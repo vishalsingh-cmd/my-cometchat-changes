@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 const createThemeScale = (scale: string, size = 12) => {
   const themeScale: Record<number, string> = {};
 
@@ -21,6 +23,35 @@ export default {
       purple: createThemeScale('purple'),
       red: createThemeScale('red'),
       green: createThemeScale('green')
+    },
+    fontFamily: {
+      sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
+      mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
+    },
+    fontWeight: {
+      normal: 'var(--font-weight-normal)',
+      medium: 'var(--font-weight-medium)',
+      semibold: 'var(--font-weight-semibold)'
+    },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      md: '1rem',
+      lg: 'clamp(1rem, 0.189vw + 0.955rem, 1.125rem)',
+      xl: 'clamp(1.125rem, 0.377vw + 1.035rem, 1.375rem)',
+      '2xl': 'clamp(2rem, 1.509vw + 1.642rem, 3rem)',
+      '3xl': 'clamp(2.5rem, 1.509vw + 2.142rem, 3.5rem)'
+    },
+    lineHeight: {
+      none: '1',
+      tight: '1.12',
+      snug: '1.2',
+      normal: '1.4'
+    },
+    letterSpacing: {
+      none: '0',
+      wide: '0.005rem',
+      widest: '0.2rem'
     }
   },
   plugins: []

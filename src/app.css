@@ -3,8 +3,43 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Variable.woff2') format('woff2'),
+      url('/fonts/Satoshi-Variable.woff') format('woff'),
+      url('/fonts/Satoshi-Variable.ttf') format('truetype');
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+      url('/fonts/Satoshi-VariableItalic.woff') format('woff'),
+      url('/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+    font-weight: 300 900;
+    font-display: swap;
+    font-style: italic;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('../fonts/Satoshi-Regular.woff2') format('woff2'),
+      url('../fonts/Satoshi-Regular.woff') format('woff'),
+      url('../fonts/Satoshi-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+
   :root,
   [data-theme='light'] {
+    /* typography */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 640;
+
     /* brand */
     --color-brand-1: 240deg 50% 99%;
     --color-brand-2: 252deg 56% 98%;
@@ -105,6 +140,11 @@
   }
 
   [data-theme='dark'] {
+    /* typography */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
     /* brand */
     --color-brand-1: 247deg 44% 4%;
     --color-brand-2: 249deg 45% 6%;
