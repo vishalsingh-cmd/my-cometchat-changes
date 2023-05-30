@@ -2,11 +2,14 @@
   import { cva, type VariantProps } from 'class-variance-authority';
   import { twMerge } from 'tailwind-merge';
 
+  import Commet from './commet.svelte';
+
   let gradientX = 0;
   let gradientY = 0;
 
   const button = cva(
-    `
+    [
+      `
       group
       relative
       box-border
@@ -27,22 +30,22 @@
   
       transition-all
   
-      disabled:pointer-events-none
-      disabled:opacity-40
-
       after:absolute
-      after:top-10
       after:left-10
-      after:w-10
+
+      after:top-10
       after:h-10
+      after:w-10
+      after:rotate-[145.28deg]
       after:opacity-0
       after:blur-[20px]
-      after:rotate-[145.28deg]
-
       hover:after:opacity-[8]
-
       focus:shadow-focus
-    `,
+
+      disabled:pointer-events-none
+      disabled:opacity-40
+    `
+    ],
     {
       variants: {
         variant: {
@@ -55,11 +58,11 @@
               active:bg-brand-10
             `,
           secondary: `
+              border-solid
+              border-[1px]
+              border-gray-6
               bg-gray-10/[0.08]
               text-foreground
-              border
-              border-solid
-              border-gray-6
 
               after:bg-brand-7
 
@@ -70,15 +73,18 @@
         },
         size: {
           sm: `
-              px-3
               h-9
               rounded-[10px]
+              px-3
             `,
           md: `
-              px-4
               h-11
               rounded-xl
+              px-4
             `
+        },
+        loading: {
+          true: `[&>*:not(.btn-spinner)]:opacity-0`
         }
       }
     }
@@ -88,9 +94,9 @@
   export { className as class };
   export let disabled: undefined | boolean = undefined;
   export let as: undefined | 'button' | 'a' = 'button';
-  export let label: undefined | string = undefined;
   export let variant: undefined | VariantProps<typeof button>['variant'] = 'primary';
   export let size: undefined | VariantProps<typeof button>['size'] = 'md';
+  export let loading: undefined | VariantProps<typeof button>['loading'] = false;
 
   let buttonRef: HTMLButtonElement | HTMLAnchorElement;
 
@@ -116,7 +122,7 @@
   on:blur
   {disabled}
   class={twMerge(
-    button({ size, variant }),
+    button({ size, loading, variant }),
     'hover:after:top-[var(--gradient-y)]',
     'hover:after:left-[var(--gradient-x)]',
     className
@@ -124,8 +130,15 @@
   style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
   {...$$restProps}
 >
-  {#if label}
-    <span class="isolate z-10">{label}</span>
+  {#if $$slots.default}
+    <span class="isolate z-10">
+      <slot />
+    </span>
+  {/if}
+  {#if loading}
+    <div class={'btn-spinner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'}>
+      <Commet />
+    </div>
   {/if}
 </svelte:element>
 

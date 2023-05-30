@@ -19,6 +19,9 @@ const meta = {
     },
     disabled: {
       control: { type: 'boolean' }
+    },
+    loading: {
+      control: { type: 'boolean' }
     }
   }
 } satisfies Meta<Button>;
