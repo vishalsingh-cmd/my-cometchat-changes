@@ -1,16 +1,34 @@
-import type { Preview } from '@storybook/svelte';
 import '../src/app.css';
 
-const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/
-      }
+import ThemeDecorator from './theme-decorator.svelte';
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/
     }
   }
 };
 
-export default preview;
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    defaultValue: 'Light',
+    toolbar: {
+      icon: 'paintbrush',
+      items: ['Light', 'Dark'],
+      dynamicTitle: true
+    }
+  }
+};
+
+export const decorators = [
+  (_, ctx) => {
+    return {
+      Component: ThemeDecorator,
+      props: { theme: ctx.globals.theme.toLowerCase() }
+    };
+  }
+];
