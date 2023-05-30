@@ -28,33 +28,44 @@
       transition-all
   
       disabled:pointer-events-none
-      disabled:opacity-60
+      disabled:opacity-40
 
       after:absolute
       after:top-10
       after:left-10
       after:w-10
       after:h-10
-      after:bg-[#D8D2F4]
       after:opacity-0
       after:blur-[20px]
       after:rotate-[145.28deg]
 
       hover:after:opacity-[8]
+
+      focus:shadow-focus
     `,
     {
       variants: {
         variant: {
           primary: `
-              bg-[#6852D6]
+              bg-brand-9
               text-background
+
+              after:bg-brand-6
+
+              active:bg-brand-10
             `,
           secondary: `
-              bg-smooth-low
+              bg-gray-10/[0.08]
               text-foreground
               border
               border-solid
-              border-smooth
+              border-gray-6
+
+              after:bg-brand-7
+
+              hover:border-brand-7
+
+              active:border-brand-10
             `
         },
         size: {
@@ -86,8 +97,8 @@
   function mouseMoveEvent(e: Event) {
     const { x, y } = buttonRef.getBoundingClientRect();
 
-    gradientX = (e as MouseEvent).clientX - x * 2;
-    gradientY = (e as MouseEvent).clientY - y * 2;
+    gradientX = (e as MouseEvent).clientX - x * 1.5;
+    gradientY = (e as MouseEvent).clientY - y * 1.5;
   }
 </script>
 
@@ -114,7 +125,7 @@
   {...$$restProps}
 >
   {#if label}
-    {label}
+    <span class="isolate z-10">{label}</span>
   {/if}
 </svelte:element>
 
