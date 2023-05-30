@@ -10,12 +10,11 @@
 
 <script lang="ts">
   export let icon: string;
-
-  $: svg = icons[icon];
 </script>
 
-{#if svg}
+{#if icons[icon]}
   <i data-icon={icon} aria-hidden="true" {...$$restProps}>
-    {@html svg}
+    <!-- eslint-disable-next-line -->
+    {@html icons[icon]}
   </i>
 {/if}
