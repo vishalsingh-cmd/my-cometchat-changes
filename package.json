@@ -12,7 +12,8 @@
     "test:unit": "vitest",
     "test": "vitest run",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "format": "prettier --plugin-search-dir . --write .",
+    "compress-icons": "npx svgo --config=svgo.config.cjs --input=src/components/icon/assets --output=src/components/icon/assets"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
