@@ -35,9 +35,13 @@
 
   :root,
   [data-theme='light'] {
+    --color-background: 240deg 100% 99%;
+    --color-foreground: 246deg 21% 9%;
+
     /* typography */
     --font-weight-normal: 400;
     --font-weight-medium: 500;
+    --font-weight-regular: 600;
     --font-weight-semibold: 640;
 
     /* brand */
@@ -140,9 +144,13 @@
   }
 
   [data-theme='dark'] {
+    --color-background: 245deg 38% 6%;
+    --color-foreground: 240deg 100% 99%;
+
     /* typography */
     --font-weight-normal: 400;
     --font-weight-medium: 500;
+    --font-weight-regular: 600;
     --font-weight-semibold: 600;
 
     /* brand */
