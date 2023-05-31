@@ -35,43 +35,7 @@
             'hover:text-brand-9',
             'hover:[&>svg]:text-gray-9'
           ],
-          // highlighted: [
-
-          //   'hover:before:w-full',
-          //   'hover:before:duration-300',
-          //   'hover:before:ease-in-out',
-
-          //   'hover:after:duration-300',
-          //   'hover:after:ease-in-out',
-          //   'hover:after:bg-brand-9'
-          // ]
-          highlighted: [
-            'text-lg',
-            'text-brand-9',
-
-            'relative'
-
-            // 'before:content-[""]',
-            // 'before:absolute',
-            // 'before:bottom-[-6px]',
-            // 'before:left-0',
-
-            // 'before:w-full',
-            // 'before:h-px',
-
-            // 'before:bg-gradient-to-l',
-            // 'before:from-brand-9',
-            // 'before:rounded-full',
-
-            // 'after:content-[""]',
-            // 'after:absolute',
-            // 'after:bottom-[-7px]',
-
-            // 'after:w-1',
-            // 'after:h-1',
-            // 'after:bg-brand-9',
-            // 'after:blur-sm'
-          ]
+          highlighted: ['text-lg', 'text-brand-9', 'relative']
         }
       }
     }
