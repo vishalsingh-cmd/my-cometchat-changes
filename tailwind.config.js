@@ -24,7 +24,12 @@ export default {
       blue: createThemeScale('blue'),
       purple: createThemeScale('purple'),
       red: createThemeScale('red'),
-      green: createThemeScale('green')
+      green: createThemeScale('green'),
+      inherit: 'inherit',
+      current: 'currentColor',
+      transparent: 'transparent',
+      black: '#000',
+      white: '#fff'
     },
     fontFamily: {
       sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
