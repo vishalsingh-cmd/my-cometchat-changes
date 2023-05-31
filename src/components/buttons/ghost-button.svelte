@@ -67,47 +67,22 @@
   {label}
   {#if variant === 'highlighted'}
     <div class="absolute bottom-[-10px] hidden h-2 w-full group-hover:block">
-      <div class="line" />
-      <div class="star" />
+      <div
+        class="line absolute h-px w-full origin-right rounded-full bg-gradient-to-l from-brand-9/100 to-brand-9/0 opacity-0 content-['']"
+      />
+      <div
+        class="star absolute left-[0%] top-[-4px] h-2 w-2 rounded-full bg-brand-9 opacity-0 blur-[2px] content-['']"
+      />
     </div>
   {/if}
 </svelte:element>
 
 <style lang="postcss">
   .line {
-    content: '';
-    position: absolute;
-
-    opacity: 0;
-
-    width: 100%;
-    height: 1px;
-
-    background: linear-gradient(to left, hsla(250, 62%, 58%, 1), hsla(250, 62%, 58%, 0));
-
-    border-radius: 999px;
-
     animation: line 1s ease-in-out;
-    transform-origin: center right;
   }
 
   .star {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0%;
-
-    opacity: 0;
-
-    width: 4px;
-    height: 4px;
-
-    background: hsla(250, 62%, 58%, 1);
-
-    border-radius: 999px;
-
-    filter: blur(2px);
-
     animation: star 1s ease-in-out;
   }
 
