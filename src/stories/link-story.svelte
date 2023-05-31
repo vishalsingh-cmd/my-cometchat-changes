@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Link from '../components/link.svelte';
+  import Link from '../components/buttons/link.svelte';
   import type { ComponentProps } from 'svelte';
 
   type $$Props = ComponentProps<Link> & {
