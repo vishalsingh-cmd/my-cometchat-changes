@@ -1,27 +1,19 @@
 <script lang="ts">
-  import Button from '../components/button.svelte';
+  import Button from '../components/buttons/button.svelte';
   import type { ComponentProps } from 'svelte';
 
   type $$Props = ComponentProps<Button> & {
-    label?: string;
+    children: string;
   };
 
-  export let label: $$Props['label'] = undefined;
+  export let children: $$Props['children'] = '';
 </script>
 
 <div data-theme="light">
-  {#if label}
-    <Button {...$$props}>{label}</Button>
-  {:else}
-    <Button {...$$props} />
-  {/if}
+  <Button {...$$props}>{children}</Button>
 </div>
 <div data-theme="dark">
-  {#if label}
-    <Button {...$$props}>{label}</Button>
-  {:else}
-    <Button {...$$props} />
-  {/if}
+  <Button {...$$props}>{children}</Button>
 </div>
 
 <style>

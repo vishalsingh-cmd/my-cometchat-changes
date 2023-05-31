@@ -2,7 +2,7 @@
   import { cva, type VariantProps } from 'class-variance-authority';
   import { twMerge } from 'tailwind-merge';
 
-  import Comet from './comet.svelte';
+  import Comet from '../comet.svelte';
 
   let gradientX = 0;
   let gradientY = 0;

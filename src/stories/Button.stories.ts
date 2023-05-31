@@ -3,12 +3,12 @@ import type { Meta, StoryObj } from '@storybook/svelte';
 import Button from './button-story.svelte';
 
 const meta = {
-  title: 'UI/Button',
+  title: 'UI/Buttons/Button',
   component: Button,
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'ghost', 'danger', 'success']
+      options: ['primary', 'secondary']
     },
     class: {
       control: { type: 'text' }
@@ -31,13 +31,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: 'Hello world'
+    children: 'Hello world'
   }
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Hello world',
+    children: 'Hello world',
     variant: 'secondary'
   }
 };
