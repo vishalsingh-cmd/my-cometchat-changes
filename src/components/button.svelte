@@ -2,7 +2,7 @@
   import { cva, type VariantProps } from 'class-variance-authority';
   import { twMerge } from 'tailwind-merge';
 
-  import Commet from './commet.svelte';
+  import Comet from './comet.svelte';
 
   let gradientX = 0;
   let gradientY = 0;
@@ -51,9 +51,11 @@
         variant: {
           primary: `
               bg-brand-9
-              text-background
+              text-brand-1
+              dark:text-brand-12
 
               after:bg-brand-6
+              dark:after:bg-brand-11
 
               active:bg-brand-10
             `,
@@ -137,7 +139,7 @@
   {/if}
   {#if loading}
     <div class={'btn-spinner absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'}>
-      <Commet />
+      <Comet {variant} />
     </div>
   {/if}
 </svelte:element>
