@@ -25,6 +25,11 @@ npm run dev
 npm run dev -- --open
 ```
 
+### Icon family
+
+All icons are located at `components/icon/assets`. To add or update an icon, just add the SVG file to this folder and run `npm run compress-icons`.
+The icons will be inlined to make use of the `currentColor` fill.
+
 ## Building
 
 To create a production version of your app:
