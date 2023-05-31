@@ -52,6 +52,7 @@ export default {
     },
     lineHeight: {
       none: '1',
+      tighter: '1.06',
       tight: '1.12',
       snug: '1.2',
       normal: '1.4'
