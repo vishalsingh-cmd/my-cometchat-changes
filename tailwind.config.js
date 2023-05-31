@@ -50,8 +50,8 @@ export default {
     },
     letterSpacing: {
       none: '0',
-      wide: '0.005rem',
-      widest: '0.2rem'
+      wide: '0.005em',
+      widest: '0.02em'
     }
   },
   plugins: []
