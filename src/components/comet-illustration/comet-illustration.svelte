@@ -23,8 +23,8 @@
 </script>
 
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { cva, type VariantProps } from 'class-variance-authority';
+  import { cn } from '$lib/utils';
 
   export const illustrationStyle = cva(['inline-block'], {
     variants: {
@@ -45,7 +45,7 @@
   <i
     data-icon={illustration}
     aria-hidden="true"
-    class={twMerge(illustrationStyle({ size }), className)}
+    class={cn(illustrationStyle({ size }), className)}
     {...$$restProps}
   >
     <!-- eslint-disable-next-line -->
