@@ -4,7 +4,7 @@
   export const illustrations = Object.entries(files).reduce<Record<string, string>>(
     (acc, [path, file]) => {
       const name = path.replace('./assets/', '').replace('.svg', '');
-      acc[name] = file;
+      acc[name] = `data:image/svg+xml,${encodeURIComponent(file)}`;
       return acc;
     },
     {}
@@ -48,7 +48,6 @@
     class={cn(illustrationStyle({ size }), className)}
     {...$$restProps}
   >
-    <!-- eslint-disable-next-line -->
-    {@html illustrations[illustration]}
+    <img alt={illustration} src={illustrations[illustration]} />
   </i>
 {/if}
