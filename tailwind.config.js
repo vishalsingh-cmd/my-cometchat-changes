@@ -36,7 +36,6 @@ export default {
     fontWeight: {
       normal: 'var(--font-weight-normal)',
       medium: 'var(--font-weight-medium)',
-      regular: 'var(--font-weight-regular)',
       semibold: 'var(--font-weight-semibold)'
     },
     fontSize: {
