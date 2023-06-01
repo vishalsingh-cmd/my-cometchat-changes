@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
-  import { twMerge } from 'tailwind-merge';
+  import { cn } from '$lib/utils';
 
   const spinner = cva(
     [
@@ -83,11 +83,11 @@
 <div
   aria-label="loading"
   role="progressbar"
-  class={twMerge(spinner({ variant }), className, 'body', variant)}
+  class={cn(spinner({ variant }), className, 'body', variant)}
   {...$$restProps}
 />
 <div class="absolute left-0 top-0 h-5 w-5 animate-spin">
-  <div class={twMerge(comet({ variant }))} />
+  <div class={cn(comet({ variant }))} />
 </div>
 
 <style>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
   import { cva, type VariantProps } from 'class-variance-authority';
+  import { cn } from '$lib/utils';
 
   const button = cva(
     [
@@ -62,7 +62,7 @@
   on:blur
   {disabled}
   {...$$restProps}
-  class={twMerge(button({ variant }), className, 'group')}
+  class={cn(button({ variant }), className, 'group')}
 >
   {label}
   {#if variant === 'highlighted'}

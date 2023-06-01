@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { twMerge } from 'tailwind-merge';
+  import { cn } from '$lib/utils';
 
   let className: undefined | string = undefined;
   export { className as class };
@@ -9,7 +9,7 @@
 <a
   {href}
   {...$$restProps}
-  class={twMerge(
+  class={cn(
     'h-5',
     'inline-flex',
     'flex-row',
@@ -19,7 +19,7 @@
     'text-sm',
     'leading-normal',
     'tracking-widest',
-    'font-regular',
+    'font-semibold',
     'hover:text-brand-9',
     'active:text-brand-10',
     'outline-brand-7/0',
