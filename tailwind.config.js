@@ -22,7 +22,12 @@ export default {
       blue: createThemeScale('blue'),
       purple: createThemeScale('purple'),
       red: createThemeScale('red'),
-      green: createThemeScale('green')
+      green: createThemeScale('green'),
+      inherit: 'inherit',
+      current: 'currentColor',
+      transparent: 'transparent',
+      black: '#000',
+      white: '#fff'
     },
     fontFamily: {
       sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
@@ -53,7 +58,11 @@ export default {
       none: '0',
       wide: '0.005rem',
       widest: '0.2rem'
+    },
+    extend: {
+      boxShadow: (theme) => ({
+        focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
+      })
     }
-  },
-  plugins: []
+  }
 };
