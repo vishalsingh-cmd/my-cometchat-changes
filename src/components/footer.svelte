@@ -25,7 +25,7 @@
   <div class="flex flex-col flex-wrap gap-8 px-5 pb-6 sm:hidden">
     <AccordionGroup>
       {#each columns as column}
-        <Accordion {column}>
+        <Accordion id={column.title}>
           <div slot="header" let:expanded let:attributes let:onClick class="h-auto w-full">
             <button
               {...attributes}
@@ -84,7 +84,7 @@
                     {href}
                     {target}
                     rel={target == '_blank' ? 'noopener noreferrer' : ''}
-                    class="self-start text-sm/normal font-semibold tracking-widest text-gray-10"
+                    class="self-start text-sm/normal font-semibold tracking-widest text-gray-11"
                     >{label}</a
                   >
                 {/each}
