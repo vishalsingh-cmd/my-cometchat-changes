@@ -106,7 +106,7 @@
 
   <!-- subfooter -->
   <div
-    class="flex flex-col-reverse items-start justify-between gap-6 px-5 py-6 sm:px-16 sm:py-10 md:flex-row-reverse md:items-center md:gap-0"
+    class="flex flex-col-reverse items-start justify-between gap-6 px-5 py-6 sm:flex-row sm:px-16 sm:py-10 md:items-center md:gap-0"
   >
     <!-- subfooter links -->
     <div class="flex flex-wrap gap-6 gap-y-3">
