@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
-  import { twMerge } from 'tailwind-merge';
+  import { cn } from '$lib/utils';
 
   import Comet from '../comet.svelte';
 
@@ -123,7 +123,7 @@
   on:focus
   on:blur
   {disabled}
-  class={twMerge(
+  class={cn(
     button({ size, loading, variant }),
     'hover:after:top-[var(--gradient-y)]',
     'hover:after:left-[var(--gradient-x)]',
