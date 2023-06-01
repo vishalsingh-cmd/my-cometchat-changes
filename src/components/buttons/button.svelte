@@ -23,7 +23,7 @@
       whitespace-nowrap
   
       text-sm
-      font-regular
+      font-semibold
       leading-none
   
       outline-none

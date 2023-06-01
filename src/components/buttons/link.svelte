@@ -19,7 +19,7 @@
     'text-sm',
     'leading-normal',
     'tracking-widest',
-    'font-regular',
+    'font-semibold',
     'hover:text-brand-9',
     'active:text-brand-10',
     'outline-brand-7/0',
