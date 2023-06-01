@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
-  import { twMerge } from 'tailwind-merge';
   import Button from './buttons/button.svelte';
+  import { cn } from '$lib/utils';
 
   const titleStyle = cva(
     [
@@ -34,10 +34,17 @@
   export let description = '';
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
   export let buttons: undefined | { label: string; link: string }[] = undefined;
+
+  const labelColours = {
+    orange: 'text-orange-9',
+    brand: 'text-brand-9'
+  };
 </script>
 
-<div class={twMerge(titleStyle({ alignment }))}>
-  <p class={`text-${label.color}-9 mb-3 max-w-[528px] text-xl font-semibold leading-tighter`}>
+<div class={cn(titleStyle({ alignment }))}>
+  <p
+    class={`${labelColours[label.color]} mb-3 max-w-[528px] text-xl font-semibold leading-tighter`}
+  >
     {label.content}
   </p>
   <svelte:element
