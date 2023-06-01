@@ -25,15 +25,6 @@
       expanded = !expanded;
     }
   };
-
-  interface $$Slots {
-    default: Record<string, never>;
-    header: {
-      expanded: boolean;
-      onClick: () => void;
-      attributes: { id: string; 'aria-expanded': boolean; 'aria-controls': string };
-    };
-  }
 </script>
 
 <div {...$$restProps}>

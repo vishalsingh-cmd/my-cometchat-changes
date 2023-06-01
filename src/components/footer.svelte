@@ -1,10 +1,9 @@
 <script lang="ts">
   import Icon from './icon/icon.svelte';
-  import Logo from './cometchat-logo.svelte';
-  import MobileLogo from './cometchat-mobile-logo.svelte';
 
   import AccordionGroup from '../components/accordion-group.svelte';
   import Accordion from '../components/accordion.svelte';
+  import CometchatLogo from './cometchat-logo.svelte';
 
   type Link = { label: string; href: string; target?: '_blank' };
   type SocialLink = Link & { icon: string };
@@ -18,9 +17,8 @@
 
 <footer data-theme="dark" class="flex-wrap bg-gray-1">
   <!-- logo -->
-  <div class="px-14 pb-8 pl-5 pt-6 sm:py-14 sm:pl-16">
-    <Logo class="hidden sm:inline" />
-    <MobileLogo class="sm:hidden" />
+  <div class="w-full px-14 pb-8 pl-5 pt-6 text-gray-12 sm:py-14 sm:pl-16">
+    <CometchatLogo class="h-4 sm:h-7" />
   </div>
 
   <!-- main links - Mobile -->
@@ -37,17 +35,16 @@
               <p class="text-md/normal font-semibold tracking-wide">
                 {column.title}
               </p>
-              {#if expanded}
-                <Icon icon="x-close" />
-              {:else}
-                <Icon icon="plus" />
-              {/if}
+              <Icon
+                icon="x-close"
+                class={`bg-brand-6 transition-transform ${expanded && 'rotate-45'}`}
+              />
             </button>
           </div>
-          <div class="flex flex-col gap-6 first:mt-[1.125rem]">
+          <div class="flex flex-col gap-6 first:mt-4">
             {#each column.groups as { title, links }}
               <div>
-                <p class="mb-4 text-sm/normal font-medium text-gray-12 opacity-[0.6]">
+                <p class="mb-4 text-sm/normal font-medium text-gray-12 opacity-60">
                   {title}
                 </p>
 
@@ -56,7 +53,9 @@
                     <a
                       {href}
                       {target}
-                      class="text-sm/normal font-semibold tracking-widest text-gray-11">{label}</a
+                      rel={target == '_blank' ? 'noopener noreferrer' : ''}
+                      class="self-start text-sm/normal font-semibold tracking-widest text-gray-11"
+                      >{label}</a
                     >
                   {/each}
                 </div>
@@ -78,7 +77,7 @@
         <div class="flex flex-col gap-4 sm:mt-0">
           {#each column.groups as { title, links }}
             <div>
-              <p class="mb-4 text-sm/normal font-medium text-gray-10 opacity-[0.54]">
+              <p class="mb-4 text-sm/normal font-medium text-gray-10 opacity-50">
                 {title}
               </p>
 
@@ -87,7 +86,9 @@
                   <a
                     {href}
                     {target}
-                    class="text-sm/normal font-semibold tracking-widest text-gray-11">{label}</a
+                    rel={target == '_blank' ? 'noopener noreferrer' : ''}
+                    class="self-start text-sm/normal font-semibold tracking-widest text-gray-10"
+                    >{label}</a
                   >
                 {/each}
               </div>
@@ -99,23 +100,19 @@
   </div>
 
   <!-- divider -->
-  <div
-    class="flex h-[2px] w-full"
-    style="background: linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-5)) 50%, transparent 100%);"
-  />
+  <div class="flex h-px w-full bg-divider-gradient" />
 
   <!-- subfooter -->
   <div
     class="flex flex-col-reverse items-start justify-between gap-6 px-5 py-6 sm:flex-row sm:px-16 sm:py-10 md:items-center md:gap-0"
   >
     <!-- subfooter links -->
-    <div class="flex flex-wrap gap-6 gap-y-3">
+    <div
+      class="flex flex-wrap gap-6 gap-y-3 break-keep text-sm/normal font-semibold tracking-widest text-gray-11"
+    >
+      <p>{new Date().getFullYear()} © CometChat</p>
       {#each subfooter as { label, href, target }}
-        <a
-          {href}
-          {target}
-          class="break-keep text-sm/normal font-semibold tracking-widest text-gray-11">{label}</a
-        >
+        <a {href} {target} rel={target == '_blank' ? 'noopener noreferrer' : ''}>{label}</a>
       {/each}
     </div>
 
@@ -124,7 +121,12 @@
       {#each socials as { label, href, target, icon }}
         <div class="flex cursor-pointer gap-1 text-gray-10">
           <Icon {icon} style="height: 20px; width: 20px" />
-          <a {href} {target} class="text-sm/normal font-semibold tracking-widest text-gray-11">
+          <a
+            {href}
+            {target}
+            rel={target == '_blank' ? 'noopener noreferrer' : ''}
+            class="text-sm/normal font-semibold tracking-widest text-gray-11"
+          >
             {label}
           </a>
         </div>

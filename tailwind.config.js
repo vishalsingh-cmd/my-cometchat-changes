@@ -53,6 +53,12 @@ export default {
       none: '0',
       wide: '0.005em',
       widest: '0.02em'
+    },
+    extend: {
+      backgroundImage: {
+        'divider-gradient':
+          'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-5)) 50%, transparent 100%)'
+      }
     }
   },
   plugins: []
