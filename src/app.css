@@ -237,4 +237,9 @@
     --color-green-11: 174deg 55% 77%;
     --color-green-12: 173deg 50% 97%;
   }
+
+  body {
+    background-color: hsl(var(--color-gray-3));
+    color: hsl(var(--color-gray-12));
+  }
 }
