@@ -16,8 +16,6 @@ export default {
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     colors: {
-      background: `hsl(var(--color-background) / <alpha-value>)`,
-      foreground: `hsl(var(--color-foreground) / <alpha-value>)`,
       brand: createThemeScale('brand'),
       gray: createThemeScale('gray'),
       orange: createThemeScale('orange'),
@@ -67,16 +65,5 @@ export default {
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
       })
     }
-  },
-
-  plugins: [
-    function ({ addBase }) {
-      addBase({
-        '[data-theme], .theme-light, .theme-dark': {
-          backgroundColor: 'hsl(var(--color-background))',
-          color: 'hsl(var(--color-foreground))'
-        }
-      });
-    }
-  ]
+  }
 };
