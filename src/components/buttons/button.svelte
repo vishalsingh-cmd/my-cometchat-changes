@@ -64,7 +64,8 @@
               border-[1px]
               border-gray-6
               bg-gray-10/[0.08]
-              text-foreground
+              
+              text-gray-12
 
               after:bg-brand-7
 
