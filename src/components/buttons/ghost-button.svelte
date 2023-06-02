@@ -45,7 +45,6 @@
   export { className as class };
   export let disabled: undefined | boolean = undefined;
   export let as: undefined | 'button' | 'a' = 'button';
-  export let label = '';
   export let variant: undefined | VariantProps<typeof button>['variant'] = 'default';
 </script>
 
@@ -64,7 +63,7 @@
   {...$$restProps}
   class={cn(button({ variant }), className, 'group')}
 >
-  {label}
+  <slot />
   {#if variant === 'highlighted'}
     <div class="absolute bottom-[-10px] hidden h-2 w-full group-hover:block">
       <div
