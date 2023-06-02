@@ -30,10 +30,10 @@
             'text-gray-12',
             'tracking-wide',
 
-            '[&>svg]:text-gray-11',
+            '[&>i]:opacity-[.74]',
 
             'hover:text-brand-9',
-            'hover:[&>svg]:text-gray-9'
+            'hover:[&>i]:opacity-100'
           ],
           highlighted: ['text-lg', 'text-brand-9', 'relative']
         }

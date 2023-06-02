@@ -14,8 +14,7 @@
   let className: string | undefined = undefined;
   export { className as class };
 
-  export let code: string;
-  export let language: string;
+  export let snippets: { code: string; language: string }[];
 
   export let lineNumbers = true;
   export let lineNumbersStartAt = 1;
@@ -26,23 +25,58 @@
   afterUpdate(() => {
     Prism.highlightAllUnder(el);
   });
+
+  let selectedLanguageIndex = 0;
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
 
-<pre
-  tabindex="-1"
-  bind:this={el}
-  data-line={lineHighlight}
-  class={clsx({ 'line-numbers': lineNumbers }, className)}
-  data-start={lineNumbersStartAt}
-  {...$$restProps}>
+<div
+  data-theme="dark"
+  class="max-w-[500px] border border-solid border-gray-5 bg-gray-1 lg:rounded-3xl lg:bg-gray-2/60"
+>
+  <div class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5">
+    {#each snippets as { language }, i}
+      <button
+        on:click={() => (selectedLanguageIndex = i)}
+        class={`relative flex h-[50px] items-center px-5 text-md font-semibold ${
+          i === selectedLanguageIndex ? 'text-gray-12/100' : 'text-gray-12/[.54]'
+        } border-b border-solid hover:text-gray-12/100 ${
+          i === selectedLanguageIndex
+            ? 'border-brand-9 hover:border-solid'
+            : 'border-gray-5 hover:border-solid'
+        } ${
+          i === selectedLanguageIndex ? 'border-solid border-brand-9' : 'border-solid border-gray-5'
+        }`}
+      >
+        {language}
+      </button>
+    {/each}
+  </div>
+  {#each snippets as snippet, i}
+    {#if i === selectedLanguageIndex}
+      {@const { code, language } = snippet}
+      <pre
+        tabindex="-1"
+        bind:this={el}
+        data-line={lineHighlight}
+        class={clsx({ 'line-numbers': lineNumbers }, className)}
+        data-start={lineNumbersStartAt}
+        {...$$restProps}>
   <code class="language-{language}"
-    >{@html Prism.highlight(code, Prism.languages[language], language)}</code
-  >
+          >{@html Prism.highlight(code, Prism.languages[language], language)}</code
+        >
 </pre>
-<div class="">
-  <GhostButton>Copy code <Icon icon="copy-01" /></GhostButton>
+    {/if}
+  {/each}
+  <div class="border-t border-gray-5 p-5">
+    <GhostButton
+      on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].code)}
+    >
+      Copy code
+      <Icon icon="copy-01" width={18} height={18} />
+    </GhostButton>
+  </div>
 </div>
 
 <style lang="postcss">
@@ -51,7 +85,6 @@
   code {
     --codeblock-padding: 16px;
     --codeblock-color: hsla(240, 100%, 99%, 1);
-    --codeblock-background-color: hsla(246, 21%, 9%, 0.6);
     --codeblock-color-variable: hsla(223, 100%, 73%, 1);
     --codeblock-color-function: hsla(20, 100%, 78%, 1);
     --codeblock-color-keyword: hsla(20, 100%, 78%, 1);
@@ -92,7 +125,6 @@
 
   pre {
     padding: var(--codeblock-padding);
-    background: var(--codeblock-background-color);
     overflow: auto;
   }
 
