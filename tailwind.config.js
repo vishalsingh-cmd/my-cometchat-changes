@@ -56,10 +56,14 @@ export default {
     },
     letterSpacing: {
       none: '0',
-      wide: '0.005rem',
-      widest: '0.2rem'
+      wide: '0.005em',
+      widest: '0.02em'
     },
     extend: {
+      backgroundImage: {
+        'divider-gradient':
+          'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-5)) 50%, transparent 100%)'
+      },
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
       })
