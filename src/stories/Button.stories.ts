@@ -1,17 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import Button from './Button.svelte';
+import Button from './button-story.svelte';
 
-// More on how to set up stories at: https://storybook.js.org/docs/svelte/writing-stories/introduction
 const meta = {
-  title: 'Example/Button',
+  title: 'UI/Buttons/Button',
   component: Button,
-  tags: ['autodocs'],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    variant: {
+      control: { type: 'select' },
+      options: ['primary', 'secondary']
+    },
+    class: {
+      control: { type: 'text' }
+    },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large']
+      options: ['sm', 'md']
+    },
+    disabled: {
+      control: { type: 'boolean' }
+    },
+    loading: {
+      control: { type: 'boolean' }
     }
   }
 } satisfies Meta<Button>;
@@ -19,30 +29,15 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/svelte/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Button'
+    children: 'Hello world'
   }
 };
 
 export const Secondary: Story = {
   args: {
-    label: 'Button'
-  }
-};
-
-export const Large: Story = {
-  args: {
-    size: 'large',
-    label: 'Button'
-  }
-};
-
-export const Small: Story = {
-  args: {
-    size: 'small',
-    label: 'Button'
+    children: 'Hello world',
+    variant: 'secondary'
   }
 };
