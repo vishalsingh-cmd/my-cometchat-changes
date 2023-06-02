@@ -33,7 +33,7 @@
 
 <div
   data-theme="dark"
-  class="max-w-[500px] border border-solid border-gray-5 bg-gray-1 lg:rounded-3xl lg:bg-gray-2/60"
+  class="border border-solid border-gray-5 bg-gray-1 lg:rounded-3xl lg:bg-gray-2/60"
 >
   <div class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5">
     {#each snippets as { language }, i}
