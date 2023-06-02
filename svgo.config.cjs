@@ -9,6 +9,7 @@ module.exports = {
       params: {
         currentColor: true
       }
-    }
+    },
+    'removeDimensions'
   ]
 };
