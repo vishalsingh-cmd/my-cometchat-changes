@@ -1,10 +1,13 @@
 <script context="module" lang="ts">
-  const files = import.meta.glob('./assets/*.svg', { as: 'raw', eager: true });
+  const files: Record<string, string> = import.meta.glob('./assets/*.svg', {
+    eager: true,
+    import: 'default'
+  });
 
   export const illustrations = Object.entries(files).reduce<Record<string, string>>(
     (acc, [path, file]) => {
       const name = path.replace('./assets/', '').replace('.svg', '');
-      acc[name] = `data:image/svg+xml,${encodeURIComponent(file)}`;
+      acc[name] = file;
       return acc;
     },
     {}
