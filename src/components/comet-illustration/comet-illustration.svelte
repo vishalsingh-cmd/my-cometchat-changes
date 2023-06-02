@@ -45,12 +45,11 @@
 </script>
 
 {#if illustrations[illustration]}
-  <i
-    data-icon={illustration}
+  <img
     aria-hidden="true"
+    alt=""
+    src={illustrations[illustration]}
     class={cn(illustrationStyle({ size }), className)}
     {...$$restProps}
-  >
-    <img alt={illustration} src={illustrations[illustration]} />
-  </i>
+  />
 {/if}
