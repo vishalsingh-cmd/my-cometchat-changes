@@ -35,7 +35,7 @@
               <p class="text-md/normal font-semibold tracking-wide">
                 {column.title}
               </p>
-              <Icon icon="plus" class={`transition-transform ${expanded && 'rotate-45'}`} />
+              <Icon icon="plus" class={`h-5 w-5 transition-transform ${expanded && 'rotate-45'}`} />
             </button>
           </div>
           <div class="flex flex-col gap-6 first:mt-4">
