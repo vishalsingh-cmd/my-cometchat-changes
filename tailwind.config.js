@@ -58,7 +58,11 @@ export default {
       none: '0',
       wide: '0.005em',
       widest: '0.02em'
+    },
+    extend: {
+      boxShadow: (theme) => ({
+        focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
+      })
     }
-  },
-  plugins: []
+  }
 };
