@@ -32,7 +32,7 @@
   };
   export let title = '';
   export let description = '';
-  export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h1';
+  export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | { label: string; link: string }[] = undefined;
 
   const labelColours = {
