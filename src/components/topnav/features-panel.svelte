@@ -24,7 +24,7 @@
           href="/"
           title="Voice & Video Calls/Conference"
           description="Simply copy and paste a few lines of code to add text, voice, and video to your."
-          asset={{ illustration: 'events' }}
+          asset={{ illustration: 'matrimonial' }}
         />
         <GhostButton class="mt-4" label="View feature" variant="highlighted" />
       </div>
