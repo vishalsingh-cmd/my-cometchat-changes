@@ -7,7 +7,7 @@
 <div class="container mx-auto flex items-stretch px-4">
   <div class="flex-1 p-12 pl-0">
     <h3 class="mb-8 text-lg opacity-54">Customer stories</h3>
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col items-start gap-8">
       <TopnavThumb
         image="https://unsplash.com/photos/7a4F2FW32z4/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjg1OTYwODY3fA&force=true&w=640"
         href="/"
@@ -28,7 +28,7 @@
   <div class="w-px bg-divider-gradient-vertical" />
   <div class="flex-1 p-12 pr-0">
     <h3 class="mb-8 text-lg opacity-54">CometChat Blog</h3>
-    <div class="flex flex-col gap-8">
+    <div class="flex flex-col items-start gap-8">
       <TopnavThumb
         image="https://unsplash.com/photos/yOIT88xWkbg/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8MzR8fGFzdHJvbm9teXxlbnwwfHx8fDE2ODU5NDA0NTd8MA&force=true&w=640"
         href="/"
