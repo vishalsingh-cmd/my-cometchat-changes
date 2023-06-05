@@ -10,8 +10,6 @@ module.exports = {
         currentColor: true
       }
     },
-    {
-      name: 'removeDimensions'
-    }
+    'removeDimensions'
   ]
 };
