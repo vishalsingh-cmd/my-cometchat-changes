@@ -12,11 +12,13 @@ export interface AssetStoryblok {
 }
 
 export interface BlogPostStoryblok {
+  customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
   body: TestStoryblok[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
+  author: string;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -87,29 +89,21 @@ export interface ButtonLinkStoryblok {
   [k: string]: any;
 }
 
-export interface CustomerStoryStoryblok {
-  cover?: AssetStoryblok;
+export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: TestStoryblok[];
   _uid: string;
-  component: 'customer-story';
-  [k: string]: any;
-}
-
-export interface FolderFooterLinkGroupStoryblok {
-  title: string;
-  folder_path: string;
-  _uid: string;
-  component: 'folder-footer-link-group';
+  component: 'customer';
   [k: string]: any;
 }
 
 export interface FooterColumnStoryblok {
   title: string;
   groups: (
-    | FolderFooterLinkGroupStoryblok
-    | ManualFooterLinkGroupStoryblok
     | TechnologiesFooterLinkGroupStoryblok
+    | FooterFolderLinkGroupStoryblok
+    | FooterManualLinkGroupStoryblok
+    | FooterTechnologyDocumentationLinkGroupStoryblok
   )[];
   _uid: string;
   component: 'footer-column';
@@ -128,20 +122,43 @@ export interface FooterConfigurationStoryblok {
   [k: string]: any;
 }
 
+export interface FooterFolderLinkGroupStoryblok {
+  title: string;
+  folder_path: string;
+  _uid: string;
+  component: 'footer-folder-link-group';
+  [k: string]: any;
+}
+
+export interface FooterManualLinkGroupStoryblok {
+  title?: string;
+  links: LinkStoryblok[];
+  _uid: string;
+  component: 'footer-manual-link-group';
+  [k: string]: any;
+}
+
+export interface FooterTechnologyDocumentationLinkGroupStoryblok {
+  title: string;
+  links: (StoryblokStory<TechnologyStoryblok> | string)[];
+  _uid: string;
+  component: 'footer-technology-documentation-link-group';
+  [k: string]: any;
+}
+
+export interface IndustryStoryblok {
+  body?: TestStoryblok[];
+  _uid: string;
+  component: 'industry';
+  [k: string]: any;
+}
+
 export interface LinkStoryblok {
   label?: string;
   link: MultilinkStoryblok;
   icon?: number | string;
   _uid: string;
   component: 'link';
-  [k: string]: any;
-}
-
-export interface ManualFooterLinkGroupStoryblok {
-  title?: string;
-  links: LinkStoryblok[];
-  _uid: string;
-  component: 'manual-footer-link-group';
   [k: string]: any;
 }
 
@@ -157,12 +174,13 @@ export interface PageStoryblok {
 }
 
 export interface TechnologyStoryblok {
+  documentation_link: LinkStoryblok[];
+  code_snippet?: string;
+  copy_code_snippet?: string;
+  screenshot: AssetStoryblok;
   seo_title?: string;
   body: TestStoryblok[];
   seo_description?: string;
-  logo: number | string;
-  code_snippet?: string;
-  screenshot: AssetStoryblok;
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'technology';
@@ -173,6 +191,15 @@ export interface TestStoryblok {
   title?: string;
   _uid: string;
   component: 'Test';
+  [k: string]: any;
+}
+
+export interface TestimonialStoryblok {
+  name: string;
+  avatar: AssetStoryblok;
+  position: string;
+  _uid: string;
+  component: 'testimonial';
   [k: string]: any;
 }
 
@@ -243,9 +270,21 @@ export interface TopnavSolutionsPanelStoryblok {
 }
 
 export interface TopnavTechnologiesPanelStoryblok {
-  title: string;
+  technologies_title: string;
+  technologies_links: (StoryblokStory<TechnologyStoryblok> | string)[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
+  [k: string]: any;
+}
+
+export interface TutorialStoryblok {
+  cover?: AssetStoryblok;
+  body: TestStoryblok[];
+  seo_title?: string;
+  seo_description?: string;
+  seo_og_image?: AssetStoryblok;
+  _uid: string;
+  component: 'tutorial';
   [k: string]: any;
 }

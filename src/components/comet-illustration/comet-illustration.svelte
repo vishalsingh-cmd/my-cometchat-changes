@@ -23,6 +23,12 @@
     | 'saas'
     | 'sports'
     | 'team';
+
+  export const isValidIllustration = (
+    illustration: unknown
+  ): illustration is IllustrationOptions => {
+    return typeof illustration === 'string' && illustration in illustrations;
+  };
 </script>
 
 <script lang="ts">

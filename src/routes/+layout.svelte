@@ -1,9 +1,15 @@
 <script lang="ts">
   import '../app.css';
   import Topnav from '$components/topnav/topnav.svelte';
+
+  export let data;
 </script>
 
-<Topnav />
+<Topnav
+  data={data.topnav.content}
+  blogPosts={data.blogPosts}
+  customerStories={data.customerStories}
+/>
 <div
   data-theme="dark"
   class="h-56 bg-gray-2"
