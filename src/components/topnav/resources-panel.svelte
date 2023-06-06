@@ -29,7 +29,7 @@
             image={story.content.cover}
             href="/"
             title={story.name}
-            publishedAt="August 24, 2022"
+            publishedAt={story.published_at}
             publishedBy={story.content.customer?.name}
           />
         {/each}
@@ -49,7 +49,7 @@
             image={story.content.cover}
             href="/"
             title={story.name}
-            publishedAt="August 24, 2022"
+            publishedAt={story.published_at}
             publishedBy={story.content.author}
           />
         {/each}

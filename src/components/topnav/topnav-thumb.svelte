@@ -1,11 +1,12 @@
 <script lang="ts">
+  import { format } from 'date-fns';
   import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { AssetStoryblok } from '$types/bloks';
 
   export let image: AssetStoryblok | undefined;
   export let title: string;
-  export let publishedAt: string;
+  export let publishedAt: string | null;
   export let publishedBy: string;
   export let href: string;
 
@@ -25,7 +26,9 @@
       {title}
     </p>
     <p class="mt-1 text-sm opacity-64 group-hover:opacity-80">
-      {publishedAt} · {publishedBy}
+      {#if publishedAt}
+        {format(new Date(publishedAt), 'MMMM d, yyyy')} · {publishedBy}
+      {/if}
     </p>
   </div>
 </a>

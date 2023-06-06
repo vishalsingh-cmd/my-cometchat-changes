@@ -61,6 +61,7 @@
   },
   "type": "module",
   "dependencies": {
-    "@storyblok/js": "^2.1.6"
+    "@storyblok/js": "^2.1.6",
+    "date-fns": "^2.30.0"
   }
 }
