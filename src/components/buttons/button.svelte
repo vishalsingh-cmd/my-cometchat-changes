@@ -112,7 +112,7 @@
   {...$$restProps}
 >
   {#if $$slots.default}
-    <span>
+    <span class="flex items-center justify-center gap-2">
       <slot />
     </span>
   {/if}
