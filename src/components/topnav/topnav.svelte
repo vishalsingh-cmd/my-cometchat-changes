@@ -2,7 +2,7 @@
   import Button from '$components/buttons/button.svelte';
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn } from '$lib/utils';
-  import { fade, slide } from 'svelte/transition';
+  import { slide } from 'svelte/transition';
   import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks';
   import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
@@ -62,8 +62,9 @@
 >
   <header
     class={cn(
-      'bg-transparent transition-all duration-300 hover:bg-gray-3/98 hover:shadow-[inset_0_-1px_hsl(var(--color-gray-12)/0.1)] hover:backdrop-blur-xl',
-      isSolid && 'bg-gray-3/98 shadow-[inset_0_-1px_hsl(var(--color-gray-12)/0.1)] backdrop-blur-xl'
+      'relative bg-transparent transition-all duration-300 hover:bg-gray-3/98 hover:backdrop-blur-xl',
+      'after:absolute after:bottom-0 after:left-0 after:right-0 after:z-20 after:h-px after:bg-divider-gradient after:opacity-0 after:transition hover:after:opacity-100',
+      isSolid && 'bg-gray-3/98 backdrop-blur-xl after:opacity-100'
     )}
   >
     <div class="container mx-auto flex h-16 items-center justify-between px-container">
@@ -165,7 +166,7 @@
               <Icon size="xs" class="text-gray-10" icon="arrow-left" />
               <span class="text-sm/none font-semibold">Back</span>
             </button>
-            <div class="h-px w-full bg-divider-gradient" />
+            <div class="h-px w-full bg-divider-gradient lg:hidden" />
             <div class="overflow-hidden">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
