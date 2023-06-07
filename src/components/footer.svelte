@@ -117,7 +117,7 @@
     <div class="flex flex-wrap gap-6 gap-y-3">
       {#each socials as { label, href, target, icon }}
         <div class="flex cursor-pointer gap-1 text-gray-10">
-          <Icon {icon} style="height: 20px; width: 20px" />
+          <Icon {icon} size="sm" />
           <a
             {href}
             {target}
