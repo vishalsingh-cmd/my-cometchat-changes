@@ -53,7 +53,7 @@
 >
   <header
     class={cn(
-      'bg-transparent transition-all duration-300',
+      'bg-transparent transition-all duration-300 hover:bg-gray-3/98 hover:shadow-[inset_0_-1px_hsl(var(--color-gray-12)/0.1)] hover:backdrop-blur-xl',
       isSolid && 'bg-gray-3/98 shadow-[inset_0_-1px_hsl(var(--color-gray-12)/0.1)] backdrop-blur-xl'
     )}
   >
