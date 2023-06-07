@@ -63,7 +63,7 @@
   <header
     class={cn(
       'relative bg-transparent transition-all duration-300 hover:bg-gray-3/98 hover:backdrop-blur-xl',
-      'after:absolute after:bottom-0 after:left-0 after:right-0 after:z-20 after:h-px after:bg-divider-gradient after:opacity-0 after:transition hover:after:opacity-100',
+      'after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:right-0 after:z-20 after:h-px after:bg-divider-gradient after:opacity-0 after:transition hover:after:opacity-100',
       isSolid && 'bg-gray-3/98 backdrop-blur-xl after:opacity-100'
     )}
   >
@@ -90,7 +90,7 @@
             {:else}
               <button
                 class={cn(style, i === activeIndex && 'text-brand-9')}
-                on:mouseenter={() => (activeIndex = activeIndex === i ? -1 : i)}
+                on:mouseenter={() => (activeIndex = i)}
               >
                 <span
                   class={cn(
