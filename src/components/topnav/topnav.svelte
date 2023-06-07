@@ -44,7 +44,7 @@
   }}
   data-theme="dark"
   class={cn(
-    'ease-motion fixed left-0 top-0 z-10 w-full text-brand-12 transition-transform duration-200',
+    'fixed left-0 top-0 z-10 w-full text-brand-12 transition-transform duration-300 ease-motion',
     {
       'translate-y-0': scrollDirection === 'up',
       '-translate-y-16': scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
