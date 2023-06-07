@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
   import { clickOutside } from '$lib/actions/click-outside';
-  import { cn } from '$lib/utils';
+  import { cn, scrollLock } from '$lib/utils';
   import { fly, slide } from 'svelte/transition';
   import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks';
   import { page } from '$app/stores';
@@ -40,6 +40,7 @@
     }
     scrollYPrev = scrollY;
   }
+  $: scrollLock(expanded || activeIndex > -1);
 
   beforeNavigate(() => {
     expanded = false;

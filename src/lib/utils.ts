@@ -1,3 +1,4 @@
+import { browser } from '$app/environment';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -12,3 +13,9 @@ export function slugify(string: string) {
     .replace(/[^\w-]/g, '-')
     .replace(/-+/g, '-');
 }
+
+export const scrollLock = (condition: boolean) => {
+  if (browser) {
+    document.body.style.overflow = condition ? 'hidden' : 'auto';
+  }
+};
