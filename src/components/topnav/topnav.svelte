@@ -24,7 +24,7 @@
   >[];
 
   let expanded = false; // mobile
-  let activeIndex = 1;
+  let activeIndex = -1;
   $: isSolid = activeIndex > -1 || scrollY > 0 || expanded;
 
   let scrollY = 0;
@@ -60,39 +60,43 @@
     )}
   >
     <div class="container mx-auto flex h-16 items-center justify-between px-container">
-      <Logo class="h-4 lg:h-5" />
-      <nav class="flex items-center" on:mouseleave={() => (activeIndex = -1)}>
-        {#each data.links as item, i}
-          {@const style =
-            'relative flex h-16 items-center overflow-hidden px-5 text-sm/none font-semibold tracking-widest transition-colors hover:text-brand-9'}
-          {#if item.component === 'link'}
-            {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
-            <a
-              on:mouseenter={() => (activeIndex = -1)}
-              class={cn(style, $page.url.pathname === href && 'text-brand-9')}
-              {href}
-              {target}
-              {rel}
-            >
-              {item.label}
-            </a>
-          {:else}
-            <button
-              class={cn(style, i === activeIndex && 'text-brand-9')}
-              on:mouseenter={() => (activeIndex = activeIndex === i ? -1 : i)}
-            >
-              <span
-                class={cn(
-                  'pointer-events-none absolute bottom-0 left-2 right-2 h-0 bg-gradient-to-t from-brand-9/30 via-brand-9/10 via-30% to-brand-9/0 transition-all delay-0 duration-200 ease-in-out',
-                  'before:absolute before:bottom-0 before:left-0 before:h-0 before:w-full before:bg-brand-9 before:opacity-0 before:transition-all before:duration-200 before:ease-in-out',
-                  i === activeIndex && 'h-6 delay-100 duration-500',
-                  i === activeIndex && 'before:opacity-1 before:h-0.5'
-                )}
-              />
-              {item.title}
-            </button>
-          {/if}
-        {/each}
+      <a href="/" class="transition hover:opacity-80">
+        <Logo class="h-4 lg:h-5" />
+      </a>
+      <div on:mouseleave={() => (activeIndex = -1)}>
+        <nav class="hidden items-center lg:flex">
+          {#each data.links as item, i}
+            {@const style =
+              'relative flex h-16 items-center overflow-hidden px-5 text-sm/none font-semibold tracking-widest transition-colors hover:text-brand-9'}
+            {#if item.component === 'link'}
+              {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
+              <a
+                on:mouseenter={() => (activeIndex = -1)}
+                class={cn(style, $page.url.pathname === href && 'text-brand-9')}
+                {href}
+                {target}
+                {rel}
+              >
+                {item.label}
+              </a>
+            {:else}
+              <button
+                class={cn(style, i === activeIndex && 'text-brand-9')}
+                on:mouseenter={() => (activeIndex = activeIndex === i ? -1 : i)}
+              >
+                <span
+                  class={cn(
+                    'pointer-events-none absolute bottom-0 left-2 right-2 h-0 bg-gradient-to-t from-brand-9/30 via-brand-9/10 via-30% to-brand-9/0 transition-all delay-0 duration-200 ease-in-out',
+                    'before:absolute before:bottom-0 before:left-0 before:h-0 before:w-full before:bg-brand-9 before:opacity-0 before:transition-all before:duration-200 before:ease-in-out',
+                    i === activeIndex && 'h-6 delay-100 duration-500',
+                    i === activeIndex && 'before:opacity-1 before:h-0.5'
+                  )}
+                />
+                {item.title}
+              </button>
+            {/if}
+          {/each}
+        </nav>
         {#if data.links[activeIndex]}
           {@const item = data.links[activeIndex]}
           <div
@@ -116,7 +120,7 @@
             </div>
           </div>
         {/if}
-      </nav>
+      </div>
 
       <div class="flex items-center gap-6">
         <div class="flex items-center gap-6">
