@@ -102,6 +102,8 @@ export default {
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
       }),
       opacity: {
+        8: '0.08',
+        15: '0.15',
         54: '0.54',
         64: '0.64',
         74: '0.74',

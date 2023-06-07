@@ -12,7 +12,7 @@
 <div data-theme="light">
   <Button {...$$props}>{children}</Button>
 </div>
-<div data-theme="dark">
+<div data-theme="dark" class="bg-gray-3">
   <Button {...$$props}>{children}</Button>
 </div>
 
