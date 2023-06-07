@@ -2,10 +2,11 @@
   import Button from '$components/buttons/button.svelte';
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn } from '$lib/utils';
-  import { slide } from 'svelte/transition';
+  import { fade, slide } from 'svelte/transition';
   import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks';
   import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import mobileBg from './topnav-mobile-bg.svg';
 
   import Logo from './logo.svelte';
   import FeaturesPanel from './features-panel.svelte';
@@ -14,6 +15,7 @@
   import ResourcesPanel from './resources-panel.svelte';
   import type { ISbStoryData } from '@storyblok/js';
   import Icon from '$components/icon/icon.svelte';
+  import { beforeNavigate } from '$app/navigation';
 
   export let data: TopNavigationStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -36,6 +38,11 @@
     }
     scrollYPrev = scrollY;
   }
+
+  beforeNavigate(() => {
+    expanded = false;
+    activeIndex = -1;
+  });
 </script>
 
 <svelte:window bind:scrollY />
@@ -97,13 +104,68 @@
             {/if}
           {/each}
         </nav>
+        <!-- Mobile nav -->
+        {#if expanded}
+          <nav
+            in:slide={{ duration: 300, delay: 100 }}
+            out:slide={{ duration: 100 }}
+            class="fixed left-0 right-0 top-16 z-10 flex h-[calc(100dvh-4rem)] flex-col justify-between overflow-auto bg-gray-3/98 backdrop-blur-xl lg:hidden"
+            style="background-image:url({mobileBg});background-size:cover;background-repeat:no-repeat;background-position:center;"
+          >
+            <div class="flex-1">
+              {#each data.links as item, i}
+                {@const style = 'px-container flex text-md/none font-semibold py-6'}
+                {#if item.component === 'link'}
+                  {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
+                  <a
+                    on:mouseenter={() => (activeIndex = -1)}
+                    class={cn(style, $page.url.pathname === href && 'text-brand-9')}
+                    {href}
+                    {target}
+                    {rel}
+                  >
+                    {item.label}
+                  </a>
+                {:else}
+                  <button
+                    class={cn(
+                      style,
+                      'flex w-full items-center justify-between',
+                      i === activeIndex && 'text-brand-9'
+                    )}
+                    on:click={() => (activeIndex = activeIndex === i ? -1 : i)}
+                  >
+                    {item.title}
+                    <Icon class="text-gray-10" size="xs" icon="chevron-right" />
+                  </button>
+                {/if}
+                <div class="h-px w-full bg-divider-gradient" />
+              {/each}
+            </div>
+            {#if data.call_to_actions[data.call_to_actions.length - 1]}
+              {@const item = data.call_to_actions[data.call_to_actions.length - 1]}
+              {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
+              <div class="p-container">
+                <Button class="w-full" as="a" {href} {target} {rel}>{item.label}</Button>
+              </div>
+            {/if}
+          </nav>
+        {/if}
         {#if data.links[activeIndex]}
           {@const item = data.links[activeIndex]}
           <div
             in:slide={{ duration: 300, delay: 100 }}
             out:slide={{ duration: 100 }}
-            class="fixed left-0 top-16 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
+            class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
           >
+            <button
+              class="flex w-full items-center gap-2 px-container py-4 lg:hidden"
+              on:click={() => (activeIndex = -1)}
+            >
+              <Icon size="xs" class="text-gray-10" icon="arrow-left" />
+              <span class="text-sm/none font-semibold">Back</span>
+            </button>
+            <div class="h-px w-full bg-divider-gradient" />
             <div class="overflow-hidden">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
