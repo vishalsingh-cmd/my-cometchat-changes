@@ -1,10 +1,10 @@
+import PreFooter from '$components/pre-footer/pre-footer.svelte';
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import PreFooter from '../components/pre-footer.svelte';
-
 const meta = {
-  title: 'UI/Prefooter',
-  component: PreFooter
+  title: 'UI/Blocks/PreFooter',
+  component: PreFooter,
+  argTypes: {}
 } satisfies Meta;
 
 export default meta;

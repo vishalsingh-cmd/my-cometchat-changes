@@ -35,7 +35,7 @@
               <p class="text-md/normal font-semibold tracking-wide">
                 {column.title}
               </p>
-              <Icon icon="plus" class={`transition-transform ${expanded && 'rotate-45'}`} />
+              <Icon icon="plus" class={`h-5 w-5 transition-transform ${expanded && 'rotate-45'}`} />
             </button>
           </div>
           <div class="flex flex-col gap-6 first:mt-4">
@@ -117,7 +117,7 @@
     <div class="flex flex-wrap gap-6 gap-y-3">
       {#each socials as { label, href, target, icon }}
         <div class="flex cursor-pointer gap-1 text-gray-10">
-          <Icon {icon} style="height: 20px; width: 20px" />
+          <Icon {icon} size="sm" />
           <a
             {href}
             {target}

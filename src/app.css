@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   @font-face {
     font-family: 'Satoshi';
     src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
