@@ -9,6 +9,7 @@
   import type { ISbStoryData } from '@storyblok/js';
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
   import TopnavThumb from './topnav-thumb.svelte';
+  import { cn } from '$lib/utils';
 
   export let data: TopnavResourcesPanelStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -19,9 +20,9 @@
   >[];
 </script>
 
-<div class="container mx-auto flex px-4">
-  <div class="flex items-stretch">
-    <div class="flex-1 p-12 pl-0">
+<div class="container mx-auto px-container xl:flex">
+  <div class="items-stretch md:flex">
+    <div class="flex-1 p-12 px-0 md:pr-12">
       <h3 class="mb-8 text-lg opacity-54">{data.customer_stories_title}</h3>
       <div class="flex flex-col items-start gap-8">
         {#each customerStories as story}
@@ -40,8 +41,9 @@
         {/if}
       </div>
     </div>
-    <div class="w-px bg-divider-gradient-vertical" />
-    <div class="flex-1 p-12">
+    <div class="hidden w-px bg-divider-gradient-vertical md:block" />
+    <div class="h-px w-full bg-divider-gradient md:hidden" />
+    <div class="flex-1 p-12 px-0 md:pl-12 xl:p-12">
       <h3 class="mb-8 text-lg opacity-54">{data.blog_title}</h3>
       <div class="flex flex-col items-start gap-8">
         {#each blogPosts as story}
@@ -61,8 +63,12 @@
       </div>
     </div>
   </div>
+  <div class="h-px w-full bg-divider-gradient xl:hidden" />
   <div
-    class="relative w-[480px] gap-12 border-l border-gray-5 bg-gray-4 p-12 pr-0 before:absolute before:left-full before:top-0 before:h-full before:w-screen before:bg-gray-4"
+    class={cn(
+      'relative w-[480px] gap-12 border-gray-5 p-12 px-0 xl:border-l xl:bg-gray-4 xl:pl-12',
+      'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
+    )}
   >
     {#each data.groups as group}
       <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>

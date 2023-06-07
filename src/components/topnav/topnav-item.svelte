@@ -43,15 +43,17 @@
       size === 'regular' ? 'flex items-center gap-2' : 'flex flex-col gap-4'
     )}
   >
-    {#if asset && 'icon' in asset}
-      <Icon
-        size={size === 'big' ? 'lg' : 'xs'}
-        icon={asset.icon}
-        class={cn(asset.color === 'secondary' ? 'text-gray-10' : 'text-brand-9')}
-      />
-    {:else if asset}
-      <CometIllustration size={size === 'big' ? 'lg' : 'sm'} illustration={asset.illustration} />
-    {/if}
+    <div class="flex flex-shrink-0">
+      {#if asset && 'icon' in asset}
+        <Icon
+          size={size === 'big' ? 'lg' : 'xs'}
+          icon={asset.icon}
+          class={cn(asset.color === 'secondary' ? 'text-gray-10' : 'text-brand-9')}
+        />
+      {:else if asset}
+        <CometIllustration size={size === 'big' ? 'lg' : 'sm'} illustration={asset.illustration} />
+      {/if}
+    </div>
     <p
       class={cn(
         'font-semibold opacity-74 transition-all group-hover:opacity-100',

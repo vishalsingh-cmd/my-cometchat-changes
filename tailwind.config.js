@@ -16,6 +16,11 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
+    container: {
+      screens: {
+        DEFAULT: '1440px'
+      }
+    },
     colors: {
       inherit: 'inherit',
       current: 'currentColor',
@@ -112,6 +117,9 @@ export default {
         64: '0.64',
         74: '0.74',
         98: '0.98'
+      },
+      padding: {
+        container: 'clamp(1rem, 5vw, 3rem)'
       }
     }
   },

@@ -13,6 +13,7 @@
   import DevelopersPanel from './developers-panel.svelte';
   import ResourcesPanel from './resources-panel.svelte';
   import type { ISbStoryData } from '@storyblok/js';
+  import Icon from '$components/icon/icon.svelte';
 
   export let data: TopNavigationStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -22,8 +23,9 @@
     }
   >[];
 
-  let activeIndex = -1;
-  $: isSolid = activeIndex > -1 || scrollY > 0;
+  let expanded = false; // mobile
+  let activeIndex = 1;
+  $: isSolid = activeIndex > -1 || scrollY > 0 || expanded;
 
   let scrollY = 0;
   let scrollYPrev = 0;
@@ -57,8 +59,8 @@
       isSolid && 'bg-gray-3/98 shadow-[inset_0_-1px_hsl(var(--color-gray-12)/0.1)] backdrop-blur-xl'
     )}
   >
-    <div class="container mx-auto flex h-16 items-center justify-between px-4">
-      <Logo />
+    <div class="container mx-auto flex h-16 items-center justify-between px-container">
+      <Logo class="h-4 lg:h-5" />
       <nav class="flex items-center" on:mouseleave={() => (activeIndex = -1)}>
         {#each data.links as item, i}
           {@const style =
@@ -96,38 +98,49 @@
           <div
             in:slide={{ duration: 300, delay: 100 }}
             out:slide={{ duration: 100 }}
-            class="fixed left-0 top-16 w-full border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
+            class="fixed left-0 top-16 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
           >
-            {#if item.component === 'topnav-panel'}
-              {@const data = item.panel[0]}
-              {#if data.component === 'topnav-features-panel'}
-                <FeaturesPanel {data} />
-              {:else if data.component === 'topnav-solutions-panel'}
-                <SolutionsPanel {data} />
-              {:else if data.component === 'topnav-technologies-panel'}
-                <DevelopersPanel {data} />
-              {:else if data.component === 'topnav-resources-panel'}
-                <ResourcesPanel {data} {blogPosts} {customerStories} />
+            <div class="overflow-hidden">
+              {#if item.component === 'topnav-panel'}
+                {@const data = item.panel[0]}
+                {#if data.component === 'topnav-features-panel'}
+                  <FeaturesPanel {data} />
+                {:else if data.component === 'topnav-solutions-panel'}
+                  <SolutionsPanel {data} />
+                {:else if data.component === 'topnav-technologies-panel'}
+                  <DevelopersPanel {data} />
+                {:else if data.component === 'topnav-resources-panel'}
+                  <ResourcesPanel {data} {blogPosts} {customerStories} />
+                {/if}
               {/if}
-            {/if}
+            </div>
           </div>
         {/if}
       </nav>
 
       <div class="flex items-center gap-6">
-        {#each data.call_to_actions as cta, i}
-          {@const { href, target, rel } = getAnchorFromCmsLink(cta.link)}
-          {#if i === data.call_to_actions.length - 1}
-            <Button as="a" {href} {target} {rel}>{cta.label}</Button>
-          {:else}
-            <a
-              class="text-sm/none font-semibold tracking-widest transition-colors hover:text-brand-9"
-              {href}
-              {target}
-              {rel}>{cta.label}</a
-            >
-          {/if}
-        {/each}
+        <div class="flex items-center gap-6">
+          {#each data.call_to_actions as cta, i}
+            {@const { href, target, rel } = getAnchorFromCmsLink(cta.link)}
+            {#if i === data.call_to_actions.length - 1}
+              <Button class="hidden sm:inline-flex" as="a" {href} {target} {rel}>{cta.label}</Button
+              >
+            {:else}
+              <a
+                class="text-sm/none font-semibold tracking-widest transition-colors hover:text-brand-9"
+                {href}
+                {target}
+                {rel}>{cta.label}</a
+              >
+            {/if}
+          {/each}
+        </div>
+        <!-- Mobile button -->
+        <div class="block lg:hidden">
+          <Button variant="secondary" on:click={() => (expanded = !expanded)}>
+            <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} />
+          </Button>
+        </div>
       </div>
     </div>
   </header>
