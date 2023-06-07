@@ -23,16 +23,22 @@
     | 'saas'
     | 'sports'
     | 'team';
+
+  export const isValidIllustration = (
+    illustration: unknown
+  ): illustration is IllustrationOptions => {
+    return typeof illustration === 'string' && illustration in illustrations;
+  };
 </script>
 
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
   import { cn } from '$lib/utils';
 
-  export const illustrationStyle = cva(['inline-block'], {
+  export const illustrationStyle = cva(['inline-block scale-[1.4]'], {
     variants: {
       size: {
-        sm: ['h-5', 'w-5'],
+        sm: ['h-4', 'w-4'],
         lg: ['h-10', 'w-10']
       }
     }
