@@ -2,7 +2,7 @@
   import Button from '$components/buttons/button.svelte';
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn } from '$lib/utils';
-  import { slide } from 'svelte/transition';
+  import { fly, slide } from 'svelte/transition';
   import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks';
   import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
@@ -16,6 +16,8 @@
   import type { ISbStoryData } from '@storyblok/js';
   import Icon from '$components/icon/icon.svelte';
   import { beforeNavigate } from '$app/navigation';
+  import { createMediaStore } from '$lib/stores/media';
+  import { circInOut } from 'svelte/easing';
 
   export let data: TopNavigationStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -43,6 +45,23 @@
     expanded = false;
     activeIndex = -1;
   });
+
+  const isMobile = createMediaStore('(max-width: 1023px)');
+
+  const panelTransition = (
+    node: HTMLElement,
+    options: { duration: number; direction: 'in' | 'out' }
+  ) => {
+    if ($isMobile) {
+      return fly(node, { duration: options.duration, x: '100vw', easing: circInOut });
+    }
+
+    return slide(node, {
+      duration: options.duration,
+      delay: options.direction === 'in' ? 100 : 0,
+      easing: circInOut
+    });
+  };
 </script>
 
 <svelte:window bind:scrollY />
@@ -155,8 +174,8 @@
         {#if data.links[activeIndex]}
           {@const item = data.links[activeIndex]}
           <div
-            in:slide={{ duration: 300, delay: 100 }}
-            out:slide={{ duration: 100 }}
+            in:panelTransition={{ duration: 200, direction: 'in' }}
+            out:panelTransition={{ duration: 100, direction: 'out' }}
             class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
           >
             <button
