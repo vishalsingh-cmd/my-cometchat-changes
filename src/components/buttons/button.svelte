@@ -27,6 +27,7 @@
       outline-none
       focus-visible:ring-4
       focus-visible:shadow-focus
+      active:shadow-focus
   
       transition
 
