@@ -16,7 +16,7 @@
       'xl:w-[480px] xl:border-r'
     ])}
   >
-    <div class="flex flex-col gap-12 p-12 px-0 sm:flex-row xl:flex-col xl:pr-12">
+    <div class="flex flex-col gap-12 p-8 px-0 sm:flex-row lg:p-12 xl:flex-col xl:pr-12">
       {#each data.featured_items as featured}
         {@const { href, target, rel } = getAnchorFromCmsLink(featured.link)}
         <TopnavItem
@@ -32,7 +32,7 @@
     </div>
     <div class="h-px w-full bg-divider-gradient xl:hidden" />
   </div>
-  <div class="flex-1 p-12 px-0 xl:px-12">
+  <div class="flex-1 p-8 px-0 lg:p-12 xl:px-12">
     {#each data.groups as group, i}
       <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
       <div
