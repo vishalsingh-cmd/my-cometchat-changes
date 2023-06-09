@@ -2,8 +2,8 @@
   import Button from '$components/buttons/button.svelte';
 
   import Noise from '$components/homepage/hero/noise.svelte';
-  import OrbitMedium from './orbit-medium.svelte';
-  import OrbitThin from '$components/homepage/hero/orbit-thin.svelte';
+  import OrbitMedium from './assets/orbit-medium.svg';
+  import OrbitThin from './assets/orbit-thin.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
 </script>
 
@@ -12,7 +12,7 @@
   class="relative overflow-hidden bg-brand-1 px-5 pb-20 pt-24 md:px-20 md:pt-[188px]"
 >
   <div class="absolute left-[calc(50vw-700px)] top-[80px] hidden md:block">
-    <OrbitMedium />
+    <img src={OrbitMedium} alt="" />
   </div>
   <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
     <Stars amount={20} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
@@ -56,10 +56,10 @@
     <div
       class="ellipse6 absolute left-[calc(50%-433.8px)] top-[-80.32px] h-[390.84px] w-[1274.01px] origin-center rotate-[-20.77deg] transform rounded-1/2 bg-[#1D1765] opacity-30 mix-blend-normal blur-[100px]"
     />
-    <div class="absolute left-1/2 translate-x-[-50%] transform">
-      <OrbitThin />
+    <div class="absolute left-1/2 h-[295.93px] w-[1378.41px] translate-x-[-50%] transform">
+      <img src={OrbitThin} alt="" />
     </div>
-    <div class="absolute right-[calc(50vw-500px)] top-[180px]">
+    <div class="absolute right-[calc(50vw-430px)] top-[180px]">
       <div
         class="absolute h-[91px] w-[91px] rounded-full bg-[#FFC1A1] shadow-[inset_31.9123px_15.9561px_79.7807px_0_rgba(252,255,215,0.79),inset_-31.9123px_-31.9123px_95.7368px_#CB798D]"
       />
