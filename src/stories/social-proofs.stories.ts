@@ -13,13 +13,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    title: 'Trusted by',
     customers: [
-      { name: 'Google' },
-      { name: 'Google' },
-      { name: 'Google' },
-      { name: 'Google' },
-      { name: 'Google' },
-      { name: 'Google' }
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' }, // test image
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' }, // test image
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' }, // test image
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' }, // test image
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' }, // test image
+      { name: 'Google', logo: 'https://i.imgur.com/fmpA2xL.png' } // test image
     ]
   }
 };
