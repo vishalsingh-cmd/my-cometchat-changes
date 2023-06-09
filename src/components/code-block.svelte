@@ -1,14 +1,19 @@
 <script lang="ts">
+  import { afterUpdate } from 'svelte';
   import clsx from 'clsx';
   import Prism from 'prismjs';
+
   import 'prism-svelte';
   import 'prismjs/plugins/line-highlight/prism-line-highlight';
   import 'prismjs/plugins/line-numbers/prism-line-numbers';
   import 'prismjs/components/prism-typescript';
   import 'prismjs/components/prism-elixir';
   import 'prismjs/components/prism-bash';
-  import { afterUpdate } from 'svelte';
+
+  import { cn } from '$lib/utils';
+
   import GhostButton from './buttons/ghost-button.svelte';
+
   import Icon from './icon/icon.svelte';
 
   let className: string | undefined = undefined;
@@ -39,15 +44,15 @@
     {#each snippets as { language }, i}
       <button
         on:click={() => (selectedLanguageIndex = i)}
-        class={`relative flex h-[50px] items-center px-5 text-md font-semibold ${
-          i === selectedLanguageIndex ? 'text-gray-12/100' : 'text-gray-12/[.54]'
-        } border-b border-solid hover:text-gray-12/100 ${
+        class={cn(
+          'relative flex h-[50px] items-center px-5 text-md font-semibold',
+          i === selectedLanguageIndex ? 'text-gray-12' : 'text-gray-12/60',
+          'border-b border-solid hover:text-gray-12/100',
           i === selectedLanguageIndex
             ? 'border-brand-9 hover:border-solid'
-            : 'border-gray-5 hover:border-solid'
-        } ${
+            : 'border-gray-5 hover:border-solid',
           i === selectedLanguageIndex ? 'border-solid border-brand-9' : 'border-solid border-gray-5'
-        }`}
+        )}
       >
         {language}
       </button>

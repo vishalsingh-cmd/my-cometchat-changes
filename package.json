@@ -15,7 +15,11 @@
     "format": "prettier --plugin-search-dir . --write .",
     "compress-icons": "npx svgo --config=svgo.config.cjs --input=src/components/icon/assets --output=src/components/icon/assets",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "sb:login": "npx storyblok@latest logout && npx storyblok login",
+    "sb:pull": "npx storyblok@latest pull-components --space=231922",
+    "sb:types": "storyblok-generate-ts source=./components.231922.json target=./src/types/bloks.d.ts && prettier ./src/types/bloks.d.ts --write",
+    "sb": "npm run sb:pull && npm run sb:types"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.18",
@@ -43,6 +47,7 @@
     "prettier-plugin-tailwindcss": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "storyblok-generate-ts": "^1.14.0",
     "storybook": "^7.0.18",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
@@ -51,12 +56,15 @@
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "vite": "^4.3.0",
+    "vite-plugin-mkcert": "^1.15.0",
     "vitest": "^0.25.3"
   },
   "type": "module",
   "dependencies": {
     "@types/prismjs": "^1.26.0",
     "prism-svelte": "^0.5.0",
-    "prismjs": "^1.29.0"
+    "prismjs": "^1.29.0",
+    "@storyblok/js": "^2.1.6",
+    "date-fns": "^2.30.0"
   }
 }

@@ -4,8 +4,7 @@
 
   import Comet from '../comet.svelte';
 
-  let gradientX = 0;
-  let gradientY = 0;
+  let position = { x: 0, y: 0 };
 
   const button = cva(
     [
@@ -17,7 +16,6 @@
       inline-flex
       items-center
       justify-center
-      gap-2.5
   
       overflow-hidden
       whitespace-nowrap
@@ -27,23 +25,14 @@
       leading-none
   
       outline-none
+      focus-visible:ring-4
+      focus-visible:shadow-focus
+      active:shadow-focus
   
-      transition-all
-  
-      after:absolute
-      after:left-10
-
-      after:top-10
-      after:h-10
-      after:w-10
-      after:rotate-[145.28deg]
-      after:opacity-0
-      after:blur-[20px]
-      hover:after:opacity-[8]
-      focus:shadow-focus
+      transition
 
       disabled:pointer-events-none
-      disabled:opacity-40
+      disabled:opacity-60
     `
     ],
     {
@@ -51,27 +40,22 @@
         variant: {
           primary: `
               bg-brand-9
+              ring-brand-9/30
               text-brand-1
               dark:text-brand-12
-
-              after:bg-brand-6
-              dark:after:bg-brand-11
 
               active:bg-brand-10
             `,
           secondary: `
-              border-solid
-              border-[1px]
-              border-gray-6
-              bg-gray-10/[0.08]
+              text-brand-12
               
-              text-gray-12
+              border
+              border-brand-11/20
+              hover:border-brand-9/50
+              focus-visible:border-brand-9/50
+              active:border-brand-9/80
 
-              after:bg-brand-7
-
-              hover:border-brand-7
-
-              active:border-brand-10
+              ring-brand-9/20
             `
         },
         size: {
@@ -101,19 +85,19 @@
   export let size: undefined | VariantProps<typeof button>['size'] = 'md';
   export let loading: undefined | VariantProps<typeof button>['loading'] = false;
 
-  let buttonRef: HTMLButtonElement | HTMLAnchorElement;
-
-  function mouseMoveEvent(e: Event) {
-    const { x, y } = buttonRef.getBoundingClientRect();
-
-    gradientX = (e as MouseEvent).clientX - x * 1.5;
-    gradientY = (e as MouseEvent).clientY - y * 1.5;
+  let el: HTMLButtonElement | HTMLAnchorElement;
+  function mouseMoveEvent(e: MouseEvent) {
+    const rect = el.getBoundingClientRect();
+    position = {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    };
   }
 </script>
 
 <svelte:element
   this={as}
-  bind:this={buttonRef}
+  bind:this={el}
   on:click
   on:mouseenter
   on:mousemove={mouseMoveEvent}
@@ -124,17 +108,11 @@
   on:focus
   on:blur
   {disabled}
-  class={cn(
-    button({ size, loading, variant }),
-    'hover:after:top-[var(--gradient-y)]',
-    'hover:after:left-[var(--gradient-x)]',
-    className
-  )}
-  style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+  class={cn(button({ size, loading, variant }), className)}
   {...$$restProps}
 >
   {#if $$slots.default}
-    <span class="isolate z-10">
+    <span class="flex items-center justify-center gap-2">
       <slot />
     </span>
   {/if}
@@ -143,7 +121,11 @@
       <Comet {variant} />
     </div>
   {/if}
+  <div
+    class="pointer-events-none absolute -inset-px opacity-100 transition duration-300"
+    style="background: radial-gradient(100px circle at {position.x}px {position.y}px, {variant ===
+    'primary'
+      ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'
+      : 'hsl(var(--color-brand-7) / 0.3), hsl(var(--color-brand-7) / 0)'});"
+  />
 </svelte:element>
-
-<style>
-</style>

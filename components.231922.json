@@ -1,0 +1,1070 @@
+{
+  "components": [
+    {
+      "name": "blog-post",
+      "display_name": null,
+      "created_at": "2023-06-05T15:34:11.948Z",
+      "updated_at": "2023-06-06T16:47:39.252Z",
+      "id": 4079335,
+      "schema": {
+        "customer": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["customer"],
+          "description": "If this blog post is a customer story, you can select the customer here to create the association",
+          "pos": 0
+        },
+        "cover": {
+          "type": "asset",
+          "pos": 1,
+          "filetypes": ["images"]
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 2,
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
+          "key": "body"
+        },
+        "seo_title": {
+          "type": "text",
+          "key": "title",
+          "pos": 3
+        },
+        "seo_description": {
+          "type": "text",
+          "key": "description",
+          "pos": 4
+        },
+        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
+          "pos": 5,
+          "type": "tab",
+          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
+          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
+        },
+        "seo_og_image": {
+          "type": "asset",
+          "filetypes": ["images"],
+          "pos": 6
+        },
+        "author": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-post",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "button-link",
+      "display_name": null,
+      "created_at": "2023-06-01T09:23:48.271Z",
+      "updated_at": "2023-06-01T09:26:36.933Z",
+      "id": 4063223,
+      "schema": {
+        "variant": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6bfc0fee-9cea-4508-b190-4803e6044120",
+              "name": "primary",
+              "value": "primary"
+            },
+            {
+              "_uid": "94be7e04-0a2d-420c-933a-88d563474483",
+              "value": "secondary",
+              "name": "secondary"
+            }
+          ],
+          "required": true,
+          "exclude_empty_option": true,
+          "pos": 0
+        },
+        "icon": {
+          "type": "option",
+          "use_uuid": true,
+          "required": false,
+          "source": "internal",
+          "datasource_slug": "icons",
+          "pos": 1
+        },
+        "label": {
+          "type": "text",
+          "required": true,
+          "pos": 2
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "button-link",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "customer",
+      "display_name": "Customer",
+      "created_at": "2023-06-02T13:38:21.932Z",
+      "updated_at": "2023-06-06T16:17:23.352Z",
+      "id": 4070113,
+      "schema": {
+        "logo": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"],
+          "asset_folder_id": 247774,
+          "pos": 1
+        },
+        "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
+          "display_name": "SEO",
+          "keys": [],
+          "pos": 4,
+          "type": "tab"
+        },
+        "body": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Customer",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "footer-column",
+      "display_name": null,
+      "created_at": "2023-06-01T09:37:12.240Z",
+      "updated_at": "2023-06-06T15:35:38.890Z",
+      "id": 4063286,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "technologies-footer-link-group",
+            "footer-folder-link-group",
+            "footer-manual-link-group",
+            "footer-technology-documentation-link-group"
+          ],
+          "display_name": "Sub Columns"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "footer-column",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "Footer Configuration",
+      "display_name": null,
+      "created_at": "2023-06-01T09:06:41.616Z",
+      "updated_at": "2023-06-01T09:40:19.627Z",
+      "id": 4063156,
+      "schema": {
+        "tab-2b3010ac-f6dc-49d5-9c7c-04c797ff77bb": {
+          "display_name": "Prefooter",
+          "keys": ["prefooter_title", "prefooter_description", "prefooter_cta"],
+          "pos": 0,
+          "type": "tab",
+          "name": "tab-2b3010ac-f6dc-49d5-9c7c-04c797ff77bb"
+        },
+        "tab-723424fd-1998-4d8f-9497-6c6ef2d95000": {
+          "display_name": "Subfooter",
+          "keys": ["subfooter", "socials"],
+          "pos": 1,
+          "type": "tab",
+          "name": "tab-723424fd-1998-4d8f-9497-6c6ef2d95000"
+        },
+        "subfooter": {
+          "type": "options",
+          "required": true,
+          "source": "internal_stories",
+          "folder_slug": "pages/",
+          "pos": 0
+        },
+        "socials": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "required": true,
+          "component_whitelist": ["link"],
+          "pos": 1
+        },
+        "columns": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["footer-column"],
+          "pos": 2
+        },
+        "prefooter_title": {
+          "type": "text",
+          "required": true,
+          "key": "prefooter_title",
+          "pos": 3,
+          "display_name": "Title"
+        },
+        "prefooter_description": {
+          "type": "text",
+          "required": true,
+          "key": "prefooter_description",
+          "pos": 4,
+          "display_name": "Description"
+        },
+        "prefooter_cta": {
+          "type": "bloks",
+          "maximum": 2,
+          "minimum": 1,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 5,
+          "display_name": "Call To Action"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Footer Configuration",
+      "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Configuration"
+    },
+    {
+      "name": "footer-folder-link-group",
+      "display_name": "Folder Footer Link Group (Automatic)",
+      "created_at": "2023-06-02T15:13:42.333Z",
+      "updated_at": "2023-06-06T15:33:26.447Z",
+      "id": 4071299,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "folder_path": {
+          "type": "text",
+          "required": true,
+          "display_name": "Storyblok Folder Path",
+          "regex": "pages\\/.+\\/$"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Folder Footer Link Group (Automatic)",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "footer-manual-link-group",
+      "display_name": "Manual Footer Link Group",
+      "created_at": "2023-06-02T15:20:14.449Z",
+      "updated_at": "2023-06-06T15:33:40.703Z",
+      "id": 4071301,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "links": {
+          "type": "bloks",
+          "display_name": "Links",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "description": "A list of links to display"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Manual Footer Link Group",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "footer-technology-documentation-link-group",
+      "display_name": "Technology Documentation (Automatic)",
+      "created_at": "2023-06-06T15:33:58.046Z",
+      "updated_at": "2023-06-06T15:35:25.772Z",
+      "id": 4084094,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "links": {
+          "type": "options",
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["technology"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Technology Documentation (Automatic)",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "industry",
+      "display_name": "Industry aka Use Case",
+      "created_at": "2023-06-06T15:55:24.337Z",
+      "updated_at": "2023-06-06T15:55:52.547Z",
+      "id": 4084164,
+      "schema": {
+        "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
+          "display_name": "SEO",
+          "keys": [],
+          "pos": 4,
+          "type": "tab"
+        },
+        "body": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Industry aka Use Case",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "link",
+      "display_name": null,
+      "created_at": "2023-06-01T09:26:56.968Z",
+      "updated_at": "2023-06-05T15:08:22.316Z",
+      "id": 4063229,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": false,
+          "pos": 0
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1,
+          "required": true,
+          "force_link_scope": true,
+          "link_scope": "pages/",
+          "restrict_content_types": true,
+          "component_whitelist": ["page"]
+        },
+        "icon": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "icons",
+          "exclude_empty_option": false,
+          "pos": 2,
+          "display_name": "Icon (optional)"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": "{{label}}",
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "link",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "page",
+      "display_name": null,
+      "created_at": "2023-05-23T11:40:13.029Z",
+      "updated_at": "2023-06-05T14:30:11.255Z",
+      "id": 4017549,
+      "schema": {
+        "seo_title": {
+          "type": "text",
+          "key": "seo_title",
+          "pos": 0
+        },
+        "seo_description": {
+          "type": "text",
+          "key": "description",
+          "pos": 1
+        },
+        "body": {
+          "type": "bloks",
+          "key": "body",
+          "pos": 2,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+        },
+        "tab-3bf835dd-bd76-4aed-b110-34444c1161cf": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo_title", "seo_description", "seo_og_image"],
+          "pos": 3,
+          "type": "tab",
+          "key": "tab-3bf835dd-bd76-4aed-b110-34444c1161cf"
+        },
+        "seo_og_image": {
+          "type": "asset",
+          "filetypes": ["images"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "page",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "technology",
+      "display_name": null,
+      "created_at": "2023-06-02T13:44:17.648Z",
+      "updated_at": "2023-06-06T15:37:35.153Z",
+      "id": 4070117,
+      "schema": {
+        "documentation_link": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "maximum": 1,
+          "minimum": 1,
+          "pos": 0
+        },
+        "code_snippet": {
+          "type": "textarea",
+          "required": false,
+          "description": "If the code block is not present, it won't show on the developers > code block section",
+          "pos": 1,
+          "key": "code_snippet"
+        },
+        "copy_code_snippet": {
+          "type": "textarea",
+          "pos": 2,
+          "description": "This is the code that is actually copied when the user clicks copy",
+          "tooltip": true,
+          "display_name": "Code Snippet that is copied on click"
+        },
+        "screenshot": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"],
+          "asset_folder_id": 247782,
+          "pos": 3,
+          "key": "screenshot"
+        },
+        "seo_title": {
+          "type": "text",
+          "key": "title",
+          "pos": 4
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 5,
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
+          "key": "body"
+        },
+        "seo_description": {
+          "type": "text",
+          "key": "description",
+          "pos": 6
+        },
+        "tab-e33adaf8-a7e6-46ee-8779-bd48057df750": {
+          "display_name": "Metadata",
+          "keys": ["code_snippet", "screenshot", "copy_code_snippet", "documentation_link"],
+          "pos": 7,
+          "type": "tab",
+          "name": "tab-e33adaf8-a7e6-46ee-8779-bd48057df750",
+          "key": "tab-e33adaf8-a7e6-46ee-8779-bd48057df750"
+        },
+        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
+          "pos": 8,
+          "type": "tab",
+          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
+          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
+        },
+        "seo_og_image": {
+          "type": "asset",
+          "filetypes": ["images"],
+          "pos": 9
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "technology",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "Test",
+      "display_name": null,
+      "created_at": "2023-06-05T20:17:37.667Z",
+      "updated_at": "2023-06-05T20:17:41.894Z",
+      "id": 4079962,
+      "schema": {
+        "title": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Test",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
+      "name": "testimonial",
+      "display_name": null,
+      "created_at": "2023-06-06T15:52:10.850Z",
+      "updated_at": "2023-06-06T15:53:09.088Z",
+      "id": 4084142,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "avatar": {
+          "type": "asset",
+          "filetypes": ["images"],
+          "required": true
+        },
+        "position": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "testimonial",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "topnav-features-panel",
+      "display_name": null,
+      "created_at": "2023-06-05T14:43:36.427Z",
+      "updated_at": "2023-06-05T15:44:40.152Z",
+      "id": 4079155,
+      "schema": {
+        "featured_items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item"]
+        },
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item-group"],
+          "display_name": "Item Groups"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-features-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "Top Navigation",
+      "display_name": null,
+      "created_at": "2023-06-01T09:46:27.448Z",
+      "updated_at": "2023-06-05T14:39:45.718Z",
+      "id": 4063296,
+      "schema": {
+        "links": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link", "topnav-panel"],
+          "required": true
+        },
+        "call_to_actions": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "maximum": 2,
+          "minimum": 1,
+          "required": true,
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Top Navigation",
+      "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Configuration"
+    },
+    {
+      "name": "topnav-item",
+      "display_name": null,
+      "created_at": "2023-06-05T14:55:57.217Z",
+      "updated_at": "2023-06-05T14:59:15.726Z",
+      "id": 4079210,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        },
+        "link": {
+          "type": "multilink",
+          "required": true,
+          "force_link_scope": true,
+          "link_scope": "pages/"
+        },
+        "icon": {
+          "type": "option",
+          "use_uuid": true,
+          "tooltip": false,
+          "source": "internal",
+          "datasource_slug": "icons",
+          "exclude_empty_option": false,
+          "description": "🚨 Please select either this or the illustration 🚨"
+        },
+        "illustration": {
+          "type": "option",
+          "use_uuid": true,
+          "description": "🚨 Please select either this or the icon 🚨",
+          "source": "internal",
+          "datasource_slug": "comet-illustrations"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "topnav-item-group",
+      "display_name": null,
+      "created_at": "2023-06-05T14:59:55.791Z",
+      "updated_at": "2023-06-05T15:01:13.287Z",
+      "id": 4079216,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-item-group",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "topnav-panel",
+      "display_name": null,
+      "created_at": "2023-06-05T14:38:18.827Z",
+      "updated_at": "2023-06-05T15:46:20.991Z",
+      "id": 4079098,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "panel": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "topnav-features-panel",
+            "topnav-solutions-panel",
+            "topnav-technologies-panel",
+            "topnav-resources-panel"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "topnav-resources-panel",
+      "display_name": null,
+      "created_at": "2023-06-05T15:39:29.215Z",
+      "updated_at": "2023-06-05T15:46:20.935Z",
+      "id": 4079339,
+      "schema": {
+        "customer_stories_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "key": "customer_stories_title"
+        },
+        "customer_stories_link": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "required": true,
+          "maximum": 1,
+          "pos": 1,
+          "key": "customer_stories_link"
+        },
+        "blog_title": {
+          "type": "text",
+          "required": true,
+          "pos": 2,
+          "key": "blog_title"
+        },
+        "blog_link": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "maximum": 1,
+          "required": true,
+          "minimum": 1,
+          "key": "blog_link"
+        },
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item-group"],
+          "display_name": "Item Groups",
+          "pos": 4,
+          "minimum": 1,
+          "key": "items"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-resources-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "topnav-solutions-panel",
+      "display_name": null,
+      "created_at": "2023-06-05T15:16:55.338Z",
+      "updated_at": "2023-06-05T15:44:32.780Z",
+      "id": 4079276,
+      "schema": {
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item-group"],
+          "display_name": "Item Groups"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-solutions-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "topnav-technologies-panel",
+      "display_name": null,
+      "created_at": "2023-06-05T15:28:11.768Z",
+      "updated_at": "2023-06-06T15:40:53.286Z",
+      "id": 4079311,
+      "schema": {
+        "technologies_title": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "technologies_links": {
+          "type": "options",
+          "pos": 2,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["technology"]
+        },
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item-group"],
+          "display_name": "Item Groups",
+          "pos": 3,
+          "minimum": 1,
+          "key": "items"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-technologies-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "tutorial",
+      "display_name": null,
+      "created_at": "2023-06-06T15:54:08.479Z",
+      "updated_at": "2023-06-06T15:54:17.900Z",
+      "id": 4084163,
+      "schema": {
+        "cover": {
+          "type": "asset",
+          "pos": 0,
+          "filetypes": ["images"]
+        },
+        "body": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
+          "key": "body"
+        },
+        "seo_title": {
+          "type": "text",
+          "key": "title",
+          "pos": 2
+        },
+        "seo_description": {
+          "type": "text",
+          "key": "description",
+          "pos": 3
+        },
+        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
+          "pos": 4,
+          "type": "tab",
+          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
+          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
+        },
+        "seo_og_image": {
+          "type": "asset",
+          "filetypes": ["images"],
+          "pos": 5
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tutorial",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    }
+  ]
+}

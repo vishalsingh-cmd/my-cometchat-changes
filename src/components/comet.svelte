@@ -11,7 +11,6 @@
 
       'animate-spin',
 
-      'before:content-[""]',
       'before:absolute',
       'before:left-0',
       'before:top-0',
@@ -45,7 +44,6 @@
       'rounded-full',
       'bg-current',
 
-      "before:content-['']",
       'before:absolute',
       'before:left-[-3.5px]',
       'before:top-[-3.5px]',
@@ -56,7 +54,7 @@
       'before:rounded-full',
       'before:bg-current',
 
-      'before:opacity-50',
+      'before:opacity-30',
 
       'before:blur-sm'
     ],
