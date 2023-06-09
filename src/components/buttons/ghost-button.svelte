@@ -30,7 +30,7 @@
             'text-gray-12',
             'tracking-wide',
 
-            '[&>i]:opacity-[.74]',
+            '[&>i]:opacity-74',
 
             'hover:text-brand-9',
             'hover:[&>i]:opacity-100'
