@@ -6,7 +6,7 @@
 
   export let title: string;
   export let description: string;
-  export let buttons: { link?: string; label: string; variant: 'primary' | 'secondary' }[];
+  export let buttons: { link: string; label: string; variant: 'primary' | 'secondary' }[];
 </script>
 
 <section data-theme="dark" class="relative overflow-hidden bg-gray-1">
