@@ -62,7 +62,10 @@ export default {
     extend: {
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
-      })
+      }),
+      borderRadius: {
+        50: '50%'
+      }
     }
   }
 };
