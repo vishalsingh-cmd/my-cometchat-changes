@@ -1,5 +1,6 @@
 <script lang="ts">
   import { intersectionObserver } from '$lib/actions/intersection-observer';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
   import type { MetricsItemStoryblok } from '$types/bloks';
 
@@ -15,6 +16,7 @@
   bind:clientWidth={width}
   bind:clientHeight={height}
   style="--metric-width:{width}px;--metric-height:{height}px;"
+  use:storyblokEditable={metric}
   use:intersectionObserver={{
     callback: ([e]) => {
       if (e.isIntersecting) {

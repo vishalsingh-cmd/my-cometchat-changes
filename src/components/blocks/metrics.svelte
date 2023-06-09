@@ -3,6 +3,7 @@
   import type { MetricsStoryblok } from '$types/bloks';
   import { cva } from 'class-variance-authority';
   import MetricsItem from './metrics-item.svelte';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   export let block: MetricsStoryblok;
 
@@ -17,7 +18,7 @@
 </script>
 
 {#if block.metrics}
-  <div class="bg-gray-1 text-gray-12">
+  <div use:storyblokEditable={block} class="bg-gray-1 text-gray-12">
     <div
       class={cn('container mx-auto px-container', grid({ even: block.metrics.length % 2 === 0 }))}
     >
