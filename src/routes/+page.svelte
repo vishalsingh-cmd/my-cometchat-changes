@@ -1,6 +1,9 @@
 <script lang="ts">
+  import Hero from '$components/homepage/hero.svelte';
   import Icon from '$components/icon/icon.svelte';
 </script>
+
+<Hero />
 
 <div class="flex flex-col gap-8 p-8">
   {#each ['light', 'dark'] as theme}
