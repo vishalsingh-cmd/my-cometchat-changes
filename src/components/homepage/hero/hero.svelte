@@ -2,8 +2,8 @@
   import Button from '$components/buttons/button.svelte';
 
   import Noise from '$components/homepage/hero/noise.svelte';
-  import OrbitMedium from './orbit-medium.svelte';
-  import OrbitThin from '$components/homepage/hero/orbit-thin.svelte';
+  import OrbitMedium from './assets/orbit-medium.svg';
+  import OrbitThin from './assets/orbit-thin.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
 </script>
 
@@ -12,7 +12,7 @@
   class="relative overflow-hidden bg-brand-1 px-5 pb-20 pt-24 md:px-20 md:pt-[188px]"
 >
   <div class="absolute left-[calc(50vw-700px)] top-[80px] hidden md:block">
-    <OrbitMedium />
+    <img src={OrbitMedium} alt="" />
   </div>
   <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
     <Stars amount={20} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
@@ -39,27 +39,27 @@
       <Stars amount={20} backgroundColours={['bg-white']} />
     </div>
     <div
-      class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-50 bg-[#944E6E]/80 blur-[75px]"
+      class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-1/2 bg-[#944E6E]/80 blur-[75px]"
     />
     <div
-      class="ellipse2 absolute left-[calc(50%-456.97px)] top-[18.63px] h-[371.2px] w-[1435.66px] origin-center rotate-[-19.97deg] transform rounded-50 blur-[75px]"
+      class="ellipse2 absolute left-[calc(50%-456.97px)] top-[18.63px] h-[371.2px] w-[1435.66px] origin-center rotate-[-19.97deg] transform rounded-1/2 blur-[75px]"
     />
     <div
-      class="ellipse3 absolute right-[calc(50%-612.54px)] top-[35px] h-[371.2px] w-[1258.4px] origin-center rotate-[-13.96deg] transform rounded-50 blur-[75px]"
+      class="ellipse3 absolute right-[calc(50%-612.54px)] top-[35px] h-[371.2px] w-[1258.4px] origin-center rotate-[-13.96deg] transform rounded-1/2 blur-[75px]"
     />
     <div
-      class="ellipse4 absolute top-[237.27px] h-[315.1px] w-[1245.75px] origin-center rotate-[-20.77deg] transform rounded-50 mix-blend-screen blur-[75px]"
+      class="ellipse4 absolute top-[237.27px] h-[315.1px] w-[1245.75px] origin-center rotate-[-20.77deg] transform rounded-1/2 mix-blend-screen blur-[75px]"
     />
     <div
-      class="ellipse5 absolute left-1/2 top-0 h-[476.94px] w-[844.1px] origin-center rotate-[-20.77deg] transform rounded-50 bg-[#172365] mix-blend-soft-light blur-[100px]"
+      class="ellipse5 absolute left-1/2 top-0 h-[476.94px] w-[844.1px] origin-center rotate-[-20.77deg] transform rounded-1/2 bg-[#172365] mix-blend-soft-light blur-[100px]"
     />
     <div
-      class="ellipse6 absolute left-[calc(50%-433.8px)] top-[-80.32px] h-[390.84px] w-[1274.01px] origin-center rotate-[-20.77deg] transform rounded-50 bg-[#1D1765] opacity-30 mix-blend-normal blur-[100px]"
+      class="ellipse6 absolute left-[calc(50%-433.8px)] top-[-80.32px] h-[390.84px] w-[1274.01px] origin-center rotate-[-20.77deg] transform rounded-1/2 bg-[#1D1765] opacity-30 mix-blend-normal blur-[100px]"
     />
-    <div class="absolute left-1/2 translate-x-[-50%] transform">
-      <OrbitThin />
+    <div class="absolute left-1/2 h-[295.93px] w-[1378.41px] translate-x-[-50%] transform">
+      <img src={OrbitThin} alt="" />
     </div>
-    <div class="absolute right-[calc(50vw-500px)] top-[180px]">
+    <div class="absolute right-[calc(50vw-430px)] top-[180px]">
       <div
         class="absolute h-[91px] w-[91px] rounded-full bg-[#FFC1A1] shadow-[inset_31.9123px_15.9561px_79.7807px_0_rgba(252,255,215,0.79),inset_-31.9123px_-31.9123px_95.7368px_#CB798D]"
       />
