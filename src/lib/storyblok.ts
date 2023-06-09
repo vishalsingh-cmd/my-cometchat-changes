@@ -89,7 +89,7 @@ export function getAnchorFromCmsLink(link: MultilinkStoryblok | undefined) {
 }
 
 export function getAnchorFromCmsStory(story: ISbStoryData) {
-  return { href: sanitizeSlug(story.full_slug) };
+  return { href: sanitizeSlug(story.full_slug), target: undefined, rel: undefined };
 }
 
 /** Utils */

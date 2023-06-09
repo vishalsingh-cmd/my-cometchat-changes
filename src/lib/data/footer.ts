@@ -68,7 +68,7 @@ export const getFooter = async (
               links: group.links.map((link) => {
                 return {
                   label: link.name,
-                  ...getAnchorFromCmsLink(link)
+                  ...getAnchorFromCmsStory(link)
                 };
               })
             };
