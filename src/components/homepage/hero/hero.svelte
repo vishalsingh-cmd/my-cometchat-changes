@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
 
+  import Noise from '$components/homepage/hero/noise.svelte';
   import OrbitMedium from './orbit-medium.svelte';
   import OrbitThin from '$components/homepage/hero/orbit-thin.svelte';
   import Stars from '$components/homepage/hero/stars.svelte';
@@ -24,6 +25,9 @@
     </div>
   </div>
   <div class="relative h-[762px]">
+    <div class="absolute left-0 right-0 top-0">
+      <Noise />
+    </div>
     <div
       class="absolute left-[calc(50vw-400px)] top-[0px] w-full max-w-[1389px] rotate-[30deg] transform"
     >
