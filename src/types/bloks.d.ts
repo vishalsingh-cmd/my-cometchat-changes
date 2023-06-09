@@ -14,7 +14,7 @@ export interface AssetStoryblok {
 export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
-  body: TestStoryblok[];
+  body: MetricsStoryblok[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
@@ -91,7 +91,7 @@ export interface ButtonLinkStoryblok {
 
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
-  body?: TestStoryblok[];
+  body?: MetricsStoryblok[];
   _uid: string;
   component: 'customer';
   [k: string]: any;
@@ -146,7 +146,7 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
 }
 
 export interface IndustryStoryblok {
-  body?: TestStoryblok[];
+  body?: MetricsStoryblok[];
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -161,14 +161,36 @@ export interface LinkStoryblok {
   [k: string]: any;
 }
 
+export interface MetricsStoryblok {
+  metrics?: MetricsItemStoryblok[];
+  _uid: string;
+  component: 'metrics';
+  [k: string]: any;
+}
+
+export interface MetricsItemStoryblok {
+  metric: string;
+  description: string;
+  _uid: string;
+  component: 'metrics-item';
+  [k: string]: any;
+}
+
 export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
-  body?: TestStoryblok[];
+  body?: MetricsStoryblok[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'page';
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface SocialProofsStoryblok {
+  title: string;
+  _uid: string;
+  component: 'social-proofs';
   [k: string]: any;
 }
 
@@ -178,18 +200,11 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   seo_title?: string;
-  body: TestStoryblok[];
+  body: MetricsStoryblok[];
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'technology';
-  [k: string]: any;
-}
-
-export interface TestStoryblok {
-  title?: string;
-  _uid: string;
-  component: 'Test';
   [k: string]: any;
 }
 
@@ -279,7 +294,7 @@ export interface TopnavTechnologiesPanelStoryblok {
 
 export interface TutorialStoryblok {
   cover?: AssetStoryblok;
-  body: TestStoryblok[];
+  body: MetricsStoryblok[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
