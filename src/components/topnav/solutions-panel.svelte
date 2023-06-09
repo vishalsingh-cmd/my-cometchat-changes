@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Divider from '$components/divider.svelte';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { TopnavSolutionsPanelStoryblok } from '$types/bloks';
@@ -11,7 +12,7 @@
   <div class="xl:flex">
     {#each data.groups as group, i}
       {#if i === data.groups.length - 1}
-        <div class="h-px w-full bg-divider-gradient xl:hidden" />
+        <Divider class="xl:hidden" />
         <div
           class={cn([
             'relative flex-1 gap-12 border-gray-5 p-8 px-0 pr-0 lg:p-12 xl:w-[480px] xl:border-l xl:bg-gray-4 xl:px-12',

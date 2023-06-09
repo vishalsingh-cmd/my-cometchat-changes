@@ -1,5 +1,6 @@
 import { env } from '$env/dynamic/private';
 import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
+import { getFooter } from '$lib/data/footer.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
 import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks.js';
@@ -19,7 +20,7 @@ export const load = async ({ cookies, fetch }) => {
       excluding_fields: 'body'
     } as const;
 
-    const [topnav, blogPosts, customerStories] = await Promise.all([
+    const [topnav, blogPosts, customerStories, footer] = await Promise.all([
       storyblok.get('cdn/stories/configuration/top-navigation', {
         version,
         resolve_relations: ['topnav-technologies-panel.technologies_links']
@@ -40,7 +41,8 @@ export const load = async ({ cookies, fetch }) => {
             is: 'not_empty'
           }
         }
-      })
+      }),
+      getFooter(storyblok, { version })
     ]);
 
     return {
@@ -50,7 +52,8 @@ export const load = async ({ cookies, fetch }) => {
         BlogPostStoryblok & {
           customer: ISbStoryData<CustomerStoryblok>;
         }
-      >[]
+      >[],
+      footer
     };
   } catch (err) {
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');

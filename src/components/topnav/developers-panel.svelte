@@ -3,6 +3,7 @@
   import type { ISbStoryData } from '@storyblok/js';
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import Divider from '$components/divider.svelte';
 
   export let data: TopnavTechnologiesPanelStoryblok;
   $: links = data.technologies_links as unknown as ISbStoryData<TechnologyStoryblok>[]; // layout.server is resolving relations for this field
@@ -30,8 +31,8 @@
         {/each}
       </div>
     </div>
-    <div class="hidden w-px bg-divider-gradient-vertical xl:block" />
-    <div class="h-px w-full bg-divider-gradient xl:hidden" />
+    <Divider direction="vertical" class="hidden xl:block" />
+    <Divider class="xl:hidden" />
     <div class="flex-1 p-8 px-0 lg:p-12 xl:pl-12">
       {#each data.groups as group}
         <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
