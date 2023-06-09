@@ -1,7 +1,7 @@
 <script lang="ts">
   import Title from '$components/title.svelte';
 
-  import Blur from './blur.svelte';
+  import Blur from './assets/blur.svg';
   import ProductDisplay from './product-display.svelte';
 </script>
 
@@ -9,7 +9,7 @@
   class="relative mx-auto w-full max-w-[1440px] pb-12 max-[1650px]:overflow-hidden md:grid md:grid-cols-2 md:gap-8 md:pt-[35px]"
 >
   <div class="absolute right-[-88px] top-[-182px] hidden blur-[400px] md:block">
-    <Blur />
+    <img alt="" src={Blur} />
   </div>
   <div>
     <Title
