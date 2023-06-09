@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Hero from '$components/homepage/hero.svelte';
+  import Hero from '$components/homepage/hero/hero.svelte';
   import Icon from '$components/icon/icon.svelte';
 </script>
 
