@@ -34,111 +34,6 @@
   }
 
   :root,
-  [data-theme='light'] {
-    /* typography */
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-semibold: 640;
-
-    /* brand */
-    --color-brand-1: 240deg 50% 99%;
-    --color-brand-2: 252deg 56% 98%;
-    --color-brand-3: 248deg 67% 98%;
-    --color-brand-4: 251deg 62% 95%;
-    --color-brand-5: 250deg 63% 93%;
-    --color-brand-6: 251deg 61% 89%;
-    --color-brand-7: 250deg 62% 82%;
-    --color-brand-8: 250deg 62% 68%;
-    --color-brand-9: 250deg 62% 58%;
-    --color-brand-10: 250deg 51% 53%;
-    --color-brand-11: 250deg 42% 45%;
-    --color-brand-12: 251deg 46% 12%;
-
-    /* gray */
-    --color-gray-1: 240deg 100% 99%;
-    --color-gray-2: 240deg 56% 98%;
-    --color-gray-3: 240deg 33% 97%;
-    --color-gray-4: 240deg 20% 95%;
-    --color-gray-5: 240deg 11% 91%;
-    --color-gray-6: 240deg 6% 87%;
-    --color-gray-7: 240deg 5% 83%;
-    --color-gray-8: 240deg 3% 75%;
-    --color-gray-9: 240deg 2% 69%;
-    --color-gray-10: 240deg 2% 57%;
-    --color-gray-11: 248deg 5% 34%;
-    --color-gray-12: 246deg 21% 9%;
-
-    /* orange */
-    --color-orange-1: 15deg 100% 99%;
-    --color-orange-2: 18deg 100% 97%;
-    --color-orange-3: 21deg 100% 95%;
-    --color-orange-4: 20deg 100% 92%;
-    --color-orange-5: 20deg 100% 89%;
-    --color-orange-6: 20deg 100% 89%;
-    --color-orange-7: 20deg 100% 82%;
-    --color-orange-8: 20deg 100% 78%;
-    --color-orange-9: 20deg 100% 58%;
-    --color-orange-10: 20deg 85% 54%;
-    --color-orange-11: 20deg 71% 50%;
-    --color-orange-12: 20deg 42% 20%;
-
-    /* blue */
-    --color-blue-1: 225deg 67% 99%;
-    --color-blue-2: 224deg 65% 97%;
-    --color-blue-3: 224deg 65% 93%;
-    --color-blue-4: 221deg 62% 90%;
-    --color-blue-5: 222deg 63% 85%;
-    --color-blue-6: 224deg 63% 82%;
-    --color-blue-7: 226deg 63% 71%;
-    --color-blue-8: 230deg 63% 57%;
-    --color-blue-9: 237deg 82% 44%;
-    --color-blue-10: 237deg 82% 44%;
-    --color-blue-11: 237deg 78% 38%;
-    --color-blue-12: 224deg 36% 15%;
-
-    /* purple */
-    --color-purple-1: 224deg 36% 15%;
-    --color-purple-2: 274deg 100% 99%;
-    --color-purple-3: 276deg 100% 97%;
-    --color-purple-4: 275deg 94% 94%;
-    --color-purple-5: 275deg 95% 92%;
-    --color-purple-6: 276deg 96% 89%;
-    --color-purple-7: 275deg 97% 85%;
-    --color-purple-8: 275deg 96% 81%;
-    --color-purple-9: 275deg 97% 75%;
-    --color-purple-10: 275deg 97% 75%;
-    --color-purple-11: 275deg 30% 48%;
-    --color-purple-12: 273deg 18% 19%;
-
-    /* red */
-    --color-red-1: 15deg 100% 99%;
-    --color-red-2: 11deg 85% 97%;
-    --color-red-3: 9deg 84% 95%;
-    --color-red-4: 9deg 84% 93%;
-    --color-red-5: 8deg 85% 89%;
-    --color-red-6: 8deg 85% 87%;
-    --color-red-7: 8deg 85% 79%;
-    --color-red-8: 8deg 85% 69%;
-    --color-red-9: 8deg 85% 59%;
-    --color-red-10: 8deg 71% 55%;
-    --color-red-11: 8deg 52% 38%;
-    --color-red-12: 8deg 28% 17%;
-
-    /* green */
-    --color-green-1: 160deg 60% 99%;
-    --color-green-2: 173deg 50% 97%;
-    --color-green-3: 173deg 56% 94%;
-    --color-green-4: 173deg 54% 91%;
-    --color-green-5: 174deg 54% 86%;
-    --color-green-6: 174deg 54% 83%;
-    --color-green-7: 173deg 54% 73%;
-    --color-green-8: 173deg 54% 67%;
-    --color-green-9: 173deg 61% 47%;
-    --color-green-10: 174deg 59% 41%;
-    --color-green-11: 173deg 48% 26%;
-    --color-green-12: 174deg 27% 15%;
-  }
-
   [data-theme='dark'] {
     /* typography */
     --font-weight-normal: 400;
@@ -242,5 +137,110 @@
     --color-green-10: 174deg 54% 60%;
     --color-green-11: 174deg 55% 77%;
     --color-green-12: 173deg 50% 97%;
+  }
+
+  [data-theme='light'] {
+    /* typography */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 640;
+
+    /* brand */
+    --color-brand-1: 240deg 50% 99%;
+    --color-brand-2: 252deg 56% 98%;
+    --color-brand-3: 248deg 67% 98%;
+    --color-brand-4: 251deg 62% 95%;
+    --color-brand-5: 250deg 63% 93%;
+    --color-brand-6: 251deg 61% 89%;
+    --color-brand-7: 250deg 62% 82%;
+    --color-brand-8: 250deg 62% 68%;
+    --color-brand-9: 250deg 62% 58%;
+    --color-brand-10: 250deg 51% 53%;
+    --color-brand-11: 250deg 42% 45%;
+    --color-brand-12: 251deg 46% 12%;
+
+    /* gray */
+    --color-gray-1: 240deg 100% 99%;
+    --color-gray-2: 240deg 56% 98%;
+    --color-gray-3: 240deg 33% 97%;
+    --color-gray-4: 240deg 20% 95%;
+    --color-gray-5: 240deg 11% 91%;
+    --color-gray-6: 240deg 6% 87%;
+    --color-gray-7: 240deg 5% 83%;
+    --color-gray-8: 240deg 3% 75%;
+    --color-gray-9: 240deg 2% 69%;
+    --color-gray-10: 240deg 2% 57%;
+    --color-gray-11: 248deg 5% 34%;
+    --color-gray-12: 246deg 21% 9%;
+
+    /* orange */
+    --color-orange-1: 15deg 100% 99%;
+    --color-orange-2: 18deg 100% 97%;
+    --color-orange-3: 21deg 100% 95%;
+    --color-orange-4: 20deg 100% 92%;
+    --color-orange-5: 20deg 100% 89%;
+    --color-orange-6: 20deg 100% 89%;
+    --color-orange-7: 20deg 100% 82%;
+    --color-orange-8: 20deg 100% 78%;
+    --color-orange-9: 20deg 100% 58%;
+    --color-orange-10: 20deg 85% 54%;
+    --color-orange-11: 20deg 71% 50%;
+    --color-orange-12: 20deg 42% 20%;
+
+    /* blue */
+    --color-blue-1: 225deg 67% 99%;
+    --color-blue-2: 224deg 65% 97%;
+    --color-blue-3: 224deg 65% 93%;
+    --color-blue-4: 221deg 62% 90%;
+    --color-blue-5: 222deg 63% 85%;
+    --color-blue-6: 224deg 63% 82%;
+    --color-blue-7: 226deg 63% 71%;
+    --color-blue-8: 230deg 63% 57%;
+    --color-blue-9: 237deg 82% 44%;
+    --color-blue-10: 237deg 82% 44%;
+    --color-blue-11: 237deg 78% 38%;
+    --color-blue-12: 224deg 36% 15%;
+
+    /* purple */
+    --color-purple-1: 224deg 36% 15%;
+    --color-purple-2: 274deg 100% 99%;
+    --color-purple-3: 276deg 100% 97%;
+    --color-purple-4: 275deg 94% 94%;
+    --color-purple-5: 275deg 95% 92%;
+    --color-purple-6: 276deg 96% 89%;
+    --color-purple-7: 275deg 97% 85%;
+    --color-purple-8: 275deg 96% 81%;
+    --color-purple-9: 275deg 97% 75%;
+    --color-purple-10: 275deg 97% 75%;
+    --color-purple-11: 275deg 30% 48%;
+    --color-purple-12: 273deg 18% 19%;
+
+    /* red */
+    --color-red-1: 15deg 100% 99%;
+    --color-red-2: 11deg 85% 97%;
+    --color-red-3: 9deg 84% 95%;
+    --color-red-4: 9deg 84% 93%;
+    --color-red-5: 8deg 85% 89%;
+    --color-red-6: 8deg 85% 87%;
+    --color-red-7: 8deg 85% 79%;
+    --color-red-8: 8deg 85% 69%;
+    --color-red-9: 8deg 85% 59%;
+    --color-red-10: 8deg 71% 55%;
+    --color-red-11: 8deg 52% 38%;
+    --color-red-12: 8deg 28% 17%;
+
+    /* green */
+    --color-green-1: 160deg 60% 99%;
+    --color-green-2: 173deg 50% 97%;
+    --color-green-3: 173deg 56% 94%;
+    --color-green-4: 173deg 54% 91%;
+    --color-green-5: 174deg 54% 86%;
+    --color-green-6: 174deg 54% 83%;
+    --color-green-7: 173deg 54% 73%;
+    --color-green-8: 173deg 54% 67%;
+    --color-green-9: 173deg 61% 47%;
+    --color-green-10: 174deg 59% 41%;
+    --color-green-11: 173deg 48% 26%;
+    --color-green-12: 174deg 27% 15%;
   }
 }
