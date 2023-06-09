@@ -1,4 +1,7 @@
 <script lang="ts">
+  import Divider from '$components/divider.svelte';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import type { ButtonLinkStoryblok } from '$types/bloks';
   import Button from '../buttons/button.svelte';
   import BigComet from './assets/big-comet.svg';
   import SmallComet from './assets/small-comet.svg';
@@ -6,8 +9,10 @@
 
   export let title: string;
   export let description: string;
-  export let buttons: { link: string; label: string; variant: 'primary' | 'secondary' }[];
+  export let buttons: ButtonLinkStoryblok[];
 </script>
+
+<Divider />
 
 <section data-theme="dark" class="relative overflow-hidden bg-gray-1">
   <div
@@ -22,8 +27,9 @@
       </p>
     </div>
     <div class="z-20 mt-8 flex gap-3 text-gray-12">
-      {#each buttons as { variant, label, link }}
-        <Button as="a" href={link} {variant}>{label}</Button>
+      {#each buttons as button}
+        {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
+        <Button as="a" {href} {target} {rel} variant={button.variant}>{button.label}</Button>
       {/each}
     </div>
   </div>

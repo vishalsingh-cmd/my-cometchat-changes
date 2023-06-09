@@ -1,6 +1,8 @@
 <script lang="ts">
   import '../app.css';
   import Topnav from '$components/topnav/topnav.svelte';
+  import PreFooter from '$components/pre-footer/pre-footer.svelte';
+  import Footer from '$components/footer.svelte';
 
   export let data;
 </script>
@@ -10,9 +12,14 @@
   blogPosts={data.blogPosts}
   customerStories={data.customerStories}
 />
-<div
-  data-theme="dark"
-  class="h-56 bg-gray-2"
-  style="background-image: url(https://wallup.net/wp-content/uploads/2019/10/66002-outer-space-galaxies-nasa.jpg)"
-/>
 <slot />
+{#if data.footer?.prefooter}
+  <PreFooter
+    title={data.footer.prefooter.title}
+    description={data.footer.prefooter.description}
+    buttons={data.footer.prefooter.buttons}
+  />
+{/if}
+{#if data.footer}
+  <Footer data={data.footer} />
+{/if}

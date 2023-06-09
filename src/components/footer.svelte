@@ -4,16 +4,13 @@
   import AccordionGroup from '../components/accordion-group.svelte';
   import Accordion from '../components/accordion.svelte';
   import CometchatLogo from './cometchat-logo.svelte';
+  import Divider from './divider.svelte';
+  import type { Footer } from '$lib/data/footer';
 
-  type Link = { label: string; href: string; target?: '_blank' };
-  type SocialLink = Link & { icon: string };
-  type LinkGroup = { title?: string; links: Link[] };
-  type Column = { title: string; groups: LinkGroup[] };
-
-  export let columns: Column[]; // main links
-  export let socials: SocialLink[]; // socials
-  export let subfooter: Link[]; // terms of use, privacy policy
+  export let data: Footer;
 </script>
+
+<Divider />
 
 <footer data-theme="dark" class="flex-wrap bg-gray-1">
   <!-- logo -->
@@ -24,7 +21,7 @@
   <!-- main links - Mobile -->
   <div class="flex flex-col flex-wrap gap-8 px-5 pb-6 sm:hidden">
     <AccordionGroup>
-      {#each columns as column}
+      {#each data.columns as column}
         <Accordion id={column.title}>
           <div slot="header" let:expanded let:attributes let:onClick class="h-auto w-full">
             <button
@@ -41,16 +38,18 @@
           <div class="flex flex-col gap-6 first:mt-4">
             {#each column.groups as { title, links }}
               <div>
-                <p class="mb-4 text-sm/normal font-medium text-gray-12 opacity-60">
-                  {title}
-                </p>
+                {#if title}
+                  <p class="mb-4 text-sm/normal font-medium text-gray-12 opacity-60">
+                    {title}
+                  </p>
+                {/if}
 
                 <div class="flex flex-col gap-4">
-                  {#each links as { label, href, target }}
+                  {#each links as { label, href, target, rel }}
                     <a
                       {href}
                       {target}
-                      rel={target == '_blank' ? 'noopener noreferrer' : ''}
+                      {rel}
                       class="self-start text-sm/normal font-semibold tracking-widest text-gray-11"
                       >{label}</a
                     >
@@ -66,7 +65,7 @@
 
   <!-- main links - Desktop -->
   <div class="hidden flex-wrap gap-20 px-16 pb-10 sm:flex">
-    {#each columns as column}
+    {#each data.columns as column}
       <div class="flex-col">
         <p class="mb-[1.125rem] text-md font-semibold tracking-wide text-brand-8">
           {column.title}
@@ -74,16 +73,18 @@
         <div class="flex flex-col gap-4 sm:mt-0">
           {#each column.groups as { title, links }}
             <div>
-              <p class="mb-4 text-sm/normal font-medium text-gray-10 opacity-50">
-                {title}
-              </p>
+              {#if title}
+                <p class="mb-4 text-sm/normal font-medium text-gray-10 opacity-50">
+                  {title}
+                </p>
+              {/if}
 
               <div class="flex flex-col gap-4">
-                {#each links as { label, href, target }}
+                {#each links as { label, href, target, rel }}
                   <a
                     {href}
                     {target}
-                    rel={target == '_blank' ? 'noopener noreferrer' : ''}
+                    {rel}
                     class="self-start text-sm/normal font-semibold tracking-widest text-gray-11"
                     >{label}</a
                   >
@@ -97,7 +98,7 @@
   </div>
 
   <!-- divider -->
-  <div class="flex h-px w-full bg-divider-gradient" />
+  <Divider />
 
   <!-- subfooter -->
   <div
@@ -108,25 +109,22 @@
       class="flex flex-wrap gap-6 gap-y-3 break-keep text-sm/normal font-semibold tracking-widest text-gray-11"
     >
       <p>{new Date().getFullYear()} © CometChat</p>
-      {#each subfooter as { label, href, target }}
-        <a {href} {target} rel={target == '_blank' ? 'noopener noreferrer' : ''}>{label}</a>
+      {#each data.subfooter as item}
+        <a class="transition hover:opacity-74" href={item.href}>{item.label}</a>
       {/each}
     </div>
 
     <!-- socials -->
     <div class="flex flex-wrap gap-6 gap-y-3">
-      {#each socials as { label, href, target, icon }}
-        <div class="flex cursor-pointer gap-1 text-gray-10">
-          <Icon {icon} size="sm" />
-          <a
-            {href}
-            {target}
-            rel={target == '_blank' ? 'noopener noreferrer' : ''}
-            class="text-sm/normal font-semibold tracking-widest text-gray-11"
-          >
+      {#each data.socials as { href, target, rel, label, icon }}
+        <a class="flex gap-1 text-gray-10 transition hover:opacity-74" {href} {target} {rel}>
+          {#if typeof icon === 'string'}
+            <Icon {icon} size="sm" />
+          {/if}
+          <span class="text-sm/normal font-semibold tracking-widest text-gray-11">
             {label}
-          </a>
-        </div>
+          </span>
+        </a>
       {/each}
     </div>
   </div>

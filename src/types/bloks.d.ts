@@ -97,20 +97,7 @@ export interface CustomerStoryblok {
   [k: string]: any;
 }
 
-export interface FooterColumnStoryblok {
-  title: string;
-  groups: (
-    | TechnologiesFooterLinkGroupStoryblok
-    | FooterFolderLinkGroupStoryblok
-    | FooterManualLinkGroupStoryblok
-    | FooterTechnologyDocumentationLinkGroupStoryblok
-  )[];
-  _uid: string;
-  component: 'footer-column';
-  [k: string]: any;
-}
-
-export interface FooterConfigurationStoryblok {
+export interface FooterStoryblok {
   subfooter: any[];
   socials: LinkStoryblok[];
   columns: FooterColumnStoryblok[];
@@ -118,7 +105,19 @@ export interface FooterConfigurationStoryblok {
   prefooter_description: string;
   prefooter_cta: ButtonLinkStoryblok[];
   _uid: string;
-  component: 'Footer Configuration';
+  component: 'footer';
+  [k: string]: any;
+}
+
+export interface FooterColumnStoryblok {
+  title: string;
+  groups: (
+    | FooterFolderLinkGroupStoryblok
+    | FooterManualLinkGroupStoryblok
+    | FooterTechnologyDocumentationLinkGroupStoryblok
+  )[];
+  _uid: string;
+  component: 'footer-column';
   [k: string]: any;
 }
 
@@ -132,7 +131,7 @@ export interface FooterFolderLinkGroupStoryblok {
 
 export interface FooterManualLinkGroupStoryblok {
   title?: string;
-  links: LinkStoryblok[];
+  links: any[];
   _uid: string;
   component: 'footer-manual-link-group';
   [k: string]: any;
@@ -215,7 +214,7 @@ export interface TopNavigationStoryblok {
   links: (LinkStoryblok | TopnavPanelStoryblok)[];
   call_to_actions: LinkStoryblok[];
   _uid: string;
-  component: 'Top Navigation';
+  component: 'top-navigation';
   [k: string]: any;
 }
 
