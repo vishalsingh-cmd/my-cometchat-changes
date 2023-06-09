@@ -1,8 +1,30 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
+
+  const stars = [...Array(20).keys()];
 </script>
 
-<section data-theme="dark" class="overflow-hidden bg-brand-1 px-20 pb-20 pt-[188px]">
+<section data-theme="dark" class="relative overflow-hidden bg-brand-1 px-20 pb-20 pt-[188px]">
+  <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
+    {#each stars as star}
+      {@const backgroundColours = ['bg-brand-9', 'bg-orange-8', 'bg-brand-7']}
+      {@const randomColour =
+        backgroundColours[Math.floor(Math.random() * backgroundColours.length)]}
+      {@const randomTop = Math.floor(Math.random() * 600) + 'px'}
+      {@const randomLeft = Math.floor(Math.random() * 400) + 'px'}
+      {@const randomRight = Math.floor(Math.random() * 400) + 'px'}
+      <div
+        id={star.toString()}
+        class="absolute h-0.5 w-0.5 rounded-full {randomColour}"
+        style="top: {randomTop}; left: {randomLeft}"
+      />
+      <div
+        id={star.toString()}
+        class="absolute h-0.5 w-0.5 rounded-full {randomColour}"
+        style="top: {randomTop}; right: {randomRight}"
+      />
+    {/each}
+  </div>
   <div class="mx-auto max-w-[528px]">
     <h1 class="text-[60px] font-semibold leading-tighter text-gray-12 text-opacity-[.54]">
       Everything you need to build<br />
