@@ -11,6 +11,7 @@ import { onMount } from 'svelte';
 
 /** Storyblok API */
 
+export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
   const { storyblokApi } = storyblokInit({
     accessToken: env.PUBLIC_STORYBLOK_TOKEN,
@@ -21,7 +22,7 @@ export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
     }
   });
 
-  return storyblokApi as NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
+  return storyblokApi as Storyblok;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -85,6 +86,10 @@ export function getAnchorFromCmsLink(link: MultilinkStoryblok | undefined) {
   }
 
   return attributes;
+}
+
+export function getAnchorFromCmsStory(story: ISbStoryData) {
+  return { href: sanitizeSlug(story.full_slug), target: undefined, rel: undefined };
 }
 
 /** Utils */

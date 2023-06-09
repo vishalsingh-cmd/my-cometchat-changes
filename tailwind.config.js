@@ -14,7 +14,9 @@ const createThemeScale = (scale: string, size = 12) => {
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{html,js,svelte,ts}'],
-  darkMode: ['class', '[data-theme="dark"]'],
+  future: {
+    hoverOnlyWhenSupported: true
+  },
   theme: {
     container: {
       screens: {
@@ -127,6 +129,9 @@ export default {
     }
   },
   plugins: [
+    plugin(({ addVariant }) => {
+      addVariant('light', "[data-theme='light'] &");
+    }),
     plugin(({ addUtilities }) => {
       addUtilities({
         '.elevated-links': {

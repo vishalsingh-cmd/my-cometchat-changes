@@ -18,6 +18,7 @@
   import { beforeNavigate } from '$app/navigation';
   import { createMediaStore } from '$lib/stores/media';
   import { circInOut } from 'svelte/easing';
+  import Divider from '$components/divider.svelte';
 
   export let data: TopNavigationStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -73,7 +74,7 @@
   }}
   data-theme="dark"
   class={cn(
-    'fixed left-0 top-0 z-10 w-full text-brand-12 transition-transform duration-300 ease-motion',
+    'fixed left-0 top-0 z-30 w-full text-brand-12 transition-transform duration-300 ease-motion',
     {
       'translate-y-0': scrollDirection === 'up',
       '-translate-y-16': scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
@@ -160,7 +161,7 @@
                     <Icon class="text-gray-10" size="xs" icon="chevron-right" />
                   </button>
                 {/if}
-                <div class="h-px w-full bg-divider-gradient" />
+                <Divider />
               {/each}
             </div>
             {#if data.call_to_actions[data.call_to_actions.length - 1]}
@@ -186,7 +187,7 @@
               <Icon size="xs" class="text-gray-10" icon="arrow-left" />
               <span class="text-sm/none font-semibold">Back</span>
             </button>
-            <div class="h-px w-full bg-divider-gradient lg:hidden" />
+            <Divider class="lg:hidden" />
             <div class="overflow-hidden">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
