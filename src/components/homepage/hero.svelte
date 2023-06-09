@@ -24,7 +24,13 @@
       class="ellipse3 absolute right-[calc(50vw-612.54px)] top-[35px] h-[371.2px] w-[1258.4px] origin-center rotate-[-13.96deg] transform rounded-50 blur-[75px]"
     />
     <div
-      class="ellipse4 relative right-[calc(50vw-477.4px)] top-[237.27px] h-[315.1px] w-[1245.75px] origin-center rotate-[-20.77deg] transform rounded-50 mix-blend-screen blur-[75px]"
+      class="ellipse4 absolute top-[237.27px] h-[315.1px] w-[1245.75px] origin-center rotate-[-20.77deg] transform rounded-50 mix-blend-screen blur-[75px]"
+    />
+    <div
+      class="ellipse5 absolute left-[50vw] top-0 h-[476.94px] w-[844.1px] origin-center rotate-[-20.77deg] transform rounded-50 bg-[#172365] mix-blend-soft-light blur-[100px]"
+    />
+    <div
+      class="ellipse6 absolute left-[calc(50vw-433.8px)] top-[-80.32px] h-[390.84px] w-[1274.01px] origin-center rotate-[-20.77deg] transform rounded-50 bg-[#1D1765] opacity-30 mix-blend-normal blur-[100px]"
     />
   </div>
 </section>
