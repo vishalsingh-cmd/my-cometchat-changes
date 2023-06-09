@@ -1,6 +1,8 @@
 import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
+import type { BlogPostStoryblok, PageStoryblok, TechnologyStoryblok } from '$types/bloks.js';
+import type { ISbStoryData } from '@storyblok/js';
 import { error } from '@sveltejs/kit';
 
 export const load = async ({ cookies, fetch, params }) => {
@@ -12,8 +14,12 @@ export const load = async ({ cookies, fetch, params }) => {
       version
     });
 
-    return { page: page.data.story };
+    return {
+      page: page.data.story as ISbStoryData<PageStoryblok | BlogPostStoryblok | TechnologyStoryblok>
+    };
   } catch (err) {
+    console.error(err);
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
+    throw err;
   }
 };
