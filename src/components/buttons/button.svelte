@@ -41,8 +41,8 @@
           primary: `
               bg-brand-9
               ring-brand-9/30
-              text-brand-1
-              dark:text-brand-12
+              text-brand-12
+              light:text-brand-1
 
               active:bg-brand-10
             `,
