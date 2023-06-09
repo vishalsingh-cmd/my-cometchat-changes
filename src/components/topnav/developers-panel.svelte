@@ -10,7 +10,7 @@
 
 <div class="container mx-auto px-container">
   <div class="items-stretch xl:flex">
-    <div class="flex-1 p-12 px-0 xl:pr-12">
+    <div class="flex-1 p-8 px-0 lg:p-12 xl:pr-12">
       <h3 class="mb-8 text-lg opacity-54">{data.technologies_title}</h3>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {#each links as link}
@@ -32,7 +32,7 @@
     </div>
     <div class="hidden w-px bg-divider-gradient-vertical xl:block" />
     <div class="h-px w-full bg-divider-gradient xl:hidden" />
-    <div class="flex-1 p-12 px-0 xl:pl-12">
+    <div class="flex-1 p-8 px-0 lg:p-12 xl:pl-12">
       {#each data.groups as group}
         <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2">
