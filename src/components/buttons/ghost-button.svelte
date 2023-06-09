@@ -65,12 +65,12 @@
 >
   <slot />
   {#if variant === 'highlighted'}
-    <div class="absolute bottom-[-10px] hidden h-2 w-full group-hover:block">
+    <div class="absolute -bottom-3 hidden h-2 w-full group-hover:block">
       <div
-        class="line absolute h-px w-full origin-right rounded-full bg-gradient-to-l from-brand-9/100 to-brand-9/0 opacity-0 content-['']"
+        class="line absolute h-px w-full origin-right rounded-full bg-gradient-to-l from-brand-9/100 to-brand-9/0 opacity-0"
       />
       <div
-        class="star absolute left-[0%] top-[-4px] h-2 w-2 rounded-full bg-brand-9 opacity-0 blur-[2px] content-['']"
+        class="star absolute left-0 h-1 w-1 -translate-y-1/2 rounded-full bg-brand-9 opacity-0 after:absolute after:left-1/2 after:top-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-brand-9/60 after:blur-sm"
       />
     </div>
   {/if}
@@ -78,11 +78,11 @@
 
 <style lang="postcss">
   .line {
-    animation: line 1s ease-in-out;
+    animation: line 1s cubic-bezier(0.9, 0.3, 0, 1);
   }
 
   .star {
-    animation: star 1s ease-in-out;
+    animation: star 1s cubic-bezier(0.9, 0.3, 0, 1);
   }
 
   @keyframes line {
@@ -99,6 +99,7 @@
     100% {
       width: 100%;
       transform: scaleX(0);
+      opacity: 0;
     }
   }
 
