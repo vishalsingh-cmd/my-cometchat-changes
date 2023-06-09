@@ -7,19 +7,24 @@
   import Stars from '$components/homepage/hero/stars.svelte';
 </script>
 
-<section data-theme="dark" class="relative overflow-hidden bg-brand-1 px-20 pb-20 pt-[188px]">
-  <div class="absolute left-[calc(50vw-700px)] top-[80px]">
+<section
+  data-theme="dark"
+  class="relative overflow-hidden bg-brand-1 px-5 pb-20 pt-24 md:px-20 md:pt-[188px]"
+>
+  <div class="absolute left-[calc(50vw-700px)] top-[80px] hidden md:block">
     <OrbitMedium />
   </div>
   <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
     <Stars amount={20} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
   </div>
   <div class="mx-auto max-w-[528px]">
-    <h1 class="text-[60px] font-semibold leading-tighter text-gray-12 text-opacity-[.54]">
+    <h1
+      class="text-3xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
+    >
       Everything you need to build<br />
       <span class="text-gray-12 text-opacity-100">in-app messaging</span>
     </h1>
-    <div class="mt-10 flex gap-3">
+    <div class="mt-6 flex gap-3 md:mt-10">
       <Button variant="secondary">Start now</Button>
       <Button variant="primary">Chat with us</Button>
     </div>
