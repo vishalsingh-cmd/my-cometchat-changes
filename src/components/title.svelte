@@ -19,7 +19,7 @@
       variants: {
         alignment: {
           left: ['items-start', 'text-left'],
-          center: ['items-center', 'text-center']
+          center: ['md:items-center', 'md:text-center']
         }
       }
     }
