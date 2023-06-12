@@ -1,6 +1,7 @@
 <script lang="ts">
-  import Link from '$components/buttons/link.svelte';
+  import Blur from '$components/technologies/assets/blur.svg';
   import Icon from '$components/icon/icon.svelte';
+  import Link from '$components/buttons/link.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
@@ -32,7 +33,16 @@
 </script>
 
 {#if block}
-  <section data-theme="light" class="bg-gray-1 px-container pb-8" use:storyblokEditable={block}>
+  <section
+    data-theme="light"
+    class="relative overflow-hidden bg-gray-1 px-container pb-8"
+    use:storyblokEditable={block}
+  >
+    <img
+      alt=""
+      src={Blur}
+      class="absolute right-[-90px] top-[-24px] h-[245px] w-[245px] md:right-[-106px] md:top-[-95px] md:h-[447px] md:w-[447px]"
+    />
     <div class="mx-auto max-w-content">
       <Title
         alignment="center"
