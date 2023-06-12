@@ -627,6 +627,89 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "platform-section",
+      "display_name": null,
+      "created_at": "2023-06-12T12:29:59.645Z",
+      "updated_at": "2023-06-12T12:34:04.659Z",
+      "id": 4111423,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "products": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 2,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["product-display-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "platform-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
+      "name": "product-display-item",
+      "display_name": null,
+      "created_at": "2023-06-12T12:31:40.641Z",
+      "updated_at": "2023-06-12T12:52:53.487Z",
+      "id": 4111430,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "link": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product-display-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
       "name": "social-proofs",
       "display_name": null,
       "created_at": "2023-06-09T14:34:35.652Z",
@@ -778,6 +861,37 @@
       "color": null,
       "icon": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "title",
+      "display_name": null,
+      "created_at": "2023-06-12T12:30:15.872Z",
+      "updated_at": "2023-06-12T12:30:38.910Z",
+      "id": 4111424,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
     },
     {
       "name": "topnav-features-panel",
