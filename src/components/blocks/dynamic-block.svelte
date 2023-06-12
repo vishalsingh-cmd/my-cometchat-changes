@@ -1,14 +1,17 @@
 <script lang="ts">
   import type { SbBlokData } from '@storyblok/js';
-  import Page from './page.svelte';
   import type { ComponentType } from 'svelte';
+
   import Metrics from './metrics.svelte';
+  import Page from './page.svelte';
+  import TechnologiesSection from './technologies-section.svelte';
 
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
+    metrics: Metrics,
     page: Page,
-    metrics: Metrics
+    'technologies-section': TechnologiesSection
   };
 </script>
 
