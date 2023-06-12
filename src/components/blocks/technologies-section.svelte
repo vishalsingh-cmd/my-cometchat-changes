@@ -41,19 +41,19 @@
         buttons={links}
       />
       <div
-        class="relative grid grid-cols-2 grid-rows-3 gap-px text-md font-semibold before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid-cols-4"
+        class="relative grid grid-cols-2 grid-rows-3 gap-px before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid-cols-4"
       >
         {#each technologies as technology, i}
           <div
             class={cn(
-              'isolate z-10 flex flex-row items-center gap-1.5 bg-gray-1 p-8 text-gray-10',
+              'isolate z-10 flex flex-row items-center gap-1.5 bg-gray-1 p-5 text-gray-10 md:p-8',
               i < 4 && 'md:pt-12',
               i > 7 && 'md:pb-12',
               (i === 0 || i === 4 || i === 8) && 'md:pl-12',
               (i === 3 || i === 7 || i === 11) && 'md:pr-12'
             )}
           >
-            <Icon icon={technology.icon} />
+            <Icon icon={technology.icon} class="flex" />
             <Link href={technology.link}>{technology.label}</Link>
           </div>
         {/each}
