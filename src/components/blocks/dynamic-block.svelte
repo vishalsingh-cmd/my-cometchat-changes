@@ -1,14 +1,18 @@
 <script lang="ts">
   import type { SbBlokData } from '@storyblok/js';
-  import Page from './page.svelte';
   import type { ComponentType } from 'svelte';
+
+  import Page from './page.svelte';
+
+  import HomepageHero from './homepage-hero.svelte';
   import Metrics from './metrics.svelte';
 
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
-    page: Page,
-    metrics: Metrics
+    'homepage-hero': HomepageHero,
+    metrics: Metrics,
+    page: Page
   };
 </script>
 

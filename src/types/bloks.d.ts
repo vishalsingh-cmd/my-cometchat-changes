@@ -14,7 +14,7 @@ export interface AssetStoryblok {
 export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
-  body: MetricsStoryblok[];
+  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
@@ -91,7 +91,7 @@ export interface ButtonLinkStoryblok {
 
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
-  body?: MetricsStoryblok[];
+  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
   _uid: string;
   component: 'customer';
   [k: string]: any;
@@ -145,8 +145,18 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface HomepageHeroStoryblok {
+  title_regular: string;
+  title_highlighted: string;
+  ghost_button: LinkStoryblok[];
+  regular_button: LinkStoryblok[];
+  _uid: string;
+  component: 'homepage-hero';
+  [k: string]: any;
+}
+
 export interface IndustryStoryblok {
-  body?: MetricsStoryblok[];
+  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -179,7 +189,7 @@ export interface MetricsItemStoryblok {
 export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
-  body?: MetricsStoryblok[];
+  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'page';
@@ -200,7 +210,7 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   seo_title?: string;
-  body: MetricsStoryblok[];
+  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
   _uid: string;
@@ -294,7 +304,7 @@ export interface TopnavTechnologiesPanelStoryblok {
 
 export interface TutorialStoryblok {
   cover?: AssetStoryblok;
-  body: MetricsStoryblok[];
+  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
