@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
 
-  import Noise from '$components/homepage/hero/noise.svelte';
+  import Noise from '$components/homepage/hero/noise.svg';
   import OrbitMedium from '$components/homepage/hero/assets/orbit-medium.svg';
   import OrbitThin from '$components/homepage/hero/assets/orbit-thin.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
@@ -50,9 +50,7 @@
       </div>
     </div>
     <div class="relative h-[762px]">
-      <div class="absolute left-0 right-0 top-0">
-        <Noise />
-      </div>
+      <img class="absolute left-0 right-0 top-[-300px]" src={Noise} alt="" />
       <div
         class="absolute left-[calc(50vw-400px)] top-[0px] w-full max-w-[1389px] rotate-[30deg] transform"
       >
