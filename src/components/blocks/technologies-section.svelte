@@ -1,23 +1,17 @@
 <script lang="ts">
+  import type { StoryblokStory } from 'storyblok-generate-ts';
+
   import Blur from '$components/technologies/assets/blur.svg';
   import Icon from '$components/icon/icon.svelte';
   import Link from '$components/buttons/link.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { TechnologiesSectionStoryblok, TechnologyStoryblok } from '$types/bloks';
-  import type { StoryblokStory } from 'storyblok-generate-ts';
 
   export let block: TechnologiesSectionStoryblok;
-
-  const links = block.header[0].links
-    ? block.header[0].links.map((link) => ({
-        label: link.label,
-        link: sanitizeSlug(link.link?.cached_url)
-      }))
-    : undefined;
 
   const technologies = (block.technologies as StoryblokStory<TechnologyStoryblok>[]).map(
     (technology) => {
@@ -25,7 +19,7 @@
 
       return {
         label: documentationInfo.label,
-        link: sanitizeSlug(documentationInfo.link.cached_url),
+        link: getAnchorFromCmsLink(documentationInfo.link),
         icon: documentationInfo.icon as string
       };
     }
@@ -48,12 +42,13 @@
         alignment="center"
         label={{ content: block.header[0].label, color: 'brand' }}
         title={block.header[0].title}
-        buttons={links}
+        buttons={block.header[0].links}
       />
       <div
         class="relative grid grid-cols-2 grid-rows-3 gap-px before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid-cols-4"
       >
         {#each technologies as technology, i}
+          {@const { href, target, rel } = technology.link}
           <div
             class={cn(
               'isolate z-10 flex flex-row items-center gap-1.5 bg-gray-1 p-5 text-gray-10 md:p-8',
@@ -64,7 +59,7 @@
             )}
           >
             <Icon icon={technology.icon} class="flex" />
-            <Link href={technology.link}>{technology.label}</Link>
+            <Link {href} {target} {rel}>{technology.label}</Link>
           </div>
         {/each}
       </div>
