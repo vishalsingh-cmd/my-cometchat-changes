@@ -23,7 +23,7 @@
       <img src={OrbitMedium} alt="" />
     </div>
     <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
-      <Stars amount={20} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
+      <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
     </div>
     <div class="mx-auto max-w-[528px]">
       <h1
@@ -54,7 +54,7 @@
       <div
         class="absolute left-[calc(50vw-400px)] top-[0px] w-full max-w-[1389px] rotate-[30deg] transform"
       >
-        <Stars amount={20} backgroundColours={['bg-white']} />
+        <Stars amount={40} backgroundColours={['bg-white']} />
       </div>
       <div
         class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-1/2 bg-[#944E6E]/80 blur-[75px]"
