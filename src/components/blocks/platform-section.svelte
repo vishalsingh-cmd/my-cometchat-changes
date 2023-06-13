@@ -6,7 +6,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PlatformSectionStoryblok } from '$types/bloks';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   export let block: PlatformSectionStoryblok;
 </script>
@@ -24,29 +24,29 @@
           label={{ color: 'orange', content: block.title[0].label }}
           title={block.title[0].title}
         />
-        <div class="px-5 md:mt-6 md:pl-16">
+        {#if block.products[0]}
+          {@const link = getAnchorFromCmsLink(block.products[0].link)}
+          <div class="px-5 md:mt-6 md:pl-16">
+            <ProductDisplay
+              illustration={block.products[0].image.filename}
+              title={block.products[0].title}
+              description={block.products[0].description}
+              link={{ ...link, label: block.products[0].link[0].label ?? '' }}
+            />
+          </div>
+        {/if}
+      </div>
+      {#if block.products[0]}
+        {@const link = getAnchorFromCmsLink(block.products[1].link)}
+        <div class="mt-10 px-5 md:mt-[146px] md:pr-16">
           <ProductDisplay
-            illustration={block.products[0].image.filename}
-            title={block.products[0].title}
-            description={block.products[0].description}
-            link={{
-              href: sanitizeSlug(block.products[0].link[0].link.cached_url),
-              label: block.products[0].link[0].label ?? ''
-            }}
+            illustration={block.products[1].image.filename}
+            title={block.products[1].title}
+            description={block.products[1].description}
+            link={{ ...link, label: block.products[1].link[0].label ?? '' }}
           />
         </div>
-      </div>
-      <div class="mt-10 px-5 md:mt-[146px] md:pr-16">
-        <ProductDisplay
-          illustration={block.products[1].image.filename}
-          title={block.products[1].title}
-          description={block.products[1].description}
-          link={{
-            href: sanitizeSlug(block.products[1].link[0].link.cached_url),
-            label: block.products[1].link[0].label ?? ''
-          }}
-        />
-      </div>
+      {/if}
     </div>
   </section>
 {/if}
