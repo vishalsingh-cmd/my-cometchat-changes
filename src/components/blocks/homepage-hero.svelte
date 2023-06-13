@@ -8,7 +8,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { HomepageHeroStoryblok } from '$types/bloks';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   export let block: HomepageHeroStoryblok;
 </script>
@@ -43,11 +43,8 @@
       {/if}
       <div class="mt-6 flex gap-3 md:mt-10">
         {#each block.links as link}
-          <Button
-            variant={link.variant}
-            as="a"
-            href={link.link ? sanitizeSlug(link.link.cached_url) : ''}
-          >
+          {@const { href, rel, target } = getAnchorFromCmsLink(block.products[0].link)}
+          <Button variant={link.variant} as="a" {href} {rel} {target}>
             {link.label}
           </Button>
         {/each}
