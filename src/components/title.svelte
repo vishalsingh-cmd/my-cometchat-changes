@@ -1,7 +1,12 @@
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
+
   import Button from './buttons/button.svelte';
+
   import { cn } from '$lib/utils';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+
+  import type { MultilinkStoryblok } from '$types/bloks';
 
   const titleStyle = cva(
     [
@@ -33,7 +38,7 @@
   export let title = '';
   export let description = '';
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
-  export let buttons: undefined | { label: string; link: string }[] = undefined;
+  export let buttons: undefined | MultilinkStoryblok[] = undefined;
 
   const labelColours = {
     orange: 'text-orange-9',
@@ -60,8 +65,11 @@
   </p>
   {#if buttons && buttons.length > 0}
     <div class="mt-6 flex gap-2">
-      {#each buttons as { label, link }, i}
-        <Button variant={i === 0 ? 'secondary' : 'primary'} as="a" href={link}>{label}</Button>
+      {#each buttons as button, i}
+        {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
+        <Button variant={i === 0 ? 'secondary' : 'primary'} as="a" {href} {target} {rel}>
+          {button.label}
+        </Button>
       {/each}
     </div>
   {/if}
