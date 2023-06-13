@@ -15,6 +15,7 @@ export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -97,6 +98,7 @@ export interface ButtonLinkStoryblok {
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -104,6 +106,14 @@ export interface CustomerStoryblok {
   )[];
   _uid: string;
   component: 'customer';
+  [k: string]: any;
+}
+
+export interface CustomerStoriesSectionStoryblok {
+  title: TitleStoryblok[];
+  testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
+  _uid: string;
+  component: 'customer-stories-section';
   [k: string]: any;
 }
 
@@ -155,11 +165,18 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface HomepageHeroStoryblok {
-  title_regular: string;
-  title_highlighted: string;
-  ghost_button: LinkStoryblok[];
-  regular_button: LinkStoryblok[];
+  title: RichtextStoryblok;
+  links: ButtonLinkStoryblok[];
   _uid: string;
   component: 'homepage-hero';
   [k: string]: any;
@@ -167,6 +184,7 @@ export interface HomepageHeroStoryblok {
 
 export interface IndustryStoryblok {
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -205,6 +223,7 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -257,6 +276,7 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   seo_title?: string;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -270,9 +290,11 @@ export interface TechnologyStoryblok {
 }
 
 export interface TestimonialStoryblok {
+  quote: string;
   name: string;
-  avatar: AssetStoryblok;
   position: string;
+  avatar: AssetStoryblok;
+  avatar_position?: '' | 'left' | 'right';
   _uid: string;
   component: 'testimonial';
   [k: string]: any;
@@ -360,21 +382,5 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
-  [k: string]: any;
-}
-
-export interface TutorialStoryblok {
-  cover?: AssetStoryblok;
-  body: (
-    | HomepageHeroStoryblok
-    | MetricsStoryblok
-    | PlatformSectionStoryblok
-    | TechnologiesSectionStoryblok
-  )[];
-  seo_title?: string;
-  seo_description?: string;
-  seo_og_image?: AssetStoryblok;
-  _uid: string;
-  component: 'tutorial';
   [k: string]: any;
 }
