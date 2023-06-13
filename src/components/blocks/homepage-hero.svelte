@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
 
-  import Noise from '$components/homepage/hero/noise.svelte';
+  import Noise from '$components/homepage/hero/noise.svg';
   import OrbitMedium from '$components/homepage/hero/assets/orbit-medium.svg';
   import OrbitThin from '$components/homepage/hero/assets/orbit-thin.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
@@ -23,40 +23,42 @@
       <img src={OrbitMedium} alt="" />
     </div>
     <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
-      <Stars amount={20} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
+      <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
     </div>
     <div class="mx-auto max-w-[528px]">
-      <h1
-        class="text-3xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
-      >
-        {block.title_regular}<br />
-        <span class="text-gray-12 text-opacity-100">{block.title_highlighted}</span>
-      </h1>
+      {#if block.title && block.title.content && block.title.content[0].content}
+        <h1
+          class="text-3xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
+        >
+          {#each block.title.content[0].content as part}
+            {#if part.marks && part.marks.some((mark) => mark.type === 'italic')}
+              <span class="text-gray-12 text-opacity-100">{part.text}</span>
+            {:else if part.text === ' '}
+              <br />
+            {:else}
+              {part.text}
+            {/if}
+          {/each}
+        </h1>
+      {/if}
       <div class="mt-6 flex gap-3 md:mt-10">
-        <Button
-          variant="secondary"
-          as="a"
-          href={sanitizeSlug(block.ghost_button[0].link.cached_url)}
-        >
-          {block.ghost_button[0].label}
-        </Button>
-        <Button
-          variant="primary"
-          as="a"
-          href={sanitizeSlug(block.regular_button[0].link.cached_url)}
-        >
-          {block.regular_button[0].label}
-        </Button>
+        {#each block.links as link}
+          <Button
+            variant={link.variant}
+            as="a"
+            href={link.link ? sanitizeSlug(link.link.cached_url) : ''}
+          >
+            {link.label}
+          </Button>
+        {/each}
       </div>
     </div>
     <div class="relative h-[762px]">
-      <div class="absolute left-0 right-0 top-0">
-        <Noise />
-      </div>
+      <img class="absolute left-0 right-0 top-[-300px]" src={Noise} alt="" />
       <div
         class="absolute left-[calc(50vw-400px)] top-[0px] w-full max-w-[1389px] rotate-[30deg] transform"
       >
-        <Stars amount={20} backgroundColours={['bg-white']} />
+        <Stars amount={40} backgroundColours={['bg-white']} />
       </div>
       <div
         class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-1/2 bg-[#944E6E]/80 blur-[75px]"
