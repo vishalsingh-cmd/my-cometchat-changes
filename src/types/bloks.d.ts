@@ -14,7 +14,12 @@ export interface AssetStoryblok {
 export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
-  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
+  body: (
+    | HomepageHeroStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
@@ -91,7 +96,12 @@ export interface ButtonLinkStoryblok {
 
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
-  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
+  body?: (
+    | HomepageHeroStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
   _uid: string;
   component: 'customer';
   [k: string]: any;
@@ -145,18 +155,30 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
 export interface HomepageHeroStoryblok {
-  title_regular: string;
-  title_highlighted: string;
-  ghost_button: LinkStoryblok[];
-  regular_button: LinkStoryblok[];
+  title: RichtextStoryblok;
+  links: ButtonLinkStoryblok[];
   _uid: string;
   component: 'homepage-hero';
   [k: string]: any;
 }
 
 export interface IndustryStoryblok {
-  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
+  body?: (
+    | HomepageHeroStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -189,11 +211,34 @@ export interface MetricsItemStoryblok {
 export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
-  body?: (HomepageHeroStoryblok | MetricsStoryblok)[];
+  body?: (
+    | HomepageHeroStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'page';
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface PlatformSectionStoryblok {
+  title: TitleStoryblok[];
+  products: ProductDisplayItemStoryblok[];
+  _uid: string;
+  component: 'platform-section';
+  [k: string]: any;
+}
+
+export interface ProductDisplayItemStoryblok {
+  image: AssetStoryblok;
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+  _uid: string;
+  component: 'product-display-item';
   [k: string]: any;
 }
 
@@ -204,13 +249,26 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface TechnologiesSectionStoryblok {
+  header: TitleStoryblok[];
+  technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
+  _uid: string;
+  component: 'technologies-section';
+  [k: string]: any;
+}
+
 export interface TechnologyStoryblok {
   documentation_link: LinkStoryblok[];
   code_snippet?: string;
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   seo_title?: string;
-  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
+  body: (
+    | HomepageHeroStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
   _uid: string;
@@ -219,11 +277,23 @@ export interface TechnologyStoryblok {
 }
 
 export interface TestimonialStoryblok {
+  quote: string;
   name: string;
-  avatar: AssetStoryblok;
   position: string;
+  avatar: AssetStoryblok;
+  avatar_position?: '' | 'left' | 'right';
   _uid: string;
   component: 'testimonial';
+  [k: string]: any;
+}
+
+export interface TitleStoryblok {
+  label: string;
+  title: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'title';
   [k: string]: any;
 }
 
@@ -299,16 +369,5 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
-  [k: string]: any;
-}
-
-export interface TutorialStoryblok {
-  cover?: AssetStoryblok;
-  body: (HomepageHeroStoryblok | MetricsStoryblok)[];
-  seo_title?: string;
-  seo_description?: string;
-  seo_og_image?: AssetStoryblok;
-  _uid: string;
-  component: 'tutorial';
   [k: string]: any;
 }
