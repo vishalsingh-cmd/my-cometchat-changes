@@ -2,9 +2,9 @@
   "components": [
     {
       "name": "blog-post",
-      "display_name": null,
+      "display_name": "Blog Post or Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-06-06T16:47:39.252Z",
+      "updated_at": "2023-06-13T08:35:47.629Z",
       "id": 4079335,
       "schema": {
         "customer": {
@@ -65,7 +65,7 @@
       "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "blog-post",
+      "real_name": "Blog Post or Customer Story",
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
@@ -164,10 +164,51 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Customer",
-      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
-      "component_group_name": "Pages"
+      "component_group_name": "Database"
+    },
+    {
+      "name": "customer-stories-section",
+      "display_name": null,
+      "created_at": "2023-06-13T15:29:13.916Z",
+      "updated_at": "2023-06-13T21:59:32.466Z",
+      "id": 4118924,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "pos": 0
+        },
+        "testimonials": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": ["testimonial"],
+          "folder_slug": "database/testimonials",
+          "min_options": "3",
+          "max_options": "3",
+          "required": true,
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "customer-stories-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
     },
     {
       "name": "footer",
@@ -388,6 +429,46 @@
       "component_group_name": "Internal Bloks"
     },
     {
+      "name": "homepage-hero",
+      "display_name": null,
+      "created_at": "2023-06-12T11:58:52.576Z",
+      "updated_at": "2023-06-13T12:31:14.510Z",
+      "id": 4111191,
+      "schema": {
+        "title": {
+          "type": "richtext",
+          "pos": 0,
+          "required": true,
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": ["italic"],
+          "restrict_type": "",
+          "restrict_components": false,
+          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'"
+        },
+        "links": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "homepage-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
       "name": "industry",
       "display_name": "Industry aka Use Case",
       "created_at": "2023-06-06T15:55:24.337Z",
@@ -574,6 +655,89 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "platform-section",
+      "display_name": null,
+      "created_at": "2023-06-12T12:29:59.645Z",
+      "updated_at": "2023-06-12T12:34:04.659Z",
+      "id": 4111423,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "products": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 2,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["product-display-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "platform-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
+      "name": "product-display-item",
+      "display_name": null,
+      "created_at": "2023-06-12T12:31:40.641Z",
+      "updated_at": "2023-06-12T12:52:53.487Z",
+      "id": 4111430,
+      "schema": {
+        "image": {
+          "type": "asset",
+          "required": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "link": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "product-display-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
       "name": "social-proofs",
       "display_name": null,
       "created_at": "2023-06-09T14:34:35.652Z",
@@ -597,6 +761,44 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Bloks"
+    },
+    {
+      "name": "technologies-section",
+      "display_name": null,
+      "created_at": "2023-06-12T14:33:06.904Z",
+      "updated_at": "2023-06-12T14:36:31.899Z",
+      "id": 4112175,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "technologies": {
+          "type": "options",
+          "required": true,
+          "source": "internal_stories",
+          "folder_slug": "",
+          "filter_content_type": ["technology"],
+          "max_options": "12"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "technologies-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
     },
     {
       "name": "technology",
@@ -696,21 +898,49 @@
       "name": "testimonial",
       "display_name": null,
       "created_at": "2023-06-06T15:52:10.850Z",
-      "updated_at": "2023-06-06T15:53:09.088Z",
+      "updated_at": "2023-06-13T19:43:27.305Z",
       "id": 4084142,
       "schema": {
+        "quote": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
         "name": {
           "type": "text",
-          "required": true
+          "required": true,
+          "pos": 1
+        },
+        "position": {
+          "type": "text",
+          "required": true,
+          "pos": 2
         },
         "avatar": {
           "type": "asset",
           "filetypes": ["images"],
-          "required": true
+          "required": true,
+          "pos": 3
         },
-        "position": {
-          "type": "text",
-          "required": true
+        "avatar_position": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "49742da4-ccd0-4af4-be99-bb55af86826e",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "394f2a27-5f91-4ce6-8596-39284803eb00",
+              "value": "right",
+              "name": "Right"
+            }
+          ],
+          "default_value": "left",
+          "exclude_empty_option": false,
+          "required": false,
+          "pos": 4
         }
       },
       "image": null,
@@ -725,6 +955,52 @@
       "color": null,
       "icon": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "title",
+      "display_name": null,
+      "created_at": "2023-06-12T12:30:15.872Z",
+      "updated_at": "2023-06-12T14:52:50.352Z",
+      "id": 4111424,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "pos": 0
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "pos": 1
+        },
+        "description": {
+          "type": "text",
+          "pos": 2
+        },
+        "links": {
+          "type": "bloks",
+          "required": false,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
     },
     {
       "name": "topnav-features-panel",
@@ -1065,65 +1341,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Bloks"
-    },
-    {
-      "name": "tutorial",
-      "display_name": null,
-      "created_at": "2023-06-06T15:54:08.479Z",
-      "updated_at": "2023-06-06T15:54:17.900Z",
-      "id": 4084163,
-      "schema": {
-        "cover": {
-          "type": "asset",
-          "pos": 0,
-          "filetypes": ["images"]
-        },
-        "body": {
-          "type": "bloks",
-          "pos": 1,
-          "required": true,
-          "restrict_type": "groups",
-          "restrict_components": true,
-          "component_whitelist": [],
-          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
-          "key": "body"
-        },
-        "seo_title": {
-          "type": "text",
-          "key": "title",
-          "pos": 2
-        },
-        "seo_description": {
-          "type": "text",
-          "key": "description",
-          "pos": 3
-        },
-        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
-          "display_name": "SEO",
-          "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
-          "pos": 4,
-          "type": "tab",
-          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
-          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
-        },
-        "seo_og_image": {
-          "type": "asset",
-          "filetypes": ["images"],
-          "pos": 5
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": true,
-      "preview_tmpl": null,
-      "is_nestable": false,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "tutorial",
-      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Pages"
     }
   ]
 }
