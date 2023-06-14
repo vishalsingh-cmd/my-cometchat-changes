@@ -3,10 +3,12 @@
   import Page from './page.svelte';
   import type { ComponentType } from 'svelte';
   import Metrics from './metrics.svelte';
+  import CustomerStoriesSection from './customer-stories-section.svelte';
 
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
+    'customer-stories-section': CustomerStoriesSection,
     page: Page,
     metrics: Metrics
   };
