@@ -6,13 +6,15 @@
 
   import HomepageHero from './homepage-hero.svelte';
   import Metrics from './metrics.svelte';
+  import PlatformSetcion from './platform-section.svelte';
 
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
     'homepage-hero': HomepageHero,
     metrics: Metrics,
-    page: Page
+    page: Page,
+    'platform-section': PlatformSetcion
   };
 </script>
 
