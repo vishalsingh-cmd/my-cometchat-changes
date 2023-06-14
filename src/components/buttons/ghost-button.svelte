@@ -4,7 +4,7 @@
 
   const button = cva(
     [
-      'flex',
+      'inline-flex',
       'flex-row',
       'gap-1.5',
 
