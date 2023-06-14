@@ -20,10 +20,12 @@
         <img alt="" src={Blur} />
       </div>
       <div>
-        <Title
-          label={{ color: 'orange', content: block.title[0].label }}
-          title={block.title[0].title}
-        />
+        {#if block.title[0]}
+          <Title
+            label={{ color: 'orange', content: block.title[0].label }}
+            title={block.title[0].title}
+          />
+        {/if}
         {#if block.products[0]}
           {@const link = getAnchorFromCmsLink(block.products[0].link)}
           <div class="px-5 md:mt-6 md:pl-16">
