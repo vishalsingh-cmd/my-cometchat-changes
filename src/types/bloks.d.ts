@@ -17,6 +17,7 @@ export interface BlogPostStoryblok {
   body: (
     | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -100,6 +101,7 @@ export interface CustomerStoryblok {
   body?: (
     | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -186,6 +188,7 @@ export interface IndustryStoryblok {
   body?: (
     | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -201,6 +204,22 @@ export interface LinkStoryblok {
   icon?: number | string;
   _uid: string;
   component: 'link';
+  [k: string]: any;
+}
+
+export interface ListItemStoryblok {
+  icon: number | string;
+  title: string;
+  description: string;
+  _uid: string;
+  component: 'list-item';
+  [k: string]: any;
+}
+
+export interface ListSectionStoryblok {
+  items: ListItemStoryblok[];
+  _uid: string;
+  component: 'list-section';
   [k: string]: any;
 }
 
@@ -225,6 +244,7 @@ export interface PageStoryblok {
   body?: (
     | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -278,6 +298,7 @@ export interface TechnologyStoryblok {
   body: (
     | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
