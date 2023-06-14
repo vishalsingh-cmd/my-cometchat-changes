@@ -15,7 +15,9 @@ export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -97,13 +99,23 @@ export interface ButtonLinkStoryblok {
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
   )[];
   _uid: string;
   component: 'customer';
+  [k: string]: any;
+}
+
+export interface CustomerStoriesSectionStoryblok {
+  title: TitleStoryblok[];
+  testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
+  _uid: string;
+  component: 'customer-stories-section';
   [k: string]: any;
 }
 
@@ -174,7 +186,9 @@ export interface HomepageHeroStoryblok {
 
 export interface IndustryStoryblok {
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -190,6 +204,22 @@ export interface LinkStoryblok {
   icon?: number | string;
   _uid: string;
   component: 'link';
+  [k: string]: any;
+}
+
+export interface ListItemStoryblok {
+  icon: number | string;
+  title: string;
+  description: string;
+  _uid: string;
+  component: 'list-item';
+  [k: string]: any;
+}
+
+export interface ListSectionStoryblok {
+  items: ListItemStoryblok[];
+  _uid: string;
+  component: 'list-section';
   [k: string]: any;
 }
 
@@ -212,7 +242,9 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
@@ -264,7 +296,9 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   seo_title?: string;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
+    | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | TechnologiesSectionStoryblok
