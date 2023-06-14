@@ -15,7 +15,7 @@
     use:storyblokEditable={block}
     data-theme="light"
     class={cn(
-      'relative z-10 flex flex-col-reverse gap-2 backdrop-blur-md md:flex-row lg:static',
+      'relative z-10 flex flex-col-reverse gap-2  md:flex-row lg:static',
       block.avatar_position == 'right' && 'md:flex-row-reverse',
       $$restProps.class
     )}
