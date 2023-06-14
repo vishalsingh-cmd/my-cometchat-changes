@@ -43,3 +43,10 @@
     icon={isOpen ? 'chevron-up' : 'chevron-down'}
   />
 </button>
+{#if isOpen}
+  <div>
+    {#each options as option}
+      <p>{option.label}</p>
+    {/each}
+  </div>
+{/if}
