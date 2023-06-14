@@ -41,7 +41,7 @@
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }))}>
+<div class={cn(titleStyle({ alignment }))} {...$$restProps}>
   <p
     class={`${labelColours[label.color]} mb-3 max-w-[528px] text-xl font-semibold leading-tighter`}
   >
