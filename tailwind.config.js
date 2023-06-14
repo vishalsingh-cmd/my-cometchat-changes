@@ -109,7 +109,8 @@ export default {
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
       }),
       borderRadius: {
-        '1/2': '50%'
+        '1/2': '50%',
+        10: '10px'
       },
       transitionTimingFunction: {
         motion: 'cubic-bezier(0.2, 1, 0.2, 1)',
