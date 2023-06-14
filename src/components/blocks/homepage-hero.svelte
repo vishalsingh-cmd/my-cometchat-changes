@@ -8,7 +8,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { HomepageHeroStoryblok } from '$types/bloks';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   export let block: HomepageHeroStoryblok;
 </script>
@@ -25,7 +25,7 @@
     <div class="relative left-1/2 top-[-200px] w-full max-w-[1389px] translate-x-[-50%] transform">
       <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
     </div>
-    <div class="mx-auto max-w-[528px]">
+    <div class="relative isolate z-10 mx-auto max-w-[528px]">
       {#if block.title && block.title.content && block.title.content[0].content}
         <h1
           class="text-3xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
@@ -41,17 +41,16 @@
           {/each}
         </h1>
       {/if}
-      <div class="mt-6 flex gap-3 md:mt-10">
-        {#each block.links as link}
-          <Button
-            variant={link.variant}
-            as="a"
-            href={link.link ? sanitizeSlug(link.link.cached_url) : ''}
-          >
-            {link.label}
-          </Button>
-        {/each}
-      </div>
+      {#if block.links.length > 0}
+        <div class="mt-6 flex gap-3 md:mt-10">
+          {#each block.links as link}
+            {@const { href, rel, target } = getAnchorFromCmsLink(link.link)}
+            <Button variant={link.variant} as="a" {href} {rel} {target}>
+              {link.label}
+            </Button>
+          {/each}
+        </div>
+      {/if}
     </div>
     <div class="relative h-[762px]">
       <img class="absolute left-0 right-0 top-[-300px]" src={Noise} alt="" />
