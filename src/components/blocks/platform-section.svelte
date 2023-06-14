@@ -38,7 +38,7 @@
           </div>
         {/if}
       </div>
-      {#if block.products[0]}
+      {#if block.products[1]}
         {@const link = getAnchorFromCmsLink(block.products[1].link)}
         <div class="mt-10 px-5 md:mt-[146px] md:pr-16">
           <ProductDisplay
