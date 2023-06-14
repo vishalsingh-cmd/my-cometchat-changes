@@ -51,15 +51,22 @@
           {@const { href, target, rel } = technology.link}
           <div
             class={cn(
-              'isolate z-10 flex flex-row items-center gap-1.5 bg-gray-1 p-5 text-gray-10 md:p-8',
+              'isolate z-10 flex flex-row items-center bg-gray-1 p-5 text-gray-10 md:p-8',
               i < 4 && 'md:pt-12',
               i > 7 && 'md:pb-12',
               (i === 0 || i === 4 || i === 8) && 'md:pl-12',
               (i === 3 || i === 7 || i === 11) && 'md:pr-12'
             )}
           >
-            <Icon icon={technology.icon} class="flex" />
-            <Link {href} {target} {rel}>{technology.label}</Link>
+            <Link
+              {href}
+              {target}
+              {rel}
+              class="inline-flex flex-row items-center gap-1.5 px-0 py-4 md:px-4"
+            >
+              <Icon icon={technology.icon} class="flex" />
+              {technology.label}
+            </Link>
           </div>
         {/each}
       </div>
