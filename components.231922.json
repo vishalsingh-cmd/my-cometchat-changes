@@ -170,6 +170,45 @@
       "component_group_name": "Database"
     },
     {
+      "name": "customer-stories-section",
+      "display_name": null,
+      "created_at": "2023-06-13T15:29:13.916Z",
+      "updated_at": "2023-06-13T16:16:47.244Z",
+      "id": 4118924,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "testimonials": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": ["testimonial"],
+          "folder_slug": "database/testimonials",
+          "min_options": "3",
+          "max_options": "3",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "customer-stories-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
       "name": "footer",
       "display_name": null,
       "created_at": "2023-06-01T09:06:41.616Z",

@@ -2,11 +2,11 @@
   import type { SbBlokData } from '@storyblok/js';
   import type { ComponentType } from 'svelte';
 
-  import Page from './page.svelte';
-
   import HomepageHero from './homepage-hero.svelte';
   import Metrics from './metrics.svelte';
-  import PlatformSetcion from './platform-section.svelte';
+  import Page from './page.svelte';
+  import PlatformSection from './platform-section.svelte';
+  import TechnologiesSection from './technologies-section.svelte';
 
   export let block: SbBlokData;
 
@@ -14,7 +14,8 @@
     'homepage-hero': HomepageHero,
     metrics: Metrics,
     page: Page,
-    'platform-section': PlatformSetcion
+    'platform-section': PlatformSection,
+    'technologies-section': TechnologiesSection
   };
 </script>
 

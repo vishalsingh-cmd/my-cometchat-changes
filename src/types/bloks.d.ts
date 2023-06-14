@@ -15,6 +15,7 @@ export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   cover?: AssetStoryblok;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -97,6 +98,7 @@ export interface ButtonLinkStoryblok {
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -104,6 +106,14 @@ export interface CustomerStoryblok {
   )[];
   _uid: string;
   component: 'customer';
+  [k: string]: any;
+}
+
+export interface CustomerStoriesSectionStoryblok {
+  title: TitleStoryblok[];
+  testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
+  _uid: string;
+  component: 'customer-stories-section';
   [k: string]: any;
 }
 
@@ -174,6 +184,7 @@ export interface HomepageHeroStoryblok {
 
 export interface IndustryStoryblok {
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -212,6 +223,7 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -264,6 +276,7 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   seo_title?: string;
   body: (
+    | CustomerStoriesSectionStoryblok
     | HomepageHeroStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
