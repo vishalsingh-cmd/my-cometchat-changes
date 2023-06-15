@@ -1,12 +1,14 @@
 <script lang="ts">
+  import DynamicBlock from '$components/blocks/dynamic-block.svelte';
+  import { startStoryblokBridge } from '$lib/storyblok.js';
+
   export let data;
+
+  startStoryblokBridge(data.page.id, (newStory) => {
+    data.page = newStory;
+  });
 </script>
 
-<div class="flex flex-col gap-8 p-8">
-  <h1>Page: {data.page.name}</h1>
-  <div class="h-96" />
-  <div class="h-96" />
-  <div class="h-96" />
-  <div class="h-96" />
-  <div class="h-96" />
-</div>
+{#key data.page.id}
+  <DynamicBlock block={data.page.content} />
+{/key}

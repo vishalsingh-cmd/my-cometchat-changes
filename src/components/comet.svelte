@@ -25,7 +25,7 @@
     {
       variants: {
         variant: {
-          primary: ['before:bg-brand-1', 'dark:before:bg-brand-12'],
+          primary: ['before:bg-brand-12', 'light:before:bg-brand-1'],
           secondary: ['before:bg-brand-10']
         }
       }
@@ -62,10 +62,10 @@
       variants: {
         variant: {
           primary: [
-            'bg-brand-1',
-            'dark:bg-brand-12',
-            'before:bg-brand-1',
-            'dark:before:bg-brand-12'
+            'bg-brand-12',
+            'light:bg-brand-1',
+            'before:bg-brand-12',
+            'light:before:bg-brand-1'
           ],
           secondary: ['bg-brand-10', 'before:bg-brand-10']
         }

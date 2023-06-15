@@ -10,6 +10,7 @@
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
   import TopnavThumb from './topnav-thumb.svelte';
   import { cn } from '$lib/utils';
+  import Divider from '$components/divider.svelte';
 
   export let data: TopnavResourcesPanelStoryblok;
   export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
@@ -41,8 +42,8 @@
         {/if}
       </div>
     </div>
-    <div class="hidden w-px bg-divider-gradient-vertical md:block" />
-    <div class="h-px w-full bg-divider-gradient md:hidden" />
+    <Divider direction="vertical" class="hidden md:block" />
+    <Divider class="md:hidden" />
     <div class="flex-1 p-8 px-0 md:pl-12 lg:p-12">
       <h3 class="mb-8 text-lg opacity-54">{data.blog_title}</h3>
       <div class="flex flex-col items-start gap-8">
@@ -63,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div class="h-px w-full bg-divider-gradient xl:hidden" />
+  <Divider class="xl:hidden" />
   <div
     class={cn(
       'relative w-[480px] gap-12 border-gray-5 p-8 px-0 lg:p-12 xl:border-l xl:bg-gray-4 xl:pl-12',
