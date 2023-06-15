@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { CustomerStoriesSectionStoryblok } from '$types/bloks';
+  import type { StoryblokStory } from 'storyblok-generate-ts';
+  import type { CustomerStoriesSectionStoryblok, TestimonialStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
   import Title from '$components/title.svelte';
@@ -7,8 +8,6 @@
 
   import Orbit from '$components/customer-stories-section/assets/orbit.svg';
   import Comet from '$components/customer-stories-section/assets/comet.svg';
-
-  export let block: CustomerStoriesSectionStoryblok;
 
   const firstTestimonialAssetPosition = cn('absolute', 'right-4 -top-8', 'xl:-top-6');
   const secondTestimonialAssetPosition = cn(
@@ -36,6 +35,9 @@
         return '';
     }
   }
+
+  export let block: CustomerStoriesSectionStoryblok;
+  const testimonials = block.testimonials as StoryblokStory<TestimonialStoryblok>[];
 </script>
 
 {#if block}
@@ -60,7 +62,7 @@
       class="absolute -bottom-[600px] -left-40 h-[600px] w-[600px] bg-custumer-stories-section-gradient blur-[150px]"
     />
 
-    {#if block.testimonials}
+    {#if testimonials}
       <div
         class="mt-10 flex w-full flex-col gap-4 px-5 pb-12 sm:max-w-xl md:max-w-3xl xl:flex-auto"
       >
@@ -75,7 +77,7 @@
           <p class="text-xl">☄️</p>
         </div>
 
-        {#each block.testimonials as testimonial, i}
+        {#each testimonials as testimonial, i}
           <div class={cn('relative isolate w-full max-w-fit', i == 1 && 'self-end')}>
             {#if i == 1}
               <img alt="" src={Comet} class={cn('h-14 w-14', secondTestimonialAssetPosition)} />
