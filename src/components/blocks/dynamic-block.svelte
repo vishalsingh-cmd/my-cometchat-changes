@@ -8,15 +8,17 @@
   import Page from './page.svelte';
   import PlatformSection from './platform-section.svelte';
   import TechnologiesSection from './technologies-section.svelte';
+  import SocialProofs from '$components/social-proofs.svelte';
 
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
-    'list-section': ListSection,
-    'homepage-hero': HomepageHero,
     metrics: Metrics,
     page: Page,
+    'homepage-hero': HomepageHero,
+    'list-section': ListSection,
     'platform-section': PlatformSection,
+    'social-proofs': SocialProofs,
     'technologies-section': TechnologiesSection
   };
 </script>
