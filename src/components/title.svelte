@@ -9,17 +9,7 @@
   import type { MultilinkStoryblok } from '$types/bloks';
 
   const titleStyle = cva(
-    [
-      'w-full',
-      'flex',
-      'flex-col',
-      'px-5',
-      'lg:px-16',
-      'pt-12',
-      'lg:pt-[100px]',
-      'pb-10',
-      'lg:pb-16'
-    ],
+    ['w-full', 'flex', 'flex-col', 'px-container', 'pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16'],
     {
       variants: {
         alignment: {
