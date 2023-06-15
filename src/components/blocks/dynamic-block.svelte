@@ -2,6 +2,7 @@
   import type { SbBlokData } from '@storyblok/js';
   import type { ComponentType } from 'svelte';
 
+  import DevelopersSection from './developers-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
@@ -12,8 +13,9 @@
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
-    'list-section': ListSection,
+    'developers-section': DevelopersSection,
     'homepage-hero': HomepageHero,
+    'list-section': ListSection,
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
