@@ -29,8 +29,8 @@
       };
     });
 
-  const onLanguageSelect = (i: number) => {
-    selectedLanguageIndex = i;
+  const onLanguageSelect = (e: CustomEvent) => {
+    selectedLanguageIndex = e.detail.i;
   };
 
   let selectedLanguageIndex = 0;
@@ -59,7 +59,7 @@
           <CodeBlock
             class="-ml-5 w-screen self-start md:ml-0 md:w-full"
             snippets={parsedCodeBlocks}
-            {onLanguageSelect}
+            on:languageSelect={onLanguageSelect}
             {selectedLanguageIndex}
           />
           {#if parsedCodeBlocks[selectedLanguageIndex].image}

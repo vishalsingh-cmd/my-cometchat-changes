@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   import clsx from 'clsx';
   import Prism from 'prismjs';
 
@@ -16,6 +16,8 @@
 
   import Icon from '../icon/icon.svelte';
 
+  const dispatch = createEventDispatcher();
+
   let className: string | undefined = undefined;
   export { className as class };
 
@@ -24,7 +26,6 @@
   export let lineNumbers = true;
   export let lineNumbersStartAt = 1;
   export let lineHighlight: string | undefined = undefined;
-  export let onLanguageSelect: (i: number) => void;
   export let selectedLanguageIndex = 0;
 
   let el: HTMLPreElement;
@@ -46,7 +47,11 @@
   <div class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5">
     {#each snippets as { label }, i}
       <button
-        on:click={() => onLanguageSelect(i)}
+        on:click={() => {
+          dispatch('languageSelect', {
+            i: i
+          });
+        }}
         class={cn(
           'relative flex h-[50px] items-center px-5 text-md font-semibold',
           i === selectedLanguageIndex ? 'text-gray-12' : 'text-gray-12/60',
