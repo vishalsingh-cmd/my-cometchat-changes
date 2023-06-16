@@ -3,6 +3,7 @@
   import type { ComponentType } from 'svelte';
 
   import HomepageHero from './homepage-hero.svelte';
+  import ImplementationSection from './implementation-section.svelte';
   import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
@@ -12,8 +13,9 @@
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
-    'list-section': ListSection,
     'homepage-hero': HomepageHero,
+    'implementation-section': ImplementationSection,
+    'list-section': ListSection,
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
