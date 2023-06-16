@@ -6,7 +6,7 @@
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
 
-  import type { MultilinkStoryblok } from '$types/bloks';
+  import type { ButtonLinkStoryblok } from '$types/bloks';
 
   const titleStyle = cva(
     ['w-full', 'flex', 'flex-col', 'px-container', 'pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16'],
@@ -28,7 +28,7 @@
   export let title = '';
   export let description = '';
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
-  export let buttons: undefined | MultilinkStoryblok[] = undefined;
+  export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
 
   const labelColours = {
     orange: 'text-orange-9',

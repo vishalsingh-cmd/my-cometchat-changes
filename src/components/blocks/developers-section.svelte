@@ -39,12 +39,14 @@
 {#if block}
   <section use:storyblokEditable={block} class="overflow-hidden">
     <div class="mx-auto max-w-content">
-      <Title
-        label={{ content: block.header[0].label, color: 'orange' }}
-        title={block.header[0].title}
-        description={block.header[0].description}
-        buttons={block.header[0].links}
-      />
+      {#if block.header[0]}
+        <Title
+          label={{ content: block.header[0].label, color: 'orange' }}
+          title={block.header[0].title}
+          description={block.header[0].description}
+          buttons={block.header[0].links}
+        />
+      {/if}
       {#if parsedCodeBlocks.length > 0}
         <div
           class="relative flex flex-col px-container pt-8 lg:grid lg:grid-cols-[minmax(100px,752px)_528px] lg:gap-8 lg:pb-[100px]"
