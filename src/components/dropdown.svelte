@@ -20,7 +20,20 @@
 
 <button
   class={cn(
-    'flex h-[34px] w-fit items-center gap-2 rounded-full border border-solid border-gray-12/[0.12] px-3 outline-none transition-all ease-smooth focus-within:border-brand-7 focus-within:shadow-focus hover:border-brand-6 active:border-brand-7 disabled:pointer-events-none disabled:opacity-[0.4] light:border-gray-11/[0.12] focus-within:light:border-brand-7 hover:light:border-brand-6 active:light:border-brand-7',
+    'px-3',
+    'flex items-center gap-2',
+    'h-[34px] w-fit',
+    'rounded-full',
+    'border border-solid border-brand-11/20',
+    'text-brand-12',
+    'outline-none',
+    'ring-brand-9/20',
+    'transition-all ease-smooth',
+    'focus-within:border-brand-7 focus-within:shadow-focus',
+    'hover:border-brand-9/50',
+    'focus-visible:border-brand-9/50 focus-visible:shadow-focus focus-visible:ring-4',
+    'active:border-brand-7 active:border-brand-9/80 active:shadow-focus ',
+    'disabled:pointer-events-none disabled:opacity-60',
     !options[selectedOption].cometIllustration && 'pl-4'
   )}
   on:click={toggle}
