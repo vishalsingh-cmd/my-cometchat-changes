@@ -18,10 +18,12 @@ export interface BlogPostStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_title?: string;
@@ -104,10 +106,12 @@ export interface CustomerStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   _uid: string;
@@ -132,9 +136,9 @@ export interface DevelopersSectionStoryblok {
 }
 
 export interface FooterStoryblok {
+  column_groups: FooterColumnGroupStoryblok[];
   subfooter: any[];
   socials: LinkStoryblok[];
-  columns: FooterColumnStoryblok[];
   prefooter_title: string;
   prefooter_description: string;
   prefooter_cta: ButtonLinkStoryblok[];
@@ -155,9 +159,15 @@ export interface FooterColumnStoryblok {
   [k: string]: any;
 }
 
+export interface FooterColumnGroupStoryblok {
+  columns: FooterColumnStoryblok[];
+  _uid: string;
+  component: 'footer-column-group';
+  [k: string]: any;
+}
+
 export interface FooterFolderLinkGroupStoryblok {
   title: string;
-  folder_path: string;
   _uid: string;
   component: 'footer-folder-link-group';
   [k: string]: any;
@@ -165,7 +175,7 @@ export interface FooterFolderLinkGroupStoryblok {
 
 export interface FooterManualLinkGroupStoryblok {
   title?: string;
-  links: any[];
+  links: LinkStoryblok[];
   _uid: string;
   component: 'footer-manual-link-group';
   [k: string]: any;
@@ -196,21 +206,34 @@ export interface HomepageHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ImplementationSectionStoryblok {
+  header: TitleStoryblok[];
+  items: PanelItemStoryblok[];
+  _uid: string;
+  component: 'implementation-section';
+  [k: string]: any;
+}
+
 export interface IndustryStoryblok {
   body?: (
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   illustration: number | string;
   short_name: string;
   description: string;
   cover_image: AssetStoryblok;
+  seo_title?: string;
+  seo_description?: string;
+  seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -263,16 +286,27 @@ export interface PageStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'page';
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface PanelItemStoryblok {
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+  _uid: string;
+  component: 'panel-item';
   [k: string]: any;
 }
 
@@ -302,6 +336,31 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SyncedBlockStoryblok {
+  synced_block: StoryblokStory<SyncedBlockContentStoryblok> | string;
+  _uid: string;
+  component: 'synced-block';
+  [k: string]: any;
+}
+
+export interface SyncedBlockContentStoryblok {
+  body?: (
+    | CustomerStoriesSectionStoryblok
+    | DevelopersSectionStoryblok
+    | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
+    | ListSectionStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | SocialProofsStoryblok
+    | SyncedBlockStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
+  _uid: string;
+  component: 'synced-block-content';
+  [k: string]: any;
+}
+
 export interface TechnologiesSectionStoryblok {
   header: TitleStoryblok[];
   technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
@@ -322,10 +381,12 @@ export interface TechnologyStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_description?: string;
@@ -340,7 +401,6 @@ export interface TestimonialStoryblok {
   name: string;
   position: string;
   avatar: AssetStoryblok;
-  avatar_position?: '' | 'left' | 'right';
   _uid: string;
   component: 'testimonial';
   [k: string]: any;
@@ -406,8 +466,10 @@ export interface TopnavPanelStoryblok {
 
 export interface TopnavResourcesPanelStoryblok {
   customer_stories_title: string;
+  customer_stories: (StoryblokStory<BlogPostStoryblok> | string)[];
   customer_stories_link: LinkStoryblok[];
   blog_title: string;
+  blog_posts: (StoryblokStory<BlogPostStoryblok> | string)[];
   blog_link: LinkStoryblok[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
@@ -416,6 +478,8 @@ export interface TopnavResourcesPanelStoryblok {
 }
 
 export interface TopnavSolutionsPanelStoryblok {
+  industries_title: string;
+  industries: (StoryblokStory<IndustryStoryblok> | string)[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-solutions-panel';

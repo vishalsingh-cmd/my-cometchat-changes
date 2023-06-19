@@ -7,11 +7,7 @@
   export let data;
 </script>
 
-<Topnav
-  data={data.topnav.content}
-  blogPosts={data.blogPosts}
-  customerStories={data.customerStories}
-/>
+<Topnav data={data.topnav.content} />
 <slot />
 {#if data.footer?.prefooter}
   <PreFooter
