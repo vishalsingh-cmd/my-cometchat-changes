@@ -51,7 +51,7 @@
               
               border
               border-brand-11/20
-              hover:border-brand-6/50
+              hover:border-brand-9/50
               focus-visible:border-brand-9/50
               active:border-brand-9/80
 
