@@ -126,7 +126,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "customer",
@@ -208,7 +208,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "developers-section",
@@ -244,7 +244,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "footer",
@@ -365,7 +365,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer-column-group",
@@ -393,7 +393,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer-folder-link-group",
@@ -431,7 +431,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer-manual-link-group",
@@ -466,7 +466,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer-technology-documentation-link-group",
@@ -497,7 +497,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "homepage-hero",
@@ -537,7 +537,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "implementation-section",
@@ -576,7 +576,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "industry",
@@ -681,7 +681,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "list-item",
@@ -719,7 +719,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "list-section",
@@ -747,7 +747,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "metrics",
@@ -774,7 +774,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "metrics-item",
@@ -804,7 +804,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "page",
@@ -895,7 +895,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "platform-section",
@@ -934,7 +934,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "product-display-item",
@@ -978,7 +978,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "social-proofs",
@@ -1015,7 +1015,63 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "synced-block",
+      "display_name": null,
+      "created_at": "2023-06-19T10:39:12.936Z",
+      "updated_at": "2023-06-19T10:46:12.366Z",
+      "id": 4142186,
+      "schema": {
+        "synced_block": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["synced-block-content"],
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "synced-block",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "synced-block-content",
+      "display_name": null,
+      "created_at": "2023-06-19T10:34:59.077Z",
+      "updated_at": "2023-06-19T10:38:57.866Z",
+      "id": 4142182,
+      "schema": {
+        "body": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "synced-block-content",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Database"
     },
     {
       "name": "technologies-section",
@@ -1053,7 +1109,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Bloks"
+      "component_group_name": "Blocks"
     },
     {
       "name": "technology",
@@ -1255,7 +1311,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-features-panel",
@@ -1294,7 +1350,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "top-navigation",
@@ -1383,7 +1439,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-item-group",
@@ -1415,7 +1471,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-panel",
@@ -1454,7 +1510,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-resources-panel",
@@ -1536,7 +1592,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-solutions-panel",
@@ -1582,7 +1638,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "topnav-technologies-panel",
@@ -1627,7 +1683,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Internal Blocks"
     }
   ]
 }

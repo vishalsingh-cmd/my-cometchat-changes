@@ -23,6 +23,7 @@ export interface BlogPostStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_title?: string;
@@ -110,6 +111,7 @@ export interface CustomerStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   _uid: string;
@@ -222,6 +224,7 @@ export interface IndustryStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   illustration: number | string;
@@ -285,6 +288,7 @@ export interface PageStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
@@ -329,6 +333,31 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SyncedBlockStoryblok {
+  synced_block: StoryblokStory<SyncedBlockContentStoryblok> | string;
+  _uid: string;
+  component: 'synced-block';
+  [k: string]: any;
+}
+
+export interface SyncedBlockContentStoryblok {
+  body?: (
+    | CustomerStoriesSectionStoryblok
+    | DevelopersSectionStoryblok
+    | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
+    | ListSectionStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | SocialProofsStoryblok
+    | SyncedBlockStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
+  _uid: string;
+  component: 'synced-block-content';
+  [k: string]: any;
+}
+
 export interface TechnologiesSectionStoryblok {
   header: TitleStoryblok[];
   technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
@@ -354,6 +383,7 @@ export interface TechnologyStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_description?: string;
