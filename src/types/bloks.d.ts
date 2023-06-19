@@ -173,7 +173,7 @@ export interface FooterFolderLinkGroupStoryblok {
 
 export interface FooterManualLinkGroupStoryblok {
   title?: string;
-  links: any[];
+  links: LinkStoryblok[];
   _uid: string;
   component: 'footer-manual-link-group';
   [k: string]: any;

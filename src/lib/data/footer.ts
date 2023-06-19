@@ -14,11 +14,8 @@ export const getFooter = async (
 ) => {
   const res = await storyblok.get('cdn/stories/configuration/footer', {
     version,
-    resolve_relations: [
-      'footer.subfooter',
-      'footer-manual-link-group.links',
-      'footer-technology-documentation-link-group.links'
-    ]
+    resolve_relations: ['footer.subfooter', 'footer-technology-documentation-link-group.links'],
+    resolve_links: 'story'
   });
   const footer = res.data.story as ISbStoryData<FooterStoryblok>;
 
@@ -69,8 +66,8 @@ export const getFooter = async (
                   title: group.title,
                   links: group.links.map((link) => {
                     return {
-                      label: link.name,
-                      ...getAnchorFromCmsStory(link)
+                      label: link.label || link.link.story?.name,
+                      ...getAnchorFromCmsLink(link.link)
                     };
                   })
                 };
