@@ -47,7 +47,7 @@ export const getFooter = async (
             if (group.component === 'footer-folder-link-group') {
               const res = await storyblok.get('cdn/links', {
                 version,
-                starts_with: group.folder_path
+                starts_with: group.folder?.folder ? `${group.folder.folder}/` : ''
               });
               const links = res.data.links as StoryblokLinks;
 

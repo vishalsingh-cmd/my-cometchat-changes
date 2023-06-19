@@ -211,6 +211,42 @@
       "component_group_name": "Bloks"
     },
     {
+      "name": "developers-section",
+      "display_name": null,
+      "created_at": "2023-06-15T08:09:07.992Z",
+      "updated_at": "2023-06-15T08:10:36.742Z",
+      "id": 4128055,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "code_blocks": {
+          "type": "options",
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["technology"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "developers-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
       "name": "footer",
       "display_name": null,
       "created_at": "2023-06-01T09:06:41.616Z",
@@ -335,18 +371,25 @@
       "name": "footer-folder-link-group",
       "display_name": "Folder Footer Link Group (Automatic)",
       "created_at": "2023-06-02T15:13:42.333Z",
-      "updated_at": "2023-06-06T15:33:26.447Z",
+      "updated_at": "2023-06-19T08:52:11.085Z",
       "id": 4071299,
       "schema": {
         "title": {
           "type": "text",
           "required": true
         },
-        "folder_path": {
-          "type": "text",
+        "folder": {
+          "type": "custom",
+          "field_type": "select-folder",
+          "options": [
+            {
+              "name": "starts_with",
+              "value": "pages/",
+              "_uid": "60cb3a5b-efbe-402b-899e-40b224593e40"
+            }
+          ],
           "required": true,
-          "display_name": "Storyblok Folder Path",
-          "regex": "pages\\/.+\\/$"
+          "display_name": "Storyblok Folder Path"
         }
       },
       "image": null,
@@ -469,24 +512,90 @@
       "component_group_name": "Bloks"
     },
     {
+      "name": "implementation-section",
+      "display_name": null,
+      "created_at": "2023-06-15T15:41:08.960Z",
+      "updated_at": "2023-06-15T15:44:19.411Z",
+      "id": 4131515,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 3,
+          "minimum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "implementation-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Bloks"
+    },
+    {
       "name": "industry",
       "display_name": "Industry aka Use Case",
       "created_at": "2023-06-06T15:55:24.337Z",
-      "updated_at": "2023-06-06T15:55:52.547Z",
+      "updated_at": "2023-06-15T13:55:42.184Z",
       "id": 4084164,
       "schema": {
-        "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
-          "display_name": "SEO",
-          "keys": [],
-          "pos": 4,
-          "type": "tab"
-        },
         "body": {
           "type": "bloks",
           "restrict_type": "groups",
           "restrict_components": true,
           "component_whitelist": [],
-          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
+          "pos": 0
+        },
+        "illustration": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "comet-illustrations",
+          "exclude_empty_option": true,
+          "required": true,
+          "pos": 1
+        },
+        "short_name": {
+          "type": "text",
+          "required": true,
+          "pos": 2
+        },
+        "description": {
+          "type": "text",
+          "pos": 3,
+          "required": true
+        },
+        "cover_image": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"],
+          "asset_folder_id": 261682,
+          "pos": 4
+        },
+        "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
+          "display_name": "SEO",
+          "keys": [],
+          "pos": 5,
+          "type": "tab"
         }
       },
       "image": null,
@@ -721,6 +830,46 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "panel-item",
+      "display_name": null,
+      "created_at": "2023-06-15T15:42:39.944Z",
+      "updated_at": "2023-06-15T15:45:31.237Z",
+      "id": 4131520,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "link": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "panel-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Bloks"
+    },
+    {
       "name": "platform-section",
       "display_name": null,
       "created_at": "2023-06-12T12:29:59.645Z",
@@ -807,11 +956,23 @@
       "name": "social-proofs",
       "display_name": null,
       "created_at": "2023-06-09T14:34:35.652Z",
-      "updated_at": "2023-06-09T14:35:18.523Z",
+      "updated_at": "2023-06-15T13:49:26.107Z",
       "id": 4103148,
       "schema": {
         "title": {
           "type": "text",
+          "required": true
+        },
+        "customers": {
+          "type": "options",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["customer"],
+          "min_options": "1",
+          "max_options": "6",
+          "source": "internal_stories",
+          "filter_content_type": ["customer"],
+          "folder_slug": "pages/customers",
           "required": true
         }
       },
@@ -823,10 +984,10 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "social-proofs",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
-      "component_group_name": "Internal Bloks"
+      "component_group_name": "Bloks"
     },
     {
       "name": "technologies-section",
@@ -870,7 +1031,7 @@
       "name": "technology",
       "display_name": null,
       "created_at": "2023-06-02T13:44:17.648Z",
-      "updated_at": "2023-06-06T15:37:35.153Z",
+      "updated_at": "2023-06-15T09:47:28.111Z",
       "id": 4070117,
       "schema": {
         "documentation_link": {
@@ -881,38 +1042,50 @@
           "component_whitelist": ["link"],
           "maximum": 1,
           "minimum": 1,
-          "pos": 0
+          "pos": 0,
+          "key": "documentation_link"
+        },
+        "short_name": {
+          "type": "text",
+          "pos": 1,
+          "key": "short_name"
+        },
+        "code_snippet_language": {
+          "type": "text",
+          "pos": 2,
+          "key": "code_snippet_language_name"
         },
         "code_snippet": {
           "type": "textarea",
           "required": false,
           "description": "If the code block is not present, it won't show on the developers > code block section",
-          "pos": 1,
+          "pos": 3,
           "key": "code_snippet"
         },
         "copy_code_snippet": {
           "type": "textarea",
-          "pos": 2,
+          "pos": 4,
           "description": "This is the code that is actually copied when the user clicks copy",
           "tooltip": true,
-          "display_name": "Code Snippet that is copied on click"
+          "display_name": "Code Snippet that is copied on click",
+          "key": "copy_code_snippet"
         },
         "screenshot": {
           "type": "asset",
           "required": true,
           "filetypes": ["images"],
           "asset_folder_id": 247782,
-          "pos": 3,
+          "pos": 5,
           "key": "screenshot"
         },
         "seo_title": {
           "type": "text",
-          "key": "title",
-          "pos": 4
+          "key": "seo_title",
+          "pos": 6
         },
         "body": {
           "type": "bloks",
-          "pos": 5,
+          "pos": 7,
           "required": true,
           "restrict_type": "groups",
           "restrict_components": true,
@@ -922,13 +1095,20 @@
         },
         "seo_description": {
           "type": "text",
-          "key": "description",
-          "pos": 6
+          "key": "seo_description",
+          "pos": 8
         },
         "tab-e33adaf8-a7e6-46ee-8779-bd48057df750": {
           "display_name": "Metadata",
-          "keys": ["code_snippet", "screenshot", "copy_code_snippet", "documentation_link"],
-          "pos": 7,
+          "keys": [
+            "code_snippet",
+            "screenshot",
+            "copy_code_snippet",
+            "documentation_link",
+            "short_name",
+            "code_snippet_language_name"
+          ],
+          "pos": 9,
           "type": "tab",
           "name": "tab-e33adaf8-a7e6-46ee-8779-bd48057df750",
           "key": "tab-e33adaf8-a7e6-46ee-8779-bd48057df750"
@@ -936,7 +1116,7 @@
         "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
           "display_name": "SEO",
           "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
-          "pos": 8,
+          "pos": 10,
           "type": "tab",
           "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
           "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
@@ -944,7 +1124,8 @@
         "seo_og_image": {
           "type": "asset",
           "filetypes": ["images"],
-          "pos": 9
+          "pos": 11,
+          "key": "seo_og_image"
         }
       },
       "image": null,
@@ -964,7 +1145,7 @@
       "name": "testimonial",
       "display_name": null,
       "created_at": "2023-06-06T15:52:10.850Z",
-      "updated_at": "2023-06-13T19:43:27.305Z",
+      "updated_at": "2023-06-16T12:50:27.295Z",
       "id": 4084142,
       "schema": {
         "quote": {
@@ -987,26 +1168,6 @@
           "filetypes": ["images"],
           "required": true,
           "pos": 3
-        },
-        "avatar_position": {
-          "type": "option",
-          "use_uuid": true,
-          "options": [
-            {
-              "_uid": "49742da4-ccd0-4af4-be99-bb55af86826e",
-              "name": "Left",
-              "value": "left"
-            },
-            {
-              "_uid": "394f2a27-5f91-4ce6-8596-39284803eb00",
-              "value": "right",
-              "name": "Right"
-            }
-          ],
-          "default_value": "left",
-          "exclude_empty_option": false,
-          "required": false,
-          "pos": 4
         }
       },
       "image": null,
