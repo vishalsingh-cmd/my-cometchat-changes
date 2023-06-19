@@ -371,18 +371,25 @@
       "name": "footer-folder-link-group",
       "display_name": "Folder Footer Link Group (Automatic)",
       "created_at": "2023-06-02T15:13:42.333Z",
-      "updated_at": "2023-06-06T15:33:26.447Z",
+      "updated_at": "2023-06-19T08:52:11.085Z",
       "id": 4071299,
       "schema": {
         "title": {
           "type": "text",
           "required": true
         },
-        "folder_path": {
-          "type": "text",
+        "folder": {
+          "type": "custom",
+          "field_type": "select-folder",
+          "options": [
+            {
+              "name": "starts_with",
+              "value": "pages/",
+              "_uid": "60cb3a5b-efbe-402b-899e-40b224593e40"
+            }
+          ],
           "required": true,
-          "display_name": "Storyblok Folder Path",
-          "regex": "pages\\/.+\\/$"
+          "display_name": "Storyblok Folder Path"
         }
       },
       "image": null,
@@ -1138,7 +1145,7 @@
       "name": "testimonial",
       "display_name": null,
       "created_at": "2023-06-06T15:52:10.850Z",
-      "updated_at": "2023-06-13T19:43:27.305Z",
+      "updated_at": "2023-06-16T12:50:27.295Z",
       "id": 4084142,
       "schema": {
         "quote": {
@@ -1161,26 +1168,6 @@
           "filetypes": ["images"],
           "required": true,
           "pos": 3
-        },
-        "avatar_position": {
-          "type": "option",
-          "use_uuid": true,
-          "options": [
-            {
-              "_uid": "49742da4-ccd0-4af4-be99-bb55af86826e",
-              "name": "Left",
-              "value": "left"
-            },
-            {
-              "_uid": "394f2a27-5f91-4ce6-8596-39284803eb00",
-              "value": "right",
-              "name": "Right"
-            }
-          ],
-          "default_value": "left",
-          "exclude_empty_option": false,
-          "required": false,
-          "pos": 4
         }
       },
       "image": null,

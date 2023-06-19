@@ -159,7 +159,6 @@ export interface FooterColumnStoryblok {
 
 export interface FooterFolderLinkGroupStoryblok {
   title: string;
-  folder_path: string;
   _uid: string;
   component: 'footer-folder-link-group';
   [k: string]: any;
@@ -362,7 +361,6 @@ export interface TestimonialStoryblok {
   name: string;
   position: string;
   avatar: AssetStoryblok;
-  avatar_position?: '' | 'left' | 'right';
   _uid: string;
   component: 'testimonial';
   [k: string]: any;
