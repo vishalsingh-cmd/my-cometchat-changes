@@ -552,9 +552,9 @@
     },
     {
       "name": "industry",
-      "display_name": "Industry aka Use Case",
+      "display_name": "Industry aka Use Case aka Solution",
       "created_at": "2023-06-06T15:55:24.337Z",
-      "updated_at": "2023-06-15T13:55:42.184Z",
+      "updated_at": "2023-06-19T09:16:53.111Z",
       "id": 4084164,
       "schema": {
         "body": {
@@ -605,7 +605,7 @@
       "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "Industry aka Use Case",
+      "real_name": "Industry aka Use Case aka Solution",
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
@@ -1498,17 +1498,33 @@
       "name": "topnav-solutions-panel",
       "display_name": null,
       "created_at": "2023-06-05T15:16:55.338Z",
-      "updated_at": "2023-06-05T15:44:32.780Z",
+      "updated_at": "2023-06-19T09:12:38.582Z",
       "id": 4079276,
       "schema": {
+        "industries_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "key": "industries_title"
+        },
+        "industries": {
+          "type": "options",
+          "pos": 1,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["industry"],
+          "key": "solutions"
+        },
         "groups": {
           "type": "bloks",
           "required": true,
-          "maximum": 2,
+          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["topnav-item-group"],
-          "display_name": "Item Groups"
+          "display_name": "Item Groups",
+          "pos": 2,
+          "key": "groups"
         }
       },
       "image": null,
