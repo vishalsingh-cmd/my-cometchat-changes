@@ -231,6 +231,9 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   cover_image: AssetStoryblok;
+  seo_title?: string;
+  seo_description?: string;
+  seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'industry';
   [k: string]: any;
