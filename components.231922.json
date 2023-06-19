@@ -582,7 +582,7 @@
       "name": "industry",
       "display_name": "Industry aka Use Case aka Solution",
       "created_at": "2023-06-06T15:55:24.337Z",
-      "updated_at": "2023-06-19T09:16:53.111Z",
+      "updated_at": "2023-06-19T10:54:04.545Z",
       "id": 4084164,
       "schema": {
         "body": {
@@ -621,9 +621,19 @@
         },
         "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
           "display_name": "SEO",
-          "keys": [],
+          "keys": ["seo_title", "seo_description", "seo_og_image"],
           "pos": 5,
           "type": "tab"
+        },
+        "seo_title": {
+          "type": "text"
+        },
+        "seo_description": {
+          "type": "text"
+        },
+        "seo_og_image": {
+          "type": "asset",
+          "filetypes": ["images"]
         }
       },
       "image": null,
