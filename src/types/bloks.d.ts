@@ -436,6 +436,8 @@ export interface TopnavResourcesPanelStoryblok {
 }
 
 export interface TopnavSolutionsPanelStoryblok {
+  industries_title: string;
+  industries: (StoryblokStory<IndustryStoryblok> | string)[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-solutions-panel';

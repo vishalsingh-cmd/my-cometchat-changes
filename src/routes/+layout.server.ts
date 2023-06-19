@@ -23,7 +23,10 @@ export const load = async ({ cookies, fetch }) => {
     const [topnav, blogPosts, customerStories, footer] = await Promise.all([
       storyblok.get('cdn/stories/configuration/top-navigation', {
         version,
-        resolve_relations: ['topnav-technologies-panel.technologies_links']
+        resolve_relations: [
+          'topnav-technologies-panel.technologies_links',
+          'topnav-solutions-panel.industries'
+        ]
       }),
       storyblok.get('cdn/stories', {
         ...blogPostsConfig,
