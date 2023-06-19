@@ -18,6 +18,7 @@
   import { createMediaStore } from '$lib/stores/media';
   import { circInOut } from 'svelte/easing';
   import Divider from '$components/divider.svelte';
+  import { string } from '$lib/strings';
 
   export let data: TopNavigationStoryblok;
 
@@ -178,7 +179,7 @@
               on:click={() => (activeIndex = -1)}
             >
               <Icon size="xs" class="text-gray-10" icon="arrow-left" />
-              <span class="text-sm/none font-semibold">Back</span>
+              <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
             <div class="overflow-hidden">
