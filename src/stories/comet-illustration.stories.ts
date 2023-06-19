@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 import CometIllustration, {
-  illustrations
+  illustrations,
+  isValidIllustration
 } from '$components/comet-illustration/comet-illustration.svelte';
 
 const meta = {
@@ -10,7 +11,7 @@ const meta = {
   argTypes: {
     illustration: {
       control: { type: 'select' },
-      options: Object.keys(illustrations)
+      options: Object.keys(illustrations).filter(isValidIllustration)
     },
     size: {
       control: { type: 'select' },
