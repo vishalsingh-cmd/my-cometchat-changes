@@ -134,9 +134,9 @@ export interface DevelopersSectionStoryblok {
 }
 
 export interface FooterStoryblok {
+  column_groups: FooterColumnGroupStoryblok[];
   subfooter: any[];
   socials: LinkStoryblok[];
-  columns: FooterColumnStoryblok[];
   prefooter_title: string;
   prefooter_description: string;
   prefooter_cta: ButtonLinkStoryblok[];
@@ -154,6 +154,13 @@ export interface FooterColumnStoryblok {
   )[];
   _uid: string;
   component: 'footer-column';
+  [k: string]: any;
+}
+
+export interface FooterColumnGroupStoryblok {
+  columns: FooterColumnStoryblok[];
+  _uid: string;
+  component: 'footer-column-group';
   [k: string]: any;
 }
 
@@ -426,8 +433,10 @@ export interface TopnavPanelStoryblok {
 
 export interface TopnavResourcesPanelStoryblok {
   customer_stories_title: string;
+  customer_stories: (StoryblokStory<BlogPostStoryblok> | string)[];
   customer_stories_link: LinkStoryblok[];
   blog_title: string;
+  blog_posts: (StoryblokStory<BlogPostStoryblok> | string)[];
   blog_link: LinkStoryblok[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
