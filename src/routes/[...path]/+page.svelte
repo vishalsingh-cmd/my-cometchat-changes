@@ -10,8 +10,8 @@
     data.page = newStory;
   });
 
-  let title = data.page?.content?.seo_title || string('seo_title');
-  let description = data.page?.content?.seo_description || string('seo_description');
+  let title = data.page?.content?.seo_title || string('default_seo_title');
+  let description = data.page?.content?.seo_description || string('default_seo_description');
 </script>
 
 <svelte:head>
