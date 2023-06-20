@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { ListSectionStoryblok } from '$types/bloks';
 
-  import Icon from '$components/icon/icon.svelte';
+  import InfoItem from '$components/info-item.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
 
   export let block: ListSectionStoryblok;
+
+  const iconColour = 'orange' as 'orange' | 'brand';
 </script>
 
 {#if block}
@@ -24,17 +26,8 @@
     >
       {#if block.items.length > 0}
         {#each block.items as item}
-          <div class="flex max-w-[395px] flex-col gap-2.5">
-            <div
-              class="flex h-[38px] w-[38px] items-center justify-center rounded-full bg-orange-9/15 text-orange-9"
-            >
-              <Icon size="xs" icon={`${item.icon}`} />
-            </div>
-            <div class="flex flex-col gap-1 text-lg text-gray-12">
-              <p class="font-semibold leading-tight">{item.title}</p>
-              <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
-            </div>
-          </div>
+          {@const newItem = { ...item, icon: { icon: item.icon.toString(), colour: iconColour } }}
+          <InfoItem item={newItem} class="max-w-[395px]" />
         {/each}
       {/if}
     </div>
