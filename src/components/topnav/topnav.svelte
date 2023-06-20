@@ -3,7 +3,7 @@
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn, scrollLock } from '$lib/utils';
   import { fly, slide } from 'svelte/transition';
-  import type { BlogPostStoryblok, CustomerStoryblok, TopNavigationStoryblok } from '$types/bloks';
+  import type { TopNavigationStoryblok } from '$types/bloks';
   import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import mobileBg from './topnav-mobile-bg.svg';
@@ -13,20 +13,14 @@
   import SolutionsPanel from './solutions-panel.svelte';
   import DevelopersPanel from './developers-panel.svelte';
   import ResourcesPanel from './resources-panel.svelte';
-  import type { ISbStoryData } from '@storyblok/js';
   import Icon from '$components/icon/icon.svelte';
   import { beforeNavigate } from '$app/navigation';
   import { createMediaStore } from '$lib/stores/media';
   import { circInOut } from 'svelte/easing';
   import Divider from '$components/divider.svelte';
+  import { string } from '$lib/strings';
 
   export let data: TopNavigationStoryblok;
-  export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
-  export let customerStories: ISbStoryData<
-    BlogPostStoryblok & {
-      customer: ISbStoryData<CustomerStoryblok>;
-    }
-  >[];
 
   let expanded = false; // mobile
   let activeIndex = -1;
@@ -185,7 +179,7 @@
               on:click={() => (activeIndex = -1)}
             >
               <Icon size="xs" class="text-gray-10" icon="arrow-left" />
-              <span class="text-sm/none font-semibold">Back</span>
+              <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
             <div class="overflow-hidden">
@@ -198,7 +192,7 @@
                 {:else if data.component === 'topnav-technologies-panel'}
                   <DevelopersPanel {data} />
                 {:else if data.component === 'topnav-resources-panel'}
-                  <ResourcesPanel {data} {blogPosts} {customerStories} />
+                  <ResourcesPanel {data} />
                 {/if}
               {/if}
             </div>

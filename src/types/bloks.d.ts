@@ -23,6 +23,7 @@ export interface BlogPostStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_title?: string;
@@ -110,6 +111,7 @@ export interface CustomerStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   _uid: string;
@@ -134,9 +136,9 @@ export interface DevelopersSectionStoryblok {
 }
 
 export interface FooterStoryblok {
+  column_groups: FooterColumnGroupStoryblok[];
   subfooter: any[];
   socials: LinkStoryblok[];
-  columns: FooterColumnStoryblok[];
   prefooter_title: string;
   prefooter_description: string;
   prefooter_cta: ButtonLinkStoryblok[];
@@ -157,9 +159,15 @@ export interface FooterColumnStoryblok {
   [k: string]: any;
 }
 
+export interface FooterColumnGroupStoryblok {
+  columns: FooterColumnStoryblok[];
+  _uid: string;
+  component: 'footer-column-group';
+  [k: string]: any;
+}
+
 export interface FooterFolderLinkGroupStoryblok {
   title: string;
-  folder_path: string;
   _uid: string;
   component: 'footer-folder-link-group';
   [k: string]: any;
@@ -167,7 +175,7 @@ export interface FooterFolderLinkGroupStoryblok {
 
 export interface FooterManualLinkGroupStoryblok {
   title?: string;
-  links: any[];
+  links: LinkStoryblok[];
   _uid: string;
   component: 'footer-manual-link-group';
   [k: string]: any;
@@ -216,12 +224,16 @@ export interface IndustryStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   illustration: number | string;
   short_name: string;
   description: string;
   cover_image: AssetStoryblok;
+  seo_title?: string;
+  seo_description?: string;
+  seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -279,6 +291,7 @@ export interface PageStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
@@ -323,6 +336,31 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SyncedBlockStoryblok {
+  synced_block: StoryblokStory<SyncedBlockContentStoryblok> | string;
+  _uid: string;
+  component: 'synced-block';
+  [k: string]: any;
+}
+
+export interface SyncedBlockContentStoryblok {
+  body?: (
+    | CustomerStoriesSectionStoryblok
+    | DevelopersSectionStoryblok
+    | HomepageHeroStoryblok
+    | ImplementationSectionStoryblok
+    | ListSectionStoryblok
+    | MetricsStoryblok
+    | PlatformSectionStoryblok
+    | SocialProofsStoryblok
+    | SyncedBlockStoryblok
+    | TechnologiesSectionStoryblok
+  )[];
+  _uid: string;
+  component: 'synced-block-content';
+  [k: string]: any;
+}
+
 export interface TechnologiesSectionStoryblok {
   header: TitleStoryblok[];
   technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
@@ -348,6 +386,7 @@ export interface TechnologyStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
   seo_description?: string;
@@ -427,8 +466,10 @@ export interface TopnavPanelStoryblok {
 
 export interface TopnavResourcesPanelStoryblok {
   customer_stories_title: string;
+  customer_stories: (StoryblokStory<BlogPostStoryblok> | string)[];
   customer_stories_link: LinkStoryblok[];
   blog_title: string;
+  blog_posts: (StoryblokStory<BlogPostStoryblok> | string)[];
   blog_link: LinkStoryblok[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
@@ -437,6 +478,8 @@ export interface TopnavResourcesPanelStoryblok {
 }
 
 export interface TopnavSolutionsPanelStoryblok {
+  industries_title: string;
+  industries: (StoryblokStory<IndustryStoryblok> | string)[];
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-solutions-panel';

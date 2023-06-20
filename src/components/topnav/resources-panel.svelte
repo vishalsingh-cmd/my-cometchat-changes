@@ -1,24 +1,13 @@
 <script lang="ts">
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
-  import type {
-    BlogPostStoryblok,
-    CustomerStoryblok,
-    TopnavResourcesPanelStoryblok
-  } from '$types/bloks';
-  import type { ISbStoryData } from '@storyblok/js';
+  import type { TopnavResourcesPanelStoryblok } from '$types/bloks';
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
   import TopnavThumb from './topnav-thumb.svelte';
   import { cn } from '$lib/utils';
   import Divider from '$components/divider.svelte';
 
   export let data: TopnavResourcesPanelStoryblok;
-  export let blogPosts: ISbStoryData<BlogPostStoryblok>[];
-  export let customerStories: ISbStoryData<
-    BlogPostStoryblok & {
-      customer: ISbStoryData<CustomerStoryblok>;
-    }
-  >[];
 </script>
 
 <div class="container mx-auto px-container xl:flex">
@@ -26,7 +15,7 @@
     <div class="flex-1 p-8 px-0 md:pr-12 lg:p-12">
       <h3 class="mb-8 text-lg opacity-54">{data.customer_stories_title}</h3>
       <div class="flex flex-col items-start gap-8">
-        {#each customerStories as story}
+        {#each data.customer_stories as story}
           <TopnavThumb
             image={story.content.cover}
             href="/"
@@ -38,7 +27,9 @@
         {#if data.customer_stories_link?.[0]}
           {@const link = data.customer_stories_link[0]}
           {@const { href, target, rel } = getAnchorFromCmsLink(link.link)}
-          <GhostButton as="a" {href} {target} {rel} variant="highlighted" label={link.label} />
+          <GhostButton as="a" {href} {target} {rel} variant="highlighted">
+            {link.label}
+          </GhostButton>
         {/if}
       </div>
     </div>
@@ -47,7 +38,7 @@
     <div class="flex-1 p-8 px-0 md:pl-12 lg:p-12">
       <h3 class="mb-8 text-lg opacity-54">{data.blog_title}</h3>
       <div class="flex flex-col items-start gap-8">
-        {#each blogPosts as story}
+        {#each data.blog_posts as story}
           <TopnavThumb
             image={story.content.cover}
             href="/"
@@ -59,7 +50,9 @@
         {#if data.blog_link?.[0]}
           {@const link = data.blog_link[0]}
           {@const { href, target, rel } = getAnchorFromCmsLink(link.link)}
-          <GhostButton as="a" {href} {target} {rel} variant="highlighted" label={link.label} />
+          <GhostButton as="a" {href} {target} {rel} variant="highlighted">
+            {link.label}
+          </GhostButton>
         {/if}
       </div>
     </div>

@@ -9,7 +9,11 @@ export const load = async ({ cookies, fetch, params }) => {
   const version: 'draft' | 'published' = cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
   const storyblok = getStoryblok({ fetch });
 
-  const relations = ['technologies-section.technologies', 'customer-stories-section.testimonials'];
+  const relations = [
+    'technologies-section.technologies',
+    'customer-stories-section.testimonials',
+    'synced-block.synced_block'
+  ];
 
   try {
     const page = await storyblok.get(`cdn/stories/pages/${params.path}`, {

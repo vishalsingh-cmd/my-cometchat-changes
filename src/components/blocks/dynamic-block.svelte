@@ -9,6 +9,7 @@
   import PlatformSection from './platform-section.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
+  import SyncedBlock from './synced-block.svelte';
 
   export let block: SbBlokData;
 
@@ -19,7 +20,8 @@
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
-    'technologies-section': TechnologiesSection
+    'technologies-section': TechnologiesSection,
+    'synced-block': SyncedBlock
   };
 </script>
 
