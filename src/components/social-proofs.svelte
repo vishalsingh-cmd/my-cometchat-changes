@@ -26,12 +26,28 @@
     return Math.max(20 + 25 * (7 - numImages), 100);
   };
 
-  let containerRef: HTMLDivElement | null = null;
+  let containerRef: HTMLElement | null = null;
+  let initialContainerWidth: number;
   let isOverflowing: boolean;
 
   function handleResize() {
-    isOverflowing = containerRef ? containerRef.scrollWidth > containerRef.clientWidth : false;
+    if (containerRef) {
+      console.log(containerRef.clientWidth, initialContainerWidth);
+      if (containerRef.clientWidth < initialContainerWidth) {
+        isOverflowing = true;
+      }
+      if (containerRef.clientWidth > initialContainerWidth) {
+        isOverflowing = false;
+      }
+    }
+    containerRef ? console.log('Rezized', containerRef.clientWidth, initialContainerWidth) : '';
   }
+
+  onMount(() => {
+    initialContainerWidth = containerRef ? containerRef.clientWidth : 0;
+    handleResize();
+    console.log('initial ' + initialContainerWidth);
+  });
 </script>
 
 <svelte:window on:resize={handleResize} />
@@ -44,16 +60,14 @@
     <h1 class="text-lg tracking-wide text-gray-12 opacity-54">{block.title}</h1>
     {#if customers}
       <div
-        class={cn(isOverflowing ? 'animate-slide' : '', 'flex')}
-        style="--slide-px: -{(customers?.length ?? 0) * (100 + gap)}px; gap: {gap}px;"
+        class={cn(isOverflowing ? 'animate-slide' : '', 'flex gap-14 px-8')}
+        style="--slide-px: -{(customers?.length ?? 0) * (100 + gap)}px;"
         bind:this={containerRef}
       >
-        {#each isOverflowing ? range(0, 2) : [''] as _}
+        {#each isOverflowing ? range(0, 10) : [0] as _}
           {#each customers as customer}
             {@const { src, alt, width, height } = getImageAttributes(customer.content.logo)}
-            <div class="grid h-full flex-shrink-0 place-items-center">
-              <img {src} {alt} {width} {height} class="max-h-8 w-fit opacity-54" />
-            </div>
+            <img {src} {alt} {width} {height} class="h-8 w-fit opacity-54" />
           {/each}
         {/each}
       </div>
