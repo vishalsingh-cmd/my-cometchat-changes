@@ -57,7 +57,7 @@
             class="absolute bottom-[-230px] right-[-117px] h-[651px] w-[651px] lg:top-[200px]"
           />
           <CodeBlock
-            class="-ml-5 w-screen self-start md:ml-0 md:w-full"
+            class="w-full self-start"
             snippets={parsedCodeBlocks}
             on:languageSelect={onLanguageSelect}
             {selectedLanguageIndex}

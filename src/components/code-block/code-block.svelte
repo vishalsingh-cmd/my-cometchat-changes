@@ -39,10 +39,7 @@
 
 <div
   data-theme="dark"
-  class={cn(
-    'border border-solid border-gray-5 bg-gray-1 lg:rounded-3xl lg:bg-gray-2/60',
-    className
-  )}
+  class={cn('rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60', className)}
 >
   <div class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5">
     {#each snippets as { label }, i}
