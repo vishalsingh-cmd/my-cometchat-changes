@@ -49,7 +49,7 @@
       {/if}
       {#if parsedCodeBlocks.length > 0}
         <div
-          class="relative flex flex-col px-container pt-8 lg:grid lg:grid-cols-[minmax(100px,752px)_528px] lg:gap-8 lg:pb-[100px]"
+          class="relative flex flex-col px-container md:pt-8 lg:grid lg:grid-cols-[minmax(100px,752px)_528px] lg:gap-8 lg:pb-[100px]"
         >
           <img
             src={Comet}

@@ -25,8 +25,8 @@
     content: string;
     color: 'orange' | 'brand';
   };
-  export let title = '';
-  export let description = '';
+  export let title: string | undefined;
+  export let description: string | undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
 
@@ -38,23 +38,29 @@
 
 <div class={cn(titleStyle({ alignment }))}>
   <p
-    class={`${labelColours[label.color]} mb-3 max-w-[528px] text-xl font-semibold leading-tighter`}
+    class={`${
+      labelColours[label.color]
+    } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
   >
     {label.content}
   </p>
-  <svelte:element
-    this={titleHeadingType}
-    class="max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12"
-  >
-    {title}
-  </svelte:element>
-  <p
-    class="mt-4 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
-  >
-    {description}
-  </p>
+  {#if title}
+    <svelte:element
+      this={titleHeadingType}
+      class="max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12"
+    >
+      {title}
+    </svelte:element>
+  {/if}
+  {#if description}
+    <p
+      class="mt-3 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74] md:mt-4"
+    >
+      {description}
+    </p>
+  {/if}
   {#if buttons && buttons.length > 0}
-    <div class="mt-6 flex gap-2">
+    <div class="mt-5 flex gap-2 md:mt-6">
       {#each buttons as button, i}
         {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
         <Button variant={i === 0 ? 'secondary' : 'primary'} as="a" {href} {target} {rel}>
