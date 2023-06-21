@@ -11,6 +11,7 @@ export const load = async ({ cookies, fetch, params }) => {
 
   const relations = [
     'technologies-section.technologies',
+    'social-proofs.customers',
     'developers-section.code_blocks',
     'synced-block.synced_block'
   ];
