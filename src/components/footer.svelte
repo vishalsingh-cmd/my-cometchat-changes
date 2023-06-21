@@ -22,46 +22,44 @@
     <!-- main links - Mobile -->
     <div class="flex flex-col flex-wrap gap-8 pb-6 sm:hidden">
       <AccordionGroup>
-        {#each data.columns as columnGroup}
-          {#each columnGroup as column, i}
-            <Accordion id={column.title + i}>
-              <div slot="header" let:expanded let:attributes let:onClick class="h-auto w-full">
-                <button
-                  {...attributes}
-                  class="flex w-full justify-between text-brand-9"
-                  on:click={onClick}
-                >
-                  <p class="text-md/normal font-semibold tracking-wide">
-                    {column.title}
-                  </p>
-                  <Icon icon="plus" class={`transition-transform ${expanded && 'rotate-45'}`} />
-                </button>
-              </div>
-              <div class="flex flex-col gap-6 first:mt-4">
-                {#each column.groups as { title, links }}
-                  <div>
-                    {#if title}
-                      <p class="mb-4 text-sm/normal font-medium opacity-60">
-                        {title}
-                      </p>
-                    {/if}
+        {#each data.columns.flat() as column, i}
+          <Accordion id={column.title + i}>
+            <div slot="header" let:expanded let:attributes let:onClick class="w-full">
+              <button
+                {...attributes}
+                class="flex w-full justify-between text-brand-9"
+                on:click={onClick}
+              >
+                <p class="text-md/normal font-semibold tracking-wide">
+                  {column.title}
+                </p>
+                <Icon icon="plus" class={`transition-transform ${expanded && 'rotate-45'}`} />
+              </button>
+            </div>
+            <div class="flex flex-col gap-6 first:pt-4">
+              {#each column.groups as { title, links }}
+                <div>
+                  {#if title}
+                    <p class="mb-2 text-sm/normal font-medium text-gray-10 opacity-50">
+                      {title}
+                    </p>
+                  {/if}
 
-                    <div class="flex flex-col gap-4">
-                      {#each links as { label, href, target, rel }}
-                        <a
-                          {href}
-                          {target}
-                          {rel}
-                          class="self-start text-sm/normal font-semibold tracking-widest text-gray-11"
-                          >{label}</a
-                        >
-                      {/each}
-                    </div>
+                  <div class="flex flex-col">
+                    {#each links as { label, href, target, rel }}
+                      <a
+                        {href}
+                        {target}
+                        {rel}
+                        class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-11"
+                        >{label}</a
+                      >
+                    {/each}
                   </div>
-                {/each}
-              </div>
-            </Accordion>
-          {/each}
+                </div>
+              {/each}
+            </div>
+          </Accordion>
         {/each}
       </AccordionGroup>
     </div>
