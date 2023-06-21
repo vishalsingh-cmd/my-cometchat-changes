@@ -35,11 +35,11 @@
   }
 
   onMount(() => {
-    handleResize();
-
     if (containerRef) {
       initialScrollWidth = containerRef.scrollWidth;
     }
+
+    handleResize();
   });
 </script>
 
