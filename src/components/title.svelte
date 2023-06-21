@@ -30,12 +30,15 @@
     }
   );
 
+  let className: undefined | string = undefined;
+  export { className as class };
   export let alignment: VariantProps<typeof titleStyle>['alignment'] = 'left';
   export let label: {
     content: string;
     color: 'orange' | 'brand';
   };
   export let title = '';
+  export let titleClass: undefined | string = undefined;
   export let description = '';
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | MultilinkStoryblok[] = undefined;
@@ -46,7 +49,7 @@
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }))}>
+<div class={cn(titleStyle({ alignment }), className)}>
   <p
     class={`${labelColours[label.color]} mb-3 max-w-[528px] text-xl font-semibold leading-tighter`}
   >
@@ -54,7 +57,7 @@
   </p>
   <svelte:element
     this={titleHeadingType}
-    class="max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12"
+    class={cn('max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12', titleClass)}
   >
     {title}
   </svelte:element>

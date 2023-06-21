@@ -23,6 +23,7 @@ export interface BlogPostStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
@@ -111,6 +112,7 @@ export interface CustomerStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
@@ -224,6 +226,7 @@ export interface IndustryStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
@@ -291,6 +294,7 @@ export interface PageStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
@@ -336,6 +340,14 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SolutionsSectionStoryblok {
+  title: TitleStoryblok[];
+  industries: (StoryblokStory<IndustryStoryblok> | string)[];
+  _uid: string;
+  component: 'solutions-section';
+  [k: string]: any;
+}
+
 export interface SyncedBlockStoryblok {
   synced_block: StoryblokStory<SyncedBlockContentStoryblok> | string;
   _uid: string;
@@ -353,6 +365,7 @@ export interface SyncedBlockContentStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
@@ -386,6 +399,7 @@ export interface TechnologyStoryblok {
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
   )[];
