@@ -2,8 +2,10 @@
   import type { SbBlokData } from '@storyblok/js';
   import type { ComponentType } from 'svelte';
 
-  import Page from './page.svelte';
+  import DevelopersSection from './developers-section.svelte';
+  import ImplementationSection from './implementation-section.svelte';
   import Metrics from './metrics.svelte';
+  import Page from './page.svelte';
   import ListSection from './list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import PlatformSection from './platform-section.svelte';
@@ -15,13 +17,15 @@
 
   const map: Record<string, ComponentType> = {
     'customer-stories-section': CustomerStoriesSection,
-    'list-section': ListSection,
+    'developers-section': DevelopersSection,
     'homepage-hero': HomepageHero,
-    metrics: Metrics,
-    page: Page,
+    'implementation-section': ImplementationSection,
+    'list-section': ListSection,
     'platform-section': PlatformSection,
+    'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
-    'synced-block': SyncedBlock
+    metrics: Metrics,
+    page: Page
   };
 </script>
 
