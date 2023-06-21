@@ -15,7 +15,7 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'relative z-10 flex flex-col-reverse gap-2 md:flex-row lg:static',
+      'relative z-10 flex flex-col-reverse gap-2 md:flex-row md:items-end lg:static',
       flipHorizontal && 'md:flex-row-reverse',
       $$restProps.class
     )}
@@ -29,7 +29,7 @@
         {alt}
         {width}
         {height}
-        class={cn('h-8 w-8 rounded-full md:h-12 md:w-12 md:self-end', flipHorizontal && 'self-end')}
+        class={cn('h-8 w-8 rounded-full md:h-12 md:w-12', flipHorizontal && 'self-end')}
       />
     {/if}
 
@@ -43,12 +43,15 @@
       <div class="mt-3 flex items-center justify-between">
         <div>
           <p class="font-semibold-light text-md/snug tracking-wide text-gray-12">{block.name}</p>
-          <p class="font-semibold-light mt-0.5 text-md/tight tracking-wide text-gray-12 opacity-74">
+          <p
+            data-theme="dark"
+            class="mt-0.5 text-md/tight font-semibold tracking-wide text-gray-2 opacity-74"
+          >
             {block.position}
           </p>
         </div>
 
-        <Button variant="secondary"><Icon icon="arrow-narrow-right" size="sm" /></Button>
+        <Button variant="secondary" size="sm"><Icon icon="arrow-narrow-right" size="sm" /></Button>
       </div>
     </div>
   </div>
