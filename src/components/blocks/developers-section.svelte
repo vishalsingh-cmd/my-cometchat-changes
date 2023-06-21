@@ -3,6 +3,7 @@
 
   import CodeBlock from '$components/code-block/code-block.svelte';
   import Comet from '$components/code-block/assets/comet.svg';
+  import Stars from '$components/homepage/hero/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
@@ -38,7 +39,15 @@
 
 {#if block}
   <section use:storyblokEditable={block} class="overflow-hidden">
-    <div class="mx-auto max-w-content">
+    <div class="relative mx-auto max-w-content">
+      <div
+        class="absolute right-[-100px] top-[400px] w-full max-w-[365px] rotate-[115.13deg] transform"
+      >
+        <Stars amount={20} backgroundColours={['bg-gray-10']} />
+      </div>
+      <div class="absolute left-0 top-[45px] h-[268px] w-full overflow-hidden">
+        <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
+      </div>
       {#if block.header[0]}
         <Title
           label={{ content: block.header[0].label, color: 'orange' }}
