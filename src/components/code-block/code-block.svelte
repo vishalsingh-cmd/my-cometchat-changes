@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { afterUpdate } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   import clsx from 'clsx';
   import Prism from 'prismjs';
 
@@ -12,18 +12,21 @@
 
   import { cn } from '$lib/utils';
 
-  import GhostButton from './buttons/ghost-button.svelte';
+  import GhostButton from '../buttons/ghost-button.svelte';
 
-  import Icon from './icon/icon.svelte';
+  import Icon from '../icon/icon.svelte';
+
+  const dispatch = createEventDispatcher();
 
   let className: string | undefined = undefined;
   export { className as class };
 
-  export let snippets: { code: string; language: string }[];
+  export let snippets: { code: string; codeToCopy: string; language: string; label: string }[];
 
   export let lineNumbers = true;
   export let lineNumbersStartAt = 1;
   export let lineHighlight: string | undefined = undefined;
+  export let selectedLanguageIndex = 0;
 
   let el: HTMLPreElement;
 
@@ -31,19 +34,111 @@
     Prism.highlightAllUnder(el);
   });
 
-  let selectedLanguageIndex = 0;
+  let container: HTMLElement | undefined = undefined;
+  let isThereLeftOverflow = false;
+  let isThereRightOverflow = false;
+  let scrollMovement = 0;
+
+  $: if (container) {
+    const widthOfAllButtons = container.scrollWidth;
+
+    if (widthOfAllButtons > container.clientWidth) {
+      if (container.scrollLeft > 0) {
+        isThereLeftOverflow = true;
+      } else {
+        isThereLeftOverflow = false;
+      }
+
+      if (container.scrollLeft < widthOfAllButtons - container.clientWidth) {
+        isThereRightOverflow = true;
+      } else {
+        isThereRightOverflow = false;
+      }
+    }
+  }
+
+  const scrollElements = (direction: 'left' | 'right') => {
+    if (container) {
+      const movement = 200;
+
+      container.scrollBy({
+        left: direction === 'left' ? -movement : movement,
+        behavior: 'smooth'
+      });
+
+      if (direction === 'left') {
+        scrollMovement -= movement;
+      } else {
+        scrollMovement += movement;
+      }
+
+      if (scrollMovement > 0) {
+        isThereLeftOverflow = true;
+      } else {
+        isThereLeftOverflow = false;
+      }
+
+      if (scrollMovement < container.scrollWidth - container.clientWidth) {
+        isThereRightOverflow = true;
+      } else {
+        isThereRightOverflow = false;
+      }
+    }
+  };
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
 
 <div
   data-theme="dark"
-  class="border border-solid border-gray-5 bg-gray-1 lg:rounded-3xl lg:bg-gray-2/60"
+  class={cn(
+    'relative rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60',
+    className
+  )}
 >
-  <div class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5">
-    {#each snippets as { language }, i}
+  {#if isThereLeftOverflow}
+    <div
+      class="absolute left-0 top-0 isolate z-20 flex h-[50px] w-[80px] items-center justify-start rounded-tl-3xl bg-gradient-to-r from-gray-2 from-50% to-gray-2/0"
+    >
       <button
-        on:click={() => (selectedLanguageIndex = i)}
+        on:click={() => {
+          if (container) {
+            scrollElements('left');
+          }
+        }}
+        class="flex h-[50px] w-[50px] items-center justify-center"
+      >
+        <Icon icon="chevron-left-double" size="sm" class="block" />
+      </button>
+    </div>
+  {/if}
+  {#if isThereRightOverflow}
+    <div
+      class="absolute right-0 top-0 isolate z-20 flex h-[50px] w-[80px] items-center justify-end rounded-tr-3xl bg-gradient-to-l from-gray-2 from-50% to-gray-2/0"
+    >
+      <button
+        on:click={() => {
+          if (container) {
+            scrollElements('right');
+          }
+        }}
+        class="flex h-[50px] w-[50px] items-center justify-center"
+      >
+        <Icon icon="chevron-right-double" size="sm" class="block" />
+      </button>
+    </div>
+  {/if}
+  <div
+    bind:this={container}
+    class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5 md:overflow-hidden"
+  >
+    {#each snippets as { label }, i}
+      <button
+        on:click={() => {
+          dispatch('languageSelect', {
+            i: i
+          });
+        }}
         class={cn(
           'relative flex h-[50px] items-center px-5 text-md font-semibold',
           i === selectedLanguageIndex ? 'text-gray-12' : 'text-gray-12/60',
@@ -54,7 +149,7 @@
           i === selectedLanguageIndex ? 'border-solid border-brand-9' : 'border-solid border-gray-5'
         )}
       >
-        {language}
+        {label}
       </button>
     {/each}
   </div>
@@ -76,10 +171,10 @@
   {/each}
   <div class="border-t border-gray-5 p-5">
     <GhostButton
-      on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].code)}
+      on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].codeToCopy)}
     >
       Copy code
-      <Icon icon="copy-01" width={18} height={18} />
+      <Icon icon="copy-01" size="sm" />
     </GhostButton>
   </div>
 </div>
