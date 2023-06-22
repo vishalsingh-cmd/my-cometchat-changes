@@ -42,7 +42,7 @@
 
       <div class="mt-3 flex items-center justify-between">
         <div>
-          <p class="font-semibold-light text-md/snug tracking-wide text-gray-12">{block.name}</p>
+          <p class="text-md/snug font-semibold tracking-wide text-gray-12">{block.name}</p>
           <p
             data-theme="dark"
             class="mt-0.5 text-md/tight font-semibold tracking-wide text-gray-2 opacity-74"
