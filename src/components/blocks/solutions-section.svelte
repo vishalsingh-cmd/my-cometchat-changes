@@ -4,17 +4,21 @@
   import CometIllustration, {
     type IllustrationOptions
   } from '$components/comet-illustration/comet-illustration.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
+  import Noise from '$components/solutions-section/assets/noise.svg';
+  import Orbit1 from '$components/solutions-section/assets/orbit-1.svg';
+  import Orbit2 from '$components/solutions-section/assets/orbit-2.svg';
+  import Stars from '$components/homepage/hero/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
-  import GhostButton from '$components/buttons/ghost-button.svelte';
   import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   export let block: SolutionsSectionStoryblok;
 
-  console.log('block', block);
+  let industriesContainer: HTMLDivElement;
 
   const industries = block.industries as StoryblokStory<IndustryStoryblok>[];
 
@@ -24,28 +28,23 @@
 
   let selectedIndustryIndex = 0;
 
-  const planetPositioning = [
-    {
-      top: '0px',
-      left: '0px'
-    },
-    {
-      top: '100px',
-      left: '200px'
-    },
-    {
-      top: '40px',
-      left: '400px'
-    },
-    {
-      top: '160px',
-      left: '800px'
-    }
-  ];
+  import { planetPositioning } from '$components/solutions-section/planet-positioning';
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="relative bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} class="relative overflow-hidden bg-gray-1 text-gray-12">
+    <div
+      class="rotate-30 gradients absolute top-[-150px] h-[1054px] w-[1584px] transform opacity-40 mix-blend-hard-light blur-[50px]"
+    />
+    <img class="absolute bottom-0 left-0 right-0 top-0" src={Noise} alt="" />
+    <img class="absolute left-[50vw] top-[93px] -translate-x-2/4" src={Orbit1} alt="" />
+    <img class="absolute left-[50vw] top-[-10px] -translate-x-2/4" src={Orbit2} alt="" />
+    <div class="absolute w-full">
+      <Stars
+        amount={40}
+        backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-orange-8', 'bg-brand-7']}
+      />
+    </div>
     <div class="mx-auto max-w-content">
       {#if block.title[0]}
         <Title
@@ -56,45 +55,59 @@
         />
       {/if}
     </div>
-    <div class="mx-auto max-w-content px-container">
+    <div class="isolate z-20 mx-auto max-w-content px-container">
       {#if industries.length > 0}
-        <div class="relative flex h-[300px]">
-          {#each industries as industry, i}
-            <div
-              class="absolute inline-flex flex-col"
-              style="top: {planetPositioning[i].top}; left: {planetPositioning[i].left}"
-            >
-              <button
-                on:click={() => (selectedIndustryIndex = i)}
-                class="flex w-[130px] flex-col items-center"
+        <div class="relative flex h-[300px]" bind:this={industriesContainer}>
+          {#if industriesContainer}
+            {#each industries as industry, i}
+              {@const industriesContainerWidth = industriesContainer.offsetWidth}
+              {@const result = planetPositioning(industriesContainerWidth, industries.length, i)}
+              <div
+                class="absolute inline-flex flex-col"
+                style="top: {result.top}px; left: {result.left}px"
               >
-                <p
-                  class={cn(
-                    'mb-3 text-center text-md font-semibold leading-tight tracking-wide',
-                    selectedIndustryIndex !== i && 'opacity-54'
-                  )}
+                <button
+                  on:click={() => (selectedIndustryIndex = i)}
+                  class="isolate z-10 flex w-[130px] flex-col items-center"
                 >
-                  {industry.name}
-                </p>
-                <CometIllustration
-                  size={selectedIndustryIndex === i ? 'lg' : 'sm'}
-                  illustration={illustrationType(industry.content.illustration)}
-                />
-              </button>
-              {#if selectedIndustryIndex === i}
-                <div
-                  class="absolute bottom-[-172px] left-1/2 mt-4 flex h-[156px] w-[348px] flex-col items-start justify-end border-l border-solid border-gray-6 pl-6"
-                >
-                  <p class="mb-3 text-lg font-medium leading-snug tracking-wide opacity-74">
-                    {industry.content.description}
+                  <p
+                    class={cn(
+                      'mb-3 text-center text-md font-semibold leading-tight tracking-wide',
+                      selectedIndustryIndex !== i && 'opacity-54'
+                    )}
+                  >
+                    {industry.name}
                   </p>
-                  <GhostButton as="a" variant="highlighted" href={sanitizeSlug(industry.full_slug)}>
-                    Learn more
-                  </GhostButton>
-                </div>
-              {/if}
-            </div>
-          {/each}
+                  <CometIllustration
+                    size={selectedIndustryIndex === i ? 'lg' : 'sm'}
+                    illustration={illustrationType(industry.content.illustration)}
+                  />
+                </button>
+                {#if selectedIndustryIndex === i}
+                  <div
+                    class={cn(
+                      'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-6 pl-6',
+                      result.left > industriesContainerWidth / 2
+                        ? 'left-[calc(50%-348px)] border-r'
+                        : 'left-1/2 border-l',
+                      i === 8 ? 'bottom-[-260px] h-[250px]' : 'bottom-[-172px] h-[156px]'
+                    )}
+                  >
+                    <p class="mb-3 text-lg font-medium leading-snug tracking-wide opacity-74">
+                      {industry.content.description}
+                    </p>
+                    <GhostButton
+                      as="a"
+                      variant="highlighted"
+                      href={sanitizeSlug(industry.full_slug)}
+                    >
+                      Learn more
+                    </GhostButton>
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          {/if}
         </div>
         {#if industries[selectedIndustryIndex]}
           {@const { src, alt, width, height } = getImageAttributes(
@@ -111,3 +124,24 @@
     />
   </section>
 {/if}
+
+<style>
+  .gradients {
+    background: radial-gradient(
+        38.96% 17.2% at 53.66% 53.67%,
+        rgba(202, 131, 253, 0.5) 0%,
+        rgba(202, 131, 253, 0) 100%
+      ),
+      radial-gradient(
+        101.78% 31.2% at 39.5% 60.15%,
+        rgba(255, 127, 62, 0.3) 0%,
+        rgba(255, 113, 41, 0) 71.73%
+      ),
+      radial-gradient(
+        85.45% 76.8% at 81.67% 32.23%,
+        rgba(20, 30, 202, 0.3) 0%,
+        rgba(20, 30, 202, 0) 79.96%
+      ),
+      rgba(0, 0, 0, 0.2);
+  }
+</style>
