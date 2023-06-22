@@ -22,38 +22,37 @@
 
   const reactions: Reaction[] = [
     {
-      styles: '-rotate-12 absolute right-4 -top-12',
+      styles: '-rotate-12 absolute right-4 -top-12 xl:-top-10 xl:right-24',
       emoji: PartyFaceEmoji
     },
     {
-      styles: 'absolute bottom-72 right-[550px] hidden rotate-12 xl:flex',
+      styles: 'absolute bottom-64 left-10 hidden rotate-12 xl:flex',
       emoji: CometEmoji
     },
     {
-      styles:
-        'absolute -left-11 top-4 md:top-2 md:left-3 lg:top-2 xl:left-[500px] xl:top-4 -rotate-12',
+      styles: 'absolute -left-11 top-0 md:-top-2 md:left-2 lg:top-2 xl:left-96 xl:top-4 -rotate-12',
       emoji: StarsFaceEmoji
     }
   ];
 
-  const cardsRotations = ['-rotate-3 ', 'mt-4', 'rotate-6 mt-4'];
+  const cardsRotations = ['xl:-translate-x-10 -rotate-3', '', 'rotate-6 xl:-translate-x-32'];
 
   export let block: CustomerStoriesSectionStoryblok;
   const testimonials = block.testimonials as StoryblokStory<TestimonialStoryblok>[];
 </script>
 
 {#if block}
-  <section data-theme="light" class="relative isolate overflow-hidden bg-gray-1">
+  <section data-theme="light" class="relative overflow-hidden bg-gray-1">
     <div
-      class="container relative mx-auto mt-12 flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
+      class="top- container relative mx-auto mt-12 flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
     >
       <div
-        class="corner-gradient absolute -bottom-[600px] -left-40 h-[600px] w-[600px] blur-[150px]"
+        class="absolute -bottom-[450px] -left-48 h-[400px] w-[400px] -rotate-90 bg-gradient-to-r from-[#fcb8a8] via-[#b968a4] to-[#756cf7] blur-[200px] xl:-bottom-72 xl:-left-10"
       />
 
       {#if block.title?.[0]}
         <Title
-          class="z-10"
+          class="p-0"
           label={{ content: block.title?.[0].label, color: 'brand' }}
           description={block.title?.[0].description}
           title={block.title?.[0].title}
@@ -62,17 +61,12 @@
       {/if}
 
       {#if testimonials}
-        <div class="flex w-full flex-col gap-4 pb-12 xl:max-w-2xl">
-          <img
-            alt=""
-            src={Orbit}
-            class="absolute hidden max-w-[670px] xl:bottom-28 xl:right-0 xl:inline"
-          />
+        <div class=" relative flex w-full flex-col gap-5 pb-12 xl:max-w-2xl">
+          <img alt="" src={Orbit} class="absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
             <img alt="" src={reactions[1].emoji} class="w-7" />
           </div>
-
           {#each testimonials as testimonial, i}
             <div class={cn('relative isolate mt-10 self-start xl:mt-0', i == 1 && 'self-end')}>
               {#if i !== 1}
@@ -83,7 +77,7 @@
                 <img
                   alt=""
                   src={Comet}
-                  class="absolute -top-5 right-5 h-14 w-14 md:right-16 xl:-left-48 xl:top-44"
+                  class="absolute -top-9 right-5 h-14 w-14 md:right-20 xl:-left-60 xl:top-36"
                 />
               {/if}
 
@@ -99,9 +93,3 @@
     </div>
   </section>
 {/if}
-
-<style>
-  .corner-gradient {
-    background-image: linear-gradient(290.03deg, #fcb8a8 12.63%, #b968a4 45.85%, #756cf7 81.21%);
-  }
-</style>
