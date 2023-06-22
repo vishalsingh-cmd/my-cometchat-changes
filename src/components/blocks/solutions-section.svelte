@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import CometIllustration, {
@@ -10,6 +11,8 @@
   import Orbit2 from '$components/solutions-section/assets/orbit-2.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
   import Title from '$components/title.svelte';
+
+  import { planetPositioning } from '$components/solutions-section/planet-positioning';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
@@ -28,18 +31,32 @@
 
   let selectedIndustryIndex = 0;
 
-  import { planetPositioning } from '$components/solutions-section/planet-positioning';
+  $: industriesContainerWidth = 0;
+
+  const handleResize = () => {
+    if (industriesContainer) {
+      industriesContainerWidth = industriesContainer.offsetWidth;
+    }
+  };
+
+  onMount(() => {
+    if (industriesContainer) {
+      industriesContainerWidth = industriesContainer.offsetWidth;
+    }
+  });
 </script>
+
+<svelte:window on:resize={handleResize} />
 
 {#if block}
   <section use:storyblokEditable={block} class="relative overflow-hidden bg-gray-1 text-gray-12">
     <div
-      class="rotate-30 gradients absolute top-[-150px] h-[1054px] w-[1584px] transform opacity-40 mix-blend-hard-light blur-[50px]"
+      class="rotate-30 gradients absolute left-[50vw] top-[-150px] h-[1054px] w-[1584px] -translate-x-1/2 transform opacity-40 mix-blend-hard-light blur-[50px]"
     />
     <img class="absolute bottom-0 left-0 right-0 top-0" src={Noise} alt="" />
     <img class="absolute left-[50vw] top-[93px] -translate-x-2/4" src={Orbit1} alt="" />
     <img class="absolute left-[50vw] top-[-10px] -translate-x-2/4" src={Orbit2} alt="" />
-    <div class="absolute w-full">
+    <div class="absolute left-[50vw] w-full max-w-content -translate-x-1/2">
       <Stars
         amount={40}
         backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-orange-8', 'bg-brand-7']}
@@ -60,7 +77,6 @@
         <div class="relative flex h-[300px]" bind:this={industriesContainer}>
           {#if industriesContainer}
             {#each industries as industry, i}
-              {@const industriesContainerWidth = industriesContainer.offsetWidth}
               {@const result = planetPositioning(industriesContainerWidth, industries.length, i)}
               <div
                 class="absolute inline-flex flex-col"
