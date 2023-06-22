@@ -11,6 +11,7 @@
   import PlatformSection from './platform-section.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
+  import SocialProofs from '$components/social-proofs.svelte';
   import SyncedBlock from './synced-block.svelte';
 
   export let block: SbBlokData;
@@ -22,6 +23,7 @@
     'implementation-section': ImplementationSection,
     'list-section': ListSection,
     'platform-section': PlatformSection,
+    'social-proofs': SocialProofs,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
     metrics: Metrics,
