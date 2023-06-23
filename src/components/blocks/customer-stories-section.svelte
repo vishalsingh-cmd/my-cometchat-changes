@@ -22,7 +22,7 @@
 
   const reactions: Reaction[] = [
     {
-      styles: '-rotate-12 absolute right-4 -top-12 xl:-top-10 xl:right-24',
+      styles: '-rotate-12 absolute right-4 -top-12 xl:-top-11 xl:right-16',
       emoji: PartyFaceEmoji
     },
     {
@@ -30,7 +30,8 @@
       emoji: CometEmoji
     },
     {
-      styles: 'absolute -left-11 top-0 md:-top-2 md:left-2 lg:top-2 xl:left-96 xl:top-4 -rotate-12',
+      styles:
+        'absolute -left-11 top-0 md:-top-2 md:left-2 lg:-top-2 xl:left-96 xl:top-4 -rotate-12',
       emoji: StarsFaceEmoji
     }
   ];
@@ -62,7 +63,7 @@
 
       {#if testimonials}
         <div class=" relative flex w-full flex-col gap-5 pb-12 xl:max-w-2xl">
-          <img alt="" src={Orbit} class="absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
+          <img alt="" src={Orbit} class="lg absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
             <img alt="" src={reactions[1].emoji} class="w-7" />

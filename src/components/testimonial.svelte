@@ -34,16 +34,20 @@
     {/if}
 
     <div
-      class="bg-gray-12/2 flex max-w-sm flex-col rounded-2xl border border-gray-12/5 p-4 text-gray-12 backdrop-blur-sm"
+      data-theme="dark"
+      class="flex w-full max-w-sm flex-col rounded-2xl border border-gray-2/[0.04] bg-gray-1/[0.02] p-4 backdrop-blur-[10px]"
     >
-      <p class="text-lg/snug font-medium tracking-wide">
+      <p data-theme="light" class="text-lg/snug font-medium tracking-wide text-gray-12">
         &quot;{block.quote}&quot;
       </p>
 
-      <div class="mt-3 flex items-center justify-between text-md/tight">
+      <div
+        data-theme="light"
+        class="mt-3 flex items-center justify-between text-md/tight text-gray-12"
+      >
         <div>
           <p class=" font-semibold tracking-wide">{block.name}</p>
-          <p class="text-[rgba(20, 19, 29, 1)] mt-0.5 font-semibold tracking-wide opacity-74">
+          <p data-theme="light" class="mt-0.5 font-semibold tracking-wide opacity-74">
             {block.position}
           </p>
         </div>
