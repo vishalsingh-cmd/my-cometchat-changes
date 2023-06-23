@@ -5,6 +5,9 @@
   } from '$components/comet-illustration/comet-illustration.svelte';
 
   import { cn } from '$lib/utils';
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
 
   export let options: {
     label: string;
@@ -57,9 +60,16 @@
   />
 </button>
 {#if isOpen}
-  <div>
-    {#each options as option}
-      <p>{option.label}</p>
+  <div class="flex flex-col gap-2">
+    {#each options as option, i}
+      <button
+        on:click={() => {
+          toggle();
+          dispatch('optionSelect', {
+            i: i
+          });
+        }}>{option.label}</button
+      >
     {/each}
   </div>
 {/if}

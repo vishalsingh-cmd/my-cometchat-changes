@@ -18,6 +18,7 @@
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
   import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
   import { cn } from '$lib/utils';
+  import Dropdown from '$components/dropdown.svelte';
 
   export let block: SolutionsSectionStoryblok;
 
@@ -25,11 +26,23 @@
 
   const industries = block.industries as StoryblokStory<IndustryStoryblok>[];
 
+  const industriesOptionsForDropdown = industries.map((industry) => {
+    return {
+      label: industry.name,
+      value: industry.slug,
+      cometIllustration: industry.content.illustration as IllustrationOptions
+    };
+  });
+
   const illustrationType = (illustration: string | number) => {
     return illustration as IllustrationOptions;
   };
 
   let selectedIndustryIndex = 0;
+
+  const onOptionSelect = (e: CustomEvent) => {
+    selectedIndustryIndex = e.detail.i;
+  };
 
   $: industriesContainerWidth = 0;
 
@@ -68,11 +81,42 @@
           alignment="center"
           label={{ color: 'brand', content: block.title[0].label }}
           title={block.title[0].title}
-          titleClass="max-w-[400px] "
+          titleClass="max-w-[400px] text-center"
+          class="items-center"
         />
       {/if}
     </div>
-    <div class="isolate z-20 mx-auto max-w-content px-container">
+    <!-- Mobile view -->
+    <div
+      class="isolate z-20 mx-auto flex max-w-content flex-col items-center px-container lg:hidden"
+    >
+      <Dropdown
+        options={industriesOptionsForDropdown}
+        selectedOption={selectedIndustryIndex}
+        on:optionSelect={onOptionSelect}
+      />
+
+      {#if industries[selectedIndustryIndex]}
+        {@const selectedIndustry = industries[selectedIndustryIndex]}
+        {@const { src, alt, width, height } = getImageAttributes(
+          selectedIndustry.content.cover_image
+        )}
+        <p
+          class="mb-5 mt-3 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
+        >
+          {selectedIndustry.content.description}
+        </p>
+        <GhostButton as="a" variant="highlighted" href={sanitizeSlug(selectedIndustry.full_slug)}>
+          Learn more
+        </GhostButton>
+        <div class="mt-10 flex w-full justify-center">
+          <img {src} {alt} {width} {height} />
+        </div>
+      {/if}
+    </div>
+
+    <!-- Desktop view -->
+    <div class="isolate z-20 mx-auto hidden max-w-content px-container lg:block">
       {#if industries.length > 0}
         <div class="relative flex h-[300px]" bind:this={industriesContainer}>
           {#if industriesContainer}
