@@ -75,7 +75,7 @@
         backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-orange-8', 'bg-brand-7']}
       />
     </div>
-    <div class="mx-auto max-w-content">
+    <div class="isolate z-20 mx-auto max-w-content">
       {#if block.title[0]}
         <Title
           alignment="center"
