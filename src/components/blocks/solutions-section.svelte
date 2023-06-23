@@ -171,7 +171,8 @@
         </div>
         {#if industries[selectedIndustryIndex]}
           {@const { src, alt, width, height } = getImageAttributes(
-            industries[selectedIndustryIndex].content.cover_image
+            industries[selectedIndustryIndex].content.cover_image,
+            { size: [0, 560] }
           )}
           <div class="mt-16 flex w-full justify-center">
             <img {src} {alt} {width} {height} />
