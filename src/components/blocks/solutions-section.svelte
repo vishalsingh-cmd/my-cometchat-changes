@@ -161,7 +161,7 @@
                       variant="highlighted"
                       href={sanitizeSlug(industry.full_slug)}
                     >
-                      Learn more
+                      {block.solution_cta_label}
                     </GhostButton>
                   </div>
                 {/if}
