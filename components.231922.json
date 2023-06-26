@@ -138,6 +138,88 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "chat-and-messaging-hero",
+      "display_name": null,
+      "created_at": "2023-06-26T11:17:05.018Z",
+      "updated_at": "2023-06-26T11:21:12.457Z",
+      "id": 4177401,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["hero-header"]
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "chat-and-messaging-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "code-block-item",
+      "display_name": null,
+      "created_at": "2023-06-26T10:09:15.789Z",
+      "updated_at": "2023-06-26T10:10:35.746Z",
+      "id": 4176575,
+      "schema": {
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"],
+          "pos": 0
+        },
+        "language_name": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "code_snippet_language": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        },
+        "code_snippet_to_show": {
+          "type": "textarea",
+          "pos": 3,
+          "required": true
+        },
+        "code_snippet_to_copy": {
+          "type": "textarea",
+          "required": true,
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "code-block-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "customer",
       "display_name": "Customer",
       "created_at": "2023-06-02T13:38:21.932Z",
@@ -232,7 +314,7 @@
       "name": "developers-section",
       "display_name": null,
       "created_at": "2023-06-15T08:09:07.992Z",
-      "updated_at": "2023-06-23T10:32:40.024Z",
+      "updated_at": "2023-06-26T10:11:11.873Z",
       "id": 4128055,
       "schema": {
         "header": {
@@ -245,10 +327,14 @@
           "component_whitelist": ["title"]
         },
         "code_blocks": {
-          "type": "options",
+          "type": "bloks",
           "required": true,
           "source": "internal_stories",
-          "filter_content_type": ["technology"]
+          "filter_content_type": ["technology"],
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["code-block-item"],
+          "minimum": 1
         }
       },
       "image": "//a.storyblok.com/f/231922/x/030f6e4600/screenshot-2023-06-23-at-11-32-23.png",
@@ -512,6 +598,46 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Technology Documentation",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "hero-header",
+      "display_name": null,
+      "created_at": "2023-06-26T11:13:46.505Z",
+      "updated_at": "2023-06-26T11:16:40.093Z",
+      "id": 4177391,
+      "schema": {
+        "title": {
+          "type": "richtext",
+          "required": true,
+          "translatable": true,
+          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'",
+          "customize_toolbar": true,
+          "toolbar": ["italic"]
+        },
+        "description": {
+          "type": "textarea"
+        },
+        "links": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero-header",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
