@@ -4,13 +4,14 @@
 
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import DevelopersSection from './developers-section.svelte';
-  import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
-  import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
+  import ListSection from './list-section.svelte';
+  import HomepageHero from './homepage-hero.svelte';
   import PlatformSection from './platform-section.svelte';
   import TechnologiesSection from './technologies-section.svelte';
+  import CustomerStoriesSection from './customer-stories-section.svelte';
   import SocialProofs from '$components/social-proofs.svelte';
   import SyncedBlock from './synced-block.svelte';
 
@@ -18,16 +19,17 @@
 
   const map: Record<string, ComponentType> = {
     'chat-and-messaging-hero': ChatAndMessagingHero,
+    'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
     'list-section': ListSection,
-    metrics: Metrics,
-    page: Page,
     'platform-section': PlatformSection,
     'social-proofs': SocialProofs,
     'synced-block': SyncedBlock,
-    'technologies-section': TechnologiesSection
+    'technologies-section': TechnologiesSection,
+    metrics: Metrics,
+    page: Page
   };
 </script>
 
