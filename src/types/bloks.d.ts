@@ -16,6 +16,7 @@ export interface BlogPostStoryblok {
   author: string;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   body: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -101,6 +102,14 @@ export interface ButtonLinkStoryblok {
   [k: string]: any;
 }
 
+export interface ChatAndMessagingHeroStoryblok {
+  header: HeroHeaderStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'chat-and-messaging-hero';
+  [k: string]: any;
+}
+
 export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
@@ -115,6 +124,7 @@ export interface CodeBlockItemStoryblok {
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -211,6 +221,15 @@ export interface RichtextStoryblok {
   [k: string]: any;
 }
 
+export interface HeroHeaderStoryblok {
+  title: RichtextStoryblok;
+  description?: string;
+  links: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'hero-header';
+  [k: string]: any;
+}
+
 export interface HomepageHeroStoryblok {
   title: RichtextStoryblok;
   links: ButtonLinkStoryblok[];
@@ -234,6 +253,7 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -298,6 +318,7 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -370,6 +391,7 @@ export interface SyncedBlockStoryblok {
 
 export interface SyncedBlockContentStoryblok {
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -403,6 +425,7 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   body: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok

@@ -138,6 +138,41 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "chat-and-messaging-hero",
+      "display_name": null,
+      "created_at": "2023-06-26T11:17:05.018Z",
+      "updated_at": "2023-06-26T11:21:12.457Z",
+      "id": 4177401,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["hero-header"]
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "chat-and-messaging-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "code-block-item",
       "display_name": null,
       "created_at": "2023-06-26T10:09:15.789Z",
@@ -563,6 +598,46 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Technology Documentation",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "hero-header",
+      "display_name": null,
+      "created_at": "2023-06-26T11:13:46.505Z",
+      "updated_at": "2023-06-26T11:16:40.093Z",
+      "id": 4177391,
+      "schema": {
+        "title": {
+          "type": "richtext",
+          "required": true,
+          "translatable": true,
+          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'",
+          "customize_toolbar": true,
+          "toolbar": ["italic"]
+        },
+        "description": {
+          "type": "textarea"
+        },
+        "links": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero-header",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
