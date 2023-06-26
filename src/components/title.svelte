@@ -36,7 +36,7 @@
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }))}>
+<div class={cn(titleStyle({ alignment }))} {...$$restProps}>
   <p
     class={`${
       labelColours[label.color]
