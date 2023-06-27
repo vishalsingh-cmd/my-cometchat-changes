@@ -1,34 +1,24 @@
 <script lang="ts">
-  import type { StoryblokStory } from 'storyblok-generate-ts';
-
   import CodeBlock from '$components/code-block/code-block.svelte';
   import Comet from '$components/code-block/assets/comet.svg';
   import Stars from '$components/homepage/hero/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { DevelopersSectionStoryblok, TechnologyStoryblok } from '$types/bloks';
+  import type { DevelopersSectionStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/storyblok';
 
   export let block: DevelopersSectionStoryblok;
 
-  const parsedCodeBlocks = (block.code_blocks as StoryblokStory<TechnologyStoryblok>[])
-    .filter(
-      (codeBlock) =>
-        codeBlock.content.code_snippet &&
-        codeBlock.content.short_name &&
-        codeBlock.content.copy_code_snippet &&
-        codeBlock.content.code_snippet_language
-    )
-    .map((codeBlock) => {
-      return {
-        code: codeBlock.content.code_snippet as string,
-        codeToCopy: codeBlock.content.copy_code_snippet as string,
-        language: codeBlock.content.code_snippet_language as string,
-        label: codeBlock.content.short_name as string,
-        image: codeBlock.content.screenshot
-      };
-    });
+  const parsedCodeBlocks = block.code_blocks.map((codeBlock) => {
+    return {
+      code: codeBlock.code_snippet_to_show,
+      codeToCopy: codeBlock.code_snippet_to_copy,
+      language: codeBlock.code_snippet_language,
+      label: codeBlock.language_name,
+      image: codeBlock.illustration
+    };
+  });
 
   const onLanguageSelect = (e: CustomEvent) => {
     selectedLanguageIndex = e.detail.i;
