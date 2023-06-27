@@ -18,7 +18,11 @@
     <div
       class="container relative mx-auto overflow-x-visible pb-[374px] pt-[100px] md:pb-[700px] md:pt-[148px]"
     >
-      <img src={Noise} alt="" class="absolute left-0 top-0" />
+      <div
+        class="absolute bottom-0 left-0 h-[1079px] w-[1440px] md:bottom-auto md:top-0 md:h-full md:w-full"
+      >
+        <img src={Noise} alt="" />
+      </div>
       <Blurs />
       <div class="absolute right-0 top-0 w-[600px]">
         <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-brand-7']} />
