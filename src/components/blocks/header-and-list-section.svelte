@@ -7,8 +7,6 @@
   import type { HeaderAndListSectionStoryblok } from '$types/bloks';
 
   export let block: HeaderAndListSectionStoryblok;
-
-  console.log(block);
 </script>
 
 {#if block}
