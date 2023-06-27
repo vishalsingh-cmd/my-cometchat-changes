@@ -40,7 +40,7 @@
           {height}
         />
       {/if}
-      <div class="isolate z-10 md:ml-[112px]">
+      <div class="isolate z-10 lg:ml-[112px]">
         <HeroHeader block={block.header[0]} variant="secondary" />
       </div>
     </div>
