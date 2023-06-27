@@ -1,15 +1,31 @@
 <script lang="ts">
-  import TabItem from './tab-item.svelte';
+  import { TabWrapper, TabHead, TabHeadItem, TabContentItem } from './';
+  let activeTabValue = 0;
+
+  const handleClick = (tabValue: number) => () => {
+    activeTabValue = tabValue;
+  };
 
   export let options: {
-    id: string;
-    label: string;
-    isActive: boolean;
+    head: {
+      id: number;
+      label: string;
+    };
+    content: any;
   }[];
 </script>
 
-<div class="flex">
-  {#each options as { id, label, isActive }}
-    <TabItem on:click={() => console.log(id)} {id} {label} {isActive} />
+<TabWrapper>
+  <TabHead>
+    {#each options as tab}
+      <TabHeadItem
+        id={tab.head.id}
+        on:click={handleClick(tab.head.id)}
+        isActive={activeTabValue == tab.head.id}>{tab.head.label}</TabHeadItem
+      >
+    {/each}
+  </TabHead>
+  {#each options as tab}
+    <TabContentItem id={tab.head.id} {activeTabValue}>{tab.content}</TabContentItem>
   {/each}
-</div>
+</TabWrapper>

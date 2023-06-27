@@ -14,24 +14,32 @@ export const Primary: Story = {
   args: {
     options: [
       {
-        id: '1',
-        label: 'Item',
-        isActive: false
+        head: {
+          id: 0,
+          label: 'Messaging Essentials'
+        },
+        content: 'Messaging Essentialxs'
       },
       {
-        id: '2',
-        label: 'Item',
-        isActive: false
+        head: {
+          id: 1,
+          label: 'Advanced Engagement'
+        },
+        content: 'Advanced Engagement'
       },
       {
-        id: '3',
-        label: 'Item',
-        isActive: false
+        head: {
+          id: 2,
+          label: 'Notifications'
+        },
+        content: 'Notifications'
       },
       {
-        id: '4',
-        label: 'Item',
-        isActive: false
+        head: {
+          id: 3,
+          label: 'Moderation'
+        },
+        content: 'Moderation'
       }
     ]
   }
