@@ -30,13 +30,16 @@
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
 
+  let className: undefined | string = undefined;
+  export { className as class };
+
   const labelColours = {
     orange: 'text-orange-9',
     brand: 'text-brand-9'
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }))} {...$$restProps}>
+<div class={cn(titleStyle({ alignment }), className)}>
   <p
     class={`${
       labelColours[label.color]

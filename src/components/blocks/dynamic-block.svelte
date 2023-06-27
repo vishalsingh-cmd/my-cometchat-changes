@@ -3,6 +3,7 @@
   import type { ComponentType } from 'svelte';
 
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
+  import ChatFeaturesSection from './chat-features-section.svelte';
   import DevelopersSection from './developers-section.svelte';
   import ImplementationSection from './implementation-section.svelte';
   import Metrics from './metrics.svelte';
@@ -19,6 +20,7 @@
 
   const map: Record<string, ComponentType> = {
     'chat-and-messaging-hero': ChatAndMessagingHero,
+    'chat-features-section': ChatFeaturesSection,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
     'homepage-hero': HomepageHero,
