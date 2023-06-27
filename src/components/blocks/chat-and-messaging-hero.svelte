@@ -19,7 +19,7 @@
       class="container relative mx-auto overflow-x-visible pb-[374px] pt-[100px] md:pb-[700px] md:pt-[148px]"
     >
       <div
-        class="absolute bottom-0 left-0 h-[1079px] w-[1440px] md:bottom-auto md:top-0 md:h-full md:w-full"
+        class="absolute bottom-0 left-0 h-[1079px] w-[1440px] md:bottom-[200px] lg:bottom-auto lg:top-0 lg:h-full lg:w-full"
       >
         <img src={Noise} alt="" />
       </div>
