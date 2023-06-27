@@ -66,7 +66,7 @@
     >
       {#each options as option, i}
         <button
-          class="transition-smooth flex flex-row items-center justify-between gap-2 bg-gray-12/0 p-2.5 transition hover:bg-gray-12/5"
+          class="transition-smooth flex flex-row items-center justify-between gap-2 rounded-xl bg-gray-12/0 p-2.5 transition hover:bg-gray-12/5"
           on:click={() => {
             toggle();
             dispatch('optionSelect', {
@@ -74,7 +74,7 @@
             });
           }}
         >
-          <span class="flex items-center gap-2.5 rounded-xl">
+          <span class="flex items-center gap-2.5">
             <CometIllustration
               class="inline-block scale-[1.4]"
               illustration={option.cometIllustration ?? 'community'}
