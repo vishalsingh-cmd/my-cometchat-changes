@@ -16,6 +16,7 @@ export interface BlogPostStoryblok {
   author: string;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   body: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -101,9 +102,29 @@ export interface ButtonLinkStoryblok {
   [k: string]: any;
 }
 
+export interface ChatAndMessagingHeroStoryblok {
+  header: HeroHeaderStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'chat-and-messaging-hero';
+  [k: string]: any;
+}
+
+export interface CodeBlockItemStoryblok {
+  illustration: AssetStoryblok;
+  language_name: string;
+  code_snippet_language: string;
+  code_snippet_to_show: string;
+  code_snippet_to_copy: string;
+  _uid: string;
+  component: 'code-block-item';
+  [k: string]: any;
+}
+
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -131,7 +152,7 @@ export interface CustomerStoriesSectionStoryblok {
 
 export interface DevelopersSectionStoryblok {
   header: TitleStoryblok[];
-  code_blocks: (StoryblokStory<TechnologyStoryblok> | string)[];
+  code_blocks: CodeBlockItemStoryblok[];
   _uid: string;
   component: 'developers-section';
   [k: string]: any;
@@ -200,9 +221,19 @@ export interface RichtextStoryblok {
   [k: string]: any;
 }
 
+export interface HeroHeaderStoryblok {
+  title: RichtextStoryblok;
+  description?: string;
+  links: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'hero-header';
+  [k: string]: any;
+}
+
 export interface HomepageHeroStoryblok {
   title: RichtextStoryblok;
   links: ButtonLinkStoryblok[];
+  illustration: AssetStoryblok;
   _uid: string;
   component: 'homepage-hero';
   [k: string]: any;
@@ -222,6 +253,7 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -286,6 +318,7 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -343,6 +376,7 @@ export interface SocialProofsStoryblok {
 export interface SolutionsSectionStoryblok {
   title: TitleStoryblok[];
   industries: (StoryblokStory<IndustryStoryblok> | string)[];
+  solution_cta_label: string;
   _uid: string;
   component: 'solutions-section';
   [k: string]: any;
@@ -357,6 +391,7 @@ export interface SyncedBlockStoryblok {
 
 export interface SyncedBlockContentStoryblok {
   body?: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
@@ -390,6 +425,7 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   body: (
+    | ChatAndMessagingHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | HomepageHeroStoryblok
