@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
-
   import Noise from '$components/homepage/hero/noise.svg';
   import OrbitMedium from '$components/homepage/hero/assets/orbit-medium.svg';
   import OrbitThin from '$components/homepage/hero/assets/orbit-thin.svg';
@@ -8,7 +7,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { HomepageHeroStoryblok } from '$types/bloks';
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
 
   export let block: HomepageHeroStoryblok;
 </script>
@@ -88,6 +87,10 @@
           class="absolute left-[-11px] top-[20px] h-[87px] w-[87px] rounded-full bg-gradient-to-l from-[#E185C6] to-[#807CE0] blur-[25px]"
         />
       </div>
+      {#if block.illustration}
+        {@const { src, alt, width, height } = getImageAttributes(block.illustration)}
+        <img class="isolate z-10 mx-auto" {src} {alt} {width} {height} />
+      {/if}
     </div>
   </section>
 {/if}

@@ -10,6 +10,7 @@ export const load = async ({ cookies, fetch, params }) => {
   const storyblok = getStoryblok({ fetch });
 
   const relations = [
+    'customer-stories-section.testimonials',
     'developers-section.code_blocks',
     'social-proofs.customers',
     'solutions-section.industries',
