@@ -215,8 +215,6 @@ export function getImageAttributes(
     }
   }
 
-  console.log(sizeInUrl);
-
   if (options?.fitIn) {
     src += 'fit-in/';
   }
@@ -291,8 +289,6 @@ export function getImageAttributes(
     });
     src += `filters:${strFilters.join(':')}`;
   }
-
-  console.log(imgSizeAttr);
 
   return {
     alt,
