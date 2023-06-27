@@ -26,7 +26,7 @@
     color: 'orange' | 'brand';
   };
   export let title: string | undefined;
-  export let description: string | undefined;
+  export let description: string | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
 
