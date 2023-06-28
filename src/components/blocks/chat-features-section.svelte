@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Illustrations from '$components/chat-and-messaging/chat-features/Illustrations.svelte';
+  import Illustration1 from '$components/chat-and-messaging/chat-features/assets/illustration1.svg';
+  import Illustration2 from '$components/chat-and-messaging/chat-features/assets/illustration2.svg';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
@@ -17,8 +18,9 @@
         {@const { src, alt, width, height } = getImageAttributes(item.illustration)}
         <div
           class={cn(
-            'max-w-1216 mx-auto flex w-full flex-col justify-between gap-4 overflow-x-visible lg:flex-row',
-            i % 2 !== 0 && 'lg:flex-row-reverse'
+            'max-w-1216 relative mx-auto flex w-full flex-col justify-between gap-4 overflow-x-visible lg:flex-row',
+            i % 2 !== 0 && 'lg:flex-row-reverse',
+            i === 1 && 'md:gap-10'
           )}
         >
           <Title
@@ -28,10 +30,21 @@
             title={item.title}
             description={item.description}
           />
-          <img {src} {alt} {width} {height} />
+          {#if i === 1}
+            <img
+              src={Illustration1}
+              alt=""
+              class="absolute left-[-240px] top-[180px] w-[837px] max-w-none md:left-[-600px] md:top-[100px] md:w-[1877px] lg:top-[-400px]"
+            />
+          {/if}
+          <img {src} {alt} {width} {height} class={cn('', i === 1 && 'mt-[70px] lg:mt-0')} />
         </div>
       {/each}
-      <Illustrations />
+      <img
+        src={Illustration2}
+        alt=""
+        class="absolute bottom-[-80px] right-[-155px] hidden w-[210px] lg:block"
+      />
     </div>
   </section>
 {/if}
