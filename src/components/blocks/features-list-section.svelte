@@ -11,7 +11,6 @@
   export let block: FeaturesListSectionStoryblok;
 
   let selectedItemIndex = 0;
-  console.log(block);
 </script>
 
 {#if block}
