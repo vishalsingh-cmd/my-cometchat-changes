@@ -1,5 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
+  import { fade } from 'svelte/transition';
+
   export let id: number;
   export let isActive: boolean;
 </script>
@@ -15,7 +17,7 @@
     on:click
     data-theme="light"
     class={cn(
-      'z-10 w-fit cursor-pointer p-5 text-xl/tighter font-semibold text-gray-12 opacity-54 hover:opacity-100 md:px-5 md:py-6',
+      'z-10 w-fit cursor-pointer p-5 text-xl/tighter font-semibold text-gray-12 opacity-54 transition-all hover:opacity-100 md:px-5 md:py-6',
       isActive ? 'opacity-100' : ''
     )}
     id="{id}-tabhead"
@@ -25,12 +27,46 @@
     <slot />
   </button>
 
-  <div
-    class="absolute -bottom-6 left-4 z-0 h-14 w-full transition-colors"
-    style={cn(
-      isActive
-        ? 'background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(104, 82, 214, 0.16) 0%, rgba(104, 82, 214, 0.00) 100%);'
-        : ''
-    )}
-  />
+  {#if isActive}
+    <div
+      in:fade
+      out:fade
+      class="animate absolute -bottom-5 z-0 h-14 w-full"
+      style={cn(
+        'background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(104, 82, 214) 0%, rgba(104, 82, 214, 0.00) 100%);'
+      )}
+    />
+  {/if}
 </li>
+
+<style>
+  .animate {
+    animation: 4s ease-in 0s infinite alternate both running slideBackAndFoward;
+    transform: translateX(10%) scale(100%);
+    opacity: 25%;
+  }
+
+  @keyframes slideBackAndFoward {
+    0% {
+      transform: translateX(10%) scale(100%);
+      opacity: 25%;
+    }
+
+    25% {
+      opacity: 20%;
+    }
+
+    50% {
+      opacity: 22%;
+    }
+
+    75% {
+      opacity: 20%;
+    }
+
+    100% {
+      transform: translateX(-10%);
+      opacity: 25%;
+    }
+  }
+</style>

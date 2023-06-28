@@ -40,6 +40,13 @@ export const Primary: Story = {
           label: 'Moderation'
         },
         content: 'Moderation'
+      },
+      {
+        head: {
+          id: 4,
+          label: 'Item'
+        },
+        content: 'Moderation'
       }
     ]
   }
