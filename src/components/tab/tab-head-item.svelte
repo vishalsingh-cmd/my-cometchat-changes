@@ -31,7 +31,6 @@
     <div class="w-full">
       <div
         in:fade
-        out:fade
         class="animate absolute -bottom-5 z-0 h-14 w-3/4"
         style={cn(
           'background: radial-gradient(50% 50.00% at 50% 50.00%, rgba(104, 82, 214) 0%, rgba(104, 82, 214, 0.00) 100%);'
