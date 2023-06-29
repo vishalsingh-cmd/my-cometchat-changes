@@ -14,8 +14,9 @@
   type="button"
   role="tab"
   class={cn(
-    'relative min-w-fit cursor-pointer overflow-hidden break-keep p-5 text-xl/tighter font-semibold text-gray-12 opacity-54 hover:opacity-100 md:py-6',
-    isActive ? 'border-b border-b-brand-8 opacity-100' : ''
+    'relative inline-block h-[59px] min-w-fit cursor-pointer overflow-hidden break-keep px-5 text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100 md:h-[71px]',
+    isActive &&
+      'text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
   )}
 >
   {label}
