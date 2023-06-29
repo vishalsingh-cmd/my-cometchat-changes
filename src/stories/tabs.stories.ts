@@ -1,11 +1,11 @@
-import Tab from '$components/tab/tab.svelte';
+import Tabs from '$components/tab/tabs.svelte';
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 const meta = {
-  title: 'UI/Tab/Tab ',
-  component: Tab,
+  title: 'UI/Tabs ',
+  component: Tabs,
   argTypes: {}
-} satisfies Meta<Tab>;
+} satisfies Meta<Tabs>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
