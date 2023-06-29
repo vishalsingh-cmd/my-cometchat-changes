@@ -20,18 +20,18 @@
     }
   );
 
+  let className: undefined | string = undefined;
+  export { className as class };
   export let alignment: VariantProps<typeof titleStyle>['alignment'] = 'left';
   export let label: {
     content: string;
     color: 'orange' | 'brand';
   };
-  export let title: string | undefined;
-  export let description: string | undefined;
+  export let title = '';
+  export let titleClass: undefined | string = undefined;
+  export let description: string | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
-
-  let className: undefined | string = undefined;
-  export { className as class };
 
   const labelColours = {
     orange: 'text-orange-9',
@@ -50,14 +50,14 @@
   {#if title}
     <svelte:element
       this={titleHeadingType}
-      class="max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12"
+      class={cn('max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12', titleClass)}
     >
       {title}
     </svelte:element>
   {/if}
   {#if description}
     <p
-      class="mt-3 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74] md:mt-4"
+      class="mt-4 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
     >
       {description}
     </p>

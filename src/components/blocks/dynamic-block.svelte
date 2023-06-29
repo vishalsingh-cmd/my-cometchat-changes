@@ -4,17 +4,18 @@
 
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
+  import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
+  import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
+  import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
-  import ListSection from './list-section.svelte';
-  import HomepageHero from './homepage-hero.svelte';
   import PlatformSection from './platform-section.svelte';
-  import TechnologiesSection from './technologies-section.svelte';
-  import CustomerStoriesSection from './customer-stories-section.svelte';
   import SocialProofs from '$components/social-proofs.svelte';
+  import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
+  import TechnologiesSection from './technologies-section.svelte';
 
   export let block: SbBlokData;
 
@@ -26,12 +27,13 @@
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
     'list-section': ListSection,
+    metrics: Metrics,
+    page: Page,
     'platform-section': PlatformSection,
     'social-proofs': SocialProofs,
+    'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
-    'technologies-section': TechnologiesSection,
-    metrics: Metrics,
-    page: Page
+    'technologies-section': TechnologiesSection
   };
 </script>
 
