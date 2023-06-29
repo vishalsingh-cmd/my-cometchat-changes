@@ -24,7 +24,11 @@
           />
         </div>
       {/if}
-      <img src={Illustration} alt="" class="relative right-[29px] mb-10 mt-[30px] w-[1486px]" />
+      <img
+        src={Illustration}
+        alt=""
+        class="relative right-0 mb-10 mt-[30px] w-[800px] max-w-none md:right-[29px] md:w-[1486px]"
+      />
     </div>
   </section>
 {/if}
