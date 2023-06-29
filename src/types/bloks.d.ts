@@ -17,8 +17,11 @@ export interface BlogPostStoryblok {
   customer?: StoryblokStory<CustomerStoryblok> | string;
   body: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -28,12 +31,27 @@ export interface BlogPostStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'blog-post';
+  [k: string]: any;
+}
+
+export interface BulletPointStoryblok {
+  item: string;
+  _uid: string;
+  component: 'bullet-point';
+  [k: string]: any;
+}
+
+export interface BulletPointsStoryblok {
+  items: BulletPointStoryblok[];
+  _uid: string;
+  component: 'bullet-points';
   [k: string]: any;
 }
 
@@ -110,6 +128,13 @@ export interface ChatAndMessagingHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ChatFeaturesSectionStoryblok {
+  items: HeaderWithImageStoryblok[];
+  _uid: string;
+  component: 'chat-features-section';
+  [k: string]: any;
+}
+
 export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
@@ -125,8 +150,11 @@ export interface CustomerStoryblok {
   logo: AssetStoryblok;
   body?: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -136,6 +164,7 @@ export interface CustomerStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   _uid: string;
   component: 'customer';
@@ -155,6 +184,30 @@ export interface DevelopersSectionStoryblok {
   code_blocks: CodeBlockItemStoryblok[];
   _uid: string;
   component: 'developers-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListItemStoryblok {
+  title: string;
+  items: FeaturesListSubItemStoryblok[];
+  _uid: string;
+  component: 'features-list-item';
+  [k: string]: any;
+}
+
+export interface FeaturesListSectionStoryblok {
+  header: TitleStoryblok[];
+  items: FeaturesListItemStoryblok[];
+  _uid: string;
+  component: 'features-list-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListSubItemStoryblok {
+  title: string;
+  content: (BulletPointsStoryblok | ImageStoryblok)[];
+  _uid: string;
+  component: 'features-list-sub-item';
   [k: string]: any;
 }
 
@@ -212,6 +265,24 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface HeaderAndListSectionStoryblok {
+  header?: TitleStoryblok[];
+  items: ListSectionStoryblok[];
+  _uid: string;
+  component: 'header-and-list-section';
+  [k: string]: any;
+}
+
+export interface HeaderWithImageStoryblok {
+  label: string;
+  title: string;
+  description: string;
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'header-with-image';
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -239,6 +310,13 @@ export interface HomepageHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ImageStoryblok {
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'image';
+  [k: string]: any;
+}
+
 export interface ImplementationSectionStoryblok {
   header: TitleStoryblok[];
   items: PanelItemStoryblok[];
@@ -254,8 +332,11 @@ export interface IndustryStoryblok {
   description: string;
   body?: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -265,6 +346,7 @@ export interface IndustryStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -319,8 +401,11 @@ export interface PageStoryblok {
   seo_description?: string;
   body?: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -330,6 +415,7 @@ export interface PageStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
@@ -392,8 +478,11 @@ export interface SyncedBlockStoryblok {
 export interface SyncedBlockContentStoryblok {
   body?: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -403,6 +492,7 @@ export interface SyncedBlockContentStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   _uid: string;
   component: 'synced-block-content';
@@ -426,8 +516,11 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   body: (
     | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -437,6 +530,7 @@ export interface TechnologyStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -543,5 +637,12 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
+  [k: string]: any;
+}
+
+export interface WebhooksSectionStoryblok {
+  title: TitleStoryblok[];
+  _uid: string;
+  component: 'webhooks-section';
   [k: string]: any;
 }

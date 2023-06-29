@@ -13,6 +13,7 @@
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import SocialProofs from '$components/social-proofs.svelte';
   import SyncedBlock from './synced-block.svelte';
+  import WebhooksSection from './webhooks-section.svelte';
 
   export let block: SbBlokData;
 
@@ -26,6 +27,7 @@
     'social-proofs': SocialProofs,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
+    'webhooks-section': WebhooksSection,
     metrics: Metrics,
     page: Page
   };

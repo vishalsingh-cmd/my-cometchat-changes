@@ -81,6 +81,60 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "bullet-point",
+      "display_name": null,
+      "created_at": "2023-06-28T09:39:11.178Z",
+      "updated_at": "2023-06-28T09:39:20.379Z",
+      "id": 4189111,
+      "schema": {
+        "item": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "bullet-point",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "bullet-points",
+      "display_name": null,
+      "created_at": "2023-06-28T09:38:08.635Z",
+      "updated_at": "2023-06-28T09:39:45.306Z",
+      "id": 4189087,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "bullet-points",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "button-link",
       "display_name": null,
       "created_at": "2023-06-01T09:23:48.271Z",
@@ -167,6 +221,36 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "chat-and-messaging-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "chat-features-section",
+      "display_name": null,
+      "created_at": "2023-06-27T13:09:07.080Z",
+      "updated_at": "2023-06-27T13:12:51.908Z",
+      "id": 4183691,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "minimum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["header-with-image"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "chat-features-section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -349,6 +433,113 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "features-list-item",
+      "display_name": null,
+      "created_at": "2023-06-28T09:34:45.942Z",
+      "updated_at": "2023-06-28T09:41:18.443Z",
+      "id": 4189082,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 3,
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["features-list-sub-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "features-list-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "features-list-section",
+      "display_name": null,
+      "created_at": "2023-06-28T09:16:05.392Z",
+      "updated_at": "2023-06-28T09:35:53.348Z",
+      "id": 4188935,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["features-list-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "features-list-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "features-list-sub-item",
+      "display_name": null,
+      "created_at": "2023-06-28T09:36:34.422Z",
+      "updated_at": "2023-06-28T09:41:05.640Z",
+      "id": 4189084,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "content": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "minimum": 1,
+          "maximum": 2,
+          "component_whitelist": ["bullet-points", "image"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "features-list-sub-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer",
@@ -604,6 +795,89 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "header-and-list-section",
+      "display_name": null,
+      "created_at": "2023-06-27T15:41:17.774Z",
+      "updated_at": "2023-06-27T15:46:08.259Z",
+      "id": 4184631,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "pos": 0,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "minimum": 1,
+          "maximum": 1
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "maximum": 1,
+          "minimum": 1,
+          "component_whitelist": ["list-section"],
+          "key": "list",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "header-and-list-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "header-with-image",
+      "display_name": null,
+      "created_at": "2023-06-27T13:11:58.224Z",
+      "updated_at": "2023-06-27T13:12:38.419Z",
+      "id": 4183715,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "translatable": true,
+          "filetypes": ["images"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "header-with-image",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "hero-header",
       "display_name": null,
       "created_at": "2023-06-26T11:13:46.505Z",
@@ -687,6 +961,32 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "image",
+      "display_name": null,
+      "created_at": "2023-06-28T09:40:18.335Z",
+      "updated_at": "2023-06-28T09:40:30.703Z",
+      "id": 4189115,
+      "schema": {
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "image",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "implementation-section",
@@ -1903,6 +2203,36 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "webhooks-section",
+      "display_name": null,
+      "created_at": "2023-06-28T13:53:29.295Z",
+      "updated_at": "2023-06-28T13:54:04.257Z",
+      "id": 4191402,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "webhooks-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     }
   ]
 }
