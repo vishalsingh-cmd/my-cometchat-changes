@@ -2,7 +2,7 @@ import Tabs from '$components/tab/tabs.svelte';
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 const meta = {
-  title: 'UI/Tabs ',
+  title: 'UI/Tabs',
   component: Tabs,
   argTypes: {}
 } satisfies Meta<Tabs>;
