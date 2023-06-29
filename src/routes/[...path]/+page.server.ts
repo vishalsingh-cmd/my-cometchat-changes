@@ -13,6 +13,7 @@ export const load = async ({ cookies, fetch, params }) => {
     'customer-stories-section.testimonials',
     'developers-section.code_blocks',
     'social-proofs.customers',
+    'solutions-section.industries',
     'synced-block.synced_block',
     'technologies-section.technologies'
   ];
