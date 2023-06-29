@@ -20,6 +20,7 @@ export interface BlogPostStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -136,6 +137,7 @@ export interface CustomerStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -221,6 +223,14 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface HeaderAndListSectionStoryblok {
+  header?: TitleStoryblok[];
+  items: ListSectionStoryblok[];
+  _uid: string;
+  component: 'header-and-list-section';
+  [k: string]: any;
+}
+
 export interface HeaderWithImageStoryblok {
   label: string;
   title: string;
@@ -276,6 +286,7 @@ export interface IndustryStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -342,6 +353,7 @@ export interface PageStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -416,6 +428,7 @@ export interface SyncedBlockContentStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
@@ -451,6 +464,7 @@ export interface TechnologyStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
     | ListSectionStoryblok
