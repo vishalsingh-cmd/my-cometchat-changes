@@ -9,6 +9,7 @@
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
+  import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
@@ -28,6 +29,7 @@
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
+    'in-depth-analytics-section': InDepthAnalyticsSection,
     'list-section': ListSection,
     metrics: Metrics,
     page: Page,

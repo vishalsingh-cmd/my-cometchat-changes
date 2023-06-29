@@ -20,9 +20,11 @@ export interface BlogPostStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -30,12 +32,27 @@ export interface BlogPostStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'blog-post';
+  [k: string]: any;
+}
+
+export interface BulletPointStoryblok {
+  item: string;
+  _uid: string;
+  component: 'bullet-point';
+  [k: string]: any;
+}
+
+export interface BulletPointsStoryblok {
+  items: BulletPointStoryblok[];
+  _uid: string;
+  component: 'bullet-points';
   [k: string]: any;
 }
 
@@ -132,22 +149,7 @@ export interface CodeBlockItemStoryblok {
 
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
-  body?: (
-    | ChatAndMessagingHeroStoryblok
-    | ChatFeaturesSectionStoryblok
-    | CustomerStoriesSectionStoryblok
-    | DevelopersSectionStoryblok
-    | HeaderAndListSectionStoryblok
-    | HomepageHeroStoryblok
-    | ImplementationSectionStoryblok
-    | ListSectionStoryblok
-    | MetricsStoryblok
-    | PlatformSectionStoryblok
-    | SocialProofsStoryblok
-    | SolutionsSectionStoryblok
-    | SyncedBlockStoryblok
-    | TechnologiesSectionStoryblok
-  )[];
+  industry: StoryblokStory<IndustryStoryblok> | string;
   _uid: string;
   component: 'customer';
   [k: string]: any;
@@ -166,6 +168,30 @@ export interface DevelopersSectionStoryblok {
   code_blocks: CodeBlockItemStoryblok[];
   _uid: string;
   component: 'developers-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListItemStoryblok {
+  title: string;
+  items: FeaturesListSubItemStoryblok[];
+  _uid: string;
+  component: 'features-list-item';
+  [k: string]: any;
+}
+
+export interface FeaturesListSectionStoryblok {
+  header: TitleStoryblok[];
+  items: FeaturesListItemStoryblok[];
+  _uid: string;
+  component: 'features-list-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListSubItemStoryblok {
+  title: string;
+  content: (BulletPointsStoryblok | ImageStoryblok)[];
+  _uid: string;
+  component: 'features-list-sub-item';
   [k: string]: any;
 }
 
@@ -268,11 +294,25 @@ export interface HomepageHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ImageStoryblok {
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'image';
+  [k: string]: any;
+}
+
 export interface ImplementationSectionStoryblok {
   header: TitleStoryblok[];
   items: PanelItemStoryblok[];
   _uid: string;
   component: 'implementation-section';
+  [k: string]: any;
+}
+
+export interface InDepthAnalyticsSectionStoryblok {
+  header: TitleStoryblok[];
+  _uid: string;
+  component: 'in-depth-analytics-section';
   [k: string]: any;
 }
 
@@ -286,9 +326,11 @@ export interface IndustryStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -296,6 +338,7 @@ export interface IndustryStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -353,9 +396,11 @@ export interface PageStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -363,6 +408,7 @@ export interface PageStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
@@ -428,9 +474,11 @@ export interface SyncedBlockContentStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -438,6 +486,7 @@ export interface SyncedBlockContentStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   _uid: string;
   component: 'synced-block-content';
@@ -464,9 +513,11 @@ export interface TechnologyStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -474,6 +525,7 @@ export interface TechnologyStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -580,5 +632,12 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
+  [k: string]: any;
+}
+
+export interface WebhooksSectionStoryblok {
+  title: TitleStoryblok[];
+  _uid: string;
+  component: 'webhooks-section';
   [k: string]: any;
 }
