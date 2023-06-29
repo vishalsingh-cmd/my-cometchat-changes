@@ -1,4 +1,4 @@
-import Tabs from '$components/tab/tabs.svelte';
+import Tabs from '$components/tabs/tabs.svelte';
 import type { Meta, StoryObj } from '@storybook/svelte';
 
 const meta = {
