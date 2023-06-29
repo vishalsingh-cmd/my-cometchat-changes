@@ -10,7 +10,7 @@
 
 {#if block}
   <section class="overflow-hidden px-container">
-    <div class="container relative mx-auto overflow-visible">
+    <div class="container relative mx-auto h-[575px] overflow-visible md:h-[738px]">
       <Background />
       {#if block.header && block.header[0]}
         {@const { label, description, title, links } = block.header[0]}
@@ -27,7 +27,7 @@
       <img
         src={Illustration}
         alt=""
-        class="relative right-0 mb-10 mt-[30px] w-[800px] max-w-none md:right-[29px] md:w-[1486px]"
+        class="absolute bottom-10 w-[1000px] max-w-none md:right-[29px] md:w-[1486px]"
       />
     </div>
   </section>
