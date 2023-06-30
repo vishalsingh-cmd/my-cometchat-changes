@@ -12,6 +12,11 @@
   <section class="overflow-hidden px-container">
     <div class="container relative mx-auto h-[575px] overflow-visible md:h-[738px]">
       <Background />
+      <img
+        src={Illustration}
+        alt=""
+        class="absolute bottom-10 w-[1000px] max-w-none md:right-[29px] md:w-[1486px]"
+      />
       {#if block.header && block.header[0]}
         {@const { label, description, title, links } = block.header[0]}
         <div class="flex justify-center">
@@ -24,11 +29,6 @@
           />
         </div>
       {/if}
-      <img
-        src={Illustration}
-        alt=""
-        class="absolute bottom-10 w-[1000px] max-w-none md:right-[29px] md:w-[1486px]"
-      />
     </div>
   </section>
 {/if}
