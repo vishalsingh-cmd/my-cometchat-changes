@@ -128,6 +128,31 @@ export default {
       },
       maxWidth: {
         content: '1440px'
+      },
+      animation: {
+        'slide-back-and-foward-smothly':
+          'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running'
+      },
+      keyframes: {
+        slideBackAndFoward: {
+          '0%': {
+            transform: 'translateX(0)',
+            opacity: '12%'
+          },
+          '25%': {
+            opacity: '20%'
+          },
+          '50%': {
+            opacity: '12%'
+          },
+          '75%': {
+            opacity: '18%'
+          },
+          '100%': {
+            transform: 'translateX(34%)',
+            opacity: '22%'
+          }
+        }
       }
     }
   },

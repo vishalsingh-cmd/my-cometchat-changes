@@ -4,7 +4,7 @@
       "name": "blog-post",
       "display_name": "Blog Post or Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-06-22T07:35:05.668Z",
+      "updated_at": "2023-06-30T12:34:02.906Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -23,7 +23,7 @@
           "use_uuid": true,
           "source": "internal_stories",
           "filter_content_type": ["customer"],
-          "description": "If this blog post is a customer story, you can select the customer here to create the association",
+          "description": "If this blog post is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
           "pos": 2
         },
         "body": {
