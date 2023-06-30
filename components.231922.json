@@ -81,60 +81,6 @@
       "component_group_name": "Pages"
     },
     {
-      "name": "bullet-point",
-      "display_name": null,
-      "created_at": "2023-06-28T09:39:11.178Z",
-      "updated_at": "2023-06-28T09:39:20.379Z",
-      "id": 4189111,
-      "schema": {
-        "item": {
-          "type": "text",
-          "required": true,
-          "translatable": true
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "bullet-point",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
-    },
-    {
-      "name": "bullet-points",
-      "display_name": null,
-      "created_at": "2023-06-28T09:38:08.635Z",
-      "updated_at": "2023-06-28T09:39:45.306Z",
-      "id": 4189087,
-      "schema": {
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["bullet-point"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "bullet-points",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
-    },
-    {
       "name": "button-link",
       "display_name": null,
       "created_at": "2023-06-01T09:23:48.271Z",
@@ -307,7 +253,7 @@
       "name": "customer",
       "display_name": "Customer",
       "created_at": "2023-06-02T13:38:21.932Z",
-      "updated_at": "2023-06-29T10:37:55.659Z",
+      "updated_at": "2023-06-22T07:35:24.923Z",
       "id": 4070113,
       "schema": {
         "logo": {
@@ -317,13 +263,27 @@
           "asset_folder_id": 247774,
           "pos": 0
         },
-        "industry": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "source": "internal_stories",
-          "filter_content_type": ["industry"],
-          "display_name": "Industry aka Case Study aka Solution"
+        "body": {
+          "type": "bloks",
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
+          "pos": 1
+        },
+        "tab-194c05e2-6195-4add-ac09-4806d8d00abd": {
+          "display_name": "Metadata",
+          "keys": ["logo"],
+          "pos": 2,
+          "type": "tab",
+          "name": "tab-194c05e2-6195-4add-ac09-4806d8d00abd"
+        },
+        "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
+          "display_name": "SEO",
+          "keys": [],
+          "pos": 3,
+          "type": "tab",
+          "name": "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c"
         }
       },
       "image": null,
@@ -334,10 +294,10 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "Customer",
-      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
-      "component_group_name": "Database"
+      "component_group_name": "Pages"
     },
     {
       "name": "customer-stories-section",
@@ -419,113 +379,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
-    },
-    {
-      "name": "features-list-item",
-      "display_name": null,
-      "created_at": "2023-06-28T09:34:45.942Z",
-      "updated_at": "2023-06-28T09:41:18.443Z",
-      "id": 4189082,
-      "schema": {
-        "title": {
-          "type": "text",
-          "required": true,
-          "translatable": true
-        },
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "minimum": 3,
-          "maximum": 4,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["features-list-sub-item"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "features-list-item",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
-    },
-    {
-      "name": "features-list-section",
-      "display_name": null,
-      "created_at": "2023-06-28T09:16:05.392Z",
-      "updated_at": "2023-06-28T09:35:53.348Z",
-      "id": 4188935,
-      "schema": {
-        "header": {
-          "type": "bloks",
-          "required": true,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["title"]
-        },
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["features-list-item"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "features-list-section",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
-    },
-    {
-      "name": "features-list-sub-item",
-      "display_name": null,
-      "created_at": "2023-06-28T09:36:34.422Z",
-      "updated_at": "2023-06-28T09:41:05.640Z",
-      "id": 4189084,
-      "schema": {
-        "title": {
-          "type": "text",
-          "required": true,
-          "translatable": true
-        },
-        "content": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "minimum": 1,
-          "maximum": 2,
-          "component_whitelist": ["bullet-points", "image"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "features-list-sub-item",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
     },
     {
       "name": "footer",
@@ -949,77 +802,6 @@
       "component_group_name": "Blocks"
     },
     {
-      "name": "image",
-      "display_name": null,
-      "created_at": "2023-06-28T09:40:18.335Z",
-      "updated_at": "2023-06-28T09:40:30.703Z",
-      "id": 4189115,
-      "schema": {
-        "illustration": {
-          "type": "asset",
-          "required": true,
-          "filetypes": ["images"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "image",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
-    },
-    {
-      "name": "image-title-description-tags-item",
-      "display_name": null,
-      "created_at": "2023-06-29T19:21:39.102Z",
-      "updated_at": "2023-06-29T19:27:46.825Z",
-      "id": 4201010,
-      "schema": {
-        "image": {
-          "type": "asset",
-          "pos": 0,
-          "required": true,
-          "filetypes": ["images"]
-        },
-        "title": {
-          "type": "textarea",
-          "pos": 1,
-          "required": true
-        },
-        "description": {
-          "type": "textarea",
-          "pos": 2,
-          "translatable": true,
-          "required": true
-        },
-        "tags": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["text", "bullet-point"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "image-title-description-tags-item",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
-    },
-    {
       "name": "implementation-section",
       "display_name": null,
       "created_at": "2023-06-15T15:41:08.960Z",
@@ -1053,36 +835,6 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "implementation-section",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
-    },
-    {
-      "name": "in-depth-analytics-section",
-      "display_name": null,
-      "created_at": "2023-06-29T12:56:24.090Z",
-      "updated_at": "2023-06-29T12:56:51.034Z",
-      "id": 4197857,
-      "schema": {
-        "header": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["title"],
-          "minimum": 1,
-          "maximum": 1
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "in-depth-analytics-section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -2264,74 +2016,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
-    },
-    {
-      "name": "voice-and-video-calls-hero",
-      "display_name": null,
-      "created_at": "2023-06-29T19:19:55.525Z",
-      "updated_at": "2023-06-29T19:27:46.899Z",
-      "id": 4200986,
-      "schema": {
-        "header": {
-          "type": "bloks",
-          "required": true,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["hero-header"]
-        },
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "maximum": 3,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["image-title-description-tags-item"]
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "voice-and-video-calls-hero",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
-    },
-    {
-      "name": "webhooks-section",
-      "display_name": null,
-      "created_at": "2023-06-28T13:53:29.295Z",
-      "updated_at": "2023-06-28T13:54:04.257Z",
-      "id": 4191402,
-      "schema": {
-        "title": {
-          "type": "bloks",
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["title"],
-          "minimum": 1,
-          "maximum": 1,
-          "required": true
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "webhooks-section",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
     }
   ]
 }

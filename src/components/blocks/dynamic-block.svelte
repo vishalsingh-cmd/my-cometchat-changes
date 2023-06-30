@@ -17,7 +17,6 @@
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
-  import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
 
   export let block: SbBlokData;
 
@@ -36,8 +35,7 @@
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
-    'technologies-section': TechnologiesSection,
-    'voice-and-video-calls-hero': VoiceAndVideoCallsHero
+    'technologies-section': TechnologiesSection
   };
 </script>
 

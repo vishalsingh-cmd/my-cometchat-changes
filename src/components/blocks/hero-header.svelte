@@ -35,14 +35,12 @@
     }
   });
 
-  let className: undefined | string = undefined;
-  export { className as class };
   export let block: HeroHeaderStoryblok;
   export let variant: undefined | VariantProps<typeof heroHeader>['variant'] = 'primary';
 </script>
 
 {#if block}
-  <div use:storyblokEditable={block} class={cn(heroHeader({ variant }), className)}>
+  <div use:storyblokEditable={block} class={cn(heroHeader({ variant }))}>
     {#if block.title && block.title.content && block.title.content[0].content}
       <h1 class={cn(title({ variant }))}>
         {#each block.title.content[0].content as part}
