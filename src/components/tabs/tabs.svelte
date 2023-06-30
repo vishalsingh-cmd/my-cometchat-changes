@@ -1,37 +1,27 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   import TabItem from './tab-item.svelte';
 
-  let activeTabValue = 0;
-
-  const handleClick = (tabValue: number) => () => {
-    activeTabValue = tabValue;
-  };
+  const dispatch = createEventDispatcher();
 
   export let options: {
     id: number;
     label: string;
-    content: any;
   }[];
+  export let activeTab = 0;
 </script>
 
-<div class="w-full">
-  <div class="flex w-full flex-row break-all" role="tablist">
-    {#each options as tab}
-      <TabItem
-        id={tab.id}
-        on:click={handleClick(tab.id)}
-        isActive={activeTabValue === tab.id}
-        label={tab.label}
-      />
-    {/each}
-  </div>
-
-  <div
-    class=""
-    id="{activeTabValue}-tabitem"
-    role="tabpanel"
-    aria-labelledby="{activeTabValue}-tab"
-  >
-    {options[activeTabValue].content}
-  </div>
+<div class="flex w-full flex-row overflow-x-scroll break-all px-container" role="tablist">
+  {#each options as tab}
+    <TabItem
+      id={tab.id}
+      on:click={() =>
+        dispatch('optionSelect', {
+          i: tab.id
+        })}
+      isActive={activeTab === tab.id}
+      label={tab.label}
+    />
+  {/each}
 </div>

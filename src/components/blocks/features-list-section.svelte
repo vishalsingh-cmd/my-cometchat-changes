@@ -1,5 +1,6 @@
 <script lang="ts">
   import FeaturesListSectionItem from '$components/features-list-section-item.svelte';
+  import Tabs from '$components/tabs/tabs.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
@@ -9,6 +10,10 @@
   export let block: FeaturesListSectionStoryblok;
 
   let selectedItemIndex = 0;
+
+  const onOptionSelect = (e: CustomEvent) => {
+    selectedItemIndex = e.detail.i;
+  };
 </script>
 
 {#if block}
@@ -23,20 +28,23 @@
         <Title label={{ content: header.label, color: 'brand' }} title={header.title} />
       {/if}
       {#if block.items.length > 0}
-        <div class="flex flex-row gap-4 px-container">
-          {#each block.items as item, i}
-            <button on:click={() => (selectedItemIndex = i)}>
-              {item.title}
-            </button>
-          {/each}
-        </div>
+        {@const parsedItems = block.items.map((item, i) => ({
+          id: i,
+          label: item.title,
+          content: item.items
+        }))}
+        <Tabs
+          options={parsedItems}
+          activeTab={selectedItemIndex}
+          on:optionSelect={onOptionSelect}
+        />
         {#if block.items[selectedItemIndex]}
           {@const item = block.items[selectedItemIndex]}
           {@const firstTwoItems = item.items.slice(0, 2)}
           {@const lastTwoItems = item.items.slice(2, 4)}
           {@const subArrays = [firstTwoItems, lastTwoItems]}
           <!-- Tablet -->
-          <div class="hidden flex-row md:flex lg:hidden">
+          <div class="hidden flex-row shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:flex lg:hidden">
             {#each subArrays as array, i}
               <div class={cn('flex-1', i === 0 && 'border-r border-r-gray-12/[0.08]')}>
                 {#each array as item, f}
@@ -48,7 +56,7 @@
 
           <!-- Mobile and Desktop -->
           <div
-            class="flex flex-col gap-px border-b-gray-12/[0.08] bg-gray-12/[0.08] md:hidden lg:grid lg:grid-cols-3"
+            class="flex flex-col gap-px border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
           >
             {#each item.items as subItem, i}
               {@const positioningFor4Items = [
