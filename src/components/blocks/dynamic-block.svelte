@@ -6,6 +6,7 @@
   import ChatFeaturesSection from './chat-features-section.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
+  import FeaturesListSection from './features-list-section.svelte';
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
@@ -25,6 +26,7 @@
     'chat-features-section': ChatFeaturesSection,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
+    'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,

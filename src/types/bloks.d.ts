@@ -20,6 +20,7 @@ export interface BlogPostStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -36,6 +37,20 @@ export interface BlogPostStoryblok {
   seo_og_image?: AssetStoryblok;
   _uid: string;
   component: 'blog-post';
+  [k: string]: any;
+}
+
+export interface BulletPointStoryblok {
+  item: string;
+  _uid: string;
+  component: 'bullet-point';
+  [k: string]: any;
+}
+
+export interface BulletPointsStoryblok {
+  items: BulletPointStoryblok[];
+  _uid: string;
+  component: 'bullet-points';
   [k: string]: any;
 }
 
@@ -137,6 +152,7 @@ export interface CustomerStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -166,6 +182,30 @@ export interface DevelopersSectionStoryblok {
   code_blocks: CodeBlockItemStoryblok[];
   _uid: string;
   component: 'developers-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListItemStoryblok {
+  title: string;
+  items: FeaturesListSubItemStoryblok[];
+  _uid: string;
+  component: 'features-list-item';
+  [k: string]: any;
+}
+
+export interface FeaturesListSectionStoryblok {
+  header: TitleStoryblok[];
+  items: FeaturesListItemStoryblok[];
+  _uid: string;
+  component: 'features-list-section';
+  [k: string]: any;
+}
+
+export interface FeaturesListSubItemStoryblok {
+  title: string;
+  content: (BulletPointsStoryblok | ImageStoryblok)[];
+  _uid: string;
+  component: 'features-list-sub-item';
   [k: string]: any;
 }
 
@@ -268,6 +308,13 @@ export interface HomepageHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ImageStoryblok {
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'image';
+  [k: string]: any;
+}
+
 export interface ImplementationSectionStoryblok {
   header: TitleStoryblok[];
   items: PanelItemStoryblok[];
@@ -286,6 +333,7 @@ export interface IndustryStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -353,6 +401,7 @@ export interface PageStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -428,6 +477,7 @@ export interface SyncedBlockContentStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -464,6 +514,7 @@ export interface TechnologyStoryblok {
     | ChatFeaturesSectionStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturesListSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
