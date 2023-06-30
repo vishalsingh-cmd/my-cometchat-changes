@@ -10,15 +10,20 @@
 
   export let block: DevelopersSectionStoryblok;
 
-  const parsedCodeBlocks = block.code_blocks.map((codeBlock) => {
-    return {
-      code: codeBlock.code_snippet_to_show,
-      codeToCopy: codeBlock.code_snippet_to_copy,
-      language: codeBlock.code_snippet_language,
-      label: codeBlock.language_name,
-      image: codeBlock.illustration
-    };
-  });
+  console.log(block);
+
+  const parsedCodeBlocks =
+    block.code_blocks && block.code_blocks.length > 0
+      ? block.code_blocks.map((codeBlock) => {
+          return {
+            code: codeBlock.code_snippet_to_show,
+            codeToCopy: codeBlock.code_snippet_to_copy,
+            language: codeBlock.code_snippet_language,
+            label: codeBlock.language_name,
+            image: codeBlock.illustration
+          };
+        })
+      : undefined;
 
   const onLanguageSelect = (e: CustomEvent) => {
     selectedLanguageIndex = e.detail.i;
@@ -38,7 +43,7 @@
       <div class="absolute left-0 top-[45px] h-[268px] w-full overflow-hidden">
         <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
       </div>
-      {#if block.header[0]}
+      {#if block.header && block.header[0]}
         <Title
           label={{ content: block.header[0].label, color: 'orange' }}
           title={block.header[0].title}
@@ -46,7 +51,7 @@
           buttons={block.header[0].links}
         />
       {/if}
-      {#if parsedCodeBlocks.length > 0}
+      {#if parsedCodeBlocks && parsedCodeBlocks.length > 0}
         <div
           class="relative flex flex-col px-container md:pt-8 lg:grid lg:grid-cols-[minmax(100px,752px)_528px] lg:gap-8 lg:pb-[100px]"
         >
