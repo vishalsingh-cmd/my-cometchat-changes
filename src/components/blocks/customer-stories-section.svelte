@@ -45,7 +45,7 @@
 {#if block}
   <section data-theme="light" class="relative overflow-hidden bg-gray-1">
     <div
-      class="top- container relative mx-auto mt-12 flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
+      class="container relative mx-auto flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
     >
       <div
         class="absolute -bottom-[450px] -left-48 h-[400px] w-[400px] -rotate-90 bg-gradient-to-r from-[#fcb8a8] via-[#b968a4] to-[#756cf7] blur-[200px] xl:-bottom-72 xl:-left-10"
@@ -53,7 +53,7 @@
 
       {#if block.title?.[0]}
         <Title
-          class="p-0"
+          class="px-0 pl-0 pr-0 pt-12 lg:p-12 xl:pt-0"
           label={{ content: block.title?.[0].label, color: 'brand' }}
           description={block.title?.[0].description}
           title={block.title?.[0].title}
@@ -78,7 +78,7 @@
                 <img
                   alt=""
                   src={Comet}
-                  class="absolute -top-9 right-5 h-14 w-14 md:right-20 xl:-left-60 xl:top-36"
+                  class="absolute -top-9 right-5 h-14 w-14 md:right-20 xl:-left-48 xl:top-36"
                 />
               {/if}
 
