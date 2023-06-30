@@ -51,13 +51,20 @@
             class="flex flex-col gap-px border-b-gray-12/[0.08] bg-gray-12/[0.08] md:hidden lg:grid lg:grid-cols-3"
           >
             {#each item.items as subItem, i}
-              {@const positioningOn4Columns = [
+              {@const positioningFor4Items = [
                 'col-start-1',
                 'col-start-2 row-end-1',
                 'col-start-2 row-start-2',
                 'col-start-3'
               ]}
-              <div class={cn('row-start-1 row-end-3 bg-gray-1', positioningOn4Columns[i])}>
+              {@const positioningFor3Items = ['col-start-1', 'col-start-2', 'col-start-3']}
+              <div
+                class={cn(
+                  'row-start-1 row-end-3 bg-gray-1',
+                  item.items.length === 4 && positioningFor4Items[i],
+                  item.items.length === 3 && positioningFor3Items[i]
+                )}
+              >
                 <FeaturesListSectionItem item={subItem} {i} />
               </div>
             {/each}
