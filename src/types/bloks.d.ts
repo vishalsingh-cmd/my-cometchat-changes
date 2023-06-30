@@ -24,6 +24,7 @@ export interface BlogPostStoryblok {
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -31,6 +32,8 @@ export interface BlogPostStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -147,23 +150,7 @@ export interface CodeBlockItemStoryblok {
 
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
-  body?: (
-    | ChatAndMessagingHeroStoryblok
-    | ChatFeaturesSectionStoryblok
-    | CustomerStoriesSectionStoryblok
-    | DevelopersSectionStoryblok
-    | FeaturesListSectionStoryblok
-    | HeaderAndListSectionStoryblok
-    | HomepageHeroStoryblok
-    | ImplementationSectionStoryblok
-    | ListSectionStoryblok
-    | MetricsStoryblok
-    | PlatformSectionStoryblok
-    | SocialProofsStoryblok
-    | SolutionsSectionStoryblok
-    | SyncedBlockStoryblok
-    | TechnologiesSectionStoryblok
-  )[];
+  industry: StoryblokStory<IndustryStoryblok> | string;
   _uid: string;
   component: 'customer';
   [k: string]: any;
@@ -315,11 +302,28 @@ export interface ImageStoryblok {
   [k: string]: any;
 }
 
+export interface ImageTitleDescriptionTagsItemStoryblok {
+  image: AssetStoryblok;
+  title: string;
+  description: string;
+  tags: (TextStoryblok | BulletPointStoryblok)[];
+  _uid: string;
+  component: 'image-title-description-tags-item';
+  [k: string]: any;
+}
+
 export interface ImplementationSectionStoryblok {
   header: TitleStoryblok[];
   items: PanelItemStoryblok[];
   _uid: string;
   component: 'implementation-section';
+  [k: string]: any;
+}
+
+export interface InDepthAnalyticsSectionStoryblok {
+  header: TitleStoryblok[];
+  _uid: string;
+  component: 'in-depth-analytics-section';
   [k: string]: any;
 }
 
@@ -337,6 +341,7 @@ export interface IndustryStoryblok {
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -344,6 +349,8 @@ export interface IndustryStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -405,6 +412,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -412,6 +420,8 @@ export interface PageStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
   _uid: string;
@@ -481,6 +491,7 @@ export interface SyncedBlockContentStoryblok {
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -488,6 +499,8 @@ export interface SyncedBlockContentStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksSectionStoryblok
   )[];
   _uid: string;
   component: 'synced-block-content';
@@ -518,6 +531,7 @@ export interface TechnologyStoryblok {
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
+    | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
@@ -525,6 +539,8 @@ export interface TechnologyStoryblok {
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksSectionStoryblok
   )[];
   seo_title?: string;
   seo_description?: string;
@@ -631,5 +647,20 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
+  [k: string]: any;
+}
+
+export interface VoiceAndVideoCallsHeroStoryblok {
+  header: HeroHeaderStoryblok[];
+  items: ImageTitleDescriptionTagsItemStoryblok[];
+  _uid: string;
+  component: 'voice-and-video-calls-hero';
+  [k: string]: any;
+}
+
+export interface WebhooksSectionStoryblok {
+  title: TitleStoryblok[];
+  _uid: string;
+  component: 'webhooks-section';
   [k: string]: any;
 }
