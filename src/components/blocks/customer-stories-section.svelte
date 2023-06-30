@@ -53,7 +53,7 @@
 
       {#if block.title?.[0]}
         <Title
-          class="px-0 pl-0 pr-0 pt-12 lg:p-12 xl:pt-0"
+          class="pl-0 pr-0 pt-12 lg:p-12 xl:pt-0"
           label={{ content: block.title?.[0].label, color: 'brand' }}
           description={block.title?.[0].description}
           title={block.title?.[0].title}
