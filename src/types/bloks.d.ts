@@ -198,8 +198,8 @@ export interface FeaturesListSubItemStoryblok {
 }
 
 export interface FeaturesSectionStoryblok {
+  image_on_the_right?: boolean;
   image?: AssetStoryblok;
-  image_on_the_left?: boolean;
   title: TitleStoryblok[];
   tags: BulletPointStoryblok[];
   _uid: string;

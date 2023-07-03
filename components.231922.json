@@ -230,7 +230,7 @@
       "name": "chat-features-section",
       "display_name": null,
       "created_at": "2023-06-27T13:09:07.080Z",
-      "updated_at": "2023-06-30T16:17:15.451Z",
+      "updated_at": "2023-07-03T08:54:35.975Z",
       "id": 4183691,
       "schema": {
         "items": {
@@ -240,7 +240,8 @@
           "minimum": 2,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["header-with-image"]
+          "component_whitelist": ["header-with-image"],
+          "description": "Please add 2"
         }
       },
       "image": "//a.storyblok.com/f/231922/x/738c25f80c/screenshot-2023-06-30-at-17-17-02.png",
@@ -424,7 +425,7 @@
       "name": "features-list-item",
       "display_name": null,
       "created_at": "2023-06-28T09:34:45.942Z",
-      "updated_at": "2023-06-28T09:41:18.443Z",
+      "updated_at": "2023-07-03T09:01:46.021Z",
       "id": 4189082,
       "schema": {
         "title": {
@@ -439,7 +440,8 @@
           "maximum": 4,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["features-list-sub-item"]
+          "component_whitelist": ["features-list-sub-item"],
+          "description": "It needs to have between 3 and 4 items"
         }
       },
       "image": null,
@@ -531,16 +533,18 @@
       "name": "features-section",
       "display_name": null,
       "created_at": "2023-06-30T15:35:17.847Z",
-      "updated_at": "2023-06-30T17:38:40.478Z",
+      "updated_at": "2023-07-03T14:07:02.876Z",
       "id": 4205182,
       "schema": {
-        "image": {
-          "type": "asset"
-        },
-        "image_on_the_left": {
+        "image_on_the_right": {
           "type": "boolean",
-          "default_value": true,
-          "required": false
+          "default_value": false,
+          "required": false,
+          "pos": 0
+        },
+        "image": {
+          "type": "asset",
+          "pos": 1
         },
         "title": {
           "type": "bloks",
@@ -549,17 +553,19 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["title"],
-          "required": true
+          "required": true,
+          "pos": 2
         },
         "tags": {
           "type": "bloks",
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["bullet-point"]
+          "component_whitelist": ["bullet-point"],
+          "pos": 3
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/f229eb5539/screenshot-2023-07-03-at-09-57-20.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -1638,7 +1644,7 @@
       "name": "synced-block",
       "display_name": null,
       "created_at": "2023-06-19T10:39:12.936Z",
-      "updated_at": "2023-06-19T10:46:12.366Z",
+      "updated_at": "2023-07-03T11:03:42.532Z",
       "id": 4142186,
       "schema": {
         "synced_block": {
@@ -1650,9 +1656,9 @@
         }
       },
       "image": null,
-      "preview_field": null,
+      "preview_field": "synced_block",
       "is_root": false,
-      "preview_tmpl": null,
+      "preview_tmpl": "",
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
