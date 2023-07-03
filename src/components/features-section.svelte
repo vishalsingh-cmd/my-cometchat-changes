@@ -23,7 +23,7 @@
           <img {src} {alt} {width} {height} class="" />
         {/if}
       </div>
-      <div data-theme="light" class="flex flex-col justify-between px-5 pb-10 pt-12 md:p-16">
+      <div data-theme="light" class="flex flex-col justify-between px-5 pb-10 pt-12 xl:p-16">
         {#if block.title[0]}
           <Title
             class={cn('max-w-[528px] pl-0 pr-0 pt-0 lg:p-0 xl:pt-0')}
