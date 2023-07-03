@@ -21,6 +21,7 @@ export interface BlogPostStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -45,6 +46,7 @@ export interface BlogPostStoryblok {
 
 export interface BulletPointStoryblok {
   item: string;
+  coming_soon?: boolean;
   _uid: string;
   component: 'bullet-point';
   [k: string]: any;
@@ -196,6 +198,16 @@ export interface FeaturesListSubItemStoryblok {
   [k: string]: any;
 }
 
+export interface FeaturesSectionStoryblok {
+  image_on_the_right?: boolean;
+  image?: AssetStoryblok;
+  title: TitleStoryblok[];
+  tags: BulletPointStoryblok[];
+  _uid: string;
+  component: 'features-section';
+  [k: string]: any;
+}
+
 export interface FooterStoryblok {
   column_groups: FooterColumnGroupStoryblok[];
   subfooter: any[];
@@ -306,7 +318,7 @@ export interface ImageTitleDescriptionTagsItemStoryblok {
   image: AssetStoryblok;
   title: string;
   description: string;
-  tags: (TextStoryblok | BulletPointStoryblok)[];
+  tags: (TextStoryblok | TagStoryblok)[];
   _uid: string;
   component: 'image-title-description-tags-item';
   [k: string]: any;
@@ -338,6 +350,7 @@ export interface IndustryStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -409,6 +422,7 @@ export interface PageStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -488,6 +502,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -504,6 +519,13 @@ export interface SyncedBlockContentStoryblok {
   )[];
   _uid: string;
   component: 'synced-block-content';
+  [k: string]: any;
+}
+
+export interface TagStoryblok {
+  tag: string;
+  _uid: string;
+  component: 'tag';
   [k: string]: any;
 }
 
@@ -528,6 +550,7 @@ export interface TechnologyStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
