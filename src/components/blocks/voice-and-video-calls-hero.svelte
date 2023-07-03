@@ -23,7 +23,7 @@
         <div class="max-w-[436px]">
           {#if block.header && block.header[0]}
             {@const header = block.header[0]}
-            <HeroHeader block={header} class="max-w-[430px]" />
+            <HeroHeader variant="secondary" block={header} class="max-w-[430px]" />
           {/if}
 
           <!-- 2nd item - Visible on desktop to have a masonry effect -->
