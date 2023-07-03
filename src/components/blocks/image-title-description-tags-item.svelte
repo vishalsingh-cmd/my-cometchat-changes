@@ -43,7 +43,7 @@
     {#if block.tags}
       <div class="mt-5 flex flex-row flex-wrap gap-2">
         {#each block.tags as tag}
-          <Tag label={tag.item} />
+          <Tag label={tag.tag} />
         {/each}
       </div>
     {/if}
