@@ -17,13 +17,13 @@
         block.image_on_the_left ? '' : 'lg:flex-row-reverse'
       )}
     >
-      <div data-theme="light" class="self-center">
+      <div data-theme="light" class="flex-1 self-center">
         {#if block.image}
           {@const { src, alt, width, height } = getImageAttributes(block.image)}
           <img {src} {alt} {width} {height} class="" />
         {/if}
       </div>
-      <div data-theme="light" class="flex flex-col justify-between px-5 pb-10 pt-12 xl:p-16">
+      <div data-theme="light" class="flex flex-1 flex-col justify-between px-5 pb-10 pt-12 xl:p-16">
         {#if block.title[0]}
           <Title
             class={cn('max-w-[528px] pl-0 pr-0 pt-0 lg:p-0 xl:pt-0')}
