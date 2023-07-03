@@ -653,6 +653,7 @@ export interface TopnavTechnologiesPanelStoryblok {
 export interface VoiceAndVideoCallsHeroStoryblok {
   header: HeroHeaderStoryblok[];
   items: ImageTitleDescriptionTagsItemStoryblok[];
+  customers: SocialProofsStoryblok[];
   _uid: string;
   component: 'voice-and-video-calls-hero';
   [k: string]: any;

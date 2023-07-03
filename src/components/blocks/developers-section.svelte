@@ -10,8 +10,6 @@
 
   export let block: DevelopersSectionStoryblok;
 
-  console.log(block);
-
   const parsedCodeBlocks =
     block.code_blocks && block.code_blocks.length > 0
       ? block.code_blocks.map((codeBlock) => {
