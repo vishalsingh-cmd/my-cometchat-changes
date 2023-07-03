@@ -195,7 +195,7 @@
       "name": "chat-and-messaging-hero",
       "display_name": null,
       "created_at": "2023-06-26T11:17:05.018Z",
-      "updated_at": "2023-06-26T11:21:12.457Z",
+      "updated_at": "2023-06-30T16:07:48.538Z",
       "id": 4177401,
       "schema": {
         "header": {
@@ -213,7 +213,7 @@
           "filetypes": ["images"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/d2925bf4be/1.jpg",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -230,7 +230,7 @@
       "name": "chat-features-section",
       "display_name": null,
       "created_at": "2023-06-27T13:09:07.080Z",
-      "updated_at": "2023-06-27T13:12:51.908Z",
+      "updated_at": "2023-06-30T16:17:15.451Z",
       "id": 4183691,
       "schema": {
         "items": {
@@ -243,7 +243,7 @@
           "component_whitelist": ["header-with-image"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/738c25f80c/screenshot-2023-06-30-at-17-17-02.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -459,7 +459,7 @@
       "name": "features-list-section",
       "display_name": null,
       "created_at": "2023-06-28T09:16:05.392Z",
-      "updated_at": "2023-06-28T09:35:53.348Z",
+      "updated_at": "2023-06-30T16:10:07.316Z",
       "id": 4188935,
       "schema": {
         "header": {
@@ -479,7 +479,7 @@
           "component_whitelist": ["features-list-item"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/7f46a3ae79/screenshot-2023-06-30-at-17-09-49.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -526,6 +526,51 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "features-section",
+      "display_name": null,
+      "created_at": "2023-06-30T15:35:17.847Z",
+      "updated_at": "2023-06-30T17:38:40.478Z",
+      "id": 4205182,
+      "schema": {
+        "image": {
+          "type": "asset"
+        },
+        "image_on_the_left": {
+          "type": "boolean",
+          "default_value": true,
+          "required": false
+        },
+        "title": {
+          "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true
+        },
+        "tags": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "features-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "footer",
@@ -784,7 +829,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-06-27T15:46:08.259Z",
+      "updated_at": "2023-06-30T16:15:34.133Z",
       "id": 4184631,
       "schema": {
         "header": {
@@ -808,7 +853,7 @@
           "pos": 1
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/be65dcdfec/screenshot-2023-06-30-at-17-15-19.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -1062,7 +1107,7 @@
       "name": "in-depth-analytics-section",
       "display_name": null,
       "created_at": "2023-06-29T12:56:24.090Z",
-      "updated_at": "2023-06-29T12:56:51.034Z",
+      "updated_at": "2023-06-30T16:13:06.960Z",
       "id": 4197857,
       "schema": {
         "header": {
@@ -1075,7 +1120,7 @@
           "maximum": 1
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/b52686888d/screenshot-2023-06-30-at-17-12-45.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -1515,7 +1560,7 @@
       "name": "social-proofs",
       "display_name": null,
       "created_at": "2023-06-09T14:34:35.652Z",
-      "updated_at": "2023-06-23T10:25:26.732Z",
+      "updated_at": "2023-06-30T14:53:15.970Z",
       "id": 4103148,
       "schema": {
         "title": {
@@ -1531,7 +1576,7 @@
           "max_options": "6",
           "source": "internal_stories",
           "filter_content_type": ["customer"],
-          "folder_slug": "pages/customers",
+          "folder_slug": "",
           "required": true
         }
       },
@@ -2269,7 +2314,7 @@
       "name": "voice-and-video-calls-hero",
       "display_name": null,
       "created_at": "2023-06-29T19:19:55.525Z",
-      "updated_at": "2023-06-29T19:27:46.899Z",
+      "updated_at": "2023-06-30T16:12:04.073Z",
       "id": 4200986,
       "schema": {
         "header": {
@@ -2288,9 +2333,18 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["image-title-description-tags-item"]
+        },
+        "customers": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["social-proofs"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/3e350e8d87/screenshot-2023-06-30-at-17-11-46.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -2307,7 +2361,7 @@
       "name": "webhooks-section",
       "display_name": null,
       "created_at": "2023-06-28T13:53:29.295Z",
-      "updated_at": "2023-06-28T13:54:04.257Z",
+      "updated_at": "2023-06-30T16:13:48.469Z",
       "id": 4191402,
       "schema": {
         "title": {
@@ -2320,7 +2374,7 @@
           "required": true
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/136e6b3b18/screenshot-2023-06-30-at-17-13-36.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,

@@ -19,6 +19,7 @@
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
+  import FeaturesSection from '$components/features-section.svelte';
 
   export let block: SbBlokData;
 
@@ -27,6 +28,7 @@
     'chat-features-section': ChatFeaturesSection,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
+    'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,

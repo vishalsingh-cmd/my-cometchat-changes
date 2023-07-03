@@ -21,6 +21,7 @@ export interface BlogPostStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -196,6 +197,16 @@ export interface FeaturesListSubItemStoryblok {
   [k: string]: any;
 }
 
+export interface FeaturesSectionStoryblok {
+  image?: AssetStoryblok;
+  image_on_the_left?: boolean;
+  title: TitleStoryblok[];
+  tags: BulletPointStoryblok[];
+  _uid: string;
+  component: 'features-section';
+  [k: string]: any;
+}
+
 export interface FooterStoryblok {
   column_groups: FooterColumnGroupStoryblok[];
   subfooter: any[];
@@ -338,6 +349,7 @@ export interface IndustryStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -409,6 +421,7 @@ export interface PageStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -488,6 +501,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -528,6 +542,7 @@ export interface TechnologyStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
     | ImplementationSectionStoryblok
@@ -653,6 +668,7 @@ export interface TopnavTechnologiesPanelStoryblok {
 export interface VoiceAndVideoCallsHeroStoryblok {
   header: HeroHeaderStoryblok[];
   items: ImageTitleDescriptionTagsItemStoryblok[];
+  customers: SocialProofsStoryblok[];
   _uid: string;
   component: 'voice-and-video-calls-hero';
   [k: string]: any;
