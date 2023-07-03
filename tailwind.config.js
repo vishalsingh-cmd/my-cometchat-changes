@@ -67,6 +67,7 @@ export default {
           letterSpacing: theme('letterSpacing.wide')
         }
       ],
+      'lg-richtext': ['1.125rem'],
       xl: [
         'clamp(1.125rem, 0.377vw + 1.035rem, 1.375rem)',
         {
@@ -74,12 +75,18 @@ export default {
         }
       ],
       '2xl': [
-        'clamp(2rem, 1.509vw + 1.642rem, 3rem)',
+        'clamp(1.375rem, 1.155vw + 1.076rem, 2rem)',
         {
           fontWeight: 'var(--font-weight-semibold)'
         }
       ],
       '3xl': [
+        'clamp(2rem, 1.509vw + 1.642rem, 3rem)',
+        {
+          fontWeight: 'var(--font-weight-semibold)'
+        }
+      ],
+      '4xl': [
         'clamp(2.5rem, 1.509vw + 2.142rem, 3.5rem)',
         {
           fontWeight: 'var(--font-weight-semibold)'

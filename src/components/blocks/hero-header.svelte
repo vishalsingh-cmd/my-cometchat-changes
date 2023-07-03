@@ -20,8 +20,8 @@
   const title = cva(['font-semibold', 'leading-tighter', 'text-gray-12', 'text-opacity-[.54]'], {
     variants: {
       variant: {
-        primary: ['text-3xl'],
-        secondary: ['text-2xl']
+        primary: ['text-4xl'],
+        secondary: ['text-3xl']
       }
     }
   });
