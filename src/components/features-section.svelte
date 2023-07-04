@@ -17,7 +17,7 @@
         block.image_on_the_right && 'lg:flex-row-reverse'
       )}
     >
-      <div class={cn('flex items-center justify-center bg-gray-12/[2%]', 'p-10 xl:p-20')}>
+      <div class={cn('flex items-center justify-center bg-gray-12/[2%] lg:w-1/2', 'p-10')}>
         {#if block.image}
           {@const { src, alt, width, height } = getImageAttributes(block.image)}
           <img {src} {alt} {width} {height} class="" />
@@ -26,8 +26,8 @@
       <div
         data-theme="light"
         class={cn(
-          'flex flex-col justify-between',
-          'px-container pb-10 pt-12 xl:p-16',
+          'flex flex-col justify-between lg:w-1/2',
+          'px-container pb-10 pt-12 lg:gap-10 xl:gap-0 xl:p-16',
           'border-b border-gray-12/8',
           block.image_on_the_right
             ? 'lg:border-r lg:border-gray-12/8'
