@@ -4,7 +4,7 @@
       "name": "blog-post",
       "display_name": "Blog Post or Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-04T13:34:44.539Z",
+      "updated_at": "2023-07-04T16:50:37.691Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -31,9 +31,16 @@
           "type": "richtext",
           "pos": 3,
           "required": true,
-          "restrict_type": "groups",
+          "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": [],
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics-paragraph"
+          ],
           "component_group_whitelist": ["e853281d-4436-4eec-96ba-923ef0dda74e"],
           "key": "body",
           "translatable": true,
@@ -42,10 +49,8 @@
           "toolbar": [
             "blok",
             "bold",
-            "list",
             "italic",
             "link",
-            "olist",
             "underline",
             "strike",
             "paragraph",
@@ -440,6 +445,37 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "disclaimer",
+      "display_name": null,
+      "created_at": "2023-07-04T14:51:10.358Z",
+      "updated_at": "2023-07-04T14:52:02.778Z",
+      "id": 4221746,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "disclaimer",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "features-list-item",
@@ -975,6 +1011,73 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "highlights-paragraph",
+      "display_name": null,
+      "created_at": "2023-07-04T16:26:58.401Z",
+      "updated_at": "2023-07-04T16:28:08.256Z",
+      "id": 4222649,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["highlights-paragraph-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "highlights-paragraph",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "highlights-paragraph-item",
+      "display_name": null,
+      "created_at": "2023-07-04T16:27:09.530Z",
+      "updated_at": "2023-07-04T16:27:42.873Z",
+      "id": 4222650,
+      "schema": {
+        "icon": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "icons"
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "highlights-paragraph-item",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
       "name": "homepage-hero",
       "display_name": null,
       "created_at": "2023-06-12T11:58:52.576Z",
@@ -1407,6 +1510,35 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "metrics-paragraph",
+      "display_name": null,
+      "created_at": "2023-07-04T16:50:02.705Z",
+      "updated_at": "2023-07-04T16:50:19.139Z",
+      "id": 4222707,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["metrics-item"],
+          "maximum": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "metrics-paragraph",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "page",
@@ -2034,6 +2166,54 @@
       "color": null,
       "icon": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "testimonial-block",
+      "display_name": null,
+      "created_at": "2023-07-04T14:33:53.990Z",
+      "updated_at": "2023-07-04T14:34:56.102Z",
+      "id": 4221681,
+      "schema": {
+        "testimonial": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_name": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_position": {
+          "type": "text",
+          "translatable": true,
+          "required": true
+        },
+        "author_company": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_image": {
+          "type": "asset",
+          "required": true,
+          "translatable": false,
+          "filetypes": ["images"],
+          "asset_folder_id": 258668
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "testimonial-block",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "title",

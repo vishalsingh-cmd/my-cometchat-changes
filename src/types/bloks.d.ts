@@ -163,6 +163,14 @@ export interface DevelopersSectionStoryblok {
   [k: string]: any;
 }
 
+export interface DisclaimerStoryblok {
+  label: string;
+  description: string;
+  _uid: string;
+  component: 'disclaimer';
+  [k: string]: any;
+}
+
 export interface FeaturesListItemStoryblok {
   title: string;
   items: FeaturesListSubItemStoryblok[];
@@ -278,6 +286,22 @@ export interface HeroHeaderStoryblok {
   [k: string]: any;
 }
 
+export interface HighlightsParagraphStoryblok {
+  items: HighlightsParagraphItemStoryblok[];
+  _uid: string;
+  component: 'highlights-paragraph';
+  [k: string]: any;
+}
+
+export interface HighlightsParagraphItemStoryblok {
+  icon: number | string;
+  title: string;
+  subtitle: string;
+  _uid: string;
+  component: 'highlights-paragraph-item';
+  [k: string]: any;
+}
+
 export interface HomepageHeroStoryblok {
   title: RichtextStoryblok;
   links: ButtonLinkStoryblok[];
@@ -390,6 +414,13 @@ export interface MetricsItemStoryblok {
   description: string;
   _uid: string;
   component: 'metrics-item';
+  [k: string]: any;
+}
+
+export interface MetricsParagraphStoryblok {
+  items: MetricsItemStoryblok[];
+  _uid: string;
+  component: 'metrics-paragraph';
   [k: string]: any;
 }
 
@@ -585,6 +616,17 @@ export interface TestimonialStoryblok {
   link?: MultilinkStoryblok;
   _uid: string;
   component: 'testimonial';
+  [k: string]: any;
+}
+
+export interface TestimonialBlockStoryblok {
+  testimonial: string;
+  author_name: string;
+  author_position: string;
+  author_company: string;
+  author_image: AssetStoryblok;
+  _uid: string;
+  component: 'testimonial-block';
   [k: string]: any;
 }
 
