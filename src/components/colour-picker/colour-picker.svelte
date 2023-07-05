@@ -18,7 +18,6 @@
     {
       variants: {
         colour: {
-          'gray-7': `bg-gray-7 hover:outline-gray-7`,
           'purple-9': `bg-purple-9 hover:outline-purple-9`,
           'red-9': `bg-red-9 hover:outline-red-9`,
           'orange-9': `bg-orange-9 hover:outline-orange-9`,
@@ -33,11 +32,6 @@
         }
       },
       compoundVariants: [
-        {
-          colour: 'gray-7',
-          isActive: true,
-          className: `outline-1 outline outline-gray-7`
-        },
         {
           colour: 'purple-9',
           isActive: true,
@@ -90,7 +84,6 @@
   const illustration = cva([], {
     variants: {
       colour: {
-        'gray-7': `text-gray-7`,
         'purple-9': `text-purple-9`,
         'red-9': `text-red-9`,
         'orange-9': `text-orange-9`,
@@ -104,7 +97,6 @@
   });
 
   const colours = [
-    'gray-7',
     'purple-9',
     'red-9',
     'orange-9',
