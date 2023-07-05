@@ -1,12 +1,14 @@
 <script lang="ts">
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getImageAttributes } from '$lib/storyblok';
+
   import type { TestimonialBlockStoryblok } from '$types/bloks';
 
   export let block: TestimonialBlockStoryblok;
 </script>
 
 {#if block}
-  <div class="my-6 flex flex-col gap-3 md:my-10">
+  <div use:storyblokEditable={block} class="my-6 flex flex-col gap-3 md:my-10">
     <div
       class="border-px flex flex-col gap-4 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-5 backdrop-blur-[20px]"
     >

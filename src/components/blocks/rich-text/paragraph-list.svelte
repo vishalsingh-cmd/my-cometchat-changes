@@ -1,6 +1,7 @@
 <script lang="ts">
   import Icon from '$components/icon/icon.svelte';
 
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
 
   import type { ParagraphListStoryblok } from '$types/bloks';
@@ -9,7 +10,7 @@
 </script>
 
 {#if block}
-  <div class="mb-5 mt-4 font-semibold leading-tighter md:mb-3">
+  <div use:storyblokEditable={block} class="mb-5 mt-4 font-semibold leading-tighter md:mb-3">
     <svelte:element this={block.is_numeric ? 'ol' : 'ul'}>
       {#each block.items as item, i}
         <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">

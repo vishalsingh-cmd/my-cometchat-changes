@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import type { MetricsStoryblok } from '$types/bloks';
 
   import MetricsItem from '../metrics-item.svelte';
@@ -7,7 +9,10 @@
 </script>
 
 {#if block}
-  <div class="flex flex-col gap-3 py-4 md:flex-row md:justify-between md:gap-10">
+  <div
+    use:storyblokEditable={block}
+    class="flex flex-col gap-3 py-4 md:flex-row md:justify-between md:gap-10"
+  >
     {#if block.metrics}
       {#each block.metrics as metric}
         <MetricsItem

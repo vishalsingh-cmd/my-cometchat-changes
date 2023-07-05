@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
 
   import type { ParagraphHeadingStoryblok } from '$types/bloks';
@@ -8,6 +9,7 @@
 
 {#if block}
   <div
+    use:storyblokEditable={block}
     class={cn('mb-2.5 mt-5 font-semibold leading-tighter md:mb-3 md:mt-10', block.label && 'mt-6')}
   >
     {#if block.label}

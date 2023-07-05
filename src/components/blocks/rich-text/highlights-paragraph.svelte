@@ -1,13 +1,18 @@
 <script lang="ts">
   import type { HighlightsParagraphStoryblok } from '$types/bloks';
 
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Icon from '$components/icon/icon.svelte';
 
   export let block: HighlightsParagraphStoryblok;
 </script>
 
 {#if block}
-  <div class="my-4 flex flex-col gap-6 md:flex-row md:justify-between md:gap-10">
+  <div
+    use:storyblokEditable={block}
+    class="my-4 flex flex-col gap-6 md:flex-row md:justify-between md:gap-10"
+  >
     {#each block.items as item}
       <div class="flex flex-row items-center gap-3">
         <div
