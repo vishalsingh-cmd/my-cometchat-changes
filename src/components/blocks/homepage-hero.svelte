@@ -27,7 +27,7 @@
     <div class="relative isolate z-10 mx-auto max-w-[528px]">
       {#if block.title && block.title.content && block.title.content[0].content}
         <h1
-          class="text-3xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
+          class="text-4xl font-semibold leading-tighter text-gray-12 text-opacity-[.54] md:text-[60px]"
         >
           {#each block.title.content[0].content as part}
             {#if part.marks && part.marks.some((mark) => mark.type === 'italic')}

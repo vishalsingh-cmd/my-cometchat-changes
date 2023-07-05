@@ -50,7 +50,7 @@
   {#if title}
     <svelte:element
       this={titleHeadingType}
-      class={cn('max-w-[528px] text-2xl font-semibold leading-tighter text-gray-12', titleClass)}
+      class={cn('max-w-[528px] text-3xl font-semibold leading-tighter text-gray-12', titleClass)}
     >
       {title}
     </svelte:element>

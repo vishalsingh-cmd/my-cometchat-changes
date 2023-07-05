@@ -4,7 +4,7 @@
       "name": "blog-post",
       "display_name": "Blog Post or Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-06-30T12:34:02.906Z",
+      "updated_at": "2023-07-04T16:51:45.471Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -16,25 +16,47 @@
         "author": {
           "type": "text",
           "required": true,
-          "pos": 1
+          "pos": 1,
+          "description": ""
         },
         "customer": {
           "type": "option",
           "use_uuid": true,
           "source": "internal_stories",
           "filter_content_type": ["customer"],
-          "description": "If this blog post is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
+          "description": "If this page is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
           "pos": 2
         },
         "body": {
-          "type": "bloks",
+          "type": "richtext",
           "pos": 3,
           "required": true,
-          "restrict_type": "groups",
+          "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": [],
-          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
-          "key": "body"
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics"
+          ],
+          "component_group_whitelist": ["e853281d-4436-4eec-96ba-923ef0dda74e"],
+          "key": "body",
+          "translatable": true,
+          "allow_target_blank": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "blok",
+            "bold",
+            "italic",
+            "link",
+            "underline",
+            "strike",
+            "paragraph",
+            "image",
+            "h3"
+          ]
         },
         "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
           "display_name": "Metadata",
@@ -84,13 +106,16 @@
       "name": "bullet-point",
       "display_name": null,
       "created_at": "2023-06-28T09:39:11.178Z",
-      "updated_at": "2023-06-28T09:39:20.379Z",
+      "updated_at": "2023-07-03T14:13:54.762Z",
       "id": 4189111,
       "schema": {
         "item": {
           "type": "text",
           "required": true,
           "translatable": true
+        },
+        "coming_soon": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -195,7 +220,7 @@
       "name": "chat-and-messaging-hero",
       "display_name": null,
       "created_at": "2023-06-26T11:17:05.018Z",
-      "updated_at": "2023-06-26T11:21:12.457Z",
+      "updated_at": "2023-06-30T16:07:48.538Z",
       "id": 4177401,
       "schema": {
         "header": {
@@ -213,7 +238,7 @@
           "filetypes": ["images"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/d2925bf4be/1.jpg",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -230,7 +255,7 @@
       "name": "chat-features-section",
       "display_name": null,
       "created_at": "2023-06-27T13:09:07.080Z",
-      "updated_at": "2023-06-27T13:12:51.908Z",
+      "updated_at": "2023-07-03T08:54:35.975Z",
       "id": 4183691,
       "schema": {
         "items": {
@@ -240,10 +265,11 @@
           "minimum": 2,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["header-with-image"]
+          "component_whitelist": ["header-with-image"],
+          "description": "Please add 2"
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/738c25f80c/screenshot-2023-06-30-at-17-17-02.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -421,10 +447,41 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "disclaimer",
+      "display_name": null,
+      "created_at": "2023-07-04T14:51:10.358Z",
+      "updated_at": "2023-07-04T14:52:02.778Z",
+      "id": 4221746,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "disclaimer",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
       "name": "features-list-item",
       "display_name": null,
       "created_at": "2023-06-28T09:34:45.942Z",
-      "updated_at": "2023-06-28T09:41:18.443Z",
+      "updated_at": "2023-07-03T09:01:46.021Z",
       "id": 4189082,
       "schema": {
         "title": {
@@ -439,7 +496,8 @@
           "maximum": 4,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["features-list-sub-item"]
+          "component_whitelist": ["features-list-sub-item"],
+          "description": "It needs to have between 3 and 4 items"
         }
       },
       "image": null,
@@ -459,7 +517,7 @@
       "name": "features-list-section",
       "display_name": null,
       "created_at": "2023-06-28T09:16:05.392Z",
-      "updated_at": "2023-06-28T09:35:53.348Z",
+      "updated_at": "2023-06-30T16:10:07.316Z",
       "id": 4188935,
       "schema": {
         "header": {
@@ -479,7 +537,7 @@
           "component_whitelist": ["features-list-item"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/7f46a3ae79/screenshot-2023-06-30-at-17-09-49.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -526,6 +584,55 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "features-section",
+      "display_name": null,
+      "created_at": "2023-06-30T15:35:17.847Z",
+      "updated_at": "2023-07-04T13:43:38.369Z",
+      "id": 4205182,
+      "schema": {
+        "image_on_the_right": {
+          "type": "boolean",
+          "default_value": false,
+          "required": false,
+          "pos": 0
+        },
+        "image": {
+          "type": "asset",
+          "pos": 1
+        },
+        "title": {
+          "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "pos": 2
+        },
+        "tags": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["tag"],
+          "pos": 3
+        }
+      },
+      "image": "//a.storyblok.com/f/231922/x/f229eb5539/screenshot-2023-07-03-at-09-57-20.png",
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "features-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "footer",
@@ -784,7 +891,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-06-27T15:46:08.259Z",
+      "updated_at": "2023-06-30T16:15:34.133Z",
       "id": 4184631,
       "schema": {
         "header": {
@@ -808,7 +915,7 @@
           "pos": 1
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/be65dcdfec/screenshot-2023-06-30-at-17-15-19.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -904,6 +1011,73 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "highlights-paragraph",
+      "display_name": null,
+      "created_at": "2023-07-04T16:26:58.401Z",
+      "updated_at": "2023-07-04T16:28:08.256Z",
+      "id": 4222649,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["highlights-paragraph-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "highlights-paragraph",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "highlights-paragraph-item",
+      "display_name": null,
+      "created_at": "2023-07-04T16:27:09.530Z",
+      "updated_at": "2023-07-04T16:27:42.873Z",
+      "id": 4222650,
+      "schema": {
+        "icon": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal",
+          "datasource_slug": "icons"
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "subtitle": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "highlights-paragraph-item",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
       "name": "homepage-hero",
       "display_name": null,
       "created_at": "2023-06-12T11:58:52.576Z",
@@ -978,7 +1152,7 @@
       "name": "image-title-description-tags-item",
       "display_name": null,
       "created_at": "2023-06-29T19:21:39.102Z",
-      "updated_at": "2023-06-29T19:27:46.825Z",
+      "updated_at": "2023-07-03T14:23:20.972Z",
       "id": 4201010,
       "schema": {
         "image": {
@@ -1003,7 +1177,7 @@
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["text", "bullet-point"]
+          "component_whitelist": ["text", "tag"]
         }
       },
       "image": null,
@@ -1062,7 +1236,7 @@
       "name": "in-depth-analytics-section",
       "display_name": null,
       "created_at": "2023-06-29T12:56:24.090Z",
-      "updated_at": "2023-06-29T12:56:51.034Z",
+      "updated_at": "2023-06-30T16:13:06.960Z",
       "id": 4197857,
       "schema": {
         "header": {
@@ -1075,7 +1249,7 @@
           "maximum": 1
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/b52686888d/screenshot-2023-06-30-at-17-12-45.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -1429,6 +1603,97 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "paragraph-heading",
+      "display_name": null,
+      "created_at": "2023-07-04T13:01:34.664Z",
+      "updated_at": "2023-07-04T13:01:49.788Z",
+      "id": 4220840,
+      "schema": {
+        "label": {
+          "type": "text",
+          "translatable": true
+        },
+        "heading": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "paragraph-heading",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "paragraph-list",
+      "display_name": null,
+      "created_at": "2023-07-04T13:47:04.990Z",
+      "updated_at": "2023-07-04T13:48:17.889Z",
+      "id": 4221178,
+      "schema": {
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["paragraph-list-item"]
+        },
+        "is_numeric": {
+          "type": "boolean"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "paragraph-list",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "paragraph-list-item",
+      "display_name": null,
+      "created_at": "2023-07-04T13:47:30.476Z",
+      "updated_at": "2023-07-04T13:47:50.612Z",
+      "id": 4221194,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "text",
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "paragraph-list-item",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
+    },
+    {
       "name": "platform-section",
       "display_name": null,
       "created_at": "2023-06-12T12:29:59.645Z",
@@ -1593,7 +1858,7 @@
       "name": "synced-block",
       "display_name": null,
       "created_at": "2023-06-19T10:39:12.936Z",
-      "updated_at": "2023-06-19T10:46:12.366Z",
+      "updated_at": "2023-07-03T11:03:42.532Z",
       "id": 4142186,
       "schema": {
         "synced_block": {
@@ -1605,9 +1870,9 @@
         }
       },
       "image": null,
-      "preview_field": null,
+      "preview_field": "synced_block",
       "is_root": false,
-      "preview_tmpl": null,
+      "preview_tmpl": "",
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
@@ -1644,6 +1909,32 @@
       "color": null,
       "icon": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "tag",
+      "display_name": null,
+      "created_at": "2023-07-03T14:15:58.057Z",
+      "updated_at": "2023-07-03T14:16:06.825Z",
+      "id": 4214882,
+      "schema": {
+        "tag": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tag",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "technologies-section",
@@ -1846,6 +2137,54 @@
       "color": null,
       "icon": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "testimonial-block",
+      "display_name": null,
+      "created_at": "2023-07-04T14:33:53.990Z",
+      "updated_at": "2023-07-04T14:34:56.102Z",
+      "id": 4221681,
+      "schema": {
+        "testimonial": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_name": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_position": {
+          "type": "text",
+          "translatable": true,
+          "required": true
+        },
+        "author_company": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "author_image": {
+          "type": "asset",
+          "required": true,
+          "translatable": false,
+          "filetypes": ["images"],
+          "asset_folder_id": 258668
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "testimonial-block",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "title",
@@ -2269,7 +2608,7 @@
       "name": "voice-and-video-calls-hero",
       "display_name": null,
       "created_at": "2023-06-29T19:19:55.525Z",
-      "updated_at": "2023-06-30T14:52:42.355Z",
+      "updated_at": "2023-06-30T16:12:04.073Z",
       "id": 4200986,
       "schema": {
         "header": {
@@ -2299,7 +2638,7 @@
           "component_whitelist": ["social-proofs"]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/3e350e8d87/screenshot-2023-06-30-at-17-11-46.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -2316,7 +2655,7 @@
       "name": "webhooks-section",
       "display_name": null,
       "created_at": "2023-06-28T13:53:29.295Z",
-      "updated_at": "2023-06-28T13:54:04.257Z",
+      "updated_at": "2023-06-30T16:13:48.469Z",
       "id": 4191402,
       "schema": {
         "title": {
@@ -2329,7 +2668,7 @@
           "required": true
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/136e6b3b18/screenshot-2023-06-30-at-17-13-36.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,

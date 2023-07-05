@@ -48,7 +48,7 @@
     />
   </div>
   <div>
-    <p class="text-3xl/none">{metric.metric}</p>
+    <p class="text-4xl/none">{metric.metric}</p>
     <p class="text-lg/snug opacity-74">{metric.description}</p>
   </div>
 </div>

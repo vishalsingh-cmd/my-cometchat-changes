@@ -18,8 +18,9 @@
   import SocialProofs from '$components/social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
-  import WebhooksSection from './webhooks-section.svelte';
   import TechnologiesSection from './technologies-section.svelte';
+  import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
+  import WebhooksSection from './webhooks-section.svelte';
 
   export let block: SbBlokData;
 
@@ -41,6 +42,7 @@
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
+    'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection
   };
 </script>

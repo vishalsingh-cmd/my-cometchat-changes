@@ -1,10 +1,12 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import { getImageAttributes } from '$lib/storyblok';
+  import { string } from '$lib/strings';
 
   import type { FeaturesListSubItemStoryblok } from '$types/bloks';
 
   import Icon from './icon/icon.svelte';
+  import Tag from './tag.svelte';
 
   export let i: number;
   export let item: FeaturesListSubItemStoryblok;
@@ -28,6 +30,9 @@
             <p class="text-lg font-medium leading-snug tracking-wide">
               {contentItem.item}
             </p>
+            {#if contentItem.coming_soon}
+              <Tag label={string('coming_soon')} />
+            {/if}
           </div>
         {/each}
       </div>
