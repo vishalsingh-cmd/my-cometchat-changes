@@ -1,46 +1,46 @@
 <script lang="ts">
   import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import type { FeaturesSectionStoryblok } from '$types/bloks';
-  import Tag from './tag.svelte';
-  import Title from './title.svelte';
+
+  import Tag from '$components/tag.svelte';
+  import Title from '$components/title.svelte';
 
   export let block: FeaturesSectionStoryblok;
-  console.log(block);
 </script>
 
 {#if block}
-  <section data-theme="light" class="bg-white">
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1">
     <div
       class={cn(
-        'container mx-auto flex flex-col-reverse lg:flex-row lg:px-container',
+        'container mx-auto flex min-h-[500px] flex-col-reverse lg:flex-row xl:min-h-[720px]',
         block.image_on_the_right && 'lg:flex-row-reverse'
       )}
     >
-      <div class={cn('flex items-center justify-center bg-gray-12/[2%] lg:w-1/2', 'p-10')}>
+      <div class="flex w-full items-center justify-center bg-gray-12/[0.02] p-10 xl:max-w-[700px]">
         {#if block.image}
           {@const { src, alt, width, height } = getImageAttributes(block.image)}
-          <img {src} {alt} {width} {height} class="" />
+          <img {src} {alt} {width} {height} />
         {/if}
       </div>
       <div
-        data-theme="light"
         class={cn(
-          'flex flex-col justify-between lg:w-1/2',
-          'px-container pb-10 pt-12 lg:gap-10 xl:gap-0 xl:p-16',
-          'border-b border-gray-12/8',
+          'flex flex-col justify-between gap-10 border-b border-gray-12/8 pb-16 pl-container pr-32',
           block.image_on_the_right
             ? 'lg:border-r lg:border-gray-12/8'
             : 'lg:border-l lg:border-gray-12/8'
         )}
       >
-        {#if block.title[0]}
+        {#if block.title && block.title[0]}
+          {@const title = block.title[0]}
           <Title
-            class={'max-w-[528px] pl-0 pr-0 pt-0 lg:p-0 xl:pt-0'}
+            class="max-w-[528px] pl-0 pr-0"
             alignment="left"
-            label={{ content: block.title[0].label, color: 'orange' }}
-            title={block.title[0].title}
-            description={block.title[0].description}
+            label={{ content: title.label, color: 'orange' }}
+            title={title.title}
+            description={title.description}
           />
         {/if}
         {#if block.tags && block.tags?.length > 0}

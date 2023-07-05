@@ -5,7 +5,7 @@
   import HeroHeader from './hero-header.svelte';
   import ImageTitleDescriptionTagsItem from './image-title-description-tags-item.svelte';
   import Background from '$components/voice-and-video-calls/hero/background.svelte';
-  import SocialProofs from '$components/social-proofs.svelte';
+  import SocialProofs from '$components/blocks/social-proofs.svelte';
 
   export let block: VoiceAndVideoCallsHeroStoryblok;
 </script>
