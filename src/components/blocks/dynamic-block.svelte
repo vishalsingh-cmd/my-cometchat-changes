@@ -21,6 +21,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import FeaturesSection from '$components/features-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
+  import WebhooksSection from './webhooks-section.svelte';
 
   export let block: SbBlokData;
 
@@ -43,7 +44,8 @@
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
-    'voice-and-video-calls-hero': VoiceAndVideoCallsHero
+    'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
+    'webhooks-section': WebhooksSection
   };
 </script>
 

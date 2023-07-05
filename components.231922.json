@@ -4,7 +4,7 @@
       "name": "blog-post",
       "display_name": "Blog Post or Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-04T16:50:37.691Z",
+      "updated_at": "2023-07-04T16:51:45.471Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -39,7 +39,7 @@
             "testimonial-block",
             "disclaimer",
             "highlights-paragraph",
-            "metrics-paragraph"
+            "metrics"
           ],
           "component_group_whitelist": ["e853281d-4436-4eec-96ba-923ef0dda74e"],
           "key": "body",
@@ -1510,35 +1510,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
-    },
-    {
-      "name": "metrics-paragraph",
-      "display_name": null,
-      "created_at": "2023-07-04T16:50:02.705Z",
-      "updated_at": "2023-07-04T16:50:19.139Z",
-      "id": 4222707,
-      "schema": {
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["metrics-item"],
-          "maximum": 3
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "metrics-paragraph",
-      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Richtext"
     },
     {
       "name": "page",

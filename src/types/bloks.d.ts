@@ -417,13 +417,6 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
-export interface MetricsParagraphStoryblok {
-  items: MetricsItemStoryblok[];
-  _uid: string;
-  component: 'metrics-paragraph';
-  [k: string]: any;
-}
-
 export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
