@@ -2,7 +2,13 @@
   import { intersectionObserver } from '$lib/actions/intersection-observer';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
+
   import type { MetricsItemStoryblok } from '$types/bloks';
+
+  let className: undefined | string = undefined;
+  export { className as class };
+  export let titleClassName: string | undefined = undefined;
+  export let subtitleClassName: string | undefined = undefined;
 
   export let metric: MetricsItemStoryblok;
 
@@ -12,7 +18,7 @@
 </script>
 
 <div
-  class="flex flex-col-reverse gap-6 lg:flex-row lg:items-end"
+  class={cn('flex flex-col-reverse gap-6 lg:flex-row lg:items-end', className)}
   bind:clientWidth={width}
   bind:clientHeight={height}
   style="--metric-width:{width}px;--metric-height:{height}px;"
@@ -48,7 +54,7 @@
     />
   </div>
   <div>
-    <p class="text-4xl/none">{metric.metric}</p>
-    <p class="text-lg/snug opacity-74">{metric.description}</p>
+    <p class={cn('text-4xl/none', titleClassName)}>{metric.metric}</p>
+    <p class={cn('text-lg/snug opacity-74', subtitleClassName)}>{metric.description}</p>
   </div>
 </div>
