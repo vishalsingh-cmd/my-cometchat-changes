@@ -8,6 +8,7 @@
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
+  import FeaturesSection from './features-section.svelte';
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
@@ -16,11 +17,12 @@
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
   import PlatformSection from './platform-section.svelte';
-  import SocialProofs from '$components/social-proofs.svelte';
+  import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
+  import WebhooksSection from './webhooks-section.svelte';
 
   export let block: SbBlokData;
 
@@ -30,6 +32,7 @@
     'chat-features-section': ChatFeaturesSection,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
+    'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
@@ -43,7 +46,8 @@
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
-    'voice-and-video-calls-hero': VoiceAndVideoCallsHero
+    'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
+    'webhooks-section': WebhooksSection
   };
 </script>
 
