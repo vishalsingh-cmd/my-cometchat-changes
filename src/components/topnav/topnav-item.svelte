@@ -62,6 +62,13 @@
     >
       {title}
     </p>
+    {#if target === '_blank'}
+      <Icon
+        size={size === 'big' ? 'lg' : 'xs'}
+        icon="link-external-02"
+        class="hidden group-hover:block"
+      />
+    {/if}
   </div>
   {#if description}
     <p
