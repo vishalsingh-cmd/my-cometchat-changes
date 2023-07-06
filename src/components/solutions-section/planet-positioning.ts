@@ -9,7 +9,7 @@ export const planetPositioning = (
     // 1 elements
     [
       {
-        top: 0,
+        top: -10,
         left: containerWidth / 2 - elementCenter
       }
     ],
@@ -17,11 +17,11 @@ export const planetPositioning = (
     // 2 elements
     [
       {
-        top: 0,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.15
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter + containerWidth * 0.14
       }
     ],
@@ -29,15 +29,15 @@ export const planetPositioning = (
     // 3 elements
     [
       {
-        top: 0,
+        top: -10,
         left: containerWidth / 3 - elementCenter - containerWidth * 0.1
       },
       {
-        top: 100,
+        top: 70,
         left: containerWidth / 2 - elementCenter
       },
       {
-        top: 50,
+        top: 20,
         left: containerWidth / 2 - elementCenter + containerWidth * 0.18
       }
     ],
@@ -45,19 +45,19 @@ export const planetPositioning = (
     // 4 elements
     [
       {
-        top: 0,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.35
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.1
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.05
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.25
       }
     ],
@@ -65,23 +65,23 @@ export const planetPositioning = (
     // 5 elements
     [
       {
-        top: 100,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.35
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.15
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 - elementCenter
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.08
       },
       {
-        top: 0,
+        top: 50,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.25
       }
     ],
@@ -89,27 +89,27 @@ export const planetPositioning = (
     // 6 elements
     [
       {
-        top: 100,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.45
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.3
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.1
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.001
       },
       {
-        top: 0,
+        top: 50,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.18
       },
       {
-        top: 100,
+        top: 60,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.31
       }
     ],
@@ -117,31 +117,31 @@ export const planetPositioning = (
     // 7 elements
     [
       {
-        top: 100,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.4
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.25
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.15
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 - elementCenter
       },
       {
-        top: 0,
+        top: 50,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.03
       },
       {
-        top: 100,
+        top: 60,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.15
       },
       {
-        top: 40,
+        top: -10,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.3
       }
     ],
@@ -149,74 +149,74 @@ export const planetPositioning = (
     // 8 elements
     [
       {
-        top: 100,
+        top: -10,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.45
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.3
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.18
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.05
       },
       {
-        top: 0,
+        top: 50,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.001
       },
       {
-        top: 100,
+        top: 60,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.1
       },
       {
-        top: 40,
+        top: -10,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.21
       },
       {
-        top: 130,
+        top: 110,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.31
       }
     ],
     // 9 elements
     [
       {
-        top: 100,
+        top: -10,
         left: 0
       },
       {
-        top: 50,
+        top: 70,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.35
       },
       {
-        top: 0,
+        top: 20,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.25
       },
       {
-        top: 10,
+        top: 90,
         left: containerWidth / 2 - elementCenter - containerWidth * 0.13
       },
       {
-        top: 0,
+        top: 50,
         left: containerWidth / 2 - elementCenter
       },
       {
-        top: 100,
+        top: 60,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.01
       },
       {
-        top: 40,
+        top: -10,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.13
       },
       {
-        top: 130,
+        top: 110,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.25
       },
       {
-        top: 0,
+        top: -30,
         left: containerWidth / 2 + elementCenter + containerWidth * 0.35
       }
     ]
