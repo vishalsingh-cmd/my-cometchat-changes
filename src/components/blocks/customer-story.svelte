@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  import { page } from '$app/stores';
 
   import ContentCard from '$components/content-card.svelte';
   import Icon from '$components/icon/icon.svelte';
@@ -50,6 +51,20 @@
       return;
     }
 
+    /** Detect end of content block and make hasReachEndOfContent true */
+    const content = document.getElementById('content');
+    if (!content) {
+      return;
+    }
+
+    const contentOffsetBottom = content.getBoundingClientRect().bottom;
+
+    if (contentOffsetBottom <= 500) {
+      hasReachedEndOfContent = true;
+    } else {
+      hasReachedEndOfContent = false;
+    }
+
     headings.forEach((heading: HTMLHeadingElement, i: number) => {
       const headingTop = heading.offsetTop;
       const nextHeadingOffsetTop = i === headings.length - 1 ? 0 : headings[i + 1].offsetTop;
@@ -63,21 +78,27 @@
     });
   };
 
+  const createAbsoluteUrl = (url: string) => {
+    return encodeURIComponent(url);
+  };
+
   const shareLinks = [
     {
       icon: 'facebook',
       text: string('blog.facebook'),
-      url: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.storyblok.com%2F'
+      url: `https://www.facebook.com/sharer/sharer.php?u=${createAbsoluteUrl($page.url.href)}`
     },
     {
       icon: 'twitter',
       text: string('blog.twitter'),
-      url: 'https://twitter.com/intent/tweet?text=Storyblok%20-%20Headless%20CMS%20&url=https%3A%2F%2Fwww.storyblok.com%2F&via=storyblok'
+      url: `https://twitter.com/intent/tweet?url=${createAbsoluteUrl($page.url.href)}`
     },
     {
       icon: 'linkedin',
       text: string('blog.linkedin'),
-      url: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.storyblok.com%2F&title=Storyblok%20-%20Headless%20CMS%20&summary=Storyblok%20-%20Headless%20CMS%20&source=Storyblok%20-%20Headless%20CMS%20'
+      url: `https://www.linkedin.com/shareArticle?mini=true&url=${createAbsoluteUrl(
+        $page.url.href
+      )}`
     }
   ];
 
@@ -124,8 +145,8 @@
       <div class="container relative mx-auto">
         <div
           class={cn(
-            'left-16 top-[120px] hidden h-0 overflow-visible lg:sticky',
-            hasReachedEndOfContent && 'hidden'
+            'sticky left-16 top-[120px] hidden h-0 overflow-visible lg:block',
+            hasReachedEndOfContent && 'lg:hidden'
           )}
         >
           <div class="relative flex h-full w-fit flex-col justify-between pl-container">
@@ -141,7 +162,7 @@
                       activeHeadingIndex === i && 'opacity-100',
                       i !== 0 && 'pt-4',
                       (i < activeHeadingIndex || activeHeadingIndex === i) &&
-                        'opacity-100 before:absolute before:left-[-12px] before:top-0 before:h-full before:w-px before:bg-brand-9'
+                        'opacity-100 before:absolute before:-left-3 before:top-0 before:h-full before:w-px before:bg-brand-9'
                     )}
                     on:click={() => {
                       activeHeadingIndex = i;
@@ -161,8 +182,9 @@
                 {#each shareLinks as link}
                   <a
                     href={link.url}
-                    class="flex items-center gap-[6px] opacity-74 ease-smooth hover:opacity-100"
+                    class="flex items-center gap-1.5 opacity-74 ease-smooth hover:opacity-100"
                     target="_blank"
+                    rel="noopener"
                   >
                     <Icon icon={link.icon} size="xs" />
                     {link.text}
