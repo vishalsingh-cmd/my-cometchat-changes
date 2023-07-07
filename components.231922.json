@@ -308,32 +308,22 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-06T14:19:08.771Z",
+      "updated_at": "2023-07-07T16:44:34.965Z",
       "id": 4079335,
       "schema": {
-        "cover": {
-          "type": "asset",
-          "pos": 0,
-          "filetypes": ["images"],
-          "asset_folder_id": 248971
-        },
-        "tab-31c8774d-cf08-4c55-ac9d-8bf3c7a72917": {
-          "display_name": "Related content",
-          "keys": ["related_items"],
-          "pos": 0,
-          "type": "tab"
-        },
-        "customer": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal_stories",
-          "filter_content_type": ["customer"],
-          "description": "If this page is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
-          "pos": 2
+        "metrics": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["metrics"],
+          "minimum": 1,
+          "maximum": 1,
+          "pos": 0
         },
         "body": {
           "type": "richtext",
-          "pos": 3,
+          "pos": 1,
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
@@ -362,17 +352,37 @@
             "h3"
           ]
         },
+        "cover": {
+          "type": "asset",
+          "pos": 2,
+          "filetypes": ["images"],
+          "asset_folder_id": 248971
+        },
+        "tab-31c8774d-cf08-4c55-ac9d-8bf3c7a72917": {
+          "display_name": "Related content",
+          "keys": ["related_items"],
+          "pos": 3,
+          "type": "tab"
+        },
+        "customer": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["customer"],
+          "description": "If this page is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
+          "pos": 4
+        },
         "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
           "display_name": "Metadata",
           "keys": ["cover", "customer"],
-          "pos": 4,
+          "pos": 5,
           "type": "tab",
           "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
         },
         "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
           "display_name": "SEO",
           "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
-          "pos": 5,
+          "pos": 6,
           "type": "tab",
           "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
           "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
@@ -380,23 +390,59 @@
         "seo_title": {
           "type": "text",
           "key": "title",
-          "pos": 6
+          "pos": 7
         },
         "seo_description": {
           "type": "text",
           "key": "description",
-          "pos": 7
+          "pos": 8
         },
         "seo_og_image": {
           "type": "asset",
           "filetypes": ["images"],
-          "pos": 8
+          "pos": 9
         },
         "related_items": {
           "type": "options",
           "source": "internal_stories",
-          "filter_content_type": ["blog-post"],
-          "max_options": "3"
+          "filter_content_type": ["blog-post", "customer-story"],
+          "max_options": "3",
+          "pos": 10
+        },
+        "tab-093b04e9-0e75-4a6b-a747-57dbc00fc0f0": {
+          "display_name": "Quote",
+          "keys": ["author_name", "author_avatar", "author_role", "author_company", "quote"],
+          "pos": 11,
+          "type": "tab"
+        },
+        "author_name": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "pos": 12
+        },
+        "author_avatar": {
+          "type": "asset",
+          "required": true,
+          "pos": 13
+        },
+        "author_role": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "pos": 14
+        },
+        "author_company": {
+          "type": "text",
+          "required": true,
+          "translatable": true,
+          "pos": 15
+        },
+        "quote": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true,
+          "pos": 16
         }
       },
       "image": null,

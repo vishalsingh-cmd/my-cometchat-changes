@@ -6,9 +6,10 @@
 
   import type { CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
 
-  import Sidebar from '$components/customer-story/sidebar.svelte';
+  import Hero from '$components/customer-story/hero.svelte';
   import RelatedContent from '$components/customer-story/related-content.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  import Sidebar from '$components/customer-story/sidebar.svelte';
 
   export let block: CustomerStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
@@ -34,7 +35,7 @@
   };
 
   const onScrollIntoView = (e: CustomEvent) => {
-    const heading = e.detail.heading as HTMLHeadingElement;
+    const heading = e.detail.i as HTMLHeadingElement;
 
     const headerOffset = 64;
 
@@ -94,13 +95,14 @@
 <svelte:window bind:scrollY={windowScroll} />
 
 {#if block}
+  <Hero {block} {industries} />
   <section
     use:storyblokEditable={block}
     data-theme="light"
     class="bg-gray-1 px-container text-gray-12"
   >
     {#if block.content.body && block.content.body.content}
-      <div class="container relative mx-auto">
+      <div class="container relative mx-auto pt-20">
         <Sidebar
           {headings}
           {activeHeadingIndex}

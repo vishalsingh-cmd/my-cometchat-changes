@@ -143,13 +143,23 @@ export interface RichtextStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
+  metrics: MetricsStoryblok[];
+  body: RichtextStoryblok;
   cover?: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
-  body: RichtextStoryblok;
   seo_title?: string;
   seo_description?: string;
   seo_og_image?: AssetStoryblok;
-  related_items?: (StoryblokStory<BlogPostStoryblok> | string)[];
+  related_items?: (
+    | StoryblokStory<BlogPostStoryblok>
+    | StoryblokStory<CustomerStoryStoryblok>
+    | string
+  )[];
+  author_name: string;
+  author_avatar: AssetStoryblok;
+  author_role: string;
+  author_company: string;
+  quote: string;
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
