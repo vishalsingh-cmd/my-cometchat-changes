@@ -143,6 +143,7 @@
                     href={link.url}
                     class="flex items-center gap-[6px] opacity-74 ease-smooth hover:opacity-100"
                     target="_blank"
+                    rel="noopener"
                   >
                     <Icon icon={link.icon} size="xs" />
                     {link.text}
