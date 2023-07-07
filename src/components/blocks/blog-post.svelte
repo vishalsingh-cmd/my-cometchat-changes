@@ -127,7 +127,7 @@
                       activeHeadingIndex === i && 'opacity-100',
                       i !== 0 && 'pt-4',
                       (i < activeHeadingIndex || activeHeadingIndex === i) &&
-                        'opacity-100 before:absolute before:left-[-12px] before:top-0 before:h-full before:w-px before:bg-brand-9'
+                        'opacity-100 before:absolute before:-left-3 before:top-0 before:h-full before:w-px before:bg-brand-9'
                     )}
                     on:click={() => {
                       activeHeadingIndex = i;
