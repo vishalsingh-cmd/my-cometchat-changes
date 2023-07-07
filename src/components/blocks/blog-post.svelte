@@ -110,7 +110,7 @@
       <div class="container relative mx-auto">
         <div
           class={cn(
-            'sticky left-16 top-[120px] h-0 overflow-visible',
+            'sticky left-16 top-[120px] hidden h-0 overflow-visible lg:block',
             hasReachedEndOfContent && 'hidden'
           )}
         >
@@ -147,7 +147,7 @@
                 {#each shareLinks as link}
                   <a
                     href={link.url}
-                    class="flex items-center gap-[6px] opacity-74 ease-smooth hover:opacity-100"
+                    class="flex items-center gap-1.5 opacity-74 ease-smooth hover:opacity-100"
                     target="_blank"
                     rel="noopener"
                   >
