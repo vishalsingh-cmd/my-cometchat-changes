@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
+  import { page } from '$app/stores';
 
   import Icon from '$components/icon/icon.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
@@ -59,25 +60,25 @@
   };
 
   const createAbsoluteUrl = (url: string) => {
-    return encodeURI(url);
+    return encodeURIComponent(url);
   };
 
   const shareLinks = [
     {
       icon: 'facebook',
       text: string('blog.facebook'),
-      url: `https://www.facebook.com/sharer/sharer.php?u=${createAbsoluteUrl(window.location.href)}`
+      url: `https://www.facebook.com/sharer/sharer.php?u=${createAbsoluteUrl($page.url.href)}`
     },
     {
       icon: 'twitter',
       text: string('blog.twitter'),
-      url: `https://twitter.com/intent/tweet?url=${createAbsoluteUrl(window.location.href)}`
+      url: `https://twitter.com/intent/tweet?url=${createAbsoluteUrl($page.url.href)}`
     },
     {
       icon: 'linkedin',
       text: string('blog.linkedin'),
       url: `https://www.linkedin.com/shareArticle?mini=true&url=${createAbsoluteUrl(
-        window.location.href
+        $page.url.href
       )}`
     }
   ];
