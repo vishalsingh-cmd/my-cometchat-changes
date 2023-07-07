@@ -46,6 +46,20 @@
       return;
     }
 
+    /** Detect end of content block and make hasReachEndOfContent true */
+    const content = document.getElementById('content');
+    if (!content) {
+      return;
+    }
+
+    const contentOffsetBottom = content.getBoundingClientRect().bottom;
+
+    if (contentOffsetBottom <= 500) {
+      hasReachedEndOfContent = true;
+    } else {
+      hasReachedEndOfContent = false;
+    }
+
     headings.forEach((heading: HTMLHeadingElement, i: number) => {
       const headingTop = heading.offsetTop;
       const nextHeadingOffsetTop = i === headings.length - 1 ? 0 : headings[i + 1].offsetTop;
@@ -112,7 +126,7 @@
         <div
           class={cn(
             'sticky left-16 top-[120px] hidden h-0 overflow-visible lg:block',
-            hasReachedEndOfContent && 'hidden'
+            hasReachedEndOfContent && 'lg:hidden'
           )}
         >
           <div class="relative flex h-full w-fit flex-col justify-between pl-container">
