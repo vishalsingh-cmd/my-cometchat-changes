@@ -58,21 +58,27 @@
     });
   };
 
+  const createAbsoluteUrl = (url: string) => {
+    return encodeURI(url);
+  };
+
   const shareLinks = [
     {
       icon: 'facebook',
       text: string('blog.facebook'),
-      url: 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.storyblok.com%2F'
+      url: `https://www.facebook.com/sharer/sharer.php?u=${createAbsoluteUrl(window.location.href)}`
     },
     {
       icon: 'twitter',
       text: string('blog.twitter'),
-      url: 'https://twitter.com/intent/tweet?text=Storyblok%20-%20Headless%20CMS%20&url=https%3A%2F%2Fwww.storyblok.com%2F&via=storyblok'
+      url: `https://twitter.com/intent/tweet?url=${createAbsoluteUrl(window.location.href)}`
     },
     {
       icon: 'linkedin',
       text: string('blog.linkedin'),
-      url: 'https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.storyblok.com%2F&title=Storyblok%20-%20Headless%20CMS%20&summary=Storyblok%20-%20Headless%20CMS%20&source=Storyblok%20-%20Headless%20CMS%20'
+      url: `https://www.linkedin.com/shareArticle?mini=true&url=${createAbsoluteUrl(
+        window.location.href
+      )}`
     }
   ];
 
