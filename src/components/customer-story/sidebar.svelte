@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
   import { page } from '$app/stores';
 
   import { string } from '$lib/strings';
@@ -30,6 +32,8 @@
     }
   ];
 
+  const dispatch = createEventDispatcher();
+
   export let hasReachedEndOfContent = false;
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
@@ -57,7 +61,9 @@
             on:click={() => {
               activeHeadingIndex = i;
 
-              dispatchEvent(new CustomEvent('scroll-into-view', { detail: heading }));
+              dispatch('scrollIntoView', {
+                i: heading
+              });
             }}
           >
             {heading.innerHTML}
