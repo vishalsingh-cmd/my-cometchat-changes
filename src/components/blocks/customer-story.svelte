@@ -209,7 +209,7 @@
     <Title
       label={{ content: string('customer_stories'), color: 'brand' }}
       title={string('related_stories')}
-      class="pl-0 pr-0"
+      class="container mx-auto pl-0 pr-0"
     />
     <div class="container mx-auto grid grid-cols-1 gap-8 pb-12 md:grid-cols-3 md:pb-20">
       {#if block.content.related_items && block.content.related_items.length > 0}
