@@ -16,8 +16,8 @@
       ?.name ?? '';
 </script>
 
-<section class="h-[743px] px-container pt-[100px] md:pb-20 md:pt-[148px]" data-theme="dark">
-  <div class="grid h-full grid-cols-1 gap-8 md:grid-cols-2">
+<section class="h-[743px] pt-[100px] md:pb-20 md:pt-[148px]" data-theme="dark">
+  <div class="container mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2">
     <div class="flex flex-col justify-between">
       <Title
         label={{ content: industry, color: 'brand' }}
