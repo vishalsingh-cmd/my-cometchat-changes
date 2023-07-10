@@ -11,7 +11,7 @@
   let industries = data.industries as ISbStoryData<IndustryStoryblok>[];
 </script>
 
-<div class="container mx-auto px-container">
+<div class="container mx-auto px-container lg:px-0">
   <div class="xl:flex">
     <div class="flex-[3] p-8 px-0 lg:p-12 xl:pr-12">
       <h3 class="mb-8 text-lg opacity-54">{data.industries_title}</h3>

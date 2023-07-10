@@ -9,7 +9,7 @@
   $: links = data.technologies_links as unknown as ISbStoryData<TechnologyStoryblok>[]; // layout.server is resolving relations for this field
 </script>
 
-<div class="container mx-auto px-container">
+<div class="container mx-auto px-container lg:px-0">
   <div class="items-stretch xl:flex">
     <div class="flex-1 p-8 px-0 lg:p-12 xl:pr-12">
       <h3 class="mb-8 text-lg opacity-54">{data.technologies_title}</h3>
