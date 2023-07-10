@@ -27,38 +27,26 @@ export const load = async ({ cookies, fetch, params }) => {
   ];
 
   try {
-    if (params.path.includes('customer-stories')) {
-      const [page, industries] = await Promise.all([
-        storyblok.get(`cdn/stories/pages/${params.path}`, {
-          version,
-          resolve_relations: relations
-        }),
-        storyblok.get('cdn/stories', {
-          starts_with: 'pages/solutions/',
-          version
-        })
-      ]);
+    const page = await storyblok.get(`cdn/stories/pages/${params.path}`, {
+      version,
+      resolve_relations: relations
+    });
 
-      return {
-        page: page.data.story as ISbStoryData<
-          PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
-        >,
-        industries: industries.data.stories as ISbStoryData<IndustryStoryblok>[]
-      };
-    } else {
-      const [page] = await Promise.all([
-        storyblok.get(`cdn/stories/pages/${params.path}`, {
-          version,
-          resolve_relations: relations
-        })
-      ]);
+    let industries = undefined;
 
-      return {
-        page: page.data.story as ISbStoryData<
-          PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
-        >
-      };
+    if (page.data.story.content.component === 'customer-story') {
+      industries = await storyblok.get('cdn/stories', {
+        content_type: 'industry',
+        version
+      });
     }
+
+    return {
+      page: page.data.story as ISbStoryData<
+        PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
+      >,
+      industries: industries?.data.stories as ISbStoryData<IndustryStoryblok>[]
+    };
   } catch (err) {
     console.error(err);
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
