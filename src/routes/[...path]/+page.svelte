@@ -13,7 +13,7 @@
   let title = data.page?.content?.seo_title || string('default_seo_title');
   let description = data.page?.content?.seo_description || string('default_seo_description');
 
-  const dataObject = {
+  $: dataObject = {
     page: data.page,
     industries: data.industries
   };
