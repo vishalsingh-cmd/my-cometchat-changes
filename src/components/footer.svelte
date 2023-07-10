@@ -90,7 +90,7 @@
                           {href}
                           {target}
                           {rel}
-                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-11 transition hover:opacity-74"
+                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-12 opacity-74 transition hover:opacity-100"
                           >{label}</a
                         >
                       {/each}
