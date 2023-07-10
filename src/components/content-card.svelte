@@ -14,12 +14,11 @@
     {#if image}
       {@const { src, alt, width, height } = getImageAttributes(image)}
       <img
-        class="mb-5 max-h-[280px] rounded-2xl object-cover"
+        class="mb-5 aspect-video max-h-[280px] rounded-2xl object-cover"
         {src}
         {alt}
         {width}
         {height}
-        style="aspect-ratio: 16/9"
       />
     {/if}
     {#if title}
