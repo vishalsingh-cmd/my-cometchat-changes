@@ -182,7 +182,7 @@
               <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
-            <div class="overflow-hidden">
+            <div class="overflow-hidden backdrop-blur-3xl">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
                 {#if data.component === 'topnav-features-panel'}
