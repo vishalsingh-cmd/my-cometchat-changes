@@ -128,7 +128,7 @@
   </div>
   <div class="relative">
     <div
-      class="absolute bottom-0 left-[-20px] h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:right-[79px] md:h-full md:w-[473px]"
+      class="absolute bottom-0 left-[-20px] h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:right-[79px] md:h-full md:w-[473px] md:to-30%"
     />
     <Illustration class={cn(illustration({ colour: colours[selectedColourIndex] }), 'w-full')} />
   </div>
