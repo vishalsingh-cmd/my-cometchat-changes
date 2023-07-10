@@ -10,8 +10,6 @@
   export let data: Footer;
 </script>
 
-<Divider />
-
 <footer data-theme="dark" class="bg-gray-1 text-gray-12">
   <div class="container mx-auto px-container">
     <!-- logo -->
