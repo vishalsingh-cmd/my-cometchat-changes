@@ -19,7 +19,9 @@
         block.image_on_the_right && 'lg:flex-row-reverse'
       )}
     >
-      <div class="flex w-full items-center justify-center bg-gray-12/[0.02] p-10 xl:max-w-[700px]">
+      <div
+        class="flex min-h-[379px] w-full items-center justify-center bg-gray-12/[0.02] xl:max-w-[700px]"
+      >
         {#if block.image}
           {@const { src, alt, width, height } = getImageAttributes(block.image)}
           <img {src} {alt} {width} {height} />
