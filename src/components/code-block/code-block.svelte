@@ -92,7 +92,7 @@
 <div
   data-theme="dark"
   class={cn(
-    'relative rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60',
+    'relative flex h-full flex-col rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60',
     className
   )}
 >
@@ -130,7 +130,7 @@
   {/if}
   <div
     bind:this={container}
-    class="flex overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5 md:overflow-hidden"
+    class="flex h-full max-h-[50px] overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5 md:overflow-hidden"
   >
     {#each snippets as { label }, i}
       <button
@@ -160,7 +160,7 @@
         tabindex="-1"
         bind:this={el}
         data-line={lineHighlight}
-        class={clsx({ 'line-numbers': lineNumbers }, className)}
+        class={clsx('h-full', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
         {...$$restProps}>
   <code class="language-{language}"
@@ -169,7 +169,7 @@
 </pre>
     {/if}
   {/each}
-  <div class="border-t border-gray-5 p-5">
+  <div class="h-full max-h-[58px] justify-self-end border-t border-gray-5 p-5">
     <GhostButton
       on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].codeToCopy)}
     >
