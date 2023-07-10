@@ -1,7 +1,8 @@
 <script lang="ts">
   import CodeBlock from '$components/code-block/code-block.svelte';
   import Comet from '$components/code-block/assets/comet.svg';
-  import Stars from '$components/homepage/hero/stars.svelte';
+
+  import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';

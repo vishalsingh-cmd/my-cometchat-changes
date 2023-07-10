@@ -2,7 +2,7 @@
   import { cva } from 'class-variance-authority';
   import { cn } from '$lib/utils';
 
-  import Stars from '$components/homepage/hero/stars.svelte';
+  import Stars from '$components/stars.svelte';
 
   const blur = cva(
     [
