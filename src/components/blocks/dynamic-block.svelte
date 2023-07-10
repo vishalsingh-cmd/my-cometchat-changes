@@ -5,6 +5,7 @@
   import BlogPost from './blog-post.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
+  import CustomersHero from './customers-hero.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
@@ -30,6 +31,7 @@
     'blog-post': BlogPost,
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
+    'customers-hero': CustomersHero,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
     'features-section': FeaturesSection,
