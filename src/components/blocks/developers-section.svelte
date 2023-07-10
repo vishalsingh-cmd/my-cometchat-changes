@@ -31,7 +31,7 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="overflow-hidden">
+  <section use:storyblokEditable={block} class="overflow-x-clip">
     <div class="relative mx-auto max-w-content">
       <div
         class="absolute right-[-100px] top-[400px] w-full max-w-[365px] rotate-[115.13deg] transform"
