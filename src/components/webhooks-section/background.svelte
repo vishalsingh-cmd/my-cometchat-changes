@@ -3,7 +3,7 @@
 
   import { cn } from '$lib/utils';
 
-  import Stars from '$components/homepage/hero/stars.svelte';
+  import Stars from '$components/stars.svelte';
 
   import Illustration from './assets/illustration.svg';
 

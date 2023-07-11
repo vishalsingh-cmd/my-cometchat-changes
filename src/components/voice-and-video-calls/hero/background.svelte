@@ -6,7 +6,7 @@
   import Comet from './assets/comet.svg';
   import Orbit from './assets/orbit.svg';
 
-  import Stars from '$components/homepage/hero/stars.svelte';
+  import Stars from '$components/stars.svelte';
 
   const blur = cva(['absolute', 'origin-center', 'transform', 'rounded-1/2'], {
     variants: {}

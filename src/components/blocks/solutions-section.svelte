@@ -5,11 +5,13 @@
   import CometIllustration, {
     type IllustrationOptions
   } from '$components/comet-illustration/comet-illustration.svelte';
-  import GhostButton from '$components/buttons/ghost-button.svelte';
+
   import Noise from '$components/solutions-section/assets/noise.svg';
   import Orbit1 from '$components/solutions-section/assets/orbit-1.svg';
   import Orbit2 from '$components/solutions-section/assets/orbit-2.svg';
-  import Stars from '$components/homepage/hero/stars.svelte';
+
+  import GhostButton from '$components/buttons/ghost-button.svelte';
+  import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { planetPositioning } from '$components/solutions-section/planet-positioning';

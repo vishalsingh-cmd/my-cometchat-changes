@@ -1,13 +1,15 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
+  import Stars from '$components/stars.svelte';
+
   import Noise from '$components/homepage/hero/noise.svg';
   import OrbitMedium from '$components/homepage/hero/assets/orbit-medium.svg';
   import OrbitThin from '$components/homepage/hero/assets/orbit-thin.svg';
-  import Stars from '$components/homepage/hero/stars.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { HomepageHeroStoryblok } from '$types/bloks';
   import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
+
+  import type { HomepageHeroStoryblok } from '$types/bloks';
 
   export let block: HomepageHeroStoryblok;
 </script>

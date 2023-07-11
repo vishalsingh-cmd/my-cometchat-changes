@@ -6,7 +6,8 @@
   import Blurs from '$components/chat-and-messaging/hero/blurs.svelte';
   import Ellipse from '$components/chat-and-messaging/hero/assets/ellipse.svg';
   import Noise from '$components/chat-and-messaging/hero/assets/noise.svg';
-  import Stars from '$components/homepage/hero/stars.svelte';
+
+  import Stars from '$components/stars.svelte';
 
   import HeroHeader from './hero-header.svelte';
 

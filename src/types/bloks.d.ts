@@ -125,6 +125,14 @@ export interface CustomerStoryblok {
   [k: string]: any;
 }
 
+export interface CustomersHeroStoryblok {
+  title: string;
+  customers: SocialProofsStoryblok[];
+  _uid: string;
+  component: 'customers-hero';
+  [k: string]: any;
+}
+
 export interface CustomerStoriesSectionStoryblok {
   title: TitleStoryblok[];
   testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
@@ -361,6 +369,7 @@ export interface IndustryStoryblok {
   body?: (
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
@@ -433,6 +442,7 @@ export interface PageStoryblok {
   body?: (
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
@@ -537,6 +547,7 @@ export interface SyncedBlockContentStoryblok {
   body?: (
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
@@ -585,6 +596,7 @@ export interface TechnologyStoryblok {
   body: (
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | FeaturesListSectionStoryblok
