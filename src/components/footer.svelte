@@ -10,8 +10,6 @@
   export let data: Footer;
 </script>
 
-<Divider />
-
 <footer data-theme="dark" class="bg-gray-1 text-gray-12">
   <div class="container mx-auto px-container">
     <!-- logo -->
@@ -90,7 +88,7 @@
                           {href}
                           {target}
                           {rel}
-                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-11 transition hover:opacity-74"
+                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-12 opacity-74 transition hover:opacity-100"
                           >{label}</a
                         >
                       {/each}
