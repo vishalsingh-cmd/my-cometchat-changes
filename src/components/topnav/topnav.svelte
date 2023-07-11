@@ -167,8 +167,8 @@
             {/if}
           </nav>
         {/if}
-        {#if data.links[activeIndex]}
-          {@const item = data.links[activeIndex]}
+        {#if data.links[3]}
+          {@const item = data.links[3]}
           <div
             in:panelTransition={{ duration: 200, direction: 'in' }}
             out:panelTransition={{ duration: 100, direction: 'out' }}
@@ -182,7 +182,7 @@
               <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
-            <div class="overflow-hidden">
+            <div class="overflow-hidden backdrop-blur-3xl">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
                 {#if data.component === 'topnav-features-panel'}
