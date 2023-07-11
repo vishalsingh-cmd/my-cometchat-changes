@@ -17,6 +17,7 @@ export const load = async ({ cookies, fetch, params }) => {
   const storyblok = getStoryblok({ fetch });
 
   const relations = [
+    'blog-post.author',
     'customer-stories-section.testimonials',
     'social-proofs.customers',
     'solutions-section.industries',

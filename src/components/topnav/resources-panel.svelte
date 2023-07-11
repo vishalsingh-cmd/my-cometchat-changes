@@ -10,6 +10,7 @@
   import TopnavThumb from './topnav-thumb.svelte';
 
   import type {
+    AuthorStoryblok,
     BlogPostStoryblok,
     CustomerStoryblok,
     TopnavResourcesPanelStoryblok
@@ -21,6 +22,8 @@
     story as StoryblokStory<BlogPostStoryblok>;
   const typeCustomer = (customer: string | StoryblokStory<CustomerStoryblok> | undefined) =>
     customer as StoryblokStory<CustomerStoryblok>;
+  const typeAuthor = (author: string | StoryblokStory<AuthorStoryblok> | undefined) =>
+    author as string;
 </script>
 
 <div class="container mx-auto px-container xl:flex">
@@ -50,17 +53,18 @@
     </div>
     <Divider direction="vertical" class="hidden md:block" />
     <Divider class="md:hidden" />
-    <div class="flex-1 px-0 py-8 lg:py-12">
+    <div class="flex-1 py-8 md:p-8 lg:py-12">
       <h3 class="mb-8 text-lg opacity-54">{data.blog_title}</h3>
       <div class="flex flex-col items-start gap-8">
         {#each data.blog_posts as story}
           {@const typedStory = typeStory(story)}
+          {@const typedAuthor = typeAuthor(typedStory.content.author)}
           <TopnavThumb
             image={typedStory.content.cover}
             href="/"
             title={typedStory.name}
             publishedAt={typedStory.published_at}
-            publishedBy={typedStory.content.author}
+            publishedBy={typedAuthor}
           />
         {/each}
         {#if data.blog_link?.[0]}
@@ -76,7 +80,7 @@
   <Divider class="xl:hidden" />
   <div
     class={cn(
-      'relative w-[480px] gap-12 border-gray-5 px-0 py-8 lg:py-12 xl:border-l xl:bg-gray-4',
+      'relative w-[480px] gap-12 border-gray-5 py-8 md:p-8 lg:py-12 xl:border-l xl:bg-gray-4',
       'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
     )}
   >
