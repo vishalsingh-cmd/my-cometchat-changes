@@ -167,8 +167,8 @@
             {/if}
           </nav>
         {/if}
-        {#if data.links[3]}
-          {@const item = data.links[3]}
+        {#if data.links[activeIndex]}
+          {@const item = data.links[activeIndex]}
           <div
             in:panelTransition={{ duration: 200, direction: 'in' }}
             out:panelTransition={{ duration: 100, direction: 'out' }}
