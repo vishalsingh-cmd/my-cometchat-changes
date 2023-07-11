@@ -1,12 +1,12 @@
 <script lang="ts">
   import { getImageAttributes } from '$lib/storyblok';
-  import type { CustomerStoryblok, SocialProofsStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  import type { CustomerStoryblok, SocialProofsStoryblok } from '$types/bloks';
+
   import { cn } from '$lib/utils';
   import { onMount } from 'svelte';
-
-  // 32 1204
 
   let containerRef: HTMLElement | null = null;
   export let block: SocialProofsStoryblok;
@@ -15,8 +15,6 @@
 
   let initialScrollWidth = 0;
 
-  // 1292 + 56 = 1348
-  // 1292 + 32 = 1324
   function handleResize() {
     if (!containerRef) return;
 
@@ -56,7 +54,7 @@
         <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
           {#each arrayOfCustomersToShow as customer}
             {@const { src, alt, width, height } = getImageAttributes(customer.content.logo)}
-            <img {src} {alt} {width} {height} class="h-8 w-fit flex-shrink-0 opacity-54" />
+            <img {src} {alt} {width} {height} class="h-7 w-fit flex-shrink-0 opacity-54" />
           {/each}
         </div>
       {/if}
