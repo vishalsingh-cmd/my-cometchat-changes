@@ -29,14 +29,17 @@
   <meta name="twitter:description" content={description} />
 
   <!-- OG Image -->
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   {#if data.page?.content?.seo_og_image?.filename}
     {@const { src } = getImageAttributes(data.page.content.seo_og_image, {
       size: [1200, 630]
     })}
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
     <meta property="og:image" content={src} />
     <meta property="twitter:image" content={src} />
+  {:else}
+    <meta property="og:image" content="/default-og-image.png" />
+    <meta property="twitter:image" content="/default-og-image.png" />
   {/if}
   <meta property="og:url" content={$page.url.toString()} />
   <meta property="og:type" content="website" />
