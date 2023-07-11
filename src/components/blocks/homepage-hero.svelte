@@ -59,7 +59,7 @@
         <Stars amount={40} backgroundColours={['bg-white']} />
       </div>
       <div
-        class="-tra absolute left-1/2 h-full w-full -translate-x-3/4 scale-50 md:-translate-x-1/2 md:scale-75 lg:scale-100"
+        class="absolute left-1/2 h-full w-full -translate-x-3/4 scale-50 md:-translate-x-1/2 md:scale-75 lg:scale-100"
       >
         <div
           class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-1/2 bg-[#944E6E]/80 blur-[75px]"
