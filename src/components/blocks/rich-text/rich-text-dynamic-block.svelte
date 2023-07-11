@@ -3,6 +3,7 @@
   import type { ComponentType } from 'svelte';
 
   import Disclaimer from './disclaimer.svelte';
+  import Gist from './gist.svelte';
   import HighlightsParagraph from './highlights-paragraph.svelte';
   import MetricsParagraph from './metrics-paragraph.svelte';
   import ParagraphHeading from './paragraph-heading.svelte';
@@ -12,6 +13,7 @@
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
+    gist: Gist,
     disclaimer: Disclaimer,
     'highlights-paragraph': HighlightsParagraph,
     metrics: MetricsParagraph,
