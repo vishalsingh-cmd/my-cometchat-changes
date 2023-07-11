@@ -5,8 +5,8 @@
   export let block: PageStoryblok;
 </script>
 
-{#if block.body}
-  {#each block.body as b}
+{#if block.content.body}
+  {#each block.content.body as b}
     <DynamicBlock block={b} />
   {/each}
 {/if}

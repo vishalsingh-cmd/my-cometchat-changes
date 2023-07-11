@@ -6,7 +6,9 @@ export const StringKeys = [
   'blog.share',
   'blog.facebook',
   'blog.twitter',
-  'blog.linkedin'
+  'blog.linkedin',
+  'customer_stories',
+  'related_stories'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

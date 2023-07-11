@@ -1,9 +1,16 @@
+import type { ISbStoryData } from '@storyblok/js';
+import { error } from '@sveltejs/kit';
+
 import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
-import type { BlogPostStoryblok, PageStoryblok, TechnologyStoryblok } from '$types/bloks.js';
-import type { ISbStoryData } from '@storyblok/js';
-import { error } from '@sveltejs/kit';
+
+import type {
+  CustomerStoryStoryblok,
+  IndustryStoryblok,
+  PageStoryblok,
+  TechnologyStoryblok
+} from '$types/bloks.js';
 
 export const load = async ({ cookies, fetch, params }) => {
   const version: 'draft' | 'published' = cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
@@ -14,7 +21,9 @@ export const load = async ({ cookies, fetch, params }) => {
     'social-proofs.customers',
     'solutions-section.industries',
     'synced-block.synced_block',
-    'technologies-section.technologies'
+    'technologies-section.technologies',
+    'customer-story.related_items',
+    'customer-story.customer'
   ];
 
   try {
@@ -23,8 +32,20 @@ export const load = async ({ cookies, fetch, params }) => {
       resolve_relations: relations
     });
 
+    let industries = undefined;
+
+    if (page.data.story.content.component === 'customer-story') {
+      industries = await storyblok.get('cdn/stories', {
+        content_type: 'industry',
+        version
+      });
+    }
+
     return {
-      page: page.data.story as ISbStoryData<PageStoryblok | BlogPostStoryblok | TechnologyStoryblok>
+      page: page.data.story as ISbStoryData<
+        PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
+      >,
+      industries: industries?.data.stories as ISbStoryData<IndustryStoryblok>[]
     };
   } catch (err) {
     console.error(err);
