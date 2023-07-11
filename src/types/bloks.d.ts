@@ -296,6 +296,13 @@ export interface FooterTechnologyDocumentationLinkGroupStoryblok {
   [k: string]: any;
 }
 
+export interface GistStoryblok {
+  gist_script: string;
+  _uid: string;
+  component: 'gist';
+  [k: string]: any;
+}
+
 export interface HeaderAndListSectionStoryblok {
   header?: TitleStoryblok[];
   items: ListSectionStoryblok[];
