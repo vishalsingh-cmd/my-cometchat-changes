@@ -1,5 +1,44 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
 
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface AuthorStoryblok {
+  name: string;
+  role: string;
+  company: string;
+  avatar: AssetStoryblok;
+  description: string;
+  _uid: string;
+  component: 'author';
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface BlogPostStoryblok {
+  author: StoryblokStory<AuthorStoryblok> | string;
+  body: RichtextStoryblok;
+  _uid: string;
+  component: 'blog-post';
+  [k: string]: any;
+}
+
 export interface BulletPointStoryblok {
   item: string;
   coming_soon?: boolean;
@@ -80,17 +119,6 @@ export interface ButtonLinkStoryblok {
   [k: string]: any;
 }
 
-export interface AssetStoryblok {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  focus?: string;
-  [k: string]: any;
-}
-
 export interface ChatAndMessagingHeroStoryblok {
   header: HeroHeaderStoryblok[];
   illustration: AssetStoryblok;
@@ -138,15 +166,6 @@ export interface CustomerStoriesSectionStoryblok {
   testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
   _uid: string;
   component: 'customer-stories-section';
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
   [k: string]: any;
 }
 

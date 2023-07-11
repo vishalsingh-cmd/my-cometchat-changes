@@ -1,6 +1,114 @@
 {
   "components": [
     {
+      "name": "author",
+      "display_name": null,
+      "created_at": "2023-07-11T13:43:35.315Z",
+      "updated_at": "2023-07-11T13:49:43.356Z",
+      "id": 4258198,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "role": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "company": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "avatar": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"]
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "author",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "blog-post",
+      "display_name": null,
+      "created_at": "2023-07-11T13:41:01.368Z",
+      "updated_at": "2023-07-11T14:12:44.664Z",
+      "id": 4258189,
+      "schema": {
+        "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7": {
+          "display_name": "Author",
+          "keys": ["author"],
+          "pos": 0,
+          "type": "tab"
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"]
+        },
+        "body": {
+          "type": "richtext",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "blok",
+            "h3",
+            "image",
+            "italic",
+            "link",
+            "paragraph",
+            "strike",
+            "underline"
+          ],
+          "component_group_whitelist": [],
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics"
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-post",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
       "name": "bullet-point",
       "display_name": null,
       "created_at": "2023-06-28T09:39:11.178Z",
