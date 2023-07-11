@@ -21,7 +21,8 @@ export const load = async ({ cookies, fetch }) => {
           'topnav-solutions-panel.industries',
           'topnav-resources-panel.customer_stories',
           'topnav-resources-panel.blog_posts',
-          'blog-post.customer'
+          'blog-post.customer',
+          'customer-story.customer'
         ]
       }),
       getFooter(storyblok, { version })

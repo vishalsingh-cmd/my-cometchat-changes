@@ -1,27 +1,45 @@
 <script lang="ts">
-  import GhostButton from '$components/buttons/ghost-button.svelte';
+  import type { StoryblokStory } from 'storyblok-generate-ts';
+
+  import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
-  import type { TopnavResourcesPanelStoryblok } from '$types/bloks';
+
+  import Divider from '$components/divider.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
   import TopnavThumb from './topnav-thumb.svelte';
-  import { cn } from '$lib/utils';
-  import Divider from '$components/divider.svelte';
+
+  import type {
+    AuthorStoryblok,
+    BlogPostStoryblok,
+    CustomerStoryblok,
+    TopnavResourcesPanelStoryblok
+  } from '$types/bloks';
 
   export let data: TopnavResourcesPanelStoryblok;
+
+  const typeStory = (story: string | StoryblokStory<BlogPostStoryblok>) =>
+    story as StoryblokStory<BlogPostStoryblok>;
+  const typeCustomer = (customer: string | StoryblokStory<CustomerStoryblok> | undefined) =>
+    customer as StoryblokStory<CustomerStoryblok>;
+  const typeAuthor = (author: string | StoryblokStory<AuthorStoryblok> | undefined) =>
+    author as string;
 </script>
 
 <div class="container mx-auto px-container xl:flex">
   <div class="items-stretch md:flex">
-    <div class="flex-1 p-8 px-0 md:pr-12 lg:p-12">
+    <div class="flex-1 p-8 px-0 md:pr-12 lg:py-12">
       <h3 class="mb-8 text-lg opacity-54">{data.customer_stories_title}</h3>
       <div class="flex flex-col items-start gap-8">
         {#each data.customer_stories as story}
+          {@const typedStory = typeStory(story)}
+          {@const typedCustomer = typeCustomer(typedStory.content.customer)}
           <TopnavThumb
-            image={story.content.cover}
+            image={typedStory.content.cover}
             href="/"
-            title={story.name}
-            publishedAt={story.published_at}
-            publishedBy={story.content.customer?.name}
+            title={typedStory.name}
+            publishedAt={typedStory.published_at}
+            publishedBy={typedCustomer.name}
           />
         {/each}
         {#if data.customer_stories_link?.[0]}
@@ -35,16 +53,18 @@
     </div>
     <Divider direction="vertical" class="hidden md:block" />
     <Divider class="md:hidden" />
-    <div class="flex-1 p-8 px-0 md:pl-12 lg:p-12">
+    <div class="flex-1 py-8 md:p-8 lg:py-12">
       <h3 class="mb-8 text-lg opacity-54">{data.blog_title}</h3>
       <div class="flex flex-col items-start gap-8">
         {#each data.blog_posts as story}
+          {@const typedStory = typeStory(story)}
+          {@const typedAuthor = typeAuthor(typedStory.content.author)}
           <TopnavThumb
-            image={story.content.cover}
+            image={typedStory.content.cover}
             href="/"
-            title={story.name}
-            publishedAt={story.published_at}
-            publishedBy={story.content.author}
+            title={typedStory.name}
+            publishedAt={typedStory.published_at}
+            publishedBy={typedAuthor}
           />
         {/each}
         {#if data.blog_link?.[0]}
@@ -60,7 +80,7 @@
   <Divider class="xl:hidden" />
   <div
     class={cn(
-      'relative w-[480px] gap-12 border-gray-5 p-8 px-0 lg:p-12 xl:border-l xl:bg-gray-4 xl:pl-12',
+      'relative w-[480px] gap-12 border-gray-5 py-8 md:p-8 lg:py-12 xl:border-l xl:bg-gray-4',
       'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
     )}
   >

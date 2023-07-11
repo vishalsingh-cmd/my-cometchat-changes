@@ -50,7 +50,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-07-11T14:12:44.664Z",
+      "updated_at": "2023-07-11T15:32:02.389Z",
       "id": 4258189,
       "schema": {
         "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7": {
@@ -91,7 +91,8 @@
             "testimonial-block",
             "disclaimer",
             "highlights-paragraph",
-            "metrics"
+            "metrics",
+            "gist"
           ]
         }
       },
@@ -1081,6 +1082,32 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "gist",
+      "display_name": null,
+      "created_at": "2023-07-11T15:31:28.076Z",
+      "updated_at": "2023-07-11T15:31:42.956Z",
+      "id": 4259241,
+      "schema": {
+        "gist_script": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "gist",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "header-and-list-section",
