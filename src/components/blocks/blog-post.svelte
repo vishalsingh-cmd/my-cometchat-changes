@@ -13,8 +13,6 @@
   const typedAuthor = (author: string | StoryblokStory<AuthorStoryblok>) => {
     return author as StoryblokStory<AuthorStoryblok>;
   };
-
-  console.log(block);
 </script>
 
 {#if block}
