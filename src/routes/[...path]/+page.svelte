@@ -3,7 +3,6 @@
   import DynamicBlock from '$components/blocks/dynamic-block.svelte';
   import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
   import { string } from '$lib/strings/index.js';
-  import DefaultOgImage from '../../../static/default-og-image.png';
 
   export let data;
 
@@ -34,8 +33,8 @@
     <meta property="og:image" content={src} />
     <meta property="twitter:image" content={src} />
   {:else}
-    <meta property="og:image" content={DefaultOgImage} />
-    <meta property="twitter:image" content={DefaultOgImage} />
+    <meta property="og:image" content="/default-og-image.png" />
+    <meta property="twitter:image" content="/default-og-image.png" />
   {/if}
   <meta property="og:url" content={$page.url.toString()} />
   <meta property="og:type" content="website" />
