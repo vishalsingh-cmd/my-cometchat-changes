@@ -14,7 +14,7 @@
 
 <p
   class={cn(
-    'p-5 pl-container text-xl font-semibold leading-tighter',
+    'p-5 pl-container text-xl font-semibold leading-tighter md:p-10',
     i !== 0 && 'border-t-gray-12/[0.08] md:border-t lg:border-t-0 lg:pl-5'
   )}
 >

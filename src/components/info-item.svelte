@@ -39,9 +39,9 @@
       <Icon size="xs" icon={item.icon.icon} />
     </div>
   {/if}
-  <div class="flex flex-col gap-1 text-lg text-gray-12">
+  <div class="flex flex-col gap-1 text-xl text-gray-12">
     <p class="font-semibold leading-tight">{item.title}</p>
-    <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+    <p class="font-medium leading-snug tracking-wide opacity-54">{item.description}</p>
   </div>
   {#if item.link}
     {@const { target, rel, href } = getAnchorFromCmsLink(item.link.link)}

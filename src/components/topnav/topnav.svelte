@@ -83,7 +83,7 @@
     )}
   >
     <div class="container mx-auto flex h-16 items-center justify-between px-container">
-      <a href="/" class="transition hover:opacity-80">
+      <a href="/">
         <Logo class="h-4 lg:h-5" />
       </a>
       <div on:mouseleave={() => (activeIndex = -1)}>
