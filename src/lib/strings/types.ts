@@ -2,7 +2,11 @@ export const StringKeys = [
   'default_seo_title',
   'default_seo_description',
   'back',
-  'coming_soon'
+  'coming_soon',
+  'blog.share',
+  'blog.facebook',
+  'blog.twitter',
+  'blog.linkedin'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];
