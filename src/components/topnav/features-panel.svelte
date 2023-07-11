@@ -8,7 +8,7 @@
   export let data: TopnavFeaturesPanelStoryblok;
 </script>
 
-<div class="container mx-auto px-container lg:px-0 xl:flex">
+<div class="container mx-auto px-container xl:flex">
   <div
     class={cn([
       'relative border-gray-5 bg-gray-4',
@@ -17,7 +17,7 @@
       'xl:w-[480px] xl:border-r'
     ])}
   >
-    <div class="flex flex-col gap-12 p-8 px-0 sm:flex-row lg:p-12 xl:flex-col xl:pr-12">
+    <div class="flex flex-col gap-12 p-8 px-0 sm:flex-row lg:p-12 lg:pl-0 xl:flex-col xl:pr-12">
       {#each data.featured_items as featured}
         {@const { href, target, rel } = getAnchorFromCmsLink(featured.link)}
         <TopnavItem
@@ -33,7 +33,7 @@
     </div>
     <Divider class="xl:hidden" />
   </div>
-  <div class="flex-1 p-8 px-0 lg:p-12 xl:px-12">
+  <div class="flex-1 p-8 px-0 lg:py-12">
     {#each data.groups as group, i}
       <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
