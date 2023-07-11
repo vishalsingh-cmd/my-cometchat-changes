@@ -18,13 +18,13 @@ export const load = async ({ cookies, fetch, params }) => {
 
   const relations = [
     'blog-post.author',
+    'customer-story.customer',
+    'customer-story.related_items',
     'customer-stories-section.testimonials',
     'social-proofs.customers',
     'solutions-section.industries',
     'synced-block.synced_block',
-    'technologies-section.technologies',
-    'customer-story.related_items',
-    'customer-story.customer'
+    'technologies-section.technologies'
   ];
 
   try {
