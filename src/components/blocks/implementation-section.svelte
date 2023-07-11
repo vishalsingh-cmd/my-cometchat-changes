@@ -26,9 +26,6 @@
 
 {#if block}
   <section use:storyblokEditable={block} class="relative overflow-hidden">
-    <div
-      class="absolute right-[calc(50vw-900px)] top-[-116px] mx-auto hidden h-[1026px] w-[1026px] origin-center rotate-[60deg] transform rounded-full bg-gradient-to-l from-orange-4/60 via-[hsl(242,30%,23%)]/60 to-[hsl(0,0%,2%)]/60 blur-[300px] md:block"
-    />
     <div class="container mx-auto">
       {#if block.header[0]}
         <Title

@@ -42,6 +42,6 @@
   <img
     alt=""
     src={SmallComet}
-    class="absolute -bottom-16 -right-36 z-10 xl:-bottom-10 xl:-right-10"
+    class="absolute -bottom-16 -right-36 z-10 xl:-bottom-2 xl:-right-10"
   />
 </section>
