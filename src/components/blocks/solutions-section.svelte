@@ -88,15 +88,18 @@
         />
       {/if}
     </div>
+
     <!-- Mobile view -->
     <div
       class="isolate z-20 mx-auto flex max-w-content flex-col items-center px-container lg:hidden"
     >
-      <Dropdown
-        options={industriesOptionsForDropdown}
-        selectedOption={selectedIndustryIndex}
-        on:optionSelect={onOptionSelect}
-      />
+      {#if industriesOptionsForDropdown.length > 0}
+        <Dropdown
+          options={industriesOptionsForDropdown}
+          selectedOption={selectedIndustryIndex}
+          on:optionSelect={onOptionSelect}
+        />
+      {/if}
 
       {#if industries[selectedIndustryIndex]}
         {@const selectedIndustry = industries[selectedIndustryIndex]}
