@@ -175,7 +175,7 @@
             class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
           >
             <button
-              class="flex w-full items-center gap-2 px-container py-4 lg:hidden"
+              class="sticky top-0 z-20 flex w-full items-center gap-2 bg-gray-3/98 px-container py-4 lg:hidden"
               on:click={() => (activeIndex = -1)}
             >
               <Icon size="xs" class="text-gray-10" icon="arrow-left" />
