@@ -22,6 +22,25 @@ export interface AuthorStoryblok {
   [k: string]: any;
 }
 
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface AwardsSectionStoryblok {
+  theme: '' | 'light' | 'dark';
+  title: string;
+  awards: MultiassetStoryblok;
+  _uid: string;
+  component: 'awards-section';
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -244,7 +263,7 @@ export interface FeaturesSectionStoryblok {
 
 export interface FooterStoryblok {
   column_groups: FooterColumnGroupStoryblok[];
-  subfooter: any[];
+  subfooter?: any[];
   socials: LinkStoryblok[];
   prefooter_title: string;
   prefooter_description: string;
@@ -393,6 +412,7 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   body?: (
+    | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CustomersHeroStoryblok
@@ -466,6 +486,7 @@ export interface PageStoryblok {
   seo_title?: string;
   seo_description?: string;
   body?: (
+    | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CustomersHeroStoryblok
@@ -571,6 +592,7 @@ export interface SyncedBlockStoryblok {
 
 export interface SyncedBlockContentStoryblok {
   body?: (
+    | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CustomersHeroStoryblok
@@ -620,6 +642,7 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   body: (
+    | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CustomersHeroStoryblok

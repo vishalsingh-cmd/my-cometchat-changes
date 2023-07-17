@@ -2,6 +2,7 @@
   import type { SbBlokData } from '@storyblok/js';
   import type { ComponentType } from 'svelte';
 
+  import AwardsSection from './awards-section.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
   import CustomersHero from './customers-hero.svelte';
@@ -28,6 +29,7 @@
   export let block: SbBlokData;
 
   const map: Record<string, ComponentType> = {
+    'awards-section': AwardsSection,
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
     'customers-hero': CustomersHero,

@@ -47,6 +47,57 @@
       "component_group_name": "Database"
     },
     {
+      "name": "awards-section",
+      "display_name": null,
+      "created_at": "2023-07-17T11:14:01.887Z",
+      "updated_at": "2023-07-17T11:20:20.789Z",
+      "id": 4284851,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "77769fdc-46bf-4e40-847d-b87f4964724f",
+              "name": "light",
+              "value": "light"
+            },
+            {
+              "_uid": "09fad670-1cf4-4f10-9035-5497f94f9612",
+              "value": "dark",
+              "name": "dark"
+            }
+          ],
+          "default_value": "light"
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "awards": {
+          "type": "multiasset",
+          "required": true,
+          "translatable": true,
+          "filetypes": ["images"],
+          "asset_folder_id": 280013
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "awards-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
@@ -834,7 +885,7 @@
       "name": "footer",
       "display_name": null,
       "created_at": "2023-06-01T09:06:41.616Z",
-      "updated_at": "2023-06-19T10:06:26.313Z",
+      "updated_at": "2023-07-17T11:09:30.787Z",
       "id": 4063156,
       "schema": {
         "column_groups": {
@@ -854,7 +905,7 @@
         },
         "subfooter": {
           "type": "options",
-          "required": true,
+          "required": false,
           "source": "internal_stories",
           "folder_slug": "pages/",
           "pos": 3
