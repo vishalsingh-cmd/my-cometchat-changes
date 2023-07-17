@@ -40,6 +40,7 @@
     <div class="mx-auto max-w-content">
       <Title
         alignment="center"
+        class="pl-0 pr-0"
         label={{ content: block.header[0].label, color: 'brand' }}
         title={block.header[0].title}
         buttons={block.header[0].links}
