@@ -28,7 +28,7 @@
     class={cn(
       'px-3',
       'flex items-center gap-2',
-      'h-[34px] w-fit',
+      'h-[38px] w-fit',
       'rounded-full',
       'border border-solid border-brand-11/20',
       'text-brand-12',
