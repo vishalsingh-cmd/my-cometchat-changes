@@ -73,7 +73,7 @@
             <div
               class="mb-12 mt-5 flex h-[480px] w-full justify-center rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
             >
-              <img {src} {alt} {width} {height} class="mt-12" />
+              <img {src} {alt} {width} {height} class="self-end" />
             </div>
           {/if}
         </div>
