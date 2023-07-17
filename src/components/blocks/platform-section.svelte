@@ -24,11 +24,12 @@
           <Title
             label={{ color: 'orange', content: block.title[0].label }}
             title={block.title[0].title}
+            class="pb-10 lg:pb-20"
           />
         {/if}
         {#if block.products[0]}
           {@const link = getAnchorFromCmsLink(block.products[0].link)}
-          <div class="px-5 md:mt-6 md:pl-16">
+          <div class="px-5 md:pl-16">
             <ProductDisplay
               illustration={block.products[0].image.filename}
               title={block.products[0].title}
