@@ -10,8 +10,8 @@
     data.page = newStory;
   });
 
-  let title = data.page?.content?.seo_title || string('default_seo_title');
-  let description = data.page?.content?.seo_description || string('default_seo_description');
+  let title = data.page?.content?.seo?.[0].title || string('default_seo_title');
+  let description = data.page?.content?.seo?.[0].description || string('default_seo_description');
 
   $: dataObject = {
     page: data.page,
@@ -31,7 +31,7 @@
   <!-- OG Image -->
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  {#if data.page?.content?.seo_og_image?.filename}
+  {#if data.page?.content?.seo?.[0].filename}
     {@const { src } = getImageAttributes(data.page.content.seo_og_image, {
       size: [1200, 630]
     })}
@@ -45,16 +45,16 @@
   <meta property="og:type" content="website" />
 
   <!-- SEO options -->
-  {#if data.page?.content.canonical_url}
-    <link rel="canonical" href={data.page.content.canonical_url} />
+  {#if data.page?.content.seo?.[0].canonical_url}
+    <link rel="canonical" href={data.page.content.seo[0].canonical_url} />
   {/if}
-  {#if data.page?.content.robots && data.page?.content.robots.length > 0}
-    {#each data.page.content.robots as robot}
+  {#if data.page?.content.seo?.[0].robots && data.page?.content.seo?.[0].robots.length > 0}
+    {#each data.page.content.seo[0].robots as robot}
       <meta name={robot.name} content={robot.content} />
     {/each}
   {/if}
-  {#if data.page?.content.href_lang && data.page?.content.href_lang.length > 0}
-    {#each data.page.content.href_lang as hrefLang}
+  {#if data.page?.content.seo?.[0].href_lang && data.page?.content.seo?.[0].href_lang.length > 0}
+    {#each data.page.content.seo[0].href_lang as hrefLang}
       {@const { rel, href, hreflang } = hrefLang}
       <link {rel} {href} {hreflang} />
     {/each}

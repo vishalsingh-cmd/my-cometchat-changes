@@ -51,8 +51,10 @@ export interface RichtextStoryblok {
 }
 
 export interface BlogPostStoryblok {
-  author: StoryblokStory<AuthorStoryblok> | string;
+  seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
+  author: StoryblokStory<AuthorStoryblok> | string;
+  cover: AssetStoryblok;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -189,23 +191,22 @@ export interface CustomerStoriesSectionStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
-  metrics: MetricsStoryblok[];
-  body: RichtextStoryblok;
-  cover?: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
-  seo_title?: string;
-  seo_description?: string;
-  seo_og_image?: AssetStoryblok;
-  related_items?: (
-    | StoryblokStory<BlogPostStoryblok>
-    | StoryblokStory<CustomerStoryStoryblok>
-    | string
-  )[];
+  Quote?: any;
   author_name: string;
   author_avatar: AssetStoryblok;
   author_role: string;
   author_company: string;
   quote: string;
+  metrics: MetricsStoryblok[];
+  body: RichtextStoryblok;
+  related_items?: (
+    | StoryblokStory<BlogPostStoryblok>
+    | StoryblokStory<CustomerStoryStoryblok>
+    | string
+  )[];
+  cover?: AssetStoryblok;
+  customer?: StoryblokStory<CustomerStoryblok> | string;
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -224,6 +225,18 @@ export interface DisclaimerStoryblok {
   description: string;
   _uid: string;
   component: 'disclaimer';
+  [k: string]: any;
+}
+
+export interface FeaturedStorySectionStoryblok {
+  theme: '' | 'light' | 'dark';
+  featured_story:
+    | StoryblokStory<BlogPostStoryblok>
+    | StoryblokStory<CustomerStoryStoryblok>
+    | string;
+  button_label: string;
+  _uid: string;
+  component: 'featured-story-section';
   [k: string]: any;
 }
 
@@ -427,6 +440,7 @@ export interface IndustryStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -443,9 +457,7 @@ export interface IndustryStoryblok {
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
-  seo_title?: string;
-  seo_description?: string;
-  seo_og_image?: AssetStoryblok;
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'industry';
   [k: string]: any;
@@ -492,8 +504,6 @@ export interface MetricsItemStoryblok {
 }
 
 export interface PageStoryblok {
-  seo_title?: string;
-  seo_description?: string;
   body?: (
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
@@ -501,6 +511,7 @@ export interface PageStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -517,10 +528,7 @@ export interface PageStoryblok {
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
-  seo_og_image?: AssetStoryblok;
-  canonical_url?: string;
-  robots?: RobotStoryblok[];
-  href_lang?: HrefLangStoryblok[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'page';
   uuid?: string;
@@ -586,6 +594,18 @@ export interface RobotStoryblok {
   [k: string]: any;
 }
 
+export interface SeoFieldsStoryblok {
+  title?: string;
+  description?: string;
+  og_image?: AssetStoryblok;
+  canonical_url?: string;
+  robots?: RobotStoryblok[];
+  href_lang?: HrefLangStoryblok[];
+  _uid: string;
+  component: 'seo-fields';
+  [k: string]: any;
+}
+
 export interface SocialProofsStoryblok {
   title: string;
   customers: (StoryblokStory<CustomerStoryblok> | string)[];
@@ -618,6 +638,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -668,6 +689,7 @@ export interface TechnologyStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -684,9 +706,7 @@ export interface TechnologyStoryblok {
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
-  seo_title?: string;
-  seo_description?: string;
-  seo_og_image?: AssetStoryblok;
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'technology';
   [k: string]: any;
