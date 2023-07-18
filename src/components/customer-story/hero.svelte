@@ -40,14 +40,12 @@
       </div>
     </div>
     {#if block.content.cover}
-      {@const { src, alt, width, height } = getImageAttributes(block.content.cover)}
-      <img
-        {src}
-        {alt}
-        {width}
-        {height}
-        class="border-px h-full rounded-3xl border border-gray-12/[0.04] object-cover object-center"
-      />
+      {@const { src, alt } = getImageAttributes(block.content.cover)}
+      <div
+        class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+      >
+        <img {src} {alt} class="object-cover" />
+      </div>
     {/if}
   </div>
 </section>
