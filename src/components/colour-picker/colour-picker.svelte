@@ -12,19 +12,20 @@
       'rounded-full',
       'shadow-[inset_0_0_0px_1px_hsl(var(--color-gray-7)/0.2)]',
       'relative',
-      'after:absolute after:-top-0.5 after:-left-0.5 after:block after:h-6 after:w-6 after:border after:rounded-full after:border-transparent'
+      'after:absolute after:-top-0.5 after:-left-0.5 after:block after:h-6 after:w-6 after:border after:rounded-full after:border-transparent',
+      'focus-visible:ring-4 focus-visible:shadow-focus outline-none'
     ],
     {
       variants: {
         colour: {
-          'purple-9': `bg-purple-9 after:hover:border-purple-9`,
-          'red-9': `bg-red-9 after:hover:border-red-9`,
-          'orange-9': `bg-orange-9 after:hover:border-orange-9`,
-          'green-9': `bg-green-9 after:hover:border-green-9`,
-          'blue-11': `bg-blue-11 after:hover:border-blue-11`,
-          'brand-9': `bg-brand-9 after:hover:border-brand-9`,
-          'blue-7': `bg-blue-7 after:hover:border-blue-7`,
-          'gray-6': `bg-gray-6 after:hover:border-gray-6`
+          'purple-9': `bg-purple-9 after:hover:border-purple-9 focus-visible:ring-purple-9/30`,
+          'red-9': `bg-red-9 after:hover:border-red-9 focus-visible:ring-red-9/30`,
+          'orange-9': `bg-orange-9 after:hover:border-orange-9  focus-visible:ring-red-9/30`,
+          'green-9': `bg-green-9 after:hover:border-green-9 focus-visible:ring-green-9/30`,
+          'blue-11': `bg-blue-11 after:hover:border-blue-11 focus-visible:ring-blue-11/30`,
+          'brand-9': `bg-brand-9 after:hover:border-brand-9 focus-visible:ring-brand-9/30`,
+          'blue-7': `bg-blue-7 after:hover:border-blue-7 focus-visible:ring-blue-7/30`,
+          'gray-6': `bg-gray-6 after:hover:border-gray-6 focus-visible:ring-gray-6/30`
         },
         isActive: {
           true: true
@@ -121,7 +122,11 @@
     <div class="flex gap-2">
       {#each colours as colour, i}
         {@const isActive = selectedColourIndex === i}
-        <button class={cn(button({ colour, isActive }))} on:click={() => changeSelectedColour(i)} />
+        <button
+          on:focus
+          class={cn(button({ colour, isActive }))}
+          on:click={() => changeSelectedColour(i)}
+        />
       {/each}
     </div>
   </div>
