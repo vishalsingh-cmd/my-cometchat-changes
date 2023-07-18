@@ -21,8 +21,6 @@
   import Icon from '$components/icon/icon.svelte';
   import { cn } from '$lib/utils';
 
-  import { page } from '$app/stores';
-
   export let title: string;
   export let description: string | undefined = undefined;
   export let asset:
