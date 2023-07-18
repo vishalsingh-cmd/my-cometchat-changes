@@ -42,9 +42,9 @@
     {#if block.content.cover}
       {@const { src, alt } = getImageAttributes(block.content.cover)}
       <div
-        class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+        class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
       >
-        <img {src} {alt} class="object-cover" />
+        <img {src} {alt} class="h-full w-full object-cover" />
       </div>
     {/if}
   </div>
