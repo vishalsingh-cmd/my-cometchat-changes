@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { industries } from '$lib/stores/industries.js';
+
   import { page } from '$app/stores';
-  import DynamicPage from '$components/blocks/dynamic-page.svelte';
-  import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
+
   import { string } from '$lib/strings/index.js';
+
+  import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
+
+  import DynamicPage from '$components/blocks/dynamic-page.svelte';
 
   export let data;
 
@@ -13,10 +18,7 @@
   let title = data.page?.content?.seo_title || string('default_seo_title');
   let description = data.page?.content?.seo_description || string('default_seo_description');
 
-  $: dataObject = {
-    page: data.page,
-    industries: data.industries
-  };
+  $industries = data.industries;
 </script>
 
 <svelte:head>
@@ -46,5 +48,5 @@
 </svelte:head>
 
 {#key data.page.id}
-  <DynamicPage page={dataObject} />
+  <DynamicPage page={data.page} />
 {/key}
