@@ -64,7 +64,7 @@
     >
       {title}
     </p>
-    {#if href?.includes('https') && asset && 'icon' in asset}
+    {#if href?.startsWith('http') && asset && 'icon' in asset}
       <Icon
         size={size === 'big' ? 'lg' : 'xs'}
         icon="link-external-02"
