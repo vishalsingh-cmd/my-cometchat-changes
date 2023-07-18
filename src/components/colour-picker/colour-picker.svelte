@@ -11,71 +11,70 @@
       'w-5',
       'rounded-full',
       'shadow-[inset_0_0_0px_1px_hsl(var(--color-gray-7)/0.2)]',
-      'hover:outline-1',
-      'hover:outline',
-      'hover:outline-offset-2'
+      'relative focus-visible:ring-4 outline-none',
+      'after:absolute after:-top-0.5 after:-left-0.5 after:block after:h-6 after:w-6 after:border after:rounded-full after:border-transparent'
     ],
     {
       variants: {
         colour: {
-          'purple-9': `bg-purple-9 hover:outline-purple-9`,
-          'red-9': `bg-red-9 hover:outline-red-9`,
-          'orange-9': `bg-orange-9 hover:outline-orange-9`,
-          'green-9': `bg-green-9 hover:outline-green-9`,
-          'blue-11': `bg-blue-11 hover:outline-blue-11`,
-          'brand-9': `bg-brand-9 hover:outline-brand-9`,
-          'blue-7': `bg-blue-7 hover:outline-blue-7`,
-          'gray-6': `bg-gray-6 hover:outline-gray-6`
+          'purple-9': `bg-purple-9 after:hover:border-purple-9 focus-visible:ring-purple-9/30`,
+          'red-9': `bg-red-9 after:hover:border-red-9 focus-visible:ring-red-9/30`,
+          'orange-9': `bg-orange-9 after:hover:border-orange-9 focus-visible:ring-red-9/30`,
+          'green-9': `bg-green-9 after:hover:border-green-9 focus-visible:ring-green-9/30`,
+          'blue-11': `bg-blue-11 after:hover:border-blue-11 focus-visible:ring-blue-11/30`,
+          'brand-9': `bg-brand-9 after:hover:border-brand-9 focus-visible:ring-brand-9/30`,
+          'blue-7': `bg-blue-7 after:hover:border-blue-7 focus-visible:ring-blue-7/30`,
+          'gray-6': `bg-gray-6 after:hover:border-gray-6 focus-visible:ring-gray-6/30`
         },
         isActive: {
-          true: `outline-offset-2`
+          true: true
         }
       },
       compoundVariants: [
         {
           colour: 'purple-9',
           isActive: true,
-          className: `outline-1 outline outline-purple-9`
+          className: `after:border-purple-9`
         },
         {
           colour: 'red-9',
           isActive: true,
-          className: `outline-1 outline outline-red-9`
+          className: `after:border-red-9`
         },
         {
           colour: 'orange-9',
           isActive: true,
-          className: `outline-1 outline outline-orange-9`
+          className: `after:border-orange-9`
         },
         {
           colour: 'orange-9',
           isActive: true,
-          className: `outline-1 outline outline-orange-9`
+          className: `after:border-orange-9`
         },
         {
           colour: 'green-9',
           isActive: true,
-          className: `outline-1 outline outline-green-9`
+          className: `after:border-green-9`
         },
         {
           colour: 'blue-11',
           isActive: true,
-          className: `outline-1 outline outline-blue-11`
+          className: `after:border-blue-11`
         },
         {
           colour: 'brand-9',
           isActive: true,
-          className: `outline-1 outline outline-brand-9`
+          className: `after:border-brand-9`
         },
         {
           colour: 'blue-7',
           isActive: true,
-          className: `outline-1 outline outline-blue-7`
+          className: `after:border-blue-7`
         },
         {
           colour: 'gray-6',
           isActive: true,
-          className: `outline-1 outline outline-gray-6`
+          className: `after:border-gray-6`
         }
       ]
     }
@@ -122,7 +121,11 @@
     <div class="flex gap-2">
       {#each colours as colour, i}
         {@const isActive = selectedColourIndex === i}
-        <button class={cn(button({ colour, isActive }))} on:click={() => changeSelectedColour(i)} />
+        <button
+          on:focus
+          class={cn(button({ colour, isActive }))}
+          on:click={() => changeSelectedColour(i)}
+        />
       {/each}
     </div>
   </div>
