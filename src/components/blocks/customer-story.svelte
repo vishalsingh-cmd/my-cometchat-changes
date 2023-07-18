@@ -4,14 +4,14 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import type { CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { CustomerStoryStoryblok, IndustryStoryblok } from '$types/bloks';
 
   import Hero from '$components/customer-story/hero.svelte';
   import RelatedContent from '$components/customer-story/related-content.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import Sidebar from '$components/customer-story/sidebar.svelte';
 
-  export let block: CustomerStoryblok;
+  export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
   let headings: HTMLHeadingElement[] = [];

@@ -1,14 +1,14 @@
 <script lang="ts">
   import { string } from '$lib/strings';
 
-  import type { CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { CustomerStoryStoryblok, CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
 
   import ContentCard from '$components/content-card.svelte';
   import Title from '$components/title.svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
   import type { ISbStoryData } from '@storyblok/js';
 
-  export let block: CustomerStoryblok;
+  export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
   const parsedItem = (item: StoryblokStory<CustomerStoryblok> | string) => {
