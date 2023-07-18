@@ -374,6 +374,15 @@ export interface HomepageHeroStoryblok {
   [k: string]: any;
 }
 
+export interface HrefLangStoryblok {
+  rel: string;
+  href: string;
+  hreflang: string;
+  _uid: string;
+  component: 'href-lang';
+  [k: string]: any;
+}
+
 export interface ImageStoryblok {
   illustration: AssetStoryblok;
   _uid: string;
@@ -509,6 +518,9 @@ export interface PageStoryblok {
     | WebhooksSectionStoryblok
   )[];
   seo_og_image?: AssetStoryblok;
+  canonical_url?: string;
+  robots?: RobotStoryblok[];
+  href_lang?: HrefLangStoryblok[];
   _uid: string;
   component: 'page';
   uuid?: string;
@@ -563,6 +575,14 @@ export interface ProductDisplayItemStoryblok {
   link: LinkStoryblok[];
   _uid: string;
   component: 'product-display-item';
+  [k: string]: any;
+}
+
+export interface RobotStoryblok {
+  name: string;
+  content: string;
+  _uid: string;
+  component: 'robot';
   [k: string]: any;
 }
 
@@ -723,7 +743,8 @@ export interface TopNavigationStoryblok {
 export interface TopnavItemStoryblok {
   title: string;
   description?: string;
-  link: MultilinkStoryblok;
+  coming_soon?: boolean;
+  link?: MultilinkStoryblok;
   icon?: number | string;
   illustration?: number | string;
   _uid: string;

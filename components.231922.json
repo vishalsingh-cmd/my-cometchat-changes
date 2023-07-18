@@ -1396,6 +1396,39 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "href-lang",
+      "display_name": null,
+      "created_at": "2023-07-18T10:02:54.094Z",
+      "updated_at": "2023-07-18T10:03:26.849Z",
+      "id": 4290662,
+      "schema": {
+        "rel": {
+          "type": "text",
+          "required": true
+        },
+        "href": {
+          "type": "text",
+          "required": true
+        },
+        "hreflang": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "href-lang",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "image",
       "display_name": null,
       "created_at": "2023-06-28T09:40:18.335Z",
@@ -1788,7 +1821,7 @@
       "name": "page",
       "display_name": null,
       "created_at": "2023-05-23T11:40:13.029Z",
-      "updated_at": "2023-06-05T14:30:11.255Z",
+      "updated_at": "2023-07-18T10:03:41.146Z",
       "id": 4017549,
       "schema": {
         "seo_title": {
@@ -1812,7 +1845,16 @@
         },
         "tab-3bf835dd-bd76-4aed-b110-34444c1161cf": {
           "display_name": "SEO",
-          "keys": ["title", "description", "seo_title", "seo_description", "seo_og_image"],
+          "keys": [
+            "title",
+            "description",
+            "seo_title",
+            "seo_description",
+            "seo_og_image",
+            "canonical_url",
+            "robots",
+            "href_lang"
+          ],
           "pos": 3,
           "type": "tab",
           "key": "tab-3bf835dd-bd76-4aed-b110-34444c1161cf"
@@ -1820,6 +1862,21 @@
         "seo_og_image": {
           "type": "asset",
           "filetypes": ["images"]
+        },
+        "canonical_url": {
+          "type": "text"
+        },
+        "robots": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["robot"]
+        },
+        "href_lang": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["href-lang"]
         }
       },
       "image": null,
@@ -2044,6 +2101,35 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "product-display-item",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "robot",
+      "display_name": null,
+      "created_at": "2023-07-18T10:01:20.423Z",
+      "updated_at": "2023-07-18T10:01:35.083Z",
+      "id": 4290661,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true
+        },
+        "content": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "robot",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
@@ -2587,21 +2673,29 @@
       "name": "topnav-item",
       "display_name": null,
       "created_at": "2023-06-05T14:55:57.217Z",
-      "updated_at": "2023-06-22T08:22:42.142Z",
+      "updated_at": "2023-07-17T16:10:59.475Z",
       "id": 4079210,
       "schema": {
         "title": {
           "type": "text",
-          "required": true
+          "required": true,
+          "pos": 0
         },
         "description": {
-          "type": "text"
+          "type": "text",
+          "pos": 1
+        },
+        "coming_soon": {
+          "type": "boolean",
+          "pos": 2
         },
         "link": {
           "type": "multilink",
-          "required": true,
+          "required": false,
           "force_link_scope": true,
-          "link_scope": "pages/"
+          "link_scope": "pages/",
+          "pos": 3,
+          "allow_target_blank": false
         },
         "icon": {
           "type": "option",
@@ -2610,14 +2704,16 @@
           "source": "internal",
           "datasource_slug": "icons",
           "exclude_empty_option": false,
-          "description": "🚨 Please select either this or the illustration 🚨"
+          "description": "🚨 Please select either this or the illustration 🚨",
+          "pos": 4
         },
         "illustration": {
           "type": "option",
           "use_uuid": true,
           "description": "🚨 Please select either this or the icon 🚨",
           "source": "internal",
-          "datasource_slug": "comet-illustrations"
+          "datasource_slug": "comet-illustrations",
+          "pos": 5
         }
       },
       "image": null,
