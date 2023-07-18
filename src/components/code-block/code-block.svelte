@@ -189,7 +189,7 @@
     --codeblock-color-function: hsla(20, 100%, 78%, 1);
     --codeblock-color-keyword: hsla(20, 100%, 78%, 1);
     --codeblock-color-operator: hsl(48deg 80% 95% / 0.9);
-    --codeblock-color-string: hsla(223, 100%, 73%, 1)l
+    --codeblock-color-string: hsla(223, 100%, 73%, 1);
     --codeblock-color-property: hsla(223, 100%, 73%, 1);
     --codeblock-color-punctuation: hsl(48deg 80% 95% / 0.5);
     --codeblock-color-comment: hsla(223, 100%, 73%, 1);
