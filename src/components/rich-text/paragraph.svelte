@@ -24,5 +24,7 @@
   ]);
 </script>
 
-<!-- eslint-disable-next-line svelte/no-at-html-tags -->
-<p class={cn(paragraph())}>{@html resolver.render(content)}</p>
+{#if content.content}
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  <p class={cn(paragraph())}>{@html resolver.render(content)}</p>
+{/if}
