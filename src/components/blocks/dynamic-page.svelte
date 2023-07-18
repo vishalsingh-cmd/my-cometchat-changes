@@ -2,8 +2,6 @@
   import type {
     BlogPostStoryblok,
     CustomerStoryStoryblok,
-    CustomerStoryblok,
-    IndustryStoryblok,
     PageStoryblok,
     TechnologyStoryblok
   } from '$types/bloks';
@@ -16,21 +14,19 @@
   /**
    * The dynamic page will render the correct page based on the content type (page, blog-post, etc.)
    */
-  export let page: {
-    page: ISbStoryData<
-      PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok | BlogPostStoryblok
-    >;
-    industries: ISbStoryData<IndustryStoryblok>[] | undefined;
-  };
+  export let page: ISbStoryData<
+    PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok | BlogPostStoryblok
+  >;
 
-  const pageData = page.page as unknown as PageStoryblok;
-  const customerStoryData = page.page as unknown as CustomerStoryblok;
+  const pageData = page as unknown as PageStoryblok;
+  const blogPostData = page as unknown as BlogPostStoryblok;
+  const customerStoryData = page as unknown as CustomerStoryStoryblok;
 </script>
 
-{#if page.page.content.component === 'blog-post'}
-  <BlogPost block={page.page.content} />
-{:else if page.page.content.component === 'customer-story' && page.industries}
-  <CustomerStory block={customerStoryData} industries={page.industries} />
+{#if page.content.component === 'blog-post'}
+  <BlogPost block={blogPostData} />
+{:else if page.content.component === 'customer-story'}
+  <CustomerStory block={customerStoryData} />
 {:else}
   <Page block={pageData} />
 {/if}

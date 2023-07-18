@@ -1,18 +1,17 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
-  import type { ISbStoryData } from '@storyblok/js';
 
+  import { industries } from '$lib/stores/industries';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import type { CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { CustomerStoryStoryblok } from '$types/bloks';
 
   import Hero from '$components/customer-story/hero.svelte';
   import RelatedContent from '$components/customer-story/related-content.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import Sidebar from '$components/customer-story/sidebar.svelte';
 
-  export let block: CustomerStoryblok;
-  export let industries: ISbStoryData<IndustryStoryblok>[];
+  export let block: CustomerStoryStoryblok;
 
   let headings: HTMLHeadingElement[] = [];
   let activeHeadingIndex = 0;
@@ -95,7 +94,7 @@
 <svelte:window bind:scrollY={windowScroll} />
 
 {#if block}
-  <Hero {block} {industries} />
+  <Hero {block} industries={$industries} />
   <section
     use:storyblokEditable={block}
     data-theme="light"
@@ -119,5 +118,5 @@
     {/if}
   </section>
 
-  <RelatedContent {industries} {block} />
+  <RelatedContent industries={$industries} {block} />
 {/if}
