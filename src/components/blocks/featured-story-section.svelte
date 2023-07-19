@@ -85,8 +85,8 @@
         </div>
         {#if content.cover}
           {@const { src, alt } = getImageAttributes(content.cover)}
-          <div class="flex-1 overflow-hidden rounded-3xl">
-            <img {src} {alt} class="h-full object-cover" />
+          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
+            <img {src} {alt} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>
