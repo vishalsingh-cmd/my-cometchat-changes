@@ -150,8 +150,10 @@
                     size={selectedIndustryIndex === i ? 'lg' : 'sm'}
                     illustration={illustrationType(industry.content.illustration)}
                     class={cn(
-                      'transform transition-all duration-150 ease-in',
-                      selectedIndustryIndex != i ? 'group-hover:h-6 group-hover:w-6' : ''
+                      'origin-center transform',
+                      selectedIndustryIndex != i
+                        ? 'origin-center transition-all duration-150 ease-in group-hover:h-6 group-hover:w-6'
+                        : 'animate-grow-comet-smothly'
                     )}
                   />
                 </button>
@@ -216,5 +218,18 @@
         rgba(20, 30, 202, 0) 79.96%
       ),
       rgba(0, 0, 0, 0.2);
+  }
+  .animateGrowSmothly {
+    animation: growSmothly 2s linear;
+  }
+  @keyframes growSmothly {
+    from {
+      width: 24px;
+      height: 24px;
+    }
+    to {
+      width: 40px;
+      height: 40px;
+    }
   }
 </style>
