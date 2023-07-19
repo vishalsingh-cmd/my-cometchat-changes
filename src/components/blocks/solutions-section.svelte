@@ -136,7 +136,7 @@
               >
                 <button
                   on:click={() => (selectedIndustryIndex = i)}
-                  class="group isolate z-10 flex w-[130px] flex-col items-center"
+                  class={cn('group isolate z-10 flex w-[143px] flex-col items-center')}
                 >
                   <p
                     class={cn(
@@ -150,10 +150,9 @@
                     size={selectedIndustryIndex === i ? 'lg' : 'sm'}
                     illustration={illustrationType(industry.content.illustration)}
                     class={cn(
-                      'transform transition-all duration-150',
+                      'transform transition-all duration-150 ease-in',
                       selectedIndustryIndex != i ? 'group-hover:h-6 group-hover:w-6' : ''
                     )}
-                    hasAnimation={selectedIndustryIndex != i}
                   />
                 </button>
                 {#if selectedIndustryIndex === i}
