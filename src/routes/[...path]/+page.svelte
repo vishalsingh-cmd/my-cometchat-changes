@@ -1,10 +1,8 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import DynamicPage from '$components/blocks/dynamic-page.svelte';
-  import Pagination from '$components/pagination/pagination.svelte';
   import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
   import { string } from '$lib/strings/index.js';
-  import { current_component } from 'svelte/internal';
 
   export let data;
 
@@ -19,11 +17,6 @@
     page: data.page,
     industries: data.industries
   };
-
-  $: currentPage = 1;
-  function changePage(number: number) {
-    currentPage = number;
-  }
 </script>
 
 <svelte:head>
@@ -53,6 +46,5 @@
 </svelte:head>
 
 {#key data.page.id}
-  <Pagination totalCountOfRegisters={100} onPageChange={changePage} {currentPage} />
-  <!-- <DynamicPage page={dataObject} /> -->
+  <DynamicPage page={dataObject} />
 {/key}
