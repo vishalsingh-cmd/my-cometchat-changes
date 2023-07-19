@@ -717,6 +717,59 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "directory-section",
+      "display_name": null,
+      "created_at": "2023-07-19T09:29:36.515Z",
+      "updated_at": "2023-07-19T15:07:17.052Z",
+      "id": 4295893,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "content_type": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "d2e99248-bb38-4738-a0e1-fd4614bf1d39",
+              "name": "Blog Posts",
+              "value": "blog-post"
+            },
+            {
+              "_uid": "c5918af6-e493-4c09-a128-052e00403929",
+              "value": "customer-story",
+              "name": "Customer Stories"
+            },
+            {
+              "_uid": "6188140a-30ab-45ec-b3de-8b9232c02a08",
+              "value": "tutorial",
+              "name": "Tutorials"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "directory-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "disclaimer",
       "display_name": null,
       "created_at": "2023-07-04T14:51:10.358Z",
@@ -1646,7 +1699,7 @@
       "name": "industry",
       "display_name": "Industry aka Use Case aka Solution",
       "created_at": "2023-06-06T15:55:24.337Z",
-      "updated_at": "2023-06-22T07:36:01.192Z",
+      "updated_at": "2023-07-18T20:29:32.874Z",
       "id": 4084164,
       "schema": {
         "cover_image": {
@@ -1692,23 +1745,17 @@
         },
         "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
           "display_name": "SEO",
-          "keys": ["seo_title", "seo_description", "seo_og_image"],
+          "keys": ["seo"],
           "pos": 6,
           "type": "tab",
           "name": "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c"
         },
-        "seo_title": {
-          "type": "text",
-          "pos": 7
-        },
-        "seo_description": {
-          "type": "text",
-          "pos": 8
-        },
-        "seo_og_image": {
-          "type": "asset",
-          "filetypes": ["images"],
-          "pos": 9
+        "seo": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"]
         }
       },
       "image": null,
@@ -1895,19 +1942,9 @@
       "name": "page",
       "display_name": null,
       "created_at": "2023-05-23T11:40:13.029Z",
-      "updated_at": "2023-07-18T10:03:41.146Z",
+      "updated_at": "2023-07-18T20:29:07.000Z",
       "id": 4017549,
       "schema": {
-        "seo_title": {
-          "type": "text",
-          "key": "seo_title",
-          "pos": 0
-        },
-        "seo_description": {
-          "type": "text",
-          "key": "description",
-          "pos": 1
-        },
         "body": {
           "type": "bloks",
           "key": "body",
@@ -1919,38 +1956,17 @@
         },
         "tab-3bf835dd-bd76-4aed-b110-34444c1161cf": {
           "display_name": "SEO",
-          "keys": [
-            "title",
-            "description",
-            "seo_title",
-            "seo_description",
-            "seo_og_image",
-            "canonical_url",
-            "robots",
-            "href_lang"
-          ],
+          "keys": ["title", "description", "seo"],
           "pos": 3,
           "type": "tab",
           "key": "tab-3bf835dd-bd76-4aed-b110-34444c1161cf"
         },
-        "seo_og_image": {
-          "type": "asset",
-          "filetypes": ["images"]
-        },
-        "canonical_url": {
-          "type": "text"
-        },
-        "robots": {
+        "seo": {
           "type": "bloks",
+          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["robot"]
-        },
-        "href_lang": {
-          "type": "bloks",
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["href-lang"]
+          "component_whitelist": ["seo-fields"]
         }
       },
       "image": null,
@@ -2456,7 +2472,7 @@
       "name": "technology",
       "display_name": null,
       "created_at": "2023-06-02T13:44:17.648Z",
-      "updated_at": "2023-06-22T07:36:15.501Z",
+      "updated_at": "2023-07-18T20:29:57.866Z",
       "id": 4070117,
       "schema": {
         "short_name": {
@@ -2513,16 +2529,6 @@
           "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
           "key": "body"
         },
-        "seo_title": {
-          "type": "text",
-          "key": "seo_title",
-          "pos": 7
-        },
-        "seo_description": {
-          "type": "text",
-          "key": "seo_description",
-          "pos": 8
-        },
         "tab-e33adaf8-a7e6-46ee-8779-bd48057df750": {
           "display_name": "Metadata",
           "keys": [
@@ -2541,17 +2547,18 @@
         },
         "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
           "display_name": "SEO",
-          "keys": ["title", "description", "seo_description", "seo_title", "seo_og_image"],
+          "keys": ["title", "description", "seo"],
           "pos": 10,
           "type": "tab",
           "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
           "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
         },
-        "seo_og_image": {
-          "type": "asset",
-          "filetypes": ["images"],
-          "pos": 11,
-          "key": "seo_og_image"
+        "seo": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"]
         }
       },
       "image": null,

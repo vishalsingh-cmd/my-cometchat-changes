@@ -9,6 +9,7 @@
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
+  import DirectorySection from './directory-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -37,6 +38,7 @@
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
+    'directory-section': DirectorySection,
     'featured-story-section': FeaturedStorySection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
