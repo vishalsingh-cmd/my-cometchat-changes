@@ -54,7 +54,7 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme}
-    class="overflow-hidden bg-gray-1 px-container text-gray-12"
+    class="overflow-hidden bg-gray-1 text-gray-12"
   >
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
@@ -63,7 +63,7 @@
       {@const author = getAuthor(story)}
       {@const date = formatDate(content.date)}
       {@const tag = getTag(story)}
-      <div class="container mx-auto flex flex-col gap-8 py-10 md:flex-row md:py-20">
+      <div class="container mx-auto flex flex-col gap-8 px-container py-10 md:flex-row md:py-20">
         <div class="flex flex-1 flex-col justify-between md:h-[526px] md:py-6">
           <div>
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
