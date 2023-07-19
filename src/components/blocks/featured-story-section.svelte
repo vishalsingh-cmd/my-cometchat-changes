@@ -76,9 +76,9 @@
               </p>
             {/if}
             <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
-              <span>{author}</span>
+              <span aria-label={`Author: ${author}`}>{author}</span>
               <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
-              <span>{date}</span>
+              <span aria-label={`Published: ${date}`}>{date}</span>
             </p>
             <Button variant="secondary" as="a" href={storyLink}>{block.button_label}</Button>
           </div>
