@@ -33,7 +33,11 @@
       />
     {/if}
     {#if title}
-      <h3 class="mb-[10px] text-xl leading-tighter group-hover:text-brand-9 md:mb-3">{title}</h3>
+      <h3
+        class="smooth mb-[10px] text-xl leading-tighter transition-all group-hover:text-brand-9 md:mb-3"
+      >
+        {title}
+      </h3>
     {/if}
     {#if author && date}
       <div
