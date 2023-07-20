@@ -23,7 +23,7 @@
   const typeCustomer = (customer: string | StoryblokStory<CustomerStoryblok> | undefined) =>
     customer as StoryblokStory<CustomerStoryblok>;
   const typeAuthor = (author: string | StoryblokStory<AuthorStoryblok> | undefined) =>
-    author as string;
+    author as unknown as StoryblokStory<AuthorStoryblok>[];
 </script>
 
 <div class="container mx-auto px-container xl:flex">
@@ -34,6 +34,7 @@
         {#each data.customer_stories as story}
           {@const typedStory = typeStory(story)}
           {@const typedCustomer = typeCustomer(typedStory.content.customer)}
+
           <TopnavThumb
             image={typedStory.content.cover}
             href="/"
@@ -64,7 +65,7 @@
             href="/"
             title={typedStory.name}
             publishedAt={typedStory.published_at}
-            publishedBy={typedAuthor}
+            publishedBy={typedAuthor[0].name}
           />
         {/each}
         {#if data.blog_link?.[0]}
