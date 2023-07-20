@@ -220,6 +220,15 @@ export interface DevelopersSectionStoryblok {
   [k: string]: any;
 }
 
+export interface DirectorySectionStoryblok {
+  label: string;
+  title: string;
+  content_type: '' | 'blog-post' | 'customer-story' | 'tutorial';
+  _uid: string;
+  component: 'directory-section';
+  [k: string]: any;
+}
+
 export interface DisclaimerStoryblok {
   label: string;
   description: string;
@@ -440,6 +449,7 @@ export interface IndustryStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -511,6 +521,7 @@ export interface PageStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -638,6 +649,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -689,6 +701,7 @@ export interface TechnologyStoryblok {
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok

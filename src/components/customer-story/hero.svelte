@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ISbStoryData } from '@storyblok/js';
 
-  import type { CustomerStoryStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { CustomerStoryStoryblok, CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
 
   import { getImageAttributes } from '$lib/storyblok';
 
@@ -11,9 +11,11 @@
   export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
-  const industry =
-    industries.find((industry) => industry.uuid === block.content.customer.content.industry)
-      ?.name ?? '';
+  const customer = block.content.customer as unknown as CustomerStoryblok;
+
+  const industryToShow = customer.content.industry as string;
+
+  const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
 </script>
 
 <section class="h-[743px] pt-[100px] md:pb-20 md:pt-[148px]" data-theme="dark">

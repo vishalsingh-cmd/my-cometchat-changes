@@ -717,6 +717,59 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "directory-section",
+      "display_name": null,
+      "created_at": "2023-07-19T09:29:36.515Z",
+      "updated_at": "2023-07-19T15:07:17.052Z",
+      "id": 4295893,
+      "schema": {
+        "label": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "content_type": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "d2e99248-bb38-4738-a0e1-fd4614bf1d39",
+              "name": "Blog Posts",
+              "value": "blog-post"
+            },
+            {
+              "_uid": "c5918af6-e493-4c09-a128-052e00403929",
+              "value": "customer-story",
+              "name": "Customer Stories"
+            },
+            {
+              "_uid": "6188140a-30ab-45ec-b3de-8b9232c02a08",
+              "value": "tutorial",
+              "name": "Tutorials"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "directory-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "disclaimer",
       "display_name": null,
       "created_at": "2023-07-04T14:51:10.358Z",

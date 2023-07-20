@@ -21,6 +21,7 @@ export const load = async ({ cookies, fetch, params }) => {
     'customer-story.customer',
     'customer-story.related_items',
     'customer-stories-section.testimonials',
+    'featured-story-section.featured_story',
     'social-proofs.customers',
     'solutions-section.industries',
     'synced-block.synced_block',
@@ -28,25 +29,23 @@ export const load = async ({ cookies, fetch, params }) => {
   ];
 
   try {
-    const page = await storyblok.get(`cdn/stories/pages/${params.path}`, {
-      version,
-      resolve_relations: relations
-    });
+    const [page, industries] = await Promise.all([
+      storyblok.get(`cdn/stories/pages/${params.path}`, {
+        version,
+        resolve_relations: relations
+      }),
 
-    let industries = undefined;
-
-    if (page.data.story.content.component === 'customer-story') {
-      industries = await storyblok.get('cdn/stories', {
+      storyblok.get('cdn/stories', {
         content_type: 'industry',
         version
-      });
-    }
+      })
+    ]);
 
     return {
       page: page.data.story as ISbStoryData<
         PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
       >,
-      industries: industries?.data.stories as ISbStoryData<IndustryStoryblok>[]
+      industries: industries.data.stories as ISbStoryData<IndustryStoryblok>[]
     };
   } catch (err) {
     console.error(err);
