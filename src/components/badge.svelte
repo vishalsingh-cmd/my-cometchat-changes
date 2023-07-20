@@ -7,7 +7,7 @@
     [
       'inline-flex',
       'text-semibold tracking-wide text-brand-10',
-      'border-[1.4px] light:border-[hsl(250,51%,53%)]/[0.16] dark:border-[hsl(250,62%,68%)]/[0.16]'
+      'border-[1.4px] light:border-brand-10/[0.16] dark:border-brand-10/[0.16]'
     ],
     {
       variants: {

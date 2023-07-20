@@ -15,7 +15,10 @@
 </script>
 
 {#if link}
-  <a href={sanitizeSlug(link)} class="group relative flex flex-col font-semibold text-gray-12">
+  <a
+    href={sanitizeSlug(link)}
+    class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-within:after:absolute focus-within:after:-left-2 focus-within:after:-top-2 focus-within:after:h-[calc(100%+16px)] focus-within:after:w-[calc(100%+16px)] focus-within:after:rounded-[18px] focus-within:after:border focus-within:after:border-brand-7"
+  >
     {#if image}
       {#if customer}
         {@const { src, alt } = getImageAttributes(customer.logo)}
@@ -33,7 +36,11 @@
       />
     {/if}
     {#if title}
-      <h3 class="mb-[10px] text-xl leading-tighter group-hover:text-brand-9 md:mb-3">{title}</h3>
+      <h3
+        class="smooth mb-[10px] text-xl leading-tighter transition-all group-hover:text-brand-9 md:mb-3"
+      >
+        {title}
+      </h3>
     {/if}
     {#if author && date}
       <div

@@ -54,7 +54,7 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme}
-    class="overflow-hidden bg-gray-1 px-container text-gray-12"
+    class="overflow-hidden bg-gray-1 text-gray-12"
   >
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
@@ -63,7 +63,7 @@
       {@const author = getAuthor(story)}
       {@const date = formatDate(content.date)}
       {@const tag = getTag(story)}
-      <div class="container mx-auto flex flex-col gap-8 py-10 md:flex-row md:py-20">
+      <div class="container mx-auto flex flex-col gap-8 px-container py-10 md:flex-row md:py-20">
         <div class="flex flex-1 flex-col justify-between md:h-[526px] md:py-6">
           <div>
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
@@ -76,17 +76,17 @@
               </p>
             {/if}
             <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
-              <span>{author}</span>
+              <span aria-label={`Author: ${author}`}>{author}</span>
               <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
-              <span>{date}</span>
+              <span aria-label={`Published: ${date}`}>{date}</span>
             </p>
             <Button variant="secondary" as="a" href={storyLink}>{block.button_label}</Button>
           </div>
         </div>
         {#if content.cover}
           {@const { src, alt } = getImageAttributes(content.cover)}
-          <div class="flex-1 overflow-hidden rounded-3xl">
-            <img {src} {alt} class="h-full object-cover" />
+          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
+            <img {src} {alt} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>
