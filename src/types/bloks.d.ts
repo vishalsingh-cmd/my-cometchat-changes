@@ -192,10 +192,6 @@ export interface CustomerStoriesSectionStoryblok {
 
 export interface CustomerStoryStoryblok {
   Quote?: any;
-  author_name: string;
-  author_avatar: AssetStoryblok;
-  author_role: string;
-  author_company: string;
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
@@ -207,6 +203,7 @@ export interface CustomerStoryStoryblok {
   cover?: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
+  author: AuthorStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;

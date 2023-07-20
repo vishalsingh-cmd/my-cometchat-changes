@@ -6,8 +6,10 @@
   import { formatDate } from '$lib/utils/dates';
   import { directories } from '$lib/stores/directories';
   import { cn } from '$lib/utils';
+  import { string } from '$lib/strings';
 
   import ContentCard from '$components/content-card.svelte';
+  import Button from '$components/buttons/button.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -45,7 +47,13 @@
         <p class="text-3xl">{block.title}</p>
       </div>
 
-      <button on:click={() => (areFiltersOpen = !areFiltersOpen)}>Press</button>
+      <Button variant="secondary" on:click={() => (areFiltersOpen = !areFiltersOpen)}>
+        {#if areFiltersOpen}
+          {string('directory.hide_filters')}
+        {:else}
+          {string('directory.show_filters')}
+        {/if}
+      </Button>
 
       {#if directoryData && directoryData.length > 0}
         <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr]')}>

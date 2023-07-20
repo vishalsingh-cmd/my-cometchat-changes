@@ -44,7 +44,8 @@ export const load = async ({ cookies, fetch, params }) => {
     let directoriesData = [];
 
     if (
-      page.data.story.content?.body.filter(
+      page.data.story.content.component === 'page' &&
+      page.data.story.content.body.filter(
         (blok: SbBlokData) => blok.component === 'directory-section'
       ).length > 0
     ) {
