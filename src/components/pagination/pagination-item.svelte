@@ -10,8 +10,8 @@
 
   const button = cva(
     [
-      'flex items-center justify-center',
-      'px-2 h-6',
+      'flex items-center justify-center tabular-nums',
+      'min-w-[24px] px-0.5 h-6',
       'text-center text-md/tight font-semibold tracking-widest text-gray-12/64',
       'hover:bg-gray-10/8 rounded-lg'
     ],
