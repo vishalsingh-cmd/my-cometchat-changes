@@ -22,16 +22,16 @@
     class="bg-gray-1 px-container text-gray-12"
   >
     <!-- Content -->
-    {#if block.body && block.body.content}
+    {#if block.content.body && block.content.body.content}
       <div class="container relative mx-auto pt-20">
         <div class="relative mx-auto w-full max-w-[640px]" id="content">
-          {#each block.body.content as b}
+          {#each block.content.body.content as b}
             <RichTextRenderer block={b} />
           {/each}
 
           <!-- Author -->
-          {#if block.author}
-            {@const author = typedAuthor(block.author)}
+          {#if block.content.author}
+            {@const author = typedAuthor(block.content.author)}
             <div class="py-8 md:py-6">
               <div
                 class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px] md:p-5"
