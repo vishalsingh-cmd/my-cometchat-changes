@@ -51,4 +51,6 @@
     {/if}
   </div>
 </section>
-<Metrics block={block.content.metrics[0]} />
+{#if block.content.metrics && block.content.metrics.length > 0}
+  <Metrics block={block.content.metrics[0]} />
+{/if}
