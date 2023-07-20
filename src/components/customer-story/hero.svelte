@@ -1,14 +1,14 @@
 <script lang="ts">
   import type { ISbStoryData } from '@storyblok/js';
 
-  import type { CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { CustomerStoryStoryblok, IndustryStoryblok } from '$types/bloks';
 
   import { getImageAttributes } from '$lib/storyblok';
 
   import Metrics from '$components/blocks/metrics.svelte';
   import Title from '$components/title.svelte';
 
-  export let block: CustomerStoryblok;
+  export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
   const industry =
@@ -49,4 +49,6 @@
     {/if}
   </div>
 </section>
-<Metrics block={block.content.metrics[0]} />
+{#if block.content.metrics && block.content.metrics.length > 0}
+  <Metrics block={block.content.metrics[0]} />
+{/if}

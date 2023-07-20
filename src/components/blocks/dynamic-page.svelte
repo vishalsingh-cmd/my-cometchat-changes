@@ -2,7 +2,6 @@
   import type {
     BlogPostStoryblok,
     CustomerStoryStoryblok,
-    CustomerStoryblok,
     IndustryStoryblok,
     PageStoryblok,
     TechnologyStoryblok
@@ -24,7 +23,7 @@
   };
 
   const pageData = page.page as unknown as PageStoryblok;
-  const customerStoryData = page.page as unknown as CustomerStoryblok;
+  const customerStoryData = page.page as unknown as CustomerStoryStoryblok;
 </script>
 
 {#if page.page.content.component === 'blog-post'}
