@@ -1,9 +1,4 @@
 {
-  "aKey": {
-    "with": "something",
-    "inside": "it"
-  },
-  "something": "else",
   "redirects": [
     {
       "source": "/react",
