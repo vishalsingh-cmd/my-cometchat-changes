@@ -219,17 +219,4 @@
       ),
       rgba(0, 0, 0, 0.2);
   }
-  .animateGrowSmothly {
-    animation: growSmothly 2s linear;
-  }
-  @keyframes growSmothly {
-    from {
-      width: 24px;
-      height: 24px;
-    }
-    to {
-      width: 40px;
-      height: 40px;
-    }
-  }
 </style>
