@@ -1,46 +1,48 @@
-import { storyblok } from '../scripts/datasources';
+// TODO: If the ../scripts/vercel-redirects.ts script works, we can delete this
 
-import type { Handle } from '@sveltejs/kit';
+// import { storyblok } from '../scripts/datasources';
 
-type Redirect = {
-  old: string;
-  new: string;
-};
+// import type { Handle } from '@sveltejs/kit';
 
-function redirect(location: string, body?: string) {
-  return new Response(body, {
-    status: 303,
-    headers: { location }
-  });
-}
+// type Redirect = {
+//   old: string;
+//   new: string;
+// };
 
-const fetchRedirects = async (datasource: string) => {
-  const translationsRes = await storyblok.get('cdn/datasource_entries', {
-    datasource: datasource,
-    per_page: 1000,
-    cv: Date.now()
-  });
+// function redirect(location: string, body?: string) {
+//   return new Response(body, {
+//     status: 303,
+//     headers: { location }
+//   });
+// }
 
-  const entries = translationsRes.data.datasource_entries.map(
-    (entry: { name: string; value: string }) => ({
-      old: entry.name,
-      new: entry.value
-    })
-  );
+// const fetchRedirects = async (datasource: string) => {
+//   const translationsRes = await storyblok.get('cdn/datasource_entries', {
+//     datasource: datasource,
+//     per_page: 1000,
+//     cv: Date.now()
+//   });
 
-  return entries;
-};
+//   const entries = translationsRes.data.datasource_entries.map(
+//     (entry: { name: string; value: string }) => ({
+//       old: entry.name,
+//       new: entry.value
+//     })
+//   );
 
-export const handle: Handle = async ({ event, resolve }) => {
-  const temporaryRedirects = await fetchRedirects('temporary-redirects');
+//   return entries;
+// };
 
-  const redirectedPath = temporaryRedirects.find((redirect: Redirect) => {
-    return redirect.old === '/' + event.params.path;
-  });
+// export const handle: Handle = async ({ event, resolve }) => {
+//   const temporaryRedirects = await fetchRedirects('temporary-redirects');
 
-  if (redirectedPath) {
-    return redirect(redirectedPath.new);
-  }
+//   const redirectedPath = temporaryRedirects.find((redirect: Redirect) => {
+//     return redirect.old === '/' + event.params.path;
+//   });
 
-  return resolve(event);
-};
+//   if (redirectedPath) {
+//     return redirect(redirectedPath.new);
+//   }
+
+//   return resolve(event);
+// };
