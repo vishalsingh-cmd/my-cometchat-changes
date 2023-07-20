@@ -9,7 +9,6 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   export let block: PreFooterStoryblok;
-  console.log(block);
 </script>
 
 {#if block}
