@@ -380,7 +380,7 @@
       "name": "code-block-item",
       "display_name": null,
       "created_at": "2023-06-26T10:09:15.789Z",
-      "updated_at": "2023-06-26T10:10:35.746Z",
+      "updated_at": "2023-07-21T08:43:55.089Z",
       "id": 4176575,
       "schema": {
         "illustration": {
@@ -395,9 +395,47 @@
           "required": true
         },
         "code_snippet_language": {
-          "type": "text",
+          "type": "option",
           "pos": 2,
-          "required": true
+          "required": true,
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "bfcbd780-a77e-4b01-bc4b-827cb7833f0c",
+              "value": "bash",
+              "name": "Bash"
+            },
+            {
+              "_uid": "856bcdb7-807f-4613-a621-166bf8b325a6",
+              "value": "elixir",
+              "name": "Elixir"
+            },
+            {
+              "_uid": "e46255d6-979e-49ae-bd3f-75852f1af3df",
+              "name": "Javascript",
+              "value": "javascript"
+            },
+            {
+              "_uid": "c3cb636c-baad-465f-b277-0e1ebaa9eb01",
+              "value": "swift",
+              "name": "Swift"
+            },
+            {
+              "_uid": "3f6f4607-54f4-4e29-b46f-8ef0fff4c95b",
+              "value": "typescript",
+              "name": "Typescript"
+            },
+            {
+              "_uid": "b1edda69-7ae4-4285-a87d-bf0081c36aa1",
+              "value": "yaml",
+              "name": "YAML"
+            },
+            {
+              "_uid": "38e4a33a-4773-49b5-ae6d-c98cc40890f2",
+              "value": "go",
+              "name": "Go"
+            }
+          ]
         },
         "code_snippet_to_show": {
           "type": "textarea",
@@ -539,37 +577,14 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-18T12:54:51.984Z",
+      "updated_at": "2023-07-20T10:31:20.281Z",
       "id": 4079335,
       "schema": {
         "Quote": {
           "type": "section",
           "pos": 0,
-          "keys": ["author_name", "author_avatar", "author_role", "author_company", "quote"],
+          "keys": ["quote"],
           "display_name": "Header Quote"
-        },
-        "author_name": {
-          "type": "text",
-          "required": true,
-          "translatable": true,
-          "pos": 1
-        },
-        "author_avatar": {
-          "type": "asset",
-          "required": true,
-          "pos": 2
-        },
-        "author_role": {
-          "type": "text",
-          "required": true,
-          "translatable": true,
-          "pos": 3
-        },
-        "author_company": {
-          "type": "text",
-          "required": true,
-          "translatable": true,
-          "pos": 4
         },
         "quote": {
           "type": "textarea",
@@ -627,7 +642,7 @@
         },
         "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
           "display_name": "Metadata",
-          "keys": ["cover", "customer"],
+          "keys": ["cover", "customer", "author"],
           "pos": 9,
           "type": "tab",
           "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
@@ -661,6 +676,15 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["seo-fields"]
+        },
+        "author": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["author"],
+          "required": true,
+          "maximum": 1,
+          "minimum": 1
         }
       },
       "image": null,
@@ -1012,7 +1036,7 @@
       "name": "footer",
       "display_name": null,
       "created_at": "2023-06-01T09:06:41.616Z",
-      "updated_at": "2023-07-17T11:09:30.787Z",
+      "updated_at": "2023-07-20T14:50:31.730Z",
       "id": 4063156,
       "schema": {
         "column_groups": {
@@ -1038,11 +1062,10 @@
           "pos": 3
         },
         "tab-723424fd-1998-4d8f-9497-6c6ef2d95000": {
-          "display_name": "Subfooter",
+          "display_name": "After Footer",
           "keys": ["subfooter", "socials"],
           "pos": 4,
-          "type": "tab",
-          "name": "tab-723424fd-1998-4d8f-9497-6c6ef2d95000"
+          "type": "tab"
         },
         "socials": {
           "type": "bloks",
@@ -2153,6 +2176,46 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "pre-footer",
+      "display_name": null,
+      "created_at": "2023-07-20T14:57:04.770Z",
+      "updated_at": "2023-07-20T15:05:44.615Z",
+      "id": 4304639,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "display_name": ""
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "call_to_action": {
+          "type": "bloks",
+          "display_name": "Call To Action",
+          "required": true,
+          "minimum": 1,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pre-footer",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "product-display-item",
       "display_name": null,
       "created_at": "2023-06-12T12:31:40.641Z",
@@ -2352,7 +2415,7 @@
       "name": "synced-block",
       "display_name": null,
       "created_at": "2023-06-19T10:39:12.936Z",
-      "updated_at": "2023-07-03T11:03:42.532Z",
+      "updated_at": "2023-07-20T14:35:37.603Z",
       "id": 4142186,
       "schema": {
         "synced_block": {
@@ -2364,7 +2427,7 @@
         }
       },
       "image": null,
-      "preview_field": "synced_block",
+      "preview_field": null,
       "is_root": false,
       "preview_tmpl": "",
       "is_nestable": true,
@@ -2799,7 +2862,7 @@
       "name": "topnav-item",
       "display_name": null,
       "created_at": "2023-06-05T14:55:57.217Z",
-      "updated_at": "2023-07-17T16:10:59.475Z",
+      "updated_at": "2023-07-20T15:54:31.645Z",
       "id": 4079210,
       "schema": {
         "title": {
@@ -3098,6 +3161,105 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "tutorial",
+      "display_name": null,
+      "created_at": "2023-07-20T11:07:17.894Z",
+      "updated_at": "2023-07-20T11:07:29.802Z",
+      "id": 4303307,
+      "schema": {
+        "seo": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "maximum": 1,
+          "minimum": 1,
+          "key": "fields",
+          "pos": 0
+        },
+        "body": {
+          "type": "richtext",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "blok",
+            "h3",
+            "image",
+            "italic",
+            "link",
+            "paragraph",
+            "strike",
+            "underline"
+          ],
+          "component_group_whitelist": [],
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics",
+            "gist"
+          ],
+          "key": "body",
+          "pos": 1
+        },
+        "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7": {
+          "display_name": "Author",
+          "keys": ["author"],
+          "pos": 2,
+          "type": "tab",
+          "key": "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7"
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "key": "author",
+          "pos": 3
+        },
+        "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
+          "display_name": "Metadata",
+          "keys": ["cover"],
+          "pos": 4,
+          "type": "tab",
+          "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
+        },
+        "cover": {
+          "type": "asset",
+          "required": true,
+          "key": "cover",
+          "pos": 5
+        },
+        "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
+          "display_name": "SEO",
+          "keys": ["fields", "seo"],
+          "pos": 6,
+          "type": "tab",
+          "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "tutorial",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
     },
     {
       "name": "voice-and-video-calls-hero",
