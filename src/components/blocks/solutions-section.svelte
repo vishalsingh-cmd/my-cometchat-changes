@@ -141,7 +141,8 @@
                   <p
                     class={cn(
                       'mb-3 text-center text-md font-semibold leading-tight tracking-wide',
-                      selectedIndustryIndex !== i && 'text-sm opacity-54 group-hover:opacity-100'
+                      selectedIndustryIndex !== i &&
+                        'text-sm leading-tight opacity-54 group-hover:opacity-100'
                     )}
                   >
                     {industry.name}
