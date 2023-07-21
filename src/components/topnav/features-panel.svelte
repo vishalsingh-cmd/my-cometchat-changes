@@ -6,7 +6,6 @@
   import TopnavItem, { getItemAsset } from './topnav-item.svelte';
 
   export let data: TopnavFeaturesPanelStoryblok;
-  console.log(data);
 </script>
 
 <div class="container mx-auto px-container xl:flex">
