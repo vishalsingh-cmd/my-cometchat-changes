@@ -26,7 +26,9 @@
 </script>
 
 <button
-  on:click={!isCurrent ? () => onPageChange(number) : () => null}
+  on:click={() => {
+    if (!isCurrent) onPageChange(number);
+  }}
   class={cn(button({ isCurrent }), className)}
 >
   {number}

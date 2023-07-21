@@ -18,7 +18,7 @@
 
   const lastPage = Math.ceil(totalCountOfRegisters / registersPerPage);
 
-  $: siblingsCount = currentPage === 1 || currentPage == lastPage ? 2 : 1;
+  $: siblingsCount = currentPage === 1 || currentPage === lastPage ? 2 : 1;
 
   $: previousPages =
     currentPage > 1 ? generatePagesArray(currentPage - 1 - siblingsCount, currentPage - 1) : [];
@@ -78,7 +78,7 @@
 
   <button
     on:click={() => (currentPage += 1)}
-    disabled={currentPage >= lastPage}
+    disabled={currentPage === lastPage}
     class="flex h-6 w-6 items-center justify-center disabled:opacity-40"
   >
     <Icon icon="chevron-right" size="xs" class="text-gray-12/74" />
