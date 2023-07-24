@@ -12,14 +12,14 @@
   export let item: FeaturesListSubItemStoryblok;
 </script>
 
-<p
+<h4
   class={cn(
     'p-5 pl-container text-xl font-semibold leading-tighter md:p-10',
     i !== 0 && 'border-t-gray-12/[0.08] md:border-t lg:border-t-0 lg:pl-5'
   )}
 >
   {item.title}
-</p>
+</h4>
 {#if item.content.length > 0}
   {#each item.content as contentItem}
     {#if contentItem.items}
