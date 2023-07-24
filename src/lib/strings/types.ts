@@ -8,7 +8,9 @@ export const StringKeys = [
   'blog.twitter',
   'blog.linkedin',
   'customer_stories',
-  'related_stories'
+  'related_stories',
+  'directory.show_filters',
+  'directory.hide_filters'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

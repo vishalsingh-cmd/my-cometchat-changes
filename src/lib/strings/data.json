@@ -8,5 +8,7 @@
   "blog.twitter": "Twitter",
   "blog.linkedin": "LinkedIn",
   "customer_stories": "Customer stories",
-  "related_stories": "Related stories"
+  "related_stories": "Related stories",
+  "directory.show_filters": "Show filters",
+  "directory.hide_filters": "Hide filters"
 }
