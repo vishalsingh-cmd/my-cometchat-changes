@@ -96,6 +96,7 @@
         />
         <div
           class="absolute left-[-11px] top-[20px] h-[87px] w-[87px] rounded-full bg-gradient-to-l from-[#E185C6] to-[#807CE0] blur-[25px]"
+          style="transform: translate3d(0, 0, 0);"
         />
       </div>
       {#if block.illustration}

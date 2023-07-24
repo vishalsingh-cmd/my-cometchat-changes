@@ -110,6 +110,7 @@
   {disabled}
   class={cn(button({ size, loading, variant }), className)}
   {...$$restProps}
+  style="transform: translate3d(0, 0, 0);"
 >
   {#if $$slots.default}
     <span class="flex items-center justify-center gap-2">
