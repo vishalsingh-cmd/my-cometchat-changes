@@ -18,15 +18,7 @@
 
   const lastPage = Math.ceil(totalCountOfRegisters / registersPerPage);
 
-  $: siblingsCount = currentPage === 1 || currentPage === lastPage ? 2 : 1;
-
-  $: previousPages =
-    currentPage > 1 ? generatePagesArray(currentPage - 1 - siblingsCount, currentPage - 1) : [];
-
-  $: nextPages =
-    currentPage < lastPage
-      ? generatePagesArray(currentPage, Math.min(currentPage + siblingsCount, lastPage))
-      : [];
+  $: pages = generatePagesArray(0, lastPage);
 </script>
 
 <div class={cn('flex h-6 gap-[14px]', className)} data-theme="light">
@@ -39,41 +31,13 @@
   </button>
 
   <div class="flex gap-3">
-    {#if currentPage > 1 + siblingsCount}
-      <PaginationItem {onPageChange} number={1} />
-      {#if currentPage > 2 + siblingsCount}
-        <p
-          class="h-6 w-6 py-1 text-center text-md/tight font-semibold tracking-widest text-gray-12/64"
-        >
-          ...
-        </p>
+    {#each pages as page, i}
+      {#if page === 1 || page === lastPage || (page < currentPage + 2 && page > currentPage - 2)}
+        <PaginationItem {onPageChange} number={page} isCurrent={pages[i] === currentPage} />
+      {:else if page === currentPage + 2 || page === currentPage - 2}
+        ...
       {/if}
-    {/if}
-
-    {#if previousPages.length > 0}
-      {#each previousPages as page}
-        <PaginationItem {onPageChange} number={page} />
-      {/each}
-    {/if}
-
-    <PaginationItem {onPageChange} number={currentPage} isCurrent />
-
-    {#if nextPages.length > 0}
-      {#each nextPages as page}
-        <PaginationItem {onPageChange} number={page} />
-      {/each}
-    {/if}
-
-    {#if currentPage + siblingsCount < lastPage}
-      {#if currentPage + 1 + siblingsCount < lastPage}
-        <p
-          class="h-6 w-6 py-1 text-center text-md/tight font-semibold tracking-widest text-gray-12/64"
-        >
-          ...
-        </p>
-      {/if}
-      <PaginationItem {onPageChange} number={lastPage} />
-    {/if}
+    {/each}
   </div>
 
   <button
