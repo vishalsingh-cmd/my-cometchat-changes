@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/react",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
+}

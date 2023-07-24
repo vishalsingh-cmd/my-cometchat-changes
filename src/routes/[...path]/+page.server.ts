@@ -18,6 +18,7 @@ export const load = async ({ cookies, fetch, params }) => {
 
   const relations = [
     'blog-post.author',
+    'tutorial.author',
     'customer-story.customer',
     'customer-story.related_items',
     'customer-stories-section.testimonials',

@@ -136,12 +136,13 @@
               >
                 <button
                   on:click={() => (selectedIndustryIndex = i)}
-                  class="isolate z-10 flex w-[130px] flex-col items-center"
+                  class={cn('group isolate z-10 flex w-[143px] flex-col items-center')}
                 >
                   <p
                     class={cn(
                       'mb-3 text-center text-md font-semibold leading-tight tracking-wide',
-                      selectedIndustryIndex !== i && 'text-sm opacity-54 hover:opacity-100'
+                      selectedIndustryIndex !== i &&
+                        'text-sm leading-tight opacity-54 group-hover:opacity-100'
                     )}
                   >
                     {industry.name}
@@ -149,15 +150,21 @@
                   <CometIllustration
                     size={selectedIndustryIndex === i ? 'lg' : 'sm'}
                     illustration={illustrationType(industry.content.illustration)}
+                    class={cn(
+                      'origin-center transform',
+                      selectedIndustryIndex != i
+                        ? 'origin-center transition-all duration-150 ease-in group-hover:h-6 group-hover:w-6'
+                        : 'animate-grow-comet-smothly'
+                    )}
                   />
                 </button>
                 {#if selectedIndustryIndex === i}
                   <div
                     class={cn(
-                      'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-6 pl-6',
+                      'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-6',
                       result.left > industriesContainerWidth / 2
-                        ? 'left-[calc(50%-348px)] border-r'
-                        : 'left-1/2 border-l',
+                        ? 'left-[calc(50%-348px)] border-r pr-6'
+                        : 'left-1/2 border-l pl-6',
                       i === 8 ? 'bottom-[-260px] h-[250px]' : 'bottom-[-172px] h-[156px]'
                     )}
                   >

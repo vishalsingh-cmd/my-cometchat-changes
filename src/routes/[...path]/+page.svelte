@@ -16,8 +16,8 @@
     data.page = newStory;
   });
 
-  let title = data.page?.content?.seo?.[0].title || string('default_seo_title');
-  let description = data.page?.content?.seo?.[0].description || string('default_seo_description');
+  let title = data.page?.content?.seo?.[0].title ?? string('default_seo_title');
+  let description = data.page?.content?.seo?.[0].description ?? string('default_seo_description');
 
   $industries = data.industries;
   $directories = data.directoriesData;

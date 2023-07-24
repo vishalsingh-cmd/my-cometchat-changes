@@ -138,7 +138,8 @@ export default {
       },
       animation: {
         'slide-back-and-foward-smothly':
-          'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running'
+          'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running',
+        'grow-comet-smothly': 'growCometSmothly 0.2s linear'
       },
       keyframes: {
         slideBackAndFoward: {
@@ -158,6 +159,16 @@ export default {
           '100%': {
             transform: 'translateX(34%)',
             opacity: '22%'
+          }
+        },
+        growCometSmothly: {
+          from: {
+            width: '24px',
+            height: '24px'
+          },
+          to: {
+            width: '40px',
+            height: '40px'
           }
         }
       }

@@ -38,7 +38,7 @@
   export const illustrationStyle = cva(['inline-block scale-[1.4]'], {
     variants: {
       size: {
-        sm: ['h-4', 'w-4'],
+        sm: ['h-5', 'w-5'],
         lg: ['h-10', 'w-10']
       }
     }

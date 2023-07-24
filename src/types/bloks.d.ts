@@ -158,7 +158,15 @@ export interface ChatFeaturesSectionStoryblok {
 export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
-  code_snippet_language: string;
+  code_snippet_language:
+    | ''
+    | 'bash'
+    | 'elixir'
+    | 'javascript'
+    | 'swift'
+    | 'typescript'
+    | 'yaml'
+    | 'go';
   code_snippet_to_show: string;
   code_snippet_to_copy: string;
   _uid: string;
@@ -457,6 +465,7 @@ export interface IndustryStoryblok {
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
+    | PreFooterStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -529,6 +538,7 @@ export interface PageStoryblok {
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
+    | PreFooterStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -581,6 +591,15 @@ export interface PlatformSectionStoryblok {
   products: ProductDisplayItemStoryblok[];
   _uid: string;
   component: 'platform-section';
+  [k: string]: any;
+}
+
+export interface PreFooterStoryblok {
+  title: string;
+  description: string;
+  call_to_action: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pre-footer';
   [k: string]: any;
 }
 
@@ -657,6 +676,7 @@ export interface SyncedBlockContentStoryblok {
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
+    | PreFooterStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -709,6 +729,7 @@ export interface TechnologyStoryblok {
     | ListSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
+    | PreFooterStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -831,6 +852,16 @@ export interface TopnavTechnologiesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-technologies-panel';
+  [k: string]: any;
+}
+
+export interface TutorialStoryblok {
+  seo?: SeoFieldsStoryblok[];
+  body: RichtextStoryblok;
+  author: StoryblokStory<AuthorStoryblok> | string;
+  cover: AssetStoryblok;
+  _uid: string;
+  component: 'tutorial';
   [k: string]: any;
 }
 

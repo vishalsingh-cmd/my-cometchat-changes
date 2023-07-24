@@ -27,6 +27,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
+  import PreFooter from './pre-footer.svelte';
 
   export let block: SbBlokData;
 
@@ -50,6 +51,7 @@
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
+    'pre-footer': PreFooter,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
