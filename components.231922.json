@@ -4,7 +4,7 @@
       "name": "author",
       "display_name": null,
       "created_at": "2023-07-11T13:43:35.315Z",
-      "updated_at": "2023-07-11T13:49:43.356Z",
+      "updated_at": "2023-07-24T13:10:40.659Z",
       "id": 4258198,
       "schema": {
         "name": {
@@ -14,18 +14,21 @@
         },
         "role": {
           "type": "text",
-          "required": true,
-          "translatable": true
+          "required": false,
+          "translatable": true,
+          "default_value": ""
         },
         "company": {
           "type": "text",
           "required": true,
-          "translatable": true
+          "translatable": true,
+          "default_value": "CometChat"
         },
         "avatar": {
           "type": "asset",
           "required": true,
-          "filetypes": ["images"]
+          "filetypes": ["images"],
+          "asset_folder_id": 282086
         },
         "description": {
           "type": "textarea",
@@ -101,9 +104,25 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-07-18T11:38:50.178Z",
+      "updated_at": "2023-07-24T13:56:30.188Z",
       "id": 4258189,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "required": true,
+          "key": "cover",
+          "pos": 0
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "key": "author",
+          "pos": 1
+        },
         "seo": {
           "type": "bloks",
           "required": false,
@@ -113,7 +132,7 @@
           "maximum": 1,
           "minimum": 1,
           "key": "fields",
-          "pos": 0
+          "pos": 2
         },
         "body": {
           "type": "richtext",
@@ -143,37 +162,14 @@
             "gist"
           ],
           "key": "body",
-          "pos": 1
-        },
-        "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7": {
-          "display_name": "Author",
-          "keys": ["author"],
-          "pos": 2,
-          "type": "tab",
-          "key": "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7"
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "translatable": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"],
-          "key": "author",
           "pos": 3
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover"],
-          "pos": 4,
+          "keys": ["cover", "author"],
+          "pos": 5,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
-        },
-        "cover": {
-          "type": "asset",
-          "required": true,
-          "key": "cover",
-          "pos": 5
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
@@ -577,7 +573,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-20T10:31:20.281Z",
+      "updated_at": "2023-07-25T11:39:32.654Z",
       "id": 4079335,
       "schema": {
         "Quote": {
@@ -678,13 +674,10 @@
           "component_whitelist": ["seo-fields"]
         },
         "author": {
-          "type": "bloks",
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["author"],
-          "required": true,
-          "maximum": 1,
-          "minimum": 1
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"]
         }
       },
       "image": null,
@@ -1036,7 +1029,7 @@
       "name": "footer",
       "display_name": null,
       "created_at": "2023-06-01T09:06:41.616Z",
-      "updated_at": "2023-07-20T14:50:31.730Z",
+      "updated_at": "2023-07-21T14:31:13.750Z",
       "id": 4063156,
       "schema": {
         "column_groups": {
@@ -1046,13 +1039,6 @@
           "restrict_components": true,
           "component_whitelist": ["footer-column-group"],
           "pos": 0
-        },
-        "tab-2b3010ac-f6dc-49d5-9c7c-04c797ff77bb": {
-          "display_name": "Prefooter",
-          "keys": ["prefooter_title", "prefooter_description", "prefooter_cta"],
-          "pos": 2,
-          "type": "tab",
-          "name": "tab-2b3010ac-f6dc-49d5-9c7c-04c797ff77bb"
         },
         "subfooter": {
           "type": "options",
@@ -1905,6 +1891,65 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "lists-section",
+      "display_name": null,
+      "created_at": "2023-07-21T14:08:10.345Z",
+      "updated_at": "2023-07-24T11:37:44.433Z",
+      "id": 4310511,
+      "schema": {
+        "columns": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["lists-section-column"],
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "lists-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "lists-section-column",
+      "display_name": null,
+      "created_at": "2023-07-24T11:31:41.834Z",
+      "updated_at": "2023-07-24T11:36:38.920Z",
+      "id": 4319205,
+      "schema": {
+        "label": {
+          "type": "text"
+        },
+        "list": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "lists-section-column",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "metrics",
       "display_name": null,
       "created_at": "2023-06-09T16:23:37.805Z",
@@ -2415,7 +2460,7 @@
       "name": "synced-block",
       "display_name": null,
       "created_at": "2023-06-19T10:39:12.936Z",
-      "updated_at": "2023-07-20T14:35:37.603Z",
+      "updated_at": "2023-07-21T08:48:39.539Z",
       "id": 4142186,
       "schema": {
         "synced_block": {
@@ -3166,9 +3211,25 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-07-20T11:07:29.802Z",
+      "updated_at": "2023-07-24T13:57:06.065Z",
       "id": 4303307,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "required": true,
+          "key": "cover",
+          "pos": 0
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "key": "author",
+          "pos": 1
+        },
         "seo": {
           "type": "bloks",
           "required": false,
@@ -3178,7 +3239,7 @@
           "maximum": 1,
           "minimum": 1,
           "key": "fields",
-          "pos": 0
+          "pos": 2
         },
         "body": {
           "type": "richtext",
@@ -3208,37 +3269,14 @@
             "gist"
           ],
           "key": "body",
-          "pos": 1
-        },
-        "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7": {
-          "display_name": "Author",
-          "keys": ["author"],
-          "pos": 2,
-          "type": "tab",
-          "key": "tab-8ae64a2d-39b0-464f-bbaa-c624e1ecbdf7"
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "required": true,
-          "translatable": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"],
-          "key": "author",
           "pos": 3
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover"],
-          "pos": 4,
+          "keys": ["cover", "author"],
+          "pos": 5,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
-        },
-        "cover": {
-          "type": "asset",
-          "required": true,
-          "key": "cover",
-          "pos": 5
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
