@@ -10,7 +10,17 @@ import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 import { onMount } from 'svelte';
 
 /** Storyblok API */
+const { storyblokApi } = storyblokInit({
+  accessToken: env.PUBLIC_STORYBLOK_TOKEN,
+  use: [apiPlugin],
+  apiOptions: {
+    https: true
+  }
+});
 
+export const storyblok = storyblokApi as NonNullable<
+  ReturnType<typeof storyblokInit>['storyblokApi']
+>;
 export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
   const { storyblokApi } = storyblokInit({

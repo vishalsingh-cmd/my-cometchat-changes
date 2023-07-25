@@ -66,10 +66,11 @@
   },
   "type": "module",
   "dependencies": {
-    "@types/prismjs": "^1.26.0",
-    "prism-svelte": "^0.5.0",
-    "prismjs": "^1.29.0",
     "@storyblok/js": "^2.1.6",
-    "date-fns": "^2.30.0"
+    "@tanstack/svelte-query": "^4.32.0",
+    "@types/prismjs": "^1.26.0",
+    "date-fns": "^2.30.0",
+    "prism-svelte": "^0.5.0",
+    "prismjs": "^1.29.0"
   }
 }
