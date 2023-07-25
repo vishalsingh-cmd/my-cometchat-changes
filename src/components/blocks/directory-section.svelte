@@ -5,15 +5,18 @@
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
 
   import { directories } from '$lib/stores/directories';
+  import { createDebouncedValue } from '$lib/stores/create-debounced-value';
 
   import { storyblok } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
 
-  import ContentCard from '$components/content-card.svelte';
   import Button from '$components/buttons/button.svelte';
+  import ContentCard from '$components/content-card.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
   import Icon from '$components/icon/icon.svelte';
+  import Input from '$components/input.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -21,6 +24,8 @@
     return directory.key === block._uid;
   })[0].data as SbBlokData[];
   let areFiltersOpen = false;
+
+  const [search, debouncedSearch] = createDebouncedValue('');
 
   const getTagsFromDirectoryData = () => {
     const tags: string[] = [];
@@ -85,7 +90,8 @@
     queryFn: async () => {
       const res = await getStories({
         filter_query: selectedTags.length > 0 ? { industry: { in: selectedTags.join(',') } } : {},
-        per_page: 12
+        per_page: 12,
+        search_term: $debouncedSearch
       });
 
       return { stories: res.data.stories, total: res.total };
@@ -101,24 +107,28 @@
         <p class="text-3xl">{block.title}</p>
       </div>
 
-      <Button
-        variant="secondary"
-        on:click={() => (areFiltersOpen = !areFiltersOpen)}
-        class="mb-8 gap-[6px]"
-      >
-        {#if areFiltersOpen}
-          {string('directory.hide_filters')}
-        {:else}
-          {string('directory.show_filters')}
-        {/if}
-        {#if selectedTags.length > 0}
-          <span
-            class="min-w-[20px] rounded-md bg-brand-9 px-[3px] py-[2px] text-xxs font-semibold leading-normal tracking-widest text-brand-1"
-          >
-            {selectedTags.length}
-          </span>
-        {/if}
-      </Button>
+      <div class="mb-8 flex w-full items-center justify-between">
+        <Button
+          variant="secondary"
+          on:click={() => (areFiltersOpen = !areFiltersOpen)}
+          class="gap-[6px]"
+        >
+          {#if areFiltersOpen}
+            {string('directory.hide_filters')}
+          {:else}
+            {string('directory.show_filters')}
+          {/if}
+          {#if selectedTags.length > 0}
+            <span
+              class="min-w-[20px] rounded-md bg-brand-9 px-[3px] py-[2px] text-xxs font-semibold leading-normal tracking-widest text-brand-1"
+            >
+              {selectedTags.length}
+            </span>
+          {/if}
+        </Button>
+
+        <Input bind:value={$search} icon="search-lg" />
+      </div>
 
       {#if directoryData}
         <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr] gap-20')}>
@@ -160,6 +170,10 @@
                   </button>
                 {/each}
               </div>
+              <GhostButton class="mt-8 gap-[6px]" on:click={() => (selectedTags = [])}>
+                Reset filters
+                <Icon size="xs" icon="trash-01" />
+              </GhostButton>
             </div>
           {/if}
 
