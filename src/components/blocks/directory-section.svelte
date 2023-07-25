@@ -190,7 +190,7 @@
           <div class={cn('grid gap-8', areFiltersOpen ? 'grid-cols-2' : 'grid-cols-3')}>
             <!-- Loading State -->
             {#if $getDirectoryDataWithFilters.isLoading}
-              {#each Array(4) as _}
+              {#each Array(6) as _}
                 <ContentCard isLoading />
               {/each}
             {/if}
