@@ -12,6 +12,7 @@
   export let customer: CustomerStoryblok | undefined = undefined;
   export let author: string | undefined = undefined;
   export let date: string | undefined = undefined;
+  export let isLoading = false;
 </script>
 
 {#if link}
@@ -59,4 +60,17 @@
       </div>
     {/if}
   </a>
+{/if}
+
+{#if isLoading}
+  <div class="relative">
+    <div class="absolute left-3 top-4 h-[30px] w-[92px] rounded-xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    <div
+      class="mb-4 aspect-video h-[202px] w-full rounded-2xl border border-[hsl(246,21%,9%)]/[0.04] bg-[hsl(246,21%,9%)]/[0.03] object-cover md:mb-5 md:h-[238px]"
+    />
+    <div class="mb-[6px] h-[18px] w-[190px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    <div class="mb-3 h-[18px] w-full rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    <div class="mb-3 h-3 w-[100px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    <div class="h-[30px] w-[51px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
+  </div>
 {/if}
