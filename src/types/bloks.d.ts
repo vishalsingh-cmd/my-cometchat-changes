@@ -13,7 +13,7 @@ export interface AssetStoryblok {
 
 export interface AuthorStoryblok {
   name: string;
-  role: string;
+  role?: string;
   company: string;
   avatar: AssetStoryblok;
   description: string;
@@ -51,10 +51,10 @@ export interface RichtextStoryblok {
 }
 
 export interface BlogPostStoryblok {
+  cover: AssetStoryblok;
+  author: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
-  cover: AssetStoryblok;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -211,7 +211,8 @@ export interface CustomerStoryStoryblok {
   cover?: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
-  author: AuthorStoryblok[];
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industry: number | string;
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -463,6 +464,7 @@ export interface IndustryStoryblok {
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
+    | ListsSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -504,6 +506,21 @@ export interface ListSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ListsSectionStoryblok {
+  columns: ListsSectionColumnStoryblok[];
+  _uid: string;
+  component: 'lists-section';
+  [k: string]: any;
+}
+
+export interface ListsSectionColumnStoryblok {
+  label?: string;
+  list?: BulletPointStoryblok[];
+  _uid: string;
+  component: 'lists-section-column';
+  [k: string]: any;
+}
+
 export interface MetricsStoryblok {
   metrics?: MetricsItemStoryblok[];
   _uid: string;
@@ -536,6 +553,7 @@ export interface PageStoryblok {
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
+    | ListsSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -674,6 +692,7 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
+    | ListsSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -727,6 +746,7 @@ export interface TechnologyStoryblok {
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
+    | ListsSectionStoryblok
     | MetricsStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -856,10 +876,10 @@ export interface TopnavTechnologiesPanelStoryblok {
 }
 
 export interface TutorialStoryblok {
+  cover: AssetStoryblok;
+  author: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
-  cover: AssetStoryblok;
   _uid: string;
   component: 'tutorial';
   [k: string]: any;

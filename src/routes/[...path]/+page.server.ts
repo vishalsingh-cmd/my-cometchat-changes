@@ -20,6 +20,7 @@ export const load = async ({ cookies, fetch, params }) => {
     'blog-post.author',
     'tutorial.author',
     'customer-story.customer',
+    'customer-story.author',
     'customer-story.related_items',
     'customer-stories-section.testimonials',
     'featured-story-section.featured_story',

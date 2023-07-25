@@ -1,11 +1,12 @@
 <script lang="ts">
-  import type { SbBlokData } from '@storyblok/js';
+  import { createQuery } from '@tanstack/svelte-query';
+  import type { ISbStoriesParams, SbBlokData } from '@storyblok/js';
 
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
 
   import { directories } from '$lib/stores/directories';
-  import { industries } from '$lib/stores/industries';
 
+  import { storyblok } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
@@ -13,30 +14,22 @@
   import ContentCard from '$components/content-card.svelte';
   import Button from '$components/buttons/button.svelte';
   import Icon from '$components/icon/icon.svelte';
-  // import { createQuery } from '@tanstack/svelte-query';
-
-  // import { storyblok } from '$lib/storyblok';
 
   export let block: DirectorySectionStoryblok;
 
-  let directoryData = $directories.filter((directory) => {
+  let directoryData = $directories.filter((directory: { key: string }) => {
     return directory.key === block._uid;
   })[0].data as SbBlokData[];
   let areFiltersOpen = false;
-  let selectedTags = [] as string[];
-
-  const allIndustries = $industries;
-
-  console.log(directoryData);
 
   const getTagsFromDirectoryData = () => {
-    const tags: any[] = [];
+    const tags: string[] = [];
 
     directoryData.forEach((item) => {
       const typedItem = item as BlogPostStoryblok;
 
       if (typedItem.content.component === 'customer-story') {
-        const industry = typedItem.content.customer.content.industry;
+        const industry = typedItem.content.industry;
         if (industry) {
           if (!tags.includes(industry)) {
             tags.push(industry);
@@ -46,12 +39,6 @@
     });
 
     return tags;
-  };
-
-  const getTag = (tag: string) => {
-    const tagObj = allIndustries.filter((ind) => ind.uuid === tag)[0];
-
-    return tagObj;
   };
 
   const toggleTag = (tag: string) => {
@@ -77,43 +64,33 @@
         typedItem.content.component === 'customer-story'
           ? typedItem.content.customer.content
           : undefined,
-      author: typedItem.content.author,
+      author: typedItem.content.author.name,
       date: formatDate(new Date(typedItem.created_at))
     };
   };
 
-  /**
-   * LOGGED OUT CODE
-   * Will serve to get the data from the directory section
-   * once we figure out where we should put the industries, categories, tags and what not
-   */
+  const getStories = async (params: Omit<ISbStoriesParams, 'content_type'> = {}) => {
+    return await storyblok.get('cdn/stories', {
+      version: 'draft',
+      content_type: 'customer-story',
+      sort_by: 'updated_at:desc',
+      ...params
+    });
+  };
 
-  // const getStories = async (params: Omit<ISbStoriesParams, 'content_type'> = {}) => {
-  //   return await storyblok.get('cdn/stories', {
-  //     version: 'draft',
-  //     content_type: 'customer-story',
-  //     sort_by: 'updated_at:desc',
-  //     ...params
-  //   });
-  // };
+  $: selectedTags = [] as string[];
 
-  // a function that uses tanstack svelte query and returns Storyblok data using the queryClient and the tags selected
-  // $: getDirectoryDataWithFilters = createQuery({
-  //   queryKey: ['directory-section'],
-  //   queryFn: async () => {
-  //     const res = await getStories({
-  //       filter_query: {
-  //         'customer.industry': {
-  //           in: selectedTags.join(',')
-  //         }
-  //       },
-  //       resolve_relations: ['customer-story.customer', 'customer.industry'],
-  //       per_page: 12
-  //     });
+  $: getDirectoryDataWithFilters = createQuery({
+    queryKey: ['directory', selectedTags],
+    queryFn: async () => {
+      const res = await getStories({
+        filter_query: selectedTags.length > 0 ? { industry: { in: selectedTags.join(',') } } : {},
+        per_page: 12
+      });
 
-  //     return { stories: res.data.stories, total: res.total };
-  //   }
-  // });
+      return { stories: res.data.stories, total: res.total };
+    }
+  });
 </script>
 
 {#if block}
@@ -143,7 +120,7 @@
         {/if}
       </Button>
 
-      {#if directoryData && directoryData.length > 0}
+      {#if directoryData}
         <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr] gap-20')}>
           {#if areFiltersOpen}
             {@const tags = getTagsFromDirectoryData()}
@@ -151,30 +128,30 @@
               <p class="mb-4 text-lg font-semibold leading-tight">Industries</p>
               <div class="flex flex-row gap-2">
                 {#each tags as tag}
-                  {@const tagObj = getTag(tag)}
-                  {@const isTagSelected = selectedTags.includes(tagObj.uuid)}
+                  {@const isTagSelected = selectedTags.includes(tag)}
                   <button
                     class={cn(
                       'flex items-center gap-[6px]',
                       'rounded-[10px] bg-brand-10/[0.12]',
                       'px-[10px] py-[6px]',
                       'text-md font-semibold leading-tight tracking-wide',
+                      'whitespace-nowrap',
                       isTagSelected
                         ? 'bg-brand-10/[0.12] pr-2 text-brand-10'
                         : 'bg-gray-11/[0.06] text-gray-11'
                     )}
                     on:click={() => {
                       if (!isTagSelected) {
-                        toggleTag(tagObj.uuid);
+                        toggleTag(tag);
                       }
                     }}
                   >
-                    {tagObj.name}
+                    {tag}
                     {#if isTagSelected}
                       <button
                         class="h-[14px] w-[14px]"
                         on:click|stopPropagation={() => {
-                          toggleTag(tagObj.uuid);
+                          toggleTag(tag);
                         }}
                       >
                         <Icon size="xs" icon="x-circle" />
@@ -185,12 +162,24 @@
               </div>
             </div>
           {/if}
+
+          <!-- Content Cards -->
           <div class={cn('grid gap-8', areFiltersOpen ? 'grid-cols-2' : 'grid-cols-3')}>
-            {#each directoryData as item}
-              {@const parsedItem = parseItem(item)}
-              {@const { image, title, tags, link, customer, author, date } = parsedItem}
-              <ContentCard {image} {title} {tags} {link} {customer} {author} {date} />
-            {/each}
+            <!-- Loading State -->
+            {#if $getDirectoryDataWithFilters.isLoading}
+              {#each Array(4) as _}
+                <ContentCard isLoading />
+              {/each}
+            {/if}
+
+            <!-- Success fetch -->
+            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+              {#each $getDirectoryDataWithFilters.data.stories as item}
+                {@const parsedItem = parseItem(item)}
+                {@const { image, title, tags, link, customer, author, date } = parsedItem}
+                <ContentCard {image} {title} {tags} {link} {customer} {author} {date} />
+              {/each}
+            {/if}
           </div>
         </div>
       {/if}
