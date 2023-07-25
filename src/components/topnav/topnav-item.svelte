@@ -65,17 +65,17 @@
     <p
       class={cn(
         'font-semibold opacity-74',
-        comingSoon ? '' : 'transition-all group-hover:opacity-100',
+        !comingSoon && 'transition-all group-hover:opacity-100',
         size === 'big' ? 'text-xl' : 'text-md tracking-wide'
       )}
     >
       {title}
     </p>
-    {#if href?.startsWith('http') && asset && 'icon' in asset && !comingSoon}
+    {#if href?.startsWith('http') && asset && 'icon' in asset}
       <Icon
         size={size === 'big' ? 'lg' : 'xs'}
         icon="link-external-02"
-        class={cn('hidden', comingSoon ? '' : 'group-hover:block')}
+        class={cn('hidden', !comingSoon && 'group-hover:block')}
       />
     {/if}
   </div>
@@ -83,7 +83,7 @@
     <p
       class={cn(
         'font-medium tracking-wide opacity-64',
-        comingSoon ? '' : 'transition-all group-hover:opacity-80',
+        !comingSoon && 'transition-all group-hover:opacity-80',
         size === 'big' ? 'mt-1 text-lg leading-snug' : 'text-sm leading-normal'
       )}
     >
