@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createQuery } from '@tanstack/svelte-query';
+  import { createQuery, isError } from '@tanstack/svelte-query';
   import type { ISbStoriesParams, SbBlokData } from '@storyblok/js';
 
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
@@ -17,6 +17,7 @@
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import Icon from '$components/icon/icon.svelte';
   import Input from '$components/input.svelte';
+  import NoResultsBanner from '$components/directory/no-results-banner.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -26,6 +27,14 @@
   let areFiltersOpen = false;
 
   const [search, debouncedSearch] = createDebouncedValue('');
+
+  const onClearSearchValue = () => {
+    $search = '';
+  };
+
+  const clearFilters = () => {
+    selectedTags = [];
+  };
 
   const getTagsFromDirectoryData = () => {
     const tags: string[] = [];
@@ -170,7 +179,7 @@
                   </button>
                 {/each}
               </div>
-              <GhostButton class="mt-8 gap-[6px]" on:click={() => (selectedTags = [])}>
+              <GhostButton class="mt-8 gap-[6px]" on:click={clearFilters}>
                 Reset filters
                 <Icon size="xs" icon="trash-01" />
               </GhostButton>
@@ -184,6 +193,15 @@
               {#each Array(4) as _}
                 <ContentCard isLoading />
               {/each}
+            {/if}
+
+            <!-- Empty State -->
+            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0 && search}
+              <NoResultsBanner
+                searchValue={$search}
+                on:clearSearchValue={onClearSearchValue}
+                class="col-span-3"
+              />
             {/if}
 
             <!-- Success fetch -->
