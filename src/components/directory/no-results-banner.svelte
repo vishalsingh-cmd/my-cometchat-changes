@@ -2,6 +2,7 @@
   import { createEventDispatcher } from 'svelte';
 
   import { cn } from '$lib/utils';
+  import { string } from '$lib/strings';
 
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import Icon from '$components/icon/icon.svelte';
@@ -28,11 +29,14 @@
     class="w-full max-w-[352px] text-center text-lg font-normal leading-snug tracking-wide text-gray-12"
   >
     <p class="mb-1 font-medium">No results found</p>
-    <p>"{searchValue}" did not match any customer stories.</p>
-    <p>Please try again.</p>
+    <p>
+      "{searchValue}" {string('directory.did_not_match_any')}
+      {string('directory.customer_stories')}.
+    </p>
+    <p>{string('directory.please_try_again')}.</p>
   </div>
   <GhostButton class="mt-3 gap-[6px]" on:click={() => dispatch('clearSearchValue')}>
-    Clear Search
+    {string('directory.clear_search')}
     <Icon size="sm" icon="x-circle" />
   </GhostButton>
 </div>
