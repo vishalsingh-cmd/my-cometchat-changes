@@ -1,20 +1,20 @@
 <script lang="ts">
   import { createQuery } from '@tanstack/svelte-query';
-  import type { ISbStoriesParams, SbBlokData } from '@storyblok/js';
+  import type { SbBlokData } from '@storyblok/js';
 
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
 
   import { directories } from '$lib/stores/directories';
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
 
-  import { storyblok } from '$lib/storyblok';
+  import { getStories } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
   import { cn } from '$lib/utils';
-  import { string } from '$lib/strings';
 
   import ContentCard from '$components/content-card.svelte';
-  import GhostButton from '$components/buttons/ghost-button.svelte';
-  import Icon from '$components/icon/icon.svelte';
+  import FilterPanel from '$components/directory/filter-panel.svelte';
+  import MobileFiltersFooter from '$components/directory/mobile-filters-footer.svelte';
+  import MobileFiltersHeader from '$components/directory/mobile-filters-header.svelte';
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
 
@@ -86,21 +86,13 @@
     };
   };
 
-  const getStories = async (params: Omit<ISbStoriesParams, 'content_type'> = {}) => {
-    return await storyblok.get('cdn/stories', {
-      version: 'draft',
-      content_type: 'customer-story',
-      sort_by: 'updated_at:desc',
-      ...params
-    });
-  };
-
   $: selectedTags = [] as string[];
 
   $: getDirectoryDataWithFilters = createQuery({
     queryKey: ['directory', selectedTags],
     queryFn: async () => {
       const res = await getStories({
+        content_type: 'customer-story',
         filter_query: selectedTags.length > 0 ? { industry: { in: selectedTags.join(',') } } : {},
         per_page: 12,
         search_term: $debouncedSearch
@@ -130,46 +122,27 @@
         <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-20 lg:grid-cols-[30%_1fr]')}>
           {#if areFiltersOpen}
             {@const tags = getTagsFromDirectoryData()}
-            <div class="border-t border-gray-12/8 pt-5">
-              <p class="mb-4 text-lg font-semibold leading-tight">Industries</p>
-              <div class="flex flex-row gap-2">
-                {#each tags as tag}
-                  {@const isTagSelected = selectedTags.includes(tag)}
-                  <button
-                    class={cn(
-                      'flex items-center gap-[6px]',
-                      'rounded-[10px] bg-brand-10/[0.12]',
-                      'px-[10px] py-[6px]',
-                      'text-md font-semibold leading-tight tracking-wide',
-                      'whitespace-nowrap',
-                      isTagSelected
-                        ? 'bg-brand-10/[0.12] pr-2 text-brand-10'
-                        : 'bg-gray-11/[0.06] text-gray-11'
-                    )}
-                    on:click={() => {
-                      if (!isTagSelected) {
-                        toggleTag(tag);
-                      }
-                    }}
-                  >
-                    {tag}
-                    {#if isTagSelected}
-                      <button
-                        class="h-[14px] w-[14px]"
-                        on:click|stopPropagation={() => {
-                          toggleTag(tag);
-                        }}
-                      >
-                        <Icon size="xs" icon="x-circle" />
-                      </button>
-                    {/if}
-                  </button>
-                {/each}
-              </div>
-              <GhostButton class="mt-8 gap-[6px]" on:click={clearFilters}>
-                {string('directory.reset_filters')}
-                <Icon size="xs" icon="trash-01" />
-              </GhostButton>
+            <div
+              class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full border-t border-gray-12/8 bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0 lg:pt-5"
+            >
+              <!-- Mobile Filters Header -->
+              <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
+
+              <FilterPanel
+                {tags}
+                {selectedTags}
+                on:selectTag={(e) => toggleTag(e.detail.i)}
+                on:clearFilters={() => clearFilters()}
+              />
+
+              <!-- Mobile Filters Footer -->
+              <MobileFiltersFooter
+                on:clearFiltersAndClose={() => {
+                  clearFilters();
+                  onToggleFiltersPanel();
+                }}
+                on:toggleFiltersPanel={onToggleFiltersPanel}
+              />
             </div>
           {/if}
 

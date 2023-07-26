@@ -4,7 +4,8 @@ import {
   storyblokInit,
   useStoryblokBridge,
   type ISbStoryData,
-  type SbSDKOptions
+  type SbSDKOptions,
+  type ISbStoriesParams
 } from '@storyblok/js';
 import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 import { onMount } from 'svelte';
@@ -45,6 +46,15 @@ export function startStoryblokBridge<T extends { story: ISbStoryData<any> }>(
     useStoryblokBridge(id, onNewStory);
   });
 }
+
+export const getStories = async (params: ISbStoriesParams = {}) => {
+  return await storyblok.get('cdn/stories', {
+    version: 'draft',
+    content_type: params.content_type,
+    sort_by: 'updated_at:desc',
+    ...params
+  });
+};
 
 /** Slugs and paths */
 

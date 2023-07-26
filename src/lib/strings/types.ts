@@ -18,7 +18,9 @@ export const StringKeys = [
   'directory.tutorials',
   'directory.blog_posts',
   'directory.please_try_again',
-  'directory.clear_search'
+  'directory.clear_search',
+  'directory.apply',
+  'directory.filters'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

@@ -19,7 +19,7 @@
     'min-w-[20px]',
     'rounded-md',
     'bg-brand-9',
-    'px-[3px] py-[2px]',
+    'px-[3px] py-0.5',
     'text-xxs font-semibold leading-normal tracking-widest text-brand-1'
   ]);
 </script>

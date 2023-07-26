@@ -18,5 +18,7 @@
   "directory.tutorials": "tutorials",
   "directory.blog_posts": "blog posts",
   "directory.please_try_again": "Please try again",
-  "directory.clear_search": "Clear Search"
+  "directory.clear_search": "Clear Search",
+  "directory.apply": "Apply",
+  "directory.filters": "Filters"
 }
