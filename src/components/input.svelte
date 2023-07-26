@@ -13,13 +13,13 @@
   export let icon: $$Props['icon'] = undefined;
 </script>
 
-<label for={$$props.id} class="relative text-gray-12">
+<label for={$$props.id} class="relative w-full text-gray-12 lg:max-w-[304px]">
   {#if icon}
     <Icon {icon} size="xs" class="absolute left-4 top-1/2 -translate-y-2/4 text-gray-12/74" />
   {/if}
   <input
     class={cn(
-      'w-[304px]',
+      'w-full lg:max-w-[304px]',
       'rounded-[14px] border border-gray-12/10 bg-gray-12/[0.02]',
       'px-4 py-[13px]',
       'text-md font-semibold leading-tight tracking-wide',
