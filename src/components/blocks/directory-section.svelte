@@ -122,12 +122,12 @@
       <Options
         {selectedTags}
         on:toggleFiltersPanel={onToggleFiltersPanel}
-        search={$search}
+        bind:value={$search}
         {areFiltersOpen}
       />
 
       {#if directoryData}
-        <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr] gap-20')}>
+        <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-20 lg:grid-cols-[30%_1fr]')}>
           {#if areFiltersOpen}
             {@const tags = getTagsFromDirectoryData()}
             <div class="border-t border-gray-12/8 pt-5">
@@ -174,7 +174,7 @@
           {/if}
 
           <!-- Content Cards -->
-          <div class={cn('grid gap-8', areFiltersOpen ? 'grid-cols-2' : 'grid-cols-3')}>
+          <div class={cn('grid gap-8', areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3')}>
             <!-- Loading State -->
             {#if $getDirectoryDataWithFilters.isLoading}
               {#each Array(6) as _}
