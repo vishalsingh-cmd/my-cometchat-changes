@@ -85,7 +85,7 @@
   {...$$restProps}
 />
 <div class="absolute left-0 top-0 h-5 w-5 animate-spin">
-  <div class={cn(comet({ variant }))} />
+  <div class={cn(comet({ variant }))} style="transform: translate3d(0, 0, 0);" />
 </div>
 
 <style>

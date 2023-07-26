@@ -42,6 +42,7 @@
     'opacity-40',
     'blur-[150px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <div
   class={cn(
@@ -53,6 +54,7 @@
     'mix-blend-soft-light',
     'blur-[100px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <div
   class={cn(
@@ -63,6 +65,7 @@
     'bg-[hsla(245,63%,24%,0.3)]',
     'blur-[100px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 
 <!-- Top blurs -->
@@ -76,6 +79,7 @@
     'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-11/100 from-0% to-purple-11/0 to-75%',
     'blur-[150px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <div
   class={cn(
@@ -87,6 +91,7 @@
     'blur-[75px]',
     'gradientClass1'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <div
   class={cn(
@@ -98,6 +103,7 @@
     'bg-[hsla(231,63%,24%,1)]',
     'blur-[100px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <div
   class={cn(
@@ -108,6 +114,7 @@
     'bg-[hsla(245,63%,24%,0.3)]',
     'blur-[100px]'
   )}
+  style="transform: translate3d(0, 0, 0);"
 />
 <img
   src={Comet}

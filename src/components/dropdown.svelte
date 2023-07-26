@@ -65,6 +65,7 @@
   {#if isOpen}
     <div
       class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-solid border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
+      style="transform: translate3d(0, 0, 0);"
       use:clickOutside={() => {
         toggle();
       }}
