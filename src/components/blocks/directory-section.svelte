@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createQuery, isError } from '@tanstack/svelte-query';
+  import { createQuery } from '@tanstack/svelte-query';
   import type { ISbStoriesParams, SbBlokData } from '@storyblok/js';
 
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
@@ -12,12 +12,11 @@
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
 
-  import Button from '$components/buttons/button.svelte';
   import ContentCard from '$components/content-card.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import Icon from '$components/icon/icon.svelte';
-  import Input from '$components/input.svelte';
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
+  import Options from '$components/directory/options.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -30,6 +29,10 @@
 
   const onClearSearchValue = () => {
     $search = '';
+  };
+
+  const onToggleFiltersPanel = () => {
+    areFiltersOpen = !areFiltersOpen;
   };
 
   const clearFilters = () => {
@@ -116,28 +119,12 @@
         <p class="text-3xl">{block.title}</p>
       </div>
 
-      <div class="mb-8 flex w-full items-center justify-between">
-        <Button
-          variant="secondary"
-          on:click={() => (areFiltersOpen = !areFiltersOpen)}
-          class="gap-[6px]"
-        >
-          {#if areFiltersOpen}
-            {string('directory.hide_filters')}
-          {:else}
-            {string('directory.show_filters')}
-          {/if}
-          {#if selectedTags.length > 0}
-            <span
-              class="min-w-[20px] rounded-md bg-brand-9 px-[3px] py-[2px] text-xxs font-semibold leading-normal tracking-widest text-brand-1"
-            >
-              {selectedTags.length}
-            </span>
-          {/if}
-        </Button>
-
-        <Input bind:value={$search} icon="search-lg" />
-      </div>
+      <Options
+        {selectedTags}
+        on:toggleFiltersPanel={onToggleFiltersPanel}
+        search={$search}
+        {areFiltersOpen}
+      />
 
       {#if directoryData}
         <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr] gap-20')}>
@@ -180,7 +167,7 @@
                 {/each}
               </div>
               <GhostButton class="mt-8 gap-[6px]" on:click={clearFilters}>
-                Reset filters
+                {string('directory.reset_filters')}
                 <Icon size="xs" icon="trash-01" />
               </GhostButton>
             </div>
@@ -196,7 +183,7 @@
             {/if}
 
             <!-- Empty State -->
-            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0 && search}
+            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0 && $search !== ''}
               <NoResultsBanner
                 searchValue={$search}
                 on:clearSearchValue={onClearSearchValue}
