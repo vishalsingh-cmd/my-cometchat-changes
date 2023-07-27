@@ -20,6 +20,7 @@
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
   import PlatformSection from './platform-section.svelte';
+  import RelatedStoriesSection from './related-stories-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
@@ -50,6 +51,7 @@
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'related-stories-section': RelatedStoriesSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
