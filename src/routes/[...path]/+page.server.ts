@@ -26,7 +26,9 @@ export const load = async ({ cookies, fetch, params }) => {
     'social-proofs.customers',
     'solutions-section.industries',
     'synced-block.synced_block',
-    'technologies-section.technologies'
+    'technologies-section.technologies',
+    'related-stories-section.items',
+    'customer-story.author'
   ];
 
   try {
