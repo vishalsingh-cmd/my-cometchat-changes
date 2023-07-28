@@ -13,7 +13,7 @@
 <div
   class="absolute bottom-0 left-0 flex h-[60px] w-full items-center justify-between border-t border-gray-12/8 px-5 lg:hidden"
 >
-  <GhostButton class="gap-[6px]" on:click={() => dispatch('clearFiltersAndClose')}>
+  <GhostButton class="gap-1.5" on:click={() => dispatch('clearFiltersAndClose')}>
     {string('directory.reset_filters')}
     <Icon size="xs" icon="trash-01" />
   </GhostButton>

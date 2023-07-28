@@ -35,7 +35,7 @@
     </p>
     <p>{string('directory.please_try_again')}.</p>
   </div>
-  <GhostButton class="mt-3 gap-[6px]" on:click={() => dispatch('clearSearchValue')}>
+  <GhostButton class="mt-3 gap-1.5" on:click={() => dispatch('clearSearchValue')}>
     {string('directory.clear_search')}
     <Icon size="sm" icon="x-circle" />
   </GhostButton>

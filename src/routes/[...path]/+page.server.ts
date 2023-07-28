@@ -22,7 +22,6 @@ export const load = async ({ cookies, fetch, params }) => {
     'customer-story.customer',
     'customer-story.author',
     'customer-story.related_items',
-    'customer-story.author',
     'customer-stories-section.testimonials',
     'featured-story-section.featured_story',
     'social-proofs.customers',

@@ -27,7 +27,7 @@
 <div
   class="relative mb-8 flex w-full flex-row-reverse items-center justify-between gap-3 lg:flex-row"
 >
-  <Button variant="secondary" on:click={() => dispatch('toggleFiltersPanel')} class="gap-[6px]">
+  <Button variant="secondary" on:click={() => dispatch('toggleFiltersPanel')} class="gap-1.5">
     <!-- Desktop -->
     <span class="hidden lg:block">
       {#if areFiltersOpen}

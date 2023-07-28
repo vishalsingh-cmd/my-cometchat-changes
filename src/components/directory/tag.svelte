@@ -13,17 +13,15 @@
 
 <button
   class={cn(
-    'flex items-center gap-[6px]',
+    'flex items-center gap-1.5',
     'rounded-[10px] bg-brand-10/[0.12]',
-    'px-2.5 py-[6px]',
+    'px-2.5 py-1.5',
     'text-md font-semibold leading-tight tracking-wide',
     'whitespace-nowrap',
     isTagSelected ? 'bg-brand-10/[0.12] pr-2 text-brand-10' : 'bg-gray-11/[0.06] text-gray-11'
   )}
   on:click={() => {
-    if (!isTagSelected) {
-      dispatch('selectTag', { i: tag });
-    }
+    dispatch('selectTag', { i: tag });
   }}
 >
   {tag}

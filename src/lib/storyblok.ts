@@ -52,6 +52,12 @@ export const getStories = async (params: ISbStoriesParams = {}) => {
     version: 'draft',
     content_type: params.content_type,
     sort_by: 'updated_at:desc',
+    resolve_relations: [
+      'customer-story.author',
+      'customer-story.customer',
+      'blog-post.author',
+      'tutorial.author'
+    ],
     ...params
   });
 };

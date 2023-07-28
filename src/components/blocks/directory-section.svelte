@@ -20,7 +20,7 @@
 
   export let block: DirectorySectionStoryblok;
 
-  let directoryData = $directories.filter((directory: { key: string }) => {
+  let directoryData = $directories.filter((directory) => {
     return directory.key === block._uid;
   })[0].data as SbBlokData[];
   let areFiltersOpen = false;

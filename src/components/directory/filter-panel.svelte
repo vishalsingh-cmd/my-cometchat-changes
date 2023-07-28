@@ -23,7 +23,7 @@
     {/each}
   </div>
   <GhostButton
-    class="isolate z-30 mt-8 hidden gap-[6px] lg:inline-flex"
+    class="isolate z-30 mt-8 hidden gap-1.5 lg:inline-flex"
     on:click={() => dispatch('clearFilters')}
   >
     {string('directory.reset_filters')}

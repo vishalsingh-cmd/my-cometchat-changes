@@ -38,14 +38,14 @@
     {/if}
     {#if title}
       <h3
-        class="smooth mb-[10px] text-xl leading-tighter transition-all group-hover:text-brand-9 md:mb-3"
+        class="smooth mb-2.5 text-xl leading-tighter transition-all group-hover:text-brand-9 md:mb-3"
       >
         {title}
       </h3>
     {/if}
     {#if author && date}
       <div
-        class="flex items-center gap-[10px] text-lg font-semibold leading-tight text-gray-12 opacity-54"
+        class="flex items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54"
       >
         <span>{author}</span>
         <span class="h-1 w-1 rounded-full bg-gray-12" />
@@ -68,7 +68,7 @@
     <div
       class="mb-4 aspect-video h-[202px] w-full rounded-2xl border border-[hsl(246,21%,9%)]/[0.04] bg-[hsl(246,21%,9%)]/[0.03] object-cover md:mb-5 md:h-[238px]"
     />
-    <div class="mb-[6px] h-[18px] w-[190px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    <div class="mb-1.5 h-[18px] w-[190px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
     <div class="mb-3 h-[18px] w-full rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
     <div class="mb-3 h-3 w-[100px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
     <div class="h-[30px] w-[51px] rounded-2xl bg-[hsl(246,21%,9%)]/[0.04]" />
