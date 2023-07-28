@@ -9,12 +9,14 @@
   export let item: BulletPointStoryblok;
 </script>
 
-<div class="flex items-center gap-2">
-  <Icon icon="star-04" size="xs" class="flex-shrink-0 text-brand-9" />
-  <p class="text-lg font-medium leading-snug tracking-wide opacity-74">
-    {item.item}
-  </p>
-  {#if item.coming_soon}
-    <Tag label={string('coming_soon')} />
-  {/if}
+<div class="flex gap-2">
+  <Icon icon="star-04" size="xs" class="flex-shrink-0 pt-px text-brand-9" />
+  <div class="flex flex-wrap">
+    <p class="text-lg font-medium leading-snug tracking-wide opacity-74">
+      {item.item}
+    </p>
+    {#if item.coming_soon}
+      <Tag label={string('coming_soon')} />
+    {/if}
+  </div>
 </div>

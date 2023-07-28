@@ -8,7 +8,6 @@
   const dispatch = createEventDispatcher();
 
   let className: undefined | string = undefined;
-
   export { className as class };
   export let options: {
     id: number;
