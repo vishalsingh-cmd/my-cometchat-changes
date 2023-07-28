@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { industries } from '$lib/stores/industries.js';
+  import { industries } from '$lib/stores/industries';
+  import { directories } from '$lib/stores/directories';
 
   import { page } from '$app/stores';
 
@@ -19,6 +20,7 @@
   let description = data.page?.content?.seo?.[0].description ?? string('default_seo_description');
 
   $industries = data.industries;
+  $directories = data.directoriesData;
 </script>
 
 <svelte:head>
