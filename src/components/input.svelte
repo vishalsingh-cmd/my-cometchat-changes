@@ -7,13 +7,16 @@
 
   interface $$Props extends HTMLInputAttributes {
     icon?: string;
+    className?: string | null;
   }
 
+  let className: $$Props['className'] = undefined;
+  export { className as class };
   export let value: HTMLInputAttributes['value'] = undefined;
   export let icon: $$Props['icon'] = undefined;
 </script>
 
-<label for={$$props.id} class="relative w-full text-gray-12 lg:max-w-[304px]">
+<label for={$$props.id} class={cn('relative w-full text-gray-12', className)}>
   {#if icon}
     <Icon {icon} size="xs" class="absolute left-4 top-1/2 -translate-y-2/4 text-gray-12/74" />
   {/if}

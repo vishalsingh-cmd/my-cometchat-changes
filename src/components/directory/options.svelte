@@ -59,5 +59,10 @@
     </span>
   {/if}
 
-  <Input bind:value icon="search-lg" placeholder={string('directory.input_placeholder')} />
+  <Input
+    bind:value
+    icon="search-lg"
+    placeholder={string('directory.input_placeholder')}
+    class="lg:max-w-[304px]"
+  />
 </div>
