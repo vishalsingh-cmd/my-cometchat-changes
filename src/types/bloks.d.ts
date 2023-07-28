@@ -185,7 +185,7 @@ export interface CustomerStoryblok {
 
 export interface CustomersHeroStoryblok {
   title: string;
-  customers: SocialProofsStoryblok[];
+  customers?: SocialProofsStoryblok[];
   _uid: string;
   component: 'customers-hero';
   [k: string]: any;
