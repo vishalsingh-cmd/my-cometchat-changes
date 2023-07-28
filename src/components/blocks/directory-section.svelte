@@ -129,9 +129,7 @@
                         : 'bg-gray-11/[0.06] text-gray-11'
                     )}
                     on:click={() => {
-                      if (!isTagSelected) {
-                        toggleTag(tagObj.uuid);
-                      }
+                      toggleTag(tagObj.uuid);
                     }}
                   >
                     {tagObj.name}
