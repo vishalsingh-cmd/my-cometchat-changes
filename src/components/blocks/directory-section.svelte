@@ -89,7 +89,7 @@
   $: selectedTags = [] as string[];
 
   $: getDirectoryDataWithFilters = createQuery({
-    queryKey: ['directory', selectedTags],
+    queryKey: [`directory-${Math.random()}`, selectedTags],
     queryFn: async () => {
       const res = await getStories({
         content_type: 'customer-story',
