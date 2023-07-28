@@ -466,10 +466,12 @@ export interface IndustryStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -558,10 +560,12 @@ export interface PageStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -640,6 +644,13 @@ export interface RelatedStoriesSectionStoryblok {
   [k: string]: any;
 }
 
+export interface RichTextSectionStoryblok {
+  body: RichtextStoryblok;
+  _uid: string;
+  component: 'rich-text-section';
+  [k: string]: any;
+}
+
 export interface RobotStoryblok {
   name: string;
   content: string;
@@ -706,10 +717,12 @@ export interface SyncedBlockContentStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -730,6 +743,14 @@ export interface TechnologiesSectionStoryblok {
   technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
   _uid: string;
   component: 'technologies-section';
+  [k: string]: any;
+}
+
+export interface TechnologiesSectionCopyStoryblok {
+  header: TitleStoryblok[];
+  technologies: TechnologyItemStoryblok[];
+  _uid: string;
+  component: 'technologies-section_copy';
   [k: string]: any;
 }
 
@@ -761,16 +782,26 @@ export interface TechnologyStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'technology';
+  [k: string]: any;
+}
+
+export interface TechnologyItemStoryblok {
+  icon: number | string;
+  name: string;
+  _uid: string;
+  component: 'technology-item';
   [k: string]: any;
 }
 
