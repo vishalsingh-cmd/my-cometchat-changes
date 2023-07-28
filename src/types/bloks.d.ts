@@ -466,6 +466,7 @@ export interface IndustryStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -559,6 +560,7 @@ export interface PageStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -642,6 +644,13 @@ export interface RelatedStoriesSectionStoryblok {
   [k: string]: any;
 }
 
+export interface RichTextSectionStoryblok {
+  body: RichtextStoryblok;
+  _uid: string;
+  component: 'rich-text-section';
+  [k: string]: any;
+}
+
 export interface RobotStoryblok {
   name: string;
   content: string;
@@ -708,6 +717,7 @@ export interface SyncedBlockContentStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
@@ -772,6 +782,7 @@ export interface TechnologyStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
