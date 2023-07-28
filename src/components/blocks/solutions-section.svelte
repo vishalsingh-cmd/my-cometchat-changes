@@ -67,6 +67,7 @@
   <section use:storyblokEditable={block} class="relative overflow-hidden bg-gray-1 text-gray-12">
     <div
       class="rotate-30 gradients absolute left-[50vw] top-[-150px] h-[1054px] w-[1584px] -translate-x-1/2 transform opacity-40 mix-blend-hard-light blur-[50px]"
+      style="transform: translate3d(0, 0, 0);"
     />
     <img class="absolute bottom-0 left-0 right-0 top-0" src={Noise} alt="" />
     <img class="absolute left-[50vw] top-[93px] -translate-x-2/4" src={Orbit1} alt="" />

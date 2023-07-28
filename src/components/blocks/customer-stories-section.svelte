@@ -49,6 +49,7 @@
     >
       <div
         class="absolute -bottom-[450px] -left-48 h-[400px] w-[400px] -rotate-90 bg-gradient-to-r from-[#fcb8a8] via-[#b968a4] to-[#756cf7] blur-[200px] xl:-bottom-72 xl:-left-10"
+        style="transform: translate3d(0, 0, 0);"
       />
 
       {#if block.title?.[0]}

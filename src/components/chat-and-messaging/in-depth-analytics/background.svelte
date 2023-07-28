@@ -25,10 +25,11 @@
 
 <div
   class="absolute left-1/2 top-[-32px] h-[672px] w-[980px] -translate-x-1/2 transform opacity-[0.12] mix-blend-hard-light blur-[100px]"
+  style="transform: translate3d(0, 0, 0);"
 >
-  <div class={cn(blur({ colour: 'orange' }))} />
-  <div class={cn(blur({ colour: 'purple' }))} />
-  <div class={cn(blur({ colour: 'blue' }))} />
+  <div class={cn(blur({ colour: 'orange' }))} style="transform: translate3d(0, 0, 0);" />
+  <div class={cn(blur({ colour: 'purple' }))} style="transform: translate3d(0, 0, 0);" />
+  <div class={cn(blur({ colour: 'blue' }))} style="transform: translate3d(0, 0, 0);" />
 </div>
 <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full">
   <Stars amount={20} backgroundColours={['bg-brand-9']} />
