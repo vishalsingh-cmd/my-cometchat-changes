@@ -1,21 +1,22 @@
 <script lang="ts">
+  import { createQuery } from '@tanstack/svelte-query';
   import type { SbBlokData } from '@storyblok/js';
 
   import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
 
   import { directories } from '$lib/stores/directories';
-  import { industries } from '$lib/stores/industries';
+  import { createDebouncedValue } from '$lib/stores/create-debounced-value';
 
+  import { getStories } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
   import { cn } from '$lib/utils';
-  import { string } from '$lib/strings';
 
   import ContentCard from '$components/content-card.svelte';
-  import Button from '$components/buttons/button.svelte';
-  import Icon from '$components/icon/icon.svelte';
-  // import { createQuery } from '@tanstack/svelte-query';
-
-  // import { storyblok } from '$lib/storyblok';
+  import FilterPanel from '$components/directory/filter-panel.svelte';
+  import MobileFiltersFooter from '$components/directory/mobile-filters-footer.svelte';
+  import MobileFiltersHeader from '$components/directory/mobile-filters-header.svelte';
+  import NoResultsBanner from '$components/directory/no-results-banner.svelte';
+  import Options from '$components/directory/options.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -23,18 +24,29 @@
     return directory.key === block._uid;
   })[0].data as SbBlokData[];
   let areFiltersOpen = false;
-  let selectedTags = [] as string[];
 
-  const allIndustries = $industries;
+  const [search, debouncedSearch] = createDebouncedValue('');
+
+  const onClearSearchValue = () => {
+    $search = '';
+  };
+
+  const onToggleFiltersPanel = () => {
+    areFiltersOpen = !areFiltersOpen;
+  };
+
+  const clearFilters = () => {
+    selectedTags = [];
+  };
 
   const getTagsFromDirectoryData = () => {
-    const tags: any[] = [];
+    const tags: string[] = [];
 
     directoryData.forEach((item) => {
       const typedItem = item as BlogPostStoryblok;
 
       if (typedItem.content.component === 'customer-story') {
-        const industry = typedItem.content.customer.content.industry;
+        const industry = typedItem.content.industry;
         if (industry) {
           if (!tags.includes(industry)) {
             tags.push(industry);
@@ -44,12 +56,6 @@
     });
 
     return tags;
-  };
-
-  const getTag = (tag: string) => {
-    const tagObj = allIndustries.filter((ind) => ind.uuid === tag)[0];
-
-    return tagObj;
   };
 
   const toggleTag = (tag: string) => {
@@ -75,10 +81,26 @@
         typedItem.content.component === 'customer-story'
           ? typedItem.content.customer.content
           : undefined,
-      author: typedItem.content.author,
+      author: typedItem.content.author.name,
       date: formatDate(new Date(typedItem.created_at))
     };
   };
+
+  $: selectedTags = [] as string[];
+
+  $: getDirectoryDataWithFilters = createQuery({
+    queryKey: [`directory-${Math.random()}`, selectedTags],
+    queryFn: async () => {
+      const res = await getStories({
+        content_type: 'customer-story',
+        filter_query: selectedTags.length > 0 ? { industry: { in: selectedTags.join(',') } } : {},
+        per_page: 12,
+        search_term: $debouncedSearch
+      });
+
+      return { stories: res.data.stories, total: res.total };
+    }
+  });
 </script>
 
 {#if block}
@@ -89,71 +111,67 @@
         <p class="text-3xl">{block.title}</p>
       </div>
 
-      <Button
-        variant="secondary"
-        on:click={() => (areFiltersOpen = !areFiltersOpen)}
-        class="mb-8 gap-[6px]"
-      >
-        {#if areFiltersOpen}
-          {string('directory.hide_filters')}
-        {:else}
-          {string('directory.show_filters')}
-        {/if}
-        {#if selectedTags.length > 0}
-          <span
-            class="min-w-[20px] rounded-md bg-brand-9 px-[3px] py-[2px] text-xxs font-semibold leading-normal tracking-widest text-brand-1"
-          >
-            {selectedTags.length}
-          </span>
-        {/if}
-      </Button>
+      <Options
+        {selectedTags}
+        on:toggleFiltersPanel={onToggleFiltersPanel}
+        bind:value={$search}
+        {areFiltersOpen}
+      />
 
-      {#if directoryData && directoryData.length > 0}
-        <div class={cn('grid', areFiltersOpen && 'grid-cols-[30%_1fr] gap-20')}>
+      {#if directoryData}
+        <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-20 lg:grid-cols-[30%_1fr]')}>
           {#if areFiltersOpen}
             {@const tags = getTagsFromDirectoryData()}
-            <div class="border-t border-gray-12/8 pt-5">
-              <p class="mb-4 text-lg font-semibold leading-tight">Industries</p>
-              <div class="flex flex-row gap-2">
-                {#each tags as tag}
-                  {@const tagObj = getTag(tag)}
-                  {@const isTagSelected = selectedTags.includes(tagObj.uuid)}
-                  <button
-                    class={cn(
-                      'flex items-center gap-[6px]',
-                      'rounded-[10px] bg-brand-10/[0.12]',
-                      'px-2.5 py-1.5',
-                      'text-md font-semibold leading-tight tracking-wide',
-                      isTagSelected
-                        ? 'bg-brand-10/[0.12] pr-2 text-brand-10'
-                        : 'bg-gray-11/[0.06] text-gray-11'
-                    )}
-                    on:click={() => {
-                      toggleTag(tagObj.uuid);
-                    }}
-                  >
-                    {tagObj.name}
-                    {#if isTagSelected}
-                      <button
-                        class="h-3.5 w-3.5"
-                        on:click|stopPropagation={() => {
-                          toggleTag(tagObj.uuid);
-                        }}
-                      >
-                        <Icon size="xs" icon="x-circle" />
-                      </button>
-                    {/if}
-                  </button>
-                {/each}
-              </div>
+            <div
+              class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full border-t border-gray-12/8 bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0 lg:pt-5"
+            >
+              <!-- Mobile Filters Header -->
+              <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
+
+              <FilterPanel
+                {tags}
+                {selectedTags}
+                on:selectTag={(e) => toggleTag(e.detail.i)}
+                on:clearFilters={() => clearFilters()}
+              />
+
+              <!-- Mobile Filters Footer -->
+              <MobileFiltersFooter
+                on:clearFiltersAndClose={() => {
+                  clearFilters();
+                  onToggleFiltersPanel();
+                }}
+                on:toggleFiltersPanel={onToggleFiltersPanel}
+              />
             </div>
           {/if}
-          <div class={cn('grid gap-8', areFiltersOpen ? 'grid-cols-2' : 'grid-cols-3')}>
-            {#each directoryData as item}
-              {@const parsedItem = parseItem(item)}
-              {@const { image, title, tags, link, customer, author, date } = parsedItem}
-              <ContentCard {image} {title} {tags} {link} {customer} {author} {date} />
-            {/each}
+
+          <!-- Content Cards -->
+          <div class={cn('grid gap-8', areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3')}>
+            <!-- Loading State -->
+            {#if $getDirectoryDataWithFilters.isLoading}
+              {#each Array(6) as _}
+                <ContentCard isLoading />
+              {/each}
+            {/if}
+
+            <!-- Empty State -->
+            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0 && $search !== ''}
+              <NoResultsBanner
+                searchValue={$search}
+                on:clearSearchValue={onClearSearchValue}
+                class="col-span-3"
+              />
+            {/if}
+
+            <!-- Success fetch -->
+            {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+              {#each $getDirectoryDataWithFilters.data.stories as item}
+                {@const parsedItem = parseItem(item)}
+                {@const { image, title, tags, link, customer, author, date } = parsedItem}
+                <ContentCard {image} {title} {tags} {link} {customer} {author} {date} />
+              {/each}
+            {/if}
           </div>
         </div>
       {/if}

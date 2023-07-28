@@ -20,8 +20,8 @@ export const load = async ({ cookies, fetch, params }) => {
     'blog-post.author',
     'tutorial.author',
     'customer-story.customer',
-    'customer-story.related_items',
     'customer-story.author',
+    'customer-story.related_items',
     'customer-stories-section.testimonials',
     'featured-story-section.featured_story',
     'social-proofs.customers',
@@ -47,6 +47,7 @@ export const load = async ({ cookies, fetch, params }) => {
 
     if (
       page.data.story.content.component === 'page' &&
+      page.data.story.content.body &&
       page.data.story.content.body.filter(
         (blok: SbBlokData) => blok.component === 'directory-section'
       ).length > 0
