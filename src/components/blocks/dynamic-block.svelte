@@ -19,14 +19,15 @@
   import ListSection from './list-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
+  import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
+  import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
-  import PreFooter from './pre-footer.svelte';
 
   export let block: SbBlokData;
 
@@ -50,6 +51,7 @@
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
