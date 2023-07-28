@@ -79,7 +79,7 @@
             });
           }}
         >
-          <span class="flex items-center gap-2.5">
+          <span class="flex items-center gap-2.5 font-semibold tracking-wide">
             <CometIllustration
               class="inline-block scale-[1.4]"
               illustration={option.cometIllustration ?? 'community'}
