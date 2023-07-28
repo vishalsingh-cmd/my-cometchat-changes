@@ -20,10 +20,10 @@
         <Background />
 
         <!-- Content -->
-        <div class="max-w-[436px]">
+        <div class="max-w-[528px]">
           {#if block.header && block.header[0]}
             {@const header = block.header[0]}
-            <HeroHeader variant="secondary" block={header} class="max-w-[430px]" />
+            <HeroHeader variant="secondary" block={header} />
           {/if}
 
           <!-- 2nd item - Visible on desktop to have a masonry effect -->
