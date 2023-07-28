@@ -27,8 +27,6 @@
 
   const allIndustries = $industries;
 
-  console.log(directoryData);
-
   const getTagsFromDirectoryData = () => {
     const tags: any[] = [];
 
@@ -81,44 +79,11 @@
       date: formatDate(new Date(typedItem.created_at))
     };
   };
-
-  /**
-   * LOGGED OUT CODE
-   * Will serve to get the data from the directory section
-   * once we figure out where we should put the industries, categories, tags and what not
-   */
-
-  // const getStories = async (params: Omit<ISbStoriesParams, 'content_type'> = {}) => {
-  //   return await storyblok.get('cdn/stories', {
-  //     version: 'draft',
-  //     content_type: 'customer-story',
-  //     sort_by: 'updated_at:desc',
-  //     ...params
-  //   });
-  // };
-
-  // a function that uses tanstack svelte query and returns Storyblok data using the queryClient and the tags selected
-  // $: getDirectoryDataWithFilters = createQuery({
-  //   queryKey: ['directory-section'],
-  //   queryFn: async () => {
-  //     const res = await getStories({
-  //       filter_query: {
-  //         'customer.industry': {
-  //           in: selectedTags.join(',')
-  //         }
-  //       },
-  //       resolve_relations: ['customer-story.customer', 'customer.industry'],
-  //       per_page: 12
-  //     });
-
-  //     return { stories: res.data.stories, total: res.total };
-  //   }
-  // });
 </script>
 
 {#if block}
   <section data-theme="light" class="bg-gray-1 pt-12 text-gray-12 md:pt-20">
-    <div class="mx-auto px-container">
+    <div class="container mx-auto px-container">
       <div class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
         <p class="mb-2 text-xl text-brand-9 md:mb-3">{block.label}</p>
         <p class="text-3xl">{block.title}</p>
@@ -157,7 +122,7 @@
                     class={cn(
                       'flex items-center gap-[6px]',
                       'rounded-[10px] bg-brand-10/[0.12]',
-                      'px-[10px] py-[6px]',
+                      'px-2.5 py-1.5',
                       'text-md font-semibold leading-tight tracking-wide',
                       isTagSelected
                         ? 'bg-brand-10/[0.12] pr-2 text-brand-10'
@@ -172,7 +137,7 @@
                     {tagObj.name}
                     {#if isTagSelected}
                       <button
-                        class="h-[14px] w-[14px]"
+                        class="h-3.5 w-3.5"
                         on:click|stopPropagation={() => {
                           toggleTag(tagObj.uuid);
                         }}
