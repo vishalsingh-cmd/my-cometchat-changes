@@ -18,6 +18,7 @@
   import ImplementationSection from './implementation-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import ListSection from './list-section.svelte';
+  import ListsSection from './lists-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
@@ -50,6 +51,7 @@
     'implementation-section': ImplementationSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'list-section': ListSection,
+    'lists-section': ListsSection,
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
