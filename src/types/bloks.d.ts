@@ -466,10 +466,12 @@ export interface IndustryStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -505,17 +507,19 @@ export interface ListSectionStoryblok {
 }
 
 export interface ListsSectionStoryblok {
-  columns: ListsSectionColumnStoryblok[];
+  theme: '' | 'light' | 'dark';
+  items: ListsSectionItemStoryblok[];
+  single_item_columns_count?: number;
   _uid: string;
   component: 'lists-section';
   [k: string]: any;
 }
 
-export interface ListsSectionColumnStoryblok {
-  label?: string;
-  list?: BulletPointStoryblok[];
+export interface ListsSectionItemStoryblok {
+  title: string;
+  items: BulletPointsStoryblok[];
   _uid: string;
-  component: 'lists-section-column';
+  component: 'lists-section-item';
   [k: string]: any;
 }
 
@@ -556,10 +560,12 @@ export interface PageStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -624,7 +630,7 @@ export interface ProductDisplayItemStoryblok {
   image: AssetStoryblok;
   title: string;
   description: string;
-  link: LinkStoryblok[];
+  link?: LinkStoryblok[];
   _uid: string;
   component: 'product-display-item';
   [k: string]: any;
@@ -635,6 +641,13 @@ export interface RelatedStoriesSectionStoryblok {
   items: (StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok> | string)[];
   _uid: string;
   component: 'related-stories-section';
+  [k: string]: any;
+}
+
+export interface RichTextSectionStoryblok {
+  body: RichtextStoryblok;
+  _uid: string;
+  component: 'rich-text-section';
   [k: string]: any;
 }
 
@@ -704,10 +717,12 @@ export interface SyncedBlockContentStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -728,6 +743,14 @@ export interface TechnologiesSectionStoryblok {
   technologies: (StoryblokStory<TechnologyStoryblok> | string)[];
   _uid: string;
   component: 'technologies-section';
+  [k: string]: any;
+}
+
+export interface TechnologiesSectionCopyStoryblok {
+  header: TitleStoryblok[];
+  technologies: TechnologyItemStoryblok[];
+  _uid: string;
+  component: 'technologies-section_copy';
   [k: string]: any;
 }
 
@@ -759,16 +782,26 @@ export interface TechnologyStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'technology';
+  [k: string]: any;
+}
+
+export interface TechnologyItemStoryblok {
+  icon: number | string;
+  name: string;
+  _uid: string;
+  component: 'technology-item';
   [k: string]: any;
 }
 

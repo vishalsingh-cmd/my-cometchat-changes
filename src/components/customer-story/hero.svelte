@@ -16,6 +16,8 @@
   const industryToShow = customer.content.industry as string;
 
   const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
+
+  const author = block.content.author;
 </script>
 
 <section class="h-[743px] pt-[100px] md:pb-20 md:pt-[148px]" data-theme="dark">
