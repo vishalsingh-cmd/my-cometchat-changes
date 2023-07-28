@@ -27,6 +27,7 @@
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
   import PreFooter from './pre-footer.svelte';
+  import TechnologiesSectionCopy from './technologies-section-copy.svelte';
 
   export let block: SbBlokData;
 
@@ -54,6 +55,7 @@
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
+    'technologies-section_copy': TechnologiesSectionCopy,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection
   };
