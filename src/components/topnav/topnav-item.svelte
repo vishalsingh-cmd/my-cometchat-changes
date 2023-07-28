@@ -56,7 +56,7 @@
     </div>
     <p
       class={cn(
-        'font-semibold opacity-74 transition-all group-hover:opacity-100',
+        'font-semibold opacity-[0.84] transition-all group-hover:opacity-100',
         size === 'big' ? 'text-xl' : 'text-md tracking-wide'
       )}
     >
@@ -73,7 +73,7 @@
   {#if description}
     <p
       class={cn(
-        'font-medium tracking-wide opacity-64 transition-all group-hover:opacity-80',
+        'font-medium tracking-wide opacity-54 transition-all group-hover:opacity-64',
         size === 'big' ? 'mt-1 text-lg leading-snug' : 'text-sm leading-normal'
       )}
     >

@@ -12,8 +12,8 @@
     {
       variants: {
         size: {
-          small: ['py-0.5', 'px-1.5', 'text-xs', 'leading-normal', 'rounded-[7px]'],
-          medium: ['py-1.5', 'px-2.5', 'text-md', 'leading-tight', 'rounded-[10px]']
+          small: ['pt-0.5 pb-[3px]', 'px-1.5', 'text-xs', 'leading-normal', 'rounded-[7px]'],
+          medium: ['pt-1.5 pb-2', 'px-2.5', 'text-md', 'leading-tight', 'rounded-[10px]']
         }
       }
     }

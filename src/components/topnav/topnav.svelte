@@ -87,7 +87,7 @@
         <Logo class="h-4 lg:h-5" />
       </a>
       <div on:mouseleave={() => (activeIndex = -1)}>
-        <nav class="hidden items-center lg:flex">
+        <nav class="hidden items-center text-gray-12 opacity-[0.84] lg:flex">
           {#each data.links as item, i}
             {@const style =
               'relative flex h-16 items-center overflow-hidden px-5 text-sm/none font-semibold tracking-widest transition-colors hover:text-brand-9'}
@@ -220,7 +220,7 @@
         <!-- Mobile button -->
         <div class="block lg:hidden">
           <Button variant="secondary" on:click={() => (expanded = !expanded)}>
-            <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} />
+            <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} class="opacity-80" />
           </Button>
         </div>
       </div>

@@ -27,7 +27,7 @@
   export let item: InfoItemType;
 </script>
 
-<div class={cn('flex flex-col items-start gap-2.5', className)}>
+<div class={cn('flex flex-col items-start gap-2 md:gap-3', className)}>
   {#if item.icon}
     <div
       class={cn(

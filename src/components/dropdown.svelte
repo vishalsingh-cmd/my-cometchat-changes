@@ -57,7 +57,7 @@
       {options[selectedOption].label}
     </span>
     <Icon
-      class="text-gray-12 opacity-54 light:text-gray-11"
+      class="text-gray-12 opacity-74 light:text-gray-11"
       size="xs"
       icon={isOpen ? 'chevron-up' : 'chevron-down'}
     />
