@@ -63,22 +63,28 @@
       <div class="absolute left-1/2 h-full w-full -scale-50 md:-scale-75 lg:left-auto lg:scale-100">
         <div
           class="absolute left-[calc(50%-371.43px)] top-[167.11px] h-[301px] w-[903px] origin-center rotate-[-19.77deg] transform rounded-1/2 bg-[#944E6E]/80 blur-[75px]"
+          style="transform: translate3d(0, 0, 0);"
         />
 
         <div
           class="ellipse2 absolute left-[calc(50%-456.97px)] top-[18.63px] h-[371.2px] w-[1435.66px] origin-center rotate-[-19.97deg] transform rounded-1/2 blur-[75px]"
+          style="transform: translate3d(0, 0, 0);"
         />
         <div
           class="ellipse3 absolute right-[calc(50%-612.54px)] top-[35px] h-[371.2px] w-[1258.4px] origin-center rotate-[-13.96deg] transform rounded-1/2 blur-[75px]"
+          style="transform: translate3d(0, 0, 0);"
         />
         <div
           class="ellipse4 absolute top-[237.27px] h-[315.1px] w-[1245.75px] origin-center rotate-[-20.77deg] transform rounded-1/2 mix-blend-screen blur-[75px]"
+          style="transform: translate3d(0, 0, 0);"
         />
         <div
           class="ellipse5 absolute left-1/2 top-0 h-[476.94px] w-[844.1px] origin-center rotate-[-20.77deg] transform rounded-1/2 bg-[#172365] mix-blend-soft-light blur-[100px]"
+          style="transform: translate3d(0, 0, 0);"
         />
         <div
           class="ellipse6 absolute left-[calc(50%-433.8px)] top-[-80.32px] h-[390.84px] w-[1274.01px] origin-center rotate-[-20.77deg] transform rounded-1/2 bg-[#1D1765] opacity-30 mix-blend-normal blur-[100px]"
+          style="transform: translate3d(0, 0, 0);"
         />
       </div>
       <div class="absolute left-1/2 h-[295.93px] w-[1378.41px] translate-x-[-50%] transform">
@@ -90,6 +96,7 @@
         />
         <div
           class="absolute left-[-11px] top-[20px] h-[87px] w-[87px] rounded-full bg-gradient-to-l from-[#E185C6] to-[#807CE0] blur-[25px]"
+          style="transform: translate3d(0, 0, 0);"
         />
       </div>
       {#if block.illustration}

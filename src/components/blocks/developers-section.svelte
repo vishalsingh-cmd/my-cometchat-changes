@@ -72,6 +72,7 @@
             )}
             <div
               class="mb-12 mt-5 flex w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
+              style="transform: translate3d(0, 0, 0);"
             >
               <img {src} {alt} {width} {height} class="mt-8 w-full px-12 md:mt-12" />
             </div>

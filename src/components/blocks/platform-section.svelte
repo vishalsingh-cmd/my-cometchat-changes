@@ -16,7 +16,10 @@
     <div
       class="relative mx-auto w-full max-w-[1440px] pb-12 max-[1650px]:overflow-hidden md:grid md:grid-cols-2 md:gap-8 md:pt-[35px]"
     >
-      <div class="absolute right-[-88px] top-[-182px] hidden blur-[400px] md:block">
+      <div
+        class="absolute right-[-88px] top-[-182px] hidden blur-[400px] md:block"
+        style="transform: translate3d(0, 0, 0);"
+      >
         <img alt="" src={Blur} />
       </div>
       <div>

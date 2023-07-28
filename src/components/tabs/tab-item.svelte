@@ -19,7 +19,7 @@
       'text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
   )}
 >
-  {label}
+  <h3>{label}</h3>
   {#if isActive}
     <div
       in:fade
