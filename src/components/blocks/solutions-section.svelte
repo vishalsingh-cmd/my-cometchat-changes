@@ -162,7 +162,7 @@
                 {#if selectedIndustryIndex === i}
                   <div
                     class={cn(
-                      'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-6',
+                      'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-12/10',
                       result.left > industriesContainerWidth / 2
                         ? 'left-[calc(50%-348px)] border-r pr-6'
                         : 'left-1/2 border-l pl-6',
