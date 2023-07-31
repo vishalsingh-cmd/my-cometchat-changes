@@ -23,7 +23,7 @@
 {#if item.content.length > 0}
   {#each item.content as contentItem}
     {#if contentItem.items}
-      <div class={cn('flex flex-col gap-3 px-container pt-0 lg:pl-5')}>
+      <div class={cn('flex flex-col gap-3 px-container pb-5 pt-0 lg:pb-0 lg:pl-5')}>
         {#each item.content[0].items as contentItem}
           <div class="flex items-center gap-2">
             <Icon icon="star-04" size="xs" class="flex-shrink-0 text-brand-9" />
