@@ -18,13 +18,13 @@
         {@const { src, alt, width, height } = getImageAttributes(item.illustration)}
         <div
           class={cn(
-            'max-w-1216 relative mx-auto flex w-full flex-col justify-between gap-4 overflow-x-visible lg:flex-row',
+            'relative mx-auto flex w-full flex-col justify-between gap-4 overflow-x-visible lg:flex-row',
             i % 2 !== 0 && 'lg:flex-row-reverse',
             i === 1 && 'md:gap-10'
           )}
         >
           <Title
-            class={cn('max-w-[416px] pl-0 pr-0', i % 2 !== 0 ? 'lg:ml-0' : 'lg:ml-[112px]')}
+            class={cn('max-w-[528px] pl-0 pr-0', i % 2 !== 0 ? 'lg:ml-0' : 'lg:ml-[112px]')}
             alignment="left"
             label={{ content: item.label, color: i % 2 !== 0 ? 'brand' : 'orange' }}
             title={item.title}
