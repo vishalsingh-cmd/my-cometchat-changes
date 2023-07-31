@@ -44,7 +44,7 @@
 {#if block}
   <div use:storyblokEditable={block} class={cn(heroHeader({ variant }), className)}>
     {#if block.title && block.title.content && block.title.content[0].content}
-      <h1 class={cn(title({ variant }), 'text-opacity-100')}>
+      <h1 class={cn(title({ variant }))}>
         {#each block.title.content[0].content as part}
           {#if part.marks && part.marks.some((mark) => mark.type === 'italic')}
             <span class="text-gray-12 text-opacity-100">{part.text}</span>
