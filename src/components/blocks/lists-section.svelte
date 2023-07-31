@@ -152,8 +152,9 @@
                 <Title class={cn('pb-8 pr-8 pt-12 ', i !== 0 && 'px-8')} title={item.title} />
                 <div
                   class={cn(
-                    'flex h-full flex-col gap-6 bg-gray-1 pb-8 pr-8 pt-12',
-                    i !== 0 && 'px-8'
+                    'flex h-full flex-col gap-6 bg-gray-1 pb-8 pr-8 pt-8',
+                    i !== 0 && 'px-8',
+                    subArray.length === 5 && 'pt-6'
                   )}
                 >
                   {#each item.items[0].items as subItem}
