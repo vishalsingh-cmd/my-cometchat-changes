@@ -21,7 +21,7 @@
       class={cn(
         'container mx-auto flex flex-col gap-12 px-container md:grid md:gap-y-16',
         (block.items.length <= 3 || block.items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
-        block.items.length === 4 && 'grid-cols-4 md:gap-x-12'
+        block.items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4'
       )}
     >
       {#if block.items.length > 0}
