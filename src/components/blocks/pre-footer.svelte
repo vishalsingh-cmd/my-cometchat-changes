@@ -22,10 +22,10 @@
     <div
       class="flex flex-col items-start justify-center px-5 pb-20 pt-24 sm:items-center xl:px-0 xl:py-36"
     >
-      <div class="flex flex-col items-start md:items-center">
+      <div class="flex flex-col items-start sm:items-center">
         <p class="z-20 text-3xl text-gray-12">{block.title}</p>
         <p
-          class="z-20 mt-1 max-w-md whitespace-pre-line text-xl leading-tight text-gray-12 opacity-70 md:text-center"
+          class="z-20 mt-1 max-w-md whitespace-pre-line text-xl leading-tight text-gray-12 opacity-70 sm:text-center"
         >
           {block.description}
         </p>
