@@ -37,7 +37,7 @@
     <div class="container mx-auto grid grid-cols-1 border-t border-gray-12/8 md:grid-cols-2">
       <div class="border-b border-gray-12/8 md:border-b-0">
         {#if block.items[0]}
-          <Panel item={parseItem(block.items[0])} class="border-b-0" />
+          <Panel item={parseItem(block.items[0])} class="border-b-0 md:pl-container" />
         {/if}
         <div class="h-full border-gray-12/[.08] px-5 py-0 md:border-b-0 md:border-r md:px-16">
           <ColourPicker />
