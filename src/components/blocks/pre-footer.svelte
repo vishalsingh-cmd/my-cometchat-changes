@@ -1,12 +1,13 @@
 <script lang="ts">
-  import Divider from '$components/divider.svelte';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import type { PreFooterStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Button from '$components/buttons/button.svelte';
+  import Stars from '$components/pre-footer/assets/stars.svg';
+  import Ellipse from '$components/pre-footer/assets/ellipse.svg';
   import BigComet from '$components/pre-footer/assets/big-comet.svg';
   import SmallComet from '$components/pre-footer/assets/small-comet.svg';
-  import Stars from '$components/pre-footer/assets/stars.svg';
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   export let block: PreFooterStoryblok;
 </script>
@@ -38,15 +39,16 @@
       {/if}
     </div>
     <img alt="" src={Stars} class="absolute inset-2 z-10" />
+    <img alt="" src={Ellipse} class="absolute top-0 hidden w-full lg:block" />
     <img
       alt=""
       src={BigComet}
-      class="absolute -left-24 -top-36 z-10 min-w-[700px] xl:-left-44 xl:-top-52 xl:min-w-[1897px]"
+      class="absolute -left-[100px] -top-[120px] z-10 h-[250px] w-[250px] lg:-left-[200px] lg:-top-[200px] lg:h-[550px] lg:w-[550px]"
     />
     <img
       alt=""
       src={SmallComet}
-      class="absolute -bottom-16 -right-36 z-10 xl:-bottom-2 xl:-right-10"
+      class="absolute -bottom-36 -right-[200px] z-10 h-[420px] w-[420px] lg:-bottom-32 lg:-right-[100px] lg:h-[500px] lg:w-[500px]"
     />
   </section>
 {/if}
