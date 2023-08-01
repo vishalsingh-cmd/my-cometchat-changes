@@ -18,7 +18,9 @@
       'disabled:pointer-events-none',
       'disabled:opacity-40',
 
+      'outline-none',
       'outline-brand-7/0',
+      'rounded-[4px]',
 
       'focus-within:outline-1',
       'focus-within:outline-brand-7/100'
