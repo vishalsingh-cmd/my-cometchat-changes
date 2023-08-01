@@ -70,10 +70,10 @@
         <div class="flex flex-col sm:gap-20">
           {#each columnGroup as column}
             <div class="flex-col">
-              <p class="mb-[1.125rem] text-md font-semibold tracking-wide text-brand-8">
+              <p class="mb-4 text-md font-semibold tracking-wide text-brand-8">
                 {column.title}
               </p>
-              <div class="flex flex-col gap-4 sm:mt-0">
+              <div class="flex flex-col gap-8 sm:mt-0">
                 {#each column.groups as { title, links }}
                   <div>
                     {#if title}
