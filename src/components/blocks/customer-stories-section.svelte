@@ -63,7 +63,7 @@
       {/if}
 
       {#if testimonials}
-        <div class=" relative flex w-full flex-col gap-5 pb-12 xl:max-w-2xl">
+        <div class=" relative flex w-full flex-col gap-0 pb-12 xl:max-w-2xl xl:gap-5">
           <img alt="" src={Orbit} class="lg absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
