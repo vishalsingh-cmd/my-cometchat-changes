@@ -23,7 +23,10 @@
       class={cn('container mx-auto px-container', grid({ even: block.metrics.length % 2 === 0 }))}
     >
       {#each block.metrics as metric}
-        <MetricsItem {metric} />
+        <MetricsItem
+          {metric}
+          subtitleClassName={block.metrics.length > 3 ? 'max-w-[280px]' : 'max-w-[328px]'}
+        />
       {/each}
     </div>
   </div>
