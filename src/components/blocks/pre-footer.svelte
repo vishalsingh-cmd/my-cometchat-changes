@@ -12,8 +12,6 @@
 </script>
 
 {#if block}
-  <Divider />
-
   <section
     data-theme="dark"
     class="relative overflow-hidden bg-gray-1"
