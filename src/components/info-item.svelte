@@ -39,7 +39,7 @@
       <Icon size="xs" icon={item.icon.icon} />
     </div>
   {/if}
-  <div class="flex flex-col gap-1 text-xl text-gray-12">
+  <div class="flex flex-col gap-1 text-lg text-gray-12">
     <h3 class="font-semibold leading-tight">{item.title}</h3>
     <p class="font-medium leading-snug tracking-wide opacity-64">{item.description}</p>
   </div>
