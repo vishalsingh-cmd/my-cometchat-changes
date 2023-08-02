@@ -23,6 +23,7 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
+  import ResourcesHero from './resources-hero.svelte';
   import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
@@ -56,6 +57,7 @@
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'resources-hero': ResourcesHero,
     'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,

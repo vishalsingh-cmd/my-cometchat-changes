@@ -2393,6 +2393,37 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "resources-hero",
+      "display_name": null,
+      "created_at": "2023-08-02T12:34:41.957Z",
+      "updated_at": "2023-08-02T12:35:47.636Z",
+      "id": 4367531,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "resources-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "rich-text-section",
       "display_name": null,
       "created_at": "2023-07-28T08:50:26.981Z",
