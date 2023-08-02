@@ -1,11 +1,17 @@
 <script lang="ts">
-  import Button from '$components/buttons/button.svelte';
+  import { beforeNavigate } from '$app/navigation';
+  import { fly, slide } from 'svelte/transition';
+  import { circInOut } from 'svelte/easing';
+  import { page } from '$app/stores';
+
+  import type { TopNavigationStoryblok } from '$types/bloks';
+
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn, scrollLock } from '$lib/utils';
-  import { fly, slide } from 'svelte/transition';
-  import type { TopNavigationStoryblok } from '$types/bloks';
-  import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { createMediaStore } from '$lib/stores/media';
+  import { string } from '$lib/strings';
+
   import mobileBg from './topnav-mobile-bg.svg';
 
   import Logo from './logo.svelte';
@@ -13,12 +19,11 @@
   import SolutionsPanel from './solutions-panel.svelte';
   import DevelopersPanel from './developers-panel.svelte';
   import ResourcesPanel from './resources-panel.svelte';
-  import Icon from '$components/icon/icon.svelte';
-  import { beforeNavigate } from '$app/navigation';
-  import { createMediaStore } from '$lib/stores/media';
-  import { circInOut } from 'svelte/easing';
+  import ResourcesPanelTemporary from './resources-panel-temporary.svelte';
+
+  import Button from '$components/buttons/button.svelte';
   import Divider from '$components/divider.svelte';
-  import { string } from '$lib/strings';
+  import Icon from '$components/icon/icon.svelte';
 
   export let data: TopNavigationStoryblok;
 
@@ -195,6 +200,8 @@
                   <DevelopersPanel {data} />
                 {:else if data.component === 'topnav-resources-panel'}
                   <ResourcesPanel {data} />
+                {:else if data.component === 'topnav-resources-panel-temporary'}
+                  <ResourcesPanelTemporary {data} />
                 {/if}
               {/if}
             </div>
