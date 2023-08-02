@@ -671,6 +671,17 @@ export interface SeoFieldsStoryblok {
   [k: string]: any;
 }
 
+export interface SinglePostResourcesPanelStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  link: MultilinkStoryblok;
+  date: string;
+  author: string;
+  _uid: string;
+  component: 'single-post-resources-panel';
+  [k: string]: any;
+}
+
 export interface SocialProofsStoryblok {
   title: string;
   customers: (StoryblokStory<CustomerStoryblok> | string)[];
@@ -880,6 +891,7 @@ export interface TopnavPanelStoryblok {
     | TopnavSolutionsPanelStoryblok
     | TopnavTechnologiesPanelStoryblok
     | TopnavResourcesPanelStoryblok
+    | TopnavResourcesPanelTemporaryStoryblok
   )[];
   _uid: string;
   component: 'topnav-panel';
@@ -896,6 +908,19 @@ export interface TopnavResourcesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-resources-panel';
+  [k: string]: any;
+}
+
+export interface TopnavResourcesPanelTemporaryStoryblok {
+  customer_stories_title: string;
+  customer_stories: SinglePostResourcesPanelStoryblok[];
+  customer_stories_link: LinkStoryblok[];
+  blog_title: string;
+  blog_posts: SinglePostResourcesPanelStoryblok[];
+  blog_link: LinkStoryblok[];
+  groups: TopnavItemGroupStoryblok[];
+  _uid: string;
+  component: 'topnav-resources-panel-temporary';
   [k: string]: any;
 }
 
