@@ -7,6 +7,7 @@
 
   import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/storyblok';
+  import Hero from '$components/blog-post/hero.svelte';
 
   export let block: BlogPostStoryblok;
 
@@ -16,14 +17,12 @@
 </script>
 
 {#if block}
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="bg-gray-1 px-container text-gray-12"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
+    <Hero {block} />
+
     <!-- Content -->
     {#if block.content.body && block.content.body.content}
-      <div class="container relative mx-auto pt-20">
+      <div class="container relative mx-auto px-container pt-20">
         <div class="relative mx-auto w-full max-w-[640px]" id="content">
           {#each block.content.body.content as b}
             <RichTextRenderer block={b} />

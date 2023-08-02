@@ -52,10 +52,11 @@ export interface RichtextStoryblok {
 
 export interface BlogPostStoryblok {
   cover: AssetStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
   related: RelatedStoriesSectionStoryblok[];
+  is_old_post?: boolean;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -210,6 +211,7 @@ export interface CustomerStoryStoryblok {
   author?: StoryblokStory<AuthorStoryblok> | string;
   industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
+  is_old_post?: boolean;
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -466,6 +468,7 @@ export interface IndustryStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -560,6 +563,7 @@ export interface PageStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -641,6 +645,14 @@ export interface RelatedStoriesSectionStoryblok {
   items: (StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok> | string)[];
   _uid: string;
   component: 'related-stories-section';
+  [k: string]: any;
+}
+
+export interface ResourcesHeroStoryblok {
+  title: string;
+  description: string;
+  _uid: string;
+  component: 'resources-hero';
   [k: string]: any;
 }
 
@@ -728,6 +740,7 @@ export interface SyncedBlockContentStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -793,6 +806,7 @@ export interface TechnologyStoryblok {
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -944,9 +958,10 @@ export interface TopnavTechnologiesPanelStoryblok {
 
 export interface TutorialStoryblok {
   cover: AssetStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
+  is_old_post?: boolean;
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
