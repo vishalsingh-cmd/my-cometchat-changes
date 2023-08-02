@@ -202,7 +202,7 @@
         {/if}
       </div>
 
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-3">
         <div class="flex items-center gap-6">
           {#each data.call_to_actions as cta, i}
             {@const { href, target, rel } = getAnchorFromCmsLink(cta.link)}
@@ -220,7 +220,7 @@
           {/each}
         </div>
         <!-- Mobile button -->
-        <div class="block lg:hidden">
+        <div class="ml- block lg:hidden">
           <Button variant="secondary" on:click={() => (expanded = !expanded)}>
             <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} />
           </Button>
