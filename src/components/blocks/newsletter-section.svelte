@@ -109,6 +109,22 @@
         border-radius: 14px;
         border: 1px solid hsla(246, 21%, 9%, 0.1);
 
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          border-color: hsla(250, 62%, 58%, 0.3);
+        }
+
+        &:active {
+          border-color: hsla(250, 62%, 58%, 0.6);
+        }
+
+        &:focus-within {
+          border-color: hsla(250, 62%, 58%, 0.4);
+
+          box-shadow: 0px 0px 0px 4px hsla(250, 62%, 58%, 0.3);
+        }
+
         & input {
           background-color: transparent;
 
