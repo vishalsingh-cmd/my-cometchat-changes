@@ -37,9 +37,12 @@
     <div class="container mx-auto grid grid-cols-1 border-t border-gray-12/8 md:grid-cols-2">
       <div class="border-b border-gray-12/8 md:border-b-0">
         {#if block.items[0]}
-          <Panel item={parseItem(block.items[0])} class="border-b-0 md:pl-container" />
+          <Panel
+            item={parseItem(block.items[0])}
+            class="border-b-0 md:pb-container md:pl-container md:pt-container lg:p-[64px]"
+          />
         {/if}
-        <div class="h-full border-gray-12/[.08] px-5 py-0 md:border-b-0 md:border-r md:px-16">
+        <div class="h-full border-gray-12/[.08] px-container py-0 md:border-b-0 md:border-r">
           <ColourPicker />
         </div>
       </div>
@@ -48,9 +51,12 @@
           {#each rightSidedItems as item, i}
             <Panel
               item={parseItem(item)}
-              class={cn('md:border-b md:border-r-0', {
-                'pb-[151px] md:border-b-0 md:pb-[220px]': i === 1
-              })}
+              class={cn(
+                'py-10 md:border-b md:border-r-0 md:py-container md:pb-container md:pl-container md:pr-container md:pt-container lg:p-[64px]',
+                {
+                  'pb-[151px] md:border-b-0 md:pb-[220px]': i === 1
+                }
+              )}
             />
             {#if i === 1}
               <div
