@@ -135,7 +135,7 @@
   {/if}
   <div
     bind:this={container}
-    class="flex h-full max-h-[50px] overflow-x-auto shadow-[inset_0_-1px_0_0] shadow-gray-5 md:overflow-hidden"
+    class="flex overflow-x-auto break-all shadow-[inset_0_-1px_0_0] shadow-gray-5 md:overflow-hidden"
   >
     {#each snippets as { label }, i}
       <button
@@ -145,7 +145,7 @@
           });
         }}
         class={cn(
-          'relative flex h-[50px] items-center px-5 text-md font-semibold',
+          'relative flex min-w-fit items-center p-4 text-md font-semibold md:px-5',
           i === selectedLanguageIndex ? 'text-gray-12' : 'text-gray-12/60',
           'border-b border-solid hover:text-gray-12/100',
           i === selectedLanguageIndex
@@ -165,7 +165,7 @@
         tabindex="-1"
         bind:this={el}
         data-line={lineHighlight}
-        class={clsx('h-full', { 'line-numbers': lineNumbers }, className)}
+        class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
         {...$$restProps}>
   <code class="language-{language}"
@@ -174,7 +174,7 @@
 </pre>
     {/if}
   {/each}
-  <div class="h-full max-h-[58px] justify-self-end border-t border-gray-5 p-5">
+  <div class="justify-self-end border-t border-gray-5 p-4 md:p-5">
     <GhostButton
       on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].codeToCopy)}
     >
@@ -188,7 +188,6 @@
   /* Generated with http://k88hudson.github.io/syntax-highlighting-theme-generator/www */
   pre,
   code {
-    --codeblock-padding: 16px;
     --codeblock-color: hsla(240, 100%, 99%, 1);
     --codeblock-color-variable: hsla(223, 100%, 73%, 1);
     --codeblock-color-function: hsla(20, 100%, 78%, 1);
@@ -216,20 +215,7 @@
     hyphens: none;
   }
 
-  @media (--md) {
-    pre {
-      --codeblock-padding: 24px;
-    }
-  }
-
-  @media (--lg) {
-    pre {
-      --codeblock-padding: 32px;
-    }
-  }
-
   pre {
-    padding: var(--codeblock-padding);
     overflow: auto;
   }
 
@@ -308,7 +294,7 @@
 
   /* Line numbers */
   pre.line-numbers {
-    --codeblock-numbers-width: 3em;
+    --codeblock-numbers-width: 2.5em;
     --codeblock-numbers-padding: 0.8em;
     --codeblock-numbers-width-padding: calc(
       var(--codeblock-numbers-width) + var(--codeblock-numbers-padding)
