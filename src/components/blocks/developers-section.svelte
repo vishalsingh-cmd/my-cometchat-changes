@@ -57,7 +57,7 @@
           <img
             src={Comet}
             alt=""
-            class="absolute bottom-[-230px] right-[-117px] h-[651px] w-[651px] lg:top-[200px]"
+            class="absolute bottom-[-230px] right-[-117px] h-[651px] w-[651px] lg:top-[60px]"
           />
 
           <CodeBlock
