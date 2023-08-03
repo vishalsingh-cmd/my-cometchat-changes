@@ -27,7 +27,7 @@
 <div class="absolute left-0 top-0 h-[803px] w-[1389px]">
   <Stars backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-gray-8']} />
 </div>
-<div class="absolute -bottom-[250px] left-[-200px] hidden w-[2235.13px] md:block">
+<div class="absolute -bottom-[250px] left-[-300px] hidden w-[2235.13px] md:block">
   <img src={BackgroundDesktop} alt="" />
 </div>
 <div class="absolute -bottom-[100px] -left-[250px] block w-[1290.1px] md:hidden">

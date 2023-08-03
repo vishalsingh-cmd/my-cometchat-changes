@@ -9,7 +9,7 @@
 {#if block}
   <section class=" overflow-hidden bg-gray-1 text-gray-12">
     <div
-      class="container relative mx-auto flex flex-col items-center gap-3 px-container pb-[306px] pt-[100px] md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
+      class="container relative mx-auto flex flex-col items-start gap-3 px-container pb-[306px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
     >
       <Background />
 
