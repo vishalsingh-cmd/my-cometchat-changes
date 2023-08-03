@@ -63,9 +63,7 @@
     </div>
 
     <!-- main links - Desktop -->
-    <div
-      class="hidden pb-10 sm:grid sm:grid-cols-2 sm:gap-20 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
-    >
+    <div class="hidden pb-10 sm:grid sm:grid-cols-2 sm:gap-20 lg:grid-cols-3 xl:grid-cols-5">
       {#each data.columns as columnGroup}
         <div class="flex flex-col sm:gap-20">
           {#each columnGroup as column}
@@ -73,11 +71,11 @@
               <p class="mb-[1.125rem] text-md font-semibold tracking-wide text-brand-8">
                 {column.title}
               </p>
-              <div class="flex flex-col gap-4 sm:mt-0">
+              <div class="flex flex-col gap-8 sm:mt-0">
                 {#each column.groups as { title, links }}
                   <div>
                     {#if title}
-                      <p class="mb-4 text-sm/normal font-medium text-gray-10 opacity-50">
+                      <p class="mb-4 text-sm/normal font-medium text-gray-12/54">
                         {title}
                       </p>
                     {/if}
@@ -88,7 +86,7 @@
                           {href}
                           {target}
                           {rel}
-                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-12 opacity-74 transition hover:opacity-100"
+                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-12 opacity-[0.84] transition hover:opacity-100"
                           >{label}</a
                         >
                       {/each}

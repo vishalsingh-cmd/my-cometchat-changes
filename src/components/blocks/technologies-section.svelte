@@ -50,7 +50,7 @@
       >
         {#each technologies as technology, i}
           {@const { href, target, rel } = technology.link}
-          <div class={cn('isolate z-10 bg-gray-1 text-gray-10')}>
+          <div class={cn('isolate z-10 bg-gray-1 text-gray-12/[0.84]')}>
             <Link
               {href}
               {target}
