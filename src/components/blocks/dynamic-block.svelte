@@ -20,9 +20,12 @@
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
   import Metrics from './metrics.svelte';
+  import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
+  import ResourcesHero from './resources-hero.svelte';
+  import RelatedStoriesSection from './related-stories-section.svelte';
   import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
@@ -53,9 +56,12 @@
     'list-section': ListSection,
     'lists-section': ListsSection,
     metrics: Metrics,
+    'newsletter-section': NewsletterSection,
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'resources-hero': ResourcesHero,
+    'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,

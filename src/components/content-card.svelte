@@ -23,8 +23,8 @@
     {#if image}
       {#if customer}
         {@const { src, alt } = getImageAttributes(customer.logo)}
-        <div class="absolute left-3 top-4 rounded-xl bg-gray-5 p-2">
-          <img {src} {alt} class="h-4 w-full" />
+        <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
+          <img {src} {alt} class="h-3.5 w-full" />
         </div>
       {/if}
       {@const { src, alt, width, height } = getImageAttributes(image)}

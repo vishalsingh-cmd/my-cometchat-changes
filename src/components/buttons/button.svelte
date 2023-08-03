@@ -32,7 +32,7 @@
       transition
 
       disabled:pointer-events-none
-      disabled:opacity-60
+      disabled:opacity-40
     `
     ],
     {
@@ -47,15 +47,17 @@
               active:bg-brand-10
             `,
           secondary: `
-              text-brand-12
+              text-gray-12
+              
+              bg-gray-12/[0.02]
+              hover:bg-brand-9/[0.02]
               
               border
-              border-brand-11/20
-              hover:border-brand-9/50
-              focus-visible:border-brand-9/50
-              active:border-brand-9/80
-
-              ring-brand-9/20
+              border-gray-12/10
+              hover:border-brand-9/30
+              active:border-brand-9/60
+              focus-visible:border-brand-9/30
+              focus-visible:ring-brand-9/30
             `
         },
         size: {

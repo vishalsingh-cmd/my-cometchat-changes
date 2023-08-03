@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-07-26T21:38:26.638Z",
+      "updated_at": "2023-08-02T15:28:42.292Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -116,7 +116,7 @@
         "author": {
           "type": "option",
           "use_uuid": true,
-          "required": true,
+          "required": false,
           "translatable": true,
           "source": "internal_stories",
           "filter_content_type": ["author"],
@@ -166,7 +166,7 @@
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover", "author"],
+          "keys": ["cover", "author", "is_old_post"],
           "pos": 5,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
@@ -186,6 +186,9 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["related-stories-section"]
+        },
+        "is_old_post": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -581,7 +584,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-07-26T21:50:58.929Z",
+      "updated_at": "2023-08-02T15:28:59.887Z",
       "id": 4079335,
       "schema": {
         "Quote": {
@@ -639,7 +642,7 @@
         },
         "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
           "display_name": "Metadata",
-          "keys": ["cover", "customer", "author", "industry"],
+          "keys": ["cover", "customer", "author", "industry", "is_old_post"],
           "pos": 9,
           "type": "tab",
           "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
@@ -663,7 +666,7 @@
           "use_uuid": true,
           "source": "internal_stories",
           "filter_content_type": ["customer"],
-          "description": "If this page is a customer story, you can select the customer here to create the association. The industry shown will be fetched from the customer.",
+          "description": "",
           "pos": 12
         },
         "seo": {
@@ -696,6 +699,9 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["related-stories-section"]
+        },
+        "is_old_post": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -2058,6 +2064,41 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "newsletter-section",
+      "display_name": null,
+      "created_at": "2023-08-03T08:03:07.340Z",
+      "updated_at": "2023-08-03T08:04:33.184Z",
+      "id": 4371223,
+      "schema": {
+        "label": {
+          "type": "text",
+          "pos": 0,
+          "description": "`label` will only appear is `is_highlight` is `true`"
+        },
+        "title": {
+          "type": "text",
+          "required": true,
+          "pos": 1
+        },
+        "is_highlight": {
+          "type": "boolean",
+          "required": false
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "newsletter-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "page",
       "display_name": null,
       "created_at": "2023-05-23T11:40:13.029Z",
@@ -2393,6 +2434,37 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "resources-hero",
+      "display_name": null,
+      "created_at": "2023-08-02T12:34:41.957Z",
+      "updated_at": "2023-08-02T12:35:47.636Z",
+      "id": 4367531,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "description": {
+          "type": "textarea",
+          "required": true,
+          "translatable": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "resources-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "rich-text-section",
       "display_name": null,
       "created_at": "2023-07-28T08:50:26.981Z",
@@ -2493,6 +2565,50 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "seo-fields",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "single-post-resources-panel",
+      "display_name": null,
+      "created_at": "2023-08-02T09:36:02.885Z",
+      "updated_at": "2023-08-02T09:38:15.630Z",
+      "id": 4366783,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "translatable": true
+        },
+        "image": {
+          "type": "asset",
+          "required": true
+        },
+        "link": {
+          "type": "multilink",
+          "required": true,
+          "allow_target_blank": true
+        },
+        "date": {
+          "type": "datetime",
+          "required": true,
+          "disable_time": true
+        },
+        "author": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "single-post-resources-panel",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
@@ -3189,7 +3305,7 @@
       "name": "topnav-panel",
       "display_name": null,
       "created_at": "2023-06-05T14:38:18.827Z",
-      "updated_at": "2023-06-05T15:46:20.991Z",
+      "updated_at": "2023-08-02T09:33:49.074Z",
       "id": 4079098,
       "schema": {
         "title": {
@@ -3207,7 +3323,8 @@
             "topnav-features-panel",
             "topnav-solutions-panel",
             "topnav-technologies-panel",
-            "topnav-resources-panel"
+            "topnav-resources-panel",
+            "topnav-resources-panel-temporary"
           ]
         }
       },
@@ -3301,6 +3418,90 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "topnav-resources-panel",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "topnav-resources-panel-temporary",
+      "display_name": null,
+      "created_at": "2023-08-02T09:31:08.134Z",
+      "updated_at": "2023-08-02T09:38:15.726Z",
+      "id": 4366769,
+      "schema": {
+        "customer_stories_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true,
+          "key": "customer_stories_title"
+        },
+        "customer_stories": {
+          "type": "bloks",
+          "pos": 1,
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["single-post-resources-panel"]
+        },
+        "customer_stories_link": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "required": true,
+          "maximum": 1,
+          "pos": 2,
+          "key": "customer_stories_link"
+        },
+        "blog_title": {
+          "type": "text",
+          "required": true,
+          "pos": 3,
+          "key": "blog_title"
+        },
+        "blog_posts": {
+          "type": "bloks",
+          "pos": 4,
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["single-post-resources-panel"]
+        },
+        "blog_link": {
+          "type": "bloks",
+          "pos": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "maximum": 1,
+          "required": true,
+          "minimum": 1,
+          "key": "blog_link"
+        },
+        "groups": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["topnav-item-group"],
+          "display_name": "Item Groups",
+          "pos": 6,
+          "minimum": 1,
+          "key": "items"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "topnav-resources-panel-temporary",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
@@ -3401,7 +3602,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-07-24T13:57:06.065Z",
+      "updated_at": "2023-08-02T15:28:28.207Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -3413,7 +3614,7 @@
         "author": {
           "type": "option",
           "use_uuid": true,
-          "required": true,
+          "required": false,
           "translatable": true,
           "source": "internal_stories",
           "filter_content_type": ["author"],
@@ -3463,7 +3664,7 @@
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover", "author"],
+          "keys": ["cover", "author", "is_old_post"],
           "pos": 5,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
@@ -3474,6 +3675,9 @@
           "pos": 6,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
+        },
+        "is_old_post": {
+          "type": "boolean"
         }
       },
       "image": null,

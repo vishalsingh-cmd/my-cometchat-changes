@@ -52,10 +52,11 @@ export interface RichtextStoryblok {
 
 export interface BlogPostStoryblok {
   cover: AssetStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
   related: RelatedStoriesSectionStoryblok[];
+  is_old_post?: boolean;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -210,6 +211,7 @@ export interface CustomerStoryStoryblok {
   author?: StoryblokStory<AuthorStoryblok> | string;
   industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
+  is_old_post?: boolean;
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -463,9 +465,11 @@ export interface IndustryStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | MetricsStoryblok
+    | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -538,6 +542,15 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
+export interface NewsletterSectionStoryblok {
+  label?: string;
+  title: string;
+  is_highlight?: boolean;
+  _uid: string;
+  component: 'newsletter-section';
+  [k: string]: any;
+}
+
 export interface PageStoryblok {
   body?: (
     | AwardsSectionStoryblok
@@ -557,9 +570,11 @@ export interface PageStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | MetricsStoryblok
+    | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -644,6 +659,14 @@ export interface RelatedStoriesSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ResourcesHeroStoryblok {
+  title: string;
+  description: string;
+  _uid: string;
+  component: 'resources-hero';
+  [k: string]: any;
+}
+
 export interface RichTextSectionStoryblok {
   body: RichtextStoryblok;
   _uid: string;
@@ -668,6 +691,17 @@ export interface SeoFieldsStoryblok {
   href_lang?: HrefLangStoryblok[];
   _uid: string;
   component: 'seo-fields';
+  [k: string]: any;
+}
+
+export interface SinglePostResourcesPanelStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  link: MultilinkStoryblok;
+  date: string;
+  author: string;
+  _uid: string;
+  component: 'single-post-resources-panel';
   [k: string]: any;
 }
 
@@ -714,9 +748,11 @@ export interface SyncedBlockContentStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | MetricsStoryblok
+    | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -779,9 +815,11 @@ export interface TechnologyStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | MetricsStoryblok
+    | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
     | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
     | SolutionsSectionStoryblok
@@ -880,6 +918,7 @@ export interface TopnavPanelStoryblok {
     | TopnavSolutionsPanelStoryblok
     | TopnavTechnologiesPanelStoryblok
     | TopnavResourcesPanelStoryblok
+    | TopnavResourcesPanelTemporaryStoryblok
   )[];
   _uid: string;
   component: 'topnav-panel';
@@ -896,6 +935,19 @@ export interface TopnavResourcesPanelStoryblok {
   groups: TopnavItemGroupStoryblok[];
   _uid: string;
   component: 'topnav-resources-panel';
+  [k: string]: any;
+}
+
+export interface TopnavResourcesPanelTemporaryStoryblok {
+  customer_stories_title: string;
+  customer_stories: SinglePostResourcesPanelStoryblok[];
+  customer_stories_link: LinkStoryblok[];
+  blog_title: string;
+  blog_posts: SinglePostResourcesPanelStoryblok[];
+  blog_link: LinkStoryblok[];
+  groups: TopnavItemGroupStoryblok[];
+  _uid: string;
+  component: 'topnav-resources-panel-temporary';
   [k: string]: any;
 }
 
@@ -919,9 +971,10 @@ export interface TopnavTechnologiesPanelStoryblok {
 
 export interface TutorialStoryblok {
   cover: AssetStoryblok;
-  author: StoryblokStory<AuthorStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   body: RichtextStoryblok;
+  is_old_post?: boolean;
   _uid: string;
   component: 'tutorial';
   [k: string]: any;

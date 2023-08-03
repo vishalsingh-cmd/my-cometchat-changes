@@ -57,24 +57,25 @@
           <img
             src={Comet}
             alt=""
-            class="absolute bottom-[-230px] right-[-117px] h-[651px] w-[651px] lg:top-[200px]"
+            class="absolute bottom-[-230px] right-[-117px] h-[651px] w-[651px] lg:top-[60px]"
           />
+
           <CodeBlock
-            class="w-full self-start"
+            class="h-[500px] w-full self-start"
             snippets={parsedCodeBlocks}
             on:languageSelect={onLanguageSelect}
             {selectedLanguageIndex}
           />
           {#if parsedCodeBlocks[selectedLanguageIndex].image}
-            {@const { src, alt, width, height } = getImageAttributes(
+            {@const { src, alt } = getImageAttributes(
               parsedCodeBlocks[selectedLanguageIndex].image,
               { size: [1000, 0] }
             )}
             <div
-              class="mb-12 mt-5 flex w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
+              class="mb-12 mt-5 flex h-[500px] w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
               style="transform: translate3d(0, 0, 0);"
             >
-              <img {src} {alt} {width} {height} class="mt-8 w-full px-12 md:mt-12" />
+              <img {src} {alt} class="mt-8 h-[500px] px-12 md:mt-12" />
             </div>
           {/if}
         </div>
