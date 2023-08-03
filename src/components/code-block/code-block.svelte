@@ -97,7 +97,7 @@
 <div
   data-theme="dark"
   class={cn(
-    'relative flex h-full max-h-[480px] flex-col rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60',
+    'relative flex h-full flex-col rounded-3xl border border-solid border-gray-5 bg-gray-1 lg:bg-gray-2/60',
     className
   )}
 >
@@ -167,8 +167,7 @@
         data-line={lineHighlight}
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
-        {...$$restProps}>
-  <code class="language-{language}"
+        {...$$restProps}><code class="language-{language}"
           >{@html Prism.highlight(code, Prism.languages[language], language)}</code
         >
 </pre>
