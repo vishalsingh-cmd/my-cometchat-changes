@@ -45,14 +45,45 @@
     directoryData.forEach((item) => {
       const typedItem = item as BlogPostStoryblok;
 
-      if (typedItem.content.component === 'customer-story') {
-        const industry = typedItem.content.industry;
-        if (industry) {
-          if (!tags.includes(industry)) {
-            tags.push(industry);
+      console.log(item);
+
+      switch (typedItem.content.component) {
+        case 'customer-story': {
+          const industry = typedItem.content.industry;
+          if (industry) {
+            if (!tags.includes(industry)) {
+              tags.push(industry);
+            }
           }
+          break;
+        }
+
+        case 'blog-post': {
+          const category = typedItem.content.category;
+          if (category) {
+            if (!tags.includes(category)) {
+              tags.push(category);
+            }
+          }
+          break;
+        }
+        case 'tutorial': {
+          const technologies = typedItem.content.technology;
+
+          technologies.forEach((technology: string) => {
+            if (!tags.includes(technology)) {
+              tags.push(technology);
+            }
+          });
+
+          break;
+        }
+        default: {
+          return undefined;
         }
       }
+
+      return tags;
     });
 
     return tags;
@@ -63,6 +94,19 @@
       selectedTags = selectedTags.filter((t) => t !== tag);
     } else {
       selectedTags = [...selectedTags, tag];
+    }
+  };
+
+  const getContentType = () => {
+    switch (block.content_type) {
+      case 'customer-story':
+        return 'customer-story';
+      case 'blog-post':
+        return 'blog-post';
+      case 'tutorial':
+        return 'tutorial';
+      default:
+        return undefined;
     }
   };
 
@@ -92,7 +136,7 @@
     queryKey: [`directory-${Math.random()}`, selectedTags],
     queryFn: async () => {
       const res = await getStories({
-        content_type: 'customer-story',
+        content_type: getContentType(),
         filter_query: selectedTags.length > 0 ? { industry: { in: selectedTags.join(',') } } : {},
         per_page: 12,
         search_term: $debouncedSearch
