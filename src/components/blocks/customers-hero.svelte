@@ -20,7 +20,7 @@
       </h1>
       <Background />
     </div>
-    {#if block.customers}
+    {#if block.customers && block.customers.length > 0}
       <SocialProofs block={block.customers[0]} />
     {/if}
   </section>

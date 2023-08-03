@@ -4,7 +4,8 @@
   import { dev } from '$app/environment';
 
   import Heading from './heading.svelte';
-  import Paragraph from '$components/rich-text/paragraph.svelte';
+  import OrderedList from './ordered-list.svelte';
+  import Paragraph from './paragraph.svelte';
 
   import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
 
@@ -12,6 +13,7 @@
 
   const map = {
     heading: Heading,
+    ordered_list: OrderedList,
     paragraph: Paragraph
   };
 

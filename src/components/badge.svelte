@@ -2,6 +2,8 @@
   import { cva, type VariantProps } from 'class-variance-authority';
 
   import { cn } from '$lib/utils';
+  let className: undefined | string = undefined;
+  export { className as class };
 
   const badge = cva(
     [
@@ -23,6 +25,6 @@
   export let label: string;
 </script>
 
-<div class={cn(badge({ size }))}>
+<div class={cn(badge({ size }), className)}>
   {label}
 </div>

@@ -1,12 +1,14 @@
 <script lang="ts">
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  import type { AuthorStoryblok, TutorialStoryblok } from '$types/bloks';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
-  import type { AuthorStoryblok, TutorialStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/storyblok';
+
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+
+  import RelatedStoriesSection from './related-stories-section.svelte';
 
   export let block: TutorialStoryblok;
 
@@ -35,6 +37,7 @@
             <div class="py-8 md:py-6">
               <div
                 class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px] md:p-5"
+                style="transform: translate3d(0, 0, 0);"
               >
                 <div class="flex items-center gap-3">
                   {#if author.content.avatar}
@@ -58,4 +61,8 @@
       </div>
     {/if}
   </section>
+
+  {#if block.content.related && block.content.related.length > 0}
+    <RelatedStoriesSection block={block.content.related[0]} />
+  {/if}
 {/if}

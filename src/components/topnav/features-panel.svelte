@@ -46,6 +46,7 @@
             title={item.title}
             description={item.description}
             asset={getItemAsset(item)}
+            comingSoon={item.coming_soon}
           />
         {/each}
       </div>

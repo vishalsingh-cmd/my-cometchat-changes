@@ -4,13 +4,24 @@ import {
   storyblokInit,
   useStoryblokBridge,
   type ISbStoryData,
-  type SbSDKOptions
+  type SbSDKOptions,
+  type ISbStoriesParams
 } from '@storyblok/js';
 import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 import { onMount } from 'svelte';
 
 /** Storyblok API */
+const { storyblokApi } = storyblokInit({
+  accessToken: env.PUBLIC_STORYBLOK_TOKEN,
+  use: [apiPlugin],
+  apiOptions: {
+    https: true
+  }
+});
 
+export const storyblok = storyblokApi as NonNullable<
+  ReturnType<typeof storyblokInit>['storyblokApi']
+>;
 export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
   const { storyblokApi } = storyblokInit({
@@ -35,6 +46,21 @@ export function startStoryblokBridge<T extends { story: ISbStoryData<any> }>(
     useStoryblokBridge(id, onNewStory);
   });
 }
+
+export const getStories = async (params: ISbStoriesParams = {}) => {
+  return await storyblok.get('cdn/stories', {
+    version: 'draft',
+    content_type: params.content_type,
+    sort_by: 'updated_at:desc',
+    resolve_relations: [
+      'customer-story.author',
+      'customer-story.customer',
+      'blog-post.author',
+      'tutorial.author'
+    ],
+    ...params
+  });
+};
 
 /** Slugs and paths */
 

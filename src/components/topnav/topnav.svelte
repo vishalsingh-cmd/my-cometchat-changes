@@ -1,11 +1,17 @@
 <script lang="ts">
-  import Button from '$components/buttons/button.svelte';
+  import { beforeNavigate } from '$app/navigation';
+  import { fly, slide } from 'svelte/transition';
+  import { circInOut } from 'svelte/easing';
+  import { page } from '$app/stores';
+
+  import type { TopNavigationStoryblok } from '$types/bloks';
+
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn, scrollLock } from '$lib/utils';
-  import { fly, slide } from 'svelte/transition';
-  import type { TopNavigationStoryblok } from '$types/bloks';
-  import { page } from '$app/stores';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { createMediaStore } from '$lib/stores/media';
+  import { string } from '$lib/strings';
+
   import mobileBg from './topnav-mobile-bg.svg';
 
   import Logo from './logo.svelte';
@@ -13,12 +19,11 @@
   import SolutionsPanel from './solutions-panel.svelte';
   import DevelopersPanel from './developers-panel.svelte';
   import ResourcesPanel from './resources-panel.svelte';
-  import Icon from '$components/icon/icon.svelte';
-  import { beforeNavigate } from '$app/navigation';
-  import { createMediaStore } from '$lib/stores/media';
-  import { circInOut } from 'svelte/easing';
+  import ResourcesPanelTemporary from './resources-panel-temporary.svelte';
+
+  import Button from '$components/buttons/button.svelte';
   import Divider from '$components/divider.svelte';
-  import { string } from '$lib/strings';
+  import Icon from '$components/icon/icon.svelte';
 
   export let data: TopNavigationStoryblok;
 
@@ -81,6 +86,7 @@
       'after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:right-0 after:z-20 after:h-px after:bg-divider-gradient after:opacity-0 after:transition hover:after:opacity-100',
       isSolid && 'bg-gray-3/98 backdrop-blur-xl after:opacity-100'
     )}
+    style="transform: translate3d(0, 0, 0);"
   >
     <div class="container mx-auto flex h-16 items-center justify-between px-container">
       <a href="/">
@@ -126,7 +132,7 @@
             in:slide={{ duration: 300, delay: 100 }}
             out:slide={{ duration: 100 }}
             class="fixed left-0 right-0 top-16 z-10 flex h-[calc(100dvh-4rem)] flex-col justify-between overflow-auto bg-gray-3/98 backdrop-blur-xl lg:hidden"
-            style="background-image:url({mobileBg});background-size:cover;background-repeat:no-repeat;background-position:center;"
+            style="background-image: url({mobileBg}); background-size: cover; background-repeat: no-repeat; background-position: center; transform: translate3d(0, 0, 0)"
           >
             <div class="flex-1">
               {#each data.links as item, i}
@@ -173,6 +179,7 @@
             in:panelTransition={{ duration: 200, direction: 'in' }}
             out:panelTransition={{ duration: 100, direction: 'out' }}
             class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
+            style="transform: translate3d(0, 0, 0);"
           >
             <button
               class="sticky top-0 z-20 flex w-full items-center gap-2 bg-gray-3/98 px-container py-4 lg:hidden"
@@ -182,7 +189,7 @@
               <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
-            <div class="overflow-hidden backdrop-blur-3xl">
+            <div class="overflow-hidden backdrop-blur-3xl" style="transform: translate3d(0, 0, 0);">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
                 {#if data.component === 'topnav-features-panel'}
@@ -193,6 +200,8 @@
                   <DevelopersPanel {data} />
                 {:else if data.component === 'topnav-resources-panel'}
                   <ResourcesPanel {data} />
+                {:else if data.component === 'topnav-resources-panel-temporary'}
+                  <ResourcesPanelTemporary {data} />
                 {/if}
               {/if}
             </div>

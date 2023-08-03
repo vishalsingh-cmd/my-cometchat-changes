@@ -40,7 +40,7 @@
     </div>
   {/if}
   <div class="flex flex-col gap-1 text-xl text-gray-12">
-    <p class="font-semibold leading-tight">{item.title}</p>
+    <h3 class="font-semibold leading-tight">{item.title}</h3>
     <p class="font-medium leading-snug tracking-wide opacity-64">{item.description}</p>
   </div>
   {#if item.link}

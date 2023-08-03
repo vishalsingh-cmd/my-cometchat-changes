@@ -9,6 +9,7 @@
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
+  import DirectorySection from './directory-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -17,16 +18,20 @@
   import ImplementationSection from './implementation-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import ListSection from './list-section.svelte';
+  import ListsSection from './lists-section.svelte';
   import Metrics from './metrics.svelte';
   import Page from './page.svelte';
+  import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
+  import RelatedStoriesSection from './related-stories-section.svelte';
+  import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
+  import TechnologiesSectionCopy from './technologies-section-copy.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
-  import PreFooter from './pre-footer.svelte';
 
   export let block: SbBlokData;
 
@@ -38,6 +43,7 @@
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
+    'directory-section': DirectorySection,
     'featured-story-section': FeaturedStorySection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
@@ -46,14 +52,18 @@
     'implementation-section': ImplementationSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'list-section': ListSection,
+    'lists-section': ListsSection,
     metrics: Metrics,
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'related-stories-section': RelatedStoriesSection,
+    'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
+    'technologies-section_copy': TechnologiesSectionCopy,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection
   };

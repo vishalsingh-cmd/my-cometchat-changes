@@ -16,6 +16,8 @@
   const industryToShow = customer.content.industry as string;
 
   const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
+
+  const author = block.content.author;
 </script>
 
 <section class="h-[743px] pt-[100px] md:pb-20 md:pt-[148px]" data-theme="dark">
@@ -29,12 +31,18 @@
       <div class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide">
         <p class="opacity-74">{block.content.quote}</p>
         <div class="flex items-center gap-3">
-          {#if block.content.author_avatar}
-            {@const { src, alt, width, height } = getImageAttributes(block.content.author_avatar)}
+          {#if block.content.author}
+            {@const { src, alt, width, height } = getImageAttributes(
+              block.content.author.content.avatar
+            )}
             <img {src} {alt} {width} {height} class="h-6 w-6" />
           {/if}
           <p>
-            {block.content.author_name}, {block.content.author_role}, {block.content.author_company}
+            {block.content.author.content.name},
+            {#if block.content.author.content.role !== ''}
+              {block.content.author.content.role},
+            {/if}
+            {block.content.author.content.company}
           </p>
         </div>
       </div>

@@ -10,7 +10,17 @@ export const StringKeys = [
   'customer_stories',
   'related_stories',
   'directory.show_filters',
-  'directory.hide_filters'
+  'directory.hide_filters',
+  'directory.reset_filters',
+  'directory.input_placeholder',
+  'directory.did_not_match_any',
+  'directory.customer_stories',
+  'directory.tutorials',
+  'directory.blog_posts',
+  'directory.please_try_again',
+  'directory.clear_search',
+  'directory.apply',
+  'directory.filters'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];
