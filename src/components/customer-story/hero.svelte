@@ -45,9 +45,9 @@
         </div>
       </div>
       {#if block.content.cover}
-        {@const { src, alt } = getImageAttributes(block.content.cover)}
+        {@const { src, alt, width, height } = getImageAttributes(block.content.cover)}
         <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
-          <img {src} {alt} class="h-full w-full object-cover" />
+          <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -80,11 +80,11 @@
         </div>
       </div>
       {#if block.content.cover}
-        {@const { src, alt } = getImageAttributes(block.content.cover)}
+        {@const { src, alt, width, height } = getImageAttributes(block.content.cover)}
         <div
           class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
         >
-          <img {src} {alt} class="h-full w-full object-cover" />
+          <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
         </div>
       {/if}
     </div>

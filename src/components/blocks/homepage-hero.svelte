@@ -101,7 +101,7 @@
       </div>
       {#if block.illustration}
         {@const { src, alt, width, height } = getImageAttributes(block.illustration)}
-        <img class="isolate z-10 mx-auto" {src} {alt} {width} {height} />
+        <img class="isolate z-10 mx-auto w-full max-w-[796px]" {src} {alt} {width} {height} />
       {/if}
     </div>
   </section>
