@@ -20,6 +20,7 @@
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
   import Metrics from './metrics.svelte';
+  import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
@@ -53,6 +54,7 @@
     'list-section': ListSection,
     'lists-section': ListsSection,
     metrics: Metrics,
+    'newsletter-section': NewsletterSection,
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
