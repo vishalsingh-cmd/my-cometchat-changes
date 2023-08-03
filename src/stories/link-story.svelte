@@ -9,10 +9,10 @@
   export let children: $$Props['children'] = '';
 </script>
 
-<div data-theme="light">
+<div data-theme="light" class="flex items-center gap-10">
   <Link {...$$props}>{children}</Link>
 </div>
-<div data-theme="dark">
+<div data-theme="dark" class="flex items-center gap-10 bg-gray-3">
   <Link {...$$props}>{children}</Link>
 </div>
 
