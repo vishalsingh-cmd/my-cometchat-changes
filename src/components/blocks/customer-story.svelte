@@ -7,9 +7,11 @@
   import type { CustomerStoryStoryblok } from '$types/bloks';
 
   import Hero from '$components/customer-story/hero.svelte';
-  import RelatedContent from '$components/customer-story/related-content.svelte';
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import Sidebar from '$components/customer-story/sidebar.svelte';
+
+  import RelatedStoriesSection from './related-stories-section.svelte';
+
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: CustomerStoryStoryblok;
 
@@ -95,6 +97,7 @@
 
 {#if block}
   <Hero {block} industries={$industries} />
+
   <section
     use:storyblokEditable={block}
     data-theme="light"
@@ -118,5 +121,7 @@
     {/if}
   </section>
 
-  <RelatedContent industries={$industries} {block} />
+  {#if block.content.related && block.content.related.length > 0}
+    <RelatedStoriesSection block={block.content.related[0]} />
+  {/if}
 {/if}

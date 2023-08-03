@@ -1,24 +1,14 @@
 <script lang="ts">
-  import type { ISbStoryData } from '@storyblok/js';
-
-  import type { CustomerStoryStoryblok, CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
 
   import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
-  import Metrics from '$components/blocks/metrics.svelte';
   import Title from '$components/title.svelte';
 
-  export let block: CustomerStoryStoryblok;
-  export let industries: ISbStoryData<IndustryStoryblok>[];
+  export let block: BlogPostStoryblok;
 
-  const customer = block.content.customer as unknown as CustomerStoryblok;
-
-  const industryToShow = customer.content.industry as string;
-
-  const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
-
-  const author = block.content.author;
+  const author = block.content.author as unknown as AuthorStoryblok;
 </script>
 
 <section
@@ -33,10 +23,10 @@
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
         <div class="flex flex-1 flex-col gap-4 text-xl leading-snug tracking-wide">
-          <p class="font-medium opacity-74">{block.content.quote}</p>
+          <p class="font-medium opacity-74">{block.content.seo[0].description}</p>
           <div class="flex items-center gap-3">
             {#if author}
-              {@const { name } = author.content}
+              {@const { name } = author}
               <p>
                 {name}
               </p>
@@ -55,14 +45,14 @@
     <div class="container mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2">
       <div class="flex flex-col justify-between">
         <Title
-          label={{ content: industry, color: 'brand' }}
+          label={{ content: '', color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />
         <div
           class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide"
         >
-          <p class="opacity-74">{block.content.quote}</p>
+          <p class="opacity-74">{block.content.seo[0].description}</p>
           <div class="flex items-center gap-3">
             {#if author}
               {@const { avatar, name, role, company } = author.content}
@@ -90,8 +80,3 @@
     </div>
   {/if}
 </section>
-{#if !block.content.is_old_post}
-  {#if block.content.metrics && block.content.metrics.length > 0}
-    <Metrics block={block.content.metrics[0]} />
-  {/if}
-{/if}

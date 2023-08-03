@@ -24,6 +24,8 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PlatformSection from './platform-section.svelte';
+  import ResourcesHero from './resources-hero.svelte';
+  import RelatedStoriesSection from './related-stories-section.svelte';
   import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
   import SolutionsSection from './solutions-section.svelte';
@@ -58,6 +60,8 @@
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'resources-hero': ResourcesHero,
+    'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
     'solutions-section': SolutionsSection,

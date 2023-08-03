@@ -57,7 +57,7 @@
       {options[selectedOption].label}
     </span>
     <Icon
-      class="text-gray-12 opacity-54 light:text-gray-11"
+      class="text-gray-12 opacity-74 light:text-gray-11"
       size="xs"
       icon={isOpen ? 'chevron-up' : 'chevron-down'}
     />
@@ -80,7 +80,7 @@
             });
           }}
         >
-          <span class="flex items-center gap-2.5">
+          <span class="flex items-center gap-2.5 font-semibold tracking-wide">
             <CometIllustration
               class="inline-block scale-[1.4]"
               illustration={option.cometIllustration ?? 'community'}
