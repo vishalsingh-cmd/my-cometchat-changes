@@ -20,15 +20,17 @@
         <Background />
 
         <!-- Content -->
-        <div class="max-w-[528px]">
+        <div>
           {#if block.header && block.header[0]}
             {@const header = block.header[0]}
-            <HeroHeader variant="secondary" block={header} />
+            <div class="l">
+              <HeroHeader variant="secondary" block={header} />
+            </div>
           {/if}
 
           <!-- 2nd item - Visible on desktop to have a masonry effect -->
           {#if block.items && block.items[1]}
-            <div class="hidden lg:mt-[209px] lg:block">
+            <div class="hidden w-full max-w-[528px] lg:mt-[209px] lg:block">
               <ImageTitleDescriptionTagsItem block={block.items[1]} />
             </div>
           {/if}
