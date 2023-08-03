@@ -20,9 +20,7 @@
 <div
   class="absolute -top-[336.13px] left-[484.9px] h-[710.96px] w-[1423.31px] origin-center rotate-[-17.44deg] transform rounded-full bg-[hsl(245,63%,24%)]/30 blur-[59px]"
 />
-<div
-  class="absolute bottom-0 left-0 h-[350px] w-full bg-gradient-to-r from-gray-1/100 to-gray-1/0"
-/>
+<div class="absolute bottom-0 left-0 h-full w-full bg-gradient-to-r from-gray-1/100 to-gray-1/0" />
 <div class="absolute left-[51px] top-0 h-[803px] w-[1389px]">
   <Stars backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-gray-8']} />
 </div>
