@@ -35,15 +35,15 @@
         </div>
 
         {#if block.items}
-          <div class="max-w-[436px]">
+          <div>
             {#each block.items as item, i}
               {@const stylingArrays = [
-                'lg:mt-[55px]',
-                'mt-16 lg:mt-auto lg:hidden',
-                'mt-16 lg:mt-[220px] transform lg:translate-x-[53px]'
+                'lg:mt-[55px] flex justify-end lg:block w-full',
+                'mt-16 lg:mt-auto lg:hidden w-full',
+                'mt-16 lg:mt-[220px] transform lg:translate-x-[53px] flex justify-end lg:block w-full'
               ]}
               <div class={stylingArrays[i]}>
-                <ImageTitleDescriptionTagsItem block={item} />
+                <ImageTitleDescriptionTagsItem block={item} class="max-w-[436px]" />
               </div>
             {/each}
           </div>
