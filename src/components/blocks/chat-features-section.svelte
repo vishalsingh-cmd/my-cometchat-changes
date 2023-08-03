@@ -37,7 +37,13 @@
               class="absolute left-[-240px] top-[180px] w-[837px] max-w-none md:left-[-600px] md:top-[100px] md:w-[1877px] lg:top-[-400px]"
             />
           {/if}
-          <img {src} {alt} {width} {height} class={cn('', i === 1 && 'mt-[70px] lg:mt-0')} />
+          <img
+            {src}
+            {alt}
+            {width}
+            {height}
+            class={cn('w-full max-w-[528px]', i === 1 && 'mt-[70px] max-w-[1070px] lg:mt-0')}
+          />
         </div>
       {/each}
       <img

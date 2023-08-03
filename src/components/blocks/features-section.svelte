@@ -15,13 +15,11 @@
   <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1">
     <div
       class={cn(
-        'container mx-auto flex min-h-[500px] flex-col-reverse lg:flex-row xl:min-h-[720px]',
+        'container mx-auto flex  flex-col-reverse lg:flex-row ',
         block.image_on_the_right && 'lg:flex-row-reverse'
       )}
     >
-      <div
-        class="flex min-h-[379px] w-full items-center justify-center bg-gray-12/[0.02] xl:max-w-[700px]"
-      >
+      <div class="flex w-full items-center justify-center bg-gray-12/[0.02] xl:max-w-[700px]">
         {#if block.image}
           {@const { src, alt, width, height } = getImageAttributes(block.image)}
           <img {src} {alt} {width} {height} />
