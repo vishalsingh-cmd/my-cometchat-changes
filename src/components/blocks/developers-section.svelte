@@ -67,7 +67,7 @@
             {selectedLanguageIndex}
           />
           {#if parsedCodeBlocks[selectedLanguageIndex].image}
-            {@const { src, alt } = getImageAttributes(
+            {@const { src, alt, width, height } = getImageAttributes(
               parsedCodeBlocks[selectedLanguageIndex].image,
               { size: [1000, 0] }
             )}
@@ -75,7 +75,7 @@
               class="mb-12 mt-5 flex h-[500px] w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
               style="transform: translate3d(0, 0, 0);"
             >
-              <img {src} {alt} class="mt-8 h-[500px] px-12 md:mt-12" />
+              <img {src} {alt} {width} {height} class="mt-8 h-[500px] px-12 md:mt-12" />
             </div>
           {/if}
         </div>

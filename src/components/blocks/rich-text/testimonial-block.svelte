@@ -23,7 +23,7 @@
       {@const { src, alt, width, height } = getImageAttributes(block.author_image, {
         size: [48, 0]
       })}
-      <img {src} {alt} {width} {height} class="rounded-full" />
+      <img {src} {alt} {width} {height} class="w-12 rounded-full" />
     {/if}
   </div>
 {/if}

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import { industries } from '$lib/stores/industries';
@@ -41,7 +42,7 @@
     if (story.content.component === 'customer-story' && story.content.customer) {
       const customer = story.content.customer as StoryblokStory<CustomerStoryblok>;
       const industry = $industries.find(
-        (industry: IndustryStoryblok) => customer.content.industry === industry.uuid
+        (industry: ISbStoryData<IndustryStoryblok>) => customer.content.industry === industry.uuid
       ) as unknown as IndustryStoryblok;
       return industry?.name;
     } else {
@@ -84,9 +85,9 @@
           </div>
         </div>
         {#if content.cover}
-          {@const { src, alt } = getImageAttributes(content.cover)}
+          {@const { src, alt, width, height } = getImageAttributes(content.cover)}
           <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
-            <img {src} {alt} class="h-full w-full object-cover" />
+            <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>

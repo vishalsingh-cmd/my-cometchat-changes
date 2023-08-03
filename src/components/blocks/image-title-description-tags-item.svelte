@@ -32,7 +32,7 @@
   >
     {#if block.image}
       {@const { src, alt, width, height } = getImageAttributes(block.image)}
-      <img {src} {alt} {width} {height} class="mb-12" />
+      <img {src} {alt} {width} {height} class="mb-12 w-full max-w-[436px]" />
     {/if}
     {#if block.title}
       <p class="font-semibold leading-tight">{block.title}</p>
