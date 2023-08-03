@@ -1,41 +1,65 @@
 <script lang="ts">
+  import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import { industries } from '$lib/stores/industries';
 
+  import { formatDate } from '$lib/utils/dates';
+
   import type {
+    AuthorStoryblok,
     BlogPostStoryblok,
     CustomerStoryStoryblok,
     CustomerStoryblok,
     IndustryStoryblok,
-    RelatedStoriesSectionStoryblok
+    RelatedStoriesSectionStoryblok,
+    TutorialStoryblok
   } from '$types/bloks';
 
   import ContentCard from '$components/content-card.svelte';
   import Title from '$components/title.svelte';
 
-  import { formatDate } from '$lib/utils/dates';
-
   export let block: RelatedStoriesSectionStoryblok;
 
   const parsedItem = (
-    item: StoryblokStory<CustomerStoryStoryblok> | StoryblokStory<BlogPostStoryblok> | string
+    item:
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<TutorialStoryblok>
+      | string
   ) => {
     const typedItem = item as StoryblokStory<CustomerStoryStoryblok>;
-    const typedCustomer = typedItem.content.customer as StoryblokStory<CustomerStoryblok>;
-    const industryId = typedCustomer.content.industry as string;
+    const typedCustomer = typedItem.content.customer
+      ? (typedItem.content.customer as StoryblokStory<CustomerStoryblok>)
+      : undefined;
+    const industryId = typedCustomer ? (typedCustomer.content.industry as string) : '';
 
     const industry = $industries.find(
-      (industry: IndustryStoryblok) => industry.uuid === industryId
+      (industry: ISbStoryData<IndustryStoryblok>) => industry.uuid === industryId
     ) as unknown as IndustryStoryblok;
+
+    const tags = () => {
+      switch (typedItem.content.component as string) {
+        case 'blog-post':
+          return [typedItem.content.category];
+        case 'tutorial':
+          return typedItem.content.technology;
+        case 'customer-story':
+          return [industry.content.short_name];
+        default:
+          return undefined;
+      }
+    };
 
     return {
       title: typedItem.name,
       image: typedItem.content.cover?.filename !== '' ? typedItem.content.cover : undefined,
-      tags: industry?.content.short_name ? [industry.content.short_name] : undefined,
+      tags: tags(),
       link: typedItem.full_slug,
-      customer: typedCustomer.content,
-      author: typedCustomer.name,
+      customer: typedCustomer ? typedCustomer.content.name : undefined,
+      author: typedItem.content.author
+        ? (typedItem.content.author as StoryblokStory<AuthorStoryblok>).name
+        : undefined,
       date: formatDate(typedItem.content.date)
     };
   };
