@@ -1,13 +1,15 @@
 <script lang="ts">
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  import type { AuthorStoryblok, TutorialStoryblok } from '$types/bloks';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
-  import type { AuthorStoryblok, TutorialStoryblok } from '$types/bloks';
   import { getImageAttributes } from '$lib/storyblok';
   import Hero from '$components/tutorial/hero.svelte';
+
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+
+  import RelatedStoriesSection from './related-stories-section.svelte';
 
   export let block: TutorialStoryblok;
 
@@ -58,4 +60,8 @@
       </div>
     {/if}
   </section>
+
+  {#if block.content.related && block.content.related.length > 0}
+    <RelatedStoriesSection block={block.content.related[0]} />
+  {/if}
 {/if}
