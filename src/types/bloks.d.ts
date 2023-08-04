@@ -57,6 +57,17 @@ export interface BlogPostStoryblok {
   body: RichtextStoryblok;
   related: RelatedStoriesSectionStoryblok[];
   is_old_post?: boolean;
+  category:
+    | ''
+    | 'explorer'
+    | 'video'
+    | 'webinar'
+    | 'how-to-guide'
+    | 'chat'
+    | 'calling'
+    | 'insights'
+    | 'industry'
+    | 'best-practices';
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -247,6 +258,7 @@ export interface FeaturedStorySectionStoryblok {
   featured_story:
     | StoryblokStory<BlogPostStoryblok>
     | StoryblokStory<CustomerStoryStoryblok>
+    | StoryblokStory<TutorialStoryblok>
     | string;
   button_label: string;
   _uid: string;
@@ -472,6 +484,7 @@ export interface IndustryStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -577,6 +590,7 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -653,7 +667,12 @@ export interface ProductDisplayItemStoryblok {
 
 export interface RelatedStoriesSectionStoryblok {
   header: TitleStoryblok[];
-  items: (StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok> | string)[];
+  items: (
+    | StoryblokStory<BlogPostStoryblok>
+    | StoryblokStory<CustomerStoryStoryblok>
+    | StoryblokStory<TutorialStoryblok>
+    | string
+  )[];
   _uid: string;
   component: 'related-stories-section';
   [k: string]: any;
@@ -713,6 +732,17 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SolutionsHeroStoryblok {
+  solution_type: StoryblokStory<IndustryStoryblok> | string;
+  title: string;
+  description: string;
+  links: ButtonLinkStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'solutions-hero';
+  [k: string]: any;
+}
+
 export interface SolutionsSectionStoryblok {
   title: TitleStoryblok[];
   industries: (StoryblokStory<IndustryStoryblok> | string)[];
@@ -755,6 +785,7 @@ export interface SyncedBlockContentStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -822,6 +853,7 @@ export interface TechnologyStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -970,11 +1002,24 @@ export interface TopnavTechnologiesPanelStoryblok {
 }
 
 export interface TutorialStoryblok {
+  technology: (
+    | ''
+    | 'react-ui-kit'
+    | 'angular-ui-kit'
+    | 'vue-ui-kit'
+    | 'android-java-ui-kit'
+    | 'android-sdk'
+    | 'ios-sdk'
+    | 'android-kotlin-ui-kit'
+  )[];
+  tutorial_type: '' | 'video' | 'text';
+  industries?: (number | string)[];
+  integration_tool: '' | 'sdk' | 'ui-kits' | 'widget';
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  body: RichtextStoryblok;
   is_old_post?: boolean;
+  body: RichtextStoryblok;
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
