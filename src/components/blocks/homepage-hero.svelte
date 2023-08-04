@@ -101,9 +101,7 @@
       </div>
       {#if block.illustration}
         {@const { src, alt, width, height } = getImageAttributes(block.illustration)}
-        <div class="mx-auto flex w-full justify-center px-container">
-          <img class="isolate z-10 min-w-[550px]" {src} {alt} {width} {height} />
-        </div>
+        <img class="isolate z-10 mx-auto w-full max-w-[796px]" {src} {alt} {width} {height} />
       {/if}
     </div>
   </section>

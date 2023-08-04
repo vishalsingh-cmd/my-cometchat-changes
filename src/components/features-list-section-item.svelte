@@ -39,7 +39,7 @@
     {/if}
     {#if contentItem.illustration}
       {@const { src, alt, width, height } = getImageAttributes(contentItem.illustration)}
-      <img {src} {alt} {width} {height} />
+      <img {src} {alt} {width} {height} class="w-full max-w-[480px]" />
     {/if}
   {/each}
 {/if}

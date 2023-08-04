@@ -35,7 +35,7 @@
           size: [1700, 0]
         })}
         <img
-          class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[320px] md:max-w-none"
+          class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[320px] md:max-w-[1500px]"
           {src}
           {alt}
           {width}

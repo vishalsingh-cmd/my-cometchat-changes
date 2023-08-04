@@ -115,7 +115,7 @@
         <GhostButton as="a" variant="highlighted" href={sanitizeSlug(selectedIndustry.full_slug)}>
           Learn more
         </GhostButton>
-        <div class="mt-10 flex w-full justify-center">
+        <div class="mt-10 flex w-full max-w-[1440px] justify-center">
           <img {src} {alt} {width} {height} />
         </div>
       {/if}
@@ -190,7 +190,7 @@
             industries[selectedIndustryIndex].content.cover_image,
             { size: [0, 560] }
           )}
-          <div class="mt-16 flex w-full justify-center">
+          <div class="mt-16 flex w-full max-w-[1440px] justify-center">
             <img {src} {alt} {width} {height} />
           </div>
         {/if}
