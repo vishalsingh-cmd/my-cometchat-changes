@@ -145,7 +145,7 @@
           });
         }}
         class={cn(
-          'relative flex min-w-fit items-center p-4 text-md font-semibold md:px-5',
+          'relative flex min-w-fit items-center p-5 text-md font-semibold',
           i === selectedLanguageIndex ? 'text-gray-12' : 'text-gray-12/60',
           'border-b border-solid hover:text-gray-12/100',
           i === selectedLanguageIndex
