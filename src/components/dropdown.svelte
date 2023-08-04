@@ -72,7 +72,7 @@
   </button>
   {#if isOpen}
     <div
-      class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-solid border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
+      class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
       use:clickOutside={() => {
         toggle();
       }}
@@ -87,7 +87,7 @@
             });
           }}
         >
-          <span class="flex items-center gap-2.5 font-semibold tracking-wide">
+          <span class="flex items-center gap-2.5 text-md font-semibold tracking-wide text-gray-12">
             <CometIllustration
               class="inline-block scale-[1.4]"
               illustration={option.cometIllustration ?? 'community'}
