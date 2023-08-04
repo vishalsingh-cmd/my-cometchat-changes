@@ -227,7 +227,7 @@
           {/each}
         </div>
         <!-- Mobile button -->
-        <div class="ml- block lg:hidden">
+        <div class="block lg:hidden">
           <Button variant="secondary" on:click={() => (expanded = !expanded)}>
             <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} class="opacity-80" />
           </Button>

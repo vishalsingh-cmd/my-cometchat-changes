@@ -1,13 +1,13 @@
 <script>
   import { cn } from '$lib/utils';
   import { cva } from 'class-variance-authority';
-  const ellipse = cva(['absolute', 'origin-center', 'transform', 'rotate-[-12deg]']);
+  const ellipse = cva(['absolute']);
 </script>
 
 <div
   class={cn(
     ellipse(),
-    '-bottom-[20px] -left-[30px] h-[250px] w-[100px] bg-gray-1 blur-[20px] md:-left-[350px] md:h-[600px] md:w-[523px] md:blur-[58px] 2xl:w-[1000px]'
+    '] -bottom-[20px] -left-[30px] h-[250px] w-[100px] bg-gray-1 md:-left-[350px] md:h-[600px] md:w-[523px] md:blur-[58px] 2xl:w-[1000px]'
   )}
   style="transform: translate3d(0, 0, 0)"
 />

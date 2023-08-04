@@ -18,7 +18,7 @@
   };
 
   const reactionEmojiStyle =
-    'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-gray-3 light:bg-gray-1 text-xl reaction-box-shadow ';
+    'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-gray-3 light:bg-gray-1 text-xl shadow-[0px_0px_0px_0px_rgba(37,37,47,0.02),0px_2px_6px_0px_rgba(37,37,47,0.02),0px_6px_8px_0px_rgba(37,37,47,0.02),0px_14px_10px_0px_rgba(37,37,47,0.02),0px_24px_10px_0px_rgba(37,37,47,0),0px_38px_11px_0px_rgba(37,37,47,0)]';
 
   const reactions: Reaction[] = [
     {

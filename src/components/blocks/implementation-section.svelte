@@ -53,9 +53,7 @@
               item={parseItem(item)}
               class={cn(
                 'py-10 md:border-b md:border-r-0 md:py-container md:pb-container md:pl-container md:pr-container md:pt-container lg:p-[64px]',
-                {
-                  'pb-[151px] md:border-b-0 md:pb-[220px]': i === 1
-                }
+                i === 1 && 'pb-[151px] md:border-b-0 md:pb-[220px]'
               )}
             />
             {#if i === 1}

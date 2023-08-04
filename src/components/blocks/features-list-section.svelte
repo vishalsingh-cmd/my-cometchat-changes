@@ -58,7 +58,7 @@
 
           <!-- Mobile and Desktop -->
           <div
-            class="flex flex-col gap-px border border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
+            class="flex flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
           >
             {#each item.items as subItem, i}
               {@const positioningFor4Items = [

@@ -4,16 +4,13 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import Button from '$components/buttons/button.svelte';
-  import Stars from '$components/pre-footer/assets/stars.svg';
-  import Ellipse from '$components/pre-footer/assets/ellipse.svg';
-  import BigComet from '$components/pre-footer/assets/big-comet.svg';
-  import SmallComet from '$components/pre-footer/assets/small-comet.svg';
+  import Background from '$components/pre-footer/background.svelte';
 
   export let block: PreFooterStoryblok;
 </script>
 
 {#if block}
-  <section data-theme="dark" class="overflow-hidden" use:storyblokEditable={block}>
+  <section data-theme="dark" class="isolate overflow-hidden" use:storyblokEditable={block}>
     <div class="container relative mx-auto bg-gray-1 px-container">
       <div class="flex flex-col items-start justify-center pb-20 pt-24 sm:items-center xl:py-36">
         <div class="flex flex-col items-start sm:items-center">
@@ -34,18 +31,7 @@
         {/if}
       </div>
 
-      <img alt="" src={Stars} class="absolute inset-2 z-10" />
-      <img alt="" src={Ellipse} class="absolute top-0 w-full" />
-      <img
-        alt=""
-        src={BigComet}
-        class="absolute -left-[100px] -top-[120px] h-[250px] w-[250px] lg:-left-[200px] lg:-top-[200px] lg:h-[550px] lg:w-[550px]"
-      />
-      <img
-        alt=""
-        src={SmallComet}
-        class="absolute -bottom-36 -right-[200px] z-10 h-[420px] w-[420px] lg:-bottom-32 lg:-right-[100px] lg:h-[500px] lg:w-[500px]"
-      />
+      <Background />
     </div>
   </section>
 {/if}

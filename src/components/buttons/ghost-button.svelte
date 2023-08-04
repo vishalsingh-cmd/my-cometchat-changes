@@ -18,11 +18,12 @@
       'disabled:pointer-events-none',
       'disabled:opacity-40',
 
-      'outline-none',
-      'outline-brand-7/0',
-      'rounded-[4px]',
+      'rounded',
 
-      'focus-within:outline-1',
+      'outline-none',
+      'outline-1',
+      'outline-brand-7/0',
+
       'focus-within:outline-brand-7/100'
     ],
     {

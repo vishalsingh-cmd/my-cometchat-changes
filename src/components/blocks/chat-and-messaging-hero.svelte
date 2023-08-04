@@ -10,7 +10,7 @@
   import Stars from '$components/stars.svelte';
 
   import HeroHeader from './hero-header.svelte';
-  import AssetGradients from '$components/chat-and-messaging/hero/asset-gradients.svelte';
+  import Background from '$components/chat-and-messaging/hero/background.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
 </script>
@@ -46,6 +46,6 @@
         <HeroHeader block={block.header[0]} variant="secondary" />
       </div>
     </div>
-    <AssetGradients />
+    <Background />
   </section>
 {/if}
