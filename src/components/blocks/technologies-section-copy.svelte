@@ -44,6 +44,7 @@
                 'rounded',
                 'text-gray-12',
                 '[&>i]:opacity-74',
+                '[&>i]:hover:opacity-100',
                 'text-sm',
                 'leading-normal',
                 'tracking-widest',

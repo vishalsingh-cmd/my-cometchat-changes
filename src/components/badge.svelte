@@ -8,8 +8,8 @@
   const badge = cva(
     [
       'inline-flex',
-      'text-semibold tracking-wide text-brand-10',
-      'border-[1.4px] light:border-brand-10/[0.16] dark:border-brand-10/[0.16]'
+      'font-semibold tracking-wide text-brand-10',
+      'border-[1.4px] border-brand-10/[0.16] '
     ],
     {
       variants: {
