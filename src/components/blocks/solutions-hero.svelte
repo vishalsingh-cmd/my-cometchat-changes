@@ -15,8 +15,6 @@
 
   export let block: SolutionsHeroStoryblok;
 
-  console.log(block);
-
   const parseItem = (item: string | StoryblokStory<IndustryStoryblok>) => {
     const typedItem = item as StoryblokStory<IndustryStoryblok>;
 
