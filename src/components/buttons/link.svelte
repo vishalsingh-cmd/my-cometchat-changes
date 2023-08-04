@@ -24,12 +24,13 @@
       variants: {
         variant: {
           primary: `
-              text-gray-12/[0.83]
+              text-gray-12/[0.84]
               hover:text-brand-9
               active:text-brand-10
             `,
           secondary: `
-              text-gray-12
+              text-gray-12/[0.84]
+              hover:text-gray-12/100
             `
         }
       }
