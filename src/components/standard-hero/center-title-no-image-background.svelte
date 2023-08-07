@@ -4,21 +4,20 @@
 
   import Stars from '$components/stars.svelte';
 
-  import Ellipses from './components/ellipses.svelte';
-  import Noise1 from './components/noise-1.svelte';
+  import Ellipses1 from './components/ellipses1.svelte';
+  import Noise1 from './components/noise1.svelte';
+  import StarsComponent from './components/stars.svelte';
   import Vignette from './components/vignette.svelte';
 </script>
 
-<div class="absolute -top-[68px] left-[25px] h-[1389px] w-[1389px]">
-  <Stars amount={40} backgroundColours={['bg-brand-7', 'bg-brand-9', 'bg-orange-8']} />
-</div>
+<StarsComponent />
 <div class="absolute -right-[400px] top-[171px] h-[1386px] w-[803px] origin-center -rotate-[30deg]">
   <Stars amount={40} backgroundColours={['bg-gray-1']} />
 </div>
 
 <Noise1 />
 
-<Ellipses />
+<Ellipses1 />
 
 <img src={Background1} alt="" class="absolute left-[52px] top-[71px] w-full" />
 

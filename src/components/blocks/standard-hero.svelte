@@ -7,9 +7,10 @@
 
   import Button from '$components/buttons/button.svelte';
 
-  import CenterTitleNoImageBackground from '$components/standard-hero/center-title-no-image-background.svelte';
-  import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
   import CenterTitleImageBackground from '$components/standard-hero/center-title-image-background.svelte';
+  import CenterTitleNoImageBackground from '$components/standard-hero/center-title-no-image-background.svelte';
+  import LeftTitleImageBackground from '$components/standard-hero/left-title-image-background.svelte';
+  import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
 
   export let block: StandardHeroStoryblok;
 </script>
@@ -86,6 +87,8 @@
         <div
           class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-[1440px] bg-gradient-to-t from-gray-1/100 to-gray-1/0"
         />
+      {:else if block.image && block.image.filename !== '' && block.header_alignment === 'left'}
+        <LeftTitleImageBackground />
       {/if}
     </div>
   </section>
