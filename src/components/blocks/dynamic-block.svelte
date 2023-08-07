@@ -30,6 +30,7 @@
   import SocialProofs from './social-proofs.svelte';
   import SolutionsHero from './solutions-hero.svelte';
   import SolutionsSection from './solutions-section.svelte';
+  import StandardHero from './standard-hero.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
@@ -67,6 +68,7 @@
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,
     'solutions-section': SolutionsSection,
+    'standard-hero': StandardHero,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
