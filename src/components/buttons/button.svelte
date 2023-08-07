@@ -27,8 +27,7 @@
       outline-none
       focus-visible:ring-4
       focus-visible:shadow-focus
-      active:shadow-focus
-  
+      
       transition
 
       disabled:pointer-events-none
@@ -41,8 +40,7 @@
           primary: `
               bg-brand-9
               ring-brand-9/30
-              text-brand-12
-              light:text-brand-1
+              text-[#FCFCFE]
 
               active:bg-brand-10
             `,
@@ -56,6 +54,7 @@
               border-gray-12/10
               hover:border-brand-9/30
               active:border-brand-9/60
+              active:shadow-focus
               focus-visible:border-brand-9/30
               focus-visible:ring-brand-9/30
             `

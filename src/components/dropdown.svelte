@@ -26,20 +26,32 @@
 <div class="relative isolate z-10">
   <button
     class={cn(
-      'px-3',
-      'flex items-center gap-2',
+      'flex items-center',
       'h-[38px] w-fit',
-      'rounded-full',
-      'border border-solid border-brand-11/20',
+      'gap-2',
+      'px-3',
+
       'text-brand-12',
+
+      'border',
+      'border-brand-12/10',
+      'rounded-full',
       'outline-none',
-      'ring-brand-9/20',
+
+      'hover:border-brand-9/30',
+
+      'focus-within:border-brand-9/40',
+
+      'focus-visible:ring-4',
+      'ring-brand-9/30',
+
+      'active:border-brand-7',
+      'active:border-brand-9/60',
+
+      'disabled:opacity-60',
+      'disabled:pointer-events-none',
+
       'transition-all ease-smooth',
-      'focus-within:border-brand-7 focus-within:shadow-focus',
-      'hover:border-brand-9/50',
-      'focus-visible:border-brand-9/50 focus-visible:shadow-focus focus-visible:ring-4',
-      'active:border-brand-7 active:border-brand-9/80 active:shadow-focus ',
-      'disabled:pointer-events-none disabled:opacity-60',
       !options[selectedOption].cometIllustration && 'pl-4'
     )}
     on:click={toggle}
@@ -53,19 +65,14 @@
         size="sm"
       />
     {/if}
-    <span class="text-md font-semibold leading-tight tracking-wide text-gray-12">
+    <span class="text-md font-semibold leading-tight tracking-wide">
       {options[selectedOption].label}
     </span>
-    <Icon
-      class="text-gray-12 opacity-74 light:text-gray-11"
-      size="xs"
-      icon={isOpen ? 'chevron-up' : 'chevron-down'}
-    />
+    <Icon class="opacity-74" size="xs" icon={isOpen ? 'chevron-up' : 'chevron-down'} />
   </button>
   {#if isOpen}
     <div
-      class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-solid border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
-      style="transform: translate3d(0, 0, 0);"
+      class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
       use:clickOutside={() => {
         toggle();
       }}
@@ -80,7 +87,7 @@
             });
           }}
         >
-          <span class="flex items-center gap-2.5 font-semibold tracking-wide">
+          <span class="flex items-center gap-2.5 text-md font-semibold tracking-wide text-gray-12">
             <CometIllustration
               class="inline-block scale-[1.4]"
               illustration={option.cometIllustration ?? 'community'}
