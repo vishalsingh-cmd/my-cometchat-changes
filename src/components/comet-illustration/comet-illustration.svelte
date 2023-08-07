@@ -35,7 +35,7 @@
   import { cva, type VariantProps } from 'class-variance-authority';
   import { cn } from '$lib/utils';
 
-  export const illustrationStyle = cva(['inline-block scale-[1.4]'], {
+  export const illustrationStyle = cva(['inline-block scale-[2]'], {
     variants: {
       size: {
         sm: ['h-5', 'w-5'],
