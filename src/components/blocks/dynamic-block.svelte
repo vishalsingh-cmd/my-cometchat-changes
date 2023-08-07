@@ -28,6 +28,7 @@
   import RelatedStoriesSection from './related-stories-section.svelte';
   import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
+  import SolutionsHero from './solutions-hero.svelte';
   import SolutionsSection from './solutions-section.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
@@ -64,6 +65,7 @@
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'social-proofs': SocialProofs,
+    'solutions-hero': SolutionsHero,
     'solutions-section': SolutionsSection,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,

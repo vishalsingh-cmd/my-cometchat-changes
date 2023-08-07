@@ -29,7 +29,8 @@ export const load = async ({ cookies, fetch, params }) => {
     'synced-block.synced_block',
     'technologies-section.technologies',
     'related-stories-section.items',
-    'customer-story.author'
+    'customer-story.author',
+    'solutions-hero.solution_type'
   ];
 
   try {
