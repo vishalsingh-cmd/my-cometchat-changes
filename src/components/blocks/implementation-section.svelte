@@ -46,7 +46,7 @@
           <ColourPicker />
         </div>
       </div>
-      <div class="relative">
+      <div class="relative overflow-hidden">
         {#if rightSidedItems.length > 0}
           {#each rightSidedItems as item, i}
             <Panel
@@ -58,7 +58,7 @@
             />
             {#if i === 1}
               <div
-                class="absolute bottom-[-140px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:bottom-[-175px] md:right-[-200px] md:h-[338px] md:w-[1739px]"
+                class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:bottom-[-130px] md:right-[-150px] md:h-[338px] md:w-[1739px]"
               >
                 <img src={Illustration} alt="" />
               </div>
