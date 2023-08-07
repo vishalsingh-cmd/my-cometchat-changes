@@ -21,10 +21,12 @@
       'h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
       block.image &&
         block.image.filename !== '' &&
+        block.image.filename !== null &&
         block.header_alignment === 'left' &&
         'h-[707px] md:h-[1148px]',
       block.image &&
         block.image.filename !== '' &&
+        block.image.filename !== null &&
         block.header_alignment === 'center' &&
         'h-[584px] md:h-[1116px]'
     )}
@@ -62,32 +64,32 @@
         {/if}
       </div>
 
-      {#if block.image}
+      {#if block.image && block.image.filename !== '' && block.image.filename !== null}
         {@const { width, height, src, alt } = getImageAttributes(block.image)}
-        <img
-          {src}
-          {height}
-          {alt}
-          {width}
+        <div
           class={cn(
             'absolute isolate z-10 w-full',
-            block.header_alignment === 'left' && '-bottom-[200px] -left-[200px] max-w-[1500px]',
-            block.header_alignment === 'center' && '-bottom-[100px] max-w-[1100px]'
+            block.header_alignment === 'left' &&
+              '-bottom-[90px] -left-[200px] w-[600px] max-w-[1300px] md:-bottom-[200px] md:-left-[400px] md:w-[1500px] lg:-left-[200px] lg:w-full',
+            block.header_alignment === 'center' &&
+              'bottom-5 w-[300px] max-w-[1100px] md:-bottom-[100px] md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
-        />
+        >
+          <img {src} {height} {alt} {width} />
+        </div>
       {/if}
 
       <!-- Backgrounds -->
-      {#if (block.image === undefined || block.image.filename === '') && block.header_alignment === 'center'}
+      {#if (block.image === undefined || block.image.filename === '' || block.image.filename === null) && block.header_alignment === 'center'}
         <CenterTitleNoImageBackground />
-      {:else if (block.image === undefined || block.image.filename === '') && block.header_alignment === 'left'}
+      {:else if (block.image === undefined || (block.image.filename === '' && block.image.filename === null)) && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
-      {:else if block.image && block.image.filename !== '' && block.header_alignment === 'center'}
+      {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
         <CenterTitleImageBackground />
         <div
           class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-[1440px] bg-gradient-to-t from-gray-1/100 to-gray-1/0"
         />
-      {:else if block.image && block.image.filename !== '' && block.header_alignment === 'left'}
+      {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left'}
         <LeftTitleImageBackground />
       {/if}
     </div>
