@@ -1,6 +1,6 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   import type { StandardHeroStoryblok } from '$types/bloks';
@@ -59,6 +59,21 @@
           </div>
         {/if}
       </div>
+
+      {#if block.image}
+        {@const { width, height, src, alt } = getImageAttributes(block.image)}
+        <img
+          {src}
+          {height}
+          {alt}
+          {width}
+          class={cn(
+            'absolute w-full',
+            block.header_alignment === 'left' && '-bottom-[200px] -left-[200px] max-w-[1500px]',
+            block.header_alignment === 'center' && '-bottom-[100px] max-w-[1100px]'
+          )}
+        />
+      {/if}
 
       <!-- Backgrounds -->
       {#if (block.image === undefined || block.image.filename === '') && block.header_alignment === 'center'}
