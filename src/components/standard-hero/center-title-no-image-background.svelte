@@ -5,7 +5,7 @@
   import Stars from '$components/stars.svelte';
 
   import Ellipses from './components/ellipses.svelte';
-  import Noise from './components/noise.svelte';
+  import Noise1 from './components/noise-1.svelte';
   import Vignette from './components/vignette.svelte';
 </script>
 
@@ -16,7 +16,7 @@
   <Stars amount={40} backgroundColours={['bg-gray-1']} />
 </div>
 
-<Noise />
+<Noise1 />
 
 <Ellipses />
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import Ellipses from './components/ellipses.svelte';
-  import Noise from './components/noise.svelte';
+  import Noise1 from './components/noise-1.svelte';
   import Vignette from './components/vignette.svelte';
 
   import Background1 from './assets/left-title-no-image/background-1.svg';
@@ -9,7 +9,7 @@
   import Stars from '$components/stars.svelte';
 </script>
 
-<Noise />
+<Noise1 />
 <Ellipses />
 <img src={Background1} alt="" class="absolute left-[52px] top-[127px] w-full" />
 <Vignette />

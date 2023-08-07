@@ -9,6 +9,7 @@
 
   import CenterTitleNoImageBackground from '$components/standard-hero/center-title-no-image-background.svelte';
   import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
+  import CenterTitleImageBackground from '$components/standard-hero/center-title-image-background.svelte';
 
   export let block: StandardHeroStoryblok;
 </script>
@@ -68,7 +69,7 @@
           {alt}
           {width}
           class={cn(
-            'absolute w-full',
+            'absolute isolate z-10 w-full',
             block.header_alignment === 'left' && '-bottom-[200px] -left-[200px] max-w-[1500px]',
             block.header_alignment === 'center' && '-bottom-[100px] max-w-[1100px]'
           )}
@@ -80,6 +81,11 @@
         <CenterTitleNoImageBackground />
       {:else if (block.image === undefined || block.image.filename === '') && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
+      {:else if block.image && block.image.filename !== '' && block.header_alignment === 'center'}
+        <CenterTitleImageBackground />
+        <div
+          class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-[1440px] bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+        />
       {/if}
     </div>
   </section>
