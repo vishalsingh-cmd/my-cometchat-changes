@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-02T15:28:42.292Z",
+      "updated_at": "2023-08-03T12:49:38.201Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -166,7 +166,7 @@
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover", "author", "is_old_post"],
+          "keys": ["cover", "author", "is_old_post", "category"],
           "pos": 5,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
@@ -189,6 +189,58 @@
         },
         "is_old_post": {
           "type": "boolean"
+        },
+        "category": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "a752e8c8-e6fe-4b42-a29d-c96887519e6d",
+              "name": "Explorer",
+              "value": "explorer"
+            },
+            {
+              "_uid": "cbd103bc-2063-4563-b8b9-f96d84520c18",
+              "value": "video",
+              "name": "Video"
+            },
+            {
+              "_uid": "214f049c-6821-4f4e-835a-e49b6b405d61",
+              "value": "webinar",
+              "name": "Webinar"
+            },
+            {
+              "_uid": "2f0c2787-d4ef-466f-a602-068be6ff2f8c",
+              "value": "how-to-guide",
+              "name": "How-to Guide"
+            },
+            {
+              "_uid": "2792004e-20a5-481f-950b-66861864649e",
+              "value": "chat",
+              "name": "Chat"
+            },
+            {
+              "_uid": "64288e7e-d2f6-451c-8f9a-c2ef572c010e",
+              "value": "calling",
+              "name": "Calling"
+            },
+            {
+              "_uid": "b209d348-0e8d-482e-b4e5-5a10a0eb61dc",
+              "value": "insights",
+              "name": "Insights"
+            },
+            {
+              "_uid": "bd263797-3ba8-4aa1-809a-7af36362896c",
+              "value": "industry",
+              "name": "Industry"
+            },
+            {
+              "_uid": "6ea3835c-4ab6-4202-9469-00b115845eb5",
+              "value": "best-practices",
+              "name": "Best practices"
+            }
+          ]
         }
       },
       "image": null,
@@ -845,7 +897,7 @@
       "name": "featured-story-section",
       "display_name": null,
       "created_at": "2023-07-18T10:52:42.228Z",
-      "updated_at": "2023-07-27T09:18:19.054Z",
+      "updated_at": "2023-08-03T12:33:12.150Z",
       "id": 4290989,
       "schema": {
         "theme": {
@@ -871,7 +923,7 @@
           "use_uuid": true,
           "required": true,
           "source": "internal_stories",
-          "filter_content_type": ["blog-post", "customer-story"]
+          "filter_content_type": ["blog-post", "customer-story", "tutorial"]
         },
         "button_label": {
           "type": "text",
@@ -2065,9 +2117,9 @@
     },
     {
       "name": "newsletter-section",
-      "display_name": null,
+      "display_name": "Newsletter Section (only 1 per page)",
       "created_at": "2023-08-03T08:03:07.340Z",
-      "updated_at": "2023-08-03T08:04:33.184Z",
+      "updated_at": "2023-08-04T10:39:30.685Z",
       "id": 4371223,
       "schema": {
         "label": {
@@ -2092,7 +2144,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "newsletter-section",
+      "real_name": "Newsletter Section (only 1 per page)",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -2399,7 +2451,7 @@
       "name": "related-stories-section",
       "display_name": null,
       "created_at": "2023-07-26T21:35:25.375Z",
-      "updated_at": "2023-07-27T09:15:35.114Z",
+      "updated_at": "2023-08-03T12:34:13.851Z",
       "id": 4333668,
       "schema": {
         "header": {
@@ -2417,7 +2469,7 @@
           "required": true,
           "source": "internal_stories",
           "max_options": "3",
-          "filter_content_type": ["blog-post", "customer-story"]
+          "filter_content_type": ["blog-post", "customer-story", "tutorial"]
         }
       },
       "image": "//a.storyblok.com/f/231922/x/2bbe01230a/device-desktop-type-customer-stories-theme-dark.png",
@@ -2646,6 +2698,54 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "social-proofs",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "solutions-hero",
+      "display_name": null,
+      "created_at": "2023-08-04T14:47:06.909Z",
+      "updated_at": "2023-08-04T14:51:32.016Z",
+      "id": 4380957,
+      "schema": {
+        "solution_type": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["industry"]
+        },
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "links": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "maximum": 2
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "solutions-hero",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -3602,14 +3702,104 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-02T15:28:28.207Z",
+      "updated_at": "2023-08-03T12:55:22.896Z",
       "id": 4303307,
       "schema": {
+        "technology": {
+          "type": "options",
+          "key": "categories",
+          "pos": 0,
+          "required": true,
+          "options": [
+            {
+              "_uid": "ac302604-c67a-48f6-81db-a83b1f10add6",
+              "name": "React UI Kit",
+              "value": "react-ui-kit"
+            },
+            {
+              "_uid": "b7345b0d-47e3-492e-b1d3-9b0f0f7015c3",
+              "value": "angular-ui-kit",
+              "name": "Angular UI Kit"
+            },
+            {
+              "_uid": "512696f4-45e7-4312-942b-5fcd7d99ef0b",
+              "value": "vue-ui-kit",
+              "name": "Vue UI Kit"
+            },
+            {
+              "_uid": "8131097d-12af-4dd5-b1c5-847dc52b5865",
+              "value": "android-java-ui-kit",
+              "name": "Android Java UI Kit"
+            },
+            {
+              "_uid": "8a1dd9f1-4987-4932-833c-657faef5dd35",
+              "value": "android-sdk",
+              "name": "Android SDK"
+            },
+            {
+              "_uid": "d1cfa084-57ed-498c-9e00-b94b4fea0a1b",
+              "value": "ios-sdk",
+              "name": "iOS SDK"
+            },
+            {
+              "_uid": "0f1426ff-dff0-47c3-821b-4444e08034bd",
+              "value": "android-kotlin-ui-kit",
+              "name": "Android Kotlin UI Kit"
+            }
+          ]
+        },
+        "tutorial_type": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "required": true,
+          "options": [
+            {
+              "_uid": "51e13e7e-04de-48b9-81cc-37fe523876d7",
+              "name": "Video",
+              "value": "video"
+            },
+            {
+              "_uid": "b08aa0b4-aa8d-4d71-8c56-0a213d5d95b5",
+              "value": "text",
+              "name": "Text"
+            }
+          ]
+        },
+        "industries": {
+          "type": "options",
+          "pos": 2,
+          "source": "internal",
+          "datasource_slug": "industries"
+        },
+        "integration_tool": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 3,
+          "required": true,
+          "options": [
+            {
+              "_uid": "6674cdfc-15d4-49ca-b4cc-1892e38d1dc5",
+              "name": "SDK",
+              "value": "sdk"
+            },
+            {
+              "_uid": "d6bc3aed-194d-45cd-a5a9-234626d163c1",
+              "value": "ui-kits",
+              "name": "UI Kits"
+            },
+            {
+              "_uid": "ad7bd8b7-0eea-4f2b-9554-6ed1875ef337",
+              "value": "widget",
+              "name": "Widget"
+            }
+          ]
+        },
         "cover": {
           "type": "asset",
           "required": true,
           "key": "cover",
-          "pos": 0
+          "pos": 4
         },
         "author": {
           "type": "option",
@@ -3619,18 +3809,12 @@
           "source": "internal_stories",
           "filter_content_type": ["author"],
           "key": "author",
-          "pos": 1
+          "pos": 5
         },
-        "seo": {
-          "type": "bloks",
-          "required": false,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["seo-fields"],
-          "maximum": 1,
-          "minimum": 1,
-          "key": "fields",
-          "pos": 2
+        "is_old_post": {
+          "type": "boolean",
+          "key": "is_old_post",
+          "pos": 6
         },
         "body": {
           "type": "richtext",
@@ -3660,24 +3844,41 @@
             "gist"
           ],
           "key": "body",
-          "pos": 3
+          "pos": 7
+        },
+        "seo": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "maximum": 1,
+          "minimum": 1,
+          "key": "seo",
+          "pos": 8
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
-          "keys": ["cover", "author", "is_old_post"],
-          "pos": 5,
+          "keys": [
+            "cover",
+            "author",
+            "is_old_post",
+            "categories",
+            "technology",
+            "tutorial_type",
+            "industries",
+            "integration_tool"
+          ],
+          "pos": 9,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
           "keys": ["fields", "seo"],
-          "pos": 6,
+          "pos": 10,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
-        },
-        "is_old_post": {
-          "type": "boolean"
         }
       },
       "image": null,
