@@ -486,9 +486,11 @@ export interface IndustryStoryblok {
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -592,9 +594,11 @@ export interface PageStoryblok {
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -752,6 +756,17 @@ export interface SolutionsSectionStoryblok {
   [k: string]: any;
 }
 
+export interface StandardHeroStoryblok {
+  title: string;
+  description: string;
+  buttons: ButtonLinkStoryblok[];
+  header_alignment: '' | 'left' | 'center';
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'standard-hero';
+  [k: string]: any;
+}
+
 export interface SyncedBlockStoryblok {
   synced_block: StoryblokStory<SyncedBlockContentStoryblok> | string;
   _uid: string;
@@ -787,9 +802,11 @@ export interface SyncedBlockContentStoryblok {
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -855,9 +872,11 @@ export interface TechnologyStoryblok {
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -904,6 +923,16 @@ export interface TitleStoryblok {
   links?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'title';
+  [k: string]: any;
+}
+
+export interface TitleImageSectionStoryblok {
+  title: TitleStoryblok[];
+  image: AssetStoryblok;
+  image_side: '' | 'left' | 'right' | 'center';
+  theme: '' | 'light' | 'dark';
+  _uid: string;
+  component: 'title-image-section';
   [k: string]: any;
 }
 

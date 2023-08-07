@@ -2793,6 +2793,69 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "standard-hero",
+      "display_name": null,
+      "created_at": "2023-08-07T12:25:34.652Z",
+      "updated_at": "2023-08-07T12:45:12.144Z",
+      "id": 4389065,
+      "schema": {
+        "title": {
+          "type": "textarea",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "textarea",
+          "pos": 1,
+          "required": true
+        },
+        "buttons": {
+          "type": "bloks",
+          "pos": 2,
+          "required": true,
+          "minimum": 1,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        },
+        "header_alignment": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "1e2a2e6d-05e5-4ad0-b00e-ce19c65dfcb9",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "8daa2c01-7555-4744-9ff4-58c42374c0fd",
+              "value": "center",
+              "name": "Center"
+            }
+          ],
+          "pos": 3
+        },
+        "image": {
+          "type": "asset",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "standard-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "synced-block",
       "display_name": null,
       "created_at": "2023-06-19T10:39:12.936Z",
@@ -3189,7 +3252,7 @@
       "name": "title",
       "display_name": null,
       "created_at": "2023-06-12T12:30:15.872Z",
-      "updated_at": "2023-07-27T12:47:28.357Z",
+      "updated_at": "2023-08-07T11:42:27.333Z",
       "id": 4111424,
       "schema": {
         "label": {
@@ -3199,13 +3262,13 @@
           "pos": 0
         },
         "title": {
-          "type": "text",
+          "type": "textarea",
           "required": true,
           "translatable": true,
           "pos": 1
         },
         "description": {
-          "type": "text",
+          "type": "textarea",
           "pos": 2
         },
         "links": {
@@ -3230,6 +3293,80 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "title-image-section",
+      "display_name": null,
+      "created_at": "2023-08-07T11:38:09.474Z",
+      "updated_at": "2023-08-07T11:41:32.903Z",
+      "id": 4388837,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "image": {
+          "type": "asset",
+          "required": true,
+          "filetypes": ["images"]
+        },
+        "image_side": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "558addb9-4af3-4272-9797-527f0a1028db",
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "_uid": "e8cdff44-1225-455b-bef2-c00191aca1bd",
+              "value": "right",
+              "name": "Right"
+            },
+            {
+              "_uid": "baf9962e-03e7-495f-af65-ccec20bcce7b",
+              "value": "center",
+              "name": "Center"
+            }
+          ]
+        },
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "8936570e-611d-4294-8746-d7a82e800d5f",
+              "name": "Light",
+              "value": "light"
+            },
+            {
+              "_uid": "b8c43800-d51a-4eef-9370-a7cd8bbfdbad",
+              "value": "dark",
+              "name": "Dark"
+            }
+          ]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title-image-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "topnav-features-panel",
