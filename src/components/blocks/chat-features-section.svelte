@@ -49,7 +49,7 @@
       <img
         src={Illustration2}
         alt=""
-        class="absolute bottom-[-80px] right-[-155px] hidden w-[210px] lg:block"
+        class="absolute bottom-[-180px] right-[-230px] hidden w-[400px] lg:block"
       />
     </div>
   </section>
