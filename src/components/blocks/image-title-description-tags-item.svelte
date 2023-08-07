@@ -7,6 +7,8 @@
 
   import Tag from '$components/tag.svelte';
 
+  let className: string | undefined = undefined;
+  export { className as class };
   export let block: ImageTitleDescriptionTagsItemStoryblok;
 
   let isIntersecting = false;
@@ -16,7 +18,8 @@
   <div
     class={cn(
       'text-lg text-gray-12 transition-all ease-smooth',
-      isIntersecting ? 'translate-x-0 opacity-100' : 'translate-x-[-200px] opacity-0'
+      isIntersecting ? 'translate-x-0 opacity-100' : 'translate-x-[-200px] opacity-0',
+      className
     )}
     use:intersectionObserver={{
       callback: ([e]) => {

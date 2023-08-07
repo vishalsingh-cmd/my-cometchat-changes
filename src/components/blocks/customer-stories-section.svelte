@@ -18,7 +18,7 @@
   };
 
   const reactionEmojiStyle =
-    'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-gray-3 light:bg-gray-1 text-xl drop-shadow-lg';
+    'z-20 flex h-14 w-14 items-center justify-center rounded-full bg-gray-3 light:bg-gray-1 text-xl shadow-[0px_0px_0px_0px_rgba(37,37,47,0.02),0px_2px_6px_0px_rgba(37,37,47,0.02),0px_6px_8px_0px_rgba(37,37,47,0.02),0px_14px_10px_0px_rgba(37,37,47,0.02),0px_24px_10px_0px_rgba(37,37,47,0),0px_38px_11px_0px_rgba(37,37,47,0)]';
 
   const reactions: Reaction[] = [
     {
@@ -54,7 +54,7 @@
 
       {#if block.title?.[0]}
         <Title
-          class="pl-0 pr-0 pt-12 lg:p-12 xl:pt-0"
+          class="pl-0 pr-0 pt-12  xl:pt-0"
           label={{ content: block.title?.[0].label, color: 'brand' }}
           description={block.title?.[0].description}
           title={block.title?.[0].title}
@@ -63,7 +63,7 @@
       {/if}
 
       {#if testimonials}
-        <div class=" relative flex w-full flex-col gap-5 pb-12 xl:max-w-2xl">
+        <div class="relative flex w-full flex-col gap-0 pb-12 xl:max-w-2xl xl:gap-5">
           <img alt="" src={Orbit} class="lg absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
@@ -95,3 +95,11 @@
     </div>
   </section>
 {/if}
+
+<style>
+  .reaction-box-shadow {
+    box-shadow: 0px 0px 0px 0px rgba(37, 37, 47, 0.02), 0px 2px 6px 0px rgba(37, 37, 47, 0.02),
+      0px 6px 8px 0px rgba(37, 37, 47, 0.02), 0px 14px 10px 0px rgba(37, 37, 47, 0.02),
+      0px 24px 10px 0px rgba(37, 37, 47, 0), 0px 38px 11px 0px rgba(37, 37, 47, 0);
+  }
+</style>

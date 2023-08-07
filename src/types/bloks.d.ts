@@ -484,6 +484,7 @@ export interface IndustryStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -589,6 +590,7 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -730,6 +732,17 @@ export interface SocialProofsStoryblok {
   [k: string]: any;
 }
 
+export interface SolutionsHeroStoryblok {
+  solution_type: StoryblokStory<IndustryStoryblok> | string;
+  title: string;
+  description: string;
+  links: ButtonLinkStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'solutions-hero';
+  [k: string]: any;
+}
+
 export interface SolutionsSectionStoryblok {
   title: TitleStoryblok[];
   industries: (StoryblokStory<IndustryStoryblok> | string)[];
@@ -772,6 +785,7 @@ export interface SyncedBlockContentStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
@@ -839,6 +853,7 @@ export interface TechnologyStoryblok {
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
     | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok

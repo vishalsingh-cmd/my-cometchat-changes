@@ -2117,9 +2117,9 @@
     },
     {
       "name": "newsletter-section",
-      "display_name": null,
+      "display_name": "Newsletter Section (only 1 per page)",
       "created_at": "2023-08-03T08:03:07.340Z",
-      "updated_at": "2023-08-03T08:04:33.184Z",
+      "updated_at": "2023-08-04T10:39:30.685Z",
       "id": 4371223,
       "schema": {
         "label": {
@@ -2144,7 +2144,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "newsletter-section",
+      "real_name": "Newsletter Section (only 1 per page)",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -2698,6 +2698,54 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "social-proofs",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "solutions-hero",
+      "display_name": null,
+      "created_at": "2023-08-04T14:47:06.909Z",
+      "updated_at": "2023-08-04T14:51:32.016Z",
+      "id": 4380957,
+      "schema": {
+        "solution_type": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["industry"]
+        },
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "links": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "maximum": 2
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "solutions-hero",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,

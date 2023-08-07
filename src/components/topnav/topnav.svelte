@@ -209,7 +209,7 @@
         {/if}
       </div>
 
-      <div class="flex items-center gap-6">
+      <div class="flex items-center gap-3">
         <div class="flex items-center gap-6">
           {#each data.call_to_actions as cta, i}
             {@const { href, target, rel } = getAnchorFromCmsLink(cta.link)}

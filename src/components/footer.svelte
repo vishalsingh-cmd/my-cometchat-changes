@@ -65,10 +65,10 @@
     <!-- main links - Desktop -->
     <div class="hidden pb-10 sm:grid sm:grid-cols-2 sm:gap-20 lg:grid-cols-3 xl:grid-cols-5">
       {#each data.columns as columnGroup}
-        <div class="flex flex-col sm:gap-20">
+        <div class="flex flex-col sm:gap-10">
           {#each columnGroup as column}
             <div class="flex-col">
-              <p class="mb-[1.125rem] text-md font-semibold tracking-wide text-brand-8">
+              <p class="mb-4 text-md font-semibold tracking-wide text-brand-8">
                 {column.title}
               </p>
               <div class="flex flex-col gap-8 sm:mt-0">

@@ -18,6 +18,8 @@
       'disabled:pointer-events-none',
       'disabled:opacity-40',
 
+      'rounded',
+
       'outline-none',
       'outline-1',
       'outline-brand-7/0',
