@@ -10,12 +10,13 @@
   import Stars from '$components/stars.svelte';
 
   import HeroHeader from './hero-header.svelte';
+  import Background from '$components/chat-and-messaging/hero/background.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="overflow-hidden px-container">
+  <section use:storyblokEditable={block} class="relative overflow-hidden px-container">
     <div
       class="container relative mx-auto overflow-x-visible pb-[374px] pt-[100px] md:pb-[700px] md:pt-[148px]"
     >
@@ -45,5 +46,6 @@
         <HeroHeader block={block.header[0]} variant="secondary" />
       </div>
     </div>
+    <Background />
   </section>
 {/if}

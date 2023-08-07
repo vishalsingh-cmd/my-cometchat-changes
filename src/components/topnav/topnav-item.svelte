@@ -75,7 +75,7 @@
       <Icon
         size={size === 'big' ? 'lg' : 'xs'}
         icon="link-external-02"
-        class={cn('hidden', !comingSoon && 'group-hover:block')}
+        class={cn('hidden [@media(hover:none)]:block', !comingSoon && 'group-hover:block')}
       />
     {/if}
   </div>

@@ -44,7 +44,9 @@
           {@const lastTwoItems = item.items.slice(2, 4)}
           {@const subArrays = [firstTwoItems, lastTwoItems]}
           <!-- Tablet -->
-          <div class="hidden flex-row shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:flex lg:hidden">
+          <div
+            class="hidden flex-row border border-t-0 border-b-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:flex lg:hidden"
+          >
             {#each subArrays as array, i}
               <div class={cn('flex-1', i === 0 && 'border-r border-r-gray-12/[0.08]')}>
                 {#each array as item, f}
@@ -56,7 +58,7 @@
 
           <!-- Mobile and Desktop -->
           <div
-            class="flex flex-col gap-px border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
+            class="flex flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
           >
             {#each item.items as subItem, i}
               {@const positioningFor4Items = [

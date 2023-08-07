@@ -54,7 +54,9 @@
     />
   </div>
   <div>
-    <p class={cn('text-4xl/none', titleClassName)}>{metric.metric}</p>
-    <p class={cn('text-lg/snug opacity-74', subtitleClassName)}>{metric.description}</p>
+    <p class={cn('text-4xl/none font-semibold', titleClassName)}>{metric.metric}</p>
+    <p class={cn('mt-2 text-lg/snug font-medium opacity-74', subtitleClassName)}>
+      {metric.description}
+    </p>
   </div>
 </div>
