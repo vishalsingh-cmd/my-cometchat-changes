@@ -5,8 +5,8 @@
 
   import type { FeaturesSectionStoryblok } from '$types/bloks';
 
-  import Tag from '$components/tag.svelte';
   import Title from '$components/title.svelte';
+  import Badge from '$components/badge.svelte';
 
   export let block: FeaturesSectionStoryblok;
 </script>
@@ -46,7 +46,7 @@
         {#if block.tags && block.tags?.length > 0}
           <div class="flex max-w-[349px] flex-wrap gap-2">
             {#each block.tags as { tag }}
-              <Tag label={tag} />
+              <Badge size="medium" label={tag} />
             {/each}
           </div>
         {/if}

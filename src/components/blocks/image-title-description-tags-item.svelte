@@ -5,7 +5,7 @@
 
   import type { ImageTitleDescriptionTagsItemStoryblok } from '$types/bloks';
 
-  import Tag from '$components/tag.svelte';
+  import Badge from '$components/badge.svelte';
 
   let className: string | undefined = undefined;
   export { className as class };
@@ -46,7 +46,7 @@
     {#if block.tags}
       <div class="mt-5 flex flex-row flex-wrap gap-2">
         {#each block.tags as tag}
-          <Tag label={tag.tag} />
+          <Badge size="medium" label={tag.tag} />
         {/each}
       </div>
     {/if}

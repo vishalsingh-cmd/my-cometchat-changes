@@ -6,7 +6,7 @@
   import type { FeaturesListSubItemStoryblok } from '$types/bloks';
 
   import Icon from './icon/icon.svelte';
-  import Tag from './tag.svelte';
+  import Badge from './badge.svelte';
 
   export let i: number;
   export let item: FeaturesListSubItemStoryblok;
@@ -31,7 +31,7 @@
               {contentItem.item}
             </p>
             {#if contentItem.coming_soon}
-              <Tag label={string('coming_soon')} />
+              <Badge size="medium" label={string('coming_soon')} />
             {/if}
           </div>
         {/each}
