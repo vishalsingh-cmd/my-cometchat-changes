@@ -12,7 +12,9 @@
 
 {#if block}
   <section use:storyblokEditable={block} class="overflow-hidden">
-    <div class="container relative mx-auto h-full px-container pb-[367px] lg:pb-[263px]">
+    <div
+      class="container relative mx-auto h-[700px] px-container pb-[367px] md:min-h-[620px] lg:pb-[263px]"
+    >
       <Background />
       {#if block.title && block.title[0]}
         {@const title = block.title[0]}
