@@ -15,7 +15,7 @@
       <img
         src={Illustration}
         alt=""
-        class="absolute bottom-10 w-[1000px] max-w-none md:right-[29px] md:w-[1486px]"
+        class="absolute bottom-0 w-[1000px] max-w-none -translate-x-1/2 md:bottom-10 md:right-[29px] md:w-[1486px] md:-translate-x-0"
       />
       {#if block.header && block.header[0]}
         {@const { label, description, title, links } = block.header[0]}
