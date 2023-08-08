@@ -11,7 +11,7 @@
 
   const dispatch = createEventDispatcher();
 
-  export let selectedTags: string[] = [];
+  export let numberOfSelectedTags = 0;
   export let areFiltersOpen = false;
   export let value: string | undefined;
 
@@ -43,19 +43,19 @@
     </span>
 
     <!-- Desktop Badge -->
-    {#if selectedTags.length > 0}
+    {#if numberOfSelectedTags > 0}
       <span class={cn(badge(), 'hidden lg:block')}>
-        {selectedTags.length}
+        {numberOfSelectedTags}
       </span>
     {/if}
   </Button>
 
   <!-- Mobile Badge | Add to move it outside `Button` because we have a `overflow: hidden` in it for the hover / background effects -->
-  {#if selectedTags.length > 0}
+  {#if numberOfSelectedTags > 0}
     <span
       class={cn(badge(), 'absolute -right-1 -top-[5px] flex items-center justify-center lg:hidden')}
     >
-      {selectedTags.length}
+      {numberOfSelectedTags}
     </span>
   {/if}
 
