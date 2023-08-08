@@ -18,5 +18,5 @@
 <img
   alt=""
   src={SmallComet}
-  class="absolute -bottom-36 -right-[200px] h-[420px] w-[420px] lg:-bottom-32 lg:-right-[100px] lg:h-[500px] lg:w-[500px]"
+  class="absolute -bottom-36 -right-[200px] h-[420px] w-[420px] lg:-bottom-[60px] lg:-right-[100px] lg:h-[500px] lg:w-[500px]"
 />

@@ -58,7 +58,7 @@
             />
             {#if i === 1}
               <div
-                class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:bottom-[-130px] md:right-[-150px] md:h-[338px] md:w-[1739px]"
+                class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:bottom-[-130px] md:right-0 md:h-[338px] md:w-[1739px]"
               >
                 <img src={Illustration} alt="" />
               </div>
