@@ -536,6 +536,7 @@ export interface ListSectionStoryblok {
 
 export interface ListsSectionStoryblok {
   theme: '' | 'light' | 'dark';
+  header?: TitleStoryblok[];
   items: ListsSectionItemStoryblok[];
   single_item_columns_count?: number;
   _uid: string;
@@ -656,6 +657,7 @@ export interface ParagraphListItemStoryblok {
 }
 
 export interface PlatformSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
   title: TitleStoryblok[];
   products: ProductDisplayItemStoryblok[];
   _uid: string;

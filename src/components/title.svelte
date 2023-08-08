@@ -23,10 +23,12 @@
   let className: undefined | string = undefined;
   export { className as class };
   export let alignment: VariantProps<typeof titleStyle>['alignment'] = 'left';
-  export let label: {
-    content: string;
-    color: 'orange' | 'brand';
-  };
+  export let label:
+    | {
+        content: string;
+        color: 'orange' | 'brand';
+      }
+    | undefined = undefined;
   export let title = '';
   export let titleClass: undefined | string = undefined;
   export let description: string | undefined = undefined;
@@ -40,13 +42,15 @@
 </script>
 
 <div class={cn(titleStyle({ alignment }), className)}>
-  <p
-    class={`${
-      labelColours[label.color]
-    } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
-  >
-    {label.content}
-  </p>
+  {#if label}
+    <p
+      class={`${
+        labelColours[label.color]
+      } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
+    >
+      {label.content}
+    </p>
+  {/if}
   {#if title}
     <svelte:element
       this={titleHeadingType}
