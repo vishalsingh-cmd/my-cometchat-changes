@@ -9,6 +9,7 @@
   } from '$types/bloks';
 
   import Item from '$components/lists-section/item.svelte';
+  import Header from '$components/title.svelte';
   import Title from '$components/lists-section/title.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
 
@@ -63,6 +64,17 @@
   const onOptionSelect = (e: CustomEvent) => {
     selectedItemIndex = e.detail.i;
   };
+
+  const getLabelInfo = (label: string | undefined) => {
+    if (!label) {
+      return undefined;
+    }
+
+    return {
+      content: label,
+      color: 'orange' as 'orange' | 'brand'
+    };
+  };
 </script>
 
 <svelte:window bind:innerWidth />
@@ -73,6 +85,18 @@
     class="bg-gray-1 pb-10 pt-5 text-gray-12 md:py-16"
   >
     <div class="container mx-auto px-container">
+      {#if block.header && block.header[0]}
+        {@const { label, title, description, links } = block.header[0]}
+        {@const labelInfo = getLabelInfo(label)}
+        <Header
+          label={labelInfo}
+          {title}
+          {description}
+          buttons={links}
+          class="mb-5 pl-0 pr-0 lg:p-0"
+          titleClass="text-2xl"
+        />
+      {/if}
       {#if block.items.length === 1}
         {@const item = block.items[0]}
         <!-- We know that the column amount will always be 3, 4 or 5 -->
