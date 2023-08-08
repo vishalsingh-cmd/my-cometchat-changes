@@ -31,25 +31,47 @@
           />
         {/if}
         {#if block.products[0]}
-          {@const link = getAnchorFromCmsLink(block.products[0].link)}
+          {@const link =
+            block.products[0].link && block.products[0].link[0]
+              ? getAnchorFromCmsLink(block.products[0].link[0].link)
+              : undefined}
           <div class="px-5 md:pl-16">
             <ProductDisplay
               illustration={block.products[0].image.filename}
               title={block.products[0].title}
               description={block.products[0].description}
-              link={{ ...link, label: block.products[0].link[0].label ?? '' }}
+              link={{
+                ...link,
+                label:
+                  block.products[0].link &&
+                  block.products[0].link[0] &&
+                  block.products[0].link[0].label
+                    ? block.products[0].link[0].label
+                    : ''
+              }}
             />
           </div>
         {/if}
       </div>
       {#if block.products[1]}
-        {@const link = getAnchorFromCmsLink(block.products[1].link)}
+        {@const link =
+          block.products[1].link && block.products[1].link[0]
+            ? getAnchorFromCmsLink(block.products[1].link[0].link)
+            : undefined}
         <div class="mt-10 px-5 md:mt-[180px] md:pr-16">
           <ProductDisplay
             illustration={block.products[1].image.filename}
             title={block.products[1].title}
             description={block.products[1].description}
-            link={{ ...link, label: block.products[1].link[0].label ?? '' }}
+            link={{
+              ...link,
+              label:
+                block.products[1].link &&
+                block.products[1].link[0] &&
+                block.products[1].link[0].label
+                  ? block.products[1].link[0].label
+                  : ''
+            }}
           />
         </div>
       {/if}
