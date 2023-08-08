@@ -894,6 +894,55 @@
       "component_group_name": "Richtext"
     },
     {
+      "name": "double-panel-section",
+      "display_name": null,
+      "created_at": "2023-08-08T10:50:15.242Z",
+      "updated_at": "2023-08-08T11:20:35.987Z",
+      "id": 4393375,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "2d5fc234-1e08-49ad-8c77-7c5ad81e9f31",
+              "name": "Light",
+              "value": "light"
+            },
+            {
+              "_uid": "b54c9db1-1751-4d9d-be59-c0f89e7e3e81",
+              "value": "dark",
+              "name": "Dark"
+            }
+          ],
+          "pos": 0
+        },
+        "panels": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "minimum": 2,
+          "component_whitelist": ["panel-item"],
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "double-panel-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "featured-story-section",
       "display_name": null,
       "created_at": "2023-07-18T10:52:42.228Z",
@@ -2198,27 +2247,63 @@
       "name": "panel-item",
       "display_name": null,
       "created_at": "2023-06-15T15:42:39.944Z",
-      "updated_at": "2023-06-15T15:45:31.237Z",
+      "updated_at": "2023-08-08T11:23:30.661Z",
       "id": 4131520,
       "schema": {
+        "icon": {
+          "type": "option",
+          "pos": 0,
+          "use_uuid": true,
+          "source": "internal",
+          "datasource_slug": "icons"
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "required": true,
+          "options": [
+            {
+              "_uid": "9f1341e0-14fa-4c18-a73b-a4c41177cbf6",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "12a8b995-0398-4139-bbcc-f23e24c3ca68",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Orange"
+        },
         "title": {
           "type": "text",
           "required": true,
-          "translatable": true
+          "translatable": true,
+          "pos": 2
         },
         "description": {
-          "type": "text",
+          "type": "textarea",
           "required": true,
-          "translatable": true
+          "translatable": true,
+          "pos": 3
         },
-        "link": {
+        "list": {
           "type": "bloks",
-          "required": true,
-          "minimum": 1,
+          "pos": 4,
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["link"]
+          "component_whitelist": ["bullet-point"]
+        },
+        "link": {
+          "type": "bloks",
+          "required": false,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["link"],
+          "pos": 5
         }
       },
       "image": null,

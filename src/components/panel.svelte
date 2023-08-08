@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { InfoItemType } from '$components/info-item.svelte';
   import InfoItem from '$components/info-item.svelte';
 
   import { cn } from '$lib/utils';
+  import type { PanelItemStoryblok } from '$types/bloks';
 
   let className: undefined | string = undefined;
   export { className as class };
-  export let item: InfoItemType;
+  export let item: PanelItemStoryblok;
   export let infoItemClassName: string | undefined = undefined;
 </script>
 
