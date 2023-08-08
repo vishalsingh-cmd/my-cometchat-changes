@@ -528,6 +528,8 @@ export interface ListItemStoryblok {
 }
 
 export interface ListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  icon_color?: '' | 'brand' | 'orange';
   items: ListItemStoryblok[];
   _uid: string;
   component: 'list-section';
@@ -686,6 +688,7 @@ export interface ProductDisplayItemStoryblok {
 
 export interface RelatedStoriesSectionStoryblok {
   header: TitleStoryblok[];
+  title_alignment?: '' | 'left' | 'center';
   items: (
     | StoryblokStory<BlogPostStoryblok>
     | StoryblokStory<CustomerStoryStoryblok>
@@ -934,7 +937,7 @@ export interface TestimonialBlockStoryblok {
 }
 
 export interface TitleStoryblok {
-  label: string;
+  label?: string;
   title: string;
   description?: string;
   links?: ButtonLinkStoryblok[];

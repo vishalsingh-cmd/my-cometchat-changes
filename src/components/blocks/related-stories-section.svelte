@@ -63,16 +63,32 @@
       date: formatDate(typedItem.content.date)
     };
   };
+
+  const getLabelInfo = (label: string | undefined) => {
+    if (!label) {
+      return undefined;
+    }
+
+    return {
+      content: label,
+      color: 'brand' as 'orange' | 'brand'
+    };
+  };
 </script>
 
 {#if block}
   <section class="bg-gray-1 px-container text-gray-12" data-theme="light">
     {#if block.header && block.header.length > 0}
-      {@const header = block.header[0]}
+      {@const { label, title, description, links } = block.header[0]}
+      {@const labelInfo = getLabelInfo(label)}
+      {@const titleAlignment = block.title_alignment === 'center' ? 'center' : 'left'}
       <Title
-        label={{ content: header.label, color: 'brand' }}
-        title={header.title}
+        label={labelInfo}
+        {title}
+        {description}
+        buttons={links}
         class="container mx-auto pl-0 pr-0"
+        alignment={titleAlignment}
       />
     {/if}
     <div class="container mx-auto grid grid-cols-1 gap-8 pb-12 md:grid-cols-3 md:pb-20">
