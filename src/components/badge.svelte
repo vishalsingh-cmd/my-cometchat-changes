@@ -7,7 +7,7 @@
 
   const badge = cva(
     [
-      'inline-flex',
+      'inline-flex whitespace-nowrap',
       'font-semibold tracking-wide leading-normal text-brand-10',
       'border-[1.4px] light:border-brand-10/[0.16] dark:border-brand-10/[0.16]'
     ],
