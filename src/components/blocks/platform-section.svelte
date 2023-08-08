@@ -9,10 +9,25 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   export let block: PlatformSectionStoryblok;
+
+  const getLabelInfo = (label: string | undefined) => {
+    if (!label) {
+      return undefined;
+    }
+
+    return {
+      content: label,
+      color: 'orange' as 'orange' | 'brand'
+    };
+  };
 </script>
 
 {#if block}
-  <section data-theme="light" class="bg-gray-1" use:storyblokEditable={block}>
+  <section
+    data-theme={block.theme === 'light' ? 'light' : 'dark'}
+    class="bg-gray-1 text-gray-12"
+    use:storyblokEditable={block}
+  >
     <div
       class="relative mx-auto w-full max-w-[1440px] pb-12 max-[1650px]:overflow-hidden md:grid md:grid-cols-2 md:gap-8 md:pt-[35px]"
     >
@@ -24,11 +39,9 @@
       </div>
       <div>
         {#if block.title[0]}
-          <Title
-            label={{ color: 'orange', content: block.title[0].label }}
-            title={block.title[0].title}
-            class="pb-10 lg:pb-20"
-          />
+          {@const { label, title, description, links } = block.title[0]}
+          {@const labelInfo = getLabelInfo(label)}
+          <Title label={labelInfo} {title} {description} buttons={links} />
         {/if}
         {#if block.products[0]}
           {@const link =

@@ -9,7 +9,6 @@
 
 <button
   on:click
-  data-theme="light"
   id="{id}-tabhead"
   type="button"
   role="tab"
