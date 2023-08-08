@@ -44,7 +44,7 @@
       </div>
       {#if block.products[1]}
         {@const link = getAnchorFromCmsLink(block.products[1].link)}
-        <div class="mt-10 px-5 md:mt-[180px] md:pr-16">
+        <div class="mt-10 self-end px-5 md:pr-16">
           <ProductDisplay
             illustration={block.products[1].image.filename}
             title={block.products[1].title}
