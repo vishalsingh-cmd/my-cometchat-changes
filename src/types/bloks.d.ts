@@ -253,6 +253,14 @@ export interface DisclaimerStoryblok {
   [k: string]: any;
 }
 
+export interface DoublePanelSectionStoryblok {
+  theme: '' | 'light' | 'dark';
+  panels: PanelItemStoryblok[];
+  _uid: string;
+  component: 'double-panel-section';
+  [k: string]: any;
+}
+
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
@@ -467,6 +475,7 @@ export interface IndustryStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -575,6 +584,7 @@ export interface PageStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -610,9 +620,12 @@ export interface PageStoryblok {
 }
 
 export interface PanelItemStoryblok {
+  icon?: number | string;
+  accent_colour: '' | 'brand' | 'orange';
   title: string;
   description: string;
-  link: LinkStoryblok[];
+  list?: BulletPointStoryblok[];
+  link?: LinkStoryblok[];
   _uid: string;
   component: 'panel-item';
   [k: string]: any;
@@ -783,6 +796,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -853,6 +867,7 @@ export interface TechnologyStoryblok {
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
