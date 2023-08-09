@@ -15,6 +15,7 @@
 
       'active:text-brand-10',
 
+      'cursor-pointer',
       'disabled:pointer-events-none',
       'disabled:opacity-40',
 

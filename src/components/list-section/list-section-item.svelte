@@ -3,6 +3,7 @@
   import { cn } from '$lib/utils';
 
   import Icon from '$components/icon/icon.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
 
   import type { ListItemStoryblok } from '$types/bloks';
 
@@ -37,5 +38,16 @@
       <h3 class="font-semibold leading-tight">{block.title}</h3>
       <p class="font-medium leading-snug tracking-wide opacity-64">{block.description}</p>
     </div>
+    {#if block.link && block.link[0]}
+      <GhostButton
+        as="a"
+        href={block.link[0].href}
+        target={block.link[0].target}
+        rel={block.link[0].rel}
+        variant="highlighted"
+      >
+        {block.link[0].label}
+      </GhostButton>
+    {/if}
   </div>
 {/if}
