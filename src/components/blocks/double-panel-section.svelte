@@ -17,7 +17,7 @@
   >
     <div
       class={cn(
-        'container mx-auto flex flex-col border-solid md:flex-row md:border-t',
+        'container mx-auto flex flex-col border-solid md:flex-row md:border-y',
         block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-2/8'
       )}
     >
