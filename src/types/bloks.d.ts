@@ -68,6 +68,7 @@ export interface BlogPostStoryblok {
     | 'insights'
     | 'industry'
     | 'best-practices';
+  first_created_on?: string;
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -447,6 +448,15 @@ export interface ImageTitleDescriptionTagsItemStoryblok {
   [k: string]: any;
 }
 
+export interface ImplementationListSectionStoryblok {
+  label: string;
+  title: string;
+  items: PanelItemStoryblok[];
+  _uid: string;
+  component: 'implementation-list-section';
+  [k: string]: any;
+}
+
 export interface ImplementationSectionStoryblok {
   header: TitleStoryblok[];
   items: PanelItemStoryblok[];
@@ -481,6 +491,7 @@ export interface IndustryStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
@@ -489,6 +500,7 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -528,8 +540,6 @@ export interface ListItemStoryblok {
 }
 
 export interface ListSectionStoryblok {
-  theme?: '' | 'dark' | 'light';
-  icon_color?: '' | 'brand' | 'orange';
   items: ListItemStoryblok[];
   _uid: string;
   component: 'list-section';
@@ -593,6 +603,7 @@ export interface PageStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
@@ -601,6 +612,7 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -673,6 +685,15 @@ export interface PreFooterStoryblok {
   call_to_action: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
+  [k: string]: any;
+}
+
+export interface PreFooterCopyStoryblok {
+  title: string;
+  description: string;
+  call_to_action: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pre-footer_copy';
   [k: string]: any;
 }
 
@@ -807,6 +828,7 @@ export interface SyncedBlockContentStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
@@ -815,6 +837,7 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -878,6 +901,7 @@ export interface TechnologyStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
+    | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
@@ -886,6 +910,7 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
