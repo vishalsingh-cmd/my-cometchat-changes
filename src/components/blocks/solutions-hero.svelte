@@ -31,7 +31,7 @@
     class="h-[663px] overflow-hidden bg-gray-1 pt-[108px] text-gray-12 md:h-[781px] md:pt-[148px]"
   >
     <div
-      class="container relative mx-auto flex h-full flex-col gap-10 px-container md:flex-row md:gap-16"
+      class="container relative mx-auto flex h-full flex-col gap-10 px-container md:gap-16 lg:flex-row"
     >
       <BackgroundBottom />
 

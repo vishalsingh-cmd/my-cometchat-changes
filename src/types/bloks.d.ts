@@ -528,6 +528,8 @@ export interface ListItemStoryblok {
 }
 
 export interface ListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  icon_color?: '' | 'brand' | 'orange';
   items: ListItemStoryblok[];
   _uid: string;
   component: 'list-section';
@@ -536,6 +538,7 @@ export interface ListSectionStoryblok {
 
 export interface ListsSectionStoryblok {
   theme: '' | 'light' | 'dark';
+  header?: TitleStoryblok[];
   items: ListsSectionItemStoryblok[];
   single_item_columns_count?: number;
   _uid: string;
@@ -656,6 +659,7 @@ export interface ParagraphListItemStoryblok {
 }
 
 export interface PlatformSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
   title: TitleStoryblok[];
   products: ProductDisplayItemStoryblok[];
   _uid: string;
@@ -684,6 +688,7 @@ export interface ProductDisplayItemStoryblok {
 
 export interface RelatedStoriesSectionStoryblok {
   header: TitleStoryblok[];
+  title_alignment?: '' | 'left' | 'center';
   items: (
     | StoryblokStory<BlogPostStoryblok>
     | StoryblokStory<CustomerStoryStoryblok>
@@ -932,7 +937,7 @@ export interface TestimonialBlockStoryblok {
 }
 
 export interface TitleStoryblok {
-  label: string;
+  label?: string;
   title: string;
   description?: string;
   links?: ButtonLinkStoryblok[];
