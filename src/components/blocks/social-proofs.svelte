@@ -49,7 +49,9 @@
     class="overflow-hidden bg-gray-1 px-container light:bg-gray-3"
   >
     <div class="container mx-auto flex flex-col items-center justify-center gap-8 pb-20 pt-16">
-      <p class="text-lg tracking-wide text-gray-12 opacity-54">{block.title}</p>
+      {#if block.title}
+        <p class="text-lg tracking-wide text-gray-12 opacity-54">{block.title}</p>
+      {/if}
       {#if customers}
         <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
           {#each arrayOfCustomersToShow as customer}
