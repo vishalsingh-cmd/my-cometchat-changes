@@ -3,11 +3,11 @@
 
   import type { CustomerStoryStoryblok, CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
 
-  import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   import Metrics from '$components/blocks/metrics.svelte';
   import Title from '$components/title.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
@@ -45,9 +45,8 @@
         </div>
       </div>
       {#if block.content.cover}
-        {@const { src, alt, width, height } = getImageAttributes(block.content.cover)}
         <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
-          <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
+          <Media media={block.content.cover} class="h-full w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -66,8 +65,7 @@
           <div class="flex items-center gap-3">
             {#if author}
               {@const { avatar, name, role, company } = author.content}
-              {@const { src, alt, width, height } = getImageAttributes(avatar)}
-              <img {src} {alt} {width} {height} class="h-6 w-6 rounded-full" />
+              <Media media={avatar} class="h-6 w-6 rounded-full" />
               <p>
                 {name},
                 {#if role}
@@ -80,11 +78,10 @@
         </div>
       </div>
       {#if block.content.cover}
-        {@const { src, alt, width, height } = getImageAttributes(block.content.cover)}
         <div
           class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
         >
-          <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
+          <Media media={block.content.cover} class="h-full w-full object-cover" />
         </div>
       {/if}
     </div>

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { getImageAttributes } from '$lib/storyblok';
-  import { cn } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import type { FeaturesSectionStoryblok } from '$types/bloks';
 
   import Title from '$components/title.svelte';
   import Badge from '$components/badge.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: FeaturesSectionStoryblok;
 </script>
@@ -23,8 +23,7 @@
         class="flex w-full items-center justify-center border-b border-gray-12/8 bg-gray-12/[0.02] xl:max-w-[700px]"
       >
         {#if block.image}
-          {@const { src, alt, width, height } = getImageAttributes(block.image)}
-          <img {src} {alt} {width} {height} />
+          <Media media={block.image} />
         {/if}
       </div>
       <div
@@ -37,10 +36,11 @@
       >
         {#if block.title && block.title[0]}
           {@const title = block.title[0]}
+          {@const labelInfo = getLabelInfo(title.label, 'orange')}
           <Title
             class="max-w-[528px] pl-0 pr-0"
             alignment="left"
-            label={{ content: title.label, color: 'orange' }}
+            label={labelInfo}
             title={title.title}
             description={title.description}
           />

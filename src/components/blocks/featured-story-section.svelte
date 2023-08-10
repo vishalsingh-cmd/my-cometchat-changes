@@ -5,7 +5,7 @@
   import { industries } from '$lib/stores/industries';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
+  import { sanitizeSlug } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
 
   import type {
@@ -14,19 +14,32 @@
     CustomerStoryStoryblok,
     CustomerStoryblok,
     FeaturedStorySectionStoryblok,
-    IndustryStoryblok
+    IndustryStoryblok,
+    TutorialStoryblok
   } from '$types/bloks';
 
   import Button from '$components/buttons/button.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: FeaturedStorySectionStoryblok;
 
   const typeFeaturedStory = (
-    story: string | StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
-  ) => story as StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>;
+    story:
+      | string
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
+  ) =>
+    story as
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>;
 
   const getAuthor = (
-    story: StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
+    story:
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
   ) => {
     if (story.content.component === 'customer-story') {
       return story.content.author_name;
@@ -37,7 +50,10 @@
   };
 
   const getTag = (
-    story: StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
+    story:
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
   ) => {
     if (story.content.component === 'customer-story' && story.content.customer) {
       const customer = story.content.customer as StoryblokStory<CustomerStoryblok>;
@@ -85,9 +101,8 @@
           </div>
         </div>
         {#if content.cover}
-          {@const { src, alt, width, height } = getImageAttributes(content.cover)}
           <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
-            <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
+            <Media media={content.cover} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>

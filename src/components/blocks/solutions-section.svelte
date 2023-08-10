@@ -10,17 +10,18 @@
   import Orbit1 from '$components/solutions-section/assets/orbit-1.svg';
   import Orbit2 from '$components/solutions-section/assets/orbit-2.svg';
 
+  import { planetPositioning } from '$components/solutions-section/planet-positioning';
+
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
-
-  import { planetPositioning } from '$components/solutions-section/planet-positioning';
+  import Dropdown from '$components/dropdown.svelte';
+  import Media from '$components/media.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
-  import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
-  import { cn } from '$lib/utils';
-  import Dropdown from '$components/dropdown.svelte';
+  import { sanitizeSlug } from '$lib/storyblok';
+  import { cn, getLabelInfo } from '$lib/utils';
 
   export let block: SolutionsSectionStoryblok;
 
@@ -80,9 +81,10 @@
     </div>
     <div class="isolate z-20 mx-auto max-w-content">
       {#if block.title[0]}
+        {@const labelInfo = getLabelInfo(block.title[0].label, 'brand')}
         <Title
           alignment="center"
-          label={{ color: 'brand', content: block.title[0].label }}
+          label={labelInfo}
           title={block.title[0].title}
           titleClass="max-w-[400px] text-center"
           class="items-center"
@@ -104,9 +106,6 @@
 
       {#if industries[selectedIndustryIndex]}
         {@const selectedIndustry = industries[selectedIndustryIndex]}
-        {@const { src, alt, width, height } = getImageAttributes(
-          selectedIndustry.content.cover_image
-        )}
         <p
           class="mb-5 mt-3 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
         >
@@ -116,7 +115,7 @@
           Learn more
         </GhostButton>
         <div class="mt-10 flex w-full max-w-[1440px] justify-center">
-          <img {src} {alt} {width} {height} />
+          <Media media={selectedIndustry.content.cover_image} />
         </div>
       {/if}
       <div
@@ -186,12 +185,8 @@
           {/if}
         </div>
         {#if industries[selectedIndustryIndex]}
-          {@const { src, alt, width, height } = getImageAttributes(
-            industries[selectedIndustryIndex].content.cover_image,
-            { size: [0, 560] }
-          )}
-          <div class="mt-16 flex w-full max-w-[1440px] justify-center">
-            <img {src} {alt} {width} {height} />
+          <div class="mx-auto mt-16 w-full max-w-[1000px]">
+            <Media media={industries[selectedIndustryIndex].content.cover_image} />
           </div>
         {/if}
       {/if}

@@ -1,11 +1,11 @@
 <script lang="ts">
   import { intersectionObserver } from '$lib/actions/intersection-observer';
-  import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   import type { ImageTitleDescriptionTagsItemStoryblok } from '$types/bloks';
 
   import Badge from '$components/badge.svelte';
+  import Media from '$components/media.svelte';
 
   let className: string | undefined = undefined;
   export { className as class };
@@ -34,8 +34,7 @@
     }}
   >
     {#if block.image}
-      {@const { src, alt, width, height } = getImageAttributes(block.image)}
-      <img {src} {alt} {width} {height} class="mb-12 w-full max-w-[436px]" />
+      <Media media={block.image} class="mb-12 w-full max-w-[436px]" />
     {/if}
     {#if block.title}
       <p class="font-semibold leading-tight">{block.title}</p>

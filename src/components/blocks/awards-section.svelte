@@ -3,9 +3,10 @@
 
   import { cn } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
 
   import type { AwardsSectionStoryblok, MultiassetStoryblok } from '$types/bloks';
+
+  import Media from '$components/media.svelte';
 
   export let block: AwardsSectionStoryblok;
 
@@ -57,8 +58,7 @@
       {#if awards}
         <div bind:this={containerRef} class={cn('flex gap-10 md:gap-20')}>
           {#each arrayOfAwardsToShow as award}
-            {@const { src, alt, width, height } = getImageAttributes(award)}
-            <img {src} {alt} {width} {height} class="h-16 flex-shrink-0 md:h-20" />
+            <Media media={award} class="h-16 flex-shrink-0 md:h-20" />
           {/each}
         </div>
       {/if}

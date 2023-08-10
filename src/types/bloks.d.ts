@@ -371,8 +371,10 @@ export interface GistStoryblok {
 }
 
 export interface HeaderAndListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour?: '' | 'orange' | 'brand';
   header?: TitleStoryblok[];
-  items: ListSectionStoryblok[];
+  items: ListItemStoryblok[];
   _uid: string;
   component: 'header-and-list-section';
   [k: string]: any;
@@ -511,6 +513,7 @@ export interface IndustryStoryblok {
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -534,6 +537,7 @@ export interface ListItemStoryblok {
   icon: number | string;
   title: string;
   description: string;
+  link?: LinkStoryblok[];
   _uid: string;
   component: 'list-item';
   [k: string]: any;
@@ -623,6 +627,7 @@ export interface PageStoryblok {
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -768,7 +773,7 @@ export interface SinglePostResourcesPanelStoryblok {
 }
 
 export interface SocialProofsStoryblok {
-  title: string;
+  title?: string;
   customers: (StoryblokStory<CustomerStoryblok> | string)[];
   _uid: string;
   component: 'social-proofs';
@@ -848,6 +853,7 @@ export interface SyncedBlockContentStoryblok {
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -921,6 +927,7 @@ export interface TechnologyStoryblok {
     | SyncedBlockStoryblok
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -928,6 +935,14 @@ export interface TechnologyStoryblok {
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'technology';
+  [k: string]: any;
+}
+
+export interface TechnologyHeroStoryblok {
+  title: TitleWithIconLabelStoryblok[];
+  customers: SocialProofsStoryblok[];
+  _uid: string;
+  component: 'technology-hero';
   [k: string]: any;
 }
 
@@ -966,6 +981,7 @@ export interface TitleStoryblok {
   title: string;
   description?: string;
   links?: ButtonLinkStoryblok[];
+  size?: '' | 'large' | 'small';
   _uid: string;
   component: 'title';
   [k: string]: any;
@@ -978,6 +994,17 @@ export interface TitleImageSectionStoryblok {
   theme: '' | 'light' | 'dark';
   _uid: string;
   component: 'title-image-section';
+  [k: string]: any;
+}
+
+export interface TitleWithIconLabelStoryblok {
+  label_icon?: number | string;
+  label?: string;
+  title: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'title-with-icon-label';
   [k: string]: any;
 }
 
