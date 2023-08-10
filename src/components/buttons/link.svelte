@@ -27,10 +27,13 @@
               text-gray-12/[0.84]
               hover:text-brand-9
               active:text-brand-10
+              [&:focus:not(:focus-visible)]:outline-0
             `,
           secondary: `
               text-gray-12/[0.84]
               hover:text-gray-12/100
+              active:text-gray-12/100
+              [&:focus:not(:focus-visible)]:outline-0
             `
         }
       }
