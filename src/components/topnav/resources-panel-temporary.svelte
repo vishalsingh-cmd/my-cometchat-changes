@@ -62,7 +62,7 @@
   <Divider class="xl:hidden" />
   <div
     class={cn(
-      'relative w-[480px] gap-12 border-gray-5 py-8 md:p-8 lg:py-12 xl:border-l xl:bg-gray-4',
+      'relative w-[480px] gap-12 border-gray-5 py-8 lg:p-8 lg:py-12 xl:border-l xl:bg-gray-4',
       'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
     )}
   >
