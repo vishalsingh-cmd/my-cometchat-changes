@@ -35,7 +35,7 @@
     {/if}
     <div class="flex flex-col gap-1 text-lg text-gray-12">
       <h3 class="font-semibold leading-tight">{block.title}</h3>
-      <p class="font-medium leading-snug tracking-wide opacity-64">{block.description}</p>
+      <p class="font-medium leading-snug tracking-wide opacity-74">{block.description}</p>
     </div>
   </div>
 {/if}
