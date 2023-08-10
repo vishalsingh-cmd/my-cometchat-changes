@@ -178,7 +178,7 @@
           <div
             in:panelTransition={{ duration: 200, direction: 'in' }}
             out:panelTransition={{ duration: 100, direction: 'out' }}
-            class="from:bg-gray-3/98 to:bg-gray-3/0 fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full translate-x-0 translate-y-0 overflow-auto bg-gradient-to-b backdrop-blur-xl"
+            class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full translate-x-0 translate-y-0 overflow-auto bg-gradient-to-b from-gray-3/98 to-gray-3/98 backdrop-blur-xl md:to-gray-3/0 lg:from-gray-3/100 lg:to-gray-3/100"
           >
             <button
               class="sticky top-0 z-20 flex w-full items-center gap-2 bg-gray-3/98 px-container py-4 lg:hidden"
