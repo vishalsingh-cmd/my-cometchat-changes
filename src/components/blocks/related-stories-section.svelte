@@ -4,6 +4,7 @@
 
   import { industries } from '$lib/stores/industries';
 
+  import { getLabelInfo } from '$lib/utils';
   import { formatDate } from '$lib/utils/dates';
 
   import type {
@@ -63,24 +64,13 @@
       date: formatDate(typedItem.content.date)
     };
   };
-
-  const getLabelInfo = (label: string | undefined) => {
-    if (!label) {
-      return undefined;
-    }
-
-    return {
-      content: label,
-      color: 'brand' as 'orange' | 'brand'
-    };
-  };
 </script>
 
 {#if block}
   <section class="bg-gray-1 px-container text-gray-12" data-theme="light">
     {#if block.header && block.header.length > 0}
       {@const { label, title, description, links } = block.header[0]}
-      {@const labelInfo = getLabelInfo(label)}
+      {@const labelInfo = getLabelInfo(label, 'brand')}
       {@const titleAlignment = block.title_alignment === 'center' ? 'center' : 'left'}
       <Title
         label={labelInfo}
