@@ -1,9 +1,10 @@
 <script lang="ts">
-  import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
+  import { sanitizeSlug } from '$lib/storyblok';
 
   import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
 
   import Badge from './badge.svelte';
+  import Media from './media.svelte';
 
   export let image: AssetStoryblok | undefined = undefined;
   export let title: string | undefined = undefined;
@@ -22,18 +23,13 @@
   >
     {#if image}
       {#if customer}
-        {@const { src, alt, width, height } = getImageAttributes(customer.logo)}
         <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
-          <img {src} {alt} {width} {height} class="h-3.5 w-full" />
+          <Media media={customer.logo} class="h-3.5 w-full" />
         </div>
       {/if}
-      {@const { src, alt, width, height } = getImageAttributes(image)}
-      <img
+      <Media
+        media={image}
         class="mb-4 aspect-video max-h-[202px] rounded-2xl object-cover md:mb-5 md:max-h-[280px]"
-        {src}
-        {alt}
-        {width}
-        {height}
       />
     {/if}
     {#if title}

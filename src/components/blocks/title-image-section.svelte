@@ -2,10 +2,10 @@
   import type { TitleImageSectionStoryblok } from '$types/bloks';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   import Title from '$components/title.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: TitleImageSectionStoryblok;
 </script>
@@ -37,14 +37,13 @@
         />
       {/if}
       {#if block.image}
-        {@const { width, height, src, alt } = getImageAttributes(block.image)}
         <div
           class={cn(
             'aspect-square h-full max-h-[640px] w-full overflow-hidden',
             block.image_side === 'center' && 'lg:relative lg:aspect-auto lg:w-[1440px]'
           )}
         >
-          <img {width} {height} {src} {alt} class="object-cover" />
+          <Media media={block.image} class="object-cover" />
         </div>
       {/if}
     </div>

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import { getImageAttributes } from '$lib/storyblok';
   import { string } from '$lib/strings';
 
   import type { FeaturesListSubItemStoryblok } from '$types/bloks';
 
   import Icon from './icon/icon.svelte';
   import Badge from './badge.svelte';
+  import Media from './media.svelte';
 
   export let i: number;
   export let item: FeaturesListSubItemStoryblok;
@@ -38,8 +38,7 @@
       </div>
     {/if}
     {#if contentItem.illustration}
-      {@const { src, alt, width, height } = getImageAttributes(contentItem.illustration)}
-      <img {src} {alt} {width} {height} class="w-full max-w-[480px]" />
+      <Media media={contentItem.illustration} class="w-full max-w-[480px]" />
     {/if}
   {/each}
 {/if}

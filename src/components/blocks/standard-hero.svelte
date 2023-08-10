@@ -1,6 +1,6 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
 
   import type { StandardHeroStoryblok } from '$types/bloks';
@@ -11,6 +11,7 @@
   import CenterTitleNoImageBackground from '$components/standard-hero/center-title-no-image-background.svelte';
   import LeftTitleImageBackground from '$components/standard-hero/left-title-image-background.svelte';
   import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: StandardHeroStoryblok;
 </script>
@@ -65,7 +66,6 @@
       </div>
 
       {#if block.image && block.image.filename !== '' && block.image.filename !== null}
-        {@const { width, height, src, alt } = getImageAttributes(block.image)}
         <div
           class={cn(
             'absolute isolate z-10 w-full',
@@ -75,7 +75,7 @@
               'bottom-5 w-[300px] max-w-[1100px] md:-bottom-[100px] md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
         >
-          <img {src} {height} {alt} {width} />
+          <Media media={block.image} />
         </div>
       {/if}
 

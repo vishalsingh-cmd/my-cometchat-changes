@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { getImageAttributes } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import type { StoryblokStory } from 'storyblok-generate-ts';
@@ -7,6 +6,7 @@
 
   import { cn } from '$lib/utils';
   import { onMount } from 'svelte';
+  import Media from '$components/media.svelte';
 
   let containerRef: HTMLElement | null = null;
   export let block: SocialProofsStoryblok;
@@ -53,8 +53,7 @@
       {#if customers}
         <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
           {#each arrayOfCustomersToShow as customer}
-            {@const { src, alt, width, height } = getImageAttributes(customer.content.logo)}
-            <img {src} {alt} {width} {height} class="h-7 w-fit flex-shrink-0 opacity-54" />
+            <Media media={customer.content.logo} class="h-7 w-fit flex-shrink-0 opacity-54" />
           {/each}
         </div>
       {/if}

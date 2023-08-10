@@ -1,6 +1,6 @@
 <script lang="ts">
+  import Media from '$components/media.svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
 
   import type { TestimonialBlockStoryblok } from '$types/bloks';
 
@@ -20,10 +20,7 @@
       </div>
     </div>
     {#if block.author_image}
-      {@const { src, alt, width, height } = getImageAttributes(block.author_image, {
-        size: [48, 0]
-      })}
-      <img {src} {alt} {width} {height} class="w-12 rounded-full" />
+      <Media media={block.author_image} class="w-12 rounded-full" />
     {/if}
   </div>
 {/if}
