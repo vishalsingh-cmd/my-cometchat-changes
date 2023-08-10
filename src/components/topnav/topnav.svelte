@@ -178,8 +178,7 @@
           <div
             in:panelTransition={{ duration: 200, direction: 'in' }}
             out:panelTransition={{ duration: 100, direction: 'out' }}
-            class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full overflow-auto border-b border-gray-12/5 bg-gray-3/98 backdrop-blur-xl"
-            style="transform: translate3d(0, 0, 0);"
+            class="fixed left-0 top-16 z-20 max-h-[calc(100dvh-4rem)] w-full translate-x-0 translate-y-0 overflow-auto bg-gradient-to-b from-gray-3/98 to-gray-3/98 backdrop-blur-xl md:to-gray-3/0 lg:from-gray-3/100 lg:to-gray-3/100"
           >
             <button
               class="sticky top-0 z-20 flex w-full items-center gap-2 bg-gray-3/98 px-container py-4 lg:hidden"
@@ -189,7 +188,7 @@
               <span class="text-sm/none font-semibold">{string('back')}</span>
             </button>
             <Divider class="lg:hidden" />
-            <div class="overflow-hidden backdrop-blur-3xl" style="transform: translate3d(0, 0, 0);">
+            <div class="translate-x-0 translate-y-0 overflow-hidden backdrop-blur-3xl">
               {#if item.component === 'topnav-panel'}
                 {@const data = item.panel[0]}
                 {#if data.component === 'topnav-features-panel'}
