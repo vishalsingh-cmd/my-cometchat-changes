@@ -16,15 +16,15 @@
     {
       label: 'Option 2',
       value: 'option2',
-      cometIllustration: 'sports'
+      cometIllustration: 'matrimonial'
     }
   ];
 </script>
 
-<div data-theme="light" class="flex h-[200px] items-start justify-center gap-10">
+<div data-theme="light" class="flex h-[200px] items-start justify-center gap-10 bg-gray-1">
   <Dropdown {options} selectedOption={selectedIndustryIndex} on:optionSelect={onOptionSelect} />
 </div>
-<div data-theme="dark" class="flex h-[200px] items-start justify-center gap-10 bg-gray-3">
+<div data-theme="dark" class="flex h-[200px] items-start justify-center gap-10 bg-gray-1">
   <Dropdown {options} selectedOption={selectedIndustryIndex} on:optionSelect={onOptionSelect} />
 </div>
 
