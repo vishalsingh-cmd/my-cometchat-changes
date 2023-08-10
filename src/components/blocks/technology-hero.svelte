@@ -7,6 +7,7 @@
   import Button from '$components/buttons/button.svelte';
   import Icon from '$components/icon/icon.svelte';
   import SocialProofs from './social-proofs.svelte';
+  import Background from '$components/technology-hero/background.svelte';
 
   export let block: TechnologyHeroStoryblok;
 </script>
@@ -17,6 +18,7 @@
       <section
         class="container relative mx-auto flex h-full justify-center px-container pb-20 pt-[103px] md:pt-[148px]"
       >
+        <Background />
         <div class={cn('isolate z-10 w-full max-w-[528px]')}>
           {#if block.title[0].label}
             <div class="flex items-center gap-1.5 text-gray-12">
