@@ -3,7 +3,9 @@
   import { cn } from '$lib/utils';
 
   import Icon from '$components/icon/icon.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
 
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import type { ListItemStoryblok } from '$types/bloks';
 
   let className: undefined | string = undefined;
@@ -37,5 +39,11 @@
       <h3 class="font-semibold leading-tight">{block.title}</h3>
       <p class="font-medium leading-snug tracking-wide opacity-74">{block.description}</p>
     </div>
+    {#if block.link && block.link[0]}
+      {@const { href, target, rel } = getAnchorFromCmsLink(block.link[0].link)}
+      <GhostButton as="a" {href} {target} {rel} variant="highlighted">
+        {block.link[0].label}
+      </GhostButton>
+    {/if}
   </div>
 {/if}
