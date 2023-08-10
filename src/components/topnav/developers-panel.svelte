@@ -12,7 +12,7 @@
 <div class="container mx-auto px-container">
   <div class="items-stretch xl:flex">
     <div class="flex-1 p-8 px-0 lg:p-12 lg:pl-0 xl:pr-12">
-      <h3 class="mb-8 text-lg opacity-54">{data.technologies_title}</h3>
+      <h3 class="mb-6 text-lg opacity-54">{data.technologies_title}</h3>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {#each links as link}
           {@const doc = link.content.documentation_link?.[0]}
@@ -35,7 +35,7 @@
     <Divider class="xl:hidden" />
     <div class="flex-1 py-8 lg:px-10 lg:py-12">
       {#each data.groups as group}
-        <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
+        <h3 class="mb-6 text-lg opacity-54">{group.title}</h3>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2">
           {#each group.items as item}
             {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
