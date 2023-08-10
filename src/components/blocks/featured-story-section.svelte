@@ -14,7 +14,8 @@
     CustomerStoryStoryblok,
     CustomerStoryblok,
     FeaturedStorySectionStoryblok,
-    IndustryStoryblok
+    IndustryStoryblok,
+    TutorialStoryblok
   } from '$types/bloks';
 
   import Button from '$components/buttons/button.svelte';
@@ -22,11 +23,22 @@
   export let block: FeaturedStorySectionStoryblok;
 
   const typeFeaturedStory = (
-    story: string | StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
-  ) => story as StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>;
+    story:
+      | string
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
+  ) =>
+    story as
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>;
 
   const getAuthor = (
-    story: StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
+    story:
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
   ) => {
     if (story.content.component === 'customer-story') {
       return story.content.author_name;
@@ -37,7 +49,10 @@
   };
 
   const getTag = (
-    story: StoryblokStory<BlogPostStoryblok> | StoryblokStory<CustomerStoryStoryblok>
+    story:
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
   ) => {
     if (story.content.component === 'customer-story' && story.content.customer) {
       const customer = story.content.customer as StoryblokStory<CustomerStoryblok>;
@@ -64,19 +79,21 @@
       {@const author = getAuthor(story)}
       {@const date = formatDate(content.date)}
       {@const tag = getTag(story)}
-      <div class="container mx-auto flex flex-col gap-8 px-container py-10 md:flex-row md:py-20">
-        <div class="flex flex-1 flex-col justify-between md:h-[526px] md:py-6">
+      <div
+        class="container mx-auto flex flex-col justify-between gap-8 px-container py-10 md:flex-row md:py-20"
+      >
+        <div class="flex max-w-[528px] flex-1 flex-col justify-between md:h-[526px] md:py-6">
           <div>
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
             <p class="text-3xl font-semibold leading-tighter">{story.name}</p>
           </div>
-          <div class="mt-8 text-xl font-medium leading-snug tracking-wide md:mt-0">
+          <div class="mt-8 text-xl font-medium leading-snug tracking-wide opacity-74 md:mt-0">
             {#if content.seo && content.seo.length > 0 && content.seo[0].description}
-              <p class="mb-2 opacity-74 md:mb-4">
+              <p class="mb-2 md:mb-4">
                 {content.seo[0].description}
               </p>
             {/if}
-            <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
+            <p class="opa mb-6 flex flex-row items-center gap-[10px] md:mb-8">
               <span aria-label={`Author: ${author}`}>{author}</span>
               <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
               <span aria-label={`Published: ${date}`}>{date}</span>
@@ -86,7 +103,7 @@
         </div>
         {#if content.cover}
           {@const { src, alt, width, height } = getImageAttributes(content.cover)}
-          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
+          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl md:max-w-[540px]">
             <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
           </div>
         {/if}
