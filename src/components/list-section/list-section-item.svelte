@@ -5,6 +5,7 @@
   import Icon from '$components/icon/icon.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
 
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import type { ListItemStoryblok } from '$types/bloks';
 
   let className: undefined | string = undefined;
@@ -39,13 +40,8 @@
       <p class="font-medium leading-snug tracking-wide opacity-64">{block.description}</p>
     </div>
     {#if block.link && block.link[0]}
-      <GhostButton
-        as="a"
-        href={block.link[0].href}
-        target={block.link[0].target}
-        rel={block.link[0].rel}
-        variant="highlighted"
-      >
+      {@const { href, target, rel } = getAnchorFromCmsLink(block.link[0].link)}
+      <GhostButton as="a" {href} {target} {rel} variant="highlighted">
         {block.link[0].label}
       </GhostButton>
     {/if}
