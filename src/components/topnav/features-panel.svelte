@@ -28,6 +28,7 @@
           title={featured.title}
           description={featured.description}
           asset={getItemAsset(featured)}
+          class="flex-1"
         />
       {/each}
     </div>
