@@ -14,7 +14,7 @@
   alt=""
   role="presentation"
   src={BigComet}
-  class="md: absolute -left-[100px] -top-[120px] h-[250px] w-[250px] md:-left-[150px] md:-top-[150px] md:h-[400px] md:w-[400px] lg:-left-[240px] lg:-top-[220px] lg:h-[600px] lg:w-[600px]"
+  class="absolute -left-[100px] -top-[120px] h-[250px] w-[250px] md:-left-[150px] md:-top-[150px] md:h-[400px] md:w-[400px] lg:-left-[240px] lg:-top-[220px] lg:h-[600px] lg:w-[600px]"
 />
 <img
   alt=""

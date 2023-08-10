@@ -93,7 +93,7 @@
                 {content.seo[0].description}
               </p>
             {/if}
-            <p class="opa mb-6 flex flex-row items-center gap-[10px] md:mb-8">
+            <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
               <span aria-label={`Author: ${author}`}>{author}</span>
               <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
               <span aria-label={`Published: ${date}`}>{date}</span>
