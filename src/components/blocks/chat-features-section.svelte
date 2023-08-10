@@ -24,7 +24,10 @@
           )}
         >
           <Title
-            class={cn('max-w-[528px] lg:pl-0 lg:pr-0', i % 2 !== 0 ? 'lg:ml-0' : 'lg:ml-[120px]')}
+            class={cn(
+              'max-w-[528px] lg:pl-0 lg:pr-0',
+              i % 2 !== 0 ? 'lg:ml-0 lg:mr-20' : 'lg:ml-[120px]'
+            )}
             alignment="left"
             label={{ content: item.label, color: i % 2 !== 0 ? 'brand' : 'orange' }}
             title={item.title}
