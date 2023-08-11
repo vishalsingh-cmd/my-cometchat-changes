@@ -215,7 +215,8 @@
   }
 
   pre {
-    overflow: auto;
+    white-space: pre-wrap;
+    overflow-y: scroll;
   }
 
   /* tokens */
