@@ -8,30 +8,34 @@
 
   import type { ButtonLinkStoryblok } from '$types/bloks';
 
-  const titleStyle = cva(
-    ['w-full', 'flex', 'flex-col', 'px-container', 'pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16'],
-    {
-      variants: {
-        alignment: {
-          left: ['items-start', 'text-left'],
-          center: ['md:items-center', 'md:text-center']
-        }
+  const titleStyle = cva(['w-full', 'flex', 'flex-col', 'px-container'], {
+    variants: {
+      alignment: {
+        left: ['items-start', 'text-left'],
+        center: ['md:items-center', 'md:text-center']
+      },
+      size: {
+        small: ['lg:py-12', 'py-12'],
+        large: ['pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16']
       }
     }
-  );
+  });
 
   let className: undefined | string = undefined;
   export { className as class };
   export let alignment: VariantProps<typeof titleStyle>['alignment'] = 'left';
-  export let label: {
-    content: string;
-    color: 'orange' | 'brand';
-  };
+  export let label:
+    | {
+        content: string;
+        color: 'orange' | 'brand';
+      }
+    | undefined = undefined;
   export let title = '';
   export let titleClass: undefined | string = undefined;
   export let description: string | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
+  export let size: 'small' | 'large' = 'large';
 
   const labelColours = {
     orange: 'text-orange-9',
@@ -39,14 +43,16 @@
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }), className)}>
-  <p
-    class={`${
-      labelColours[label.color]
-    } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
-  >
-    {label.content}
-  </p>
+<div class={cn(titleStyle({ alignment, size }), className)}>
+  {#if label}
+    <p
+      class={`${
+        labelColours[label.color]
+      } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
+    >
+      {label.content}
+    </p>
+  {/if}
   {#if title}
     <svelte:element
       this={titleHeadingType}

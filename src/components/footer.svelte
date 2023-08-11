@@ -1,10 +1,12 @@
 <script lang="ts">
   import Icon from './icon/icon.svelte';
 
-  import AccordionGroup from '../components/accordion-group.svelte';
-  import Accordion from '../components/accordion.svelte';
-  import CometchatLogo from './cometchat-logo.svelte';
   import Divider from './divider.svelte';
+  import Link from './buttons/link.svelte';
+  import CometchatLogo from './cometchat-logo.svelte';
+  import Accordion from '../components/accordion.svelte';
+  import AccordionGroup from '../components/accordion-group.svelte';
+
   import type { Footer } from '$lib/data/footer';
 
   export let data: Footer;
@@ -28,30 +30,30 @@
                 class="flex w-full justify-between text-brand-9"
                 on:click={onClick}
               >
-                <p class="text-md/normal font-semibold tracking-wide">
+                <p class="text-md/tight font-semibold tracking-wide">
                   {column.title}
                 </p>
-                <Icon icon="plus" class={`transition-transform ${expanded && 'rotate-45'}`} />
+                <Icon
+                  icon="plus"
+                  class={`transition-transform ${expanded && 'rotate-45'}`}
+                  size="sm"
+                />
               </button>
             </div>
             <div class="flex flex-col gap-6 first:pt-4">
               {#each column.groups as { title, links }}
                 <div>
                   {#if title}
-                    <p class="mb-2 text-sm/normal font-medium text-gray-10 opacity-50">
+                    <p class="mb-4 text-sm/normal font-semibold tracking-widest text-gray-12/60">
                       {title}
                     </p>
                   {/if}
 
-                  <div class="flex flex-col">
+                  <div class="flex flex-col gap-4">
                     {#each links as { label, href, target, rel }}
-                      <a
-                        {href}
-                        {target}
-                        {rel}
-                        class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-11"
-                        >{label}</a
-                      >
+                      <Link variant="secondary" {href} {target} {rel}>
+                        {label}
+                      </Link>
                     {/each}
                   </div>
                 </div>
@@ -68,7 +70,7 @@
         <div class="flex flex-col sm:gap-10">
           {#each columnGroup as column}
             <div class="flex-col">
-              <p class="mb-4 text-md font-semibold tracking-wide text-brand-8">
+              <p class="mb-4 text-md font-semibold tracking-wide text-brand-9">
                 {column.title}
               </p>
               <div class="flex flex-col gap-8 sm:mt-0">
@@ -80,15 +82,11 @@
                       </p>
                     {/if}
 
-                    <div class="flex flex-col">
+                    <div class="flex flex-col gap-4">
                       {#each links as { label, href, target, rel }}
-                        <a
-                          {href}
-                          {target}
-                          {rel}
-                          class="self-start py-1.5 text-sm/normal font-semibold tracking-widest text-gray-12 opacity-[0.84] transition hover:opacity-100"
-                          >{label}</a
-                        >
+                        <Link variant="secondary" {href} {target} {rel}>
+                          {label}
+                        </Link>
                       {/each}
                     </div>
                   </div>
@@ -109,25 +107,25 @@
     >
       <!-- subfooter links -->
       <div
-        class="flex flex-wrap gap-6 gap-y-3 break-keep text-sm/normal font-semibold tracking-widest text-gray-11"
+        class="flex flex-wrap gap-6 gap-y-3 break-keep text-sm/normal font-semibold tracking-widest text-gray-12/[0.84]"
       >
         <p>{new Date().getFullYear()} © CometChat</p>
-        {#each data.subfooter as item}
-          <a class="transition hover:opacity-74" href={item.href}>{item.label}</a>
+        {#each data.subfooter as { label, href, target, rel }}
+          <Link variant="secondary" {href} {target} {rel}>
+            {label}
+          </Link>
         {/each}
       </div>
 
       <!-- socials -->
       <div class="flex flex-wrap gap-6 gap-y-3">
         {#each data.socials as { href, target, rel, label, icon }}
-          <a class="flex gap-1 text-gray-10 transition hover:opacity-74" {href} {target} {rel}>
+          <Link variant="secondary" {href} {target} {rel}>
             {#if typeof icon === 'string'}
               <Icon {icon} size="sm" />
             {/if}
-            <span class="text-sm/normal font-semibold tracking-widest text-gray-11">
-              {label}
-            </span>
-          </a>
+            {label}
+          </Link>
         {/each}
       </div>
     </div>

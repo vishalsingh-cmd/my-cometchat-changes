@@ -23,14 +23,14 @@
         <div>
           {#if block.header && block.header[0]}
             {@const header = block.header[0]}
-            <div class="l">
+            <div>
               <HeroHeader variant="secondary" block={header} />
             </div>
           {/if}
 
           <!-- 2nd item - Visible on desktop to have a masonry effect -->
           {#if block.items && block.items[1]}
-            <div class="hidden w-full max-w-[528px] lg:mt-[209px] lg:block">
+            <div class="hidden w-full max-w-[416px] lg:mt-[209px] lg:block">
               <ImageTitleDescriptionTagsItem block={block.items[1]} />
             </div>
           {/if}
@@ -45,7 +45,7 @@
                 'mt-16 lg:mt-[220px] transform lg:translate-x-[53px] flex justify-end lg:block w-full'
               ]}
               <div class={stylingArrays[i]}>
-                <ImageTitleDescriptionTagsItem block={item} class="max-w-[436px]" />
+                <ImageTitleDescriptionTagsItem block={item} class="max-w-[416px]" />
               </div>
             {/each}
           </div>

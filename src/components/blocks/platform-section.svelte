@@ -7,14 +7,19 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PlatformSectionStoryblok } from '$types/bloks';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getLabelInfo } from '$lib/utils';
 
   export let block: PlatformSectionStoryblok;
 </script>
 
 {#if block}
-  <section data-theme="light" class="bg-gray-1" use:storyblokEditable={block}>
+  <section
+    data-theme={block.theme === 'light' ? 'light' : 'dark'}
+    class="bg-gray-1 text-gray-12"
+    use:storyblokEditable={block}
+  >
     <div
-      class="relative mx-auto w-full max-w-[1440px] pb-12 max-[1650px]:overflow-hidden md:grid md:grid-cols-2 md:gap-8 md:pt-[35px]"
+      class="relative mx-auto flex w-full max-w-[1440px] flex-col pb-10 max-[1650px]:overflow-hidden md:pb-20"
     >
       <div
         class="absolute right-[-88px] top-[-182px] hidden blur-[400px] md:block"
@@ -22,37 +27,45 @@
       >
         <img alt="" src={Blur} />
       </div>
+
       <div>
         {#if block.title[0]}
+          {@const { label, title, description, links } = block.title[0]}
+          {@const labelInfo = getLabelInfo(label, 'orange')}
           <Title
-            label={{ color: 'orange', content: block.title[0].label }}
-            title={block.title[0].title}
-            class="pb-10 lg:pb-20"
+            label={labelInfo}
+            {title}
+            {description}
+            buttons={links}
+            class="lg:pb-20 lg:pt-20"
           />
         {/if}
-        {#if block.products[0]}
-          {@const link = getAnchorFromCmsLink(block.products[0].link)}
-          <div class="px-5 md:pl-16">
-            <ProductDisplay
-              illustration={block.products[0].image.filename}
-              title={block.products[0].title}
-              description={block.products[0].description}
-              link={{ ...link, label: block.products[0].link[0].label ?? '' }}
-            />
+
+        {#if block.products}
+          <div
+            class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end lg:gap-0"
+          >
+            {#each block.products as product}
+              {@const link =
+                product.link && product.link[0]
+                  ? getAnchorFromCmsLink(product.link[0].link)
+                  : undefined}
+              <ProductDisplay
+                illustration={product.image.filename}
+                title={product.title}
+                description={product.description}
+                link={{
+                  ...link,
+                  label:
+                    product.link && product.link[0] && product.link[0].label
+                      ? product.link[0].label
+                      : ''
+                }}
+              />
+            {/each}
           </div>
         {/if}
       </div>
-      {#if block.products[1]}
-        {@const link = getAnchorFromCmsLink(block.products[1].link)}
-        <div class="mt-10 px-5 md:mt-[180px] md:pr-16">
-          <ProductDisplay
-            illustration={block.products[1].image.filename}
-            title={block.products[1].title}
-            description={block.products[1].description}
-            link={{ ...link, label: block.products[1].link[0].label ?? '' }}
-          />
-        </div>
-      {/if}
     </div>
   </section>
 {/if}

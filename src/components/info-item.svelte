@@ -1,50 +1,67 @@
-<script lang="ts" context="module">
-  import type { MultilinkStoryblok } from '$types/bloks';
-
-  export type InfoItemType = {
-    icon?: {
-      icon: string;
-      colour: 'brand' | 'orange';
-    };
-    title: string;
-    description: string;
-    link?: {
-      label: string;
-      link: MultilinkStoryblok;
-    };
-  };
-</script>
-
 <script lang="ts">
+  import Badge from '$components/badge.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
   import Icon from '$components/icon/icon.svelte';
 
+  import type { PanelItemStoryblok } from '$types/bloks';
+
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { string } from '$lib/strings';
   import { cn } from '$lib/utils';
 
   let className: undefined | string = undefined;
   export { className as class };
-  export let item: InfoItemType;
+  export let item: PanelItemStoryblok;
+
+  const typeIcon = (icon: string | number) => {
+    return icon as string;
+  };
 </script>
 
-<div class={cn('flex flex-col items-start gap-2 md:gap-3', className)}>
+<div class={cn('flex flex-col items-start', className)}>
   {#if item.icon}
+    {@const typedIcon = typeIcon(item.icon)}
     <div
       class={cn(
-        'flex h-[38px] w-[38px] items-center justify-center rounded-full',
-        item.icon.colour === 'orange' && 'bg-orange-9/15 text-orange-9',
-        item.icon.colour === 'brand' && 'bg-brand-9/10 text-brand-9'
+        'mb-2 flex h-[38px] w-[38px] items-center justify-center rounded-full md:mb-3',
+        item.accent_colour === 'orange' && 'bg-orange-9/15 text-orange-9',
+        item.accent_colour === 'brand' && 'bg-brand-9/10 text-brand-9'
       )}
     >
-      <Icon size="xs" icon={item.icon.icon} />
+      <Icon size="xs" icon={typedIcon} />
     </div>
   {/if}
-  <div class="flex flex-col gap-1 text-lg text-gray-12">
+  <div class="flex flex-col gap-1 text-xl text-gray-12 md:gap-2">
     <h3 class="font-semibold leading-tight">{item.title}</h3>
-    <p class="font-medium leading-snug tracking-wide opacity-64">{item.description}</p>
+    <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
   </div>
-  {#if item.link}
-    {@const { target, rel, href } = getAnchorFromCmsLink(item.link.link)}
-    <GhostButton variant="highlighted" as="a" {target} {rel} {href}>{item.link.label}</GhostButton>
+  {#if item.list && item.list.length > 0}
+    <ul class={cn('mt-5 flex flex-col gap-3 md:mt-8 ')}>
+      {#each item.list as listItem}
+        <li class="flex items-center gap-2">
+          <Icon
+            icon="star-04"
+            size="xs"
+            class={cn(
+              'flex-shrink-0',
+              item.accent_colour === 'orange' && 'text-orange-9',
+              item.accent_colour === 'brand' && 'text-brand-9'
+            )}
+          />
+          <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
+            {listItem.item}
+          </p>
+          {#if listItem.coming_soon}
+            <Badge size="medium" label={string('coming_soon')} />
+          {/if}
+        </li>
+      {/each}
+    </ul>
+  {/if}
+  {#if item.link && item.link[0]}
+    {@const { target, rel, href } = getAnchorFromCmsLink(item.link[0])}
+    <GhostButton variant="highlighted" as="a" {target} {rel} {href} class="mt-5 md:mt-8">
+      {item.link[0].label}
+    </GhostButton>
   {/if}
 </div>

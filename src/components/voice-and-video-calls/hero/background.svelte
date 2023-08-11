@@ -4,6 +4,7 @@
   import { cn } from '$lib/utils';
 
   import Comet from './assets/comet.svg';
+  import Comet2 from './assets/comet-2.svg';
   import Orbit from './assets/orbit.svg';
 
   import Stars from '$components/stars.svelte';
@@ -118,9 +119,10 @@
 />
 <img
   src={Comet}
-  class="absolute bottom-[545px] right-[-230px] lg:bottom-[66px] lg:left-[-300px] lg:right-auto"
+  class="absolute -left-[230px] bottom-[200px] z-10 min-w-[400px] sm:-left-[350px] lg:-bottom-[50px]"
   alt=""
 />
+<img src={Comet2} class="absolute -right-[150px] bottom-[530px] z-10 w-[270px] sm:hidden" alt="" />
 <img src={Orbit} alt="" class="absolute bottom-[337px] right-[-410px]" />
 
 <style lang="postcss">

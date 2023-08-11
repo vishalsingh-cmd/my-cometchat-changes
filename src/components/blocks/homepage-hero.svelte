@@ -7,9 +7,10 @@
   import OrbitThin from '$components/homepage/hero/assets/orbit-thin.svg';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   import type { HomepageHeroStoryblok } from '$types/bloks';
+  import Media from '$components/media.svelte';
 
   export let block: HomepageHeroStoryblok;
 </script>
@@ -93,8 +94,7 @@
         <img src={OrbitThin} alt="" />
       </div>
       {#if block.illustration}
-        {@const { src, alt, width, height } = getImageAttributes(block.illustration)}
-        <img class="isolate z-10 mx-auto w-full max-w-[796px]" {src} {alt} {width} {height} />
+        <Media media={block.illustration} class="isolate z-10 mx-auto w-full max-w-[796px]" />
       {/if}
     </div>
   </section>

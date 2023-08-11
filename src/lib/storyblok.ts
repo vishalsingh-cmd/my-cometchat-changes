@@ -50,7 +50,6 @@ export function startStoryblokBridge<T extends { story: ISbStoryData<any> }>(
 export const getStories = async (params: ISbStoriesParams = {}) => {
   return await storyblok.get('cdn/stories', {
     version: 'draft',
-    content_type: params.content_type,
     sort_by: 'updated_at:desc',
     resolve_relations: [
       'customer-story.author',

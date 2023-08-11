@@ -27,8 +27,7 @@
       outline-none
       focus-visible:ring-4
       focus-visible:shadow-focus
-      active:shadow-focus
-  
+      
       transition
 
       disabled:pointer-events-none
@@ -41,8 +40,7 @@
           primary: `
               bg-brand-9
               ring-brand-9/30
-              text-brand-12
-              light:text-brand-1
+              text-[#FCFCFE]
 
               active:bg-brand-10
             `,
@@ -56,6 +54,7 @@
               border-gray-12/10
               hover:border-brand-9/30
               active:border-brand-9/60
+              active:shadow-focus
               focus-visible:border-brand-9/30
               focus-visible:ring-brand-9/30
             `
@@ -125,7 +124,7 @@
     </div>
   {/if}
   <div
-    class="pointer-events-none absolute -inset-px opacity-100 transition duration-300"
+    class="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
     style="background: radial-gradient(100px circle at {position.x}px {position.y}px, {variant ===
     'primary'
       ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'

@@ -10,12 +10,14 @@
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
   import DirectorySection from './directory-section.svelte';
+  import DoublePanelSection from './double-panel-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
+  import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
@@ -30,9 +32,11 @@
   import SocialProofs from './social-proofs.svelte';
   import SolutionsHero from './solutions-hero.svelte';
   import SolutionsSection from './solutions-section.svelte';
+  import StandardHero from './standard-hero.svelte';
   import SyncedBlock from './synced-block.svelte';
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
+  import TitleImageSection from './title-image-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
 
@@ -47,12 +51,14 @@
     'customer-stories-section': CustomerStoriesSection,
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
+    'double-panel-section': DoublePanelSection,
     'featured-story-section': FeaturedStorySection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
+    'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'list-section': ListSection,
     'lists-section': ListsSection,
@@ -67,9 +73,11 @@
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,
     'solutions-section': SolutionsSection,
+    'standard-hero': StandardHero,
     'synced-block': SyncedBlock,
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
+    'title-image-section': TitleImageSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection
   };

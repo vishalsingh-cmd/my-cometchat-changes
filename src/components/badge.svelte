@@ -7,15 +7,15 @@
 
   const badge = cva(
     [
-      'inline-flex',
+      'inline-flex items-center flex-wrap',
       'font-semibold tracking-wide text-brand-10',
-      'border-[1.4px] border-brand-10/[0.16] '
+      'border-[1.4px] light:border-brand-10/[0.16] dark:border-brand-10/[0.16]'
     ],
     {
       variants: {
         size: {
-          small: ['pt-0.5 pb-[3px]', 'px-1.5', 'text-xs', 'leading-normal', 'rounded-[7px]'],
-          medium: ['pt-1.5 pb-2', 'px-2.5', 'text-md', 'leading-tight', 'rounded-[10px]']
+          small: ['py-0.5', 'px-1.5', 'text-xs', 'rounded-[7px]', 'leading-normal'],
+          medium: ['py-[5.5px]', 'px-2.5', 'text-md', 'rounded-[10px]', 'leading-snug']
         }
       }
     }
