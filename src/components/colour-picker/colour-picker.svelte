@@ -113,7 +113,7 @@
   };
 </script>
 
-<div class="flex flex-col md:items-center">
+<div class="flex max-h-[421px] flex-col overflow-hidden md:items-center">
   <div class="mb-5 w-fit">
     <p class="mb-3 text-sm font-semibold leading-normal tracking-widest text-gray-12/54">
       Pick a color
@@ -133,6 +133,8 @@
     <div
       class="absolute bottom-0 left-[-20px] h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:right-[79px] md:h-full md:w-[473px] md:to-30%"
     />
-    <Illustration class={cn(illustration({ colour: colours[selectedColourIndex] }), 'w-full')} />
+    <Illustration
+      class={cn(illustration({ colour: colours[selectedColourIndex] }), 'h-[719px] w-[384px]')}
+    />
   </div>
 </div>
