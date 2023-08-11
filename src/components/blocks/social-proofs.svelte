@@ -56,7 +56,7 @@
         <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
           {#each arrayOfCustomersToShow as customer}
             {@const { src, alt, width, height } = getImageAttributes(customer.content.logo)}
-            <img {src} {alt} {width} {height} class="h-7 w-fit flex-shrink-0 opacity-54" />
+            <img {src} {alt} {width} {height} class="h-6 w-fit flex-shrink-0 opacity-54" />
           {/each}
         </div>
       {/if}
