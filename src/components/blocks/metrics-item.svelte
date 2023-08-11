@@ -18,7 +18,7 @@
 </script>
 
 <div
-  class={cn('flex flex-col-reverse gap-6 lg:flex-row lg:items-end', className)}
+  class={cn('flex flex-col-reverse gap-6 md:flex-row md:items-end', className)}
   bind:clientWidth={width}
   bind:clientHeight={height}
   style="--metric-width:{width}px;--metric-height:{height}px;"
@@ -36,20 +36,20 @@
     role="presentation"
     class={cn(
       'relative transition-all delay-500 duration-500 ease-smooth',
-      'h-px lg:w-px',
-      intersecting ? 'w-[var(--metric-width)] lg:h-[var(--metric-height)]' : 'w-0 lg:h-0'
+      'h-px md:w-px',
+      intersecting ? 'w-[var(--metric-width)] md:h-[var(--metric-height)]' : 'w-0 md:h-0'
     )}
   >
     <div
       class={cn(
-        'h-px w-full lg:h-full lg:w-px',
-        'bg-gradient-to-r from-gray-12/0 to-gray-12/10 lg:bg-gradient-to-t'
+        'h-px w-full md:h-full md:w-px',
+        'bg-gradient-to-r from-gray-12/0 to-gray-12/10 md:bg-gradient-to-t'
       )}
     />
     <div
       class={cn(
         'absolute h-[3px] w-[3px] rounded-full bg-brand-9 shadow-[0_0_4px_1px_hsl(var(--color-brand-9)/0.3)]',
-        '-top-px right-0 lg:-right-px lg:top-0'
+        '-top-px right-0 md:-right-px md:top-0'
       )}
     />
   </div>

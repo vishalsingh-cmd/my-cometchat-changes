@@ -7,11 +7,11 @@
 
   export let block: MetricsStoryblok;
 
-  const grid = cva('grid gap-8 py-10 lg:pt-14 xl:pt-20', {
+  const grid = cva('grid gap-8 py-10 md:pt-14 xl:pt-20', {
     variants: {
       even: {
         true: 'grid-cols-1 md:grid-cols-2 xl:grid-cols-4',
-        false: 'grid-cols-1 lg:grid-cols-3'
+        false: 'grid-cols-1 md:grid-cols-3'
       }
     }
   });
