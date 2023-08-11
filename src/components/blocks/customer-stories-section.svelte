@@ -3,6 +3,8 @@
   import type { CustomerStoriesSectionStoryblok, TestimonialStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Title from '$components/title.svelte';
   import Testimonial from '$components/testimonial.svelte';
 
@@ -43,7 +45,11 @@
 </script>
 
 {#if block}
-  <section data-theme="light" class="relative overflow-hidden bg-gray-1">
+  <section
+    use:storyblokEditable={block}
+    data-theme="light"
+    class="relative overflow-hidden bg-gray-1"
+  >
     <div
       class="container relative mx-auto flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
     >

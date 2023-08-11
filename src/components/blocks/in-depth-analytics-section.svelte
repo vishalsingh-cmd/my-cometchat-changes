@@ -1,15 +1,16 @@
 <script lang="ts">
-  import Background from '$components/chat-and-messaging/in-depth-analytics/background.svelte';
-  import Illustration from '$components/chat-and-messaging/in-depth-analytics/assets/illustration.svg';
-  import Title from '$components/title.svelte';
-
   import type { InDepthAnalyticsSectionStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
+  import Title from '$components/title.svelte';
+  import Illustration from '$components/chat-and-messaging/in-depth-analytics/assets/illustration.svg';
+  import Background from '$components/chat-and-messaging/in-depth-analytics/background.svelte';
 
   export let block: InDepthAnalyticsSectionStoryblok;
 </script>
 
 {#if block}
-  <section class="overflow-hidden px-container">
+  <section use:storyblokEditable={block} class="overflow-hidden px-container">
     <div class="container relative mx-auto h-[575px] overflow-visible md:h-[738px]">
       <Background />
       <img

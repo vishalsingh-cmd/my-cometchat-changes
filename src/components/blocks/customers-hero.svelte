@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { CustomersHeroStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import SocialProofs from './social-proofs.svelte';
 
@@ -9,7 +10,7 @@
 </script>
 
 {#if block}
-  <section class="overflow-hidden bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} class="overflow-hidden bg-gray-1 text-gray-12">
     <div
       class="relative mx-auto flex px-container pb-[258px] pt-[180px] md:justify-center md:pb-[242px] md:pt-[316px]"
     >

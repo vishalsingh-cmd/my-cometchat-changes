@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   import type { NewsletterSectionStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { cn } from '$lib/utils';
 
@@ -41,6 +42,7 @@
 
 {#if block}
   <section
+    use:storyblokEditable={block}
     data-theme="light"
     class={cn(
       'bg-gray-1 py-5 text-gray-12  md:py-6',
