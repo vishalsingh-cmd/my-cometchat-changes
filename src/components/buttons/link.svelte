@@ -16,8 +16,8 @@
       font-semibold
       outline-none
       outline-brand-7/0
-      focus-within:outline-1
-      focus-within:outline-brand-7/100
+      focus-visible:outline-1
+      focus-visible:outline-brand-7/100
     `
     ],
     {
@@ -31,6 +31,7 @@
           secondary: `
               text-gray-12/[0.84]
               hover:text-gray-12/100
+              active:text-gray-12/100
             `
         }
       }

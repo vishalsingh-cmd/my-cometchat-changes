@@ -981,6 +981,7 @@ export interface TitleStoryblok {
   title: string;
   description?: string;
   links?: ButtonLinkStoryblok[];
+  size?: '' | 'large' | 'small';
   _uid: string;
   component: 'title';
   [k: string]: any;

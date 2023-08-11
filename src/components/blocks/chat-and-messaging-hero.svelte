@@ -1,6 +1,5 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
   import type { ChatAndMessagingHeroStoryblok } from '$types/bloks';
 
   import Blurs from '$components/chat-and-messaging/hero/blurs.svelte';
@@ -11,6 +10,7 @@
 
   import HeroHeader from './hero-header.svelte';
   import Background from '$components/chat-and-messaging/hero/background.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
 </script>
@@ -31,15 +31,9 @@
       </div>
       <img src={Ellipse} alt="" class="absolute left-[calc(50%+300px)] top-[39px]" />
       {#if block.illustration}
-        {@const { src, alt, width, height } = getImageAttributes(block.illustration, {
-          size: [1700, 0]
-        })}
-        <img
+        <Media
+          media={block.illustration}
           class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[320px] md:max-w-[1500px]"
-          {src}
-          {alt}
-          {width}
-          {height}
         />
       {/if}
       <div class="isolate z-10 lg:ml-[112px]">

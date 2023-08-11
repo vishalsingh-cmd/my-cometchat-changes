@@ -2,7 +2,7 @@
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   import type { IndustryStoryblok, SolutionsHeroStoryblok } from '$types/bloks';
 
@@ -12,6 +12,7 @@
     type IllustrationOptions
   } from '$components/comet-illustration/comet-illustration.svelte';
   import Stars from '$components/stars.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: SolutionsHeroStoryblok;
 
@@ -57,12 +58,8 @@
         {/if}
       </div>
       {#if block.illustration}
-        {@const { src, alt, width, height } = getImageAttributes(block.illustration)}
-        <img
-          {src}
-          {alt}
-          {width}
-          {height}
+        <Media
+          media={block.illustration}
           class="bottom-0 w-full max-w-[784px] translate-x-4 transform self-end md:translate-x-16"
         />
       {/if}

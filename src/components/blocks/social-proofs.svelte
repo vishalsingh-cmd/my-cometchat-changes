@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { getImageAttributes } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
+  import { getImageAttributes } from '$lib/storyblok';
   import type { StoryblokStory } from 'storyblok-generate-ts';
   import type { CustomerStoryblok, SocialProofsStoryblok } from '$types/bloks';
 

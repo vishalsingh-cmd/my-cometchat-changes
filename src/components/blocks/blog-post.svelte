@@ -4,9 +4,9 @@
   import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
-  import Hero from '$components/blog-post/hero.svelte';
 
+  import Hero from '$components/blog-post/hero.svelte';
+  import Media from '$components/media.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   import RelatedStoriesSection from './related-stories-section.svelte';
@@ -40,8 +40,7 @@
               >
                 <div class="flex items-center gap-3">
                   {#if author.content.avatar}
-                    {@const { src, alt, width, height } = getImageAttributes(author.content.avatar)}
-                    <img class="h-10 w-10 rounded-full" {src} {alt} {width} {height} />
+                    <Media media={author.content.avatar} class="h-10 w-10 rounded-full" />
                   {/if}
                   <div
                     class="flex flex-col gap-[2px] text-md font-semibold leading-tight tracking-wide text-gray-12"

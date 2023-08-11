@@ -1,6 +1,6 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { cn } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
 
   import type {
     BulletPointStoryblok,
@@ -64,17 +64,6 @@
   const onOptionSelect = (e: CustomEvent) => {
     selectedItemIndex = e.detail.i;
   };
-
-  const getLabelInfo = (label: string | undefined) => {
-    if (!label) {
-      return undefined;
-    }
-
-    return {
-      content: label,
-      color: 'orange' as 'orange' | 'brand'
-    };
-  };
 </script>
 
 <svelte:window bind:innerWidth />
@@ -87,7 +76,7 @@
     <div class="container mx-auto px-container">
       {#if block.header && block.header[0]}
         {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label)}
+        {@const labelInfo = getLabelInfo(label, 'orange')}
         <Header
           label={labelInfo}
           {title}

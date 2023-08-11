@@ -7,24 +7,13 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { ImplementationSectionStoryblok } from '$types/bloks';
-  import { cn } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
 
   export let block: ImplementationSectionStoryblok;
 
   const leftSidedItems =
     block.items.length === 4 ? block.items.slice(0, 2) : block.items.slice(0, 1);
   const rightSidedItems = block.items.length === 4 ? block.items.slice(2) : block.items.slice(1);
-
-  const getLabelInfo = (label: string | undefined) => {
-    if (!label) {
-      return undefined;
-    }
-
-    return {
-      content: label,
-      color: 'brand' as 'orange' | 'brand'
-    };
-  };
 </script>
 
 {#if block}
@@ -32,7 +21,7 @@
     <div class="container mx-auto">
       {#if block.header[0]}
         {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label)}
+        {@const labelInfo = getLabelInfo(label, 'brand')}
         <Title label={labelInfo} {title} {description} buttons={links} alignment="center" />
       {/if}
     </div>

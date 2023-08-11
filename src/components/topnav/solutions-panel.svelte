@@ -14,7 +14,7 @@
 <div class="container mx-auto px-container">
   <div class="xl:flex">
     <div class="flex-[3] p-8 px-0 lg:p-12 lg:pl-0 xl:pr-12">
-      <h3 class="mb-8 text-lg opacity-54">{data.industries_title}</h3>
+      <h3 class="mb-6 text-lg opacity-54">{data.industries_title}</h3>
       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {#each industries as item}
           <TopnavItem
@@ -34,7 +34,7 @@
           'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
         ])}
       >
-        <h3 class="mb-8 text-lg opacity-54">{group.title}</h3>
+        <h3 class="mb-6 text-lg opacity-54">{group.title}</h3>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1">
           {#each group.items as item}
             {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}

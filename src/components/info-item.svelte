@@ -39,7 +39,15 @@
     <ul class={cn('mt-5 flex flex-col gap-3 md:mt-8 ')}>
       {#each item.list as listItem}
         <li class="flex items-center gap-2">
-          <Icon icon="star-04" size="xs" class="flex-shrink-0 text-brand-9" />
+          <Icon
+            icon="star-04"
+            size="xs"
+            class={cn(
+              'flex-shrink-0',
+              item.accent_colour === 'orange' && 'text-orange-9',
+              item.accent_colour === 'brand' && 'text-brand-9'
+            )}
+          />
           <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
             {listItem.item}
           </p>
