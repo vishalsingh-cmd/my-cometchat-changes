@@ -27,7 +27,7 @@
 
 <div class="mt-5 lg:mt-0">
   {#each panels as panel, i}
-    <div class={cn('border-t border-solid border-gray-12/8 pt-8', i !== 0 && 'mt-8')}>
+    <div class={cn('border-t border-solid border-gray-12/8 pt-5', i !== 0 && 'mt-8')}>
       <p class="mb-4 text-lg font-semibold leading-tight">{panel.title}</p>
       <div class="flex flex-row flex-wrap gap-2">
         {#each panel.tags as tag}
