@@ -24,7 +24,7 @@
   <div use:storyblokEditable={block} class="bg-gray-1 text-gray-12">
     <div
       class={cn(
-        'container mx-auto h-[300px] px-container',
+        'container mx-auto px-container lg:h-[300px]',
         grid({ even: block.metrics.length % 2 === 0 })
       )}
     >
