@@ -10,7 +10,7 @@
 {#if block}
   <div
     use:storyblokEditable={block}
-    class={cn('mb-2.5 mt-5 font-semibold leading-tighter md:mb-3 md:mt-10', block.label && 'mt-6')}
+    class={cn('pb-2.5 pt-5 font-semibold leading-tighter md:pb-3 md:pt-10', block.label && 'pt-6')}
   >
     {#if block.label}
       <p class="mb-2 text-xl text-brand-9">{block.label}</p>
