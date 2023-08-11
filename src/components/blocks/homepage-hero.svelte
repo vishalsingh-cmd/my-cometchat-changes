@@ -19,7 +19,7 @@
   <section
     data-theme="dark"
     use:storyblokEditable={block}
-    class="relative overflow-hidden bg-gray-1 px-5 pb-20 pt-24 md:px-20 md:pt-[188px]"
+    class="relative overflow-hidden bg-gray-1 px-5 pt-24 md:px-20 md:pt-[188px]"
   >
     <div class="absolute left-[calc(50vw-700px)] top-[80px] hidden md:block">
       <img src={OrbitMedium} alt="" />
