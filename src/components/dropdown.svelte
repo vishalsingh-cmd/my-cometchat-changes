@@ -27,26 +27,32 @@
   <button
     class={cn(
       'flex items-center',
-      'h-[38px] w-fit',
+      'h-[44px] w-fit',
       'gap-2',
-      'px-3',
+      'px-3.5',
 
       'text-brand-12',
 
+      'bg-gray-12/[0.02]',
+      'hover:bg-brand-9/[0.03]',
+
       'border',
       'border-brand-12/10',
-      'rounded-full',
+      'rounded-[14px]',
       'outline-none',
 
       'hover:border-brand-9/30',
 
       'focus-within:border-brand-9/40',
+      'focus-within:bg-brand-9/[0.02]',
 
+      'focus-visible:bg-brand-9/[0.02]',
       'focus-visible:ring-4',
       'ring-brand-9/30',
 
       'active:border-brand-7',
       'active:border-brand-9/60',
+      'active:bg-brand-9/[0.02]',
 
       'disabled:opacity-60',
       'disabled:pointer-events-none',
@@ -79,7 +85,7 @@
     >
       {#each options as option, i}
         <button
-          class="transition-smooth flex flex-row items-center justify-between gap-2 rounded-xl bg-gray-12/0 p-2.5 transition hover:bg-gray-12/5"
+          class="transition-smooth flex flex-row items-center justify-between gap-2 rounded-xl bg-gray-12/0 px-3 py-[14px] transition hover:bg-gray-12/5"
           on:click={() => {
             toggle();
             dispatch('optionSelect', {

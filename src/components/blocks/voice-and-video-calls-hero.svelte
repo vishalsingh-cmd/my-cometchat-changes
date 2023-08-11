@@ -20,7 +20,7 @@
         <Background />
 
         <!-- Content -->
-        <div class="lg:ml-[80px]">
+        <div>
           {#if block.header && block.header[0]}
             {@const header = block.header[0]}
             <div>

@@ -80,15 +80,17 @@
       {@const author = getAuthor(story)}
       {@const date = formatDate(content.date)}
       {@const tag = getTag(story)}
-      <div class="container mx-auto flex flex-col gap-8 px-container py-10 md:flex-row md:py-20">
-        <div class="flex flex-1 flex-col justify-between md:h-[526px] md:py-6">
+      <div
+        class="container mx-auto flex flex-col justify-between gap-8 px-container py-10 md:flex-row md:py-20"
+      >
+        <div class="flex max-w-[528px] flex-1 flex-col justify-between md:h-[526px] md:py-6">
           <div>
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
             <p class="text-3xl font-semibold leading-tighter">{story.name}</p>
           </div>
-          <div class="mt-8 text-xl font-medium leading-snug tracking-wide md:mt-0">
+          <div class="mt-8 text-xl font-medium leading-snug tracking-wide opacity-74 md:mt-0">
             {#if content.seo && content.seo.length > 0 && content.seo[0].description}
-              <p class="mb-2 opacity-74 md:mb-4">
+              <p class="mb-2 md:mb-4">
                 {content.seo[0].description}
               </p>
             {/if}

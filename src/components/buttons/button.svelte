@@ -124,7 +124,7 @@
     </div>
   {/if}
   <div
-    class="pointer-events-none absolute -inset-px opacity-100 transition duration-300"
+    class="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
     style="background: radial-gradient(100px circle at {position.x}px {position.y}px, {variant ===
     'primary'
       ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'
