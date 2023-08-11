@@ -8,17 +8,18 @@
 
   import type { ButtonLinkStoryblok } from '$types/bloks';
 
-  const titleStyle = cva(
-    ['w-full', 'flex', 'flex-col', 'px-container', 'pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16'],
-    {
-      variants: {
-        alignment: {
-          left: ['items-start', 'text-left'],
-          center: ['md:items-center', 'md:text-center']
-        }
+  const titleStyle = cva(['w-full', 'flex', 'flex-col', 'px-container'], {
+    variants: {
+      alignment: {
+        left: ['items-start', 'text-left'],
+        center: ['md:items-center', 'md:text-center']
+      },
+      size: {
+        small: ['lg:py-12', 'py-12'],
+        large: ['pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16']
       }
     }
-  );
+  });
 
   let className: undefined | string = undefined;
   export { className as class };
@@ -34,6 +35,7 @@
   export let description: string | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
+  export let size: 'small' | 'large' = 'large';
 
   const labelColours = {
     orange: 'text-orange-9',
@@ -41,7 +43,7 @@
   };
 </script>
 
-<div class={cn(titleStyle({ alignment }), className)}>
+<div class={cn(titleStyle({ alignment, size }), className)}>
   {#if label}
     <p
       class={`${

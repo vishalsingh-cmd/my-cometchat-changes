@@ -25,3 +25,14 @@ export const scrollLock = (condition: boolean) => {
     document.body.style.overflow = condition ? 'hidden' : 'auto';
   }
 };
+
+export const getLabelInfo = (label: string | undefined, color: 'orange' | 'brand') => {
+  if (!label) {
+    return undefined;
+  }
+
+  return {
+    content: label,
+    color: color
+  };
+};

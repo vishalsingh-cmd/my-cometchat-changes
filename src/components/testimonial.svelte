@@ -1,10 +1,13 @@
 <script lang="ts">
   import type { TestimonialStoryblok } from '$types/bloks';
 
-  import { getAnchorFromCmsLink, getImageAttributes } from '$lib/storyblok';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Button from './buttons/button.svelte';
   import Icon from './icon/icon.svelte';
+  import Media from './media.svelte';
+
   import { cn } from '$lib/utils';
 
   export let block: TestimonialStoryblok;
@@ -21,14 +24,8 @@
     )}
   >
     {#if block.avatar}
-      {@const { src, alt, width, height } = getImageAttributes(block.avatar, {
-        size: [48, 48]
-      })}
-      <img
-        {src}
-        {alt}
-        {width}
-        {height}
+      <Media
+        media={block.avatar}
         class={cn('h-8 w-8 rounded-full md:h-12 md:w-12', flipHorizontal && 'self-end')}
       />
     {/if}

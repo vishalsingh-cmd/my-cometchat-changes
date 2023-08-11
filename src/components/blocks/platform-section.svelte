@@ -7,19 +7,9 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PlatformSectionStoryblok } from '$types/bloks';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getLabelInfo } from '$lib/utils';
 
   export let block: PlatformSectionStoryblok;
-
-  const getLabelInfo = (label: string | undefined) => {
-    if (!label) {
-      return undefined;
-    }
-
-    return {
-      content: label,
-      color: 'orange' as 'orange' | 'brand'
-    };
-  };
 </script>
 
 {#if block}
@@ -41,7 +31,7 @@
       <div>
         {#if block.title[0]}
           {@const { label, title, description, links } = block.title[0]}
-          {@const labelInfo = getLabelInfo(label)}
+          {@const labelInfo = getLabelInfo(label, 'orange')}
           <Title
             label={labelInfo}
             {title}

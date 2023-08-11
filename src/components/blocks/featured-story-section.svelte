@@ -5,7 +5,7 @@
   import { industries } from '$lib/stores/industries';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes, sanitizeSlug } from '$lib/storyblok';
+  import { sanitizeSlug } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
 
   import type {
@@ -19,6 +19,7 @@
   } from '$types/bloks';
 
   import Button from '$components/buttons/button.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: FeaturedStorySectionStoryblok;
 
@@ -102,9 +103,8 @@
           </div>
         </div>
         {#if content.cover}
-          {@const { src, alt, width, height } = getImageAttributes(content.cover)}
-          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl md:max-w-[540px]">
-            <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
+          <div class="max-h-[526px] flex-1 overflow-hidden rounded-3xl">
+            <Media media={content.cover} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>

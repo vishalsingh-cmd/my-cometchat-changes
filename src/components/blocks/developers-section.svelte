@@ -2,12 +2,14 @@
   import CodeBlock from '$components/code-block/code-block.svelte';
   import Comet from '$components/code-block/assets/comet.svg';
 
+  import Media from '$components/media.svelte';
   import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getLabelInfo } from '$lib/utils';
+
   import type { DevelopersSectionStoryblok } from '$types/bloks';
-  import { getImageAttributes } from '$lib/storyblok';
 
   export let block: DevelopersSectionStoryblok;
 
@@ -43,8 +45,9 @@
         <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-orange-8', 'bg-brand-7']} />
       </div>
       {#if block.header && block.header[0]}
+        {@const labelInfo = getLabelInfo(block.header[0].label, 'orange')}
         <Title
-          label={{ content: block.header[0].label, color: 'orange' }}
+          label={labelInfo}
           title={block.header[0].title}
           description={block.header[0].description}
           buttons={block.header[0].links}
@@ -67,15 +70,14 @@
             {selectedLanguageIndex}
           />
           {#if parsedCodeBlocks[selectedLanguageIndex].image}
-            {@const { src, alt, width, height } = getImageAttributes(
-              parsedCodeBlocks[selectedLanguageIndex].image,
-              { size: [1000, 0] }
-            )}
             <div
               class="mb-12 mt-5 flex h-[500px] w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
               style="transform: translate3d(0, 0, 0);"
             >
-              <img {src} {alt} {width} {height} class="mt-8 h-[500px] px-12 md:mt-12" />
+              <Media
+                media={parsedCodeBlocks[selectedLanguageIndex].image}
+                class="mt-8 h-[500px] px-12 md:mt-12"
+              />
             </div>
           {/if}
         </div>
