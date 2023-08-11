@@ -1121,6 +1121,7 @@ export interface TutorialStoryblok {
   is_old_post?: boolean;
   body: RichtextStoryblok;
   seo?: SeoFieldsStoryblok[];
+  related?: RelatedStoriesSectionStoryblok[];
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
