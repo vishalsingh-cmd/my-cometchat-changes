@@ -51,7 +51,7 @@
                   ? getAnchorFromCmsLink(product.link[0].link)
                   : undefined}
               <ProductDisplay
-                illustration={product.image.filename}
+                illustration={product.image}
                 title={product.title}
                 description={product.description}
                 link={{
