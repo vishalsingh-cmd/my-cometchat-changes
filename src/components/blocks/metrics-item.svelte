@@ -53,7 +53,7 @@
       )}
     />
   </div>
-  <div>
+  <div class="self-start">
     <p class={cn('text-4xl/none font-semibold', titleClassName)}>{metric.metric}</p>
     <p class={cn('mt-2 text-lg/snug font-medium opacity-74', subtitleClassName)}>
       {metric.description}
