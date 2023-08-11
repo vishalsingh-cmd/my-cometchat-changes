@@ -78,15 +78,15 @@
             {@const widthNumber = Number(width)}
             {@const heightNumber = Number(height)}
             <div
-              class="mb-12 mt-5 h-full max-h-[500px] overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
+              class="mb-12 mt-5 h-[300px] overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] md:h-[500px] md:max-h-[500px] lg:mb-0 lg:mt-0"
             >
               <Media
                 media={parsedCodeBlocks[selectedLanguageIndex].image}
                 class={cn(
                   widthNumber > heightNumber &&
-                    'ml-16 mt-16 h-[500px] max-h-none max-w-max md:mt-16 md:h-[700px]',
+                    'ml-8 mt-8 h-[350px] max-h-none max-w-max md:ml-12 md:mt-12  md:h-[500px]',
                   widthNumber < heightNumber &&
-                    'mx-auto mt-10 max-h-max w-auto max-w-none md:w-[400px]'
+                    'mx-auto mt-8 max-h-max w-[220px] max-w-none md:mt-12 md:w-[300px]'
                 )}
               />
             </div>
