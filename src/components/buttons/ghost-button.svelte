@@ -76,8 +76,7 @@
         class="line absolute h-px w-full origin-right rounded-full bg-gradient-to-l from-brand-9/100 to-brand-9/0 opacity-0"
       />
       <div
-        class="star absolute left-0 h-1 w-1 -translate-y-1/2 rounded-full bg-brand-9 opacity-0 after:absolute after:left-1/2 after:top-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-brand-9/60 after:blur-sm"
-        style="transform: translate3d(0, 0, 0);"
+        class="star absolute left-0 h-1 w-1 -translate-y-[40%] rounded-full bg-brand-9 opacity-0 after:absolute after:left-1/2 after:top-1/2 after:h-2 after:w-2 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:bg-brand-9/60 after:blur-sm"
       />
     </div>
   {/if}

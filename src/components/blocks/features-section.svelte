@@ -28,7 +28,7 @@
       </div>
       <div
         class={cn(
-          'flex flex-col justify-between gap-10 border-b border-gray-12/8 pb-16 pl-container pr-32',
+          'flex flex-col justify-between gap-10 border-b border-gray-12/8 pb-16 pl-container pr-container lg:pr-32',
           block.image_on_the_right
             ? 'lg:border-r lg:border-gray-12/8'
             : 'lg:border-l lg:border-gray-12/8'
