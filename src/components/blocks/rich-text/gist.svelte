@@ -50,7 +50,7 @@
 </script>
 
 {#if block}
-  <div class="mb-5 mt-4">
+  <div class="my-8">
     <iframe class="container w-full" src="about:blank" bind:this={frame} title="Gist" />
   </div>
 {/if}
