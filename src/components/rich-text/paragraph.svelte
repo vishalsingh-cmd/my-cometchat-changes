@@ -16,7 +16,7 @@
     'tracking-wide',
 
     '[&>a]:text-brand-9',
-    '[&>a]:hover:text-brand-7',
+    '[&>a:hover]:text-brand-7',
 
     '[&>img]:my-6',
     '[&>img]:md:my-10',
