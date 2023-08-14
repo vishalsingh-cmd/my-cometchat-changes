@@ -1,6 +1,4 @@
 <script lang="ts">
-  import IphoneFrame from '$components/colour-picker/assets/Iphone-frame.png';
-
   let className: undefined | string = undefined;
   export { className as class };
 </script>
@@ -208,10 +206,3 @@
     />
   </defs>
 </svg>
-
-<img
-  src={IphoneFrame}
-  alt=""
-  role="presentation"
-  class="absolute -bottom-[68px] left-0 h-[809px]"
-/>

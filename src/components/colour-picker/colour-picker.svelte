@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cva, type VariantProps } from 'class-variance-authority';
 
+  import IphoneFrame from '$components/colour-picker/assets/Iphone-frame.png';
   import Illustration from '$components/colour-picker/assets/Illustration.svelte';
 
   import { cn } from '$lib/utils';
@@ -133,6 +134,13 @@
     <div
       class="absolute bottom-0 left-[-20px] h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:right-[79px] md:h-full md:w-[473px] md:to-30%"
     />
+    <img
+      src={IphoneFrame}
+      alt=""
+      role="presentation"
+      class="absolute -bottom-[68px] left-0 h-[809px]"
+    />
+
     <Illustration
       class={cn(illustration({ colour: colours[selectedColourIndex] }), 'h-[719px] w-[384px]')}
     />
