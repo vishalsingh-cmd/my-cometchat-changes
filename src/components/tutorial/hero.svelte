@@ -46,7 +46,7 @@
     >
       <div class="flex flex-col justify-between">
         <Title
-          label={{ content: '', color: 'brand' }}
+          label={{ content: block.content.technology, color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />
