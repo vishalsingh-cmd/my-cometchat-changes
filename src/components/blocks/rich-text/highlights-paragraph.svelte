@@ -11,7 +11,7 @@
 {#if block}
   <div
     use:storyblokEditable={block}
-    class="my-4 flex flex-col gap-6 md:flex-row md:justify-between md:gap-10"
+    class="flex flex-col gap-6 py-4 md:flex-row md:justify-between md:gap-10"
   >
     {#each block.items as item}
       <div class="flex flex-row items-center gap-3">

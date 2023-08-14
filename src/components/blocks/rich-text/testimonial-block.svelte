@@ -8,7 +8,7 @@
 </script>
 
 {#if block}
-  <div use:storyblokEditable={block} class="my-6 flex flex-col gap-3 md:my-10">
+  <div use:storyblokEditable={block} class="pd:my-10 flex flex-col gap-3 py-6">
     <div
       class="border-px flex flex-col gap-4 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-5 backdrop-blur-[20px]"
       style="transform: translate3d(0, 0, 0);"

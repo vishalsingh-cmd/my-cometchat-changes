@@ -2,6 +2,8 @@ import type { BlogPostStoryblok, CustomerStoryStoryblok, TutorialStoryblok } fro
 
 import { formatDate } from '$lib/utils/dates';
 
+export const RESULTS_PER_PAGE = 12;
+
 export type Panel = {
   type:
     | 'category'
