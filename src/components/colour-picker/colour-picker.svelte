@@ -114,7 +114,7 @@
   };
 </script>
 
-<div class="flex max-h-[421px] flex-col overflow-hidden md:items-center">
+<div class="flex flex-col md:items-center">
   <div class="mb-5 w-fit">
     <p class="mb-3 text-sm font-semibold leading-normal tracking-widest text-gray-12/54">
       Pick a color
@@ -131,16 +131,18 @@
     </div>
   </div>
 
-  <div class="relative isolate flex w-full justify-center">
+  <div class="relative isolate flex w-full justify-center overflow-hidden">
     <div
-      class="absolute bottom-0 left-0 z-10 h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:w-[473px] md:to-30% xl:left-[79px] xl:h-full"
+      class="absolute bottom-0 left-0 z-10 h-full w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:w-[473px] md:to-30% xl:left-[79px] xl:h-full"
     />
-    <img src={IphoneFrame} alt="" role="presentation" class="h-full w-full max-w-[417px]" />
-    <Illustration
-      class={cn(
-        illustration({ colour: colours[selectedColourIndex] }),
-        'absolute -bottom-[6px] z-0 h-full w-[calc(100%-36px)] lg:-bottom-[3px] lg:w-[calc(100%-40px)] xl:w-[calc(100%-206px)] 2xl:w-[calc(100%-220px)]'
-      )}
-    />
+    <div class="relative">
+      <img src={IphoneFrame} alt="" role="presentation" class="h-full w-full max-w-[417px]" />
+      <Illustration
+        class={cn(
+          illustration({ colour: colours[selectedColourIndex] }),
+          'absolute left-[14px] top-1 z-0 h-full w-[calc(100%-32px)]'
+        )}
+      />
+    </div>
   </div>
 </div>
