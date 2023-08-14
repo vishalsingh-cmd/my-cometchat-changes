@@ -10,7 +10,7 @@
 </script>
 
 <div class="w-full max-w-[640px]">
-  <div class="mb-6 h-full w-full overflow-visible md:mb-12 md:h-[360px]">
+  <div class="mb-6 h-full w-full md:mb-12">
     <Media media={illustration} />
   </div>
   <div class="max-w-[416px] font-sans text-xl text-gray-12">
