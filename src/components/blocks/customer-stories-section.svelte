@@ -28,12 +28,12 @@
       emoji: PartyFaceEmoji
     },
     {
-      styles: 'absolute bottom-64 left-10 hidden rotate-12 xl:flex',
+      styles: 'absolute bottom-[280px] left-[70px] hidden rotate-12 xl:flex',
       emoji: CometEmoji
     },
     {
       styles:
-        'absolute -left-11 top-0 md:-top-2 md:left-2 lg:-top-2 xl:left-96 xl:top-4 -rotate-12',
+        'absolute -left-11 top-0 md:-top-2 md:left-2 lg:-top-2 xl:left-96 xl:top-[36px] -rotate-12',
       emoji: StarsFaceEmoji
     }
   ];
@@ -70,7 +70,7 @@
 
       {#if testimonials}
         <div class="relative flex w-full flex-col gap-0 pb-12 xl:max-w-2xl xl:gap-5">
-          <img alt="" src={Orbit} class="lg absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
+          <img alt="" src={Orbit} class="absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
             <img alt="" src={reactions[1].emoji} class="w-7" />
@@ -85,7 +85,7 @@
                 <img
                   alt=""
                   src={Comet}
-                  class="absolute -top-9 right-5 h-14 w-14 md:right-20 xl:-left-48 xl:top-36"
+                  class="absolute -right-[90px] -top-[156px] h-[300px] w-[300px] md:-right-[40px] xl:-left-[330px] xl:top-0"
                 />
               {/if}
 

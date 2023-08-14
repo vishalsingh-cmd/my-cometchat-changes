@@ -65,7 +65,9 @@
               {/if}
 
               {#if block.items.length === 3 && i === 1}
-                <div class="bg-gray-1">
+                <div
+                  class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] md:h-[338px] md:w-[1739px] xl:right-0"
+                >
                   <img src={Illustration1} alt="" />
                 </div>
               {/if}
