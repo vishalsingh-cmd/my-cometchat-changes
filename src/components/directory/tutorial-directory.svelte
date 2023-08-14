@@ -9,7 +9,13 @@
 
   import { getStories } from '$lib/storyblok';
   import { cn } from '$lib/utils';
-  import { cleanFilters, parseItem, type Panel, getPanel } from '$lib/data/directory';
+  import {
+    cleanFilters,
+    parseItem,
+    type Panel,
+    getPanel,
+    RESULTS_PER_PAGE
+  } from '$lib/data/directory';
 
   import ContentCard from '$components/content-card.svelte';
   import FilterPanel from '$components/directory/filter-panel.svelte';
@@ -17,6 +23,7 @@
   import MobileFiltersHeader from '$components/directory/mobile-filters-header.svelte';
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
+  import Pagination from '$components/pagination/pagination.svelte';
 
   export let block: DirectorySectionStoryblok;
 
@@ -195,6 +202,12 @@
       : null
   };
 
+  const toggleNewPage = (pageNumber: number) => {
+    currentPage = pageNumber;
+  };
+
+  $: currentPage = 1;
+
   $: getDirectoryDataWithFilters = createQuery({
     queryKey: [`directory-${Math.random()}`, { id: block._uid }],
     queryFn: async () => {
@@ -219,7 +232,12 @@
   />
 
   {#if directoryData}
-    <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-20 lg:grid-cols-[30%_1fr]')}>
+    <div
+      class={cn(
+        'flex flex-col lg:grid lg:grid-rows-[1fr_154px]',
+        areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]'
+      )}
+    >
       {#if areFiltersOpen}
         <div
           class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
@@ -271,6 +289,20 @@
           {/each}
         {/if}
       </div>
+
+      <!-- Pagination -->
+      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+        <div
+          class={cn('flex h-[154px] items-center justify-center', areFiltersOpen && 'col-start-2')}
+        >
+          <Pagination
+            onPageChange={toggleNewPage}
+            totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
+            registersPerPage={RESULTS_PER_PAGE}
+            {currentPage}
+          />
+        </div>
+      {/if}
     </div>
   {/if}
 {/if}
