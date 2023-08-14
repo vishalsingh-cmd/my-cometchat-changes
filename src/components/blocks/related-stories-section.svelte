@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { industries } from '$lib/stores/industries';
 
@@ -67,7 +68,11 @@
 </script>
 
 {#if block}
-  <section class="bg-gray-1 px-container text-gray-12" data-theme="light">
+  <section
+    use:storyblokEditable={block}
+    class="bg-gray-1 px-container text-gray-12"
+    data-theme="light"
+  >
     {#if block.header && block.header.length > 0}
       {@const { label, title, description, links } = block.header[0]}
       {@const labelInfo = getLabelInfo(label, 'brand')}

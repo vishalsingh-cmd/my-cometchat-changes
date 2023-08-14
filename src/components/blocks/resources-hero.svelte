@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { ResourcesHeroStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import Background from '$components/resources-hero/background.svelte';
 
@@ -7,7 +8,7 @@
 </script>
 
 {#if block}
-  <section class=" overflow-hidden bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} class="overflow-hidden bg-gray-1 text-gray-12">
     <div
       class="container relative mx-auto flex flex-col items-start gap-3 px-container pb-[306px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
     >
