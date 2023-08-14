@@ -8,8 +8,6 @@
   import type { ParagraphListStoryblok } from '$types/bloks';
 
   export let block: ParagraphListStoryblok;
-
-  console.log(block);
 </script>
 
 {#if block}
