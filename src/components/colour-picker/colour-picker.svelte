@@ -130,19 +130,22 @@
       {/each}
     </div>
   </div>
-  <div class="relative">
+
+  <div class="relative isolate h-[240px] w-full lg:h-[349px]">
     <div
-      class="absolute bottom-0 left-[-20px] h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:right-[79px] md:h-full md:w-[473px] md:to-30%"
+      class="bottom- absolute -left-[20px] z-20 h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:left-0 md:right-[79px] md:h-full md:w-[473px] md:to-30% xl:left-[100px]"
     />
     <img
       src={IphoneFrame}
       alt=""
       role="presentation"
-      class="absolute -bottom-[68px] left-0 h-[809px]"
+      class="absolute left-0 top-[4px] z-0 h-full w-[291px] lg:left-[20px] lg:top-0 lg:w-[391px] xl:left-[106px] xl:w-[396px]"
     />
-
     <Illustration
-      class={cn(illustration({ colour: colours[selectedColourIndex] }), 'h-[719px] w-[384px]')}
+      class={cn(
+        illustration({ colour: colours[selectedColourIndex] }),
+        'absolute -top-[80px] left-[8px] z-10 h-[719px] w-[270px] lg:top-[6px] lg:w-full'
+      )}
     />
   </div>
 </div>
