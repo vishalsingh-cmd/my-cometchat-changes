@@ -53,7 +53,7 @@
       {#if customers}
         <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
           {#each arrayOfCustomersToShow as customer}
-            <Media media={customer.content.logo} class="h-7 w-fit flex-shrink-0 opacity-54" />
+            <Media media={customer.content.logo} class="h-6 w-fit flex-shrink-0 opacity-54" />
           {/each}
         </div>
       {/if}
