@@ -29,13 +29,19 @@
 <div class="absolute left-0 top-0 h-full w-full">
   <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-brand-7']} />
 </div>
+
+<div
+  class="absolute bottom-0 left-0 h-[80px] w-full bg-gradient-to-b from-[rgba(10,9,20,0.00)] to-[#0A0914]"
+/>
+
 <img
   src={Illustration}
   alt=""
   class="absolute bottom-[-50px] left-auto right-[-80px] hidden max-w-[870px] xl:bottom-auto xl:top-[56px] xl:block"
 />
+
 <img
   src={IllustrationMobile}
   alt=""
-  class=" absolute bottom-12 right-0 min-w-[515.113px] max-w-[800px] translate-x-[16%] pt-8 xl:hidden"
+  class="absolute bottom-12 right-0 min-w-[515.113px] max-w-[800px] translate-x-[16%] pt-8 xl:hidden"
 />

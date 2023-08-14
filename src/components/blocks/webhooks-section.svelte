@@ -20,7 +20,7 @@
         {@const title = block.title[0]}
         <Title
           class="pl-0 pr-0"
-          label={{ content: title.label, color: 'orange' }}
+          label={{ content: title.label ? title.label : '', color: 'orange' }}
           description={title.description}
           title={title.title}
           buttons={title.links}
