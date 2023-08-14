@@ -131,20 +131,15 @@
     </div>
   </div>
 
-  <div class="relative isolate h-[240px] w-full lg:h-[349px]">
+  <div class="relative isolate flex w-full justify-center">
     <div
-      class="bottom- absolute -left-[20px] z-20 h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:left-0 md:right-[79px] md:h-full md:w-[473px] md:to-30% xl:left-[100px]"
+      class="absolute bottom-0 left-0 z-10 h-[360px] w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:w-[473px] md:to-30% xl:left-[79px] xl:h-full"
     />
-    <img
-      src={IphoneFrame}
-      alt=""
-      role="presentation"
-      class="absolute left-0 top-[4px] z-0 h-full w-[291px] lg:left-[20px] lg:top-0 lg:w-[391px] xl:left-[106px] xl:w-[396px]"
-    />
+    <img src={IphoneFrame} alt="" role="presentation" class="h-full w-full max-w-[417px]" />
     <Illustration
       class={cn(
         illustration({ colour: colours[selectedColourIndex] }),
-        'absolute -top-[80px] left-[8px] z-10 h-[719px] w-[270px] lg:top-[6px] lg:w-full'
+        'absolute -bottom-[6px] z-0 h-full w-[calc(100%-36px)] lg:-bottom-[3px] lg:w-[calc(100%-40px)] xl:w-[calc(100%-206px)] 2xl:w-[calc(100%-220px)]'
       )}
     />
   </div>
