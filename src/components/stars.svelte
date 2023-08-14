@@ -13,6 +13,7 @@
 
 {#each stars as star, i}
   <div
+    role="presentation"
     class="absolute h-0.5 w-0.5 rounded-full {star.colour}"
     style={`top: ${star.vertical}; ${
       i % 2 === 0 ? 'left:' + star.horizontal : 'right:' + star.horizontal

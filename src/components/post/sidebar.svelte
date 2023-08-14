@@ -41,7 +41,7 @@
 
 <div
   class={cn(
-    'sticky left-16 top-[120px] hidden h-0 overflow-visible lg:block',
+    'wrap sticky left-16 top-[120px] hidden h-0 w-[272px] overflow-visible lg:block',
     hasReachedEndOfContent && 'lg:hidden'
   )}
 >
@@ -52,7 +52,7 @@
         {#each headings as heading, i}
           <button
             class={cn(
-              'relative text-lg font-semibold leading-tight opacity-54',
+              'relative text-left text-lg font-semibold leading-tight opacity-54',
               activeHeadingIndex === i && 'opacity-100',
               i !== 0 && 'pt-4',
               (i < activeHeadingIndex || activeHeadingIndex === i) &&

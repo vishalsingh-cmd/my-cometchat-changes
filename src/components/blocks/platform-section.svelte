@@ -42,16 +42,14 @@
         {/if}
 
         {#if block.products}
-          <div
-            class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end lg:gap-0"
-          >
+          <div class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end">
             {#each block.products as product}
               {@const link =
                 product.link && product.link[0]
                   ? getAnchorFromCmsLink(product.link[0].link)
                   : undefined}
               <ProductDisplay
-                illustration={product.image.filename}
+                illustration={product.image}
                 title={product.title}
                 description={product.description}
                 link={{

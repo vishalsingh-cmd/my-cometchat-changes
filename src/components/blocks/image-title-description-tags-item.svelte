@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { intersectionObserver } from '$lib/actions/intersection-observer';
   import { cn } from '$lib/utils';
+  import { intersectionObserver } from '$lib/actions/intersection-observer';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import type { ImageTitleDescriptionTagsItemStoryblok } from '$types/bloks';
 
@@ -16,6 +17,7 @@
 
 {#if block}
   <div
+    use:storyblokEditable={block}
     class={cn(
       'text-lg text-gray-12 transition-all ease-smooth',
       isIntersecting ? 'translate-x-0 opacity-100' : 'translate-x-[-200px] opacity-0',

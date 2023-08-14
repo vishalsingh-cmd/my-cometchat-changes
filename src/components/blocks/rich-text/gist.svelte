@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { GistStoryblok } from '$types/bloks';
   import { onMount } from 'svelte';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   export let block: GistStoryblok;
 
@@ -50,7 +51,7 @@
 </script>
 
 {#if block}
-  <div class="mb-5 mt-4">
+  <div use:storyblokEditable={block} class="my-8">
     <iframe class="container w-full" src="about:blank" bind:this={frame} title="Gist" />
   </div>
 {/if}

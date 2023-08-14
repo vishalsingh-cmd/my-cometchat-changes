@@ -69,6 +69,7 @@ export interface BlogPostStoryblok {
     | 'industry'
     | 'best-practices';
   first_created_on?: string;
+  pre_footer?: PreFooterCopyStoryblok[];
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -224,6 +225,7 @@ export interface CustomerStoryStoryblok {
   industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
   is_old_post?: boolean;
+  pre_footer?: PreFooterCopyStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -668,8 +670,8 @@ export interface ParagraphListStoryblok {
 }
 
 export interface ParagraphListItemStoryblok {
-  title: string;
-  description?: string;
+  title?: string;
+  description: RichtextStoryblok;
   _uid: string;
   component: 'paragraph-list-item';
   [k: string]: any;
@@ -1121,6 +1123,8 @@ export interface TutorialStoryblok {
   is_old_post?: boolean;
   body: RichtextStoryblok;
   seo?: SeoFieldsStoryblok[];
+  related?: RelatedStoriesSectionStoryblok[];
+  pre_footer?: PreFooterCopyStoryblok[];
   _uid: string;
   component: 'tutorial';
   [k: string]: any;

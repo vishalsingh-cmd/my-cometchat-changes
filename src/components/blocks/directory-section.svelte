@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { DirectorySectionStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import BlogPostDirectory from '$components/directory/blog-post-directory.svelte';
   import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
@@ -9,7 +10,11 @@
 </script>
 
 {#if block}
-  <section data-theme="light" class="bg-gray-1 pt-12 text-gray-12 md:pt-20">
+  <section
+    use:storyblokEditable={block}
+    data-theme="light"
+    class="bg-gray-1 pt-12 text-gray-12 md:pt-20"
+  >
     <div class="container mx-auto px-container">
       <div class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
         <p class="mb-2 text-xl text-brand-9 md:mb-3">{block.label}</p>

@@ -107,7 +107,7 @@
       {#if industries[selectedIndustryIndex]}
         {@const selectedIndustry = industries[selectedIndustryIndex]}
         <p
-          class="mb-5 mt-3 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
+          class="mb-3 mt-5 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
         >
           {selectedIndustry.content.description}
         </p>
@@ -185,9 +185,10 @@
           {/if}
         </div>
         {#if industries[selectedIndustryIndex]}
-          <div class="mx-auto mt-16 w-full max-w-[1000px]">
-            <Media media={industries[selectedIndustryIndex].content.cover_image} />
-          </div>
+          <Media
+            media={industries[selectedIndustryIndex].content.cover_image}
+            class="mx-auto mt-16 max-h-[500px] w-auto"
+          />
         {/if}
       {/if}
       <div

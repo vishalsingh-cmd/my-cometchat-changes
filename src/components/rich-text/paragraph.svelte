@@ -9,22 +9,23 @@
   const resolver = new RichTextResolver();
 
   const paragraph = cva([
-    'text-lg-richtext',
+    'mt-4 mb-6',
+
     'font-medium',
     'text-gray-12',
     'leading-snug',
     'tracking-wide',
 
-    '[&>a]:text-brand-9',
-    '[&>a]:hover:text-brand-7',
+    '[&_a]:text-brand-9',
+    '[&_a:hover]:text-brand-12',
 
-    '[&>img]:my-6',
-    '[&>img]:md:my-10',
-    '[&>img]:rounded-[20px]'
+    '[&_img]:my-6',
+    '[&_img]:md:my-10',
+    '[&_img]:rounded-[20px]'
   ]);
 </script>
 
 {#if content.content}
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  <p class={cn(paragraph())}>{@html resolver.render(content)}</p>
+  <p class={cn(paragraph(), 'text-lg-richtext')}>{@html resolver.render(content)}</p>
 {/if}

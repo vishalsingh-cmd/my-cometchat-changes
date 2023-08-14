@@ -1,5 +1,6 @@
 <script lang="ts">
   import Icon from '$components/icon/icon.svelte';
+  import Paragraph from '$components/rich-text/paragraph.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
@@ -10,26 +11,42 @@
 </script>
 
 {#if block}
-  <div use:storyblokEditable={block} class="mb-5 mt-4 font-semibold leading-tighter md:mb-3">
+  <div use:storyblokEditable={block} class="pb-6 pt-4 font-semibold leading-tighter md:mb-3">
     <svelte:element this={block.is_numeric ? 'ol' : 'ul'}>
       {#each block.items as item, i}
         <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
-          <div class="flex items-center gap-2">
+          <div class="flex-start flex gap-2">
             {#if block.is_numeric}
-              <p class="w-[32px] text-center text-brand-9">
+              <p class="mt-4 w-[32px] text-center text-brand-9">
                 {#if i < 9}
-                  0{i + 1}
+                  0{i + 1}.
                 {:else}
-                  {i + 1}
+                  {i + 1}.
                 {/if}
               </p>
             {:else}
-              <Icon icon="star-04" size="2xs" class="h-[14px] w-[14px] text-brand-9" />
+              <Icon
+                icon="star-04"
+                size="2xs"
+                class={cn(
+                  'mt-0.5 h-[14px] w-[14px] flex-shrink-0 text-brand-9',
+                  !item.title && 'mt-5'
+                )}
+              />
             {/if}
-            <p class={cn(item.description && 'font-semibold leading-tight')}>{item.title}</p>
+            {#if item.title}
+              <p class={cn(item.description && 'font-semibold leading-tight')}>{item.title}</p>
+            {/if}
+            {#if item.description && !item.title}
+              <div>
+                <Paragraph content={item.description} />
+              </div>
+            {/if}
           </div>
-          {#if item.description}
-            <p class={cn('ml-[22px]', block.is_numeric && 'ml-10')}>{item.description}</p>
+          {#if item.description && item.title}
+            <div class={cn('ml-[22px] [&_p]:m-0', block.is_numeric && 'ml-10')}>
+              <Paragraph content={item.description} />
+            </div>
           {/if}
         </li>
       {/each}

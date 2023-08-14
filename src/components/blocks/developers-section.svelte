@@ -6,8 +6,10 @@
   import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
 
+  import { cn } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getLabelInfo } from '$lib/utils';
+  import { getImageAttributes } from '$lib/storyblok';
 
   import type { DevelopersSectionStoryblok } from '$types/bloks';
 
@@ -70,13 +72,22 @@
             {selectedLanguageIndex}
           />
           {#if parsedCodeBlocks[selectedLanguageIndex].image}
+            {@const { width, height } = getImageAttributes(
+              parsedCodeBlocks[selectedLanguageIndex].image
+            )}
+            {@const widthNumber = Number(width)}
+            {@const heightNumber = Number(height)}
             <div
-              class="mb-12 mt-5 flex h-[500px] w-full justify-center overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] lg:mb-0 lg:mt-0"
-              style="transform: translate3d(0, 0, 0);"
+              class="mb-12 mt-5 h-[300px] overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] md:h-[500px] md:max-h-[500px] lg:mb-0 lg:mt-0"
             >
               <Media
                 media={parsedCodeBlocks[selectedLanguageIndex].image}
-                class="mt-8 h-[500px] px-12 md:mt-12"
+                class={cn(
+                  widthNumber > heightNumber &&
+                    'ml-8 mt-8 h-[350px] max-h-none max-w-max md:ml-12 md:mt-12  md:h-[500px]',
+                  widthNumber < heightNumber &&
+                    'mx-auto mt-8 max-h-max w-[220px] max-w-none md:mt-12 md:w-[300px]'
+                )}
               />
             </div>
           {/if}

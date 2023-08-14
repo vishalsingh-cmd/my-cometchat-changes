@@ -15,7 +15,7 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme ? block.theme : 'light'}
-    class="bg-gray-1"
+    class="bg-gray-1 text-gray-12"
   >
     {#if block.header && block.header[0]}
       {@const header = block.header[0]}
@@ -30,27 +30,21 @@
         />
       {/if}
     {/if}
-    {#if block.items}
-      <section class="bg-gray-1 pb-12 pt-6 md:pb-20 md:pt-12" use:storyblokEditable={block}>
-        <div
-          class={cn(
-            'container mx-auto flex flex-col gap-12 px-container md:grid md:gap-y-16',
-            (block.items.length <= 3 || block.items.length > 4) &&
-              'grid-cols-3 gap-x-8 lg:gap-x-12',
-            block.items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
-          )}
-        >
-          {#if block.items.length > 0}
-            {#each block.items as item}
-              <ListSectionItem
-                block={item}
-                accentColour={block.accent_colour ? block.accent_colour : 'orange'}
-                class="max-w-[395px]"
-              />
-            {/each}
-          {/if}
-        </div>
-      </section>
+    {#if block.items && block.items.length > 0}
+      {@const items = block.items[0]}
+      <div
+        class={cn(
+          'container mx-auto flex flex-col gap-12 px-container pb-12 pt-6 md:grid md:gap-y-16 md:pb-20 md:pt-12',
+          (items.items.length <= 3 || items.items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
+          items.items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
+        )}
+      >
+        {#if items.items.length > 0}
+          {#each items.items as item}
+            <ListSectionItem block={item} accentColour="orange" class="max-w-[395px]" />
+          {/each}
+        {/if}
+      </div>
     {/if}
   </section>
 {/if}

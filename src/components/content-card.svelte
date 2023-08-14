@@ -14,6 +14,7 @@
   export let author: string | undefined = undefined;
   export let date: string | undefined = undefined;
   export let isLoading = false;
+  export let badgeSize: 'small' | 'medium' = 'small';
 </script>
 
 {#if link}
@@ -34,14 +35,14 @@
     {/if}
     {#if title}
       <h3
-        class="smooth mb-2.5 text-xl leading-tighter transition-all group-hover:text-brand-9 md:mb-3"
+        class="smooth mb-2.5 text-xl leading-tighter opacity-[0.84] transition-all group-hover:opacity-100 md:mb-3"
       >
         {title}
       </h3>
     {/if}
     {#if author && date}
       <div
-        class="flex items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54"
+        class="flex items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
       >
         <span>{author}</span>
         <span class="h-1 w-1 rounded-full bg-gray-12" />
@@ -51,7 +52,7 @@
     {#if tags}
       <div class="mt-4 flex flex-row flex-wrap gap-2">
         {#each tags as tag}
-          <Badge label={tag} size="small" />
+          <Badge label={tag} size={badgeSize} />
         {/each}
       </div>
     {/if}

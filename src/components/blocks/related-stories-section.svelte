@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { industries } from '$lib/stores/industries';
 
@@ -67,7 +68,11 @@
 </script>
 
 {#if block}
-  <section class="bg-gray-1 px-container text-gray-12" data-theme="light">
+  <section
+    use:storyblokEditable={block}
+    class="bg-gray-1 px-container text-gray-12"
+    data-theme="light"
+  >
     {#if block.header && block.header.length > 0}
       {@const { label, title, description, links } = block.header[0]}
       {@const labelInfo = getLabelInfo(label, 'brand')}
@@ -81,13 +86,32 @@
         alignment={titleAlignment}
       />
     {/if}
-    <div class="container mx-auto grid grid-cols-1 gap-8 pb-12 md:grid-cols-3 md:pb-20">
+    <div class="container relative mx-auto grid grid-cols-1 gap-8 pb-12 md:grid-cols-3 md:pb-20">
+      <div
+        class="absolute -left-[196px] -top-[86px] h-[408px] w-[408px] rounded-full opacity-20 blur"
+      />
       {#if block.items && block.items.length > 0}
         {#each block.items as item}
           {@const { title, image, tags, link, customer, author, date } = parsedItem(item)}
-          <ContentCard {title} {image} {tags} {link} {customer} {author} {date} />
+          <ContentCard
+            {title}
+            {image}
+            {tags}
+            {link}
+            {customer}
+            {author}
+            {date}
+            badgeSize="medium"
+          />
         {/each}
       {/if}
     </div>
   </section>
 {/if}
+
+<style>
+  .blur {
+    background: linear-gradient(290deg, #fcb8a8 0%, #b968a4 48.44%, #756cf6 100%);
+    filter: blur(150px);
+  }
+</style>

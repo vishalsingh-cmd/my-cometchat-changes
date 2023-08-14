@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-08T18:14:52.503Z",
+      "updated_at": "2023-08-14T11:51:23.866Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -245,6 +245,13 @@
         "first_created_on": {
           "type": "datetime",
           "disable_time": false
+        },
+        "pre_footer": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pre-footer_copy"]
         }
       },
       "image": null,
@@ -640,7 +647,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-02T15:28:59.887Z",
+      "updated_at": "2023-08-14T11:51:43.951Z",
       "id": 4079335,
       "schema": {
         "Quote": {
@@ -758,6 +765,13 @@
         },
         "is_old_post": {
           "type": "boolean"
+        },
+        "pre_footer": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pre-footer_copy"]
         }
       },
       "image": null,
@@ -2483,17 +2497,21 @@
       "name": "paragraph-list-item",
       "display_name": null,
       "created_at": "2023-07-04T13:47:30.476Z",
-      "updated_at": "2023-07-04T13:47:50.612Z",
+      "updated_at": "2023-08-14T12:17:50.773Z",
       "id": 4221194,
       "schema": {
         "title": {
-          "type": "text",
-          "required": true,
+          "type": "textarea",
+          "required": false,
           "translatable": true
         },
         "description": {
-          "type": "text",
-          "translatable": true
+          "type": "richtext",
+          "translatable": true,
+          "customize_toolbar": true,
+          "toolbar": ["bold", "inlinecode", "italic", "link", "strike", "underline"],
+          "allow_target_blank": true,
+          "required": true
         }
       },
       "image": null,
@@ -3620,7 +3638,7 @@
       "name": "title-image-section",
       "display_name": null,
       "created_at": "2023-08-07T11:38:09.474Z",
-      "updated_at": "2023-08-07T11:41:32.903Z",
+      "updated_at": "2023-08-14T13:15:11.707Z",
       "id": 4388837,
       "schema": {
         "title": {
@@ -3677,7 +3695,7 @@
           ]
         }
       },
-      "image": null,
+      "image": "//a.storyblok.com/f/231922/x/fb841382da/chat-features.png",
       "preview_field": null,
       "is_root": false,
       "preview_tmpl": null,
@@ -4219,7 +4237,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-03T12:55:22.896Z",
+      "updated_at": "2023-08-14T11:52:02.533Z",
       "id": 4303307,
       "schema": {
         "technology": {
@@ -4396,6 +4414,22 @@
           "pos": 10,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
+        },
+        "related": {
+          "type": "bloks",
+          "required": false,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-stories-section"]
+        },
+        "pre_footer": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pre-footer_copy"]
         }
       },
       "image": null,
