@@ -107,7 +107,7 @@
       {#if industries[selectedIndustryIndex]}
         {@const selectedIndustry = industries[selectedIndustryIndex]}
         <p
-          class="mb-5 mt-3 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
+          class="mb-3 mt-5 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
         >
           {selectedIndustry.content.description}
         </p>
