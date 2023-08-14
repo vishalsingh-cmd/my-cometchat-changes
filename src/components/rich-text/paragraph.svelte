@@ -9,7 +9,6 @@
   const resolver = new RichTextResolver();
 
   const paragraph = cva([
-    'text-lg-richtext',
     'font-medium',
     'text-gray-12',
     'leading-snug',
@@ -26,5 +25,5 @@
 
 {#if content.content}
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  <p class={cn(paragraph())}>{@html resolver.render(content)}</p>
+  <p class={cn(paragraph(), 'text-lg-richtext')}>{@html resolver.render(content)}</p>
 {/if}
