@@ -42,9 +42,7 @@
         {/if}
 
         {#if block.products}
-          <div
-            class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end lg:gap-0"
-          >
+          <div class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end">
             {#each block.products as product}
               {@const link =
                 product.link && product.link[0]
