@@ -9,6 +9,8 @@
   const resolver = new RichTextResolver();
 
   const paragraph = cva([
+    'mt-4 mb-6',
+
     'font-medium',
     'text-gray-12',
     'leading-snug',

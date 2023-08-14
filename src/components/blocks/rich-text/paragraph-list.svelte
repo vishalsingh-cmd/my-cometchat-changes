@@ -17,18 +17,21 @@
         <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
           <div class="flex-start flex gap-2">
             {#if block.is_numeric}
-              <p class="mt-px w-[32px] text-center text-brand-9">
+              <p class="mt-4 w-[32px] text-center text-brand-9">
                 {#if i < 9}
-                  0{i + 1}
+                  0{i + 1}.
                 {:else}
-                  {i + 1}
+                  {i + 1}.
                 {/if}
               </p>
             {:else}
               <Icon
                 icon="star-04"
                 size="2xs"
-                class="mt-0.5 h-[14px] w-[14px] flex-shrink-0 text-brand-9"
+                class={cn(
+                  'mt-0.5 h-[14px] w-[14px] flex-shrink-0 text-brand-9',
+                  !item.title && 'mt-5'
+                )}
               />
             {/if}
             {#if item.title}
