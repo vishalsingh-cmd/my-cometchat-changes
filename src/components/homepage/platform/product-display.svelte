@@ -11,7 +11,7 @@
 
 <div class="w-full max-w-[640px]">
   <div class="mb-6 h-full w-full overflow-visible md:mb-12 md:h-[360px]">
-    <Media media={illustration} class="scale-[1.4] transform" />
+    <Media media={illustration} />
   </div>
   <div class="max-w-[416px] font-sans text-xl text-gray-12">
     <h3 class="mb-1 font-semibold leading-tighter md:mb-2">{title}</h3>
