@@ -7,11 +7,11 @@
 </script>
 
 {#if content.content}
-  <ol class="pl-4">
+  <ul class="pl-4">
     {#each content.content as item}
       <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
         <Paragraph content={item} />
       </li>
     {/each}
-  </ol>
+  </ul>
 {/if}

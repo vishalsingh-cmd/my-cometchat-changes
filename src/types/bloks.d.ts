@@ -670,8 +670,8 @@ export interface ParagraphListStoryblok {
 }
 
 export interface ParagraphListItemStoryblok {
-  title: string;
-  description?: string;
+  title?: string;
+  description: RichtextStoryblok;
   _uid: string;
   component: 'paragraph-list-item';
   [k: string]: any;
