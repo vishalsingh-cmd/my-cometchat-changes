@@ -19,7 +19,7 @@
   data-theme="dark"
 >
   {#if block.content.is_old_post}
-    <div class="container mx-auto flex flex-col gap-12 px-container">
+    <div class="container mx-auto flex flex-col gap-12 px-container pb-8 md:pb-0">
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
         <div class="flex flex-1 flex-col gap-4 text-xl leading-snug tracking-wide">
@@ -41,10 +41,15 @@
       {/if}
     </div>
   {:else}
-    <div class="container mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2">
+    <div
+      class="container mx-auto grid h-full grid-cols-1 gap-8 px-container pb-8 md:grid-cols-2 md:pb-0"
+    >
       <div class="flex flex-col justify-between">
         <Title
-          label={{ content: '', color: 'brand' }}
+          label={{
+            content: block.content.category,
+            color: 'brand'
+          }}
           class="pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />

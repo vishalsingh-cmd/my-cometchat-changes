@@ -10,6 +10,7 @@
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
 
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  import PreFooter from '$components/blocks/pre-footer.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -121,5 +122,9 @@
 
   {#if block.content.related && block.content.related.length > 0}
     <RelatedStoriesSection block={block.content.related[0]} />
+  {/if}
+
+  {#if block.content.pre_footer && block.content.pre_footer.length > 0}
+    <PreFooter block={block.content.pre_footer[0]} />
   {/if}
 {/if}

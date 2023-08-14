@@ -61,8 +61,12 @@
         (industry: ISbStoryData<IndustryStoryblok>) => customer.content.industry === industry.uuid
       ) as unknown as IndustryStoryblok;
       return industry?.name;
+    } else if (story.content.component === 'blog-post') {
+      return story.content.category;
+    } else if (story.content.component === 'tutorial') {
+      return story.content.technology;
     } else {
-      return story.tag_list[0] ?? '';
+      return '';
     }
   };
 </script>

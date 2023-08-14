@@ -15,12 +15,12 @@
     'leading-snug',
     'tracking-wide',
 
-    '[&>a]:text-brand-9',
-    '[&>a]:hover:text-brand-7',
+    '[&_a]:text-brand-9',
+    '[&_a:hover]:text-brand-7',
 
-    '[&>img]:my-6',
-    '[&>img]:md:my-10',
-    '[&>img]:rounded-[20px]'
+    '[&_img]:my-6',
+    '[&_img]:md:my-10',
+    '[&_img]:rounded-[20px]'
   ]);
 </script>
 
