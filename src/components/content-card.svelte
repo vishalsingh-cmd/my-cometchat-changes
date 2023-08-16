@@ -20,7 +20,7 @@
 {#if link}
   <a
     href={sanitizeSlug(link)}
-    class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-within:after:absolute focus-within:after:-left-2 focus-within:after:-top-2 focus-within:after:h-[calc(100%+16px)] focus-within:after:w-[calc(100%+16px)] focus-within:after:rounded-[18px] focus-within:after:border focus-within:after:border-brand-7"
+    class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
     {#if image}
       {#if customer}
