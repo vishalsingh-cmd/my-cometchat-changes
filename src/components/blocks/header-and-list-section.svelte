@@ -30,19 +30,17 @@
       {/if}
     {/if}
     {#if block.items && block.items.length > 0}
-      {@const items = block.items[0]}
+      {@const items = block.items}
       <div
         class={cn(
           'container mx-auto flex flex-col gap-12 px-container pb-12 pt-6 md:grid md:gap-y-16 md:pb-20 md:pt-12',
-          (items.items.length <= 3 || items.items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
-          items.items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
+          (items.length <= 3 || items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
+          items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
         )}
       >
-        {#if items.items.length > 0}
-          {#each items.items as item}
-            <ListSectionItem block={item} accentColour="orange" class="max-w-[395px]" />
-          {/each}
-        {/if}
+        {#each items as item}
+          <ListSectionItem block={item} accentColour="orange" class="max-w-[395px]" />
+        {/each}
       </div>
     {/if}
   </section>
