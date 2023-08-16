@@ -30,10 +30,6 @@
   <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-gray-8', 'bg-brand-7']} />
 </div>
 
-<div
-  class="absolute bottom-0 left-0 h-[140px] w-full bg-gradient-to-b from-[rgba(10,9,20,0.00)] to-[#0A0914]"
-/>
-
 <img
   src={Illustration}
   alt=""
