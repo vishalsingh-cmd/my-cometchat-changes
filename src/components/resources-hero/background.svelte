@@ -33,6 +33,9 @@
 <div class="absolute -bottom-[100px] -left-[250px] block w-[1290.1px] md:hidden">
   <img src={BackgroundMobile} alt="" />
 </div>
+<div
+  class="absolute bottom-0 left-0 h-[350px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0 to-50%"
+/>
 
 <style lang="postcss">
   .blur1 {
