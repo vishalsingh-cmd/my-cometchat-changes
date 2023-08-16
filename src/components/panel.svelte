@@ -12,7 +12,7 @@
 
 <div
   class={cn(
-    'border-b border-gray-12/[.08] px-5 py-10 md:border-b-0 md:border-r md:px-16 md:py-[72px]',
+    'border-b border-gray-12/[.08] px-5 py-10 md:border-b-0 md:border-r md:p-16',
     className
   )}
 >
