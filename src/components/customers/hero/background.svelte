@@ -57,9 +57,14 @@
   style="background: linear-gradient(285.43deg, rgba(148, 78, 110, 0.08) 37.49%, rgba(109, 53, 0, 0.048) 85.53%); transform: translate3d(0, 0, 0);"
 />
 
+<!-- Gradient -->
+<div
+  class="absolute bottom-0 left-0 h-[398px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+/>
+
 <!-- Planets -->
 <div
-  class="absolute left-[-180px] top-0 w-[1509px] md:left-auto md:top-[70px] md:h-[876px] md:w-[1871px]"
+  class="absolute left-[-180px] top-0 w-[1509px] md:left-auto md:top-5 md:h-[876px] md:w-[1871px]"
 >
   <img src={Planets} alt="" class="h-full w-full" />
 </div>
@@ -70,7 +75,4 @@
 />
 <div
   class="absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-gray-1/0"
-/>
-<div
-  class="absolute bottom-0 left-0 h-[398px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
 />
