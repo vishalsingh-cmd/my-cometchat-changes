@@ -88,7 +88,7 @@
         class="container mx-auto flex flex-col justify-between gap-8 px-container py-10 md:flex-row md:py-20"
       >
         <div class="flex max-w-[528px] flex-1 flex-col justify-between md:h-[526px] md:py-6">
-          <div>
+          <div class="mb-8">
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
             <p class="text-3xl font-semibold leading-tighter">{story.name}</p>
           </div>
