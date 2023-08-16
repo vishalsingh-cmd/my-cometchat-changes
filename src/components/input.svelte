@@ -28,7 +28,10 @@
       'text-md font-semibold leading-tight tracking-wide',
       'placeholder:text-opacity-64',
       'hover:border-brand-9/30',
-      'focus-visible:border-brand-9/40 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-9/30',
+      'outline-none',
+      'active:border-brand-9/60',
+      'focus:border-brand-9/60',
+      'peer-focus:border-brand-9/40 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-brand-9/30',
       icon && 'pl-10',
       value && value.length > 0 && 'pr-10'
     )}
