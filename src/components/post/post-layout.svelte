@@ -1,9 +1,15 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
+  import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import type { BlogPostStoryblok, CustomerStoryStoryblok, TutorialStoryblok } from '$types/bloks';
+  import type {
+    AuthorStoryblok,
+    BlogPostStoryblok,
+    CustomerStoryStoryblok,
+    TutorialStoryblok
+  } from '$types/bloks';
 
   import Sidebar from '$components/post/sidebar.svelte';
 
@@ -11,6 +17,7 @@
 
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import PreFooter from '$components/blocks/pre-footer.svelte';
+  import Media from '$components/media.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -76,6 +83,13 @@
     });
   };
 
+  const isBlockTutorialOrBlogPost =
+    block.content.component === 'blog-post' || block.content.component === 'tutorial';
+
+  const typedAuthor = (author: string | StoryblokStory<AuthorStoryblok>) => {
+    return author as StoryblokStory<AuthorStoryblok>;
+  };
+
   onMount(() => {
     getAllHeadings();
     progressForContent();
@@ -116,6 +130,34 @@
             <RichTextRenderer block={b} />
           {/each}
         </div>
+
+        <!-- Author -->
+        {#if block.content.author && isBlockTutorialOrBlogPost}
+          {@const author = typedAuthor(block.content.author)}
+          <div class="mx-auto w-full max-w-[640px]">
+            <div class="py-8 md:py-6">
+              <div
+                class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px] md:p-5"
+                style="transform: translate3d(0, 0, 0);"
+              >
+                <div class="flex items-center gap-3">
+                  {#if author.content.avatar}
+                    <Media media={author.content.avatar} class="h-10 w-10 rounded-full" />
+                  {/if}
+                  <div
+                    class="flex flex-col gap-[2px] text-md font-semibold leading-tight tracking-wide text-gray-12"
+                  >
+                    <p>{author.content.name}</p>
+                    <p class="opacity-74">{author.content.role}, {author.content.company}</p>
+                  </div>
+                </div>
+                <div class="text-lg-richtext font-medium leading-snug tracking-wide text-gray-12">
+                  {author.content.description}
+                </div>
+              </div>
+            </div>
+          </div>
+        {/if}
       </div>
     {/if}
   </section>
