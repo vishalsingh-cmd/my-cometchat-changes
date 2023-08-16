@@ -211,7 +211,16 @@
           {#each $getDirectoryDataWithFilters.data.stories as item}
             {@const parsedItem = parseItem(item, 'blog-post')}
             {@const { image, title, tags, link, customer, author, date } = parsedItem}
-            <ContentCard {image} {title} {tags} {link} {customer} {author} {date} />
+            <ContentCard
+              {image}
+              {title}
+              {tags}
+              {link}
+              {customer}
+              {author}
+              {date}
+              badgeSize="medium"
+            />
           {/each}
         {/if}
       </div>

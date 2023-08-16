@@ -14,7 +14,7 @@
   export let author: string | undefined = undefined;
   export let date: string | undefined = undefined;
   export let isLoading = false;
-  export let badgeSize: 'small' | 'medium' = 'small';
+  export let badgeSize: 'small' | 'medium' = 'medium';
 </script>
 
 {#if link}
