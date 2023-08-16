@@ -226,7 +226,7 @@
       </div>
 
       <!-- Pagination -->
-      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.total > RESULTS_PER_PAGE}
         <div class={cn('flex items-center justify-center', areFiltersOpen && 'col-start-2')}>
           <Pagination
             onPageChange={toggleNewPage}
