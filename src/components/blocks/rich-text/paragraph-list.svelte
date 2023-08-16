@@ -37,13 +37,13 @@
             {#if item.title}
               <p class={cn(item.description && 'font-semibold leading-tight')}>{item.title}</p>
             {/if}
-            {#if item.description && !item.title}
+            {#if item.description && (!item.title || item.title === '')}
               <div>
                 <Paragraph content={item.description} />
               </div>
             {/if}
           </div>
-          {#if item.description && item.title}
+          {#if item.description && item.title && item.title !== ''}
             <div class={cn('ml-[22px] [&_p]:m-0', block.is_numeric && 'ml-10')}>
               <Paragraph content={item.description} />
             </div>
