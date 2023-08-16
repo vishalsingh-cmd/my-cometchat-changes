@@ -71,3 +71,6 @@
 <div
   class="absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-gray-1/0"
 />
+<div
+  class="absolute bottom-0 left-0 h-[398px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+/>
