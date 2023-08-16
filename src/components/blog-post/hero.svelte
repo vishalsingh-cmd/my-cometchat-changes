@@ -41,9 +41,7 @@
       {/if}
     </div>
   {:else}
-    <div
-      class="container mx-auto grid h-full grid-cols-1 gap-8 px-container pb-8 md:grid-cols-2 md:pb-0"
-    >
+    <div class="container mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2">
       <div class="flex flex-col justify-between">
         <Title
           label={{
