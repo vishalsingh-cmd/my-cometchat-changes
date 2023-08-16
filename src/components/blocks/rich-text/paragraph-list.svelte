@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '$components/icon/icon.svelte';
-  import Paragraph from '$components/rich-text/paragraph.svelte';
+  import ListParagraph from '$components/rich-text/list-paragraph.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
@@ -17,7 +17,7 @@
         <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
           <div class="flex-start flex gap-2">
             {#if block.is_numeric}
-              <p class="mt-4 w-[32px] text-center text-brand-9">
+              <p class="w-[32px] text-center text-brand-9">
                 {#if i < 9}
                   0{i + 1}.
                 {:else}
@@ -30,7 +30,7 @@
                 size="2xs"
                 class={cn(
                   'mt-0.5 h-[14px] w-[14px] flex-shrink-0 text-brand-9',
-                  !item.title && 'mt-5'
+                  !item.title && 'mt-1'
                 )}
               />
             {/if}
@@ -39,13 +39,13 @@
             {/if}
             {#if item.description && (!item.title || item.title === '')}
               <div>
-                <Paragraph content={item.description} />
+                <ListParagraph content={item.description} />
               </div>
             {/if}
           </div>
           {#if item.description && item.title && item.title !== ''}
             <div class={cn('ml-[22px] [&_p]:m-0', block.is_numeric && 'ml-10')}>
-              <Paragraph content={item.description} />
+              <ListParagraph content={item.description} />
             </div>
           {/if}
         </li>
