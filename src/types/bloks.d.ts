@@ -258,6 +258,7 @@ export interface DisclaimerStoryblok {
 
 export interface DoublePanelSectionStoryblok {
   theme: '' | 'light' | 'dark';
+  title?: TitleStoryblok[];
   panels: PanelItemStoryblok[];
   _uid: string;
   component: 'double-panel-section';
