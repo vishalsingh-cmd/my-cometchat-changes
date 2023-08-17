@@ -16,7 +16,14 @@
     class="bg-gray-1 text-gray-12"
     data-theme={block.theme === 'light' ? 'light' : 'dark'}
   >
-    <div class="container mx-auto">
+    <div
+      class={cn(
+        'container mx-auto',
+        (!block.title || (block.title && block.title.length === 0)) &&
+          'border-solid md:flex-row md:border-y',
+        block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-12/8'
+      )}
+    >
       {#if block.title && block.title[0]}
         {@const { label, title, description, links } = block.title[0]}
         {@const labelInfo = getLabelInfo(label, 'brand')}
@@ -25,6 +32,7 @@
       <div
         class={cn(
           'flex flex-col border-solid md:flex-row md:border-y',
+          block.title && 'md:border-y',
           block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-2/8'
         )}
       >
