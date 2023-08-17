@@ -517,6 +517,7 @@ export interface IndustryStoryblok {
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
     | TechnologyHeroStoryblok
+    | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -640,6 +641,7 @@ export interface PageStoryblok {
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
     | TechnologyHeroStoryblok
+    | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -867,6 +869,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
     | TechnologyHeroStoryblok
+    | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -942,6 +945,7 @@ export interface TechnologyStoryblok {
     | TechnologiesSectionStoryblok
     | TechnologiesSectionCopyStoryblok
     | TechnologyHeroStoryblok
+    | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
@@ -998,6 +1002,15 @@ export interface TitleStoryblok {
   size?: '' | 'large' | 'small';
   _uid: string;
   component: 'title';
+  [k: string]: any;
+}
+
+export interface TitleFeaturesSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
+  title?: TitleStoryblok[];
+  features?: TitleImageSectionStoryblok[];
+  _uid: string;
+  component: 'title-features-section';
   [k: string]: any;
 }
 

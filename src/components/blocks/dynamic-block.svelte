@@ -38,6 +38,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
   import TechnologyHero from './technology-hero.svelte';
+  import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
@@ -81,6 +82,7 @@
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
+    'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection
