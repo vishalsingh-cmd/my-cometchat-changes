@@ -2222,6 +2222,48 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "logo-showcase",
+      "display_name": null,
+      "created_at": "2023-08-17T12:54:18.923Z",
+      "updated_at": "2023-08-17T12:54:54.890Z",
+      "id": 4436152,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": false,
+          "key": "title",
+          "pos": 0
+        },
+        "logos": {
+          "type": "options",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["customer"],
+          "min_options": "1",
+          "max_options": "6",
+          "source": "internal",
+          "filter_content_type": [],
+          "folder_slug": "",
+          "required": true,
+          "key": "icons",
+          "pos": 1,
+          "datasource_slug": "icons"
+        }
+      },
+      "image": "//a.storyblok.com/f/231922/x/aaf6f73267/customers-section.png",
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "logo-showcase",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "metrics",
       "display_name": null,
       "created_at": "2023-06-09T16:23:37.805Z",

@@ -21,6 +21,7 @@
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
+  import LogoShowcase from './logo-showcase.svelte';
   import Metrics from './metrics.svelte';
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
@@ -63,6 +64,7 @@
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'list-section': ListSection,
     'lists-section': ListsSection,
+    'logo-showcase': LogoShowcase,
     metrics: Metrics,
     'newsletter-section': NewsletterSection,
     page: Page,

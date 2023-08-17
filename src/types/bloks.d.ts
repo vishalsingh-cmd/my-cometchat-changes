@@ -500,6 +500,7 @@ export interface IndustryStoryblok {
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
     | MetricsStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
@@ -570,6 +571,14 @@ export interface ListsSectionItemStoryblok {
   [k: string]: any;
 }
 
+export interface LogoShowcaseStoryblok {
+  title?: string;
+  logos: (number | string)[];
+  _uid: string;
+  component: 'logo-showcase';
+  [k: string]: any;
+}
+
 export interface MetricsStoryblok {
   metrics?: MetricsItemStoryblok[];
   _uid: string;
@@ -614,6 +623,7 @@ export interface PageStoryblok {
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
     | MetricsStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
@@ -840,6 +850,7 @@ export interface SyncedBlockContentStoryblok {
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
     | MetricsStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
@@ -914,6 +925,7 @@ export interface TechnologyStoryblok {
     | InDepthAnalyticsSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
     | MetricsStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
