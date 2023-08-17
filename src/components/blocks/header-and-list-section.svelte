@@ -39,7 +39,11 @@
         )}
       >
         {#each items as item}
-          <ListSectionItem block={item} accentColour="orange" class="max-w-[395px]" />
+          <ListSectionItem
+            block={item}
+            accentColour={block.accent_colour === 'orange' ? 'orange' : 'brand'}
+            class="max-w-[395px]"
+          />
         {/each}
       </div>
     {/if}
