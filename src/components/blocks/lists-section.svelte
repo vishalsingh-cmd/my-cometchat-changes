@@ -82,7 +82,10 @@
           {title}
           {description}
           buttons={links}
-          class="mb-5 pl-0 pr-0 lg:p-0"
+          class={cn(
+            'pl-0 pr-0 lg:p-0',
+            block.items.length === 1 && block.items[0].title !== '' && 'mb-5'
+          )}
           titleClass="text-2xl"
         />
       {/if}
@@ -93,14 +96,17 @@
           block.single_item_columns_count ? block.single_item_columns_count.toString() : '4'
         )}
         <div>
-          <div class="flex flex-col">
-            <Title title={item.title} />
+          <div class={cn('flex flex-col', item.title === '' && 'mt-8 md:mt-12')}>
+            {#if item.title}
+              <Title title={item.title} />
+            {/if}
             <div
               class={cn(
-                'relative mt-8 flex flex-col gap-px before:absolute before:inset-0 before:hidden before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:mt-12 md:grid md:before:block',
+                'relative flex flex-col gap-px before:absolute before:inset-0 before:hidden before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid md:before:block',
                 parsedColumnCount === 3 && 'md:grid-cols-3',
                 parsedColumnCount === 4 && 'md:grid-cols-2 lg:grid-cols-4',
-                parsedColumnCount === 5 && 'md:grid-cols-3 lg:grid-cols-5'
+                parsedColumnCount === 5 && 'md:grid-cols-3 lg:grid-cols-5',
+                item.title !== '' && 'mt-8 md:mt-12 '
               )}
             >
               {#if item.items[0].items}
@@ -128,7 +134,7 @@
         {@const splittedArray = splitMultiItemsIntoSubArrays(block.items, innerWidth)}
         {@const itemsAsTabs = block.items.map((item, i) => ({
           id: i,
-          label: item.title
+          label: item.title ?? ''
         }))}
         <!-- Mobile Layout when we have multiple items -->
         <div class="block md:hidden">
@@ -161,8 +167,9 @@
             )}
           >
             {#each subArray as item, i}
+              {@const title = item.title ?? ''}
               <div class="isolate flex flex-col gap-px">
-                <Title class={cn('pb-8 pr-8 pt-12 ', i !== 0 && 'px-8')} title={item.title} />
+                <Title class={cn('pb-8 pr-8 pt-12 ', i !== 0 && 'px-8')} {title} />
                 <div
                   class={cn(
                     'flex h-full flex-col gap-6 bg-gray-1 pb-8 pr-8 pt-8',
