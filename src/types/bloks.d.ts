@@ -563,7 +563,7 @@ export interface ListsSectionStoryblok {
 }
 
 export interface ListsSectionItemStoryblok {
-  title: string;
+  title?: string;
   items: BulletPointsStoryblok[];
   _uid: string;
   component: 'lists-section-item';
@@ -687,9 +687,9 @@ export interface PlatformSectionStoryblok {
 }
 
 export interface PreFooterStoryblok {
-  title: string;
-  description: string;
-  call_to_action: ButtonLinkStoryblok[];
+  title?: string;
+  description?: string;
+  call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
   [k: string]: any;
@@ -804,8 +804,8 @@ export interface SolutionsSectionStoryblok {
 
 export interface StandardHeroStoryblok {
   title: string;
-  description: string;
-  buttons: ButtonLinkStoryblok[];
+  description?: string;
+  buttons?: ButtonLinkStoryblok[];
   header_alignment: '' | 'left' | 'center';
   image?: AssetStoryblok;
   _uid: string;
