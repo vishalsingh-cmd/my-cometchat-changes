@@ -10,7 +10,7 @@
 {#if block}
   <section use:storyblokEditable={block} class="relative overflow-hidden bg-gray-1 text-gray-12">
     <div
-      class="container relative mx-auto flex flex-col items-start gap-3 px-container pb-[306px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
+      class="container relative mx-auto flex flex-col items-start gap-3 px-container pb-[260px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
     >
       <Background />
 

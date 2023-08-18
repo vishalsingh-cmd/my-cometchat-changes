@@ -30,7 +30,7 @@
 <div class="absolute -left-[250px] -top-[100px] hidden w-[2235.13px] md:block">
   <img src={BackgroundDesktop} alt="" />
 </div>
-<div class="absolute -bottom-[100px] -left-[250px] block w-[1290.1px] md:hidden">
+<div class="absolute -bottom-[120px] -left-[250px] block w-[1290.1px] md:hidden">
   <img src={BackgroundMobile} alt="" />
 </div>
 
