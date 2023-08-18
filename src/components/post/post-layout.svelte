@@ -101,11 +101,7 @@
 {#if block}
   <slot />
 
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="first-letter mx-auto bg-gray-1 text-gray-12"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="mx-auto bg-gray-1 text-gray-12">
     {#if block.content.body && block.content.body.content}
       <div
         class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
