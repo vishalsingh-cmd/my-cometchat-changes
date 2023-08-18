@@ -22,7 +22,7 @@
   <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-orange-8']} />
 </div>
 <div
-  class="absolute left-[50vw] top-[400px] h-[803px] w-[1386px] origin-center rotate-[30deg] 2xl:left-[400px]"
+  class="absolute left-[50vw] top-[400px] h-[803px] w-[1386px] origin-center rotate-[30deg] 2xl:-left-[100px] 2xl:top-0"
   data-theme="light"
 >
   <Stars amount={40} backgroundColours={['bg-brand-1']} />
@@ -78,7 +78,7 @@
 
 <!-- Planets - In Front of side gradients -->
 <div
-  class="absolute -bottom-[150px] -right-[140px] md:-bottom-[180px] md:-right-[300px] md:h-[600px] md:w-[600px]"
+  class="absolute -bottom-[150px] -right-[140px] hidden md:-bottom-[180px] md:-right-[300px] md:block md:h-[600px] md:w-[600px]"
 >
   <img src={BigPurplePlanet} alt="" class="h-full w-full" />
 </div>
@@ -89,7 +89,9 @@
   <img src={BigPinkPlanet} alt="" class="h-full w-full" />
 </div>
 
-<div class="absolute right-[100px] top-[100px] hidden scale-150 md:block">
+<div
+  class="absolute right-[100px] top-[100px] hidden scale-150 md:top-[80px] md:block md:scale-90 xl:scale-100"
+>
   <img src={OrangePlanet} alt="" class="h-full w-full" />
 </div>
 
