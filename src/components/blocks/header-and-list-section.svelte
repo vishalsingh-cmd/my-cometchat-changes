@@ -8,6 +8,8 @@
   import Title from '$components/title.svelte';
 
   export let block: HeaderAndListSectionStoryblok;
+
+  console.log(`Accent Color ${typeof block.accent_colour}`);
 </script>
 
 {#if block}
@@ -23,7 +25,8 @@
           alignment="center"
           label={{
             content: header.label,
-            color: block.accent_colour ? block.accent_colour : 'orange'
+            color:
+              block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
           }}
           title={header.title}
         />
@@ -41,7 +44,9 @@
         {#each items as item}
           <ListSectionItem
             block={item}
-            accentColour={block.accent_colour === 'orange' ? 'orange' : 'brand'}
+            accentColour={block.accent_colour === '' || !block.accent_colour
+              ? 'orange'
+              : block.accent_colour}
             class="max-w-[395px]"
           />
         {/each}
