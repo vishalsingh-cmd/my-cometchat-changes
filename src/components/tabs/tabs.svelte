@@ -17,7 +17,7 @@
 </script>
 
 <div
-  class={cn('flex w-full flex-row overflow-x-scroll break-all md:px-container', className)}
+  class={cn('flex w-full flex-row overflow-x-scroll break-all sm:px-container', className)}
   role="tablist"
 >
   {#each options as tab}
