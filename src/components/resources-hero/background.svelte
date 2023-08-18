@@ -20,22 +20,19 @@
 <div
   class="absolute -top-[336.13px] left-[484.9px] h-[710.96px] w-[1423.31px] origin-center rotate-[-17.44deg] transform rounded-full bg-[hsl(245,63%,24%)]/30 blur-[59px]"
 />
-<div class="absolute bottom-0 left-0 h-full w-full bg-gradient-to-r from-gray-1/100 to-gray-1/0" />
+
 <div class="absolute left-[51px] top-0 h-[803px] w-[1389px]">
   <Stars backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-gray-8']} />
 </div>
 <div class="absolute left-0 top-0 h-[803px] w-[1389px]">
   <Stars backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-gray-8']} />
 </div>
-<div class="absolute -bottom-[250px] left-[-300px] hidden w-[2235.13px] md:block">
+<div class="absolute -left-[250px] -top-[100px] hidden w-[2235.13px] md:block">
   <img src={BackgroundDesktop} alt="" />
 </div>
 <div class="absolute -bottom-[100px] -left-[250px] block w-[1290.1px] md:hidden">
   <img src={BackgroundMobile} alt="" />
 </div>
-<div
-  class="absolute bottom-0 left-0 h-[350px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0 to-50%"
-/>
 
 <style lang="postcss">
   .blur1 {
