@@ -8,8 +8,6 @@
   import Title from '$components/title.svelte';
 
   export let block: HeaderAndListSectionStoryblok;
-
-  console.log(`Accent Color ${typeof block.accent_colour}`);
 </script>
 
 {#if block}
