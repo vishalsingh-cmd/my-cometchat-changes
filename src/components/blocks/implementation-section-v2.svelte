@@ -31,7 +31,7 @@
         <Title label={labelInfo} {title} {description} buttons={links} size="small" />
       {/if}
 
-      <div class="flex flex-col border-t border-gray-12/[.08] lg:flex-row">
+      <div class="flex flex-col border-y border-gray-12/[.08] lg:flex-row">
         <div class="flex flex-1 flex-col">
           {#if leftItems.length > 0}
             {#each leftItems as item, i}
