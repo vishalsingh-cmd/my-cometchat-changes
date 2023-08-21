@@ -12,7 +12,7 @@
 {#if block}
   <section use:storyblokEditable={block} class="overflow-hidden bg-gray-1 text-gray-12">
     <div
-      class="relative mx-auto flex px-container pb-[258px] pt-[180px] md:justify-center md:pb-[242px] md:pt-[316px]"
+      class="container relative mx-auto flex px-container pb-[180px] pt-[180px] md:justify-center md:pb-[242px] md:pt-[316px]"
     >
       <h1
         class="isolate z-10 max-w-[736px] text-left text-4xl font-semibold leading-tighter md:text-center"

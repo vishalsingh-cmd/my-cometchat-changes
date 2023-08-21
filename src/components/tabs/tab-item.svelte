@@ -13,7 +13,7 @@
   type="button"
   role="tab"
   class={cn(
-    'relative inline-block h-[59px] min-w-fit cursor-pointer overflow-hidden break-keep px-5 text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100 md:h-[71px]',
+    'relative inline-block h-[51px] min-w-fit cursor-pointer overflow-hidden break-keep px-3 text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100 md:h-[71px] md:px-5',
     isActive &&
       'text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
   )}

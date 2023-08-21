@@ -26,8 +26,6 @@
   let document = typeof window !== 'undefined' ? window.document : null;
   let windowScroll = 0;
 
-  let hasReachedEndOfContent = false;
-
   const getAllHeadings = () => {
     if (!document) {
       return;
@@ -60,14 +58,6 @@
     const content = document.getElementById('content');
     if (!content) {
       return;
-    }
-
-    const contentOffsetBottom = content.getBoundingClientRect().bottom;
-
-    if (contentOffsetBottom <= 500) {
-      hasReachedEndOfContent = true;
-    } else {
-      hasReachedEndOfContent = false;
     }
 
     headings.forEach((heading: HTMLHeadingElement, i: number) => {
@@ -111,30 +101,21 @@
 {#if block}
   <slot />
 
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="bg-gray-1 px-container text-gray-12"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="mx-auto bg-gray-1 text-gray-12">
     {#if block.content.body && block.content.body.content}
-      <div class="container relative mx-auto pt-20">
-        <Sidebar
-          {headings}
-          {activeHeadingIndex}
-          {hasReachedEndOfContent}
-          on:scrollIntoView={onScrollIntoView}
-        />
+      <div
+        class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
+      >
+        <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
 
-        <div class="relative mx-auto w-full max-w-[640px]" id="content">
+        <div class="relative" id="content">
           {#each block.content.body.content as b}
             <RichTextRenderer block={b} />
           {/each}
-        </div>
 
-        <!-- Author -->
-        {#if block.content.author && isBlockTutorialOrBlogPost}
-          {@const author = typedAuthor(block.content.author)}
-          <div class="mx-auto w-full max-w-[640px]">
+          <!-- Author -->
+          {#if block.content.author && isBlockTutorialOrBlogPost}
+            {@const author = typedAuthor(block.content.author)}
             <div class="py-8 md:py-6">
               <div
                 class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px] md:p-5"
@@ -156,8 +137,8 @@
                 </div>
               </div>
             </div>
-          </div>
-        {/if}
+          {/if}
+        </div>
       </div>
     {/if}
   </section>
