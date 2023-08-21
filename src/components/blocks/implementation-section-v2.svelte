@@ -42,7 +42,10 @@
         <div class="flex flex-1 flex-col overflow-hidden">
           {#if rightItems[0]}
             <Panel item={rightItems[0]} />
-            <Media media={block.illustration} class="transform md:-translate-x-20 md:scale-125" />
+            <Media
+              media={block.illustration}
+              class="-translate-x-10 scale-125 transform md:-translate-x-20"
+            />
           {/if}
         </div>
         <div />
