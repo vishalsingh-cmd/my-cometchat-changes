@@ -470,6 +470,16 @@ export interface ImplementationSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ImplementationSectionV2Storyblok {
+  accent_colour: '' | 'brand' | 'orange';
+  header: TitleStoryblok[];
+  items: PanelItemStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'implementation-section-v2';
+  [k: string]: any;
+}
+
 export interface InDepthAnalyticsSectionStoryblok {
   header: TitleStoryblok[];
   _uid: string;
@@ -498,7 +508,9 @@ export interface IndustryStoryblok {
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | InfrastructureSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -526,6 +538,15 @@ export interface IndustryStoryblok {
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'industry';
+  [k: string]: any;
+}
+
+export interface InfrastructureSectionStoryblok {
+  accent_colour: '' | 'brand' | 'orange';
+  header?: TitleStoryblok[];
+  items?: BulletPointStoryblok[];
+  _uid: string;
+  component: 'infrastructure-section';
   [k: string]: any;
 }
 
@@ -622,7 +643,9 @@ export interface PageStoryblok {
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | InfrastructureSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -850,7 +873,9 @@ export interface SyncedBlockContentStoryblok {
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | InfrastructureSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -926,7 +951,9 @@ export interface TechnologyStoryblok {
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | InfrastructureSectionStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
