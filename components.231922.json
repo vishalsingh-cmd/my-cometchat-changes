@@ -271,11 +271,11 @@
       "name": "bullet-point",
       "display_name": null,
       "created_at": "2023-06-28T09:39:11.178Z",
-      "updated_at": "2023-07-03T14:13:54.762Z",
+      "updated_at": "2023-08-21T15:31:02.659Z",
       "id": 4189111,
       "schema": {
         "item": {
-          "type": "text",
+          "type": "textarea",
           "required": true,
           "translatable": true
         },
@@ -2525,7 +2525,7 @@
       "name": "panel-item",
       "display_name": null,
       "created_at": "2023-06-15T15:42:39.944Z",
-      "updated_at": "2023-08-08T13:31:17.998Z",
+      "updated_at": "2023-08-21T15:24:10.361Z",
       "id": 4131520,
       "schema": {
         "icon": {
@@ -2539,7 +2539,7 @@
           "type": "option",
           "use_uuid": true,
           "pos": 1,
-          "required": true,
+          "required": false,
           "options": [
             {
               "_uid": "9f1341e0-14fa-4c18-a73b-a4c41177cbf6",
@@ -2552,7 +2552,7 @@
               "name": "Orange"
             }
           ],
-          "default_value": "Orange"
+          "default_value": "orange"
         },
         "title": {
           "type": "text",
@@ -2562,8 +2562,8 @@
         },
         "description": {
           "type": "textarea",
-          "required": true,
-          "translatable": true,
+          "required": false,
+          "translatable": false,
           "pos": 3
         },
         "list": {

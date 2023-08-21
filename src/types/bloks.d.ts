@@ -679,9 +679,9 @@ export interface PageStoryblok {
 
 export interface PanelItemStoryblok {
   icon?: number | string;
-  accent_colour: '' | 'brand' | 'orange';
+  accent_colour?: '' | 'brand' | 'orange';
   title: string;
-  description: string;
+  description?: string;
   list?: BulletPointStoryblok[];
   link?: LinkStoryblok[];
   _uid: string;

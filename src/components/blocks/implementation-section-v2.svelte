@@ -1,0 +1,52 @@
+<script lang="ts">
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { cn, getLabelInfo } from '$lib/utils';
+
+  import type { ImplementationSectionV2Storyblok } from '$types/bloks';
+
+  import Title from '$components/title.svelte';
+  import Panel from '$components/panel.svelte';
+  import Media from '$components/media.svelte';
+
+  export let block: ImplementationSectionV2Storyblok;
+
+  const accentColour = () => {
+    if (block.accent_colour) {
+      return block.accent_colour;
+    }
+
+    return 'brand';
+  };
+
+  const leftItems = block.items.slice(0, 2);
+  const rightItems = block.items.slice(2);
+</script>
+
+{#if block}
+  <section use:storyblokEditable={block} class="bg-gray-1 text-gray-12" data-theme="dark">
+    <div class="container mx-auto">
+      {#if block.header[0]}
+        {@const { label, title, description, links } = block.header[0]}
+        {@const labelInfo = getLabelInfo(label, accentColour())}
+        <Title label={labelInfo} {title} {description} buttons={links} size="small" />
+      {/if}
+
+      <div class="flex flex-col border-t border-gray-12/[.08] lg:flex-row">
+        <div class="flex flex-1 flex-col">
+          {#if leftItems.length > 0}
+            {#each leftItems as item, i}
+              <Panel {item} class={cn(i === 1 && 'border-t border-gray-12/[.08]')} />
+            {/each}
+          {/if}
+        </div>
+        <div class="flex flex-1 flex-col overflow-hidden">
+          {#if rightItems[0]}
+            <Panel item={rightItems[0]} />
+            <Media media={block.illustration} class="transform md:-translate-x-20 md:scale-125" />
+          {/if}
+        </div>
+        <div />
+      </div>
+    </div>
+  </section>
+{/if}
