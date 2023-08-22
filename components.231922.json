@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-14T11:51:23.866Z",
+      "updated_at": "2023-08-22T09:29:39.522Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -240,7 +240,9 @@
               "value": "best-practices",
               "name": "Best practices"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "categories"
         },
         "first_created_on": {
           "type": "datetime",
@@ -271,11 +273,11 @@
       "name": "bullet-point",
       "display_name": null,
       "created_at": "2023-06-28T09:39:11.178Z",
-      "updated_at": "2023-07-03T14:13:54.762Z",
+      "updated_at": "2023-08-21T15:31:02.659Z",
       "id": 4189111,
       "schema": {
         "item": {
-          "type": "text",
+          "type": "textarea",
           "required": true,
           "translatable": true
         },
@@ -1904,6 +1906,68 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "implementation-section-v2",
+      "display_name": null,
+      "created_at": "2023-08-21T13:08:49.292Z",
+      "updated_at": "2023-08-21T14:12:01.419Z",
+      "id": 4451608,
+      "schema": {
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "a1729fb8-e696-4c33-8b5e-e5e9e4335510",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "6a58791c-c374-462b-a1f2-2670a74f3326",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "pos": 0
+        },
+        "header": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "pos": 1
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 3,
+          "minimum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "pos": 2
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "implementation-section-v2",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "in-depth-analytics-section",
       "display_name": null,
       "created_at": "2023-06-29T12:56:24.090Z",
@@ -2008,6 +2072,57 @@
       "color": null,
       "icon": null,
       "component_group_name": "Pages"
+    },
+    {
+      "name": "infrastructure-section",
+      "display_name": null,
+      "created_at": "2023-08-21T14:12:33.187Z",
+      "updated_at": "2023-08-21T14:21:27.334Z",
+      "id": 4452483,
+      "schema": {
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "b3454b9a-79ee-4414-a5b2-834f134342e8",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "0304a90b-e9cb-40c1-89e6-c4e0d24afee0",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ]
+        },
+        "header": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "items": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "infrastructure-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "link",
@@ -2412,7 +2527,7 @@
       "name": "panel-item",
       "display_name": null,
       "created_at": "2023-06-15T15:42:39.944Z",
-      "updated_at": "2023-08-08T13:31:17.998Z",
+      "updated_at": "2023-08-21T15:24:10.361Z",
       "id": 4131520,
       "schema": {
         "icon": {
@@ -2426,7 +2541,7 @@
           "type": "option",
           "use_uuid": true,
           "pos": 1,
-          "required": true,
+          "required": false,
           "options": [
             {
               "_uid": "9f1341e0-14fa-4c18-a73b-a4c41177cbf6",
@@ -2439,7 +2554,7 @@
               "name": "Orange"
             }
           ],
-          "default_value": "Orange"
+          "default_value": "orange"
         },
         "title": {
           "type": "text",
@@ -2449,8 +2564,8 @@
         },
         "description": {
           "type": "textarea",
-          "required": true,
-          "translatable": true,
+          "required": false,
+          "translatable": false,
           "pos": 3
         },
         "list": {
@@ -4339,7 +4454,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-14T11:52:02.533Z",
+      "updated_at": "2023-08-22T09:30:22.413Z",
       "id": 4303307,
       "schema": {
         "technology": {
@@ -4383,7 +4498,9 @@
               "value": "android-kotlin-ui-kit",
               "name": "Android Kotlin UI Kit"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "technologies"
         },
         "tutorial_type": {
           "type": "option",
@@ -4401,7 +4518,9 @@
               "value": "text",
               "name": "Text"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "tutorial-types"
         },
         "industries": {
           "type": "options",
@@ -4430,7 +4549,9 @@
               "value": "widget",
               "name": "Widget"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "integration-tools"
         },
         "cover": {
           "type": "asset",

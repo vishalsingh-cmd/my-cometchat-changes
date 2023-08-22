@@ -55,19 +55,21 @@
       | StoryblokStory<CustomerStoryStoryblok>
       | StoryblokStory<TutorialStoryblok>
   ) => {
+    let tags = [] as string[];
+
+    console.log(story);
+
     if (story.content.component === 'customer-story' && story.content.customer) {
-      const customer = story.content.customer as StoryblokStory<CustomerStoryblok>;
-      const industry = $industries.find(
-        (industry: ISbStoryData<IndustryStoryblok>) => customer.content.industry === industry.uuid
-      ) as unknown as IndustryStoryblok;
-      return industry?.name;
+      tags = [story.content.industry as string];
     } else if (story.content.component === 'blog-post') {
-      return story.content.category;
+      tags = [story.content.category];
     } else if (story.content.component === 'tutorial') {
-      return story.content.technology;
-    } else {
-      return '';
+      tags = story.content.technology;
     }
+
+    const parsedTags = tags.join(', ');
+
+    return parsedTags;
   };
 </script>
 
@@ -83,13 +85,15 @@
       {@const storyLink = sanitizeSlug(story.full_slug)}
       {@const author = getAuthor(story)}
       {@const date = formatDate(content.date)}
-      {@const tag = getTag(story)}
+      {@const tags = getTag(story)}
       <div
         class="container mx-auto flex flex-col justify-between gap-8 px-container py-10 md:flex-row md:items-center md:py-20"
       >
         <div class="flex flex-1 flex-col justify-between md:py-6">
           <div class="mb-8 max-w-[528px] md:mb-16">
-            <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">{tag}</p>
+            <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">
+              {tags}
+            </p>
             <p class="text-3xl font-semibold leading-tighter">{story.name}</p>
           </div>
           <div
