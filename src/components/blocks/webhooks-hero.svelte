@@ -36,7 +36,7 @@
         {/if}
       </div>
       {#if block.illustration}
-        <div class="absolute -right-40 top-[30px] w-[1000px]">
+        <div class="isolate z-10 md:absolute md:-right-40 md:top-[30px] md:w-[1000px]">
           <Media media={block.illustration} />
         </div>
       {/if}
