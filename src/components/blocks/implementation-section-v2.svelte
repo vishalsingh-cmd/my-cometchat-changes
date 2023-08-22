@@ -10,24 +10,20 @@
 
   export let block: ImplementationSectionV2Storyblok;
 
-  const accentColour = () => {
-    if (block.accent_colour) {
-      return block.accent_colour;
-    }
-
-    return 'brand';
-  };
-
   const leftItems = block.items.slice(0, 2);
   const rightItems = block.items.slice(2);
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="bg-gray-1 text-gray-12" data-theme="dark">
+  <section
+    use:storyblokEditable={block}
+    class="overflow-hidden bg-gray-1 text-gray-12"
+    data-theme="dark"
+  >
     <div class="container mx-auto">
       {#if block.header[0]}
         {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label, accentColour())}
+        {@const labelInfo = getLabelInfo(label, block.accent_colour || 'orange')}
         <Title label={labelInfo} {title} {description} buttons={links} size="small" />
       {/if}
 
@@ -39,12 +35,12 @@
             {/each}
           {/if}
         </div>
-        <div class="flex flex-1 flex-col overflow-hidden">
+        <div class="flex flex-1 flex-col overflow-x-visible">
           {#if rightItems[0]}
-            <Panel item={rightItems[0]} />
+            <Panel item={rightItems[0]} class="md:border-r-0" />
             <Media
               media={block.illustration}
-              class="-translate-x-10 scale-125 transform md:-translate-x-20"
+              class="-translate-x-10 scale-125 transform md:translate-x-0"
             />
           {/if}
         </div>
