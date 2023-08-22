@@ -17,8 +17,10 @@
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
+  import ImplementationSectionV2 from './implementation-section-v2.svelte';
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
+  import InfrastructureSection from './infrastructure-section.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
   import LogoShowcase from './logo-showcase.svelte';
@@ -61,8 +63,10 @@
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
+    'implementation-section-v2': ImplementationSectionV2,
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
+    'infrastructure-section': InfrastructureSection,
     'list-section': ListSection,
     'lists-section': ListsSection,
     'logo-showcase': LogoShowcase,
