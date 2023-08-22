@@ -69,7 +69,7 @@ export interface BlogPostStoryblok {
     | 'industry'
     | 'best-practices';
   first_created_on?: string;
-  pre_footer?: PreFooterCopyStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -218,7 +218,7 @@ export interface CustomerStoryStoryblok {
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover?: AssetStoryblok;
+  cover: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   author?: StoryblokStory<AuthorStoryblok> | string;
@@ -376,6 +376,7 @@ export interface GistStoryblok {
 export interface HeaderAndListSectionStoryblok {
   theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'orange' | 'brand';
+  title_alignment?: '' | 'center' | 'left';
   header?: TitleStoryblok[];
   items: ListItemStoryblok[];
   _uid: string;
@@ -518,7 +519,6 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -532,6 +532,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -653,7 +654,6 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -667,6 +667,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -728,15 +729,6 @@ export interface PreFooterStoryblok {
   call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
-  [k: string]: any;
-}
-
-export interface PreFooterCopyStoryblok {
-  title: string;
-  description: string;
-  call_to_action: ButtonLinkStoryblok[];
-  _uid: string;
-  component: 'pre-footer_copy';
   [k: string]: any;
 }
 
@@ -883,7 +875,6 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -897,6 +888,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -961,7 +953,6 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -975,6 +966,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -1049,6 +1041,16 @@ export interface TitleImageSectionStoryblok {
   theme: '' | 'light' | 'dark';
   _uid: string;
   component: 'title-image-section';
+  [k: string]: any;
+}
+
+export interface TitleSectionStoryblok {
+  title: TitleStoryblok[];
+  accent_colour?: '' | 'brand' | 'orange';
+  alignment?: '' | 'center' | 'left';
+  theme?: '' | 'dark' | 'light';
+  _uid: string;
+  component: 'title-section';
   [k: string]: any;
 }
 
@@ -1177,7 +1179,7 @@ export interface TutorialStoryblok {
   body: RichtextStoryblok;
   seo?: SeoFieldsStoryblok[];
   related?: RelatedStoriesSectionStoryblok[];
-  pre_footer?: PreFooterCopyStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
