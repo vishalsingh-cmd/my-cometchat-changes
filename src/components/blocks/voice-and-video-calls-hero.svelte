@@ -14,7 +14,7 @@
   <section class="overflow-hidden" use:storyblokEditable={block}>
     <section class="px-container">
       <div
-        class="relative mx-auto flex max-w-content flex-col gap-16 pb-16 pt-[160px] lg:flex-row lg:justify-center lg:gap-[143px]"
+        class="relative mx-auto flex max-w-content flex-col gap-16 pb-16 pt-[100px] lg:flex-row lg:justify-center lg:gap-[143px] lg:pt-[160px]"
       >
         <!-- Background Elements -->
         <Background />
