@@ -69,7 +69,7 @@ export interface BlogPostStoryblok {
     | 'industry'
     | 'best-practices';
   first_created_on?: string;
-  pre_footer?: PreFooterCopyStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -519,7 +519,6 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -535,6 +534,7 @@ export interface IndustryStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -655,7 +655,6 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -671,6 +670,7 @@ export interface PageStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -731,15 +731,6 @@ export interface PreFooterStoryblok {
   call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
-  [k: string]: any;
-}
-
-export interface PreFooterCopyStoryblok {
-  title: string;
-  description: string;
-  call_to_action: ButtonLinkStoryblok[];
-  _uid: string;
-  component: 'pre-footer_copy';
   [k: string]: any;
 }
 
@@ -886,7 +877,6 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -902,6 +892,7 @@ export interface SyncedBlockContentStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   _uid: string;
@@ -965,7 +956,6 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
-    | PreFooterCopyStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -981,6 +971,7 @@ export interface TechnologyStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -1192,7 +1183,7 @@ export interface TutorialStoryblok {
   body: RichtextStoryblok;
   seo?: SeoFieldsStoryblok[];
   related?: RelatedStoriesSectionStoryblok[];
-  pre_footer?: PreFooterCopyStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
@@ -1204,6 +1195,14 @@ export interface VoiceAndVideoCallsHeroStoryblok {
   customers: SocialProofsStoryblok[];
   _uid: string;
   component: 'voice-and-video-calls-hero';
+  [k: string]: any;
+}
+
+export interface WebhooksHeroStoryblok {
+  title: TitleStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'webhooks-hero';
   [k: string]: any;
 }
 

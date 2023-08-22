@@ -1,0 +1,45 @@
+<script lang="ts">
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getLabelInfo } from '$lib/utils';
+
+  import type { WebhooksHeroStoryblok } from '$types/bloks';
+
+  import Background from '$components/webhooks-hero/background.svelte';
+
+  import Media from '$components/media.svelte';
+  import Title from '$components/title.svelte';
+
+  export let block: WebhooksHeroStoryblok;
+</script>
+
+{#if block}
+  <section
+    use:storyblokEditable={block}
+    data-theme="dark"
+    class="h-[730px] overflow-hidden bg-gray-1 text-gray-12"
+  >
+    <div class="container relative mx-auto h-full w-full overflow-x-visible">
+      <Background />
+
+      <div class="lg:ml-[112px]">
+        {#if block.title && block.title[0]}
+          {@const { label, title, description, links } = block.title[0]}
+          {@const labelInfo = getLabelInfo(label, 'brand')}
+          <Title
+            label={labelInfo}
+            {title}
+            {description}
+            buttons={links}
+            alignment="left"
+            class="lg:pt-[148px]"
+          />
+        {/if}
+      </div>
+      {#if block.illustration}
+        <div class="absolute -right-40 top-[30px] w-[1000px]">
+          <Media media={block.illustration} />
+        </div>
+      {/if}
+    </div>
+  </section>
+{/if}
