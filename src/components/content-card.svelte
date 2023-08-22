@@ -1,5 +1,6 @@
 <script lang="ts">
   import { sanitizeSlug } from '$lib/storyblok';
+  import { string } from '$lib/strings';
 
   import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
 
@@ -42,11 +43,11 @@
     {/if}
     {#if author && date}
       <div
-        class="flex items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
+        class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
       >
-        <span>{author}</span>
+        <span aria-label={string('a11y.author')}>{author}</span>
         <span class="h-1 w-1 rounded-full bg-gray-12" />
-        <span>{date}</span>
+        <span aria-label={string('a11y.published')}>{date}</span>
       </div>
     {/if}
     {#if tags}
