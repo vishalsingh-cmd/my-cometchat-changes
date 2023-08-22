@@ -31,13 +31,19 @@
         <div class="flex flex-1 flex-col">
           {#if leftItems.length > 0}
             {#each leftItems as item, i}
-              <Panel {item} class={cn(i === 1 && 'border-t border-gray-12/[.08]')} />
+              <Panel
+                {item}
+                class={cn(
+                  'px-container md:px-container',
+                  i === 1 && 'border-t border-gray-12/[.08]'
+                )}
+              />
             {/each}
           {/if}
         </div>
         <div class="flex flex-1 flex-col overflow-x-visible">
           {#if rightItems[0]}
-            <Panel item={rightItems[0]} class="md:border-r-0" />
+            <Panel item={rightItems[0]} class="px-container md:border-r-0 md:px-container" />
             <Media
               media={block.illustration}
               class="-translate-x-10 scale-125 transform md:translate-x-0"
