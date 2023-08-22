@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-14T11:51:23.866Z",
+      "updated_at": "2023-08-22T09:29:39.522Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -240,7 +240,9 @@
               "value": "best-practices",
               "name": "Best practices"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "categories"
         },
         "first_created_on": {
           "type": "datetime",
@@ -647,7 +649,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-14T11:51:43.951Z",
+      "updated_at": "2023-08-22T12:50:41.730Z",
       "id": 4079335,
       "schema": {
         "Quote": {
@@ -714,7 +716,8 @@
           "type": "asset",
           "pos": 10,
           "filetypes": ["images"],
-          "asset_folder_id": 248971
+          "asset_folder_id": 248971,
+          "required": true
         },
         "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
           "display_name": "SEO",
@@ -1452,7 +1455,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-08-17T11:37:32.828Z",
+      "updated_at": "2023-08-22T11:17:50.154Z",
       "id": 4184631,
       "schema": {
         "theme": {
@@ -1491,9 +1494,27 @@
           ],
           "default_value": "orange"
         },
+        "title_alignment": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 2,
+          "options": [
+            {
+              "_uid": "a8d241aa-78ed-4575-af8e-6b65da3553b7",
+              "name": "Center",
+              "value": "center"
+            },
+            {
+              "_uid": "1be9fb0b-6d17-46ff-89b9-358d65008347",
+              "value": "left",
+              "name": "Left"
+            }
+          ],
+          "default_value": "Center"
+        },
         "header": {
           "type": "bloks",
-          "pos": 2,
+          "pos": 3,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["title"],
@@ -1509,7 +1530,7 @@
           "minimum": 1,
           "component_whitelist": ["list-item"],
           "key": "list",
-          "pos": 3
+          "pos": 4
         }
       },
       "image": "//a.storyblok.com/f/231922/x/be65dcdfec/screenshot-2023-06-30-at-17-15-19.png",
@@ -4452,7 +4473,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-14T11:52:02.533Z",
+      "updated_at": "2023-08-22T09:30:22.413Z",
       "id": 4303307,
       "schema": {
         "technology": {
@@ -4496,7 +4517,9 @@
               "value": "android-kotlin-ui-kit",
               "name": "Android Kotlin UI Kit"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "technologies"
         },
         "tutorial_type": {
           "type": "option",
@@ -4514,7 +4537,9 @@
               "value": "text",
               "name": "Text"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "tutorial-types"
         },
         "industries": {
           "type": "options",
@@ -4543,7 +4568,9 @@
               "value": "widget",
               "name": "Widget"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "integration-tools"
         },
         "cover": {
           "type": "asset",

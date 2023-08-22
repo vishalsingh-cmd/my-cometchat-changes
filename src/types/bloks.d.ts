@@ -218,7 +218,7 @@ export interface CustomerStoryStoryblok {
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover?: AssetStoryblok;
+  cover: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   author?: StoryblokStory<AuthorStoryblok> | string;
@@ -376,6 +376,7 @@ export interface GistStoryblok {
 export interface HeaderAndListSectionStoryblok {
   theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'orange' | 'brand';
+  title_alignment?: '' | 'center' | 'left';
   header?: TitleStoryblok[];
   items: ListItemStoryblok[];
   _uid: string;
