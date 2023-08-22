@@ -20,7 +20,7 @@
       class={cn(
         'container mx-auto',
         (!block.title || (block.title && block.title.length === 0)) &&
-          'border-solid md:flex-row md:border-y',
+          'border-y border-solid md:flex-row',
         block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-12/8'
       )}
     >
