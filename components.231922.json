@@ -271,11 +271,11 @@
       "name": "bullet-point",
       "display_name": null,
       "created_at": "2023-06-28T09:39:11.178Z",
-      "updated_at": "2023-07-03T14:13:54.762Z",
+      "updated_at": "2023-08-21T15:31:02.659Z",
       "id": 4189111,
       "schema": {
         "item": {
-          "type": "text",
+          "type": "textarea",
           "required": true,
           "translatable": true
         },
@@ -915,7 +915,7 @@
       "name": "double-panel-section",
       "display_name": null,
       "created_at": "2023-08-08T10:50:15.242Z",
-      "updated_at": "2023-08-08T13:30:06.224Z",
+      "updated_at": "2023-08-17T14:07:45.317Z",
       "id": 4393375,
       "schema": {
         "theme": {
@@ -936,6 +936,15 @@
           ],
           "pos": 0
         },
+        "title": {
+          "type": "bloks",
+          "pos": 1,
+          "required": false,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
         "panels": {
           "type": "bloks",
           "required": true,
@@ -944,7 +953,7 @@
           "restrict_components": true,
           "minimum": 2,
           "component_whitelist": ["panel-item"],
-          "pos": 1
+          "pos": 2
         }
       },
       "image": "//a.storyblok.com/f/231922/x/4e81513250/screenshot-2023-08-08-at-14-28-22.png",
@@ -1443,7 +1452,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-08-09T13:59:57.734Z",
+      "updated_at": "2023-08-17T11:37:32.828Z",
       "id": 4184631,
       "schema": {
         "theme": {
@@ -1496,7 +1505,7 @@
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
-          "maximum": 5,
+          "maximum": 6,
           "minimum": 1,
           "component_whitelist": ["list-item"],
           "key": "list",
@@ -1895,6 +1904,68 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "implementation-section-v2",
+      "display_name": null,
+      "created_at": "2023-08-21T13:08:49.292Z",
+      "updated_at": "2023-08-21T14:12:01.419Z",
+      "id": 4451608,
+      "schema": {
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "a1729fb8-e696-4c33-8b5e-e5e9e4335510",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "6a58791c-c374-462b-a1f2-2670a74f3326",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "pos": 0
+        },
+        "header": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "pos": 1
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 3,
+          "minimum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "pos": 2
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "implementation-section-v2",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "in-depth-analytics-section",
       "display_name": null,
       "created_at": "2023-06-29T12:56:24.090Z",
@@ -1999,6 +2070,57 @@
       "color": null,
       "icon": null,
       "component_group_name": "Pages"
+    },
+    {
+      "name": "infrastructure-section",
+      "display_name": null,
+      "created_at": "2023-08-21T14:12:33.187Z",
+      "updated_at": "2023-08-21T14:21:27.334Z",
+      "id": 4452483,
+      "schema": {
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "b3454b9a-79ee-4414-a5b2-834f134342e8",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "0304a90b-e9cb-40c1-89e6-c4e0d24afee0",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ]
+        },
+        "header": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "items": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "infrastructure-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "link",
@@ -2190,12 +2312,12 @@
       "name": "lists-section-item",
       "display_name": null,
       "created_at": "2023-07-27T10:47:43.148Z",
-      "updated_at": "2023-07-27T10:48:16.738Z",
+      "updated_at": "2023-08-17T11:38:52.194Z",
       "id": 4338453,
       "schema": {
         "title": {
           "type": "text",
-          "required": true,
+          "required": false,
           "translatable": true
         },
         "items": {
@@ -2220,6 +2342,48 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "logo-showcase",
+      "display_name": null,
+      "created_at": "2023-08-17T12:54:18.923Z",
+      "updated_at": "2023-08-17T12:54:54.890Z",
+      "id": 4436152,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": false,
+          "key": "title",
+          "pos": 0
+        },
+        "logos": {
+          "type": "options",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["customer"],
+          "min_options": "1",
+          "max_options": "6",
+          "source": "internal",
+          "filter_content_type": [],
+          "folder_slug": "",
+          "required": true,
+          "key": "icons",
+          "pos": 1,
+          "datasource_slug": "icons"
+        }
+      },
+      "image": "//a.storyblok.com/f/231922/x/aaf6f73267/customers-section.png",
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "logo-showcase",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "metrics",
@@ -2361,7 +2525,7 @@
       "name": "panel-item",
       "display_name": null,
       "created_at": "2023-06-15T15:42:39.944Z",
-      "updated_at": "2023-08-08T13:31:17.998Z",
+      "updated_at": "2023-08-21T15:24:10.361Z",
       "id": 4131520,
       "schema": {
         "icon": {
@@ -2375,7 +2539,7 @@
           "type": "option",
           "use_uuid": true,
           "pos": 1,
-          "required": true,
+          "required": false,
           "options": [
             {
               "_uid": "9f1341e0-14fa-4c18-a73b-a4c41177cbf6",
@@ -2388,7 +2552,7 @@
               "name": "Orange"
             }
           ],
-          "default_value": "Orange"
+          "default_value": "orange"
         },
         "title": {
           "type": "text",
@@ -2398,8 +2562,8 @@
         },
         "description": {
           "type": "textarea",
-          "required": true,
-          "translatable": true,
+          "required": false,
+          "translatable": false,
           "pos": 3
         },
         "list": {
@@ -2589,22 +2753,22 @@
       "name": "pre-footer",
       "display_name": null,
       "created_at": "2023-07-20T14:57:04.770Z",
-      "updated_at": "2023-07-27T09:16:22.621Z",
+      "updated_at": "2023-08-17T11:59:56.968Z",
       "id": 4304639,
       "schema": {
         "title": {
           "type": "text",
-          "required": true,
+          "required": false,
           "display_name": ""
         },
         "description": {
-          "type": "text",
-          "required": true
+          "type": "textarea",
+          "required": false
         },
         "call_to_action": {
           "type": "bloks",
           "display_name": "Call To Action",
-          "required": true,
+          "required": false,
           "minimum": 1,
           "maximum": 2,
           "restrict_type": "",
@@ -3077,7 +3241,7 @@
       "name": "standard-hero",
       "display_name": null,
       "created_at": "2023-08-07T12:25:34.652Z",
-      "updated_at": "2023-08-07T12:45:12.144Z",
+      "updated_at": "2023-08-17T11:05:51.973Z",
       "id": 4389065,
       "schema": {
         "title": {
@@ -3088,13 +3252,12 @@
         "description": {
           "type": "textarea",
           "pos": 1,
-          "required": true
+          "required": false
         },
         "buttons": {
           "type": "bloks",
           "pos": 2,
-          "required": true,
-          "minimum": 1,
+          "required": false,
           "maximum": 2,
           "restrict_type": "",
           "restrict_components": true,
@@ -3631,6 +3794,60 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "title-features-section",
+      "display_name": null,
+      "created_at": "2023-08-17T13:32:28.856Z",
+      "updated_at": "2023-08-17T13:36:44.956Z",
+      "id": 4436349,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 0,
+          "options": [
+            {
+              "_uid": "c4cd9be0-bb3d-42b9-8f9b-c28e32b0585e",
+              "name": "Light",
+              "value": "light"
+            },
+            {
+              "_uid": "57dabf57-e4df-469c-b8de-bc07846cbbb1",
+              "value": "dark",
+              "name": "Dark"
+            }
+          ],
+          "default_value": "light"
+        },
+        "title": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "pos": 1
+        },
+        "features": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title-image-section"],
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title-features-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "title-image-section",

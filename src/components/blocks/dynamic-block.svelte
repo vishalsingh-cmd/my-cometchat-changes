@@ -17,10 +17,13 @@
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
+  import ImplementationSectionV2 from './implementation-section-v2.svelte';
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
+  import InfrastructureSection from './infrastructure-section.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
+  import LogoShowcase from './logo-showcase.svelte';
   import Metrics from './metrics.svelte';
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
@@ -37,6 +40,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
   import TechnologyHero from './technology-hero.svelte';
+  import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
@@ -59,10 +63,13 @@
     'header-and-list-section': HeaderAndListSection,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
+    'implementation-section-v2': ImplementationSectionV2,
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
+    'infrastructure-section': InfrastructureSection,
     'list-section': ListSection,
     'lists-section': ListsSection,
+    'logo-showcase': LogoShowcase,
     metrics: Metrics,
     'newsletter-section': NewsletterSection,
     page: Page,
@@ -79,6 +86,7 @@
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
+    'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-section': WebhooksSection

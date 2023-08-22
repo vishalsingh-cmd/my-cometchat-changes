@@ -37,7 +37,7 @@
             <img
               src={Illustration1}
               alt=""
-              class="absolute left-[-240px] top-[180px] w-[837px] max-w-none md:left-[-600px] md:top-[100px] md:w-[1877px] lg:top-[-400px]"
+              class="absolute left-[-300px] top-[170px] w-[1000px] max-w-none md:left-[-550px] md:top-[100px] md:w-[1877px] lg:top-[-400px]"
             />
           {/if}
           <div class={cn('w-full max-w-[528px]', i === 1 && 'mt-[70px] max-w-[1070px] lg:mt-0')}>
@@ -48,7 +48,7 @@
       <img
         src={Illustration2}
         alt=""
-        class="absolute bottom-[-180px] right-[-230px] hidden w-[400px] lg:block"
+        class="absolute bottom-[-170px] right-[-150px] hidden w-[400px] lg:block"
       />
     </div>
   </section>

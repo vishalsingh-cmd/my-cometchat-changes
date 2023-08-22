@@ -4,6 +4,7 @@
 
   const button = cva(
     [
+      'h-5',
       'inline-flex',
       'items-center',
       'flex-row',
@@ -20,12 +21,10 @@
       'disabled:opacity-40',
 
       'rounded',
-
       'outline-none',
-      'outline-1',
-      'outline-brand-7/0',
 
-      'focus-within:outline-brand-7/100'
+      'focus-visible:ring-1',
+      'focus-visible:ring-brand-7/100'
     ],
     {
       variants: {

@@ -24,7 +24,7 @@
 </script>
 
 <div
-  class="absolute left-1/2 top-[-32px] h-[672px] w-[980px] -translate-x-1/2 transform opacity-[0.12] mix-blend-hard-light blur-[100px]"
+  class="absolute -left-[100px] bottom-[50px] h-[272px] w-[500px] -translate-x-1/2 transform border border-brand-10 opacity-[0.12] mix-blend-hard-light blur-[100px] md:h-[572px] md:w-[980px] lg:left-[200px] lg:top-[100px]"
   style="transform: translate3d(0, 0, 0);"
 >
   <div class={cn(blur({ colour: 'orange' }))} style="transform: translate3d(0, 0, 0);" />

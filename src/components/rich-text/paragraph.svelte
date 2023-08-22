@@ -17,7 +17,14 @@
     'tracking-wide',
 
     '[&_a]:text-brand-9',
-    '[&_a:hover]:text-brand-10',
+    '[&_a:hover]:text-brand-11',
+    '[&_a:active]:text-brand-11',
+    '[&_a]:transition-colors',
+    '[&_a]:rounded',
+    '[&_a]:outline-none',
+    '[&_a]:outline-brand-7/0',
+    '[&_a:focus-visible]:outline-1',
+    '[&_a:focus-visible]:outline-brand-7/100',
 
     '[&_img]:my-6',
     '[&_img]:md:my-10',

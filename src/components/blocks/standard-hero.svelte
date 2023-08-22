@@ -53,7 +53,7 @@
             {block.description}
           </p>
         {/if}
-        {#if block.buttons.length > 0}
+        {#if block.buttons && block.buttons.length > 0}
           <div class="'mt-5 flex gap-3 md:mt-8">
             {#each block.buttons as link}
               {@const { href, rel, target } = getAnchorFromCmsLink(link.link)}
@@ -72,7 +72,7 @@
             block.header_alignment === 'left' &&
               '-bottom-[90px] -left-[200px] w-[600px] max-w-[1300px] md:-bottom-[200px] md:-left-[400px] md:w-[1500px] lg:-left-[200px] lg:w-full',
             block.header_alignment === 'center' &&
-              'bottom-5 w-[300px] max-w-[1100px] md:-bottom-[100px] md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
+              'bottom-5 w-[300px] max-w-[1100px] md:-bottom-5 md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
         >
           <Media media={block.image} />
