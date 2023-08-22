@@ -30,7 +30,7 @@
       <Divider class="xl:hidden" />
       <div
         class={cn([
-          'relative flex-1 gap-12 border-gray-5 py-8 lg:px-12 lg:py-12 xl:w-[480px] xl:border-l xl:bg-gray-4',
+          'relative flex-1 gap-12 border-gray-5 py-8 lg:py-12 xl:w-[480px] xl:border-l xl:bg-gray-4 xl:px-12',
           'xl:before:absolute xl:before:left-full xl:before:top-0 xl:before:h-full xl:before:w-screen xl:before:bg-gray-4'
         ])}
       >
