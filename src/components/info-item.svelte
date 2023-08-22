@@ -33,17 +33,19 @@
   {/if}
   <div class="flex flex-col gap-1 text-xl text-gray-12 md:gap-2">
     <h3 class="font-semibold leading-tight">{item.title}</h3>
-    <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+    {#if item.description}
+      <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+    {/if}
   </div>
   {#if item.list && item.list.length > 0}
     <ul class={cn('mt-5 flex flex-col gap-3 md:mt-8 ')}>
       {#each item.list as listItem}
-        <li class="flex items-center gap-2">
+        <li class="flex-start flex gap-2">
           <Icon
             icon="star-04"
             size="xs"
             class={cn(
-              'flex-shrink-0',
+              'mt-1 flex-shrink-0',
               item.accent_colour === 'orange' && 'text-orange-9',
               item.accent_colour === 'brand' && 'text-brand-9'
             )}
