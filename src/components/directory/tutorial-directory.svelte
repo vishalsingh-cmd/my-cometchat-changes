@@ -8,7 +8,7 @@
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
 
   import { getStories } from '$lib/storyblok';
-  import { cn } from '$lib/utils';
+  import { cn, scrollLock } from '$lib/utils';
   import {
     cleanFilters,
     parseItem,
@@ -24,6 +24,7 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
+  import { createMediaStore } from '$lib/stores/media';
 
   export let block: DirectorySectionStoryblok;
 
@@ -221,6 +222,9 @@
       return { stories: res.data.stories, total: res.total };
     }
   });
+
+  const isMobile = createMediaStore('(max-width: 1023px)');
+  $: scrollLock(areFiltersOpen && $isMobile);
 </script>
 
 {#if block}
