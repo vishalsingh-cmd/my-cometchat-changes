@@ -218,7 +218,7 @@ export interface CustomerStoryStoryblok {
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover?: AssetStoryblok;
+  cover: AssetStoryblok;
   customer?: StoryblokStory<CustomerStoryblok> | string;
   seo?: SeoFieldsStoryblok[];
   author?: StoryblokStory<AuthorStoryblok> | string;
@@ -533,6 +533,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -668,6 +669,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -898,6 +900,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -976,6 +979,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
@@ -1050,6 +1054,16 @@ export interface TitleImageSectionStoryblok {
   theme: '' | 'light' | 'dark';
   _uid: string;
   component: 'title-image-section';
+  [k: string]: any;
+}
+
+export interface TitleSectionStoryblok {
+  title: TitleStoryblok[];
+  accent_colour?: '' | 'brand' | 'orange';
+  alignment?: '' | 'center' | 'left';
+  theme?: '' | 'dark' | 'light';
+  _uid: string;
+  component: 'title-section';
   [k: string]: any;
 }
 

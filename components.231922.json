@@ -649,7 +649,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-14T11:51:43.951Z",
+      "updated_at": "2023-08-22T12:50:41.730Z",
       "id": 4079335,
       "schema": {
         "Quote": {
@@ -716,7 +716,8 @@
           "type": "asset",
           "pos": 10,
           "filetypes": ["images"],
-          "asset_folder_id": 248971
+          "asset_folder_id": 248971,
+          "required": true
         },
         "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
           "display_name": "SEO",
@@ -3938,6 +3939,86 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "title-image-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "title-section",
+      "display_name": null,
+      "created_at": "2023-08-22T13:05:00.627Z",
+      "updated_at": "2023-08-22T13:06:18.847Z",
+      "id": 4457889,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "aaafe588-1bc2-4338-bfe1-d383d6f67c94",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "7afbecd0-1b4e-4cb9-aaae-e5f77b52e481",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Brand"
+        },
+        "alignment": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "af6043a5-4774-4195-a448-7dce87d7a788",
+              "name": "Center",
+              "value": "center"
+            },
+            {
+              "_uid": "28e174e5-700b-4bc5-af0a-f1e744338940",
+              "value": "left",
+              "name": "Left"
+            }
+          ],
+          "default_value": "Center"
+        },
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "a0bd23d9-5f7d-4e5c-af2d-dcad46ecd988",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "8d482b65-2123-4b77-9308-10839a8a4c2e",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "Light"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title-section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
