@@ -6,6 +6,7 @@
 
   import { directories } from '$lib/stores/directories';
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
+  import { createMediaStore } from '$lib/stores/media';
 
   import { getStories } from '$lib/storyblok';
   import { cn, scrollLock } from '$lib/utils';
@@ -24,7 +25,6 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
-  import { createMediaStore } from '$lib/stores/media';
 
   export let block: DirectorySectionStoryblok;
 
