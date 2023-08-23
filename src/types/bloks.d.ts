@@ -534,6 +534,7 @@ export interface IndustryStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -669,6 +670,7 @@ export interface PageStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -890,6 +892,7 @@ export interface SyncedBlockContentStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   _uid: string;
@@ -968,6 +971,7 @@ export interface TechnologyStoryblok {
     | TitleImageSectionStoryblok
     | TitleSectionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
@@ -1011,6 +1015,13 @@ export interface TestimonialBlockStoryblok {
   author_image: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
+  [k: string]: any;
+}
+
+export interface TextStoryblok {
+  value: string;
+  _uid: string;
+  component: 'text';
   [k: string]: any;
 }
 
@@ -1169,6 +1180,15 @@ export interface TutorialStoryblok {
     | 'android-sdk'
     | 'ios-sdk'
     | 'android-kotlin-ui-kit'
+    | 'ionic'
+    | 'javascript-jquery'
+    | 'php'
+    | 'node-js'
+    | 'kotlin'
+    | 'react-native'
+    | 'react'
+    | 'java'
+    | 'swift'
   )[];
   tutorial_type: '' | 'video' | 'text';
   industries?: (number | string)[];
@@ -1185,12 +1205,27 @@ export interface TutorialStoryblok {
   [k: string]: any;
 }
 
+export interface TypewriterTextStoryblok {
+  entries: TextStoryblok[];
+  _uid: string;
+  component: 'typewriter-text';
+  [k: string]: any;
+}
+
 export interface VoiceAndVideoCallsHeroStoryblok {
   header: HeroHeaderStoryblok[];
   items: ImageTitleDescriptionTagsItemStoryblok[];
   customers: SocialProofsStoryblok[];
   _uid: string;
   component: 'voice-and-video-calls-hero';
+  [k: string]: any;
+}
+
+export interface WebhooksHeroStoryblok {
+  title: TitleStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'webhooks-hero';
   [k: string]: any;
 }
 

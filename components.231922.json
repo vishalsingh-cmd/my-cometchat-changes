@@ -1699,7 +1699,7 @@
       "name": "homepage-hero",
       "display_name": null,
       "created_at": "2023-06-12T11:58:52.576Z",
-      "updated_at": "2023-06-26T09:44:33.090Z",
+      "updated_at": "2023-08-23T12:57:13.409Z",
       "id": 4111191,
       "schema": {
         "title": {
@@ -1708,10 +1708,11 @@
           "required": true,
           "translatable": true,
           "customize_toolbar": true,
-          "toolbar": ["italic"],
+          "toolbar": ["italic", "blok"],
           "restrict_type": "",
-          "restrict_components": false,
-          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'"
+          "restrict_components": true,
+          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'",
+          "component_whitelist": ["typewriter-text"]
         },
         "links": {
           "type": "bloks",
@@ -1928,7 +1929,7 @@
       "name": "implementation-section-v2",
       "display_name": null,
       "created_at": "2023-08-21T13:08:49.292Z",
-      "updated_at": "2023-08-21T14:12:01.419Z",
+      "updated_at": "2023-08-23T12:20:53.031Z",
       "id": 4451608,
       "schema": {
         "accent_colour": {
@@ -1961,12 +1962,13 @@
         "items": {
           "type": "bloks",
           "required": true,
-          "maximum": 3,
+          "maximum": 4,
           "minimum": 3,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["panel-item"],
-          "pos": 2
+          "pos": 2,
+          "description": "Last item will be on the right side with the image beneath"
         },
         "illustration": {
           "type": "asset",
@@ -3714,6 +3716,31 @@
       "component_group_name": "Richtext"
     },
     {
+      "name": "text",
+      "display_name": null,
+      "created_at": "2023-08-23T12:56:09.289Z",
+      "updated_at": "2023-08-23T12:56:28.145Z",
+      "id": 4465701,
+      "schema": {
+        "value": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "text",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "title",
       "display_name": null,
       "created_at": "2023-06-12T12:30:15.872Z",
@@ -4513,7 +4540,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-22T13:55:37.435Z",
+      "updated_at": "2023-08-22T17:02:24.397Z",
       "id": 4303307,
       "schema": {
         "technology": {
@@ -4556,6 +4583,51 @@
               "_uid": "0f1426ff-dff0-47c3-821b-4444e08034bd",
               "value": "android-kotlin-ui-kit",
               "name": "Android Kotlin UI Kit"
+            },
+            {
+              "_uid": "af649336-c13b-4b00-986a-89ce3d4177e3",
+              "value": "ionic",
+              "name": "Ionic"
+            },
+            {
+              "_uid": "8e5e071d-3b61-467c-87c0-13b09d7b6c2e",
+              "value": "javascript-jquery",
+              "name": "Javascript/JQuery"
+            },
+            {
+              "_uid": "832abe8e-ee47-4ae8-a8b5-5af055495898",
+              "value": "php",
+              "name": "PHP"
+            },
+            {
+              "_uid": "3880e649-2a98-49f0-8f00-e46960026e6b",
+              "value": "node-js",
+              "name": "NodeJS"
+            },
+            {
+              "_uid": "db4d885d-bb5f-47a9-aed5-6ca73344d419",
+              "value": "kotlin",
+              "name": "Kotlin"
+            },
+            {
+              "_uid": "094b20e1-6b13-4686-b7b6-002c7f1b5643",
+              "value": "react-native",
+              "name": "ReactNative"
+            },
+            {
+              "_uid": "2fec926c-3774-469f-b9c6-056c708e28db",
+              "value": "react",
+              "name": "React"
+            },
+            {
+              "_uid": "f23a2b88-4c2c-41d5-9f49-0ffffd815388",
+              "value": "java",
+              "name": "Java"
+            },
+            {
+              "_uid": "738eb558-da1c-40a7-ae8b-9ae4c07f2031",
+              "value": "swift",
+              "name": "Swift"
             }
           ]
         },
@@ -4604,7 +4676,8 @@
               "value": "widget",
               "name": "Widget"
             }
-          ]
+          ],
+          "default_value": ""
         },
         "cover": {
           "type": "asset",
@@ -4722,6 +4795,35 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "typewriter-text",
+      "display_name": null,
+      "created_at": "2023-08-23T12:55:08.594Z",
+      "updated_at": "2023-08-23T12:56:44.899Z",
+      "id": 4465700,
+      "schema": {
+        "entries": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "typewriter-text",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "voice-and-video-calls-hero",
       "display_name": null,
       "created_at": "2023-06-29T19:19:55.525Z",
@@ -4763,6 +4865,41 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "voice-and-video-calls-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "webhooks-hero",
+      "display_name": null,
+      "created_at": "2023-08-22T14:30:19.879Z",
+      "updated_at": "2023-08-22T14:33:27.959Z",
+      "id": 4458201,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "maximum": 1,
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "asset_folder_id": 266057
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "webhooks-hero",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
