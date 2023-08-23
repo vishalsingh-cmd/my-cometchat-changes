@@ -55,6 +55,10 @@
           .gist-meta a {
             color: #6852D6 !important;
           }
+
+          .gist-meta a:first-child {
+            color: #FAFAFF !important;
+          }
         </style>
       `;
     });
