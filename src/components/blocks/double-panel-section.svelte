@@ -7,6 +7,8 @@
   import Panel from '$components/panel.svelte';
   import Title from '$components/title.svelte';
 
+  import Background from '$components/double-panel-section/background.svelte';
+
   export let block: DoublePanelSectionStoryblok;
 </script>
 
@@ -18,12 +20,16 @@
   >
     <div
       class={cn(
-        'container mx-auto',
+        'container relative mx-auto',
         (!block.title || (block.title && block.title.length === 0)) &&
           'border-y border-solid md:flex-row',
         block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-12/8'
       )}
     >
+      <div class="absolute -left-[157px] -top-[240px]">
+        <Background />
+      </div>
+
       {#if block.title && block.title[0]}
         {@const { label, title, description, links } = block.title[0]}
         {@const labelInfo = getLabelInfo(label, 'brand')}
@@ -31,13 +37,12 @@
       {/if}
       <div
         class={cn(
-          'flex flex-col border-solid md:flex-row md:border-y',
-          block.title && 'md:border-y',
+          'flex flex-col border-y border-solid md:flex-row',
           block.theme === 'light' ? 'border-gray-12/8' : 'border-gray-2/8'
         )}
       >
         {#each block.panels as panel}
-          <Panel item={panel} />
+          <Panel item={panel} class="flex-1" />
         {/each}
       </div>
     </div>
