@@ -49,7 +49,7 @@
 />
 
 <div class="absolute left-2 top-[127px]">
-  <img src={SmallPlanetsBack} alt="" />
+  <img draggable="false" src={SmallPlanetsBack} alt="" class="pointer-events-none" />
 </div>
 
 <div class="absolute -top-[68px] left-[25px] h-[803px] w-[1366.711px]">
@@ -57,7 +57,7 @@
 </div>
 
 <div class="absolute -bottom-[400px] -left-[500px] hidden h-[1000px] w-[1000px] md:block">
-  <img src={CornerPlanet} alt="" />
+  <img draggable="false" src={CornerPlanet} alt="" class="pointer-events-none" />
 </div>
 
 <div

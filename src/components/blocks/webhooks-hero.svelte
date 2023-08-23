@@ -21,7 +21,7 @@
     <div class="container relative mx-auto h-full w-full overflow-x-visible">
       <Background />
 
-      <div class="mt-[52px] lg:ml-[112px] lg:mt-0">
+      <div class="isolate z-10 mt-[52px] lg:ml-[112px] lg:mt-0">
         {#if block.title && block.title[0]}
           {@const { label, title, description, links } = block.title[0]}
           {@const labelInfo = getLabelInfo(label, 'brand')}
