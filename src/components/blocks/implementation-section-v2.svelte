@@ -10,8 +10,8 @@
 
   export let block: ImplementationSectionV2Storyblok;
 
-  const leftItems = block.items.slice(0, 2);
-  const rightItems = block.items.slice(2);
+  const leftItems = block.items.slice(0, block.items.length - 1);
+  const rightItems = block.items.slice(block.items.length - 1);
 </script>
 
 {#if block}
@@ -35,7 +35,7 @@
                 {item}
                 class={cn(
                   'px-container md:px-container',
-                  i === 1 && 'border-t border-gray-12/[.08]'
+                  i !== 0 && 'border-t border-gray-12/[.08]'
                 )}
               />
             {/each}
