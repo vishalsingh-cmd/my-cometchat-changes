@@ -10,13 +10,13 @@
 </script>
 
 <div class="flex gap-2">
-  <Icon icon="star-04" size="xs" class="flex-shrink-0 pt-px text-brand-9" />
-  <div class="flex flex-wrap gap-y-2">
+  <Icon icon="star-04" size="xs" class="mt-0.5 flex-shrink-0 pt-px text-brand-9" />
+  <div class="flex flex-wrap gap-2">
     <p class="text-lg font-medium leading-snug tracking-wide opacity-74">
       {item.item}
     </p>
     {#if item.coming_soon}
-      <Badge label={string('coming_soon')} size="medium" />
+      <Badge label={string('coming_soon')} size="small" />
     {/if}
   </div>
 </div>
