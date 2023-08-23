@@ -11,6 +11,7 @@
   export let block: TutorialStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
+  const tags = block.content.technology.join(', ');
 </script>
 
 <section
@@ -57,7 +58,7 @@
       <div class="flex flex-col justify-between gap-8">
         <Title
           label={{
-            content: block.content.category,
+            content: tags,
             color: 'brand'
           }}
           class="pb-0 pl-0 pr-0 pt-0 lg:p-0"
