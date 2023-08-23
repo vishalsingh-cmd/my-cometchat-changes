@@ -20,7 +20,7 @@
       {@const header = block.header[0]}
       {#if header.label}
         <Title
-          alignment="center"
+          alignment={block.title_alignment !== '' ? block.title_alignment : 'center'}
           label={{
             content: header.label,
             color:
