@@ -57,8 +57,6 @@
   ) => {
     let tags = [] as string[];
 
-    console.log(story);
-
     if (story.content.component === 'customer-story' && story.content.customer) {
       tags = [story.content.industry as string];
     } else if (story.content.component === 'blog-post') {
