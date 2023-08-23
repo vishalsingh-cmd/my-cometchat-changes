@@ -45,8 +45,10 @@
         </div>
       </div>
       {#if block.content.cover}
-        <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
-          <Media media={block.content.cover} class="h-full w-full object-cover" />
+        <div
+          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+        >
+          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -61,7 +63,7 @@
         <div
           class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide"
         >
-          <p class="opacity-74">{block.content.quote}</p>
+          <p class="opacity-74">&quot;{block.content.quote}&quot;</p>
           <div class="flex items-center gap-3">
             {#if author}
               {@const { avatar, name, role, company } = author.content}
@@ -79,9 +81,9 @@
       </div>
       {#if block.content.cover}
         <div
-          class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
+          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
-          <Media media={block.content.cover} class="h-full w-full object-cover" />
+          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
       {/if}
     </div>
