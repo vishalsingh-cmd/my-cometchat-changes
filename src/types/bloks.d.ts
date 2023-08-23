@@ -1173,6 +1173,15 @@ export interface TutorialStoryblok {
     | 'android-sdk'
     | 'ios-sdk'
     | 'android-kotlin-ui-kit'
+    | 'ionic'
+    | 'javascript-jquery'
+    | 'php'
+    | 'node-js'
+    | 'kotlin'
+    | 'react-native'
+    | 'react'
+    | 'java'
+    | 'swift'
   )[];
   tutorial_type: '' | 'video' | 'text';
   industries?: (number | string)[];
