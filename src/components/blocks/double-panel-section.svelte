@@ -37,7 +37,7 @@
         )}
       >
         {#each block.panels as panel}
-          <Panel item={panel} />
+          <Panel item={panel} class="flex-1 last:border-r-0" />
         {/each}
       </div>
     </div>
