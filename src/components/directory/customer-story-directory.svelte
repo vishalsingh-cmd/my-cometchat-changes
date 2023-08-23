@@ -6,9 +6,10 @@
 
   import { directories } from '$lib/stores/directories';
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
+  import { createMediaStore } from '$lib/stores/media';
 
   import { getStories } from '$lib/storyblok';
-  import { cn } from '$lib/utils';
+  import { cn, scrollLock } from '$lib/utils';
   import { parseItem, type Panel, cleanFilters, RESULTS_PER_PAGE } from '$lib/data/directory';
 
   import ContentCard from '$components/content-card.svelte';
@@ -147,6 +148,13 @@
       return { stories: res.data.stories, total: res.total };
     }
   });
+
+  $: hasPagination =
+    $getDirectoryDataWithFilters.isSuccess &&
+    $getDirectoryDataWithFilters.data.total > RESULTS_PER_PAGE;
+
+  const isMobile = createMediaStore('(max-width: 1023px)');
+  $: scrollLock(areFiltersOpen && $isMobile);
 </script>
 
 {#if block}
@@ -158,12 +166,7 @@
   />
 
   {#if directoryData}
-    <div
-      class={cn(
-        'flex flex-col lg:grid lg:grid-rows-[1fr_154px]',
-        areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]'
-      )}
-    >
+    <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}>
       {#if areFiltersOpen}
         <div
           class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
@@ -189,7 +192,13 @@
       {/if}
 
       <!-- Content Cards -->
-      <div class={cn('grid gap-8', areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3')}>
+      <div
+        class={cn(
+          'grid gap-8',
+          areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
+          !hasPagination && 'pb-12 lg:pb-20'
+        )}
+      >
         <!-- Loading State -->
         {#if $getDirectoryDataWithFilters.isLoading}
           {#each Array(6) as _}
@@ -226,8 +235,10 @@
       </div>
 
       <!-- Pagination -->
-      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.total > RESULTS_PER_PAGE}
-        <div class={cn('flex items-center justify-center', areFiltersOpen && 'col-start-2')}>
+      {#if $getDirectoryDataWithFilters.isSuccess && hasPagination}
+        <div
+          class={cn('flex h-[154px] items-center justify-center', areFiltersOpen && 'col-start-2')}
+        >
           <Pagination
             onPageChange={toggleNewPage}
             totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
