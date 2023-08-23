@@ -147,7 +147,7 @@
     <RelatedStoriesSection block={block.content.related[0]} />
   {/if}
 
-  {#if block.content.pre_footer && block.content.pre_footer.length > 0}
-    <PreFooter block={block.content.pre_footer[0]} />
+  {#if block.content.pre_footer && block.content.pre_footer.length > 0 && block.content.pre_footer[0].synced_block.content.body[0]}
+    <PreFooter block={block.content.pre_footer[0].synced_block.content.body[0]} />
   {/if}
 {/if}

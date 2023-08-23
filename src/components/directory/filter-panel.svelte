@@ -8,6 +8,7 @@
   import Icon from '$components/icon/icon.svelte';
 
   import Tag from './tag.svelte';
+  import Accordion from '$components/accordion.svelte';
 
   export let panels: {
     type:
@@ -25,21 +26,35 @@
   const dispatch = createEventDispatcher();
 </script>
 
-<div class="mt-5 lg:mt-0">
+<div class="mt-5 flex flex-col gap-4 lg:mt-0">
   {#each panels as panel, i}
-    <div class={cn('border-t border-solid border-gray-12/8 pt-5', i !== 0 && 'mt-8')}>
-      <p class="mb-4 text-lg font-semibold leading-tight">{panel.title}</p>
-      <div class="flex flex-row flex-wrap gap-2">
+    <Accordion id={panel.title + i}>
+      <div slot="header" let:expanded let:attributes let:onClick>
+        <button
+          {...attributes}
+          on:click={onClick}
+          class="flex w-full justify-between border-t border-solid border-gray-12/8 pb-4 pt-5"
+        >
+          <p class="text-lg font-semibold leading-tight">{panel.title}</p>
+          <Icon
+            icon="chevron-up"
+            size="xs"
+            class={cn('transition-transform duration-300', expanded && 'rotate-180')}
+          />
+        </button>
+      </div>
+      <div class="flex flex-row flex-wrap gap-2 pb-4">
         {#each panel.tags as tag}
           {@const isTagSelected = panel.selectedTags.includes(tag)}
           {@const panelType = panel.type}
           <Tag {tag} {panelType} {isTagSelected} on:selectTag />
         {/each}
       </div>
-    </div>
+    </Accordion>
   {/each}
+
   <GhostButton
-    class="isolate z-30 mt-8 hidden gap-1.5 lg:inline-flex"
+    class="isolate z-30 mt-5 hidden gap-1.5 lg:inline-flex"
     on:click={() => dispatch('clearFilters')}
   >
     {string('directory.reset_filters')}

@@ -1018,6 +1018,13 @@ export interface TestimonialBlockStoryblok {
   [k: string]: any;
 }
 
+export interface TextStoryblok {
+  value: string;
+  _uid: string;
+  component: 'text';
+  [k: string]: any;
+}
+
 export interface TitleStoryblok {
   label?: string;
   title: string;
@@ -1173,6 +1180,15 @@ export interface TutorialStoryblok {
     | 'android-sdk'
     | 'ios-sdk'
     | 'android-kotlin-ui-kit'
+    | 'ionic'
+    | 'javascript-jquery'
+    | 'php'
+    | 'node-js'
+    | 'kotlin'
+    | 'react-native'
+    | 'react'
+    | 'java'
+    | 'swift'
   )[];
   tutorial_type: '' | 'video' | 'text';
   industries?: (number | string)[];
@@ -1186,6 +1202,13 @@ export interface TutorialStoryblok {
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   _uid: string;
   component: 'tutorial';
+  [k: string]: any;
+}
+
+export interface TypewriterTextStoryblok {
+  entries: TextStoryblok[];
+  _uid: string;
+  component: 'typewriter-text';
   [k: string]: any;
 }
 
