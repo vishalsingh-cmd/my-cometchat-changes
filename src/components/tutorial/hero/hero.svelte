@@ -14,7 +14,7 @@
 </script>
 
 <section
-  class={cn('bg-gray-1 text-gray-12', block.content.is_old_post && 'h-auto')}
+  class={cn('bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}

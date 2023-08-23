@@ -14,10 +14,10 @@
 </script>
 
 <section
-  class={cn('bg-gray-1 text-gray-12', block.content.is_old_post && 'h-auto')}
+  class={cn('bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
-  {#if block.content.is_old_post}
+  {#if block.content.imported_from_old_site}
     <div
       class="container mx-auto flex flex-col gap-12 px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px]"
     >
@@ -28,11 +28,11 @@
           <div class="flex items-center gap-3">
             {#if author}
               {@const { name } = author.content}
-              {@const { first_created_on } = block.content}
+              {@const { created_at } = block.content}
               <p>
                 {name}
-                {#if first_created_on}
-                  • {formatDateUSMedium(new Date(first_created_on))}
+                {#if created_at}
+                  • {formatDateUSMedium(new Date(created_at))}
                 {/if}
               </p>
             {/if}
@@ -70,11 +70,11 @@
           <div class="flex items-center gap-3">
             {#if author}
               {@const { name } = author.content}
-              {@const { first_created_on } = block.content}
+              {@const { created_at } = block.content}
               <p>
                 {name}
-                {#if first_created_on}
-                  • {formatDateUSMedium(new Date(first_created_on))}
+                {#if created_at}
+                  • {formatDateUSMedium(new Date(created_at))}
                 {/if}
               </p>
             {/if}

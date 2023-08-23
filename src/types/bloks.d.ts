@@ -53,10 +53,6 @@ export interface RichtextStoryblok {
 export interface BlogPostStoryblok {
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  body: RichtextStoryblok;
-  related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   category:
     | ''
     | 'explorer'
@@ -68,8 +64,12 @@ export interface BlogPostStoryblok {
     | 'insights'
     | 'industry'
     | 'best-practices';
-  first_created_on?: string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
