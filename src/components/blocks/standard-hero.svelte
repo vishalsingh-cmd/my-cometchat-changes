@@ -80,9 +80,9 @@
       {/if}
 
       <!-- Backgrounds -->
-      {#if (block.image === undefined || block.image.filename === '' || block.image.filename === null) && block.header_alignment === 'center'}
+      {#if (!block.image || block.image.source === null) && block.header_alignment === 'center'}
         <CenterTitleNoImageBackground />
-      {:else if (block.image === undefined || (block.image.filename === '' && block.image.filename === null)) && block.header_alignment === 'left'}
+      {:else if (!block.image || block.image.source === null) && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
         <CenterTitleImageBackground />

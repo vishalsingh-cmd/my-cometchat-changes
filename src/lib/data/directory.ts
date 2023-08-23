@@ -30,9 +30,9 @@ export const parseItem = (
       case 'tutorial':
         return [
           item.content.tutorial_type,
-          item.content.technology,
+          ...item.content.technology,
           item.content.integration_tool,
-          item.content.industry
+          ...item.content.industries
         ];
     }
   };

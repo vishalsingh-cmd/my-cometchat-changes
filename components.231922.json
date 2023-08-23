@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-22T09:29:39.522Z",
+      "updated_at": "2023-08-23T15:54:06.527Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -122,73 +122,6 @@
           "filter_content_type": ["author"],
           "key": "author",
           "pos": 1
-        },
-        "seo": {
-          "type": "bloks",
-          "required": false,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["seo-fields"],
-          "maximum": 1,
-          "minimum": 1,
-          "key": "fields",
-          "pos": 2
-        },
-        "body": {
-          "type": "richtext",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "customize_toolbar": true,
-          "toolbar": [
-            "bold",
-            "blok",
-            "h3",
-            "image",
-            "italic",
-            "link",
-            "paragraph",
-            "strike",
-            "underline"
-          ],
-          "component_group_whitelist": [],
-          "component_whitelist": [
-            "paragraph-list",
-            "paragraph-heading",
-            "testimonial-block",
-            "disclaimer",
-            "highlights-paragraph",
-            "metrics",
-            "gist"
-          ],
-          "key": "body",
-          "pos": 3
-        },
-        "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
-          "display_name": "Metadata",
-          "keys": ["cover", "author", "is_old_post", "category", "first_created_on"],
-          "pos": 5,
-          "type": "tab",
-          "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
-        },
-        "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
-          "display_name": "SEO",
-          "keys": ["fields", "seo"],
-          "pos": 6,
-          "type": "tab",
-          "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
-        },
-        "related": {
-          "type": "bloks",
-          "required": true,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "is_old_post": {
-          "type": "boolean"
         },
         "category": {
           "type": "option",
@@ -242,18 +175,103 @@
             }
           ],
           "source": "internal",
-          "datasource_slug": "categories"
+          "datasource_slug": "categories",
+          "pos": 2,
+          "key": "category"
         },
-        "first_created_on": {
+        "imported_from_old_site": {
+          "type": "boolean",
+          "pos": 3,
+          "key": "is_old_post"
+        },
+        "created_at": {
           "type": "datetime",
-          "disable_time": false
+          "disable_time": false,
+          "pos": 4,
+          "key": "created_at"
+        },
+        "body": {
+          "type": "richtext",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "blok",
+            "h3",
+            "image",
+            "italic",
+            "link",
+            "paragraph",
+            "strike",
+            "underline"
+          ],
+          "component_group_whitelist": [],
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics",
+            "gist"
+          ],
+          "key": "body",
+          "pos": 5
+        },
+        "related": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-stories-section"],
+          "pos": 6,
+          "key": "related"
         },
         "pre_footer": {
           "type": "bloks",
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy"]
+          "component_whitelist": ["pre-footer_copy", "synced-block"],
+          "pos": 7,
+          "key": "pre_footer"
+        },
+        "seo": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "maximum": 1,
+          "minimum": 1,
+          "key": "seo",
+          "pos": 8
+        },
+        "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
+          "display_name": "Metadata",
+          "keys": [
+            "cover",
+            "author",
+            "is_old_post",
+            "category",
+            "first_created_on",
+            "created_at",
+            "imported_from_old_site"
+          ],
+          "pos": 9,
+          "type": "tab",
+          "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
+        },
+        "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
+          "display_name": "SEO",
+          "keys": ["fields", "seo"],
+          "pos": 10,
+          "type": "tab",
+          "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
         }
       },
       "image": null,
@@ -1699,7 +1717,7 @@
       "name": "homepage-hero",
       "display_name": null,
       "created_at": "2023-06-12T11:58:52.576Z",
-      "updated_at": "2023-06-26T09:44:33.090Z",
+      "updated_at": "2023-08-23T12:57:13.409Z",
       "id": 4111191,
       "schema": {
         "title": {
@@ -1708,10 +1726,11 @@
           "required": true,
           "translatable": true,
           "customize_toolbar": true,
-          "toolbar": ["italic"],
+          "toolbar": ["italic", "blok"],
           "restrict_type": "",
-          "restrict_components": false,
-          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'"
+          "restrict_components": true,
+          "description": "Use italic to choose the words that should be rendered with a different colour. Following this example ( https://www.figma.com/file/6jRhVOPoYwkJkmolX7IJYx/Design-by-Significa?type=design&node-id=586-30902&t=qOmTenYMVfyiKWtc-0 ), you would do:\n'Everything you need to build <i>in-app messaging</i>'",
+          "component_whitelist": ["typewriter-text"]
         },
         "links": {
           "type": "bloks",
@@ -1928,7 +1947,7 @@
       "name": "implementation-section-v2",
       "display_name": null,
       "created_at": "2023-08-21T13:08:49.292Z",
-      "updated_at": "2023-08-21T14:12:01.419Z",
+      "updated_at": "2023-08-23T12:20:53.031Z",
       "id": 4451608,
       "schema": {
         "accent_colour": {
@@ -1961,12 +1980,13 @@
         "items": {
           "type": "bloks",
           "required": true,
-          "maximum": 3,
+          "maximum": 4,
           "minimum": 3,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["panel-item"],
-          "pos": 2
+          "pos": 2,
+          "description": "Last item will be on the right side with the image beneath"
         },
         "illustration": {
           "type": "asset",
@@ -2805,46 +2825,6 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "pre-footer",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
-    },
-    {
-      "name": "pre-footer_copy",
-      "display_name": null,
-      "created_at": "2023-08-09T08:41:54.758Z",
-      "updated_at": "2023-08-09T08:42:19.833Z",
-      "id": 4397972,
-      "schema": {
-        "title": {
-          "type": "text",
-          "required": true,
-          "display_name": ""
-        },
-        "description": {
-          "type": "text",
-          "required": true
-        },
-        "call_to_action": {
-          "type": "bloks",
-          "display_name": "Call To Action",
-          "required": true,
-          "minimum": 1,
-          "maximum": 2,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["button-link"]
-        }
-      },
-      "image": "//a.storyblok.com/f/231922/x/a4586d7ae1/device-desktop.png",
-      "preview_field": null,
-      "is_root": true,
-      "preview_tmpl": null,
-      "is_nestable": false,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "pre-footer_copy",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -3754,6 +3734,31 @@
       "component_group_name": "Richtext"
     },
     {
+      "name": "text",
+      "display_name": null,
+      "created_at": "2023-08-23T12:56:09.289Z",
+      "updated_at": "2023-08-23T12:56:28.145Z",
+      "id": 4465701,
+      "schema": {
+        "value": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "text",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "title",
       "display_name": null,
       "created_at": "2023-06-12T12:30:15.872Z",
@@ -3939,6 +3944,86 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "title-image-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "title-section",
+      "display_name": null,
+      "created_at": "2023-08-22T13:05:00.627Z",
+      "updated_at": "2023-08-22T13:06:18.847Z",
+      "id": 4457889,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "aaafe588-1bc2-4338-bfe1-d383d6f67c94",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "7afbecd0-1b4e-4cb9-aaae-e5f77b52e481",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Brand"
+        },
+        "alignment": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "af6043a5-4774-4195-a448-7dce87d7a788",
+              "name": "Center",
+              "value": "center"
+            },
+            {
+              "_uid": "28e174e5-700b-4bc5-af0a-f1e744338940",
+              "value": "left",
+              "name": "Left"
+            }
+          ],
+          "default_value": "Center"
+        },
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "a0bd23d9-5f7d-4e5c-af2d-dcad46ecd988",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "8d482b65-2123-4b77-9308-10839a8a4c2e",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "Light"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "title-section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -4473,13 +4558,36 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-22T09:30:22.413Z",
+      "updated_at": "2023-08-23T15:05:00.900Z",
       "id": 4303307,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "required": true,
+          "key": "cover",
+          "pos": 0
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": false,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "key": "author",
+          "pos": 1
+        },
+        "industries": {
+          "type": "options",
+          "pos": 2,
+          "source": "internal",
+          "datasource_slug": "industries",
+          "key": "industries"
+        },
         "technology": {
           "type": "options",
-          "key": "categories",
-          "pos": 0,
+          "key": "technology",
+          "pos": 3,
           "required": true,
           "options": [
             {
@@ -4516,15 +4624,58 @@
               "_uid": "0f1426ff-dff0-47c3-821b-4444e08034bd",
               "value": "android-kotlin-ui-kit",
               "name": "Android Kotlin UI Kit"
+            },
+            {
+              "_uid": "af649336-c13b-4b00-986a-89ce3d4177e3",
+              "value": "ionic",
+              "name": "Ionic"
+            },
+            {
+              "_uid": "8e5e071d-3b61-467c-87c0-13b09d7b6c2e",
+              "value": "javascript-jquery",
+              "name": "Javascript/JQuery"
+            },
+            {
+              "_uid": "832abe8e-ee47-4ae8-a8b5-5af055495898",
+              "value": "php",
+              "name": "PHP"
+            },
+            {
+              "_uid": "3880e649-2a98-49f0-8f00-e46960026e6b",
+              "value": "node-js",
+              "name": "NodeJS"
+            },
+            {
+              "_uid": "db4d885d-bb5f-47a9-aed5-6ca73344d419",
+              "value": "kotlin",
+              "name": "Kotlin"
+            },
+            {
+              "_uid": "094b20e1-6b13-4686-b7b6-002c7f1b5643",
+              "value": "react-native",
+              "name": "ReactNative"
+            },
+            {
+              "_uid": "2fec926c-3774-469f-b9c6-056c708e28db",
+              "value": "react",
+              "name": "React"
+            },
+            {
+              "_uid": "f23a2b88-4c2c-41d5-9f49-0ffffd815388",
+              "value": "java",
+              "name": "Java"
+            },
+            {
+              "_uid": "738eb558-da1c-40a7-ae8b-9ae4c07f2031",
+              "value": "swift",
+              "name": "Swift"
             }
-          ],
-          "source": "internal",
-          "datasource_slug": "technologies"
+          ]
         },
         "tutorial_type": {
           "type": "option",
           "use_uuid": true,
-          "pos": 1,
+          "pos": 4,
           "required": true,
           "options": [
             {
@@ -4538,19 +4689,12 @@
               "name": "Text"
             }
           ],
-          "source": "internal",
-          "datasource_slug": "tutorial-types"
-        },
-        "industries": {
-          "type": "options",
-          "pos": 2,
-          "source": "internal",
-          "datasource_slug": "industries"
+          "key": "tutorial_type"
         },
         "integration_tool": {
           "type": "option",
           "use_uuid": true,
-          "pos": 3,
+          "pos": 5,
           "required": true,
           "options": [
             {
@@ -4569,26 +4713,10 @@
               "name": "Widget"
             }
           ],
-          "source": "internal",
-          "datasource_slug": "integration-tools"
+          "default_value": "",
+          "key": "integration_tool"
         },
-        "cover": {
-          "type": "asset",
-          "required": true,
-          "key": "cover",
-          "pos": 4
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "required": false,
-          "translatable": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"],
-          "key": "author",
-          "pos": 5
-        },
-        "is_old_post": {
+        "imported_from_old_site": {
           "type": "boolean",
           "key": "is_old_post",
           "pos": 6
@@ -4623,6 +4751,26 @@
           "key": "body",
           "pos": 7
         },
+        "related": {
+          "type": "bloks",
+          "required": false,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-stories-section"],
+          "key": "related",
+          "pos": 8
+        },
+        "pre_footer": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pre-footer_copy", "synced-block"],
+          "key": "pre_footer",
+          "pos": 9
+        },
         "seo": {
           "type": "bloks",
           "required": false,
@@ -4632,7 +4780,7 @@
           "maximum": 1,
           "minimum": 1,
           "key": "seo",
-          "pos": 8
+          "pos": 10
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
@@ -4644,34 +4792,24 @@
             "technology",
             "tutorial_type",
             "industries",
-            "integration_tool"
+            "integration_tool",
+            "first_created_on",
+            "imported_from_old_site",
+            "created_at"
           ],
-          "pos": 9,
+          "pos": 11,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
           "keys": ["fields", "seo"],
-          "pos": 10,
+          "pos": 12,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
         },
-        "related": {
-          "type": "bloks",
-          "required": false,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "pre_footer": {
-          "type": "bloks",
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy"]
+        "created_at": {
+          "type": "datetime"
         }
       },
       "image": null,
@@ -4686,6 +4824,35 @@
       "color": null,
       "icon": null,
       "component_group_name": "Pages"
+    },
+    {
+      "name": "typewriter-text",
+      "display_name": null,
+      "created_at": "2023-08-23T12:55:08.594Z",
+      "updated_at": "2023-08-23T12:56:44.899Z",
+      "id": 4465700,
+      "schema": {
+        "entries": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "typewriter-text",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "voice-and-video-calls-hero",
@@ -4729,6 +4896,41 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "voice-and-video-calls-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "webhooks-hero",
+      "display_name": null,
+      "created_at": "2023-08-22T14:30:19.879Z",
+      "updated_at": "2023-08-22T14:33:27.959Z",
+      "id": 4458201,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "maximum": 1,
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"]
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "asset_folder_id": 266057
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "webhooks-hero",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
