@@ -24,11 +24,11 @@
 <section
   class={cn(
     'h-[743px] bg-gray-1 pt-[100px] text-gray-12 md:pb-20 md:pt-[148px]',
-    block.content.is_old_post && 'h-auto'
+    block.content.imported_from_old_site && 'h-auto'
   )}
   data-theme="dark"
 >
-  {#if block.content.is_old_post}
+  {#if block.content.imported_from_old_site}
     <div class="container mx-auto flex flex-col gap-12 px-container">
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
@@ -87,7 +87,7 @@
     </div>
   {/if}
 </section>
-{#if !block.content.is_old_post}
+{#if !block.content.imported_from_old_site}
   {#if block.content.metrics && block.content.metrics.length > 0}
     <Metrics block={block.content.metrics[0]} />
   {/if}

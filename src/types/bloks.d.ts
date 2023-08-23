@@ -214,18 +214,19 @@ export interface CustomerStoriesSectionStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
+  cover: AssetStoryblok;
+  customer?: StoryblokStory<CustomerStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industry: number | string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
   Quote?: any;
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   pre_footer?: PreFooterCopyStoryblok[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
