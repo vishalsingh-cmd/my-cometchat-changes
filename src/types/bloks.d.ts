@@ -53,10 +53,6 @@ export interface RichtextStoryblok {
 export interface BlogPostStoryblok {
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  body: RichtextStoryblok;
-  related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   category:
     | ''
     | 'explorer'
@@ -68,8 +64,12 @@ export interface BlogPostStoryblok {
     | 'insights'
     | 'industry'
     | 'best-practices';
-  first_created_on?: string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'blog-post';
   [k: string]: any;
@@ -214,18 +214,19 @@ export interface CustomerStoriesSectionStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
+  cover: AssetStoryblok;
+  customer?: StoryblokStory<CustomerStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industry: number | string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
   Quote?: any;
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   pre_footer?: PreFooterCopyStoryblok[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -512,10 +513,12 @@ export interface IndustryStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -549,6 +552,13 @@ export interface InfrastructureSectionStoryblok {
   items?: BulletPointStoryblok[];
   _uid: string;
   component: 'infrastructure-section';
+  [k: string]: any;
+}
+
+export interface LegalHeroStoryblok {
+  title: string;
+  _uid: string;
+  component: 'legal-hero';
   [k: string]: any;
 }
 
@@ -619,6 +629,30 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
+export interface ModerationFeatureStoryblok {
+  Name: string;
+  features: ModerationSubFeatureStoryblok[];
+  _uid: string;
+  component: 'moderation-feature';
+  [k: string]: any;
+}
+
+export interface ModerationFeaturesStoryblok {
+  title: TitleStoryblok[];
+  features: ModerationFeatureStoryblok[];
+  _uid: string;
+  component: 'moderation-features';
+  [k: string]: any;
+}
+
+export interface ModerationSubFeatureStoryblok {
+  text: PanelItemStoryblok[];
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'moderation-sub-feature';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
@@ -648,10 +682,12 @@ export interface PageStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -838,6 +874,7 @@ export interface StandardHeroStoryblok {
   buttons?: ButtonLinkStoryblok[];
   header_alignment: '' | 'left' | 'center';
   image?: AssetStoryblok;
+  has_coming_soon_tag?: boolean;
   _uid: string;
   component: 'standard-hero';
   [k: string]: any;
@@ -870,10 +907,12 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -949,10 +988,12 @@ export interface TechnologyStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -1047,9 +1088,11 @@ export interface TitleFeaturesSectionStoryblok {
 
 export interface TitleImageSectionStoryblok {
   title: TitleStoryblok[];
+  list_items?: BulletPointStoryblok[];
   image: AssetStoryblok;
   image_side: '' | 'left' | 'right' | 'center';
   theme: '' | 'light' | 'dark';
+  accent_colour?: '' | 'brand' | 'orange';
   _uid: string;
   component: 'title-image-section';
   [k: string]: any;
@@ -1171,6 +1214,9 @@ export interface TopnavTechnologiesPanelStoryblok {
 }
 
 export interface TutorialStoryblok {
+  cover: AssetStoryblok;
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industries?: (number | string)[];
   technology: (
     | ''
     | 'react-ui-kit'
@@ -1191,15 +1237,13 @@ export interface TutorialStoryblok {
     | 'swift'
   )[];
   tutorial_type: '' | 'video' | 'text';
-  industries?: (number | string)[];
   integration_tool: '' | 'sdk' | 'ui-kits' | 'widget';
-  cover: AssetStoryblok;
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  is_old_post?: boolean;
+  imported_from_old_site?: boolean;
   body: RichtextStoryblok;
-  seo?: SeoFieldsStoryblok[];
   related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
+  created_at?: string;
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
