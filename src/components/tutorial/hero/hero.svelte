@@ -15,7 +15,7 @@
 </script>
 
 <section
-  class={cn('bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
+  class={cn('isolate bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
@@ -53,11 +53,14 @@
       class="container relative mx-auto grid h-full grid-cols-1 gap-8 overflow-hidden px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px] lg:grid-cols-2"
     >
       <!-- Background Blur -->
-      <div class="absolute -left-[150px] top-[100px] h-[584px] w-[852px] md:left-[300px]">
-        <img src={Blur} alt="" />
-      </div>
+      <img
+        src={Blur}
+        alt=""
+        draggable="false"
+        class="pointer-events-none absolute right-1/2 top-[200px] min-h-[584px] min-w-[852px] translate-x-1/2 select-none mix-blend-hard-light md:top-0"
+      />
 
-      <div class="flex flex-col justify-between gap-8">
+      <div class="z-10 flex flex-col justify-between gap-8">
         <Title
           label={{
             content: tags,
@@ -86,7 +89,7 @@
       </div>
       {#if block.content.cover}
         <div
-          class="border-px h-full max-h-[580px] min-h-[297px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+          class="border-px z-10 h-full max-h-[580px] min-h-[297px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
           <Media media={block.content.cover} class="h-full w-full object-cover" />
         </div>

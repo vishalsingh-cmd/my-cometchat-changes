@@ -10,7 +10,7 @@
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
 
-  import Background from './assets/background.png';
+  import Blur from './assets/blur.png';
 
   export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
@@ -25,7 +25,7 @@
 </script>
 
 <section
-  class={cn('hbg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
+  class={cn('bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
@@ -101,10 +101,10 @@
         </div>
       {/if}
       <img
-        src={Background}
+        src={Blur}
         alt=""
         draggable="false"
-        class="pointer-events-none absolute right-1/2 top-0 -z-10 min-h-[584px] min-w-[852px] translate-x-1/2 select-none opacity-8 mix-blend-hard-light md:-top-1/3"
+        class="pointer-events-none absolute right-1/2 top-0 min-h-[584px] min-w-[852px] translate-x-1/2 select-none opacity-8 mix-blend-hard-light md:-top-1/3"
       />
     </div>
   {/if}
