@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-22T14:01:41.261Z",
+      "updated_at": "2023-08-23T15:54:06.527Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -122,73 +122,6 @@
           "filter_content_type": ["author"],
           "key": "author",
           "pos": 1
-        },
-        "seo": {
-          "type": "bloks",
-          "required": false,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["seo-fields"],
-          "maximum": 1,
-          "minimum": 1,
-          "key": "fields",
-          "pos": 2
-        },
-        "body": {
-          "type": "richtext",
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "customize_toolbar": true,
-          "toolbar": [
-            "bold",
-            "blok",
-            "h3",
-            "image",
-            "italic",
-            "link",
-            "paragraph",
-            "strike",
-            "underline"
-          ],
-          "component_group_whitelist": [],
-          "component_whitelist": [
-            "paragraph-list",
-            "paragraph-heading",
-            "testimonial-block",
-            "disclaimer",
-            "highlights-paragraph",
-            "metrics",
-            "gist"
-          ],
-          "key": "body",
-          "pos": 3
-        },
-        "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
-          "display_name": "Metadata",
-          "keys": ["cover", "author", "is_old_post", "category", "first_created_on"],
-          "pos": 5,
-          "type": "tab",
-          "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
-        },
-        "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
-          "display_name": "SEO",
-          "keys": ["fields", "seo"],
-          "pos": 6,
-          "type": "tab",
-          "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
-        },
-        "related": {
-          "type": "bloks",
-          "required": true,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "is_old_post": {
-          "type": "boolean"
         },
         "category": {
           "type": "option",
@@ -242,18 +175,103 @@
             }
           ],
           "source": "internal",
-          "datasource_slug": "categories"
+          "datasource_slug": "categories",
+          "pos": 2,
+          "key": "category"
         },
-        "first_created_on": {
+        "imported_from_old_site": {
+          "type": "boolean",
+          "pos": 3,
+          "key": "is_old_post"
+        },
+        "created_at": {
           "type": "datetime",
-          "disable_time": false
+          "disable_time": false,
+          "pos": 4,
+          "key": "created_at"
+        },
+        "body": {
+          "type": "richtext",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "customize_toolbar": true,
+          "toolbar": [
+            "bold",
+            "blok",
+            "h3",
+            "image",
+            "italic",
+            "link",
+            "paragraph",
+            "strike",
+            "underline"
+          ],
+          "component_group_whitelist": [],
+          "component_whitelist": [
+            "paragraph-list",
+            "paragraph-heading",
+            "testimonial-block",
+            "disclaimer",
+            "highlights-paragraph",
+            "metrics",
+            "gist"
+          ],
+          "key": "body",
+          "pos": 5
+        },
+        "related": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-stories-section"],
+          "pos": 6,
+          "key": "related"
         },
         "pre_footer": {
           "type": "bloks",
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy", "synced-block"]
+          "component_whitelist": ["pre-footer_copy", "synced-block"],
+          "pos": 7,
+          "key": "pre_footer"
+        },
+        "seo": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "maximum": 1,
+          "minimum": 1,
+          "key": "seo",
+          "pos": 8
+        },
+        "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
+          "display_name": "Metadata",
+          "keys": [
+            "cover",
+            "author",
+            "is_old_post",
+            "category",
+            "first_created_on",
+            "created_at",
+            "imported_from_old_site"
+          ],
+          "pos": 9,
+          "type": "tab",
+          "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
+        },
+        "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
+          "display_name": "SEO",
+          "keys": ["fields", "seo"],
+          "pos": 10,
+          "type": "tab",
+          "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
         }
       },
       "image": null,
@@ -649,12 +667,51 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-22T12:50:41.730Z",
+      "updated_at": "2023-08-23T16:15:13.221Z",
       "id": 4079335,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "pos": 0,
+          "filetypes": ["images"],
+          "asset_folder_id": 248971,
+          "required": true
+        },
+        "customer": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["customer"],
+          "description": "",
+          "pos": 1
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "pos": 2
+        },
+        "industry": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal",
+          "filter_content_type": [],
+          "required": true,
+          "datasource_slug": "industries",
+          "pos": 3
+        },
+        "imported_from_old_site": {
+          "type": "boolean",
+          "pos": 4
+        },
+        "created_at": {
+          "type": "datetime",
+          "pos": 5
+        },
         "Quote": {
           "type": "section",
-          "pos": 0,
+          "pos": 6,
           "keys": ["quote"],
           "display_name": "Header Quote"
         },
@@ -662,7 +719,7 @@
           "type": "textarea",
           "required": true,
           "translatable": true,
-          "pos": 5
+          "pos": 7
         },
         "metrics": {
           "type": "bloks",
@@ -672,11 +729,11 @@
           "component_whitelist": ["metrics"],
           "minimum": 1,
           "maximum": 1,
-          "pos": 6
+          "pos": 8
         },
         "body": {
           "type": "richtext",
-          "pos": 7,
+          "pos": 9,
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
@@ -705,58 +762,6 @@
             "h3"
           ]
         },
-        "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
-          "display_name": "Metadata",
-          "keys": ["cover", "customer", "author", "industry", "is_old_post"],
-          "pos": 9,
-          "type": "tab",
-          "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
-        },
-        "cover": {
-          "type": "asset",
-          "pos": 10,
-          "filetypes": ["images"],
-          "asset_folder_id": 248971,
-          "required": true
-        },
-        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
-          "display_name": "SEO",
-          "keys": ["title", "description", "seo"],
-          "pos": 11,
-          "type": "tab",
-          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
-          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
-        },
-        "customer": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal_stories",
-          "filter_content_type": ["customer"],
-          "description": "",
-          "pos": 12
-        },
-        "seo": {
-          "type": "bloks",
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["seo-fields"]
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"]
-        },
-        "industry": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal",
-          "filter_content_type": [],
-          "required": true,
-          "datasource_slug": "industries"
-        },
         "related": {
           "type": "bloks",
           "required": true,
@@ -764,17 +769,48 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "is_old_post": {
-          "type": "boolean"
+          "component_whitelist": ["related-stories-section"],
+          "pos": 10
         },
         "pre_footer": {
           "type": "bloks",
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy"]
+          "component_whitelist": ["pre-footer_copy"],
+          "pos": 11
+        },
+        "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
+          "display_name": "Metadata",
+          "keys": [
+            "cover",
+            "customer",
+            "author",
+            "industry",
+            "is_old_post",
+            "imported_from_old_site",
+            "created_at"
+          ],
+          "pos": 12,
+          "type": "tab",
+          "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
+        },
+        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo"],
+          "pos": 13,
+          "type": "tab",
+          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
+          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
+        },
+        "seo": {
+          "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "pos": 14
         }
       },
       "image": null,
@@ -3861,7 +3897,7 @@
       "name": "title-image-section",
       "display_name": null,
       "created_at": "2023-08-07T11:38:09.474Z",
-      "updated_at": "2023-08-14T13:15:11.707Z",
+      "updated_at": "2023-08-24T10:33:59.343Z",
       "id": 4388837,
       "schema": {
         "title": {
@@ -3871,12 +3907,21 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["title"]
+          "component_whitelist": ["title"],
+          "pos": 0
+        },
+        "list_items": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
         },
         "image": {
           "type": "asset",
           "required": true,
-          "filetypes": ["images"]
+          "filetypes": ["images"],
+          "pos": 2
         },
         "image_side": {
           "type": "option",
@@ -3898,7 +3943,8 @@
               "value": "center",
               "name": "Center"
             }
-          ]
+          ],
+          "pos": 3
         },
         "theme": {
           "type": "option",
@@ -3915,7 +3961,25 @@
               "value": "dark",
               "name": "Dark"
             }
-          ]
+          ],
+          "pos": 4
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6c588286-e050-48b8-9be7-3a0f81d175b8",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "fe601135-deb8-4ed5-92b9-e4566dcab89f",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Orange"
         }
       },
       "image": "//a.storyblok.com/f/231922/x/fb841382da/chat-features.png",
@@ -4540,13 +4604,36 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-22T17:02:24.397Z",
+      "updated_at": "2023-08-23T15:05:00.900Z",
       "id": 4303307,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "required": true,
+          "key": "cover",
+          "pos": 0
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "required": false,
+          "translatable": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "key": "author",
+          "pos": 1
+        },
+        "industries": {
+          "type": "options",
+          "pos": 2,
+          "source": "internal",
+          "datasource_slug": "industries",
+          "key": "industries"
+        },
         "technology": {
           "type": "options",
-          "key": "categories",
-          "pos": 0,
+          "key": "technology",
+          "pos": 3,
           "required": true,
           "options": [
             {
@@ -4634,7 +4721,7 @@
         "tutorial_type": {
           "type": "option",
           "use_uuid": true,
-          "pos": 1,
+          "pos": 4,
           "required": true,
           "options": [
             {
@@ -4647,18 +4734,13 @@
               "value": "text",
               "name": "Text"
             }
-          ]
-        },
-        "industries": {
-          "type": "options",
-          "pos": 2,
-          "source": "internal",
-          "datasource_slug": "industries"
+          ],
+          "key": "tutorial_type"
         },
         "integration_tool": {
           "type": "option",
           "use_uuid": true,
-          "pos": 3,
+          "pos": 5,
           "required": true,
           "options": [
             {
@@ -4677,25 +4759,10 @@
               "name": "Widget"
             }
           ],
-          "default_value": ""
+          "default_value": "",
+          "key": "integration_tool"
         },
-        "cover": {
-          "type": "asset",
-          "required": true,
-          "key": "cover",
-          "pos": 4
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "required": false,
-          "translatable": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"],
-          "key": "author",
-          "pos": 5
-        },
-        "is_old_post": {
+        "imported_from_old_site": {
           "type": "boolean",
           "key": "is_old_post",
           "pos": 6
@@ -4730,6 +4797,26 @@
           "key": "body",
           "pos": 7
         },
+        "related": {
+          "type": "bloks",
+          "required": false,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-stories-section"],
+          "key": "related",
+          "pos": 8
+        },
+        "pre_footer": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pre-footer_copy", "synced-block"],
+          "key": "pre_footer",
+          "pos": 9
+        },
         "seo": {
           "type": "bloks",
           "required": false,
@@ -4739,7 +4826,7 @@
           "maximum": 1,
           "minimum": 1,
           "key": "seo",
-          "pos": 8
+          "pos": 10
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
@@ -4751,34 +4838,24 @@
             "technology",
             "tutorial_type",
             "industries",
-            "integration_tool"
+            "integration_tool",
+            "first_created_on",
+            "imported_from_old_site",
+            "created_at"
           ],
-          "pos": 9,
+          "pos": 11,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
           "keys": ["fields", "seo"],
-          "pos": 10,
+          "pos": 12,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
         },
-        "related": {
-          "type": "bloks",
-          "required": false,
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "pre_footer": {
-          "type": "bloks",
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy", "synced-block"]
+        "created_at": {
+          "type": "datetime"
         }
       },
       "image": null,
