@@ -22,7 +22,8 @@ export const StringKeys = [
   'directory.apply',
   'directory.filters',
   'a11y.author',
-  'a11y.published'
+  'a11y.published',
+  'a11y.role'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

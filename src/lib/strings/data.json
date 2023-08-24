@@ -22,5 +22,6 @@
   "directory.apply": "Apply",
   "directory.filters": "Filters",
   "a11y.author": "Author",
-  "a11y.published": "Date published"
+  "a11y.published": "Date published",
+  "a11y.role": "Role"
 }

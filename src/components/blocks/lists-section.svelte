@@ -12,6 +12,7 @@
   import Header from '$components/title.svelte';
   import Title from '$components/lists-section/title.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
+  import Background from '$components/lists-section/background.svelte';
 
   export let block: ListsSectionStoryblok;
 
@@ -71,9 +72,11 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme}
-    class="bg-gray-1 pb-10 pt-5 text-gray-12 md:py-16"
+    class="overflow-hidden bg-gray-1 pb-10 pt-5 text-gray-12 md:py-16"
   >
-    <div class="container mx-auto px-container">
+    <div class="container relative isolate mx-auto px-container">
+      <Background theme={block.theme} />
+
       {#if block.header && block.header[0]}
         {@const { label, title, description, links } = block.header[0]}
         {@const labelInfo = getLabelInfo(label, 'orange')}
@@ -159,6 +162,7 @@
           <div
             class={cn(
               'relative hidden gap-px before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid',
+              block.theme === 'dark' && 'before:from-[#272730] before:to-[#27273066]',
               // When we have a sub array of 2, we want to fit the gradient into those two and not expand it the entire width
               subArray.length === 2 && 'md:w-2/3 md:grid-cols-2',
               subArray.length === 3 && 'md:grid-cols-3',
