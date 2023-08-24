@@ -214,18 +214,19 @@ export interface CustomerStoriesSectionStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
+  cover: AssetStoryblok;
+  customer?: StoryblokStory<CustomerStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industry: number | string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
   Quote?: any;
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   pre_footer?: PreFooterCopyStoryblok[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -262,6 +263,22 @@ export interface DoublePanelSectionStoryblok {
   panels: PanelItemStoryblok[];
   _uid: string;
   component: 'double-panel-section';
+  [k: string]: any;
+}
+
+export interface FaqStoryblok {
+  title: string;
+  text: string;
+  _uid: string;
+  component: 'faq';
+  [k: string]: any;
+}
+
+export interface FaqSectionStoryblok {
+  title: TitleStoryblok[];
+  faqs: FaqStoryblok[];
+  _uid: string;
+  component: 'faq-section';
   [k: string]: any;
 }
 
@@ -502,6 +519,7 @@ export interface IndustryStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -512,10 +530,12 @@ export interface IndustryStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -549,6 +569,13 @@ export interface InfrastructureSectionStoryblok {
   items?: BulletPointStoryblok[];
   _uid: string;
   component: 'infrastructure-section';
+  [k: string]: any;
+}
+
+export interface LegalHeroStoryblok {
+  title: string;
+  _uid: string;
+  component: 'legal-hero';
   [k: string]: any;
 }
 
@@ -619,6 +646,23 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
+export interface ModerationFeatureStoryblok {
+  name: string;
+  sub_features: PanelItemStoryblok[];
+  images: MultiassetStoryblok;
+  _uid: string;
+  component: 'moderation-feature';
+  [k: string]: any;
+}
+
+export interface ModerationFeaturesStoryblok {
+  title: TitleStoryblok[];
+  features: ModerationFeatureStoryblok[];
+  _uid: string;
+  component: 'moderation-features';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
@@ -638,6 +682,7 @@ export interface PageStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -648,10 +693,12 @@ export interface PageStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -767,6 +814,7 @@ export interface ResourcesHeroStoryblok {
 }
 
 export interface RichTextSectionStoryblok {
+  has_sidebar?: boolean;
   body: RichtextStoryblok;
   _uid: string;
   component: 'rich-text-section';
@@ -838,6 +886,7 @@ export interface StandardHeroStoryblok {
   buttons?: ButtonLinkStoryblok[];
   header_alignment: '' | 'left' | 'center';
   image?: AssetStoryblok;
+  has_coming_soon_tag?: boolean;
   _uid: string;
   component: 'standard-hero';
   [k: string]: any;
@@ -860,6 +909,7 @@ export interface SyncedBlockContentStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -870,10 +920,12 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -939,6 +991,7 @@ export interface TechnologyStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -949,10 +1002,12 @@ export interface TechnologyStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -1047,9 +1102,11 @@ export interface TitleFeaturesSectionStoryblok {
 
 export interface TitleImageSectionStoryblok {
   title: TitleStoryblok[];
+  list_items?: BulletPointStoryblok[];
   image: AssetStoryblok;
   image_side: '' | 'left' | 'right' | 'center';
   theme: '' | 'light' | 'dark';
+  accent_colour?: '' | 'brand' | 'orange';
   _uid: string;
   component: 'title-image-section';
   [k: string]: any;
@@ -1174,7 +1231,7 @@ export interface TutorialStoryblok {
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   industries?: (number | string)[];
-  technology: (
+  technology?: (
     | ''
     | 'react-ui-kit'
     | 'angular-ui-kit'

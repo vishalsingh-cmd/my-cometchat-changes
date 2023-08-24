@@ -11,6 +11,7 @@
   import DevelopersSection from './developers-section.svelte';
   import DirectorySection from './directory-section.svelte';
   import DoublePanelSection from './double-panel-section.svelte';
+  import FaqSection from './faq-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -59,6 +60,7 @@
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
+    'faq-section': FaqSection,
     'featured-story-section': FeaturedStorySection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
