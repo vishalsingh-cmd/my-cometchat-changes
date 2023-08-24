@@ -20,7 +20,10 @@ export const StringKeys = [
   'directory.please_try_again',
   'directory.clear_search',
   'directory.apply',
-  'directory.filters'
+  'directory.filters',
+  'a11y.author',
+  'a11y.published',
+  'a11y.role'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];
