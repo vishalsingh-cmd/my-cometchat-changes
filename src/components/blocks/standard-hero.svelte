@@ -86,9 +86,6 @@
         <LeftTitleNoImageBackground />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
         <CenterTitleImageBackground />
-        <div
-          class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
-        />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left'}
         <LeftTitleImageBackground />
       {/if}
