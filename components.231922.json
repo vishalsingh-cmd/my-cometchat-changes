@@ -2530,20 +2530,32 @@
       "name": "moderation-feature",
       "display_name": null,
       "created_at": "2023-08-24T10:49:34.426Z",
-      "updated_at": "2023-08-24T10:54:06.250Z",
+      "updated_at": "2023-08-24T13:48:15.351Z",
       "id": 4470845,
       "schema": {
-        "Name": {
+        "name": {
           "type": "text",
-          "required": true
+          "required": true,
+          "key": "name",
+          "pos": 0
         },
-        "features": {
+        "sub_features": {
           "type": "bloks",
           "required": true,
           "minimum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["moderation-sub-feature"]
+          "component_whitelist": ["panel-item"],
+          "key": "features",
+          "pos": 1
+        },
+        "images": {
+          "type": "multiasset",
+          "filetypes": ["images"],
+          "required": true,
+          "asset_folder_id": 300466,
+          "key": "images",
+          "pos": 2
         }
       },
       "image": null,
@@ -2596,41 +2608,6 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
-    },
-    {
-      "name": "moderation-sub-feature",
-      "display_name": null,
-      "created_at": "2023-08-24T10:50:31.605Z",
-      "updated_at": "2023-08-24T10:51:09.032Z",
-      "id": 4470848,
-      "schema": {
-        "text": {
-          "type": "bloks",
-          "pos": 0,
-          "required": true,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["panel-item"],
-          "minimum": 1,
-          "maximum": 1
-        },
-        "image": {
-          "type": "asset",
-          "pos": 1
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "moderation-sub-feature",
-      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Internal Blocks"
     },
     {
       "name": "newsletter-section",
@@ -3115,19 +3092,24 @@
       "name": "rich-text-section",
       "display_name": null,
       "created_at": "2023-07-28T08:50:26.981Z",
-      "updated_at": "2023-07-28T09:05:58.236Z",
+      "updated_at": "2023-08-24T15:04:17.212Z",
       "id": 4343559,
       "schema": {
+        "has_sidebar": {
+          "type": "boolean",
+          "description": "Will be based on the `h2` of `body`",
+          "pos": 0
+        },
         "body": {
           "type": "richtext",
           "required": true,
           "customize_toolbar": true,
-          "toolbar": ["blok", "bold", "inlinecode", "h3", "image", "link", "italic", "paragraph"],
+          "toolbar": ["blok", "bold", "inlinecode", "image", "link", "italic", "paragraph", "h2"],
           "restrict_type": "groups",
           "restrict_components": true,
           "component_group_whitelist": ["e853281d-4436-4eec-96ba-923ef0dda74e"],
           "key": "content",
-          "pos": 0
+          "pos": 1
         }
       },
       "image": null,
@@ -4738,7 +4720,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-23T15:05:00.900Z",
+      "updated_at": "2023-08-24T15:02:13.830Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -4768,7 +4750,7 @@
           "type": "options",
           "key": "technology",
           "pos": 3,
-          "required": true,
+          "required": false,
           "options": [
             {
               "_uid": "ac302604-c67a-48f6-81db-a83b1f10add6",
@@ -4910,13 +4892,13 @@
           "toolbar": [
             "bold",
             "blok",
-            "h3",
             "image",
             "italic",
             "link",
             "paragraph",
             "strike",
-            "underline"
+            "underline",
+            "h2"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [

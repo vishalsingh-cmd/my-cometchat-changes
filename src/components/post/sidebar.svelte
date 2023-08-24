@@ -36,6 +36,7 @@
 
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
+  export let hasShareOptions = true;
 </script>
 
 <div class="wrap sticky top-[80px] hidden h-fit w-full max-w-[272px] overflow-visible md:block">
@@ -60,28 +61,30 @@
               });
             }}
           >
-            {heading.innerHTML}
+            {heading.innerText}
           </button>
         {/each}
       {/if}
     </div>
-    <div class="ml-3 mt-[100px] flex flex-col gap-6 text-lg font-semibold leading-tight">
-      <p>
-        {string('blog.share')}
-      </p>
-      <div class="flex flex-col gap-3">
-        {#each shareLinks as link}
-          <a
-            href={link.url}
-            class="flex items-center gap-1.5 opacity-74 ease-smooth hover:opacity-100"
-            target="_blank"
-            rel="noopener"
-          >
-            <Icon icon={link.icon} size="xs" />
-            {link.text}
-          </a>
-        {/each}
+    {#if hasShareOptions}
+      <div class="ml-3 mt-[100px] flex flex-col gap-6 text-lg font-semibold leading-tight">
+        <p>
+          {string('blog.share')}
+        </p>
+        <div class="flex flex-col gap-3">
+          {#each shareLinks as link}
+            <a
+              href={link.url}
+              class="flex items-center gap-1.5 opacity-74 ease-smooth hover:opacity-100"
+              target="_blank"
+              rel="noopener"
+            >
+              <Icon icon={link.icon} size="xs" />
+              {link.text}
+            </a>
+          {/each}
+        </div>
       </div>
-    </div>
+    {/if}
   </div>
 </div>

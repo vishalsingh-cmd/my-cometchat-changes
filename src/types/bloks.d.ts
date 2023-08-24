@@ -630,8 +630,9 @@ export interface MetricsItemStoryblok {
 }
 
 export interface ModerationFeatureStoryblok {
-  Name: string;
-  features: ModerationSubFeatureStoryblok[];
+  name: string;
+  sub_features: PanelItemStoryblok[];
+  images: MultiassetStoryblok;
   _uid: string;
   component: 'moderation-feature';
   [k: string]: any;
@@ -642,14 +643,6 @@ export interface ModerationFeaturesStoryblok {
   features: ModerationFeatureStoryblok[];
   _uid: string;
   component: 'moderation-features';
-  [k: string]: any;
-}
-
-export interface ModerationSubFeatureStoryblok {
-  text: PanelItemStoryblok[];
-  image?: AssetStoryblok;
-  _uid: string;
-  component: 'moderation-sub-feature';
   [k: string]: any;
 }
 
@@ -803,6 +796,7 @@ export interface ResourcesHeroStoryblok {
 }
 
 export interface RichTextSectionStoryblok {
+  has_sidebar?: boolean;
   body: RichtextStoryblok;
   _uid: string;
   component: 'rich-text-section';
@@ -1217,7 +1211,7 @@ export interface TutorialStoryblok {
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   industries?: (number | string)[];
-  technology: (
+  technology?: (
     | ''
     | 'react-ui-kit'
     | 'angular-ui-kit'
