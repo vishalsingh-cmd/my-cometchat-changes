@@ -42,7 +42,12 @@
           />
         {/if}
         {#if block.list_items && block.list_items.length > 0}
-          <ul class={cn('mt-5 flex flex-col gap-3 md:mt-8 lg:pl-[56px]')}>
+          <ul
+            class={cn(
+              'mt-5 flex flex-col gap-3 md:mt-8',
+              block.image_side === 'right' && 'lg:pl-[56px]'
+            )}
+          >
             {#each block.list_items as listItem}
               <li class="flex-start flex gap-2">
                 <Icon
