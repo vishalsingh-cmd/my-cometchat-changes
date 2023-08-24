@@ -55,10 +55,10 @@
 </div>
 
 <!-- Planets | Mobile -->
-<div class="absolute -left-60 top-40 h-[889.15px] w-[789.15px] md:hidden">
+<div class="absolute -left-60 top-0 h-[889.15px] w-[789.15px] md:hidden">
   <img src={LeftSidePlanetsMobile} alt="" />
 </div>
-<div class="absolute -right-60 -top-[120px] h-[520px] w-[520px] md:hidden">
+<div class="absolute -right-40 -top-10 h-[320px] w-[320px] md:hidden">
   <img src={RightSidePlanetsMobile} alt="" class="h-full w-full" />
 </div>
 

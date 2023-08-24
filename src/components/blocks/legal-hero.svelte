@@ -11,11 +11,11 @@
 {#if block}
   <section
     data-theme="dark"
-    class="h-[452px] overflow-hidden bg-gray-1 text-gray-12"
+    class="h-[254px] overflow-hidden bg-gray-1 text-gray-12 md:h-[452px]"
     use:storyblokEditable={block}
   >
     <div
-      class="container relative mx-auto flex h-full flex-col items-center justify-center px-container"
+      class="container relative mx-auto flex h-full flex-col items-center px-container pt-[132px] md:justify-center md:pt-0"
     >
       <Background />
 
