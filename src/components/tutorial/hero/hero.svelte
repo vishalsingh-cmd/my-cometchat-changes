@@ -24,7 +24,9 @@
     >
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
-        <div class="flex flex-1 flex-col gap-4 text-xl leading-snug tracking-wide opacity-74">
+        <div
+          class="flex flex-1 flex-col justify-between gap-4 text-xl leading-snug tracking-wide opacity-74"
+        >
           <p class="font-medium">{block.content.seo[0].description}</p>
           <div class="flex items-center gap-3">
             {#if author}

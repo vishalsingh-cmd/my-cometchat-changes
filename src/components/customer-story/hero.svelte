@@ -25,18 +25,19 @@
 </script>
 
 <section
-  class={cn(
-    'h-[743px] overflow-hidden bg-gray-1 pt-[100px] text-gray-12 md:pb-20 md:pt-[148px]',
-    block.content.imported_from_old_site && 'h-auto'
-  )}
+  class={cn('hbg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
-    <div class="container mx-auto flex flex-col gap-12 px-container">
+    <div
+      class="container mx-auto flex flex-col gap-12 px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px]"
+    >
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
-        <div class="flex flex-1 flex-col gap-4 text-xl leading-snug tracking-wide">
-          <p class="font-medium opacity-74">{block.content.quote}</p>
+        <div
+          class="flex flex-1 flex-col justify-between gap-4 text-xl leading-snug tracking-wide opacity-74"
+        >
+          <p class="font-medium">{block.content.quote}</p>
           <div class="flex items-center gap-3">
             {#if author}
               {@const { name } = author.content}
@@ -57,9 +58,9 @@
     </div>
   {:else}
     <div
-      class="container relative isolate mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2"
+      class="container relative mx-auto grid h-full grid-cols-1 gap-8 overflow-hidden px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px] lg:grid-cols-2"
     >
-      <div class="flex flex-col justify-between">
+      <div class="flex flex-col justify-between gap-8">
         <Title
           label={{ content: industry, color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
@@ -68,7 +69,7 @@
         <div
           class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide"
         >
-          <p class="opacity-74">&quot;{block.content.quote}&quot;</p>
+          <p class="opacity-74">{block.content.quote}</p>
           <div class="flex items-center gap-4">
             {#if author}
               {@const { avatar, name, role, company } = author.content}
