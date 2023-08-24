@@ -19,8 +19,6 @@
 
       frame.contentWindow.document.head.innerHTML += `
         <style>
-
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
         @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css');
           .gist .gist-data {
             background-color:hsla(246, 21%, 9%, 1) !important;
