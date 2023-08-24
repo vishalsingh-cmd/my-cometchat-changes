@@ -18,6 +18,7 @@
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import Media from '$components/media.svelte';
+  import Share from './share.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -138,6 +139,8 @@
               </div>
             </div>
           {/if}
+
+          <Share class="pb-8 md:hidden" />
         </div>
       </div>
     {/if}
