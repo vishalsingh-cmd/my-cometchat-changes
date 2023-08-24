@@ -98,7 +98,7 @@
             class="mt-8 max-w-[528px] text-xl font-medium leading-snug tracking-wide opacity-74 md:mt-0"
           >
             {#if content.seo && content.seo.length > 0 && content.seo[0].description}
-              <p class="mb-2 md:mb-4">
+              <p class="mb-3 md:mb-4">
                 {content.seo[0].description}
               </p>
             {/if}
