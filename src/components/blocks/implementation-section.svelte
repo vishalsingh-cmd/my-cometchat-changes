@@ -8,7 +8,6 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { ImplementationSectionStoryblok } from '$types/bloks';
   import { cn, getLabelInfo } from '$lib/utils';
-  import Media from '$components/media.svelte';
 
   export let block: ImplementationSectionStoryblok;
 
