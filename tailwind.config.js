@@ -134,6 +134,9 @@ export default {
       padding: {
         container: 'clamp(1rem, 5vw, 4rem)'
       },
+      margin: {
+        container: 'clamp(1rem, 5vw, 4rem)'
+      },
       maxWidth: {
         content: '1440px'
       },
@@ -196,6 +199,17 @@ export default {
             width: '100%',
             height: '100%'
           }
+        },
+        '.visually-hidden': {
+          border: '0',
+          clip: 'rect(0 0 0 0)',
+          height: 'auto',
+          margin: '0',
+          overflow: 'hidden',
+          padding: '0',
+          position: 'absolute',
+          width: '1px',
+          'white-space': 'nowrap'
         }
       });
     })
