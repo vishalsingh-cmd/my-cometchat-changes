@@ -1,9 +1,6 @@
 <script lang="ts">
-  import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
-  import { industries } from '$lib/stores/industries';
 
   import { getLabelInfo } from '$lib/utils';
   import { formatDate } from '$lib/utils/dates';
@@ -13,7 +10,6 @@
     BlogPostStoryblok,
     CustomerStoryStoryblok,
     CustomerStoryblok,
-    IndustryStoryblok,
     RelatedStoriesSectionStoryblok,
     TutorialStoryblok
   } from '$types/bloks';
@@ -34,11 +30,6 @@
     const typedCustomer = typedItem.content.customer
       ? (typedItem.content.customer as StoryblokStory<CustomerStoryblok>)
       : undefined;
-    const industryId = typedCustomer ? (typedCustomer.content.industry as string) : '';
-
-    const industry = $industries.find(
-      (industry: ISbStoryData<IndustryStoryblok>) => industry.uuid === industryId
-    ) as unknown as IndustryStoryblok;
 
     const tags = () => {
       switch (typedItem.content.component as string) {
@@ -47,7 +38,7 @@
         case 'tutorial':
           return typedItem.content.technology;
         case 'customer-story':
-          return [industry.content.short_name];
+          return [typedItem.content.industry];
         default:
           return undefined;
       }

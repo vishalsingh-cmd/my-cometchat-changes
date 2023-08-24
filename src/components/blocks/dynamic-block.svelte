@@ -42,7 +42,9 @@
   import TechnologyHero from './technology-hero.svelte';
   import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
+  import TitleSection from './title-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
+  import WebhooksHero from './webhooks-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
 
   export let block: SbBlokData;
@@ -88,7 +90,9 @@
     'technology-hero': TechnologyHero,
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
+    'title-section': TitleSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
+    'webhooks-hero': WebhooksHero,
     'webhooks-section': WebhooksSection
   };
 </script>
