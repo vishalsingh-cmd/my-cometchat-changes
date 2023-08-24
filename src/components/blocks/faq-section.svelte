@@ -11,11 +11,7 @@
 </script>
 
 {#if block}
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="mt-[100px] overflow-hidden bg-gray-1"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="overflow-hidden bg-gray-1">
     <div
       class="container relative mx-auto flex flex-col justify-between px-container py-12 lg:flex-row lg:py-[100px]"
     >
