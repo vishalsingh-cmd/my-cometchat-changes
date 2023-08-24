@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getImageAttributes } from '$lib/storyblok';
+  import { getImageAttributes, type ImageAttributesOptions } from '$lib/storyblok';
 
   import type { AssetStoryblok } from '$types/bloks';
 
@@ -7,7 +7,7 @@
 
   export { className as class };
   export let media: AssetStoryblok;
-  export let options = {};
+  export let imageTransformOptions: Partial<ImageAttributesOptions> | undefined = undefined;
 </script>
 
 {#if media.filename}
@@ -21,7 +21,7 @@
       <source src={media.filename} type="video/webm" />
     </video>
   {:else if mediaFile.includes('jpg') || mediaFile.includes('jpeg') || mediaFile.includes('png') || mediaFile.includes('webp') || mediaFile.includes('gif')}
-    {@const { src, alt, width, height } = getImageAttributes(media, options)}
+    {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
     <img class={className} {src} {alt} {width} {height} />
   {/if}
 {/if}

@@ -1,6 +1,8 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
   import Stars from '$components/stars.svelte';
+  import Media from '$components/media.svelte';
+  import TypewriterText from './typewriter-text.svelte';
 
   import Noise from '$components/homepage/hero/noise.svg';
   import OrbitMedium from '$components/homepage/hero/assets/orbit-medium.svg';
@@ -10,7 +12,6 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   import type { HomepageHeroStoryblok } from '$types/bloks';
-  import Media from '$components/media.svelte';
 
   export let block: HomepageHeroStoryblok;
 </script>
@@ -40,6 +41,14 @@
             {:else}
               {part.text}
             {/if}
+          {/each}
+
+          {#each block.title.content?.filter((cont) => cont.type === 'blok') || [] as blockGroup}
+            {#each blockGroup.attrs.body || [] as block}
+              {#if block.component === 'typewriter-text'}
+                <TypewriterText {block} />
+              {/if}
+            {/each}
           {/each}
         </h1>
       {/if}
