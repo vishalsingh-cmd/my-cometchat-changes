@@ -517,6 +517,7 @@ export interface IndustryStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -620,6 +621,30 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
+export interface ModerationFeatureStoryblok {
+  Name: string;
+  features: any[];
+  _uid: string;
+  component: 'moderation-feature';
+  [k: string]: any;
+}
+
+export interface ModerationFeaturesStoryblok {
+  title: TitleStoryblok[];
+  features: ModerationFeaturesStoryblok[];
+  _uid: string;
+  component: 'moderation-features';
+  [k: string]: any;
+}
+
+export interface ModerationSubFeatureStoryblok {
+  text: PanelItemStoryblok[];
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'moderation-sub-feature';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
@@ -653,6 +678,7 @@ export interface PageStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -839,6 +865,7 @@ export interface StandardHeroStoryblok {
   buttons?: ButtonLinkStoryblok[];
   header_alignment: '' | 'left' | 'center';
   image?: AssetStoryblok;
+  has_coming_soon_tag?: boolean;
   _uid: string;
   component: 'standard-hero';
   [k: string]: any;
@@ -875,6 +902,7 @@ export interface SyncedBlockContentStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -954,6 +982,7 @@ export interface TechnologyStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
