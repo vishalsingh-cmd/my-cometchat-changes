@@ -55,12 +55,12 @@
         class={cn(
           'h-[250px] w-[250px]',
           'absolute origin-center transform rounded-1/2',
+          '-translate-x-1/2 translate-y-1/2',
           'bottom-1/2 left-1/2',
           'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-8/80 from-0% to-[rgba(20,30,202,0.00)]/0 to-100%',
           'opacity-60',
           'blur-[150px]'
         )}
-        style="transform: translate3d(0, 0, 0) translateY(50%) translateX(-50%);"
       />
 
       <div class="z-10 flex flex-col justify-between gap-8">
