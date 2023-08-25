@@ -114,7 +114,7 @@
     </div>
   {/if}
 
-  <!-- Background Blur -->
+  <!-- Bottom Gradient -->
   <div
     class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
   />

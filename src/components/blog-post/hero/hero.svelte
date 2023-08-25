@@ -13,10 +13,7 @@
 </script>
 
 <section
-  class={cn(
-    'relative isolate bg-gray-1 text-gray-12',
-    block.content.imported_from_old_site && 'h-auto'
-  )}
+  class={cn('relative bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
@@ -103,7 +100,7 @@
     </div>
   {/if}
 
-  <!-- Background Blur -->
+  <!-- Bottom Gradient -->
   <div
     class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
   />
