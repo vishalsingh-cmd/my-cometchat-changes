@@ -10,7 +10,7 @@
 
   import HeroHeader from './hero-header.svelte';
   import Media from '$components/media.svelte';
-  import Background from '$components/chat-and-messaging/hero/background..svelte';
+  import Background from '$components/chat-and-messaging/hero/background.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
 </script>
