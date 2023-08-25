@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Illustration1 from '$components/implementation-section/assets/illustration-1.svg';
+  import Illustration1 from '$components/implementation-section/assets/illustration-1.png';
   import Illustration2 from '$components/implementation-section/assets/illustration-2.svg';
   import ColourPicker from '$components/colour-picker/colour-picker.svelte';
   import Panel from '$components/panel.svelte';

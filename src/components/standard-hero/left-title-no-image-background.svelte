@@ -21,7 +21,3 @@
 <div class="absolute -left-[300px] -top-[20px] w-[2149.59px]">
   <img src={Background2} alt="" />
 </div>
-
-<div
-  class="absolute -left-1/2 bottom-0 h-[187px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
-/>

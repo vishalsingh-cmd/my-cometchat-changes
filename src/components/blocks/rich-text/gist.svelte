@@ -19,31 +19,51 @@
 
       frame.contentWindow.document.head.innerHTML += `
         <style>
+        @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css');
           .gist .gist-data {
-            background-color: hsla(246, 21%, 9%, 0.02) !important;
+            background-color:hsla(246, 21%, 9%, 1) !important;
+            border-bottom: 1px solid hsla(240, 100%, 99%, 0.08) !important;
           }
 
           .gist .gist-file {
-            border: 1px solid hsla(246, 21%, 9%, 0.04) !important;
+            border: 1px solid hsla(240, 100%, 99%, 0.08) !important;
             border-radius: 16px;
           }
 
+          .gist .blob-num {
+            color: hsla(240, 100%, 99%, 0.64) !important;
+          }
+          
+          .gist .blob-code-inner {
+            color: hsla(240, 100%, 99%, 1) !important;
+          }
+
           .gist .blob-code-content {
-            padding: 20px 0px !important;
+            padding: 20px 10px !important;
           }
 
           .gist .highlight {
             background: transparent !important;
+            
           }
 
           .gist-meta {
+            color: hsla(240, 100%, 99%, 0.64) !important;as
             border-radius: 0px 0px 16px 16px !important;
-            background-color: hsla(246, 21%, 9%, 0.02) !important;
+            background-color: hsla(246, 21%, 9%, 1) !important;
           }
 
           .gist-meta a {
             color: #6852D6 !important;
           }
+
+          .gist-meta a:first-child {
+            color: #FAFAFF !important;
+          }
+
+          body .gist .gist-data .pl-s .pl-s1 {
+            color: #a5c261
+        }
         </style>
       `;
     });
