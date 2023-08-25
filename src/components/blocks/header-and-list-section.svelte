@@ -16,39 +16,42 @@
     data-theme={block.theme ? block.theme : 'light'}
     class="bg-gray-1 text-gray-12"
   >
-    {#if block.header && block.header[0]}
-      {@const header = block.header[0]}
-      {#if header.label}
-        <Title
-          alignment={block.title_alignment !== '' ? block.title_alignment : 'center'}
-          label={{
-            content: header.label,
-            color:
-              block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
-          }}
-          title={header.title}
-        />
-      {/if}
-    {/if}
-    {#if block.items && block.items.length > 0}
-      {@const items = block.items}
-      <div
-        class={cn(
-          'container mx-auto flex flex-col gap-12 px-container pb-12 pt-6 md:grid md:gap-y-16 md:pb-20 md:pt-12',
-          (items.length <= 3 || items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
-          items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
-        )}
-      >
-        {#each items as item}
-          <ListSectionItem
-            block={item}
-            accentColour={block.accent_colour === '' || !block.accent_colour
-              ? 'orange'
-              : block.accent_colour}
-            class="max-w-[395px]"
+    <div class="container mx-auto px-container">
+      {#if block.header && block.header[0]}
+        {@const header = block.header[0]}
+        {#if header.label}
+          <Title
+            alignment={block.title_alignment !== '' ? block.title_alignment : 'center'}
+            label={{
+              content: header.label,
+              color:
+                block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
+            }}
+            title={header.title}
+            class="pl-0 lg:px-0"
           />
-        {/each}
-      </div>
-    {/if}
+        {/if}
+      {/if}
+      {#if block.items && block.items.length > 0}
+        {@const items = block.items}
+        <div
+          class={cn(
+            'flex flex-col gap-12 pb-12 pt-6 md:grid md:gap-y-16 md:pb-20 md:pt-12',
+            (items.length <= 3 || items.length > 4) && 'grid-cols-3 gap-x-8 lg:gap-x-12',
+            items.length === 4 && 'sm:grid-cols-2 md:gap-x-12 lg:grid-cols-4 xl:gap-x-10'
+          )}
+        >
+          {#each items as item}
+            <ListSectionItem
+              block={item}
+              accentColour={block.accent_colour === '' || !block.accent_colour
+                ? 'orange'
+                : block.accent_colour}
+              class="max-w-[395px]"
+            />
+          {/each}
+        </div>
+      {/if}
+    </div>
   </section>
 {/if}
