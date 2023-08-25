@@ -46,7 +46,11 @@ export const load = async ({ cookies, fetch, params }) => {
       })
     ]);
 
-    let directoriesData = [];
+    let datasourceCategories = [];
+    let datasourceIndustries = [];
+    let datasourceTechnologies = [];
+    let datasourceTutorialTypes = [];
+    let datasourceIntegrationTools = [];
 
     if (
       page.data.story.content.component === 'page' &&
@@ -55,24 +59,99 @@ export const load = async ({ cookies, fetch, params }) => {
         (blok: SbBlokData) => blok.component === 'directory-section'
       ).length > 0
     ) {
-      const directories = page.data.story.content.body.filter(
+      const directorySection = page.data.story.content.body.filter(
         (blok: SbBlokData) => blok.component === 'directory-section'
-      );
+      )[0];
 
-      directoriesData = await Promise.all(
-        directories.map(async (directory: { content_type: string; _uid: string }) => {
-          const directoryData = await storyblok.get('cdn/stories', {
-            content_type: directory.content_type,
-            version,
-            resolve_relations: relations
+      if (directorySection.content_type === 'blog-post') {
+        datasourceCategories = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'categories'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
+          });
+      }
+
+      if (directorySection.content_type === 'customer-story') {
+        datasourceIndustries = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'industries'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
+          });
+      }
+
+      if (directorySection.content_type === 'tutorial') {
+        datasourceTechnologies = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'technologies'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
           });
 
-          return {
-            key: directory._uid,
-            data: directoryData.data.stories
-          };
-        })
-      );
+        datasourceTutorialTypes = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'tutorial-types'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
+          });
+
+        datasourceIndustries = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'industries'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
+          });
+
+        datasourceIntegrationTools = await storyblok
+          .get('cdn/datasource_entries', {
+            cv: Date.now(),
+            datasource: 'integration-tools'
+          })
+          .then((res) => {
+            return res.data.datasource_entries.map((entry: { name: string; value: string }) => {
+              return {
+                name: entry.name,
+                value: entry.value
+              };
+            });
+          });
+      }
     }
 
     return {
@@ -80,7 +159,11 @@ export const load = async ({ cookies, fetch, params }) => {
         PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
       >,
       industries: industries.data.stories as ISbStoryData<IndustryStoryblok>[],
-      directoriesData: directoriesData as SbBlokData[]
+      datasourceCategories: datasourceCategories,
+      datasourceIndustries: datasourceIndustries,
+      datasourceTechnologies: datasourceTechnologies,
+      datasourceTutorialTypes: datasourceTutorialTypes,
+      datasourceIntegrationTools: datasourceIntegrationTools
     };
   } catch (err) {
     console.error(err);

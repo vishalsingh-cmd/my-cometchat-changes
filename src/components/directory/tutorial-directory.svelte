@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { createQuery } from '@tanstack/svelte-query';
+
+  import { page } from '$app/stores';
 
   import type { DirectorySectionStoryblok } from '$types/bloks';
 
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
   import { createMediaStore } from '$lib/stores/media';
 
-  import { getStories, storyblok } from '$lib/storyblok';
+  import { getStories } from '$lib/storyblok';
   import { cn, scrollLock } from '$lib/utils';
   import {
     cleanFilters,
@@ -43,105 +44,29 @@
     panels = cleanFilters(panels);
   };
 
-  let technologies: { name: string; value: string }[] = [];
-
-  const fetchTechnologies = async () => {
-    await storyblok
-      .get('cdn/datasource_entries', {
-        cv: Date.now(),
-        datasource: 'technologies'
-      })
-      .then((res) => {
-        technologies = res.data.datasource_entries.map((entry: { name: string; value: string }) => {
-          return {
-            name: entry.name,
-            value: entry.value
-          };
-        });
-      });
-  };
-
-  let tutorialTypes: { name: string; value: string }[] = [];
-
-  const fetchTutorialTypes = async () => {
-    await storyblok
-      .get('cdn/datasource_entries', {
-        cv: Date.now(),
-        datasource: 'tutorial-types'
-      })
-      .then((res) => {
-        tutorialTypes = res.data.datasource_entries.map(
-          (entry: { name: string; value: string }) => {
-            return {
-              name: entry.name,
-              value: entry.value
-            };
-          }
-        );
-      });
-  };
-
-  let industries: { name: string; value: string }[] = [];
-
-  const fetchIndustries = async () => {
-    await storyblok
-      .get('cdn/datasource_entries', {
-        cv: Date.now(),
-        datasource: 'industries'
-      })
-      .then((res) => {
-        industries = res.data.datasource_entries.map((entry: { name: string; value: string }) => {
-          return {
-            name: entry.name,
-            value: entry.value
-          };
-        });
-      });
-  };
-
-  let integrationTools: { name: string; value: string }[] = [];
-
-  const fetchIntegrationTools = async () => {
-    await storyblok
-      .get('cdn/datasource_entries', {
-        cv: Date.now(),
-        datasource: 'integration-tools'
-      })
-      .then((res) => {
-        integrationTools = res.data.datasource_entries.map(
-          (entry: { name: string; value: string }) => {
-            return {
-              name: entry.name,
-              value: entry.value
-            };
-          }
-        );
-      });
-  };
-
   $: panels = [
     {
       type: 'technology',
       title: 'Technology',
-      tags: technologies,
+      tags: $page.data.datasourceTechnologies,
       selectedTags: []
     },
     {
       type: 'tutorial_type',
       title: 'Tutorial Type',
-      tags: tutorialTypes,
+      tags: $page.data.datasourceTutorialTypes,
       selectedTags: []
     },
     {
       type: 'industries',
       title: 'Industries',
-      tags: industries,
+      tags: $page.data.datasourceIndustries,
       selectedTags: []
     },
     {
       type: 'integration_tool',
       title: 'Integration Tool',
-      tags: integrationTools,
+      tags: $page.data.datasourceIntegrationTools,
       selectedTags: []
     }
   ] as Panel[];
@@ -240,13 +165,6 @@
 
   const isMobile = createMediaStore('(max-width: 1023px)');
   $: scrollLock(areFiltersOpen && $isMobile);
-
-  onMount(() => {
-    fetchTechnologies();
-    fetchTutorialTypes();
-    fetchIndustries();
-    fetchIntegrationTools();
-  });
 </script>
 
 {#if block}

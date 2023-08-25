@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import { createQuery } from '@tanstack/svelte-query';
+
+  import { page } from '$app/stores';
 
   import type { DirectorySectionStoryblok } from '$types/bloks';
 
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
   import { createMediaStore } from '$lib/stores/media';
 
-  import { getStories, storyblok } from '$lib/storyblok';
+  import { getStories } from '$lib/storyblok';
   import { cn, scrollLock } from '$lib/utils';
   import { parseItem, type Panel, cleanFilters, RESULTS_PER_PAGE } from '$lib/data/directory';
 
@@ -37,29 +38,11 @@
     panels = cleanFilters(panels);
   };
 
-  let industries: { name: string; value: string }[] = [];
-
-  const fetchIndustries = async () => {
-    await storyblok
-      .get('cdn/datasource_entries', {
-        cv: Date.now(),
-        datasource: 'industries'
-      })
-      .then((res) => {
-        industries = res.data.datasource_entries.map((entry: { name: string; value: string }) => {
-          return {
-            name: entry.name,
-            value: entry.value
-          };
-        });
-      });
-  };
-
   $: panels = [
     {
       type: 'industry',
       title: 'Industry',
-      tags: industries,
+      tags: $page.data.datasourceIndustries,
       selectedTags: []
     }
   ] as Panel[];
@@ -153,10 +136,6 @@
 
   const isMobile = createMediaStore('(max-width: 1023px)');
   $: scrollLock(areFiltersOpen && $isMobile);
-
-  onMount(() => {
-    fetchIndustries();
-  });
 </script>
 
 {#if block}
