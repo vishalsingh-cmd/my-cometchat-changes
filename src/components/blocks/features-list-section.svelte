@@ -1,11 +1,12 @@
 <script lang="ts">
-  import FeaturesListSectionItem from '$components/features-list-section-item.svelte';
+  import type { FeaturesListSectionStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
+  import { cn, getLabelInfo } from '$lib/utils';
+
   import Tabs from '$components/tabs/tabs.svelte';
   import Title from '$components/title.svelte';
-
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { cn } from '$lib/utils';
-  import type { FeaturesListSectionStoryblok } from '$types/bloks';
+  import FeaturesListSectionItem from '$components/features-list-section-item.svelte';
 
   export let block: FeaturesListSectionStoryblok;
 
@@ -25,7 +26,8 @@
     <div class="mx-auto max-w-content">
       {#if block.header && block.header[0]}
         {@const header = block.header[0]}
-        <Title label={{ content: header.label, color: 'brand' }} title={header.title} />
+        {@const labelInfo = getLabelInfo(header.label, 'brand')}
+        <Title label={labelInfo} title={header.title} />
       {/if}
       {#if block.items.length > 0}
         {@const parsedItems = block.items.map((item, i) => ({

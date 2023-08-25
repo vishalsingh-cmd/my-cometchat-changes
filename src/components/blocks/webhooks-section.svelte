@@ -1,11 +1,11 @@
 <script lang="ts">
+  import type { WebhooksSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import type { WebhooksSectionStoryblok } from '$types/bloks';
-
-  import Background from '$components/webhooks-section/background.svelte';
+  import { getLabelInfo } from '$lib/utils';
 
   import Title from '$components/title.svelte';
+  import Background from '$components/webhooks-section/background.svelte';
 
   export let block: WebhooksSectionStoryblok;
 </script>
@@ -17,14 +17,9 @@
     >
       <Background />
       {#if block.title && block.title[0]}
-        {@const title = block.title[0]}
-        <Title
-          class="pl-0 pr-0"
-          label={{ content: title.label ? title.label : '', color: 'orange' }}
-          description={title.description}
-          title={title.title}
-          buttons={title.links}
-        />
+        {@const { label, title, description, links } = block.title[0]}
+        {@const labelInfo = getLabelInfo(label, 'orange')}
+        <Title class="pl-0 pr-0" label={labelInfo} {description} {title} buttons={links} />
       {/if}
     </div>
     <div

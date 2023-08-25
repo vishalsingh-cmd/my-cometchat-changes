@@ -2,6 +2,8 @@
   import type { InDepthAnalyticsSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
+  import { getLabelInfo } from '$lib/utils';
+
   import Title from '$components/title.svelte';
   import Illustration from '$components/chat-and-messaging/in-depth-analytics/assets/illustration.svg';
   import Background from '$components/chat-and-messaging/in-depth-analytics/background.svelte';
@@ -20,9 +22,10 @@
       />
       {#if block.header && block.header[0]}
         {@const { label, description, title, links } = block.header[0]}
+        {@const labelInfo = getLabelInfo(label, 'brand')}
         <div class="flex justify-center">
           <Title
-            label={{ content: label, color: 'brand' }}
+            label={labelInfo}
             {description}
             {title}
             buttons={links}

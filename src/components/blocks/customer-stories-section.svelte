@@ -2,7 +2,7 @@
   import type { StoryblokStory } from 'storyblok-generate-ts';
   import type { CustomerStoriesSectionStoryblok, TestimonialStoryblok } from '$types/bloks';
 
-  import { cn } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import Title from '$components/title.svelte';
@@ -59,9 +59,10 @@
       />
 
       {#if block.title?.[0]}
+        {@const labelInfo = getLabelInfo(block.title?.[0].label, 'brand')}
         <Title
           class="pl-0 pr-0 pt-12  xl:pt-0"
-          label={{ content: block.title?.[0].label, color: 'brand' }}
+          label={labelInfo}
           description={block.title?.[0].description}
           title={block.title?.[0].title}
           buttons={block.title?.[0].links}

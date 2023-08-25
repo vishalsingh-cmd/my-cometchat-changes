@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { TitleImageSectionStoryblok } from '$types/bloks';
-
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { cn } from '$lib/utils';
+
+  import { cn, getLabelInfo } from '$lib/utils';
 
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
@@ -24,12 +24,13 @@
       )}
     >
       {#if block.title[0]}
-        {@const header = block.title[0]}
+        {@const { label, title, description, links } = block.title[0]}
+        {@const labelInfo = getLabelInfo(label, 'orange')}
         <Title
-          label={{ content: header.label, color: 'orange' }}
-          title={header.title}
-          description={header.description ?? undefined}
-          buttons={header.links ?? undefined}
+          label={labelInfo}
+          {title}
+          description={description ?? undefined}
+          buttons={links ?? undefined}
           class={cn(
             'max-w-[528px] p-0 pl-0 pr-0 lg:p-0',
             block.image_side === 'right' && 'lg:pl-[56px]'

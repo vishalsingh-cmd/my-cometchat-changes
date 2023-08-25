@@ -12,12 +12,13 @@
 {#if block}
   <section>
     {#if block.title && block.title[0]}
+      {@const { title, description, links } = block.title[0]}
       {@const labelInfo = getLabelInfo(block.title[0].label, 'brand')}
       <Title
         label={labelInfo}
-        title={block.title[0].title}
-        description={block.title[0].description}
-        buttons={block.title[0].links}
+        {title}
+        {description}
+        buttons={links}
         alignment="center"
         size="small"
       />

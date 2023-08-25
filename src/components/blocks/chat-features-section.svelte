@@ -4,8 +4,9 @@
   import Media from '$components/media.svelte';
   import Title from '$components/title.svelte';
 
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
+  import { getLabelInfo } from '$lib/utils';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import type { ChatFeaturesSectionStoryblok } from '$types/bloks';
 
@@ -16,6 +17,8 @@
   <section use:storyblokEditable={block} class="overflow-hidden">
     <div class="container relative mx-auto flex flex-col md:pt-[80px] lg:gap-[102px]">
       {#each block.items as item, i}
+        {@const { label, title, description, illustration } = item}
+        {@const labelInfo = getLabelInfo(label, i % 2 !== 0 ? 'brand' : 'orange')}
         <div
           class={cn(
             'relative mx-auto flex w-full flex-col gap-4 overflow-x-visible md:gap-[88px] lg:flex-row',
@@ -29,9 +32,9 @@
               i % 2 !== 0 ? 'lg:ml-0 lg:mr-20' : 'lg:ml-[120px]'
             )}
             alignment="left"
-            label={{ content: item.label, color: i % 2 !== 0 ? 'brand' : 'orange' }}
-            title={item.title}
-            description={item.description}
+            label={labelInfo}
+            {title}
+            {description}
           />
           {#if i === 1}
             <img
@@ -41,7 +44,7 @@
             />
           {/if}
           <div class={cn('w-full max-w-[528px]', i === 1 && 'mt-[70px] max-w-[1070px] lg:mt-0')}>
-            <Media media={item.illustration} />
+            <Media media={illustration} />
           </div>
         </div>
       {/each}

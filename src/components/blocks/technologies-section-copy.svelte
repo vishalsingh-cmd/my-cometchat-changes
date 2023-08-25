@@ -1,7 +1,8 @@
 <!-- This block is used while we don't publish the `Technologies` on Storyblok -->
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { cn } from '$lib/utils';
+
+  import { cn, getLabelInfo } from '$lib/utils';
 
   import Blur from '$components/technologies/assets/blur.svg';
   import Icon from '$components/icon/icon.svelte';
@@ -24,13 +25,11 @@
       class="absolute right-[-90px] top-[-24px] h-[245px] w-[245px] md:right-[-106px] md:top-[-95px] md:h-[447px] md:w-[447px]"
     />
     <div class="mx-auto max-w-content">
-      <Title
-        alignment="center"
-        class="pl-0 pr-0"
-        label={{ content: block.header[0].label, color: 'brand' }}
-        title={block.header[0].title}
-        buttons={block.header[0].links}
-      />
+      {#if block.header && block.header.length > 0}
+        {@const { label, title, links } = block.header[0]}
+        {@const labelInfo = getLabelInfo(label, 'brand')}
+        <Title alignment="center" class="pl-0 pr-0" label={labelInfo} {title} buttons={links} />
+      {/if}
       <div
         class="relative grid grid-cols-2 gap-px before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid-cols-4 md:grid-rows-[104px_88px_104px]"
       >
