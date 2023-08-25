@@ -48,7 +48,7 @@
     <p
       class={`${
         labelColours[label.color]
-      } mb-2 max-w-[528px] text-xl font-semibold capitalize leading-tighter md:mb-3`}
+      } mb-2 max-w-[528px] text-xl font-semibold leading-tighter md:mb-3`}
     >
       {label.content}
     </p>
