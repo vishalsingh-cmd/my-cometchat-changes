@@ -20,7 +20,9 @@
     use:storyblokEditable={block}
     class={cn(
       'text-lg text-gray-12 transition-all ease-smooth',
-      isIntersecting ? 'translate-x-0 opacity-100' : 'translate-x-[-200px] opacity-0',
+      isIntersecting
+        ? 'translate-y-0 opacity-100 md:translate-x-0'
+        : 'translate-y-[200px] opacity-0 md:-translate-x-[200px] md:translate-y-0',
       className
     )}
     use:intersectionObserver={{

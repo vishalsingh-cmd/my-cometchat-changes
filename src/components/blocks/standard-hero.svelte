@@ -19,7 +19,7 @@
 {#if block}
   <section
     class={cn(
-      'h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
+      'relative h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
       block.image &&
         block.image.filename !== '' &&
         block.image.filename !== null &&
@@ -80,18 +80,26 @@
       {/if}
 
       <!-- Backgrounds -->
-      {#if (!block.image || block.image.source === null) && block.header_alignment === 'center'}
+      {#if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'center'}
         <CenterTitleNoImageBackground />
-      {:else if (!block.image || block.image.source === null) && block.header_alignment === 'left'}
+      {:else if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
         <CenterTitleImageBackground />
-        <div
-          class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-[1440px] bg-gradient-to-t from-gray-1/100 to-gray-1/0"
-        />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left'}
         <LeftTitleImageBackground />
       {/if}
     </div>
+
+    <!-- Bottom Gradient -->
+    {#if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
+      <div
+        class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+      />
+    {:else if !(block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left')}
+      <div
+        class="absolute bottom-0 h-[187px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+      />
+    {/if}
   </section>
 {/if}
