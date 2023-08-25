@@ -1,37 +1,36 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   import InfoItem from '$components/info-item.svelte';
   import Sidebar from '$components/post/sidebar.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
   import Title from '$components/title.svelte';
+
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getImageAttributes } from '$lib/storyblok';
   import { cn, getLabelInfo } from '$lib/utils';
+
   import type { ModerationFeaturesStoryblok } from '$types/bloks';
-  import { onDestroy, onMount } from 'svelte';
 
   export let block: ModerationFeaturesStoryblok;
 
   let host: HTMLElement;
   let headings: HTMLHeadingElement[] = [];
   let activeHeadingIndex = 0;
-  let document = typeof window !== 'undefined' ? window.document : null;
   let windowScroll = 0;
 
   let activeTab = 0;
 
   const getAllHeadings = () => {
-    if (!document || !host) {
+    if (!host) {
       return;
     }
-
     headings = Array.from(host.querySelectorAll('span#feature'));
   };
 
   const onScrollIntoView = (e: CustomEvent) => {
     const heading = e.detail.i as HTMLHeadingElement;
-
     const headerOffset = 64;
-
     const top = heading.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
 
     window.scrollTo({ top, behavior: 'smooth' });
@@ -44,7 +43,6 @@
 
     headings.forEach((heading: HTMLHeadingElement, i: number) => {
       const headingTop = heading.offsetTop;
-
       const nextHeadingOffsetTop = i === headings.length - 1 ? 0 : headings[i + 1].offsetTop;
 
       if (
@@ -63,12 +61,12 @@
     if (typeof window !== 'undefined') {
       window.addEventListener('scroll', progressForContent);
     }
-  });
 
-  onDestroy(() => {
-    if (typeof window !== 'undefined') {
-      window.removeEventListener('scroll', progressForContent);
-    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('scroll', progressForContent);
+      }
+    };
   });
 </script>
 
@@ -129,8 +127,8 @@
                     })}
                     <div
                       class={cn(
-                        'col-start-2 mt-8 h-80 rounded-3xl border border-gray-5 bg-gray-3 p-6 lg:mt-0 lg:h-auto',
-                        feature.images.length === 1 && 'row-span-2'
+                        'col-start-2 h-80 rounded-3xl border border-gray-5 bg-gray-3 p-6 lg:h-auto',
+                        feature.images.length === 1 && 'order-2 row-span-2 lg:order-[unset]'
                       )}
                       style={feature.images.length === 1
                         ? `grid-row: span ${feature.sub_features.length} / span ${feature.sub_features.length}`
