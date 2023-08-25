@@ -266,6 +266,22 @@ export interface DoublePanelSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FaqStoryblok {
+  title: string;
+  text: string;
+  _uid: string;
+  component: 'faq';
+  [k: string]: any;
+}
+
+export interface FaqSectionStoryblok {
+  title: TitleStoryblok[];
+  faqs: FaqStoryblok[];
+  _uid: string;
+  component: 'faq-section';
+  [k: string]: any;
+}
+
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
@@ -503,6 +519,7 @@ export interface IndustryStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -665,6 +682,7 @@ export interface PageStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -891,6 +909,7 @@ export interface SyncedBlockContentStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -972,6 +991,7 @@ export interface TechnologyStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok

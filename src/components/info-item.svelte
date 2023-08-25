@@ -61,7 +61,7 @@
     </ul>
   {/if}
   {#if item.link && item.link[0]}
-    {@const { target, rel, href } = getAnchorFromCmsLink(item.link[0])}
+    {@const { target, rel, href } = getAnchorFromCmsLink(item.link[0].link)}
     <GhostButton variant="highlighted" as="a" {target} {rel} {href} class="mt-5 md:mt-8">
       {item.link[0].label}
     </GhostButton>
