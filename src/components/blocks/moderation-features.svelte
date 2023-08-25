@@ -78,10 +78,10 @@
     data-theme="light"
     class="border-b border-gray-12 border-opacity-8 bg-gray-1 text-gray-12"
   >
-    <div class="container mx-auto px-container">
-      {#if block.title && block.title[0]}
-        {@const title = block.title[0]}
-        {@const labelInfo = getLabelInfo(title.label, 'brand')}
+    {#if block.title && block.title[0]}
+      {@const title = block.title[0]}
+      {@const labelInfo = getLabelInfo(title.label, 'brand')}
+      <div class="container mx-auto px-container">
         <Title
           class="max-w-[528px] pl-0 pr-0"
           alignment="left"
@@ -89,25 +89,30 @@
           title={title.title}
           description={title.description}
         />
-      {/if}
+      </div>
+    {/if}
 
-      {#if block.features}
-        <div class="flex gap-16 pb-12 lg:mt-12 lg:pb-20" bind:this={host}>
-          <aside class="hidden w-[272px] shrink-0 lg:block">
-            <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
-          </aside>
+    {#if block.features}
+      <div
+        class="flex gap-16 pb-12 lg:container lg:mx-auto lg:mt-12 lg:px-container lg:pb-20"
+        bind:this={host}
+      >
+        <aside class="hidden w-[272px] shrink-0 lg:block">
+          <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
+        </aside>
 
-          <div class="flex flex-col">
-            <div class="-mx-container mb-10 bg-gray-1 lg:hidden">
-              <Tabs
-                class="sm:px-0"
-                options={headings.map((h, id) => ({ id, label: h.innerHTML }))}
-                {activeTab}
-                on:optionSelect={(e) => {
-                  activeTab = e.detail.i;
-                }}
-              />
-            </div>
+        <div class="flex flex-col overflow-hidden">
+          <div class="mb-10 lg:hidden">
+            <Tabs
+              options={headings.map((h, id) => ({ id, label: h.innerText }))}
+              {activeTab}
+              on:optionSelect={(e) => {
+                activeTab = e.detail.i;
+              }}
+            />
+          </div>
+
+          <div class="container mx-auto px-container">
             {#each block.features as feature, i}
               <div
                 class={cn(
@@ -147,7 +152,7 @@
             {/each}
           </div>
         </div>
-      {/if}
-    </div>
+      </div>
+    {/if}
   </section>
 {/if}
