@@ -13,7 +13,7 @@ export type Panel = {
     | 'integration_tool'
     | 'industry';
   title: string;
-  tags: string[];
+  tags: { name: string; value: string }[];
   selectedTags: string[];
 };
 
