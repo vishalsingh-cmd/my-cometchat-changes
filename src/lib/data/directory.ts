@@ -27,13 +27,27 @@ export const parseItem = (
         return [item.content.industry];
       case 'blog-post':
         return [item.content.category];
-      case 'tutorial':
-        return [
-          item.content.tutorial_type,
-          ...item.content.technology,
-          item.content.integration_tool,
-          ...item.content.industries
-        ];
+      case 'tutorial': {
+        const tags = [];
+
+        if (item.content.tutorial_type) {
+          tags.push(item.content.tutorial_type);
+        }
+
+        if (item.content.technology) {
+          tags.push(...item.content.technology);
+        }
+
+        if (item.content.integration_tool) {
+          tags.push(item.content.integration_tool);
+        }
+
+        if (item.content.industries) {
+          tags.push(...item.content.industries);
+        }
+
+        return tags;
+      }
     }
   };
 
