@@ -6,12 +6,6 @@
 
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
-  import { cva } from 'class-variance-authority';
-
-  const blur = cva([''], {
-    variants: {}
-  });
-
   export let block: TutorialStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
