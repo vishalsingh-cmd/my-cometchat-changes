@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { TutorialStoryblok } from '$types/bloks';
 
-  import Hero from '$components/tutorial/hero/hero.svelte';
+  import Hero from '$components/tutorial/hero.svelte';
   import PostLayout from '$components/post/post-layout.svelte';
 
   export let block: TutorialStoryblok;

@@ -10,8 +10,6 @@
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
 
-  import Blur from './assets/blur.png';
-
   export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
@@ -25,7 +23,7 @@
 </script>
 
 <section
-  class={cn('bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
+  class={cn('relative bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
@@ -60,6 +58,19 @@
     <div
       class="container relative mx-auto grid h-full grid-cols-1 gap-8 overflow-hidden px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px] lg:grid-cols-2"
     >
+      <!-- Background Blur -->
+      <div
+        class={cn(
+          'h-[250px] w-[250px]',
+          'absolute origin-center transform rounded-1/2',
+          'bottom-1/2 left-1/2',
+          'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-8/80 from-0% to-[rgba(20,30,202,0.00)]/0 to-100%',
+          'opacity-60',
+          'blur-[150px]'
+        )}
+        style="transform: translate3d(0, 0, 0) translateY(50%) translateX(-50%);"
+      />
+
       <div class="flex flex-col justify-between gap-8">
         <Title
           label={{ content: industry, color: 'brand' }}
@@ -100,14 +111,13 @@
           <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
       {/if}
-      <img
-        src={Blur}
-        alt=""
-        draggable="false"
-        class="pointer-events-none absolute right-1/2 top-0 min-h-[584px] min-w-[852px] translate-x-1/2 select-none opacity-8 mix-blend-hard-light md:-top-1/3"
-      />
     </div>
   {/if}
+
+  <!-- Background Blur -->
+  <div
+    class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+  />
 </section>
 {#if !block.content.imported_from_old_site}
   {#if block.content.metrics && block.content.metrics.length > 0}
