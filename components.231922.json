@@ -1010,9 +1010,9 @@
     },
     {
       "name": "faq",
-      "display_name": null,
+      "display_name": "FAQ",
       "created_at": "2023-08-24T15:11:06.621Z",
-      "updated_at": "2023-08-24T15:12:26.321Z",
+      "updated_at": "2023-08-24T15:22:39.896Z",
       "id": 4472691,
       "schema": {
         "title": {
@@ -1031,7 +1031,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "faq",
+      "real_name": "FAQ",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
@@ -1039,9 +1039,9 @@
     },
     {
       "name": "faq-section",
-      "display_name": null,
+      "display_name": "FAQ Section",
       "created_at": "2023-08-24T15:12:45.953Z",
-      "updated_at": "2023-08-24T15:14:20.855Z",
+      "updated_at": "2023-08-24T15:21:35.871Z",
       "id": 4472693,
       "schema": {
         "title": {
@@ -1059,7 +1059,8 @@
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["faq"],
-          "minimum": 1
+          "minimum": 1,
+          "display_name": "FAQ’s list"
         }
       },
       "image": null,
@@ -1069,7 +1070,7 @@
       "is_nestable": true,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "faq-section",
+      "real_name": "FAQ Section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -1558,7 +1559,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-08-22T11:17:50.154Z",
+      "updated_at": "2023-08-24T17:27:42.762Z",
       "id": 4184631,
       "schema": {
         "theme": {
@@ -1629,7 +1630,7 @@
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
-          "maximum": 6,
+          "maximum": 9,
           "minimum": 1,
           "component_whitelist": ["list-item"],
           "key": "list",
