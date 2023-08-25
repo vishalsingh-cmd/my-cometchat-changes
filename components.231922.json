@@ -667,12 +667,51 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-22T12:50:41.730Z",
+      "updated_at": "2023-08-23T16:15:13.221Z",
       "id": 4079335,
       "schema": {
+        "cover": {
+          "type": "asset",
+          "pos": 0,
+          "filetypes": ["images"],
+          "asset_folder_id": 248971,
+          "required": true
+        },
+        "customer": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["customer"],
+          "description": "",
+          "pos": 1
+        },
+        "author": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal_stories",
+          "filter_content_type": ["author"],
+          "pos": 2
+        },
+        "industry": {
+          "type": "option",
+          "use_uuid": true,
+          "source": "internal",
+          "filter_content_type": [],
+          "required": true,
+          "datasource_slug": "industries",
+          "pos": 3
+        },
+        "imported_from_old_site": {
+          "type": "boolean",
+          "pos": 4
+        },
+        "created_at": {
+          "type": "datetime",
+          "pos": 5
+        },
         "Quote": {
           "type": "section",
-          "pos": 0,
+          "pos": 6,
           "keys": ["quote"],
           "display_name": "Header Quote"
         },
@@ -680,7 +719,7 @@
           "type": "textarea",
           "required": true,
           "translatable": true,
-          "pos": 5
+          "pos": 7
         },
         "metrics": {
           "type": "bloks",
@@ -690,11 +729,11 @@
           "component_whitelist": ["metrics"],
           "minimum": 1,
           "maximum": 1,
-          "pos": 6
+          "pos": 8
         },
         "body": {
           "type": "richtext",
-          "pos": 7,
+          "pos": 9,
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
@@ -723,58 +762,6 @@
             "h3"
           ]
         },
-        "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
-          "display_name": "Metadata",
-          "keys": ["cover", "customer", "author", "industry", "is_old_post"],
-          "pos": 9,
-          "type": "tab",
-          "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
-        },
-        "cover": {
-          "type": "asset",
-          "pos": 10,
-          "filetypes": ["images"],
-          "asset_folder_id": 248971,
-          "required": true
-        },
-        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
-          "display_name": "SEO",
-          "keys": ["title", "description", "seo"],
-          "pos": 11,
-          "type": "tab",
-          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
-          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
-        },
-        "customer": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal_stories",
-          "filter_content_type": ["customer"],
-          "description": "",
-          "pos": 12
-        },
-        "seo": {
-          "type": "bloks",
-          "minimum": 1,
-          "maximum": 1,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["seo-fields"]
-        },
-        "author": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal_stories",
-          "filter_content_type": ["author"]
-        },
-        "industry": {
-          "type": "option",
-          "use_uuid": true,
-          "source": "internal",
-          "filter_content_type": [],
-          "required": true,
-          "datasource_slug": "industries"
-        },
         "related": {
           "type": "bloks",
           "required": true,
@@ -782,17 +769,48 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["related-stories-section"]
-        },
-        "is_old_post": {
-          "type": "boolean"
+          "component_whitelist": ["related-stories-section"],
+          "pos": 10
         },
         "pre_footer": {
           "type": "bloks",
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["pre-footer_copy"]
+          "component_whitelist": ["pre-footer_copy"],
+          "pos": 11
+        },
+        "tab-cd6b9157-fe46-4588-b305-21955e7d3929": {
+          "display_name": "Metadata",
+          "keys": [
+            "cover",
+            "customer",
+            "author",
+            "industry",
+            "is_old_post",
+            "imported_from_old_site",
+            "created_at"
+          ],
+          "pos": 12,
+          "type": "tab",
+          "name": "tab-cd6b9157-fe46-4588-b305-21955e7d3929"
+        },
+        "tab-e9800462-0656-422c-b46c-5b6242a5cc4c": {
+          "display_name": "SEO",
+          "keys": ["title", "description", "seo"],
+          "pos": 13,
+          "type": "tab",
+          "name": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c",
+          "key": "tab-e9800462-0656-422c-b46c-5b6242a5cc4c"
+        },
+        "seo": {
+          "type": "bloks",
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["seo-fields"],
+          "pos": 14
         }
       },
       "image": null,
@@ -2484,6 +2502,109 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "moderation-feature",
+      "display_name": null,
+      "created_at": "2023-08-24T10:49:34.426Z",
+      "updated_at": "2023-08-24T10:50:12.799Z",
+      "id": 4470845,
+      "schema": {
+        "Name": {
+          "type": "text",
+          "required": true
+        },
+        "features": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "moderation-feature",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "moderation-features",
+      "display_name": null,
+      "created_at": "2023-08-24T10:45:49.214Z",
+      "updated_at": "2023-08-24T10:52:38.779Z",
+      "id": 4470841,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "minimum": 1,
+          "maximum": 1
+        },
+        "features": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["moderation-features"],
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "moderation-features",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "moderation-sub-feature",
+      "display_name": null,
+      "created_at": "2023-08-24T10:50:31.605Z",
+      "updated_at": "2023-08-24T10:51:09.032Z",
+      "id": 4470848,
+      "schema": {
+        "text": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "minimum": 1,
+          "maximum": 1
+        },
+        "image": {
+          "type": "asset",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "moderation-sub-feature",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
       "name": "newsletter-section",
       "display_name": "Newsletter Section (only 1 per page)",
       "created_at": "2023-08-03T08:03:07.340Z",
@@ -3242,7 +3363,7 @@
       "name": "standard-hero",
       "display_name": null,
       "created_at": "2023-08-07T12:25:34.652Z",
-      "updated_at": "2023-08-17T11:05:51.973Z",
+      "updated_at": "2023-08-24T10:53:01.669Z",
       "id": 4389065,
       "schema": {
         "title": {
@@ -3285,6 +3406,9 @@
         "image": {
           "type": "asset",
           "pos": 4
+        },
+        "has_coming_soon_tag": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -3879,7 +4003,7 @@
       "name": "title-image-section",
       "display_name": null,
       "created_at": "2023-08-07T11:38:09.474Z",
-      "updated_at": "2023-08-14T13:15:11.707Z",
+      "updated_at": "2023-08-24T10:33:59.343Z",
       "id": 4388837,
       "schema": {
         "title": {
@@ -3889,12 +4013,21 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["title"]
+          "component_whitelist": ["title"],
+          "pos": 0
+        },
+        "list_items": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
         },
         "image": {
           "type": "asset",
           "required": true,
-          "filetypes": ["images"]
+          "filetypes": ["images"],
+          "pos": 2
         },
         "image_side": {
           "type": "option",
@@ -3916,7 +4049,8 @@
               "value": "center",
               "name": "Center"
             }
-          ]
+          ],
+          "pos": 3
         },
         "theme": {
           "type": "option",
@@ -3933,7 +4067,25 @@
               "value": "dark",
               "name": "Dark"
             }
-          ]
+          ],
+          "pos": 4
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6c588286-e050-48b8-9be7-3a0f81d175b8",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "fe601135-deb8-4ed5-92b9-e4566dcab89f",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Orange"
         }
       },
       "image": "//a.storyblok.com/f/231922/x/fb841382da/chat-features.png",
