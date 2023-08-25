@@ -26,7 +26,7 @@
       {/if}
     </div>
     <div
-      class="container mx-auto grid grid-cols-1 gap-px border-t border-gray-12/8 bg-gray-12/8 md:grid-cols-2"
+      class="container relative mx-auto grid grid-cols-1 gap-px border-t border-gray-12/8 bg-gray-12/8 md:grid-cols-2"
     >
       <div class="flex flex-col gap-px">
         {#each leftSidedItems as item, i}
@@ -66,7 +66,7 @@
 
               {#if block.items.length === 3 && i === 1}
                 <div
-                  class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] md:h-[338px] md:w-[1739px] xl:right-0"
+                  class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] lg:h-[338px] lg:w-[1739px] xl:right-0"
                 >
                   <img src={Illustration1} alt="" />
                 </div>
