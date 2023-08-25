@@ -112,7 +112,7 @@
             />
           </div>
 
-          <div class="container mx-auto px-container">
+          <div class="px-container lg:px-0">
             {#each block.features as feature, i}
               <div
                 class={cn(

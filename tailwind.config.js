@@ -134,9 +134,6 @@ export default {
       padding: {
         container: 'clamp(1rem, 5vw, 4rem)'
       },
-      margin: {
-        container: 'clamp(1rem, 5vw, 4rem)'
-      },
       maxWidth: {
         content: '1440px'
       },
