@@ -44,7 +44,7 @@
 </script>
 
 <div class={cn(titleStyle({ alignment, size }), className)}>
-  {#if label}
+  {#if label?.content}
     <p
       class={`${
         labelColours[label.color]

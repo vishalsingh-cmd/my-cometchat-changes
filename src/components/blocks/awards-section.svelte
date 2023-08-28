@@ -56,9 +56,12 @@
         {block.title}
       </p>
       {#if awards}
-        <div bind:this={containerRef} class={cn('flex gap-10 md:gap-20')}>
+        <div
+          bind:this={containerRef}
+          class={cn('flex items-center justify-center gap-10 md:gap-20')}
+        >
           {#each arrayOfAwardsToShow as award}
-            <Media media={award} class="h-16 flex-shrink-0 md:h-20" />
+            <Media media={award} class="h-16 w-fit flex-shrink-0 md:h-20" />
           {/each}
         </div>
       {/if}

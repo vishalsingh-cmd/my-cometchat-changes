@@ -9,8 +9,8 @@
   import Stars from '$components/stars.svelte';
 
   import HeroHeader from './hero-header.svelte';
-  import Background from '$components/chat-and-messaging/hero/background.svelte';
   import Media from '$components/media.svelte';
+  import Background from '$components/chat-and-messaging/hero/background.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
 </script>
@@ -18,7 +18,7 @@
 {#if block}
   <section use:storyblokEditable={block} class="relative overflow-hidden px-container">
     <div
-      class="container relative mx-auto overflow-x-visible pb-[374px] pt-[100px] md:pb-[700px] md:pt-[148px]"
+      class="container relative mx-auto overflow-x-visible pb-[374px] pt-[100px] md:pb-[600px] md:pt-[148px]"
     >
       <div
         class="absolute bottom-0 left-0 h-[1079px] w-[1440px] md:bottom-[200px] lg:bottom-auto lg:top-0 lg:h-full lg:w-full"
@@ -33,13 +33,14 @@
       {#if block.illustration}
         <Media
           media={block.illustration}
-          class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[320px] md:max-w-[1500px]"
+          class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[300px] md:max-w-[1500px]"
         />
       {/if}
       <div class="isolate z-10 lg:ml-[112px]">
         <HeroHeader block={block.header[0]} variant="secondary" />
       </div>
     </div>
+
     <Background />
   </section>
 {/if}

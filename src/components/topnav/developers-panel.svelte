@@ -33,7 +33,7 @@
     </div>
     <Divider direction="vertical" class="hidden xl:block" />
     <Divider class="xl:hidden" />
-    <div class="flex-1 py-8 lg:py-12 xl:px-10">
+    <div class="flex-1 py-8 lg:px-10 lg:py-12">
       {#each data.groups as group}
         <h3 class="mb-6 text-lg opacity-54">{group.title}</h3>
         <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2">

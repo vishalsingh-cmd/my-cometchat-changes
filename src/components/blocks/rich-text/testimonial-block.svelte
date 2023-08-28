@@ -10,7 +10,7 @@
 {#if block}
   <div use:storyblokEditable={block} class="pd:my-12 flex flex-col gap-3 py-6">
     <div
-      class="border-px flex flex-col gap-4 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px]"
+      class="border-px flex flex-col gap-4 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-5 backdrop-blur-[20px]"
       style="transform: translate3d(0, 0, 0);"
     >
       <p class="text-lg font-medium leading-snug tracking-wide">{block.testimonial}</p>

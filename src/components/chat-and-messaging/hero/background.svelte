@@ -1,21 +1,6 @@
-<script>
-  import { cn } from '$lib/utils';
-  import { cva } from 'class-variance-authority';
-  const ellipse = cva(['absolute']);
-</script>
-
 <div
-  class={cn(
-    ellipse(),
-    '-bottom-[20px] -left-[30px] h-[250px] w-[100px] bg-gray-1 blur-[58px] md:-left-[350px] md:h-[600px] md:w-[523px] 2xl:w-[1000px]'
-  )}
-  style="transform: translate3d(0, 0, 0)"
+  class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0 lg:h-[300px]"
 />
-
 <div
-  class={cn(
-    ellipse(),
-    '-bottom-[100px] -left-[100px] h-[200px] w-[350px] bg-gray-1/90 blur-[20px] md:-bottom-[120px] md:left-0 md:h-[300px] md:w-[600px] lg:w-[1000px] 2xl:-bottom-[80px] 2xl:left-[500px]'
-  )}
-  style="transform: translate3d(0, 0, 0)"
+  class="absolute -left-[100px] bottom-0 hidden h-[500px] w-[300px] bg-gradient-to-r from-gray-1/100 via-gray-1/100 to-gray-1/0 blur-xl md:block md:w-[30vw] 2xl:w-[50vw]"
 />

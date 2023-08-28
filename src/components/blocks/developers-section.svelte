@@ -36,8 +36,14 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="overflow-x-clip">
+  <section use:storyblokEditable={block} class="relative overflow-hidden">
     <div class="relative mx-auto max-w-content">
+      <img
+        src={Comet}
+        alt=""
+        class="absolute -bottom-[60px] right-[-117px] h-[400px] w-[400px] lg:-bottom-[20px]"
+      />
+
       <div
         class="absolute right-[-100px] top-[400px] w-full max-w-[365px] rotate-[115.13deg] transform"
       >
@@ -59,12 +65,6 @@
         <div
           class="relative flex flex-col px-container md:pt-8 lg:grid lg:grid-cols-[minmax(100px,752px)_528px] lg:gap-8 lg:pb-[100px]"
         >
-          <img
-            src={Comet}
-            alt=""
-            class="absolute -bottom-[60px] right-[-117px] h-[400px] w-[400px] lg:-bottom-[20px]"
-          />
-
           <CodeBlock
             class="h-[500px] w-full self-start"
             snippets={parsedCodeBlocks}
@@ -94,5 +94,10 @@
         </div>
       {/if}
     </div>
+
+    <!-- Bottom Gradient -->
+    <div
+      class="absolute bottom-0 left-0 h-[50px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0 lg:h-[100px]"
+    />
   </section>
 {/if}

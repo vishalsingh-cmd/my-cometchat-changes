@@ -1,25 +1,15 @@
 <script lang="ts">
-  import type { ISbStoryData } from '@storyblok/js';
-
-  import type { CustomerStoryStoryblok, CustomerStoryblok, IndustryStoryblok } from '$types/bloks';
+  import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
-  import { string } from '$lib/strings';
+  import { formatDateUSMedium } from '$lib/utils/dates';
 
-  import Metrics from '$components/blocks/metrics.svelte';
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
 
-  export let block: CustomerStoryStoryblok;
-  export let industries: ISbStoryData<IndustryStoryblok>[];
+  export let block: BlogPostStoryblok;
 
-  const customer = block.content.customer as unknown as CustomerStoryblok;
-
-  const industryToShow = customer.content.industry as string;
-
-  const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
-
-  const author = block.content.author;
+  const author = block.content.author as unknown as AuthorStoryblok;
 </script>
 
 <section
@@ -35,22 +25,24 @@
         <div
           class="flex flex-1 flex-col justify-between gap-4 text-xl leading-snug tracking-wide opacity-74"
         >
-          <p class="font-medium">{block.content.quote}</p>
+          <p class="font-medium">{block.content.seo[0].description}</p>
           <div class="flex items-center gap-3">
             {#if author}
               {@const { name } = author.content}
+              {@const { created_at } = block.content}
               <p>
                 {name}
+                {#if created_at}
+                  • {formatDateUSMedium(new Date(created_at))}
+                {/if}
               </p>
             {/if}
           </div>
         </div>
       </div>
       {#if block.content.cover}
-        <div
-          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
-        >
-          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
+        <div class="h-full max-h-[656px] overflow-hidden rounded-3xl">
+          <Media media={block.content.cover} class="h-full max-h-[656px] w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -71,42 +63,36 @@
         )}
       />
 
-      <div class="flex flex-col justify-between gap-8">
+      <div class="z-10 flex flex-col justify-between gap-8">
         <Title
-          label={{ content: industry, color: 'brand' }}
-          class="pl-0 pr-0 pt-0 lg:p-0"
+          label={{
+            content: block.content.category,
+            color: 'brand'
+          }}
+          class="pb-0 pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />
         <div
-          class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide"
+          class="flex max-w-[528px] flex-col gap-6 text-xl font-medium leading-snug tracking-wide opacity-74"
         >
-          <p class="opacity-74">{block.content.quote}</p>
-          <div class="flex items-center gap-4">
+          <p>{block.content.seo[0].description}</p>
+          <div class="flex items-center gap-3">
             {#if author}
-              {@const { avatar, name, role, company } = author.content}
-              <Media
-                media={avatar}
-                imageTransformOptions={{ size: [96, 96] }}
-                class="h-12 w-12 rounded-full"
-              />
-              <div class="text-lg font-medium">
-                <p aria-label={string('a11y.author')}>
-                  {name}
-                </p>
-                <p aria-label={string('a11y.role')}>
-                  {#if role}
-                    {role},
-                  {/if}
-                  {company}
-                </p>
-              </div>
+              {@const { name } = author.content}
+              {@const { created_at } = block.content}
+              <p>
+                {name}
+                {#if created_at}
+                  • {formatDateUSMedium(new Date(created_at))}
+                {/if}
+              </p>
             {/if}
           </div>
         </div>
       </div>
       {#if block.content.cover}
         <div
-          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+          class="border-px z-10 h-full max-h-[580px] min-h-[297px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
           <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
@@ -119,8 +105,3 @@
     class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
   />
 </section>
-{#if !block.content.imported_from_old_site}
-  {#if block.content.metrics && block.content.metrics.length > 0}
-    <Metrics block={block.content.metrics[0]} />
-  {/if}
-{/if}
