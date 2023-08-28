@@ -20,7 +20,11 @@
       </div>
     </div>
     {#if block.author_image}
-      <Media media={block.author_image} class="w-12 rounded-full" />
+      <Media
+        imageTransformOptions={{ size: [200, 0] }}
+        media={block.author_image}
+        class="w-12 rounded-full"
+      />
     {/if}
   </div>
 {/if}

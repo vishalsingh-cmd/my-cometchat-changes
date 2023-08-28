@@ -62,7 +62,7 @@
     } else if (story.content.component === 'blog-post') {
       tags = [story.content.category];
     } else if (story.content.component === 'tutorial') {
-      tags = story.content.technology;
+      tags = [story.content.tutorial_type];
     }
 
     const parsedTags = tags.join(', ');
@@ -111,10 +111,12 @@
           </div>
         </div>
         {#if content.cover}
-          <div
-            class="relative min-h-[297px] flex-1 self-stretch overflow-hidden rounded-3xl md:h-full md:min-h-[501px]"
-          >
-            <Media media={content.cover} class="absolute h-full w-full object-cover" />
+          <div class="relative flex-1 self-stretch overflow-hidden rounded-3xl">
+            <Media
+              imageTransformOptions={{ size: [0, 900] }}
+              media={content.cover}
+              class="absolute h-full w-full object-cover"
+            />
           </div>
         {/if}
       </div>

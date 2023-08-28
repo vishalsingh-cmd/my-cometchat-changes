@@ -81,6 +81,7 @@
               class="mb-12 mt-5 h-[300px] overflow-hidden rounded-3xl border border-solid border-gray-5 bg-gray-2/60 backdrop-blur-[100px] md:h-[500px] md:max-h-[500px] lg:mb-0 lg:mt-0"
             >
               <Media
+                imageTransformOptions={{ size: [1000, 0] }}
                 media={parsedCodeBlocks[selectedLanguageIndex].image}
                 class={cn(
                   widthNumber > heightNumber &&

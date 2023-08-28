@@ -49,7 +49,11 @@
       </div>
       {#if block.content.cover}
         <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
-          <Media media={block.content.cover} class="h-full w-full object-cover" />
+          <Media
+            imageTransformOptions={{ size: [1600, 0] }}
+            media={block.content.cover}
+            class="h-full w-full object-cover"
+          />
         </div>
       {/if}
     </div>
@@ -94,7 +98,11 @@
         <div
           class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
         >
-          <Media media={block.content.cover} class="h-full w-full object-cover" />
+          <Media
+            imageTransformOptions={{ size: [1600, 0] }}
+            media={block.content.cover}
+            class="h-full w-full object-cover"
+          />
         </div>
       {/if}
       <img

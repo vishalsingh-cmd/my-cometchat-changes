@@ -32,6 +32,7 @@
       <img src={Ellipse} alt="" class="absolute left-[calc(50%+300px)] top-[39px]" />
       {#if block.illustration}
         <Media
+          imageTransformOptions={{ size: [1500, 0] }}
           media={block.illustration}
           class="absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[320px] md:max-w-[1500px]"
         />

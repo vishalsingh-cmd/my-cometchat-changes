@@ -103,7 +103,11 @@
         <img src={OrbitThin} alt="" />
       </div>
       {#if block.illustration}
-        <Media media={block.illustration} class="isolate z-10 mx-auto w-full max-w-[796px]" />
+        <Media
+          imageTransformOptions={{ size: [1200, 0] }}
+          media={block.illustration}
+          class="isolate z-10 mx-auto w-full max-w-[796px]"
+        />
       {/if}
     </div>
   </section>
