@@ -25,6 +25,7 @@
   import ListsSection from './lists-section.svelte';
   import LogoShowcase from './logo-showcase.svelte';
   import Metrics from './metrics.svelte';
+  import ModerationFeatures from './moderation-features.svelte';
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
@@ -73,6 +74,7 @@
     'lists-section': ListsSection,
     'logo-showcase': LogoShowcase,
     metrics: Metrics,
+    'moderation-features': ModerationFeatures,
     'newsletter-section': NewsletterSection,
     page: Page,
     'platform-section': PlatformSection,
