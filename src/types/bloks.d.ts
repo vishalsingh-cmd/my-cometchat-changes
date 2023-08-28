@@ -498,6 +498,17 @@ export interface ImplementationSectionV2Storyblok {
   [k: string]: any;
 }
 
+export interface ImplementationSectionV3Storyblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour: '' | 'brand' | 'orange';
+  header: TitleStoryblok[];
+  items: PanelItemStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'implementation-section-v3';
+  [k: string]: any;
+}
+
 export interface InDepthAnalyticsSectionStoryblok {
   header: TitleStoryblok[];
   _uid: string;
@@ -528,6 +539,7 @@ export interface IndustryStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -691,6 +703,7 @@ export interface PageStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -918,6 +931,7 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -1000,6 +1014,7 @@ export interface TechnologyStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok

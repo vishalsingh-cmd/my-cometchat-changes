@@ -2093,6 +2093,88 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "implementation-section-v3",
+      "display_name": null,
+      "created_at": "2023-08-28T16:30:18.137Z",
+      "updated_at": "2023-08-28T16:36:48.883Z",
+      "id": 4486304,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 0,
+          "options": [
+            {
+              "_uid": "c1720b99-8413-4c9b-ac94-b8594023c0f6",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "19db663b-a3bd-457b-9bc3-519c6ef18e25",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "light"
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "required": true,
+          "options": [
+            {
+              "_uid": "a1729fb8-e696-4c33-8b5e-e5e9e4335510",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "6a58791c-c374-462b-a1f2-2670a74f3326",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "pos": 1
+        },
+        "header": {
+          "type": "bloks",
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "pos": 2
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 4,
+          "minimum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "pos": 3,
+          "description": "Last item will be on the right side with the image beneath"
+        },
+        "illustration": {
+          "type": "asset",
+          "required": true,
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "implementation-section-v3",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "in-depth-analytics-section",
       "display_name": null,
       "created_at": "2023-06-29T12:56:24.090Z",
@@ -4788,7 +4870,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-28T09:24:23.164Z",
+      "updated_at": "2023-08-28T13:35:23.271Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -4900,7 +4982,9 @@
               "value": "swift",
               "name": "Swift"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "technologies"
         },
         "tutorial_type": {
           "type": "option",
@@ -4919,7 +5003,9 @@
               "name": "Text"
             }
           ],
-          "key": "tutorial_type"
+          "key": "tutorial_type",
+          "source": "internal",
+          "datasource_slug": "tutorial-types"
         },
         "integration_tool": {
           "type": "option",
@@ -4944,7 +5030,9 @@
             }
           ],
           "default_value": "",
-          "key": "integration_tool"
+          "key": "integration_tool",
+          "source": "internal",
+          "datasource_slug": "integration-tools"
         },
         "imported_from_old_site": {
           "type": "boolean",
