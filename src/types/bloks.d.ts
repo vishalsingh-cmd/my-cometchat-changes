@@ -67,7 +67,7 @@ export interface BlogPostStoryblok {
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
-  related: RelatedStoriesSectionStoryblok[];
+  related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   seo?: SeoFieldsStoryblok[];
   _uid: string;
@@ -263,6 +263,22 @@ export interface DoublePanelSectionStoryblok {
   panels: PanelItemStoryblok[];
   _uid: string;
   component: 'double-panel-section';
+  [k: string]: any;
+}
+
+export interface FaqStoryblok {
+  title: string;
+  text: string;
+  _uid: string;
+  component: 'faq';
+  [k: string]: any;
+}
+
+export interface FaqSectionStoryblok {
+  title: TitleStoryblok[];
+  faqs: FaqStoryblok[];
+  _uid: string;
+  component: 'faq-section';
   [k: string]: any;
 }
 
@@ -503,6 +519,7 @@ export interface IndustryStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -513,6 +530,7 @@ export interface IndustryStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -551,6 +569,13 @@ export interface InfrastructureSectionStoryblok {
   items?: BulletPointStoryblok[];
   _uid: string;
   component: 'infrastructure-section';
+  [k: string]: any;
+}
+
+export interface LegalHeroStoryblok {
+  title: string;
+  _uid: string;
+  component: 'legal-hero';
   [k: string]: any;
 }
 
@@ -622,8 +647,9 @@ export interface MetricsItemStoryblok {
 }
 
 export interface ModerationFeatureStoryblok {
-  Name: string;
-  features: any[];
+  name: string;
+  sub_features: PanelItemStoryblok[];
+  images: MultiassetStoryblok;
   _uid: string;
   component: 'moderation-feature';
   [k: string]: any;
@@ -631,17 +657,9 @@ export interface ModerationFeatureStoryblok {
 
 export interface ModerationFeaturesStoryblok {
   title: TitleStoryblok[];
-  features: ModerationFeaturesStoryblok[];
+  features: ModerationFeatureStoryblok[];
   _uid: string;
   component: 'moderation-features';
-  [k: string]: any;
-}
-
-export interface ModerationSubFeatureStoryblok {
-  text: PanelItemStoryblok[];
-  image?: AssetStoryblok;
-  _uid: string;
-  component: 'moderation-sub-feature';
   [k: string]: any;
 }
 
@@ -664,6 +682,7 @@ export interface PageStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -674,6 +693,7 @@ export interface PageStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -794,6 +814,7 @@ export interface ResourcesHeroStoryblok {
 }
 
 export interface RichTextSectionStoryblok {
+  has_sidebar?: boolean;
   body: RichtextStoryblok;
   _uid: string;
   component: 'rich-text-section';
@@ -888,6 +909,7 @@ export interface SyncedBlockContentStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -898,6 +920,7 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -968,6 +991,7 @@ export interface TechnologyStoryblok {
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
@@ -978,6 +1002,7 @@ export interface TechnologyStoryblok {
     | ImplementationSectionV2Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
@@ -1206,7 +1231,7 @@ export interface TutorialStoryblok {
   cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   industries?: (number | string)[];
-  technology: (
+  technology?: (
     | ''
     | 'react-ui-kit'
     | 'angular-ui-kit'

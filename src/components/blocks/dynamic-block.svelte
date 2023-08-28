@@ -11,6 +11,7 @@
   import DevelopersSection from './developers-section.svelte';
   import DirectorySection from './directory-section.svelte';
   import DoublePanelSection from './double-panel-section.svelte';
+  import FaqSection from './faq-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -21,10 +22,12 @@
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
+  import LegalHero from './legal-hero.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
   import LogoShowcase from './logo-showcase.svelte';
   import Metrics from './metrics.svelte';
+  import ModerationFeatures from './moderation-features.svelte';
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
@@ -59,6 +62,7 @@
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
+    'faq-section': FaqSection,
     'featured-story-section': FeaturedStorySection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
@@ -69,10 +73,12 @@
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'infrastructure-section': InfrastructureSection,
+    'legal-hero': LegalHero,
     'list-section': ListSection,
     'lists-section': ListsSection,
     'logo-showcase': LogoShowcase,
     metrics: Metrics,
+    'moderation-features': ModerationFeatures,
     'newsletter-section': NewsletterSection,
     page: Page,
     'platform-section': PlatformSection,
