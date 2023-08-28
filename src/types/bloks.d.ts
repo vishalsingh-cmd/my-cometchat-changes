@@ -214,18 +214,19 @@ export interface CustomerStoriesSectionStoryblok {
 }
 
 export interface CustomerStoryStoryblok {
+  cover: AssetStoryblok;
+  customer?: StoryblokStory<CustomerStoryblok> | string;
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  industry: number | string;
+  imported_from_old_site?: boolean;
+  created_at?: string;
   Quote?: any;
   quote: string;
   metrics: MetricsStoryblok[];
   body: RichtextStoryblok;
-  cover: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
-  seo?: SeoFieldsStoryblok[];
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  industry: number | string;
   related: RelatedStoriesSectionStoryblok[];
-  is_old_post?: boolean;
   pre_footer?: PreFooterCopyStoryblok[];
+  seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
   [k: string]: any;
@@ -516,6 +517,7 @@ export interface IndustryStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -619,6 +621,30 @@ export interface MetricsItemStoryblok {
   [k: string]: any;
 }
 
+export interface ModerationFeatureStoryblok {
+  Name: string;
+  features: any[];
+  _uid: string;
+  component: 'moderation-feature';
+  [k: string]: any;
+}
+
+export interface ModerationFeaturesStoryblok {
+  title: TitleStoryblok[];
+  features: ModerationFeaturesStoryblok[];
+  _uid: string;
+  component: 'moderation-features';
+  [k: string]: any;
+}
+
+export interface ModerationSubFeatureStoryblok {
+  text: PanelItemStoryblok[];
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'moderation-sub-feature';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
@@ -652,6 +678,7 @@ export interface PageStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -838,6 +865,7 @@ export interface StandardHeroStoryblok {
   buttons?: ButtonLinkStoryblok[];
   header_alignment: '' | 'left' | 'center';
   image?: AssetStoryblok;
+  has_coming_soon_tag?: boolean;
   _uid: string;
   component: 'standard-hero';
   [k: string]: any;
@@ -874,6 +902,7 @@ export interface SyncedBlockContentStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -953,6 +982,7 @@ export interface TechnologyStoryblok {
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
     | MetricsStoryblok
+    | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
@@ -1047,9 +1077,11 @@ export interface TitleFeaturesSectionStoryblok {
 
 export interface TitleImageSectionStoryblok {
   title: TitleStoryblok[];
+  list_items?: BulletPointStoryblok[];
   image: AssetStoryblok;
   image_side: '' | 'left' | 'right' | 'center';
   theme: '' | 'light' | 'dark';
+  accent_colour?: '' | 'brand' | 'orange';
   _uid: string;
   component: 'title-image-section';
   [k: string]: any;
