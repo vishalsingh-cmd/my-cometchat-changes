@@ -36,11 +36,11 @@
       >
         {#if block.title && block.title[0]}
           {@const title = block.title[0]}
-          {@const labelInfo = getLabelInfo(title.label, 'orange')}
+          {@const label = getLabelInfo(title.label, 'orange')}
           <Title
             class="max-w-[528px] pl-0 pr-0"
             alignment="left"
-            label={labelInfo}
+            {label}
             title={title.title}
             description={title.description}
           />

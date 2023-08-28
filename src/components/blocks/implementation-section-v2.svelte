@@ -22,9 +22,9 @@
   >
     <div class="container mx-auto">
       {#if block.header[0]}
-        {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label, block.accent_colour || 'orange')}
-        <Title label={labelInfo} {title} {description} buttons={links} size="small" />
+        {@const { title, description, links } = block.header[0]}
+        {@const label = getLabelInfo(block.header[0].label, block.accent_colour || 'orange')}
+        <Title {label} {title} {description} buttons={links} size="small" />
       {/if}
 
       <div class="flex flex-col border-y border-gray-12/[.08] lg:flex-row">

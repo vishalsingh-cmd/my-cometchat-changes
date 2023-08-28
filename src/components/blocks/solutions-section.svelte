@@ -81,10 +81,10 @@
     </div>
     <div class="isolate z-20 mx-auto max-w-content">
       {#if block.title[0]}
-        {@const labelInfo = getLabelInfo(block.title[0].label, 'brand')}
+        {@const label = getLabelInfo(block.title[0].label, 'brand')}
         <Title
           alignment="center"
-          label={labelInfo}
+          {label}
           title={block.title[0].title}
           titleClass="max-w-[400px] text-center"
           class="items-center"

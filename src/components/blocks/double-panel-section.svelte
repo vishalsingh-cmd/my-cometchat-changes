@@ -31,9 +31,9 @@
       </div>
 
       {#if block.title && block.title[0]}
-        {@const { label, title, description, links } = block.title[0]}
-        {@const labelInfo = getLabelInfo(label, 'brand')}
-        <Title label={labelInfo} {title} {description} buttons={links} alignment="center" />
+        {@const { title, description, links } = block.title[0]}
+        {@const label = getLabelInfo(block.title[0].label, 'brand')}
+        <Title {label} {title} {description} buttons={links} alignment="center" />
       {/if}
       <div
         class={cn(
