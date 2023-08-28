@@ -1,17 +1,20 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+
   import { cn } from '$lib/utils';
+  import { string } from '$lib/strings';
 
   import type { StandardHeroStoryblok } from '$types/bloks';
 
+  import Badge from '$components/badge.svelte';
   import Button from '$components/buttons/button.svelte';
+  import Media from '$components/media.svelte';
 
   import CenterTitleImageBackground from '$components/standard-hero/center-title-image-background.svelte';
   import CenterTitleNoImageBackground from '$components/standard-hero/center-title-no-image-background.svelte';
   import LeftTitleImageBackground from '$components/standard-hero/left-title-image-background.svelte';
   import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
-  import Media from '$components/media.svelte';
 
   export let block: StandardHeroStoryblok;
 </script>
@@ -19,7 +22,7 @@
 {#if block}
   <section
     class={cn(
-      'h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
+      'relative h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
       block.image &&
         block.image.filename !== '' &&
         block.image.filename !== null &&
@@ -45,6 +48,9 @@
           block.header_alignment === 'left' && 'md:pl-[112px]'
         )}
       >
+        {#if block.has_coming_soon_tag}
+          <Badge size="medium" label={string('coming_soon')} class="mb-2 md:mb-3" />
+        {/if}
         {#if block.title}
           <h1 class="mb-3 text-3xl font-semibold leading-tighter md:mb-5">{block.title}</h1>
         {/if}
@@ -80,18 +86,26 @@
       {/if}
 
       <!-- Backgrounds -->
-      {#if (!block.image || block.image.source === null) && block.header_alignment === 'center'}
+      {#if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'center'}
         <CenterTitleNoImageBackground />
-      {:else if (!block.image || block.image.source === null) && block.header_alignment === 'left'}
+      {:else if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
         <CenterTitleImageBackground />
-        <div
-          class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-[1440px] bg-gradient-to-t from-gray-1/100 to-gray-1/0"
-        />
       {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left'}
         <LeftTitleImageBackground />
       {/if}
     </div>
+
+    <!-- Bottom Gradient -->
+    {#if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
+      <div
+        class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+      />
+    {:else if !(block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left')}
+      <div
+        class="absolute bottom-0 h-[187px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+      />
+    {/if}
   </section>
 {/if}

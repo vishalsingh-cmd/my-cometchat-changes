@@ -1009,6 +1009,74 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "faq",
+      "display_name": "FAQ",
+      "created_at": "2023-08-24T15:11:06.621Z",
+      "updated_at": "2023-08-24T15:22:39.896Z",
+      "id": 4472691,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "text": {
+          "type": "textarea",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "FAQ",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "faq-section",
+      "display_name": "FAQ Section",
+      "created_at": "2023-08-24T15:12:45.953Z",
+      "updated_at": "2023-08-24T15:21:35.871Z",
+      "id": 4472693,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "minimum": 1,
+          "maximum": 1,
+          "required": true
+        },
+        "faqs": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["faq"],
+          "minimum": 1,
+          "display_name": "FAQ’s list"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "FAQ Section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "featured-story-section",
       "display_name": null,
       "created_at": "2023-07-18T10:52:42.228Z",
@@ -1491,7 +1559,7 @@
       "name": "header-and-list-section",
       "display_name": null,
       "created_at": "2023-06-27T15:41:17.774Z",
-      "updated_at": "2023-08-22T11:17:50.154Z",
+      "updated_at": "2023-08-24T17:27:42.762Z",
       "id": 4184631,
       "schema": {
         "theme": {
@@ -1562,7 +1630,7 @@
           "required": true,
           "restrict_type": "",
           "restrict_components": true,
-          "maximum": 6,
+          "maximum": 9,
           "minimum": 1,
           "component_whitelist": ["list-item"],
           "key": "list",
@@ -2182,6 +2250,31 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "legal-hero",
+      "display_name": null,
+      "created_at": "2023-08-24T11:19:11.047Z",
+      "updated_at": "2023-08-24T11:19:46.178Z",
+      "id": 4470937,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "legal-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "link",
       "display_name": null,
       "created_at": "2023-06-01T09:26:56.968Z",
@@ -2500,6 +2593,89 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "moderation-feature",
+      "display_name": null,
+      "created_at": "2023-08-24T10:49:34.426Z",
+      "updated_at": "2023-08-24T13:48:15.351Z",
+      "id": 4470845,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "key": "name",
+          "pos": 0
+        },
+        "sub_features": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "key": "features",
+          "pos": 1
+        },
+        "images": {
+          "type": "multiasset",
+          "filetypes": ["images"],
+          "required": true,
+          "asset_folder_id": 300466,
+          "key": "images",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "moderation-feature",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "moderation-features",
+      "display_name": null,
+      "created_at": "2023-08-24T10:45:49.214Z",
+      "updated_at": "2023-08-24T10:53:34.329Z",
+      "id": 4470841,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title"],
+          "required": true,
+          "minimum": 1,
+          "maximum": 1
+        },
+        "features": {
+          "type": "bloks",
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["moderation-feature"],
+          "minimum": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "moderation-features",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "newsletter-section",
@@ -2984,19 +3160,24 @@
       "name": "rich-text-section",
       "display_name": null,
       "created_at": "2023-07-28T08:50:26.981Z",
-      "updated_at": "2023-07-28T09:05:58.236Z",
+      "updated_at": "2023-08-24T15:09:29.026Z",
       "id": 4343559,
       "schema": {
+        "has_sidebar": {
+          "type": "boolean",
+          "description": "Will be based on the `h2` of `body`",
+          "pos": 0
+        },
         "body": {
           "type": "richtext",
           "required": true,
           "customize_toolbar": true,
-          "toolbar": ["blok", "bold", "inlinecode", "h3", "image", "link", "italic", "paragraph"],
+          "toolbar": ["blok", "bold", "inlinecode", "image", "link", "italic", "paragraph", "h3"],
           "restrict_type": "groups",
           "restrict_components": true,
           "component_group_whitelist": ["e853281d-4436-4eec-96ba-923ef0dda74e"],
           "key": "content",
-          "pos": 0
+          "pos": 1
         }
       },
       "image": null,
@@ -3260,7 +3441,7 @@
       "name": "standard-hero",
       "display_name": null,
       "created_at": "2023-08-07T12:25:34.652Z",
-      "updated_at": "2023-08-17T11:05:51.973Z",
+      "updated_at": "2023-08-24T10:53:01.669Z",
       "id": 4389065,
       "schema": {
         "title": {
@@ -3303,6 +3484,9 @@
         "image": {
           "type": "asset",
           "pos": 4
+        },
+        "has_coming_soon_tag": {
+          "type": "boolean"
         }
       },
       "image": null,
@@ -3897,7 +4081,7 @@
       "name": "title-image-section",
       "display_name": null,
       "created_at": "2023-08-07T11:38:09.474Z",
-      "updated_at": "2023-08-14T13:15:11.707Z",
+      "updated_at": "2023-08-24T10:33:59.343Z",
       "id": 4388837,
       "schema": {
         "title": {
@@ -3907,12 +4091,21 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["title"]
+          "component_whitelist": ["title"],
+          "pos": 0
+        },
+        "list_items": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["bullet-point"]
         },
         "image": {
           "type": "asset",
           "required": true,
-          "filetypes": ["images"]
+          "filetypes": ["images"],
+          "pos": 2
         },
         "image_side": {
           "type": "option",
@@ -3934,7 +4127,8 @@
               "value": "center",
               "name": "Center"
             }
-          ]
+          ],
+          "pos": 3
         },
         "theme": {
           "type": "option",
@@ -3951,7 +4145,25 @@
               "value": "dark",
               "name": "Dark"
             }
-          ]
+          ],
+          "pos": 4
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "6c588286-e050-48b8-9be7-3a0f81d175b8",
+              "name": "Brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "fe601135-deb8-4ed5-92b9-e4566dcab89f",
+              "value": "orange",
+              "name": "Orange"
+            }
+          ],
+          "default_value": "Orange"
         }
       },
       "image": "//a.storyblok.com/f/231922/x/fb841382da/chat-features.png",
@@ -4576,7 +4788,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-23T15:05:00.900Z",
+      "updated_at": "2023-08-24T15:02:13.830Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -4606,7 +4818,7 @@
           "type": "options",
           "key": "technology",
           "pos": 3,
-          "required": true,
+          "required": false,
           "options": [
             {
               "_uid": "ac302604-c67a-48f6-81db-a83b1f10add6",
@@ -4748,13 +4960,13 @@
           "toolbar": [
             "bold",
             "blok",
-            "h3",
             "image",
             "italic",
             "link",
             "paragraph",
             "strike",
-            "underline"
+            "underline",
+            "h2"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [

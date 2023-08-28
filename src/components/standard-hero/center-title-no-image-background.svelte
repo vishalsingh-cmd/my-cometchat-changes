@@ -24,7 +24,3 @@
 <Vignette />
 
 <img src={Background2} alt="" class="absolute -bottom-[20px] -left-[200px] w-[519px]" />
-
-<div
-  class="absolute -left-1/2 bottom-0 h-[187px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
-/>
