@@ -10,6 +10,7 @@
 
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
+  export let hasShareOptions = true;
 </script>
 
 <div
@@ -44,11 +45,13 @@
               });
             }}
           >
-            {heading.innerHTML}
+            {heading.innerText}
           </button>
         {/each}
       {/if}
     </div>
-    <Share class="ml-3 mt-[100px]" />
+    {#if hasShareOptions}
+      <Share class="ml-3 mt-[100px]" />
+    {/if}
   </div>
 </div>
