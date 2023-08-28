@@ -23,5 +23,6 @@
   "directory.filters": "Filters",
   "a11y.author": "Author",
   "a11y.published": "Date published",
-  "a11y.role": "Role"
+  "a11y.role": "Role",
+  "directory.no_results_found": "No results found"
 }

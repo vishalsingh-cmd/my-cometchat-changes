@@ -1,10 +1,8 @@
 import type { ISbStoryData, SbBlokData } from '@storyblok/js';
 import { error } from '@sveltejs/kit';
-
 import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
-
 import type {
   CustomerStoryStoryblok,
   IndustryStoryblok,
@@ -33,6 +31,20 @@ export const load = async ({ cookies, fetch, params }) => {
     'solutions-hero.solution_type'
   ];
 
+  const getEntriesBasedOnDatasource = async (datasource: string) => {
+    const entriesResponse = await storyblok.get('cdn/datasource_entries', {
+      cv: Date.now(),
+      datasource
+    });
+
+    return entriesResponse.data.datasource_entries.map(
+      (entry: { name: string; value: string }) => ({
+        name: entry.name,
+        value: entry.value
+      })
+    );
+  };
+
   try {
     const [page, industries] = await Promise.all([
       storyblok.get(`cdn/stories/pages/${params.path}`, {
@@ -46,33 +58,33 @@ export const load = async ({ cookies, fetch, params }) => {
       })
     ]);
 
-    let directoriesData = [];
+    let datasourceCategories = [];
+    let datasourceIndustries = [];
+    let datasourceTechnologies = [];
+    let datasourceTutorialTypes = [];
+    let datasourceIntegrationTools = [];
 
-    if (
+    const directorySection =
       page.data.story.content.component === 'page' &&
       page.data.story.content.body &&
-      page.data.story.content.body.filter(
+      page.data.story.content.body.find(
         (blok: SbBlokData) => blok.component === 'directory-section'
-      ).length > 0
+      );
+
+    if (
+      directorySection &&
+      ['blog-post', 'customer-story', 'tutorial'].includes(directorySection.content_type)
     ) {
-      const directories = page.data.story.content.body.filter(
-        (blok: SbBlokData) => blok.component === 'directory-section'
-      );
-
-      directoriesData = await Promise.all(
-        directories.map(async (directory: { content_type: string; _uid: string }) => {
-          const directoryData = await storyblok.get('cdn/stories', {
-            content_type: directory.content_type,
-            version,
-            resolve_relations: relations
-          });
-
-          return {
-            key: directory._uid,
-            data: directoryData.data.stories
-          };
-        })
-      );
+      if (directorySection.content_type === 'blog-post') {
+        datasourceCategories = await getEntriesBasedOnDatasource('categories');
+      } else if (directorySection.content_type === 'customer-story') {
+        datasourceIndustries = await getEntriesBasedOnDatasource('industries');
+      } else if (directorySection.content_type === 'tutorial') {
+        datasourceTechnologies = await getEntriesBasedOnDatasource('technologies');
+        datasourceTutorialTypes = await getEntriesBasedOnDatasource('tutorial-types');
+        datasourceIndustries = await getEntriesBasedOnDatasource('industries');
+        datasourceIntegrationTools = await getEntriesBasedOnDatasource('integration-tools');
+      }
     }
 
     return {
@@ -80,7 +92,11 @@ export const load = async ({ cookies, fetch, params }) => {
         PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
       >,
       industries: industries.data.stories as ISbStoryData<IndustryStoryblok>[],
-      directoriesData: directoriesData as SbBlokData[]
+      datasourceCategories,
+      datasourceIndustries,
+      datasourceTechnologies,
+      datasourceTutorialTypes,
+      datasourceIntegrationTools
     };
   } catch (err) {
     console.error(err);

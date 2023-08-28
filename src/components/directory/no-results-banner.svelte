@@ -28,11 +28,13 @@
   <div
     class="w-full max-w-[352px] text-center text-lg font-normal leading-snug tracking-wide text-gray-12"
   >
-    <p class="mb-1 font-medium">No results found</p>
-    <p>
-      "{searchValue}" {string('directory.did_not_match_any')}
-      {string('directory.customer_stories')}.
-    </p>
+    <p class="mb-1 font-medium">{string('directory.no_results_found')}</p>
+    {#if searchValue !== ''}
+      <p>
+        "{searchValue}" {string('directory.did_not_match_any')}
+        {string('directory.customer_stories')}.
+      </p>
+    {/if}
     <p>{string('directory.please_try_again')}.</p>
   </div>
   <GhostButton class="mt-3 gap-1.5" on:click={() => dispatch('clearSearchValue')}>
