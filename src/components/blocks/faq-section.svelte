@@ -4,7 +4,7 @@
   import Icon from '$components/icon/icon.svelte';
   import Title from '$components/title.svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getLabelInfo } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
   import type { FaqSectionStoryblok } from '$types/bloks';
 
   export let block: FaqSectionStoryblok;
@@ -50,12 +50,20 @@
                     class="flex w-full items-center justify-between gap-4 text-left lg:max-w-[640px]"
                     on:click={onClick}
                   >
-                    <p class="w-full font-semibold leading-tighter opacity-74">
+                    <p
+                      class={cn(
+                        'w-full font-semibold leading-tighter opacity-74',
+                        expanded && 'opacity-100'
+                      )}
+                    >
                       {title}
                     </p>
                     <Icon
                       icon="chevron-up"
-                      class={`transition-transform ${expanded && 'rotate-180'} shrink-0 opacity-74`}
+                      class={cn(
+                        'shrink-0 opacity-74 transition-transform duration-300',
+                        expanded && 'rotate-180 opacity-100'
+                      )}
                       size="md"
                     />
                   </button>
