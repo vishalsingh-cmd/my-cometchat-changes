@@ -64,7 +64,7 @@
                         'shrink-0 opacity-74 transition-transform duration-300',
                         expanded && 'rotate-180 opacity-100'
                       )}
-                      size="md"
+                      size="sm"
                     />
                   </button>
                 </div>
