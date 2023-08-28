@@ -1,6 +1,6 @@
 {
   "name": "cometchat-web",
-  "version": "0.0.1",
+  "version": "0.0.1-development",
   "private": true,
   "scripts": {
     "prepare": "husky install",
