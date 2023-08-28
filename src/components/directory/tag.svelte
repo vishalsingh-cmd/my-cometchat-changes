@@ -5,7 +5,7 @@
 
   import Icon from '$components/icon/icon.svelte';
 
-  export let tag: string;
+  export let tag: { name: string; value: string };
   export let panelType:
     | 'technology'
     | 'tutorial_type'
@@ -32,15 +32,15 @@
     isTagSelected ? 'bg-brand-10/[0.12] pr-2 text-brand-10' : 'bg-gray-11/[0.06] text-gray-11'
   )}
   on:click={() => {
-    dispatch('selectTag', { i: tag, j: panelType });
+    dispatch('selectTag', { i: tag.value, j: panelType });
   }}
 >
-  {tag}
+  {tag.value}
   {#if isTagSelected}
     <button
       class="h-[14px] w-[14px]"
       on:click|stopPropagation={() => {
-        dispatch('selectTag', { i: tag, j: panelType });
+        dispatch('selectTag', { i: tag.value, j: panelType });
       }}
     >
       <Icon size="xs" icon="x-circle" />

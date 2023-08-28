@@ -9,7 +9,7 @@
   export let block: TutorialStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
-  const tags = block.content.technology.join(', ');
+  const tags = block.content.technology && block.content.technology.join(', ');
 </script>
 
 <section
@@ -47,7 +47,7 @@
     >
       <div class="flex flex-col justify-between">
         <Title
-          label={{ content: tags, color: 'brand' }}
+          label={block.content.technology && { content: tags, color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />

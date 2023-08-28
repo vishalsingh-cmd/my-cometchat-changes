@@ -19,7 +19,10 @@
       | 'category'
       | 'industry';
     title: string;
-    tags: string[];
+    tags: {
+      name: string;
+      value: string;
+    }[];
     selectedTags: string[];
   }[];
 
@@ -45,7 +48,7 @@
       </div>
       <div class="flex flex-row flex-wrap gap-2 pb-4">
         {#each panel.tags as tag}
-          {@const isTagSelected = panel.selectedTags.includes(tag)}
+          {@const isTagSelected = panel.selectedTags.includes(tag.value)}
           {@const panelType = panel.type}
           <Tag {tag} {panelType} {isTagSelected} on:selectTag />
         {/each}

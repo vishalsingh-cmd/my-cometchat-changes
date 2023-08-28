@@ -1,10 +1,10 @@
 <script lang="ts">
   import { createQuery } from '@tanstack/svelte-query';
-  import type { SbBlokData } from '@storyblok/js';
 
-  import type { BlogPostStoryblok, DirectorySectionStoryblok } from '$types/bloks';
+  import { page } from '$app/stores';
 
-  import { directories } from '$lib/stores/directories';
+  import type { DirectorySectionStoryblok } from '$types/bloks';
+
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
   import { createMediaStore } from '$lib/stores/media';
 
@@ -22,9 +22,6 @@
 
   export let block: DirectorySectionStoryblok;
 
-  let directoryData = $directories.filter((directory) => {
-    return directory.key === block._uid;
-  })[0].data as SbBlokData[];
   let areFiltersOpen = false;
 
   const [search, debouncedSearch] = createDebouncedValue('');
@@ -41,27 +38,11 @@
     panels = cleanFilters(panels);
   };
 
-  const getTags = () => {
-    const tags: string[] = [];
-
-    directoryData.forEach((item) => {
-      const typedItem = item as BlogPostStoryblok;
-
-      const category = typedItem.content.category;
-
-      if (!tags.includes(category)) {
-        tags.push(category);
-      }
-    });
-
-    return tags;
-  };
-
   $: panels = [
     {
       type: 'category',
       title: 'Category',
-      tags: getTags(),
+      tags: $page.data.datasourceCategories,
       selectedTags: []
     }
   ] as Panel[];
@@ -165,91 +146,89 @@
     {areFiltersOpen}
   />
 
-  {#if directoryData}
-    <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}>
-      {#if areFiltersOpen}
-        <div
-          class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
-        >
-          <!-- Mobile Filters Header -->
-          <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
+  <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}>
+    {#if areFiltersOpen}
+      <div
+        class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
+      >
+        <!-- Mobile Filters Header -->
+        <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
 
-          <FilterPanel
-            {panels}
-            on:selectTag={(e) => toggleTag(e.detail.i, e.detail.j)}
-            on:clearFilters={() => clearFilters()}
-          />
+        <FilterPanel
+          {panels}
+          on:selectTag={(e) => toggleTag(e.detail.i, e.detail.j)}
+          on:clearFilters={() => clearFilters()}
+        />
 
-          <!-- Mobile Filters Footer -->
-          <MobileFiltersFooter
-            on:clearFiltersAndClose={() => {
-              clearFilters();
-              onToggleFiltersPanel();
-            }}
-            on:toggleFiltersPanel={onToggleFiltersPanel}
-          />
-        </div>
+        <!-- Mobile Filters Footer -->
+        <MobileFiltersFooter
+          on:clearFiltersAndClose={() => {
+            clearFilters();
+            onToggleFiltersPanel();
+          }}
+          on:toggleFiltersPanel={onToggleFiltersPanel}
+        />
+      </div>
+    {/if}
+
+    <!-- Content Cards -->
+    <div
+      class={cn(
+        'grid gap-8',
+        areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
+        !hasPagination && 'pb-12 lg:pb-20'
+      )}
+    >
+      <!-- Loading State -->
+      {#if $getDirectoryDataWithFilters.isLoading}
+        {#each Array(6) as _}
+          <ContentCard isLoading />
+        {/each}
       {/if}
 
-      <!-- Content Cards -->
-      <div
-        class={cn(
-          'grid gap-8',
-          areFiltersOpen ? 'lg:grid-cols-2' : 'lg:grid-cols-3',
-          !hasPagination && 'pb-12 lg:pb-20'
-        )}
-      >
-        <!-- Loading State -->
-        {#if $getDirectoryDataWithFilters.isLoading}
-          {#each Array(6) as _}
-            <ContentCard isLoading />
-          {/each}
-        {/if}
+      <!-- Empty State -->
+      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0}
+        <NoResultsBanner
+          searchValue={$search}
+          on:clearSearchValue={onClearSearchValue}
+          class="col-span-3"
+        />
+      {/if}
 
-        <!-- Empty State -->
-        {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length === 0 && $search !== ''}
-          <NoResultsBanner
-            searchValue={$search}
-            on:clearSearchValue={onClearSearchValue}
-            class="col-span-3"
+      <!-- Success fetch -->
+      {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+        {#each $getDirectoryDataWithFilters.data.stories as item}
+          {@const parsedItem = parseItem(item, 'blog-post')}
+          {@const { image, title, tags, link, customer, author, date } = parsedItem}
+          <ContentCard
+            {image}
+            {title}
+            {tags}
+            {link}
+            {customer}
+            {author}
+            {date}
+            badgeSize="medium"
           />
-        {/if}
-
-        <!-- Success fetch -->
-        {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
-          {#each $getDirectoryDataWithFilters.data.stories as item}
-            {@const parsedItem = parseItem(item, 'blog-post')}
-            {@const { image, title, tags, link, customer, author, date } = parsedItem}
-            <ContentCard
-              {image}
-              {title}
-              {tags}
-              {link}
-              {customer}
-              {author}
-              {date}
-              badgeSize="medium"
-            />
-          {/each}
-        {/if}
-      </div>
-
-      <!-- Pagination -->
-      {#if $getDirectoryDataWithFilters.isSuccess && hasPagination}
-        <div
-          class={cn(
-            'flex items-center justify-center py-10 lg:py-16',
-            areFiltersOpen && 'col-start-2'
-          )}
-        >
-          <Pagination
-            onPageChange={toggleNewPage}
-            totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
-            registersPerPage={RESULTS_PER_PAGE}
-            {currentPage}
-          />
-        </div>
+        {/each}
       {/if}
     </div>
-  {/if}
+
+    <!-- Pagination -->
+    {#if $getDirectoryDataWithFilters.isSuccess && hasPagination}
+      <div
+        class={cn(
+          'flex items-center justify-center py-10 lg:py-16',
+          areFiltersOpen && 'col-start-2'
+        )}
+      >
+        <Pagination
+          onPageChange={toggleNewPage}
+          totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
+          registersPerPage={RESULTS_PER_PAGE}
+          {currentPage}
+        />
+      </div>
+    {/if}
+  </div>
 {/if}
