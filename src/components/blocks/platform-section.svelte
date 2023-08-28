@@ -30,15 +30,9 @@
 
       <div>
         {#if block.title[0]}
-          {@const { label, title, description, links } = block.title[0]}
-          {@const labelInfo = getLabelInfo(label, 'orange')}
-          <Title
-            label={labelInfo}
-            {title}
-            {description}
-            buttons={links}
-            class="lg:pb-20 lg:pt-20"
-          />
+          {@const { title, description, links } = block.title[0]}
+          {@const label = getLabelInfo(block.title[0].label, 'orange')}
+          <Title {label} {title} {description} buttons={links} class="lg:pb-20 lg:pt-20" />
         {/if}
 
         {#if block.products}

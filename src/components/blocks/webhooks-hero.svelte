@@ -23,10 +23,10 @@
 
       <div class="isolate z-10 mt-[52px] lg:ml-[112px] lg:mt-0">
         {#if block.title && block.title[0]}
-          {@const { label, title, description, links } = block.title[0]}
-          {@const labelInfo = getLabelInfo(label, 'brand')}
+          {@const { title, description, links } = block.title[0]}
+          {@const label = getLabelInfo(block.title[0].label, 'brand')}
           <Title
-            label={labelInfo}
+            {label}
             {title}
             {description}
             buttons={links}

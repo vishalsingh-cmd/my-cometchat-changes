@@ -17,9 +17,9 @@
     >
       <Background />
       {#if block.title && block.title[0]}
-        {@const { label, title, description, links } = block.title[0]}
-        {@const labelInfo = getLabelInfo(label, 'orange')}
-        <Title class="pl-0 pr-0" label={labelInfo} {description} {title} buttons={links} />
+        {@const { title, description, links } = block.title[0]}
+        {@const label = getLabelInfo(block.title[0].label, 'orange')}
+        <Title class="pl-0 pr-0" {label} {description} {title} buttons={links} />
       {/if}
     </div>
     <div

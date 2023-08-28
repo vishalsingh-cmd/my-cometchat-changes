@@ -80,12 +80,12 @@
   >
     {#if block.title && block.title[0]}
       {@const title = block.title[0]}
-      {@const labelInfo = getLabelInfo(title.label, 'brand')}
+      {@const label = getLabelInfo(title.label, 'brand')}
       <div class="container mx-auto px-container">
         <Title
           class="max-w-[528px] pl-0 pr-0"
           alignment="left"
-          label={labelInfo}
+          {label}
           title={title.title}
           description={title.description}
         />

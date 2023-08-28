@@ -27,10 +27,10 @@
     >
       <div class="flex-1">
         {#if block.title[0]}
-          {@const { title, description, links, label } = block.title[0]}
-          {@const itemLabel = getLabelInfo(label, block.accent_colour || 'orange')}
+          {@const { title, description, links } = block.title[0]}
+          {@const label = getLabelInfo(block.title[0].label, block.accent_colour || 'orange')}
           <Title
-            label={itemLabel}
+            {label}
             {title}
             {description}
             buttons={links}

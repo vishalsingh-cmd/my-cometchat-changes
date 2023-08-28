@@ -17,8 +17,8 @@
   <section use:storyblokEditable={block} class="overflow-hidden">
     <div class="container relative mx-auto flex flex-col md:pt-[80px] lg:gap-[102px]">
       {#each block.items as item, i}
-        {@const { label, title, description, illustration } = item}
-        {@const labelInfo = getLabelInfo(label, i % 2 !== 0 ? 'brand' : 'orange')}
+        {@const { title, description, illustration } = item}
+        {@const label = getLabelInfo(item.label, i % 2 !== 0 ? 'brand' : 'orange')}
         <div
           class={cn(
             'relative mx-auto flex w-full flex-col gap-4 overflow-x-visible md:gap-[88px] lg:flex-row',
@@ -32,7 +32,7 @@
               i % 2 !== 0 ? 'lg:ml-0 lg:mr-20' : 'lg:ml-[120px]'
             )}
             alignment="left"
-            label={labelInfo}
+            {label}
             {title}
             {description}
           />

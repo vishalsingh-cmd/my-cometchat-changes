@@ -40,9 +40,9 @@
     />
     <div class="mx-auto max-w-content">
       {#if block.header && block.header.length > 0}
-        {@const { label, title, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label, 'brand')}
-        <Title alignment="center" class="pl-0 pr-0" label={labelInfo} {title} buttons={links} />
+        {@const { title, links } = block.header[0]}
+        {@const label = getLabelInfo(block.header[0].label, 'brand')}
+        <Title alignment="center" class="pl-0 pr-0" {label} {title} buttons={links} />
       {/if}
       <div
         class="relative grid grid-cols-2 gap-px before:absolute before:inset-0 before:h-full before:w-full before:bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] before:from-[#DCDCE0] before:to-[#FAFAFF00] before:to-80% md:grid-cols-4 md:grid-rows-[104px_88px_104px]"

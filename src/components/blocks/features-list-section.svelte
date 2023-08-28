@@ -26,8 +26,8 @@
     <div class="mx-auto max-w-content">
       {#if block.header && block.header[0]}
         {@const header = block.header[0]}
-        {@const labelInfo = getLabelInfo(header.label, 'brand')}
-        <Title label={labelInfo} title={header.title} />
+        {@const label = getLabelInfo(header.label, 'brand')}
+        <Title {label} title={header.title} />
       {/if}
       {#if block.items.length > 0}
         {@const parsedItems = block.items.map((item, i) => ({

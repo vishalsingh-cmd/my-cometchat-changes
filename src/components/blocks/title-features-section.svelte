@@ -13,15 +13,8 @@
   <section>
     {#if block.title && block.title[0]}
       {@const { title, description, links } = block.title[0]}
-      {@const labelInfo = getLabelInfo(block.title[0].label, 'brand')}
-      <Title
-        label={labelInfo}
-        {title}
-        {description}
-        buttons={links}
-        alignment="center"
-        size="small"
-      />
+      {@const label = getLabelInfo(block.title[0].label, 'brand')}
+      <Title {label} {title} {description} buttons={links} alignment="center" size="small" />
     {/if}
 
     {#if block.features && block.features.length > 0}
