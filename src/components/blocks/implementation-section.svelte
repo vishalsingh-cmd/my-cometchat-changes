@@ -20,9 +20,9 @@
   <section use:storyblokEditable={block} class="relative overflow-hidden">
     <div class="container mx-auto">
       {#if block.header[0]}
-        {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label, 'brand')}
-        <Title label={labelInfo} {title} {description} buttons={links} alignment="center" />
+        {@const { title, description, links } = block.header[0]}
+        {@const label = getLabelInfo(block.header[0].label, 'brand')}
+        <Title {label} {title} {description} buttons={links} alignment="center" />
       {/if}
     </div>
     <div

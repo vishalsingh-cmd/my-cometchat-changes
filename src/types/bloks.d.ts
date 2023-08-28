@@ -67,7 +67,7 @@ export interface BlogPostStoryblok {
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
-  related: RelatedStoriesSectionStoryblok[];
+  related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   seo?: SeoFieldsStoryblok[];
   _uid: string;

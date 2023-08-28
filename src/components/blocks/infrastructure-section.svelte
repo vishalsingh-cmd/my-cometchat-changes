@@ -47,16 +47,9 @@
       </div>
 
       {#if block.header && block.header[0]}
-        {@const { label, title, description, links } = block.header[0]}
-        {@const labelInfo = getLabelInfo(label, accentColour())}
-        <Title
-          label={labelInfo}
-          {title}
-          {description}
-          buttons={links}
-          size="large"
-          class="pb-5 lg:pb-8"
-        />
+        {@const { title, description, links } = block.header[0]}
+        {@const label = getLabelInfo(block.header[0].label, accentColour())}
+        <Title {label} {title} {description} buttons={links} size="large" class="pb-5 lg:pb-8" />
       {/if}
 
       {#if block.items && block.items.length > 0}

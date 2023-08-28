@@ -65,11 +65,11 @@
     data-theme="light"
   >
     {#if block.header && block.header.length > 0}
-      {@const { label, title, description, links } = block.header[0]}
-      {@const labelInfo = getLabelInfo(label, 'brand')}
+      {@const { title, description, links } = block.header[0]}
+      {@const label = getLabelInfo(block.header[0].label, 'brand')}
       {@const titleAlignment = block.title_alignment === 'center' ? 'center' : 'left'}
       <Title
-        label={labelInfo}
+        {label}
         {title}
         {description}
         buttons={links}

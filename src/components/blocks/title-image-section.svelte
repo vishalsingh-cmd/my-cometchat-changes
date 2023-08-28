@@ -1,6 +1,5 @@
 <script lang="ts">
   import type { TitleImageSectionStoryblok } from '$types/bloks';
-
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn, getLabelInfo } from '$lib/utils';
   import { string } from '$lib/strings';
@@ -28,10 +27,10 @@
     >
       <div class="flex-1">
         {#if block.title[0]}
-          {@const { title, description, links, label } = block.title[0]}
-          {@const itemLabel = getLabelInfo(label, block.accent_colour || 'orange')}
+          {@const { title, description, links } = block.title[0]}
+          {@const label = getLabelInfo(block.title[0].label, block.accent_colour || 'orange')}
           <Title
-            label={itemLabel}
+            {label}
             {title}
             {description}
             buttons={links}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { cn } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
 
   import type { HeaderAndListSectionStoryblok } from '$types/bloks';
 
@@ -18,16 +18,16 @@
   >
     <div class="container mx-auto px-container">
       {#if block.header && block.header[0]}
-        {@const header = block.header[0]}
-        {#if header.label}
+        {@const { title } = block.header[0]}
+        {@const label = getLabelInfo(
+          block.header[0].label,
+          block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
+        )}
+        {#if label}
           <Title
             alignment={block.title_alignment !== '' ? block.title_alignment : 'center'}
-            label={{
-              content: header.label,
-              color:
-                block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
-            }}
-            title={header.title}
+            {label}
+            {title}
             class="pl-0 lg:px-0"
           />
         {/if}
