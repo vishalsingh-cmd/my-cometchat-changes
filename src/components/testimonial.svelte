@@ -53,7 +53,15 @@
 
         {#if block.link}
           {@const { href, target, rel } = getAnchorFromCmsLink(block.link)}
-          <Button variant="secondary" size="sm" as="a" {rel} {target} {href}>
+          <Button
+            aria-label="Link to {block.name} testimonial"
+            variant="secondary"
+            size="sm"
+            as="a"
+            {rel}
+            {target}
+            {href}
+          >
             <Icon icon="arrow-narrow-right" size="xs" class="opacity-80" />
           </Button>
         {/if}
