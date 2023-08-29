@@ -19,6 +19,7 @@
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
   import ImplementationSectionV2 from './implementation-section-v2.svelte';
+  import ImplementationSectionV3 from './implementation-section-v3.svelte';
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
@@ -70,6 +71,7 @@
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
     'implementation-section-v2': ImplementationSectionV2,
+    'implementation-section-v3': ImplementationSectionV3,
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'infrastructure-section': InfrastructureSection,
