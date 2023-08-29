@@ -10,8 +10,6 @@
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
 
-  import Background from './assets/background.png';
-
   export let block: CustomerStoryStoryblok;
   export let industries: ISbStoryData<IndustryStoryblok>[];
 
@@ -25,18 +23,19 @@
 </script>
 
 <section
-  class={cn(
-    'h-[743px] overflow-hidden bg-gray-1 pt-[100px] text-gray-12 md:pb-20 md:pt-[148px]',
-    block.content.is_old_post && 'h-auto'
-  )}
+  class={cn('relative bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
-  {#if block.content.is_old_post}
-    <div class="container mx-auto flex flex-col gap-12 px-container">
+  {#if block.content.imported_from_old_site}
+    <div
+      class="container mx-auto flex flex-col gap-12 px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px]"
+    >
       <div class="flex flex-col gap-3 md:flex-row md:gap-16">
         <h1 class="flex-1 text-3xl font-semibold leading-tighter">{block.name}</h1>
-        <div class="flex flex-1 flex-col gap-4 text-xl leading-snug tracking-wide">
-          <p class="font-medium opacity-74">{block.content.quote}</p>
+        <div
+          class="flex flex-1 flex-col justify-between gap-4 text-xl leading-snug tracking-wide opacity-74"
+        >
+          <p class="font-medium">{block.content.quote}</p>
           <div class="flex items-center gap-3">
             {#if author}
               {@const { name } = author.content}
@@ -48,20 +47,35 @@
         </div>
       </div>
       {#if block.content.cover}
-        <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
+        <div
+          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
+        >
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
             media={block.content.cover}
-            class="h-full w-full object-cover"
+            class="h-full max-h-[580px] w-full object-cover"
           />
         </div>
       {/if}
     </div>
   {:else}
     <div
-      class="container relative isolate mx-auto grid h-full grid-cols-1 gap-8 px-container md:grid-cols-2"
+      class="container relative mx-auto grid h-full grid-cols-1 gap-8 overflow-hidden px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px] lg:grid-cols-2"
     >
-      <div class="flex flex-col justify-between">
+      <!-- Background Blur -->
+      <div
+        class={cn(
+          'h-[250px] w-[250px]',
+          'absolute origin-center transform rounded-1/2',
+          '-translate-x-1/2 translate-y-1/2',
+          'bottom-1/2 left-1/2',
+          'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-8/80 from-0% to-[rgba(20,30,202,0.00)]/0 to-100%',
+          'opacity-60',
+          'blur-[150px]'
+        )}
+      />
+
+      <div class="flex flex-col justify-between gap-8">
         <Title
           label={{ content: industry, color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
@@ -96,25 +110,24 @@
       </div>
       {#if block.content.cover}
         <div
-          class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
+          class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
             media={block.content.cover}
-            class="h-full w-full object-cover"
+            class="h-full max-h-[580px] w-full object-cover"
           />
         </div>
       {/if}
-      <img
-        src={Background}
-        alt=""
-        draggable="false"
-        class="pointer-events-none absolute right-1/2 top-0 -z-10 min-h-[584px] min-w-[852px] translate-x-1/2 select-none opacity-8 mix-blend-hard-light md:-top-1/3"
-      />
     </div>
   {/if}
+
+  <!-- Bottom Gradient -->
+  <div
+    class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+  />
 </section>
-{#if !block.content.is_old_post}
+{#if !block.content.imported_from_old_site}
   {#if block.content.metrics && block.content.metrics.length > 0}
     <Metrics block={block.content.metrics[0]} />
   {/if}

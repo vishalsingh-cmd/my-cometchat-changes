@@ -4,8 +4,14 @@ import { ISbResult, ISbStoryData, apiPlugin, storyblokInit } from '@storyblok/js
 
 dotenv.config();
 
+const PUBLIC_STORYBLOK_TOKEN = process.env.PUBLIC_STORYBLOK_TOKEN;
+
+if (!PUBLIC_STORYBLOK_TOKEN) {
+  throw new Error('Missing required env var: PUBLIC_STORYBLOK_TOKEN');
+}
+
 const { storyblokApi } = storyblokInit({
-  accessToken: process.env.PUBLIC_STORYBLOK_TOKEN,
+  accessToken: PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
     https: true

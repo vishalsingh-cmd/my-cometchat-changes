@@ -11,7 +11,7 @@
 {#if block}
   <div
     use:storyblokEditable={block}
-    class="flex flex-col gap-3 pb-3 pt-5 md:flex-row md:justify-between md:gap-10 md:pb-4 md:pt-8"
+    class="flex flex-col gap-3 py-4 md:flex-row md:justify-between md:gap-10"
   >
     {#if block.metrics}
       {#each block.metrics as metric}

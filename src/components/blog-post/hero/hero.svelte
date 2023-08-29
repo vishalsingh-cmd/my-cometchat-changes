@@ -1,15 +1,15 @@
 <script lang="ts">
-  import type { AuthorStoryblok, TutorialStoryblok } from '$types/bloks';
+  import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
   import { formatDateUSMedium } from '$lib/utils/dates';
 
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
-  export let block: TutorialStoryblok;
+
+  export let block: BlogPostStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
-  const tags = block.content.technology && block.content.technology.join(', ');
 </script>
 
 <section
@@ -42,11 +42,7 @@
       </div>
       {#if block.content.cover}
         <div class="h-full max-h-[656px] overflow-hidden rounded-3xl">
-          <Media
-            imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
-            class="h-full max-h-[656px] w-full object-cover"
-          />
+          <Media media={block.content.cover} class="h-full max-h-[656px] w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -69,8 +65,11 @@
 
       <div class="z-10 flex flex-col justify-between gap-8">
         <Title
-          label={block.content.technology && { content: tags, color: 'brand' }}
-          class="pl-0 pr-0 pt-0 lg:p-0"
+          label={{
+            content: block.content.category,
+            color: 'brand'
+          }}
+          class="pb-0 pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
         />
         <div
@@ -95,11 +94,7 @@
         <div
           class="border-px z-10 h-full max-h-[580px] min-h-[297px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
-          <Media
-            imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
-            class="h-full w-full object-cover"
-          />
+          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
       {/if}
     </div>

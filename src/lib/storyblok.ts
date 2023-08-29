@@ -10,9 +10,15 @@ import {
 import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 import { onMount } from 'svelte';
 
+const PUBLIC_STORYBLOK_TOKEN = env.PUBLIC_STORYBLOK_TOKEN;
+
+if (!PUBLIC_STORYBLOK_TOKEN) {
+  throw new Error('Missing required env var: PUBLIC_STORYBLOK_TOKEN');
+}
+
 /** Storyblok API */
 const { storyblokApi } = storyblokInit({
-  accessToken: env.PUBLIC_STORYBLOK_TOKEN,
+  accessToken: PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
   apiOptions: {
     https: true
@@ -25,7 +31,7 @@ export const storyblok = storyblokApi as NonNullable<
 export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
   const { storyblokApi } = storyblokInit({
-    accessToken: env.PUBLIC_STORYBLOK_TOKEN,
+    accessToken: PUBLIC_STORYBLOK_TOKEN,
     use: [apiPlugin],
     apiOptions: {
       https: true,
