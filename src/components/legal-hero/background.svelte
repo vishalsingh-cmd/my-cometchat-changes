@@ -11,22 +11,29 @@
 
   import Stars from '$components/stars.svelte';
 
-  const blur = cva(['absolute', 'origin-center', 'rounded-1/2', '-rotate-[20deg]', 'blur-[58px]']);
+  const blur = cva([
+    'absolute',
+    'origin-center',
+    'rounded-1/2',
+    '-rotate-[20deg]',
+    'blur-[58px]',
+    'pointer-events-none'
+  ]);
 </script>
 
-<div class="absolute -top-[68px] left-[25px] h-[803px] w-[1389px]">
+<div class="pointer-events-none absolute -top-[68px] left-[25px] h-[803px] w-[1389px]">
   <Stars backgroundColours={['bg-brand-7', 'bg-brand-9', 'bg-orange-8']} />
 </div>
 
 <div
-  class="absolute -bottom-[600px] -right-[600px] h-[803px] w-[1386px] origin-center rotate-[30deg]"
+  class="pointer-events-none absolute -bottom-[600px] -right-[600px] h-[803px] w-[1386px] origin-center rotate-[30deg]"
 >
   <Stars backgroundColours={['bg-brand-1']} />
 </div>
 
 <!-- Noise -->
-<div class="absolute top-0 h-[452px] w-[1440px]">
-  <img src={Noise} alt="" />
+<div class="pointer-events-none absolute top-0 h-[452px] w-[1440px]">
+  <img role="presentation" src={Noise} alt="" />
 </div>
 
 <!-- Blurs -->
@@ -46,20 +53,22 @@
 <div class={cn(blur(), 'blur2 -left-10 top-20 h-[262.16px] w-[1372.26px] -rotate-[10deg]')} />
 
 <!-- Planets | Desktop -->
-<div class="absolute -left-80 -top-10 hidden h-[676.72px] w-[876.72px] md:block">
-  <img src={LeftSidePlanets} alt="" />
+<div
+  class="pointer-events-none absolute -left-80 -top-10 hidden h-[676.72px] w-[876.72px] md:block"
+>
+  <img role="presentation" src={LeftSidePlanets} alt="" />
 </div>
 
-<div class="absolute -right-10 top-0 hidden h-[487px] w-[519px] md:block">
-  <img src={RightSidePlanets} alt="" />
+<div class="pointer-events-none absolute -right-10 top-0 hidden h-[487px] w-[519px] md:block">
+  <img role="presentation" src={RightSidePlanets} alt="" />
 </div>
 
 <!-- Planets | Mobile -->
-<div class="absolute -left-60 top-0 h-[889.15px] w-[789.15px] md:hidden">
-  <img src={LeftSidePlanetsMobile} alt="" />
+<div class="pointer-events-none absolute -left-60 top-0 h-[889.15px] w-[789.15px] md:hidden">
+  <img role="presentation" src={LeftSidePlanetsMobile} alt="" />
 </div>
 <div class="absolute -right-40 -top-10 h-[320px] w-[320px] md:hidden">
-  <img src={RightSidePlanetsMobile} alt="" class="h-full w-full" />
+  <img role="presentation" src={RightSidePlanetsMobile} alt="" class="h-full w-full" />
 </div>
 
 <style>

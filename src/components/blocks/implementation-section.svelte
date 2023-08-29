@@ -59,16 +59,18 @@
               />
 
               {#if block.items.length === 4 && i === 0}
-                <div class="w-[1000px] -translate-x-72 translate-y-10 transform bg-gray-1">
-                  <img src={Illustration2} alt="" />
+                <div
+                  class="pointer-events-none w-[1000px] -translate-x-72 translate-y-10 transform bg-gray-1"
+                >
+                  <img role="presentation" src={Illustration2} alt="" />
                 </div>
               {/if}
 
               {#if block.items.length === 3 && i === 1}
                 <div
-                  class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] lg:h-[338px] lg:w-[1739px] xl:right-0"
+                  class="pointer-events-none absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] lg:h-[338px] lg:w-[1739px] xl:right-0"
                 >
-                  <img src={Illustration1} alt="" />
+                  <img role="presentation" src={Illustration1} alt="" />
                 </div>
               {/if}
             </div>
