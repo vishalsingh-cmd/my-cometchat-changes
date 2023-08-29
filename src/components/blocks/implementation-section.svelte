@@ -68,7 +68,7 @@
 
               {#if block.items.length === 3 && i === 1}
                 <div
-                  class="pointer-events-none absolute -bottom-[100px] right-[200px] scale-150 transform"
+                  class="pointer-events-none absolute -bottom-[50px] right-[400px] w-full scale-[4] transform md:-bottom-[100px] md:right-[100px] md:scale-150 lg:right-[200px] lg:w-auto"
                 >
                   <img role="presentation" src={Illustration1} alt="" />
                 </div>
