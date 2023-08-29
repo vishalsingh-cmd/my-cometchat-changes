@@ -45,7 +45,7 @@
       <div
         class={cn(
           'isolate z-10 w-full max-w-[528px]',
-          block.header_alignment === 'left' && 'md:pl-[112px]'
+          block.header_alignment === 'left' && 'md:max-w-[640px] md:pl-[112px]'
         )}
       >
         {#if block.has_coming_soon_tag}
@@ -76,7 +76,7 @@
           class={cn(
             'absolute isolate z-10 w-full',
             block.header_alignment === 'left' &&
-              '-bottom-[90px] -left-[200px] w-[600px] max-w-[1300px] md:-bottom-[200px] md:-left-[400px] md:w-[1500px] lg:-left-[200px] lg:w-full',
+              '-bottom-[90px] -left-[200px] w-[600px] max-w-[1300px] md:-left-[400px] md:bottom-[0px] md:w-[1500px] lg:-left-[200px] lg:w-full',
             block.header_alignment === 'center' &&
               'bottom-5 w-[300px] max-w-[1100px] md:-bottom-5 md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
