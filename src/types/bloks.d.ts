@@ -282,6 +282,14 @@ export interface FaqSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FeatureStoryblok {
+  title: string;
+  feature_list: FeatureItemStoryblok[];
+  _uid: string;
+  component: 'feature';
+  [k: string]: any;
+}
+
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
@@ -292,6 +300,24 @@ export interface FeaturedStorySectionStoryblok {
   button_label: string;
   _uid: string;
   component: 'featured-story-section';
+  [k: string]: any;
+}
+
+export interface FeatureItemStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  items_right_of_image: ListItemStoryblok[];
+  items?: ListItemStoryblok[];
+  _uid: string;
+  component: 'feature-item';
+  [k: string]: any;
+}
+
+export interface FeaturesAtGlanceSectionStoryblok {
+  title: string;
+  features: FeatureStoryblok[];
+  _uid: string;
+  component: 'features-at-glance-section';
   [k: string]: any;
 }
 
@@ -498,6 +524,17 @@ export interface ImplementationSectionV2Storyblok {
   [k: string]: any;
 }
 
+export interface ImplementationSectionV3Storyblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour: '' | 'brand' | 'orange';
+  header: TitleStoryblok[];
+  items: PanelItemStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'implementation-section-v3';
+  [k: string]: any;
+}
+
 export interface InDepthAnalyticsSectionStoryblok {
   header: TitleStoryblok[];
   _uid: string;
@@ -521,6 +558,7 @@ export interface IndustryStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -528,6 +566,7 @@ export interface IndustryStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -684,6 +723,7 @@ export interface PageStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -691,6 +731,7 @@ export interface PageStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -911,6 +952,7 @@ export interface SyncedBlockContentStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -918,6 +960,7 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok
@@ -993,6 +1036,7 @@ export interface TechnologyStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -1000,6 +1044,7 @@ export interface TechnologyStoryblok {
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
     | LegalHeroStoryblok

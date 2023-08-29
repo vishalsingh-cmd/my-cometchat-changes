@@ -6,7 +6,9 @@
 
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
 
+  export let accentColour: 'brand' | 'orange' = 'orange';
   export let block: ListSectionStoryblok;
+  console.log(block);
 </script>
 
 {#if block}
@@ -24,7 +26,7 @@
     >
       {#if block.items.length > 0}
         {#each block.items as item}
-          <ListSectionItem block={item} accentColour="orange" class="max-w-[395px]" />
+          <ListSectionItem block={item} {accentColour} class="max-w-[395px]" />
         {/each}
       {/if}
     </div>
