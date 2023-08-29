@@ -58,7 +58,7 @@
           class={cn('flex w-full items-center justify-center gap-8 md:gap-14')}
         >
           {#each arrayOfLogosToShow as logo}
-            <Icon icon={logo} size="lg" class="flex-shrink-0 opacity-54" />
+            <Icon icon={logo} size="free" class="h-full flex-shrink-0 opacity-54" />
           {/each}
         </div>
       {/if}
