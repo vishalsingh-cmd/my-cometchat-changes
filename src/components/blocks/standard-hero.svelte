@@ -81,7 +81,7 @@
               'bottom-5 w-[300px] max-w-[1100px] md:-bottom-5 md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
         >
-          <Media media={block.image} />
+          <Media imageTransformOptions={{ size: [1900, 0] }} media={block.image} />
         </div>
       {/if}
 

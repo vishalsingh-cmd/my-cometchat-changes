@@ -115,7 +115,10 @@
           Learn more
         </GhostButton>
         <div class="mt-10 flex w-full max-w-[1440px] justify-center">
-          <Media media={selectedIndustry.content.cover_image} />
+          <Media
+            imageTransformOptions={{ size: [900, 0] }}
+            media={selectedIndustry.content.cover_image}
+          />
         </div>
       {/if}
       <div
@@ -184,12 +187,16 @@
             {/each}
           {/if}
         </div>
-        {#if industries[selectedIndustryIndex]}
+        {#each industries as _, i}
           <Media
-            media={industries[selectedIndustryIndex].content.cover_image}
-            class="mx-auto mt-16 max-h-[500px] w-auto"
+            imageTransformOptions={{ size: [1800, 0] }}
+            media={industries[i].content.cover_image}
+            class={cn(
+              'mx-auto mt-16 hidden max-h-[500px] w-auto',
+              selectedIndustryIndex === i && 'block'
+            )}
           />
-        {/if}
+        {/each}
       {/if}
       <div
         class="absolute bottom-0 left-0 right-0 h-[160px] bg-gradient-to-t from-gray-1 to-gray-1/0"

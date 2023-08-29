@@ -23,7 +23,7 @@
         class="flex w-full items-center justify-center border-b border-gray-12/8 bg-gray-12/[0.02] xl:max-w-[700px]"
       >
         {#if block.image}
-          <Media media={block.image} />
+          <Media media={block.image} imageTransformOptions={{ size: [1000, 0] }} />
         {/if}
       </div>
       <div

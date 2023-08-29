@@ -124,7 +124,11 @@
               >
                 <div class="flex items-center gap-3">
                   {#if author.content.avatar}
-                    <Media media={author.content.avatar} class="h-10 w-10 rounded-full" />
+                    <Media
+                      imageTransformOptions={{ size: [100, 100] }}
+                      media={author.content.avatar}
+                      class="h-10 w-10 rounded-full"
+                    />
                   {/if}
                   <div
                     class="flex flex-col gap-[2px] text-md font-semibold leading-tight tracking-wide text-gray-12"

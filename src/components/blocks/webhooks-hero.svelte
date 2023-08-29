@@ -37,7 +37,7 @@
       </div>
       {#if block.illustration}
         <div class="isolate z-10 md:absolute md:-right-40 md:top-[30px] md:w-[1000px]">
-          <Media media={block.illustration} />
+          <Media imageTransformOptions={{ size: [1600, 0] }} media={block.illustration} />
         </div>
       {/if}
     </div>

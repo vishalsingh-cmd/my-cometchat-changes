@@ -4788,7 +4788,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-28T09:24:23.164Z",
+      "updated_at": "2023-08-28T13:35:23.271Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -4900,7 +4900,9 @@
               "value": "swift",
               "name": "Swift"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "technologies"
         },
         "tutorial_type": {
           "type": "option",
@@ -4919,7 +4921,9 @@
               "name": "Text"
             }
           ],
-          "key": "tutorial_type"
+          "key": "tutorial_type",
+          "source": "internal",
+          "datasource_slug": "tutorial-types"
         },
         "integration_tool": {
           "type": "option",
@@ -4944,7 +4948,9 @@
             }
           ],
           "default_value": "",
-          "key": "integration_tool"
+          "key": "integration_tool",
+          "source": "internal",
+          "datasource_slug": "integration-tools"
         },
         "imported_from_old_site": {
           "type": "boolean",

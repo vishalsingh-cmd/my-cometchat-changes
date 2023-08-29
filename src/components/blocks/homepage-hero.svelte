@@ -104,6 +104,7 @@
       </div>
       {#if block.illustration}
         <Media
+          imageTransformOptions={{ size: [1200, 0] }}
           media={block.illustration}
           class="isolate z-10 w-full min-w-[454px] max-w-[796px] -translate-x-[10%] translate-y-[50px] sm:mx-auto sm:-translate-x-0 md:translate-y-0"
         />

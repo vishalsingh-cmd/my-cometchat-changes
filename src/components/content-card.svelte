@@ -26,12 +26,17 @@
     {#if image}
       {#if customer}
         <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
-          <Media media={customer.logo} class="h-3.5 w-full" />
+          <Media
+            imageTransformOptions={{ size: [0, 200] }}
+            media={customer.logo}
+            class="h-3.5 w-full"
+          />
         </div>
       {/if}
       <Media
+        imageTransformOptions={{ size: [0, 800] }}
         media={image}
-        class="mb-4 aspect-video max-h-[202px] rounded-2xl object-cover md:mb-5 md:max-h-[280px]"
+        class="mb-4 aspect-video h-full max-h-[202px] w-full rounded-2xl object-cover md:mb-5 md:max-h-[280px]"
       />
     {/if}
     {#if title}

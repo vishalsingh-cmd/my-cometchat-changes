@@ -39,7 +39,11 @@
         </div>
       {/if}
       {#if contentItem.illustration}
-        <Media media={contentItem.illustration} class="w-full max-w-[480px]" />
+        <Media
+          media={contentItem.illustration}
+          imageTransformOptions={{ size: [700, 0] }}
+          class="w-full max-w-[480px]"
+        />
       {/if}
     {/each}
   {/if}

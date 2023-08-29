@@ -25,6 +25,7 @@
   >
     {#if block.avatar}
       <Media
+        imageTransformOptions={{ size: [200, 0] }}
         media={block.avatar}
         class={cn('h-8 w-8 rounded-full md:h-12 md:w-12', flipHorizontal && 'self-end')}
       />
