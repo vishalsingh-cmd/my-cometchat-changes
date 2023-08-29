@@ -282,6 +282,14 @@ export interface FaqSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FeatureStoryblok {
+  title: string;
+  feature_list: FeatureItemStoryblok[];
+  _uid: string;
+  component: 'feature';
+  [k: string]: any;
+}
+
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
@@ -292,6 +300,24 @@ export interface FeaturedStorySectionStoryblok {
   button_label: string;
   _uid: string;
   component: 'featured-story-section';
+  [k: string]: any;
+}
+
+export interface FeatureItemStoryblok {
+  title: string;
+  image: AssetStoryblok;
+  items_right_of_image: ListItemStoryblok[];
+  items?: ListItemStoryblok[];
+  _uid: string;
+  component: 'feature-item';
+  [k: string]: any;
+}
+
+export interface FeaturesAtGlanceSectionStoryblok {
+  title: string;
+  features: FeatureStoryblok[];
+  _uid: string;
+  component: 'features-at-glance-section';
   [k: string]: any;
 }
 
@@ -532,6 +558,7 @@ export interface IndustryStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -696,6 +723,7 @@ export interface PageStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -924,6 +952,7 @@ export interface SyncedBlockContentStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -1007,6 +1036,7 @@ export interface TechnologyStoryblok {
     | DoublePanelSectionStoryblok
     | FaqSectionStoryblok
     | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
@@ -1306,5 +1336,12 @@ export interface WebhooksSectionStoryblok {
   title: TitleStoryblok[];
   _uid: string;
   component: 'webhooks-section';
+  [k: string]: any;
+}
+
+export interface YoutubeVideoStoryblok {
+  video_url: string;
+  _uid: string;
+  component: 'youtube-video';
   [k: string]: any;
 }
