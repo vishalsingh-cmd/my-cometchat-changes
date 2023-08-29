@@ -16,7 +16,10 @@
   export let activeTab = 0;
 </script>
 
-<div class={cn('flex w-full flex-row overflow-x-scroll break-all', className)} role="tablist">
+<div
+  class={cn('flex w-full flex-row gap-4 overflow-x-scroll break-all md:gap-6', className)}
+  role="tablist"
+>
   {#each options as tab}
     <TabItem
       id={tab.id}
