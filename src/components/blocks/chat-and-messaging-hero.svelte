@@ -36,6 +36,7 @@
       />
       {#if block.illustration}
         <Media
+          imageTransformOptions={{ size: [1500, 0] }}
           media={block.illustration}
           class="pointer-events-none absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[300px] md:max-w-[1500px]"
         />

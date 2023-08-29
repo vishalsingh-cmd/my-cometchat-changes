@@ -76,7 +76,11 @@
             block.image_side === 'center' && 'lg:relative lg:aspect-auto lg:w-[1440px]'
           )}
         >
-          <Media media={block.image} class="object-cover" />
+          <Media
+            imageTransformOptions={{ size: [1200, 0] }}
+            media={block.image}
+            class="object-cover"
+          />
         </div>
       {/if}
     </div>

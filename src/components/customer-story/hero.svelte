@@ -50,7 +50,11 @@
         <div
           class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
-          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
+          <Media
+            imageTransformOptions={{ size: [1600, 0] }}
+            media={block.content.cover}
+            class="h-full max-h-[580px] w-full object-cover"
+          />
         </div>
       {/if}
     </div>
@@ -108,7 +112,11 @@
         <div
           class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
-          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
+          <Media
+            imageTransformOptions={{ size: [1600, 0] }}
+            media={block.content.cover}
+            class="h-full max-h-[580px] w-full object-cover"
+          />
         </div>
       {/if}
     </div>

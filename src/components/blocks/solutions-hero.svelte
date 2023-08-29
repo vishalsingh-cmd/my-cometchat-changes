@@ -59,6 +59,7 @@
       </div>
       {#if block.illustration}
         <Media
+          imageTransformOptions={{ size: [1000, 0] }}
           media={block.illustration}
           class="bottom-0 w-full max-w-[784px] translate-x-4 transform self-end md:translate-x-16"
         />

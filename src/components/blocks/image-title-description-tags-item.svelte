@@ -38,7 +38,11 @@
     }}
   >
     {#if block.image}
-      <Media media={block.image} class="mb-12 w-full max-w-[436px]" />
+      <Media
+        imageTransformOptions={{ size: [800, 0] }}
+        media={block.image}
+        class="mb-12 w-full max-w-[436px]"
+      />
     {/if}
     {#if block.title}
       <p class="font-semibold leading-tight">{block.title}</p>
