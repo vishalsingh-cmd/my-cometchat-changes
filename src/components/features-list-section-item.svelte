@@ -12,7 +12,7 @@
   export let item: FeaturesListSubItemStoryblok;
 </script>
 
-<div class={cn(i === 0 && 'flex h-full flex-col justify-between')}>
+<div class={cn('flex h-full flex-col')}>
   <h4
     class={cn(
       ' pb-6 pl-container pt-10 text-xl font-semibold leading-tighter',
@@ -39,11 +39,13 @@
         </div>
       {/if}
       {#if contentItem.illustration}
-        <Media
-          media={contentItem.illustration}
-          imageTransformOptions={{ size: [700, 0] }}
-          class="w-full max-w-[480px]"
-        />
+        <div class="flex h-full flex-col justify-end">
+          <Media
+            media={contentItem.illustration}
+            imageTransformOptions={{ size: [700, 0] }}
+            class=" w-full max-w-[480px]"
+          />
+        </div>
       {/if}
     {/each}
   {/if}
