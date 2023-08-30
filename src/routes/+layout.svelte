@@ -5,8 +5,18 @@
   import '../app.css';
   import Topnav from '$components/topnav/topnav.svelte';
   import Footer from '$components/footer.svelte';
+  import scrollDirection from '$lib/stores/scroll-direction';
 
   export let data;
+
+  let scrollY = 0;
+  let scrollYPrev = 0;
+  $: {
+    if (Math.abs(scrollY - scrollYPrev) > 20) {
+      scrollDirection.set(scrollY > scrollYPrev ? 'down' : 'up');
+    }
+    scrollYPrev = scrollY;
+  }
 
   const queryClient = new QueryClient({
     defaultOptions: {
@@ -17,6 +27,8 @@
     }
   });
 </script>
+
+<svelte:window bind:scrollY />
 
 <QueryClientProvider client={queryClient}>
   <Topnav data={data.topnav.content} />

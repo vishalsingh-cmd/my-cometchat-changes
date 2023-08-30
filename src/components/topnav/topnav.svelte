@@ -9,6 +9,7 @@
   import { clickOutside } from '$lib/actions/click-outside';
   import { cn, scrollLock } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import scrollDirection from '$lib/stores/scroll-direction';
   import { createMediaStore } from '$lib/stores/media';
   import { string } from '$lib/strings';
 
@@ -32,14 +33,6 @@
   $: isSolid = activeIndex > -1 || scrollY > 0 || expanded;
 
   let scrollY = 0;
-  let scrollYPrev = 0;
-  let scrollDirection: 'down' | 'up' = 'down';
-  $: {
-    if (Math.abs(scrollY - scrollYPrev) > 20) {
-      scrollDirection = scrollY > scrollYPrev ? 'down' : 'up';
-    }
-    scrollYPrev = scrollY;
-  }
   $: scrollLock(expanded || activeIndex > -1);
 
   beforeNavigate(() => {
@@ -75,8 +68,8 @@
   class={cn(
     'fixed left-0 top-0 z-30 w-full text-brand-12 transition-transform duration-300 ease-motion',
     {
-      'translate-y-0': scrollDirection === 'up',
-      '-translate-y-16': scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
+      'translate-y-0': $scrollDirection === 'up',
+      '-translate-y-16': $scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
     }
   )}
 >
