@@ -307,7 +307,7 @@ export interface FeatureItemStoryblok {
   title: string;
   image: AssetStoryblok;
   items_right_of_image: ListItemStoryblok[];
-  items?: ListItemStoryblok[];
+  items?: ListSectionStoryblok[];
   _uid: string;
   component: 'feature-item';
   [k: string]: any;
@@ -1336,5 +1336,12 @@ export interface WebhooksSectionStoryblok {
   title: TitleStoryblok[];
   _uid: string;
   component: 'webhooks-section';
+  [k: string]: any;
+}
+
+export interface YoutubeVideoStoryblok {
+  video_url: string;
+  _uid: string;
+  component: 'youtube-video';
   [k: string]: any;
 }

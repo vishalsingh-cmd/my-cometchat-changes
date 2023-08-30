@@ -43,38 +43,42 @@
       />
 
       <div class="border-t border-gray-12/8">
+        <div
+          class="container mx-auto mt-4 flex w-full flex-row gap-3 overflow-x-scroll break-all px-container md:mt-6"
+        >
+          {#each block.features[activeTab].feature_list as feature, i}
+            <button
+              on:click={() => {
+                activeButtonsTab = i;
+              }}
+              id="{i}-buttontabhead"
+              type="button"
+              role="tab"
+              class={cn(
+                'px-2.5 md:px-5',
+                'py-1.5 md:py-3',
+                'bg-gray-12/[0.06] hover:bg-brand-10/[0.12]',
+                'text-lg/tight text-gray-12/64 hover:text-brand-10',
+                'rounded-[10px] md:rounded-[14px]',
+                'transition-colors',
+                'font-semibold',
+                'min-w-fit',
+                'cursor-pointer',
+                'break-keep',
+                activeButtonsTab === i && 'bg-brand-10/[0.12] text-brand-10'
+              )}
+            >
+              {feature.title}
+            </button>
+          {/each}
+        </div>
         <div class="container mx-auto px-container">
-          <div class="mt-9 flex w-full flex-row gap-3 overflow-x-scroll break-all">
-            {#each block.features[activeTab].feature_list as feature, i}
-              <button
-                on:click={() => {
-                  activeButtonsTab = i;
-                }}
-                id="{i}-tabhead"
-                type="button"
-                role="tab"
-                class={cn(
-                  'px-2.5 md:px-5',
-                  'py-1.5 md:py-3',
-                  'bg-gray-12/[0.06] hover:bg-brand-10/[0.12]',
-                  'text-lg/tight text-gray-12/64 hover:text-brand-10',
-                  'rounded-[10px] md:rounded-[14px]',
-                  'transition-colors',
-                  'font-semibold',
-                  'min-w-fit',
-                  'cursor-pointer',
-                  'break-keep',
-                  activeButtonsTab === i && 'bg-brand-10/[0.12] text-brand-10'
-                )}
-              >
-                {feature.title}
-              </button>
-            {/each}
-          </div>
           {#if block.features[activeTab].feature_list[activeButtonsTab]}
-            {@const { image, items_right_of_image, items } =
+            {@const { image, items_right_of_image } =
               block.features[activeTab].feature_list[activeButtonsTab]}
-            <div class="mt-8 grid grid-cols-1 gap-[54px] pb-12 lg:mt-12 lg:grid-cols-[2fr,1fr]">
+            <div
+              class="mt-8 grid grid-cols-1 gap-12 pb-8 md:pb-12 lg:mt-12 lg:grid-cols-[2fr,1fr] lg:gap-[54px]"
+            >
               <div
                 class="order-2 flex max-w-[864px] items-center justify-center rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1"
               >
@@ -91,7 +95,7 @@
 
               {#if items_right_of_image}
                 <div
-                  class="order-1 flex flex-col gap-10 md:grid md:grid-cols-2 lg:order-2 lg:grid-cols-1 lg:flex-col xl:flex"
+                  class="order-1 flex flex-col gap-12 md:grid md:grid-cols-2 md:gap-10 lg:order-2 lg:grid-cols-1 lg:flex-col xl:flex"
                 >
                   {#each items_right_of_image as item}
                     <ListSectionItem accentColour="brand" block={item} />
@@ -99,16 +103,15 @@
                 </div>
               {/if}
             </div>
-
-            {#if items}
-              <ListSection
-                accentColour="brand"
-                block={{ _uid: '', items: items, component: 'list-section' }}
-              />
-            {/if}
-            <div />
           {/if}
         </div>
+
+        {#if block.features[activeTab].feature_list[activeButtonsTab]}
+          {@const { items } = block.features[activeTab].feature_list[activeButtonsTab]}
+          {#if items && items[0]}
+            <ListSection accentColour="brand" block={items[0]} />
+          {/if}
+        {/if}
       </div>
     {/if}
   </section>
