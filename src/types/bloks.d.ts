@@ -294,8 +294,8 @@ export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
     | StoryblokStory<BlogPostStoryblok>
-    | StoryblokStory<CustomerStoryStoryblok>
     | StoryblokStory<TutorialStoryblok>
+    | StoryblokStory<CustomerStoryStoryblok>
     | string;
   button_label: string;
   _uid: string;
@@ -307,7 +307,7 @@ export interface FeatureItemStoryblok {
   title: string;
   image: AssetStoryblok;
   items_right_of_image: ListItemStoryblok[];
-  items?: ListItemStoryblok[];
+  items?: ListSectionStoryblok[];
   _uid: string;
   component: 'feature-item';
   [k: string]: any;
@@ -543,6 +543,7 @@ export interface InDepthAnalyticsSectionStoryblok {
 }
 
 export interface IndustryStoryblok {
+  redirect_url?: MultilinkStoryblok;
   cover_image: AssetStoryblok;
   illustration: number | string;
   short_name: string;
@@ -916,6 +917,7 @@ export interface SolutionsSectionStoryblok {
   title: TitleStoryblok[];
   industries: (StoryblokStory<IndustryStoryblok> | string)[];
   solution_cta_label: string;
+  redirects_to_old_website?: boolean;
   _uid: string;
   component: 'solutions-section';
   [k: string]: any;

@@ -123,6 +123,7 @@
       {#each colours as colour, i}
         {@const isActive = selectedColourIndex === i}
         <button
+          aria-label="Change colour to {colour}"
           on:focus
           class={cn(button({ colour, isActive }))}
           on:click={() => changeSelectedColour(i)}
