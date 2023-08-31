@@ -10,8 +10,8 @@
 
   export let block: ImplementationSectionV3Storyblok;
 
-  const leftItems = block.items.slice(0, block.items.length - 1);
-  const rightItems = block.items.slice(block.items.length - 1);
+  const leftItems = block.items.slice(0, 1);
+  const rightItems = block.items.slice(1, block.items.length);
 </script>
 
 {#if block}
@@ -36,7 +36,7 @@
         </div>
         <div class="flex flex-1 flex-col overflow-x-visible">
           {#if rightItems.length > 0}
-            {#each leftItems as item, i}
+            {#each rightItems as item, i}
               <Panel
                 {item}
                 class={cn(
