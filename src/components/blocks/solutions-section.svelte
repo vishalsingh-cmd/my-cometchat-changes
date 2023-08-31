@@ -20,7 +20,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { getAnchorFromCmsLink, sanitizeSlug } from '$lib/storyblok';
   import { cn, getLabelInfo } from '$lib/utils';
 
   export let block: SolutionsSectionStoryblok;
@@ -106,12 +106,24 @@
 
       {#if industries[selectedIndustryIndex]}
         {@const selectedIndustry = industries[selectedIndustryIndex]}
+        {@const redirectLink = selectedIndustry.content.redirect_url
+          ? selectedIndustry.content.redirect_url.url
+          : null}
         <p
           class="mb-3 mt-5 max-w-[350px] text-center text-lg font-medium leading-snug tracking-wide"
         >
           {selectedIndustry.content.description}
         </p>
-        <GhostButton as="a" variant="highlighted" href={sanitizeSlug(selectedIndustry.full_slug)}>
+        <GhostButton
+          as="a"
+          variant="highlighted"
+          href={block.redirects_to_old_website === true &&
+          selectedIndustry.content.redirect_url &&
+          selectedIndustry.content.redirect_url.url !== ''
+            ? redirectLink
+            : sanitizeSlug(selectedIndustry.full_slug)}
+          target={block.redirects_to_old_website === true && redirectLink ? '_blank' : null}
+        >
           Learn more
         </GhostButton>
         <div class="mt-10 flex w-full max-w-[1440px] justify-center">
@@ -162,6 +174,9 @@
                   />
                 </button>
                 {#if selectedIndustryIndex === i}
+                  {@const redirectLink = industry.content.redirect_url
+                    ? industry.content.redirect_url.url
+                    : null}
                   <div
                     class={cn(
                       'absolute mt-4 flex w-[348px] flex-col items-start justify-end border-solid border-gray-12/10',
@@ -177,7 +192,12 @@
                     <GhostButton
                       as="a"
                       variant="highlighted"
-                      href={sanitizeSlug(industry.full_slug)}
+                      href={block.redirects_to_old_website === true && redirectLink
+                        ? sanitizeSlug(redirectLink)
+                        : sanitizeSlug(industry.full_slug)}
+                      target={block.redirects_to_old_website === true && redirectLink
+                        ? '_blank'
+                        : null}
                     >
                       {block.solution_cta_label}
                     </GhostButton>
