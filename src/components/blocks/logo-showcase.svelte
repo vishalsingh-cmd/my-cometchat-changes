@@ -55,7 +55,7 @@
       {#if logos}
         <div
           bind:this={containerRef}
-          class={cn('flex w-full items-center justify-center gap-8 md:gap-14')}
+          class={cn('flex h-8 w-full items-center justify-center gap-8 md:gap-14')}
         >
           {#each arrayOfLogosToShow as logo}
             <Icon icon={logo} size="free" class="h-full flex-shrink-0 opacity-54" />
