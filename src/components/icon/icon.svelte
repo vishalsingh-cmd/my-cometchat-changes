@@ -10,7 +10,7 @@
     md: 'w-6 h-6',
     lg: 'w-8 h-8',
     xl: 'w-10 h-10',
-    free: 'h-8'
+    free: 'h-8 min-w-[32px]'
   };
   let className: string | undefined = undefined;
   export { className as class };
