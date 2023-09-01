@@ -96,7 +96,7 @@
                   id={i}
                   label={feature.title}
                   isActive={activeButtonsTab === i}
-                  on:click={() => (activeButtonsTab = i)}
+                  on:click={() => ((activeButtonsTab = i), (selectedFeatureIndex = i))}
                 />
               {/each}
             </div>
