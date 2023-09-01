@@ -8,7 +8,6 @@
 
   export let accentColour: 'brand' | 'orange' = 'orange';
   export let block: ListSectionStoryblok;
-  console.log(block);
 </script>
 
 {#if block}
