@@ -1,8 +1,5 @@
 <script lang="ts">
-  import type { ISbStoryData } from '@storyblok/js';
   import type { StoryblokStory } from 'storyblok-generate-ts';
-
-  import { industries } from '$lib/stores/industries';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { sanitizeSlug } from '$lib/storyblok';
@@ -12,9 +9,7 @@
     AuthorStoryblok,
     BlogPostStoryblok,
     CustomerStoryStoryblok,
-    CustomerStoryblok,
     FeaturedStorySectionStoryblok,
-    IndustryStoryblok,
     TutorialStoryblok
   } from '$types/bloks';
 
@@ -111,7 +106,9 @@
           </div>
         </div>
         {#if content.cover}
-          <div class="relative flex-1 self-stretch overflow-hidden rounded-3xl">
+          <div
+            class="relative h-[329px] self-stretch overflow-hidden rounded-3xl md:h-auto md:flex-1"
+          >
             <Media
               imageTransformOptions={{ size: [0, 900] }}
               media={content.cover}

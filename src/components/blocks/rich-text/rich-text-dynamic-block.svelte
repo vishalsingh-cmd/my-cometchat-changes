@@ -9,6 +9,7 @@
   import ParagraphHeading from './paragraph-heading.svelte';
   import ParagraphList from './paragraph-list.svelte';
   import TestimonialBlock from './testimonial-block.svelte';
+  import YoutubeVideo from './youtube-video.svelte';
 
   export let block: SbBlokData;
 
@@ -19,7 +20,8 @@
     metrics: MetricsParagraph,
     'paragraph-heading': ParagraphHeading,
     'paragraph-list': ParagraphList,
-    'testimonial-block': TestimonialBlock
+    'testimonial-block': TestimonialBlock,
+    'youtube-video': YoutubeVideo
   };
 </script>
 

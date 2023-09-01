@@ -82,7 +82,7 @@
     style="transform: translate3d(0, 0, 0);"
   >
     <div class="container mx-auto flex h-16 items-center justify-between px-container">
-      <a href="/">
+      <a aria-label="Homepage link | CometChat Logo" href="/">
         <Logo class="h-4 lg:h-5" />
       </a>
       <div on:mouseleave={() => (activeIndex = -1)}>
@@ -220,7 +220,11 @@
         </div>
         <!-- Mobile button -->
         <div class="block lg:hidden">
-          <Button variant="secondary" on:click={() => (expanded = !expanded)}>
+          <Button
+            aria-label="Menu button"
+            variant="secondary"
+            on:click={() => (expanded = !expanded)}
+          >
             <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} class="opacity-80" />
           </Button>
         </div>

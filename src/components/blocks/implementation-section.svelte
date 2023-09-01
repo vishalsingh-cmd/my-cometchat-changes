@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Illustration1 from '$components/implementation-section/assets/illustration-1.png';
+  import Illustration1 from '$components/implementation-section/assets/illustration-1.svg';
   import Illustration2 from '$components/implementation-section/assets/illustration-2.svg';
   import ColourPicker from '$components/colour-picker/colour-picker.svelte';
   import Panel from '$components/panel.svelte';
@@ -59,16 +59,18 @@
               />
 
               {#if block.items.length === 4 && i === 0}
-                <div class="w-[1000px] -translate-x-72 translate-y-10 transform bg-gray-1">
-                  <img src={Illustration2} alt="" />
+                <div
+                  class="pointer-events-none w-[1000px] -translate-x-72 translate-y-10 transform bg-gray-1"
+                >
+                  <img role="presentation" src={Illustration2} alt="" />
                 </div>
               {/if}
 
               {#if block.items.length === 3 && i === 1}
                 <div
-                  class="absolute bottom-[-100px] right-[calc(50vw-300px)] h-[260px] w-[1333px] md:-right-[140px] md:bottom-[-130px] lg:h-[338px] lg:w-[1739px] xl:right-0"
+                  class="pointer-events-none absolute -bottom-[50px] right-[400px] w-full scale-[4] transform md:-bottom-[100px] md:right-[100px] md:scale-150 lg:right-[200px] lg:w-auto"
                 >
-                  <img src={Illustration1} alt="" />
+                  <img role="presentation" src={Illustration1} alt="" />
                 </div>
               {/if}
             </div>

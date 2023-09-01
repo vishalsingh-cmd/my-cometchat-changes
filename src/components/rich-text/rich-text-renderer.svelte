@@ -6,6 +6,7 @@
   import Heading from './heading.svelte';
   import OrderedList from './ordered-list.svelte';
   import Paragraph from './paragraph.svelte';
+  import UnorderedList from './unordered-list.svelte';
 
   import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
 
@@ -14,6 +15,7 @@
   const map = {
     heading: Heading,
     ordered_list: OrderedList,
+    bullet_list: UnorderedList,
     paragraph: Paragraph
   };
 

@@ -1114,7 +1114,7 @@
       "name": "featured-story-section",
       "display_name": null,
       "created_at": "2023-07-18T10:52:42.228Z",
-      "updated_at": "2023-08-03T12:33:12.150Z",
+      "updated_at": "2023-08-31T10:38:15.782Z",
       "id": 4290989,
       "schema": {
         "theme": {
@@ -1140,7 +1140,7 @@
           "use_uuid": true,
           "required": true,
           "source": "internal_stories",
-          "filter_content_type": ["blog-post", "customer-story", "tutorial"]
+          "filter_content_type": ["blog-post", "tutorial", "customer-story"]
         },
         "button_label": {
           "type": "text",
@@ -1992,13 +1992,13 @@
       "name": "image",
       "display_name": null,
       "created_at": "2023-06-28T09:40:18.335Z",
-      "updated_at": "2023-06-28T09:40:30.703Z",
+      "updated_at": "2023-08-30T11:49:10.745Z",
       "id": 4189115,
       "schema": {
         "illustration": {
           "type": "asset",
           "required": true,
-          "filetypes": ["images"]
+          "filetypes": []
         }
       },
       "image": null,
@@ -2318,15 +2318,19 @@
       "name": "industry",
       "display_name": "Industry aka Use Case aka Solution",
       "created_at": "2023-06-06T15:55:24.337Z",
-      "updated_at": "2023-07-18T20:29:32.874Z",
+      "updated_at": "2023-08-31T15:26:07.935Z",
       "id": 4084164,
       "schema": {
+        "redirect_url": {
+          "type": "multilink",
+          "pos": 0
+        },
         "cover_image": {
           "type": "asset",
           "required": true,
           "filetypes": ["images"],
           "asset_folder_id": 261682,
-          "pos": 0
+          "pos": 1
         },
         "illustration": {
           "type": "option",
@@ -2335,16 +2339,16 @@
           "datasource_slug": "comet-illustrations",
           "exclude_empty_option": true,
           "required": true,
-          "pos": 1
+          "pos": 2
         },
         "short_name": {
           "type": "text",
           "required": true,
-          "pos": 2
+          "pos": 3
         },
         "description": {
           "type": "text",
-          "pos": 3,
+          "pos": 4,
           "required": true
         },
         "body": {
@@ -2353,19 +2357,19 @@
           "restrict_components": true,
           "component_whitelist": [],
           "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"],
-          "pos": 4
+          "pos": 5
         },
         "tab-644f9330-a067-46a7-8583-0fd3258aa89f": {
           "display_name": "Metadata",
-          "keys": ["illustration", "short_name", "description", "cover_image"],
-          "pos": 5,
+          "keys": ["illustration", "short_name", "description", "cover_image", "redirect_url"],
+          "pos": 6,
           "type": "tab",
           "name": "tab-644f9330-a067-46a7-8583-0fd3258aa89f"
         },
         "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c": {
           "display_name": "SEO",
           "keys": ["seo"],
-          "pos": 6,
+          "pos": 7,
           "type": "tab",
           "name": "tab-494d41a1-227b-4909-8c7a-5a6c323d5a0c"
         },
@@ -2374,7 +2378,8 @@
           "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["seo-fields"]
+          "component_whitelist": ["seo-fields"],
+          "pos": 8
         }
       },
       "image": null,
@@ -3048,10 +3053,10 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "paragraph-heading",
-      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
-      "component_group_name": "Richtext"
+      "component_group_name": "Internal Blocks"
     },
     {
       "name": "paragraph-list",
@@ -3592,7 +3597,7 @@
       "name": "solutions-section",
       "display_name": null,
       "created_at": "2023-06-20T18:58:01.249Z",
-      "updated_at": "2023-06-23T14:36:32.251Z",
+      "updated_at": "2023-08-31T15:17:36.445Z",
       "id": 4150807,
       "schema": {
         "title": {
@@ -3614,6 +3619,9 @@
         "solution_cta_label": {
           "type": "text",
           "required": true
+        },
+        "redirects_to_old_website": {
+          "type": "boolean"
         }
       },
       "image": "//a.storyblok.com/f/231922/x/8ce52210c6/solutions-section.png",

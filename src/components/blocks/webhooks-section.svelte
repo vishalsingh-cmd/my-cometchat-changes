@@ -19,7 +19,7 @@
       {#if block.title && block.title[0]}
         {@const { title, description, links } = block.title[0]}
         {@const label = getLabelInfo(block.title[0].label, 'orange')}
-        <Title class="pl-0 pr-0" {label} {description} {title} buttons={links} />
+        <Title class="isolate z-10 pl-0 pr-0" {label} {description} {title} buttons={links} />
       {/if}
     </div>
     <div

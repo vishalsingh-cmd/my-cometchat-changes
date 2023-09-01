@@ -40,14 +40,16 @@
           activeTab={selectedItemIndex}
           on:optionSelect={onOptionSelect}
         />
-        {#if block.items[selectedItemIndex]}
-          {@const item = block.items[selectedItemIndex]}
+        {#each block.items as item, i}
           {@const firstTwoItems = item.items.slice(0, 2)}
           {@const lastTwoItems = item.items.slice(2, 4)}
           {@const subArrays = [firstTwoItems, lastTwoItems]}
           <!-- Tablet -->
           <div
-            class="hidden flex-row border border-t-0 border-b-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:flex lg:hidden"
+            class={cn(
+              'hidden flex-row border border-t-0 border-b-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)]',
+              i === selectedItemIndex && 'hidden md:flex lg:hidden'
+            )}
           >
             {#each subArrays as array, i}
               <div class={cn('flex-1', i === 0 && 'border-r border-r-gray-12/[0.08]')}>
@@ -60,7 +62,10 @@
 
           <!-- Mobile and Desktop -->
           <div
-            class="flex flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] md:hidden lg:grid lg:grid-cols-3"
+            class={cn(
+              'hidden flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] lg:grid-cols-3',
+              i === selectedItemIndex && 'flex md:hidden lg:grid'
+            )}
           >
             {#each item.items as subItem, i}
               {@const positioningFor4Items = [
@@ -81,7 +86,7 @@
               </div>
             {/each}
           </div>
-        {/if}
+        {/each}
       {/if}
     </div>
   </section>

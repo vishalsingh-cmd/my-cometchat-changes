@@ -14,22 +14,28 @@
   import BigPurplePlanet from './assets/big-purple-planet.svg';
   import SmallPurplePlanet from './assets/small-purple-planet.svg';
 
-  const blur = cva(['absolute', 'origin-center', 'transform', 'rounded-1/2']);
+  const blur = cva([
+    'absolute',
+    'origin-center',
+    'transform',
+    'rounded-1/2',
+    'pointer-events-none'
+  ]);
 </script>
 
 <!-- Stars -->
-<div class="absolute top-[-68px] h-[803px] w-[1389px]">
+<div class="pointer-events-none absolute top-[-68px] h-[803px] w-[1389px]">
   <Stars amount={40} backgroundColours={['bg-brand-9', 'bg-brand-7', 'bg-orange-8']} />
 </div>
 <div
-  class="absolute left-[50vw] top-[400px] h-[803px] w-[1386px] origin-center rotate-[30deg] 2xl:-left-[100px] 2xl:top-0"
+  class="pointer-events-none absolute left-[50vw] top-[400px] h-[803px] w-[1386px] origin-center rotate-[30deg] 2xl:-left-[100px] 2xl:top-0"
   data-theme="light"
 >
   <Stars amount={40} backgroundColours={['bg-brand-1']} />
 </div>
 
 <!-- Noise -->
-<div class="absolute top-0 h-[1079px] w-[1440px]">
+<div class="pointer-events-none absolute top-0 h-[1079px] w-[1440px]">
   <img src={Noise} alt="" />
 </div>
 
@@ -64,49 +70,53 @@
 />
 
 <!-- Blur Planets -->
-<div class="absolute left-0 top-[50px]">
-  <img src={BlurPlanets} alt="" class="h-full w-full" />
+<div class="pointer-events-none absolute left-0 top-[50px]">
+  <img role="presentation" src={BlurPlanets} alt="" class="h-full w-full" />
 </div>
 
 <!-- Side Gradients -->
 <div
-  class="absolute left-[-2px] top-0 h-[970px] w-[104px] bg-gradient-to-r from-gray-1/60 to-gray-1/0 2xl:hidden"
+  class="pointer-events-none absolute left-[-2px] top-0 h-[970px] w-[104px] bg-gradient-to-r from-gray-1/60 to-gray-1/0 2xl:hidden"
 />
 <div
-  class="absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-gray-1/0 2xl:hidden"
+  class="pointer-events-none absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-gray-1/0 2xl:hidden"
 />
 
 <!-- Planets - In Front of side gradients -->
 <div
-  class="absolute -bottom-[150px] -right-[140px] hidden md:-bottom-[180px] md:-right-[300px] md:block md:h-[600px] md:w-[600px]"
+  class="pointer-events-none absolute -bottom-[150px] -right-[140px] hidden md:-bottom-[180px] md:-right-[300px] md:block md:h-[600px] md:w-[600px]"
 >
-  <img src={BigPurplePlanet} alt="" class="h-full w-full" />
+  <img role="presentation" src={BigPurplePlanet} alt="" class="h-full w-full" />
 </div>
 
 <div
-  class="absolute -bottom-[60px] -left-[180px] h-[400px] w-[400px] md:-left-[290px] md:bottom-[0px] md:h-[600px] md:w-[600px]"
+  class="pointer-events-none absolute -bottom-[60px] -left-[180px] h-[400px] w-[400px] md:-left-[290px] md:bottom-[0px] md:h-[600px] md:w-[600px]"
 >
-  <img src={BigPinkPlanet} alt="" class="h-full w-full" />
+  <img role="presentation" src={BigPinkPlanet} alt="" class="h-full w-full" />
 </div>
 
 <div
-  class="absolute right-[100px] top-[100px] hidden scale-150 md:top-[80px] md:block md:scale-90 xl:scale-100"
+  class="pointer-events-none absolute right-[100px] top-[100px] hidden scale-150 md:top-[80px] md:block md:scale-90 xl:scale-100"
 >
-  <img src={OrangePlanet} alt="" class="h-full w-full" />
+  <img role="presentation" src={OrangePlanet} alt="" class="h-full w-full" />
 </div>
 
-<div class="absolute -right-[100px] -top-[70px] w-[450px] md:left-0 md:top-0 xl:left-[250px]">
-  <img src={RedPlanet} alt="" class="h-full w-full" />
+<div
+  class="pointer-events-none absolute -right-[100px] -top-[70px] w-[450px] md:left-0 md:top-0 xl:left-[250px]"
+>
+  <img role="presentation" src={RedPlanet} alt="" class="h-full w-full" />
 </div>
 
 <!-- In Front of bottom gradient -->
 
 <!-- Orbit -->
-<div class="absolute -bottom-[60px] left-[100px] w-[1211.029px]">
-  <img src={Orbit} alt="" class="h-full w-full" />
+<div class="pointer-events-none absolute -bottom-[60px] left-[100px] w-[1211.029px]">
+  <img role="presentation" src={Orbit} alt="" class="h-full w-full" />
 </div>
 
 <!-- Planet -->
-<div class="absolute -bottom-[60px] left-[100px] w-[400px] md:-bottom-[60px] md:w-[450px]">
-  <img src={SmallPurplePlanet} alt="" class="h-full w-full" />
+<div
+  class="pointer-events-none absolute -bottom-[60px] left-[100px] w-[400px] md:-bottom-[60px] md:w-[450px]"
+>
+  <img role="presentation" src={SmallPurplePlanet} alt="" class="h-full w-full" />
 </div>
