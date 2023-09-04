@@ -11,6 +11,7 @@
 
   let scrollY = 0;
   let scrollYPrev = 0;
+
   $: {
     if (Math.abs(scrollY - scrollYPrev) > 20) {
       scrollDirection.set(scrollY > scrollYPrev ? 'down' : 'up');

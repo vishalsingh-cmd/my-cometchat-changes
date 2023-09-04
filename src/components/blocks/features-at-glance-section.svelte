@@ -1,6 +1,7 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
+  import { onMount } from 'svelte';
 
   import { cn } from '$lib/utils';
   import scrollDirection from '$lib/stores/scroll-direction';
@@ -9,27 +10,33 @@
   import Tabs from '$components/tabs/tabs.svelte';
   import ListSection from './list-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
-  import ButtonTab from '$components/features-at-glance-section/button-tab.svelte';
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
+  import DesktopTabs from '$components/features-at-glance-section/desktop-tabs.svelte';
 
   let activeTab = 0;
   let activeButtonsTab = 0;
   let selectedFeatureIndex = 0;
 
-  let windowScroll = 0;
   let isSticky = false;
   let topOffset: number;
-  let containerRef: HTMLElement;
+  let containerRef: HTMLElement | null;
 
-  $: if (windowScroll !== 0) {
-    topOffset = containerRef.getBoundingClientRect().top; // Distance from the element to the top
-    isSticky = topOffset === 0;
+  function updateStickyState() {
+    if (containerRef) {
+      topOffset = containerRef.getBoundingClientRect().top;
+      isSticky = topOffset <= 0;
+      requestAnimationFrame(updateStickyState);
+    }
   }
+
+  // Initial call to start the animation loop
+  onMount(() => {
+    containerRef = document.getElementById('stickyContainer');
+    updateStickyState();
+  });
 
   export let block: FeaturesAtGlanceSectionStoryblok;
 </script>
-
-<svelte:window bind:scrollY={windowScroll} />
 
 {#if block}
   <section use:storyblokEditable={block} data-theme="light" class="relative bg-gray-1 text-gray-12">
@@ -45,20 +52,18 @@
         id: i,
         label: title
       }))}
-      {@const parsedDropdownFeatures = block.features[activeTab].feature_list.map(
-        ({ title }, i) => ({
-          label: title,
-          value: title
-        })
-      )}
+      {@const parsedDropdownFeatures = block.features[activeTab].feature_list.map(({ title }) => ({
+        label: title,
+        value: title
+      }))}
 
       <!-- Sticky Element -->
-      <div bind:this={containerRef} class="sticky left-0 top-0 z-10 md:static">
+      <div id="stickyContainer" class="sticky left-0 top-0 z-10 md:static">
         <!-- Element that is going to translate -->
         <div
           class={cn('bg-gray-1 transition-transform duration-300 ease-motion', {
-            'border-b border-gray-12/8': isSticky,
-            'translate-y-16': $scrollDirection === 'up' && isSticky
+            'border-b border-gray-12/8 md:border-b-0': isSticky,
+            'translate-y-16 md:translate-y-0': $scrollDirection === 'up' && isSticky
           })}
         >
           <Tabs
@@ -88,18 +93,14 @@
             </div>
 
             <!-- Desktop Tabs -->
-            <div
-              class="container mx-auto mt-4 hidden w-full flex-row gap-3 overflow-x-scroll break-all px-container md:flex"
-            >
-              {#each block.features[activeTab].feature_list as feature, i}
-                <ButtonTab
-                  id={i}
-                  label={feature.title}
-                  isActive={activeButtonsTab === i}
-                  on:click={() => ((activeButtonsTab = i), (selectedFeatureIndex = i))}
-                />
-              {/each}
-            </div>
+            <DesktopTabs
+              class="container mx-auto mt-4 px-container"
+              options={block.features[activeTab].feature_list}
+              activeTab={activeButtonsTab}
+              on:optionSelect={(e) => {
+                (activeButtonsTab = e.detail.i), (selectedFeatureIndex = e.detail.i);
+              }}
+            />
           </div>
         </div>
       </div>
