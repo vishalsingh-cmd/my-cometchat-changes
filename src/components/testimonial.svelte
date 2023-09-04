@@ -51,7 +51,7 @@
           </p>
         </div>
 
-        {#if block.link}
+        {#if block.link && !block.g2_review}
           {@const { href, target, rel } = getAnchorFromCmsLink(block.link)}
           <Button
             aria-label="Link to {block.name} testimonial"
@@ -64,6 +64,11 @@
           >
             <Icon icon="arrow-narrow-right" size="xs" class="opacity-80" />
           </Button>
+        {/if}
+
+        {#if block.g2_review}
+          {@const review = block.g2_review}
+          <p>{block.g2_review}</p>
         {/if}
       </div>
     </div>

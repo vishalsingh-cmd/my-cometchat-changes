@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-08-29T14:07:13.892Z",
+      "updated_at": "2023-09-01T09:22:28.178Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -224,8 +224,6 @@
         "related": {
           "type": "bloks",
           "required": false,
-          "minimum": 1,
-          "maximum": 1,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["related-stories-section"],
@@ -1114,7 +1112,7 @@
       "name": "featured-story-section",
       "display_name": null,
       "created_at": "2023-07-18T10:52:42.228Z",
-      "updated_at": "2023-08-31T10:38:15.782Z",
+      "updated_at": "2023-09-04T16:12:01.325Z",
       "id": 4290989,
       "schema": {
         "theme": {
@@ -1140,7 +1138,7 @@
           "use_uuid": true,
           "required": true,
           "source": "internal_stories",
-          "filter_content_type": ["blog-post", "tutorial", "customer-story"]
+          "filter_content_type": ["customer-story", "blog-post", "tutorial"]
         },
         "button_label": {
           "type": "text",
@@ -4042,7 +4040,7 @@
       "name": "testimonial",
       "display_name": null,
       "created_at": "2023-06-06T15:52:10.850Z",
-      "updated_at": "2023-06-22T14:52:33.492Z",
+      "updated_at": "2023-09-04T17:06:09.915Z",
       "id": 4084142,
       "schema": {
         "quote": {
@@ -4072,6 +4070,12 @@
           "required": false,
           "allow_target_blank": false,
           "show_anchor": false
+        },
+        "g2_review": {
+          "type": "number",
+          "decimals": 1,
+          "steps": 1,
+          "max_value": 10
         }
       },
       "image": null,
