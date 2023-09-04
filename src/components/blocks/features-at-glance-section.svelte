@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
   import { onMount } from 'svelte';
+  import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { cn } from '$lib/utils';
   import scrollDirection from '$lib/stores/scroll-direction';
@@ -29,7 +29,6 @@
     }
   }
 
-  // Initial call to start the animation loop
   onMount(() => {
     containerRef = document.getElementById('stickyContainer');
     updateStickyState();
