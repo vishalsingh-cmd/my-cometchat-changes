@@ -24,7 +24,8 @@ export const StringKeys = [
   'a11y.author',
   'a11y.published',
   'a11y.role',
-  'directory.no_results_found'
+  'directory.no_results_found',
+  'reviews.g2_text'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

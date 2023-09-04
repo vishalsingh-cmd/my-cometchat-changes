@@ -7,8 +7,10 @@
   import Button from './buttons/button.svelte';
   import Icon from './icon/icon.svelte';
   import Media from './media.svelte';
+  import ClickableBadge from './clickable-badge.svelte';
 
   import { cn } from '$lib/utils';
+  import { string } from '$lib/strings';
 
   export let block: TestimonialStoryblok;
   export let flipHorizontal: boolean;
@@ -42,7 +44,7 @@
 
       <div
         data-theme="light"
-        class="mt-3 flex items-center justify-between text-md/tight text-gray-12"
+        class="mt-3 flex items-end justify-between text-md/tight text-gray-12"
       >
         <div>
           <p class=" font-semibold tracking-wide">{block.name}</p>
@@ -67,8 +69,7 @@
         {/if}
 
         {#if block.g2_review}
-          {@const review = block.g2_review}
-          <p>{block.g2_review}</p>
+          <ClickableBadge review={block.g2_review} />
         {/if}
       </div>
     </div>
