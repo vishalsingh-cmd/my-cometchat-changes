@@ -19,18 +19,15 @@
 
   let isSticky = false;
   let topOffset: number;
-  let containerRef: HTMLElement | null;
+  let containerRef: HTMLDivElement;
 
   function updateStickyState() {
-    if (containerRef) {
-      topOffset = containerRef.getBoundingClientRect().top;
-      isSticky = topOffset <= 0;
-      requestAnimationFrame(updateStickyState);
-    }
+    topOffset = containerRef.getBoundingClientRect().top;
+    isSticky = topOffset <= 0;
+    requestAnimationFrame(updateStickyState);
   }
 
   onMount(() => {
-    containerRef = document.getElementById('stickyContainer');
     updateStickyState();
   });
 
@@ -57,7 +54,7 @@
       }))}
 
       <!-- Sticky Element -->
-      <div id="stickyContainer" class="sticky left-0 top-0 z-10 md:static">
+      <div bind:this={containerRef} class="sticky left-0 top-0 z-10 md:static">
         <!-- Element that is going to translate -->
         <div
           class={cn('bg-gray-1 transition-transform duration-300 ease-motion', {
