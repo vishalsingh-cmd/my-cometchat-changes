@@ -13,6 +13,7 @@
   import DoublePanelSection from './double-panel-section.svelte';
   import FaqSection from './faq-section.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
+  import FeaturesAtGlanceSection from './features-at-glance-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
   import HeaderAndListSection from './header-and-list-section.svelte';
@@ -65,6 +66,7 @@
     'double-panel-section': DoublePanelSection,
     'faq-section': FaqSection,
     'featured-story-section': FeaturedStorySection,
+    'features-at-glance-section': FeaturesAtGlanceSection,
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,

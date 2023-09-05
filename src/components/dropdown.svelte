@@ -8,6 +8,9 @@
 
   import { cn } from '$lib/utils';
   import { clickOutside } from '$lib/actions/click-outside';
+  let className: undefined | string = undefined;
+  export { className as class };
+  export let flyOutClass: undefined | string = undefined;
 
   const dispatch = createEventDispatcher();
 
@@ -58,7 +61,8 @@
       'disabled:pointer-events-none',
 
       'transition-all ease-smooth',
-      !options[selectedOption].cometIllustration && 'pl-4'
+      !options[selectedOption].cometIllustration && 'pl-4',
+      className
     )}
     on:click={toggle}
     {disabled}
@@ -74,11 +78,21 @@
     <span class="text-md font-semibold leading-tight tracking-wide">
       {options[selectedOption].label}
     </span>
-    <Icon class="opacity-74" size="xs" icon={isOpen ? 'chevron-up' : 'chevron-down'} />
+    <Icon
+      class={cn(
+        'shrink-0 opacity-74 transition-transform duration-300',
+        isOpen && 'rotate-180 opacity-100'
+      )}
+      size="xs"
+      icon="chevron-up"
+    />
   </button>
   {#if isOpen}
     <div
-      class="border-px absolute left-1/2 top-[46px] flex max-h-[290px] w-[300px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]"
+      class={cn(
+        'border-px absolute left-1/2 top-[46px] flex max-h-[290px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]',
+        flyOutClass ? flyOutClass : 'w-[300px]'
+      )}
       use:clickOutside={() => {
         toggle();
       }}
@@ -94,11 +108,13 @@
           }}
         >
           <span class="flex items-center gap-2.5 text-md font-semibold tracking-wide text-gray-12">
-            <CometIllustration
-              class="inline-block scale-[1.4]"
-              illustration={option.cometIllustration ?? 'community'}
-              size="sm"
-            />
+            {#if option.cometIllustration}
+              <CometIllustration
+                class="inline-block scale-[1.4]"
+                illustration={option.cometIllustration ?? 'community'}
+                size="sm"
+              />
+            {/if}
             {option.label}
           </span>
           {#if i === selectedOption}
