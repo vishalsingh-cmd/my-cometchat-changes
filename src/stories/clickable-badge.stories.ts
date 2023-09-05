@@ -1,22 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/svelte';
 
-import ClickableBadgeStory from './clickable-badge-story.svelte';
+import ClickableBadge from '$components/clickable-badge.svelte';
 
 const meta = {
   title: 'UI/Clickable Badge',
-  component: ClickableBadgeStory,
+  component: ClickableBadge,
   argTypes: {
     review: {
-      control: 'number'
+      control: 'number',
+      disabeld: 'boolean'
     }
   }
-} satisfies Meta<ClickableBadgeStory>;
+} satisfies Meta<ClickableBadge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    review: 4.4
+    review: 4.4,
+    disabled: false
   }
 };
