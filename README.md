@@ -1,6 +1,7 @@
 # Cometchat Website
 
 ## Development
+
 ### Prerequisites
 
 - Ensure you have the `node` version specified in [`./.nvmrc`](./.nvmrc).
@@ -65,5 +66,3 @@ This is because we are using Next.JS Preview Mode inside an iframe and we have t
 - We have a [production environment](http://cometchat-web-production.vercel.app/) that is deployed when new releases are published
 
 All the environments are deployed on [Vercel](https://vercel.com/)
-
-
