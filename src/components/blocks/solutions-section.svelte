@@ -1,6 +1,11 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
+
+  import { cn, getLabelInfo } from '$lib/utils';
+  import { sanitizeSlug } from '$lib/storyblok';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import CometIllustration, {
     type IllustrationOptions
@@ -12,16 +17,11 @@
 
   import { planetPositioning } from '$components/solutions-section/planet-positioning';
 
-  import GhostButton from '$components/buttons/ghost-button.svelte';
   import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
-  import Dropdown from '$components/dropdown.svelte';
   import Media from '$components/media.svelte';
-
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
-  import { getAnchorFromCmsLink, sanitizeSlug } from '$lib/storyblok';
-  import { cn, getLabelInfo } from '$lib/utils';
+  import Dropdown from '$components/dropdown.svelte';
+  import GhostButton from '$components/buttons/ghost-button.svelte';
 
   export let block: SolutionsSectionStoryblok;
 

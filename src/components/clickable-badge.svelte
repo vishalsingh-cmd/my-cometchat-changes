@@ -1,7 +1,10 @@
 <script lang="ts">
-  import { string } from '$lib/strings';
   import { cn } from '$lib/utils';
+  import { string } from '$lib/strings';
+
   import Icon from './icon/icon.svelte';
+
+  export let review: number;
   let className: undefined | string = undefined;
   export { className as class };
 
@@ -25,8 +28,6 @@
     'disabled:opacity-40',
     'disabled:pointer-events-none'
   );
-
-  export let review: number;
 </script>
 
 {#if review}

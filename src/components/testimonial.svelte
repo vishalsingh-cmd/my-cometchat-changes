@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { TestimonialStoryblok } from '$types/bloks';
 
+  import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
@@ -9,11 +10,9 @@
   import Button from './buttons/button.svelte';
   import ClickableBadge from '$components/clickable-badge.svelte';
 
-  import { cn } from '$lib/utils';
-  import { string } from '$lib/strings';
+  export let flipHorizontal: boolean;
 
   export let block: TestimonialStoryblok;
-  export let flipHorizontal: boolean;
 </script>
 
 {#if block}

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { cn, getLabelInfo } from '$lib/utils';
-
   import type { TitleSectionStoryblok } from '$types/bloks';
+
+  import { getLabelInfo } from '$lib/utils';
 
   import Title from '$components/title.svelte';
 
