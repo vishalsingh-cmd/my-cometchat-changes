@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
   import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { cn } from '$lib/utils';
-  import scrollDirection from '$lib/stores/scroll-direction';
 
   import Media from '$components/media.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
@@ -12,24 +10,11 @@
   import Dropdown from '$components/dropdown.svelte';
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
   import DesktopTabs from '$components/features-at-glance-section/desktop-tabs.svelte';
+  import Sticky from '$components/sticky.svelte';
 
   let activeTab = 0;
   let activeButtonsTab = 0;
   let selectedFeatureIndex = 0;
-
-  let isSticky = false;
-  let topOffset: number;
-  let containerRef: HTMLDivElement;
-
-  function updateStickyState() {
-    topOffset = containerRef.getBoundingClientRect().top;
-    isSticky = topOffset <= 0;
-    requestAnimationFrame(updateStickyState);
-  }
-
-  onMount(() => {
-    updateStickyState();
-  });
 
   export let block: FeaturesAtGlanceSectionStoryblok;
 </script>
@@ -54,52 +39,44 @@
       }))}
 
       <!-- Sticky Element -->
-      <div bind:this={containerRef} class="sticky left-0 top-0 z-10 md:static">
+      <Sticky>
         <!-- Element that is going to translate -->
-        <div
-          class={cn('bg-gray-1 transition-transform duration-300 ease-motion', {
-            'border-b border-gray-12/8 md:border-b-0': isSticky,
-            'translate-y-16 md:translate-y-0': $scrollDirection === 'up' && isSticky
-          })}
-        >
-          <Tabs
-            {activeTab}
-            options={parsedTabsFeatures}
-            on:optionSelect={(e) => {
-              activeTab = e.detail.i;
-              activeButtonsTab = 0;
-              selectedFeatureIndex = 0;
-            }}
-            class="container mx-auto px-container"
-          />
+        <Tabs
+          {activeTab}
+          options={parsedTabsFeatures}
+          on:optionSelect={(e) => {
+            activeTab = e.detail.i;
+            activeButtonsTab = 0;
+            selectedFeatureIndex = 0;
+          }}
+        />
 
-          <div class="border-t border-gray-12/8">
-            <!-- Mobile Dropdown -->
-            <div class="container mx-auto w-full px-container md:hidden">
-              <Dropdown
-                class="my-4 w-full justify-between"
-                flyOutClass="w-full justify-between"
-                options={parsedDropdownFeatures}
-                selectedOption={selectedFeatureIndex}
-                on:optionSelect={(e) => {
-                  selectedFeatureIndex = e.detail.i;
-                  activeButtonsTab = e.detail.i;
-                }}
-              />
-            </div>
-
-            <!-- Desktop Tabs -->
-            <DesktopTabs
-              class="container mx-auto mt-4 px-container"
-              options={block.features[activeTab].feature_list}
-              activeTab={activeButtonsTab}
+        <div class="border-t border-gray-12/8">
+          <!-- Mobile Dropdown -->
+          <div class="container mx-auto w-full px-container md:hidden">
+            <Dropdown
+              class="my-4 w-full justify-between"
+              flyOutClass="w-full justify-between"
+              options={parsedDropdownFeatures}
+              selectedOption={selectedFeatureIndex}
               on:optionSelect={(e) => {
-                (activeButtonsTab = e.detail.i), (selectedFeatureIndex = e.detail.i);
+                selectedFeatureIndex = e.detail.i;
+                activeButtonsTab = e.detail.i;
               }}
             />
           </div>
+
+          <!-- Desktop Tabs -->
+          <DesktopTabs
+            class="container mx-auto mt-4 px-container"
+            options={block.features[activeTab].feature_list}
+            activeTab={activeButtonsTab}
+            on:optionSelect={(e) => {
+              (activeButtonsTab = e.detail.i), (selectedFeatureIndex = e.detail.i);
+            }}
+          />
         </div>
-      </div>
+      </Sticky>
 
       <div class="container mx-auto px-container pb-8 md:pb-12 md:pt-12">
         {#if block.features[activeTab].feature_list[activeButtonsTab]}

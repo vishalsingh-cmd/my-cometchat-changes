@@ -11,6 +11,7 @@
   import { cn, getLabelInfo } from '$lib/utils';
 
   import type { ModerationFeaturesStoryblok } from '$types/bloks';
+  import Sticky from '$components/sticky.svelte';
 
   export let block: ModerationFeaturesStoryblok;
 
@@ -103,13 +104,15 @@
 
         <div class="flex flex-col overflow-hidden">
           <div class="mb-10 lg:hidden">
-            <Tabs
-              options={headings.map((h, id) => ({ id, label: h.innerText }))}
-              {activeTab}
-              on:optionSelect={(e) => {
-                activeTab = e.detail.i;
-              }}
-            />
+            <Sticky alwaysHaveBorder>
+              <Tabs
+                options={headings.map((h, id) => ({ id, label: h.innerText }))}
+                {activeTab}
+                on:optionSelect={(e) => {
+                  activeTab = e.detail.i;
+                }}
+              />
+            </Sticky>
           </div>
 
           <div class="px-container lg:px-0">
