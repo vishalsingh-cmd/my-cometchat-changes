@@ -1115,7 +1115,7 @@ export interface TestimonialBlockStoryblok {
   author_name: string;
   author_position: string;
   author_company: string;
-  author_image: AssetStoryblok;
+  author_image?: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
   [k: string]: any;
