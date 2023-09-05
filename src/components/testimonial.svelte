@@ -4,10 +4,10 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import Button from './buttons/button.svelte';
-  import Icon from './icon/icon.svelte';
   import Media from './media.svelte';
-  import ClickableBadge from './clickable-badge.svelte';
+  import Icon from './icon/icon.svelte';
+  import Button from './buttons/button.svelte';
+  import ClickableBadge from '$components/clickable-badge.svelte';
 
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
@@ -44,10 +44,13 @@
 
       <div
         data-theme="light"
-        class="mt-3 flex items-end justify-between text-md/tight text-gray-12"
+        class={cn(
+          'mt-3 flex items-end justify-between gap-4 text-md/tight text-gray-12',
+          block.g2_review && 'flex-col items-start gap-3 md:flex-row md:items-end md:gap-0'
+        )}
       >
         <div>
-          <p class=" font-semibold tracking-wide">{block.name}</p>
+          <p class="font-semibold tracking-wide">{block.name}</p>
           <p data-theme="light" class="mt-0.5 font-semibold tracking-wide opacity-74">
             {block.position}
           </p>
@@ -55,21 +58,24 @@
 
         {#if block.link && !block.g2_review}
           {@const { href, target, rel } = getAnchorFromCmsLink(block.link)}
-          <Button
-            aria-label="Link to {block.name} testimonial"
-            variant="secondary"
-            size="sm"
-            as="a"
-            {rel}
-            {target}
-            {href}
-          >
-            <Icon icon="arrow-narrow-right" size="xs" class="opacity-80" />
-          </Button>
+          {#if href}
+            <Button
+              aria-label="Link to {block.name} testimonial"
+              variant="secondary"
+              size="sm"
+              as="a"
+              {rel}
+              {target}
+              {href}
+            >
+              <Icon icon="arrow-narrow-right" size="xs" class="opacity-80" />
+            </Button>
+          {/if}
         {/if}
 
         {#if block.g2_review}
-          <ClickableBadge review={block.g2_review} />
+          {@const { href, target, rel } = getAnchorFromCmsLink(block.link)}
+          <ClickableBadge {href} {target} {rel} review={block.g2_review} />
         {/if}
       </div>
     </div>
