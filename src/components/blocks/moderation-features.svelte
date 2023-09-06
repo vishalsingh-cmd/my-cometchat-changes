@@ -93,6 +93,16 @@
       </div>
     {/if}
 
+    <Sticky alwaysHaveBorder class=" lg:hidden">
+      <Tabs
+        options={headings.map((h, id) => ({ id, label: h.innerText }))}
+        {activeTab}
+        on:optionSelect={(e) => {
+          activeTab = e.detail.i;
+        }}
+      />
+    </Sticky>
+
     {#if block.features}
       <div
         class="flex gap-16 pb-12 lg:container lg:mx-auto lg:mt-12 lg:px-container lg:pb-20"
@@ -102,19 +112,7 @@
           <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
         </aside>
 
-        <div class="flex flex-col overflow-hidden">
-          <div class="mb-10 lg:hidden">
-            <Sticky alwaysHaveBorder>
-              <Tabs
-                options={headings.map((h, id) => ({ id, label: h.innerText }))}
-                {activeTab}
-                on:optionSelect={(e) => {
-                  activeTab = e.detail.i;
-                }}
-              />
-            </Sticky>
-          </div>
-
+        <div class="mt-10 flex flex-col overflow-hidden lg:mt-0">
           <div class="px-container lg:px-0">
             {#each block.features as feature, i}
               <div

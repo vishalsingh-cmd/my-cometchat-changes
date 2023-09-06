@@ -8,6 +8,9 @@
   let containerRef: HTMLDivElement;
   export let alwaysHaveBorder = false;
 
+  let className: undefined | string = undefined;
+  export { className as class };
+
   function updateStickyState() {
     if (containerRef) {
       topOffset = containerRef.getBoundingClientRect().top;
@@ -22,7 +25,7 @@
   });
 </script>
 
-<div bind:this={containerRef} class={cn('sticky left-0 top-0 z-10 md:static')}>
+<div bind:this={containerRef} class={cn('sticky left-0 top-0 z-10 md:static', className)}>
   <div
     class={cn(
       'bg-gray-1 transition-transform duration-300 ease-motion md:translate-y-0',
