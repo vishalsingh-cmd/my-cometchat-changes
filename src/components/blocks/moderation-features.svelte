@@ -1,17 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-
-  import InfoItem from '$components/info-item.svelte';
-  import Sidebar from '$components/post/sidebar.svelte';
-  import Tabs from '$components/tabs/tabs.svelte';
-  import Title from '$components/title.svelte';
-
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getImageAttributes } from '$lib/storyblok';
-  import { cn, getLabelInfo } from '$lib/utils';
-
   import type { ModerationFeaturesStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
+  import { cn, getLabelInfo } from '$lib/utils';
+  import { getImageAttributes } from '$lib/storyblok';
+
+  import Title from '$components/title.svelte';
   import Sticky from '$components/sticky.svelte';
+  import Tabs from '$components/tabs/tabs.svelte';
+  import Sidebar from '$components/post/sidebar.svelte';
+  import InfoItem from '$components/info-item.svelte';
 
   export let block: ModerationFeaturesStoryblok;
 
@@ -93,7 +92,7 @@
       </div>
     {/if}
 
-    <Sticky alwaysHaveBorder class=" lg:hidden">
+    <Sticky alwaysHaveBorder class="lg:hidden">
       <Tabs
         options={headings.map((h, id) => ({ id, label: h.innerText }))}
         {activeTab}

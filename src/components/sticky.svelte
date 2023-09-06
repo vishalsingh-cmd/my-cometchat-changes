@@ -15,7 +15,6 @@
     if (containerRef) {
       topOffset = containerRef.getBoundingClientRect().top;
       isSticky = topOffset <= 0;
-      console.log(topOffset);
     }
     requestAnimationFrame(updateStickyState);
   }

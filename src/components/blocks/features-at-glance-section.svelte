@@ -2,15 +2,13 @@
   import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import { cn } from '$lib/utils';
-
   import Media from '$components/media.svelte';
+  import Sticky from '$components/sticky.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
   import ListSection from './list-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
   import DesktopTabs from '$components/features-at-glance-section/desktop-tabs.svelte';
-  import Sticky from '$components/sticky.svelte';
 
   let activeTab = 0;
   let activeButtonsTab = 0;
