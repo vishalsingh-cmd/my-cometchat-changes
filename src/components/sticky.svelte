@@ -24,7 +24,9 @@
   });
 </script>
 
+<!-- Sticky Element -->
 <div bind:this={containerRef} class={cn('sticky left-0 top-0 z-10 md:static', className)}>
+  <!-- Element that is going to translate -->
   <div
     class={cn(
       'bg-gray-1 transition-transform duration-300 ease-motion md:translate-y-0',

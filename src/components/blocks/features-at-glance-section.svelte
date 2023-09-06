@@ -36,9 +36,7 @@
         value: title
       }))}
 
-      <!-- Sticky Element -->
       <Sticky>
-        <!-- Element that is going to translate -->
         <Tabs
           {activeTab}
           options={parsedTabsFeatures}
