@@ -65,10 +65,10 @@ export const load = async ({ cookies, fetch, params }) => {
     let datasourceIntegrationTools = [];
 
     const directorySection =
-      page.data.story.content.component === 'page' &&
-      page.data.story.content.body &&
-      page.data.story.content.body.find(
-        (blok: SbBlokData) => blok.component === 'directory-section'
+      page.data?.story?.content?.component === 'page' &&
+      page.data?.story?.content.body &&
+      page.data?.story?.content.body.find(
+        (blok: SbBlokData) => blok?.component === 'directory-section'
       );
 
     if (

@@ -107,6 +107,6 @@
   };
 </script>
 
-{#if typeof block.component === 'string' && map[block.component]}
+{#if block?.component && typeof block?.component === 'string' && map[block?.component]}
   <svelte:component this={map[block.component]} {block} {...$$restProps} />
 {/if}

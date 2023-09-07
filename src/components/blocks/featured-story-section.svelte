@@ -36,11 +36,11 @@
       | StoryblokStory<CustomerStoryStoryblok>
       | StoryblokStory<TutorialStoryblok>
   ) => {
-    if (story.content.component === 'customer-story') {
-      return story.content.author_name;
+    if (story.content?.component === 'customer-story') {
+      return story.content?.author_name;
     } else {
-      const author = story.content.author as StoryblokStory<AuthorStoryblok>;
-      return author.name;
+      const author = story.content?.author as StoryblokStory<AuthorStoryblok>;
+      return author?.name;
     }
   };
 
@@ -52,12 +52,12 @@
   ) => {
     let tags = [] as string[];
 
-    if (story.content.component === 'customer-story' && story.content.customer) {
-      tags = [story.content.industry as string];
-    } else if (story.content.component === 'blog-post') {
-      tags = [story.content.category];
-    } else if (story.content.component === 'tutorial') {
-      tags = [story.content.tutorial_type];
+    if (story.content?.component === 'customer-story' && story.content?.customer) {
+      tags = [story.content?.industry as string];
+    } else if (story.content?.component === 'blog-post') {
+      tags = [story.content?.category];
+    } else if (story.content?.component === 'tutorial') {
+      tags = [story.content?.tutorial_type];
     }
 
     const parsedTags = tags.join(', ');
@@ -77,7 +77,7 @@
       {@const content = story.content}
       {@const storyLink = sanitizeSlug(story.full_slug)}
       {@const author = getAuthor(story)}
-      {@const date = formatDate(content.date)}
+      {@const date = content?.date ? formatDate(content?.date) : undefined}
       {@const tags = getTag(story)}
       <div
         class="container mx-auto flex flex-col justify-between gap-8 px-container py-10 md:flex-row md:items-center md:py-20"
@@ -87,31 +87,35 @@
             <p class="mb-2 text-xl font-semibold leading-tighter text-brand-9 md:mb-4">
               {tags}
             </p>
-            <p class="text-3xl font-semibold leading-tighter">{story.name}</p>
+            <p class="text-3xl font-semibold leading-tighter">{story?.name}</p>
           </div>
           <div
             class="mt-8 max-w-[528px] text-xl font-medium leading-snug tracking-wide opacity-74 md:mt-0"
           >
-            {#if content.seo && content.seo.length > 0 && content.seo[0].description}
+            {#if content?.seo && content?.seo.length > 0 && content?.seo[0].description}
               <p class="mb-3 md:mb-4">
-                {content.seo[0].description}
+                {content?.seo[0].description}
               </p>
             {/if}
             <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
-              <span aria-label={`Author: ${author}`}>{author}</span>
-              <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
-              <span aria-label={`Published: ${date}`}>{date}</span>
+              {#if author}
+                <span aria-label={`Author: ${author}`}>{author}</span>
+              {/if}
+              {#if date}
+                <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
+                <span aria-label={`Published: ${date}`}>{date}</span>
+              {/if}
             </p>
             <Button variant="secondary" as="a" href={storyLink}>{block.button_label}</Button>
           </div>
         </div>
-        {#if content.cover}
+        {#if content?.cover}
           <div
             class="relative h-[329px] self-stretch overflow-hidden rounded-3xl md:h-auto md:flex-1"
           >
             <Media
               imageTransformOptions={{ size: [0, 900] }}
-              media={content.cover}
+              media={content?.cover}
               class="absolute h-full w-full object-cover"
             />
           </div>

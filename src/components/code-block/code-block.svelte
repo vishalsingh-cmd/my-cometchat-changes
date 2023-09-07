@@ -36,7 +36,7 @@
   let el: HTMLPreElement;
 
   afterUpdate(() => {
-    Prism.highlightAllUnder(el);
+    if (Prism) Prism.highlightAllUnder(el);
   });
 
   let container: HTMLElement | undefined = undefined;
@@ -168,7 +168,7 @@
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
         {...$$restProps}><code class="language-{language}"
-          >{@html Prism.highlight(code, Prism.languages[language], language)}</code
+          >{@html Prism && Prism.highlight(code, Prism.languages[language], language)}</code
         >
 </pre>
     {/if}
