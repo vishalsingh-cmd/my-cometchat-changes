@@ -37,7 +37,7 @@
       return;
     }
 
-    headings = Array.from(content.querySelectorAll('h3'));
+    headings = Array.from(content.querySelectorAll('h2', 'h3'));
   };
 
   const onScrollIntoView = (e: CustomEvent) => {
