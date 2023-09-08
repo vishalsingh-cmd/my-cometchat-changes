@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  import { afterUpdate, createEventDispatcher } from 'svelte';
   import clsx from 'clsx';
-  // import Prism from 'prismjs';
+  import Prism from 'prismjs';
 
-  import 'prism-svelte';
-  import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  // import 'prism-svelte';
+  // import 'prismjs/plugins/line-highlight/prism-line-highlight';
+  // import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
-  import 'prismjs/components/prism-bash';
-  import 'prismjs/components/prism-elixir';
-  import 'prismjs/components/prism-go';
-  import 'prismjs/components/prism-javascript';
-  import 'prismjs/components/prism-swift';
-  import 'prismjs/components/prism-typescript';
-  import 'prismjs/components/prism-yaml';
+  // import 'prismjs/components/prism-bash';
+  // import 'prismjs/components/prism-elixir';
+  // import 'prismjs/components/prism-go';
+  // import 'prismjs/components/prism-javascript';
+  // import 'prismjs/components/prism-swift';
+  // import 'prismjs/components/prism-typescript';
+  // import 'prismjs/components/prism-yaml';
 
   import { cn } from '$lib/utils';
 
@@ -35,9 +35,9 @@
 
   let el: HTMLPreElement;
 
-  // afterUpdate(() => {
-  //   if (Prism) Prism.highlightAllUnder(el);
-  // });
+  afterUpdate(() => {
+    if (Prism) Prism.highlightAllUnder(el);
+  });
 
   let container: HTMLElement | undefined = undefined;
   let isThereLeftOverflow = false;
