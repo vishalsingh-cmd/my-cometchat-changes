@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { afterUpdate, createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   import clsx from 'clsx';
   import Prism from 'prismjs';
 
-  // import 'prism-svelte';
-  // import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  // import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  import 'prism-svelte';
+  import 'prismjs/plugins/line-highlight/prism-line-highlight';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
-  // import 'prismjs/components/prism-bash';
-  // import 'prismjs/components/prism-elixir';
-  // import 'prismjs/components/prism-go';
-  // import 'prismjs/components/prism-javascript';
-  // import 'prismjs/components/prism-swift';
-  // import 'prismjs/components/prism-typescript';
-  // import 'prismjs/components/prism-yaml';
+  import 'prismjs/components/prism-bash';
+  import 'prismjs/components/prism-elixir';
+  import 'prismjs/components/prism-go';
+  import 'prismjs/components/prism-javascript';
+  import 'prismjs/components/prism-swift';
+  import 'prismjs/components/prism-typescript';
+  import 'prismjs/components/prism-yaml';
 
   import { cn } from '$lib/utils';
 
@@ -167,14 +167,12 @@
         data-line={lineHighlight}
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
-        {...$$restProps}><code class="language-{language}">
-          <!-- {@html Prism ? Prism.highlight(code, Prism.languages[language], language) : null}</code -->
-        <!-- > -->
-<!-- </code> -->
-</code></pre>
+        {...$$restProps}><code class="language-{language}"
+          >{@html Prism && Prism.highlight(code, Prism.languages[language], language)}</code
+        >
+</pre>
     {/if}
   {/each}
-
   <div class="justify-self-end border-t border-gray-5 p-4 md:p-5">
     <GhostButton
       on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].codeToCopy)}
