@@ -41,7 +41,7 @@
     {:else}
       <img
         alt=""
-        src="./assets/placeholder-image.jpg"
+        src="./_static/assets/placeholder-image.jpg"
         class="mb-4 h-[202px] w-full rounded-2xl object-cover md:mb-5 md:h-[240px]"
       />
     {/if}
