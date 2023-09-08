@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { createEventDispatcher, afterUpdate } from 'svelte';
+  import { createEventDispatcher } from 'svelte';
   import clsx from 'clsx';
-  import Prism from 'prismjs';
+  // import Prism from 'prismjs';
 
   import 'prism-svelte';
   import 'prismjs/plugins/line-highlight/prism-line-highlight';
@@ -168,9 +168,10 @@
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
         {...$$restProps}><code class="language-{language}">
-          {@html Prism.highlight(code, Prism.languages[language], language)}</code
-        >
-</pre>
+          <!-- {@html Prism ? Prism.highlight(code, Prism.languages[language], language) : null}</code -->
+        <!-- > -->
+<!-- </code> -->
+</code></pre>
     {/if}
   {/each}
 
