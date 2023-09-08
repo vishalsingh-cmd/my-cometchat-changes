@@ -3,9 +3,9 @@
   import clsx from 'clsx';
   import Prism from 'prismjs';
 
-  import 'prism-svelte';
-  import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  // import 'prism-svelte';
+  // import 'prismjs/plugins/line-highlight/prism-line-highlight';
+  // import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
   import 'prismjs/components/prism-bash';
   import 'prismjs/components/prism-elixir';
