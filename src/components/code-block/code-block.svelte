@@ -3,6 +3,10 @@
   import clsx from 'clsx';
   import Prism from 'prismjs';
 
+  import 'prism-svelte';
+  import 'prismjs/plugins/line-highlight/prism-line-highlight';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers';
+
   import 'prismjs/components/prism-bash';
   import 'prismjs/components/prism-elixir';
   import 'prismjs/components/prism-go';
@@ -10,10 +14,6 @@
   import 'prismjs/components/prism-swift';
   import 'prismjs/components/prism-typescript';
   import 'prismjs/components/prism-yaml';
-
-  import 'prism-svelte';
-  import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
   import { cn } from '$lib/utils';
 
@@ -93,7 +93,6 @@
 </script>
 
 <!-- eslint-disable svelte/no-at-html-tags -->
-
 <div
   data-theme="dark"
   class={cn(
