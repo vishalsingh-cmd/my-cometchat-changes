@@ -1,25 +1,24 @@
 <script lang="ts">
-  import { createEventDispatcher, afterUpdate } from 'svelte';
-  import clsx from 'clsx';
-  import Prism from 'prismjs';
-
-  import 'prism-svelte';
-  import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  import { createEventDispatcher } from 'svelte';
+  import Prism from '@magidoc/plugin-svelte-prismjs';
 
   import 'prismjs/components/prism-bash';
   import 'prismjs/components/prism-elixir';
   import 'prismjs/components/prism-go';
-  import 'prismjs/components/prism-javascript';
   import 'prismjs/components/prism-swift';
+  import 'prismjs/components/prism-javascript';
   import 'prismjs/components/prism-typescript';
   import 'prismjs/components/prism-yaml';
 
   import { cn } from '$lib/utils';
-
   import GhostButton from '../buttons/ghost-button.svelte';
 
   import Icon from '../icon/icon.svelte';
+  import clsx from 'clsx';
+
+  export let lineNumbers = true;
+  export let lineNumbersStartAt = 1;
+  export let lineHighlight: string | undefined = undefined;
 
   const dispatch = createEventDispatcher();
 
@@ -28,16 +27,7 @@
 
   export let snippets: { code: string; codeToCopy: string; language: string; label: string }[];
 
-  export let lineNumbers = true;
-  export let lineNumbersStartAt = 1;
-  export let lineHighlight: string | undefined = undefined;
   export let selectedLanguageIndex = 0;
-
-  let el: HTMLPreElement;
-
-  afterUpdate(() => {
-    if (Prism) Prism.highlightAllUnder(el);
-  });
 
   let container: HTMLElement | undefined = undefined;
   let isThereLeftOverflow = false;
@@ -162,14 +152,11 @@
       {@const { code, language } = snippet}
       <pre
         tabindex="-1"
-        bind:this={el}
         data-line={lineHighlight}
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
         {...$$restProps}>
-        <code class="language-{language}">
-          {@html Prism.highlight(code, Prism.languages[language], language)}
-        </code>
+      <Prism {language} source={code} showLineNumbers showCopyButton />
       </pre>
     {/if}
   {/each}

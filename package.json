@@ -27,6 +27,7 @@
     "vercel:redirects": "svelte-kit sync && npx vite-node ./node.tsconfig.json ./scripts/vercel-redirects.ts"
   },
   "devDependencies": {
+    "@magidoc/plugin-svelte-prismjs": "^4.1.0",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
@@ -36,6 +37,7 @@
     "@storybook/testing-library": "^0.0.14-next.2",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
+    "@types/prismjs": "^1.26.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.14",
@@ -50,6 +52,7 @@
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.3.0",
+    "prismjs": "^1.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storyblok-generate-ts": "^1.14.0",
@@ -68,9 +71,7 @@
   "dependencies": {
     "@storyblok/js": "^2.1.6",
     "@tanstack/svelte-query": "^4.32.0",
-    "@types/prismjs": "^1.26.0",
     "date-fns": "^2.30.0",
-    "prism-svelte": "^0.5.0",
-    "prismjs": "^1.29.0"
+    "prism-svelte": "^0.5.0"
   }
 }
