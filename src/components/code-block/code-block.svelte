@@ -1,19 +1,19 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
-  // import clsx from 'clsx';
-  // import Prism from 'prismjs';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
+  import clsx from 'clsx';
+  import Prism from 'prismjs';
 
-  // import 'prism-svelte';
-  // import 'prismjs/plugins/line-highlight/prism-line-highlight';
-  // import 'prismjs/plugins/line-numbers/prism-line-numbers';
+  import 'prism-svelte';
+  import 'prismjs/plugins/line-highlight/prism-line-highlight';
+  import 'prismjs/plugins/line-numbers/prism-line-numbers';
 
-  // import 'prismjs/components/prism-bash';
-  // import 'prismjs/components/prism-elixir';
-  // import 'prismjs/components/prism-go';
-  // import 'prismjs/components/prism-javascript';
-  // import 'prismjs/components/prism-swift';
-  // import 'prismjs/components/prism-typescript';
-  // import 'prismjs/components/prism-yaml';
+  import 'prismjs/components/prism-bash';
+  import 'prismjs/components/prism-elixir';
+  import 'prismjs/components/prism-go';
+  import 'prismjs/components/prism-javascript';
+  import 'prismjs/components/prism-swift';
+  import 'prismjs/components/prism-typescript';
+  import 'prismjs/components/prism-yaml';
 
   import { cn } from '$lib/utils';
 
@@ -28,12 +28,12 @@
 
   export let snippets: { code: string; codeToCopy: string; language: string; label: string }[];
 
-  // export let lineNumbers = true;
-  // export let lineNumbersStartAt = 1;
-  // export let lineHighlight: string | undefined = undefined;
+  export let lineNumbers = true;
+  export let lineNumbersStartAt = 1;
+  export let lineHighlight: string | undefined = undefined;
   export let selectedLanguageIndex = 0;
 
-  // let el: HTMLPreElement;
+  let el: HTMLPreElement;
 
   // afterUpdate(() => {
   //   if (Prism) Prism.highlightAllUnder(el);
@@ -158,21 +158,22 @@
       </button>
     {/each}
   </div>
-  <!-- {#each snippets as snippet, i}
+  {#each snippets as snippet, i}
     {#if i === selectedLanguageIndex}
-      {@const { code, language } = snippet} -->
-  <!-- <pre
+      {@const { code, language } = snippet}
+      <pre
         tabindex="-1"
         bind:this={el}
         data-line={lineHighlight}
         class={clsx('h-full py-4 md:py-6', { 'line-numbers': lineNumbers }, className)}
         data-start={lineNumbersStartAt}
-        {...$$restProps}><code class="language-{language}"
-          >{@html Prism && Prism.highlight(code, Prism.languages[language], language)}</code
+        {...$$restProps}><code class="language-{language}">
+          {@html Prism.highlight(code, Prism.languages[language], language)}</code
         >
-</pre> -->
-  <!-- {/if}
-  {/each} -->
+</pre>
+    {/if}
+  {/each}
+
   <div class="justify-self-end border-t border-gray-5 p-4 md:p-5">
     <GhostButton
       on:click={() => navigator.clipboard.writeText(snippets[selectedLanguageIndex].codeToCopy)}
