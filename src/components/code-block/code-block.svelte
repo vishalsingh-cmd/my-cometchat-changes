@@ -39,6 +39,10 @@
     if (Prism) Prism.highlightAllUnder(el);
   });
 
+  onMount(() => {
+    if (Prism) Prism.highlightAllUnder(el);
+  });
+
   let container: HTMLElement | undefined = undefined;
   let isThereLeftOverflow = false;
   let isThereRightOverflow = false;
