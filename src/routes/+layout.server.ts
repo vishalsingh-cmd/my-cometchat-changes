@@ -1,5 +1,6 @@
-import { env } from '$env/dynamic/private';
+import type { LayoutServerLoad } from './$types';
 import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
+import { env } from '$env/dynamic/private';
 import { getFooter } from '$lib/data/footer.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
@@ -7,7 +8,7 @@ import type { TopNavigationStoryblok } from '$types/bloks.js';
 import type { ISbStoryData } from '@storyblok/js';
 import { error } from '@sveltejs/kit';
 
-export const load = async ({ cookies, fetch }) => {
+export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
   const version: 'draft' | 'published' = cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
   const storyblok = getStoryblok({ fetch });
 

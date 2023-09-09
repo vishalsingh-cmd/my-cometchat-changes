@@ -21,7 +21,7 @@
   >
     {item.title}
   </h4>
-  {#if item.content.length > 0}
+  {#if item?.content?.length > 0}
     {#each item.content as contentItem}
       {#if contentItem.items}
         <div class={cn('flex flex-col gap-3 px-container pb-5 pt-2 lg:pl-10')}>

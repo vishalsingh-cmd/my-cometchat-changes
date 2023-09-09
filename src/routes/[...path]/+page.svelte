@@ -48,8 +48,8 @@
     <meta property="og:image" content={src} />
     <meta property="twitter:image" content={src} />
   {:else}
-    <meta property="og:image" content="/default-og-image.png" />
-    <meta property="twitter:image" content="/default-og-image.png" />
+    <meta property="og:image" content="/_static/default-og-image.png" />
+    <meta property="twitter:image" content="/_static/default-og-image.png" />
   {/if}
   <meta property="og:url" content={$page.url.toString()} />
   <meta property="og:type" content="website" />

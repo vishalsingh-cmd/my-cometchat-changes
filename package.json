@@ -22,11 +22,12 @@
     "sb:pull": "npx storyblok@latest pull-components --space=231922",
     "sb:types": "storyblok-generate-ts source=./components.231922.json target=./src/types/bloks.d.ts && prettier ./src/types/bloks.d.ts --write",
     "sb": "npm run sb:pull && npm run sb:types",
-    "datasources": "svelte-kit sync && npx ts-node@latest --project ./node.tsconfig.json ./scripts/datasources.ts",
-    "sitemap": "svelte-kit sync && npx ts-node@latest --project ./node.tsconfig.json ./scripts/sitemap.ts",
-    "vercel:redirects": "svelte-kit sync && npx ts-node@latest --project ./node.tsconfig.json ./scripts/vercel-redirects.ts"
+    "datasources": "svelte-kit sync && npx vite-node ./node.tsconfig.json ./scripts/datasources.ts",
+    "sitemap": "svelte-kit sync && npx vite-node ./node.tsconfig.json ./scripts/sitemap.ts",
+    "vercel:redirects": "svelte-kit sync && npx vite-node ./node.tsconfig.json ./scripts/vercel-redirects.ts"
   },
   "devDependencies": {
+    "@magidoc/plugin-svelte-prismjs": "^4.1.0",
     "@storybook/addon-essentials": "^7.0.18",
     "@storybook/addon-interactions": "^7.0.18",
     "@storybook/addon-links": "^7.0.18",
@@ -56,6 +57,7 @@
     "storybook": "^7.0.18",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
+    "svelte-highlight": "^7.3.0",
     "tailwind-merge": "^1.12.0",
     "tailwindcss": "^3.3.2",
     "tslib": "^2.4.1",
@@ -68,9 +70,6 @@
   "dependencies": {
     "@storyblok/js": "^2.1.6",
     "@tanstack/svelte-query": "^4.32.0",
-    "@types/prismjs": "^1.26.0",
-    "date-fns": "^2.30.0",
-    "prism-svelte": "^0.5.0",
-    "prismjs": "^1.29.0"
+    "date-fns": "^2.30.0"
   }
 }
