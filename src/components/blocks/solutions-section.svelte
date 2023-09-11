@@ -20,7 +20,7 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IndustryStoryblok, SolutionsSectionStoryblok } from '$types/bloks';
-  import { getAnchorFromCmsLink, sanitizeSlug } from '$lib/storyblok';
+  import { sanitizeSlug } from '$lib/storyblok';
   import { cn, getLabelInfo } from '$lib/utils';
 
   export let block: SolutionsSectionStoryblok;

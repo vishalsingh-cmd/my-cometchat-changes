@@ -17,7 +17,10 @@
 </script>
 
 <div
-  class={cn('flex w-full flex-row gap-4 overflow-x-scroll break-all md:gap-6', className)}
+  class={cn(
+    'container mx-auto flex w-full flex-row gap-4 overflow-x-scroll break-all px-container md:gap-6',
+    className
+  )}
   role="tablist"
 >
   {#each options as tab}

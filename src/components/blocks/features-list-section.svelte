@@ -7,6 +7,7 @@
   import Tabs from '$components/tabs/tabs.svelte';
   import Title from '$components/title.svelte';
   import FeaturesListSectionItem from '$components/features-list-section-item.svelte';
+  import Sticky from '$components/sticky.svelte';
 
   export let block: FeaturesListSectionStoryblok;
 
@@ -18,11 +19,7 @@
 </script>
 
 {#if block}
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="overflow-hidden bg-gray-1 text-gray-12"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
     <div class="mx-auto max-w-content">
       {#if block.header && block.header[0]}
         {@const header = block.header[0]}
@@ -35,11 +32,13 @@
           label: item.title,
           content: item.items
         }))}
-        <Tabs
-          options={parsedItems}
-          activeTab={selectedItemIndex}
-          on:optionSelect={onOptionSelect}
-        />
+        <Sticky alwaysHaveBorder>
+          <Tabs
+            options={parsedItems}
+            activeTab={selectedItemIndex}
+            on:optionSelect={onOptionSelect}
+          />
+        </Sticky>
         {#each block.items as item, i}
           {@const firstTwoItems = item.items.slice(0, 2)}
           {@const lastTwoItems = item.items.slice(2, 4)}
