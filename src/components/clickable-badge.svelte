@@ -16,7 +16,6 @@
     'rounded-[10px]',
 
     'bg-brand-10/[0.12]',
-    'active:bg-brand-10/20',
     'focus-visible:bg-brand-10/[0.12]',
 
     'transition-colors ease-smooth',
@@ -37,7 +36,11 @@
     on:click
     on:focus
     {...$$restProps}
-    class={cn(clickableBadge, $$restProps.href && 'hover:bg-brand-10/[0.16]', className)}
+    class={cn(
+      clickableBadge,
+      $$restProps.href && 'hover:bg-brand-10/[0.16] active:bg-brand-10/20',
+      className
+    )}
   >
     <div class="flex items-center justify-center gap-0.5">
       <Icon icon="star-01" size="xs" class="flex-shrink-0 text-brand-9" />
