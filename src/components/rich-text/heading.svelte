@@ -8,7 +8,7 @@
 </script>
 
 <svelte:element
-  this={content?.attrs?.level == 2 ? 'h2' : 'h3'}
+  this={`h${content.attrs.level}`}
   class={cn(
     'pb-2.5 pt-5 md:pb-3 md:pt-10',
     'font-semibold leading-tighter text-gray-12',
