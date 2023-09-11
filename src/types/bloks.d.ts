@@ -293,9 +293,9 @@ export interface FeatureStoryblok {
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
+    | StoryblokStory<CustomerStoryStoryblok>
     | StoryblokStory<BlogPostStoryblok>
     | StoryblokStory<TutorialStoryblok>
-    | StoryblokStory<CustomerStoryStoryblok>
     | string;
   button_label: string;
   _uid: string;
@@ -1104,6 +1104,7 @@ export interface TestimonialStoryblok {
   position: string;
   avatar: AssetStoryblok;
   link?: MultilinkStoryblok;
+  g2_review?: number;
   _uid: string;
   component: 'testimonial';
   [k: string]: any;
@@ -1114,7 +1115,7 @@ export interface TestimonialBlockStoryblok {
   author_name: string;
   author_position: string;
   author_company: string;
-  author_image: AssetStoryblok;
+  author_image?: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
   [k: string]: any;
