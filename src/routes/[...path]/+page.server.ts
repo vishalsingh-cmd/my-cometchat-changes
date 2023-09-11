@@ -65,10 +65,10 @@ export const load = async ({ cookies, fetch, params }) => {
     let datasourceIntegrationTools = [];
 
     const directorySection =
-      page.data.story.content.component === 'page' &&
-      page.data.story.content.body &&
-      page.data.story.content.body.find(
-        (blok: SbBlokData) => blok.component === 'directory-section'
+      page.data?.story?.content?.component === 'page' &&
+      page.data?.story?.content.body &&
+      page.data?.story?.content.body.find(
+        (blok: SbBlokData) => blok?.component === 'directory-section'
       );
 
     if (
@@ -99,8 +99,8 @@ export const load = async ({ cookies, fetch, params }) => {
       datasourceIntegrationTools
     };
   } catch (err) {
-    console.error(err);
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
+    console.error('Unhandled error in page.server:', err);
     throw err;
   }
 };

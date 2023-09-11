@@ -19,7 +19,7 @@
 
   @font-face {
     font-family: 'Satoshi';
-    src: url('/fonts/Satoshi-Variable.woff2') format('woff2');
+    src: url('/_static/fonts/Satoshi-Variable.woff2') format('woff2');
     font-weight: 300 900;
     font-display: swap;
     font-style: normal;
@@ -27,7 +27,7 @@
 
   @font-face {
     font-family: 'Satoshi';
-    src: url('/fonts/Satoshi-VariableItalic.woff2') format('woff2');
+    src: url('/_static/fonts/Satoshi-VariableItalic.woff2') format('woff2');
     font-weight: 300 900;
     font-display: swap;
     font-style: italic;
@@ -35,7 +35,7 @@
 
   @font-face {
     font-family: 'IBM Plex Mono';
-    src: url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+    src: url('/_static/fonts/IBMPlexMono-Regular.woff2') format('woff2');
     font-weight: 400;
     font-display: swap;
     font-style: normal;

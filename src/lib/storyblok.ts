@@ -71,16 +71,17 @@ export const getStories = async (params: ISbStoriesParams = {}) => {
 
 export const sanitizeSlug = (slug: string) => {
   // nothing for now, but it's good to have a centralized function that we pass all slugs through
-  if (slug.startsWith('http')) return slug;
+  if (slug && slug.startsWith('http')) return slug;
 
   // remove the "pages" folder, always start with a slash, and end with no slash
-  return (
-    '/' +
-    slug
-      .replace(/^pages/, '')
-      .replace(/^\/+/, '')
-      .replace(/\/+$/, '')
-  );
+  if (slug)
+    return (
+      '/' +
+      slug
+        .replace(/^pages/, '')
+        .replace(/^\/+/, '')
+        .replace(/\/+$/, '')
+    );
 };
 
 export function getAnchorFromCmsLink(link: MultilinkStoryblok | undefined) {

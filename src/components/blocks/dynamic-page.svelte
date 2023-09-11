@@ -30,11 +30,11 @@
   const tutorialData = page as unknown as TutorialStoryblok;
 </script>
 
-{#if page.content.component === 'blog-post'}
+{#if page.content && page.content?.component && page.content?.component === 'blog-post'}
   <BlogPost block={blogPostData} />
-{:else if page.content.component === 'tutorial'}
+{:else if page.content?.component === 'tutorial'}
   <Tutorial block={tutorialData} />
-{:else if page.content.component === 'customer-story'}
+{:else if page.content?.component === 'customer-story'}
   <CustomerStory block={customerStoryData} />
 {:else}
   <Page block={pageData} />
