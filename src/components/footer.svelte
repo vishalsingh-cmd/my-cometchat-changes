@@ -13,7 +13,7 @@
 </script>
 
 {#if data}
-  <footer data-theme="dark" class="bg-gray-1 text-gray-12" data-sveltekit-preload-data="tap">
+  <footer data-theme="dark" class="bg-gray-1 text-gray-12">
     <div class="container mx-auto px-container">
       <!-- logo -->
       <div class="w-full pb-8 pt-6 sm:py-14">
