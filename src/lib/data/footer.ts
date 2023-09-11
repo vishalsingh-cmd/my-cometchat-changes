@@ -81,16 +81,16 @@ export const getFooter = async (
 
   return {
     prefooter: {
-      title: footer.content.prefooter_title,
-      description: footer.content.prefooter_description,
-      buttons: footer.content.prefooter_cta
+      title: footer?.content?.prefooter_title,
+      description: footer?.content?.prefooter_description,
+      buttons: footer?.content?.prefooter_cta
     },
-    socials: footer.content.socials.map((social) => ({
+    socials: footer?.content.socials.map((social) => ({
       label: social.label,
       icon: social.icon,
       ...getAnchorFromCmsLink(social.link)
     })),
-    subfooter: footer.content.subfooter.map((subfooter) => ({
+    subfooter: footer?.content?.subfooter?.map((subfooter) => ({
       label: subfooter.name,
       ...getAnchorFromCmsStory(subfooter)
     })),

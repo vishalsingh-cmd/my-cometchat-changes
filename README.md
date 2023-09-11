@@ -1,43 +1,68 @@
-# create-svelte
+# Cometchat Website
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Development
 
-## Creating a project
+### Prerequisites
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Ensure you have the `node` version specified in [`./.nvmrc`](./.nvmrc).
+- Ensure you have the `.env` file with the values according to `.env.example`
+- Ensure you have the required dependencies installed, `npm install` or `npm ci` according to your needs.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Next development server
 
-# create a new project in my-app
-npm create svelte@latest my-app
+- `npm run dev` to start the Next development server.
+
+## Stroryblok integration
+
+It's important to make sure that your component types stay in sync with the data structures in Storyblok. This can be accomplished using the Storyblok CLI and a few configuration steps.
+
+### Prerequisites
+
+**Setting up the Storyblok CLI**
+
+The first step is to install the Storyblok CLI. You can do this using npm - `npm install -g storyblok-cli`
+
+Once the CLI is installed, you'll need to authenticate with your Storyblok account - `storyblok login`.
+Follow the prompts to enter your Storyblok credentials.
+
+### Syncing Types
+
+With everything configured, you can sync the types from Storyblok by running `npm run sb`.
+
+### Syncing Datasources
+
+With everything configured, you can sync the datasources from Storyblok by running `npm run datasources`.
+
+### HTTPS localhost to use preview mode with Storyblok
+
+To be able to use Storyblok's Live Preview in Chrome when developing, you need to enable HTTPS on localhost:
+Create a certificate (one-time only)
+
+```
+brew install mkcert
+mkcert -install
+mkcert localhost
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```
+npm run dev:https
 ```
 
-### Icon family
+This is because we are using Next.JS Preview Mode inside an iframe and we have to use SameSite=None cookie policy (that just works with Secure cookies).
 
-All icons are located at `components/icon/assets`. To add or update an icon, just add the SVG file to this folder and run `npm run compress-icons`.
-The icons will be inlined to make use of the `currentColor` fill.
+## Storybook
 
-## Building
+- `npm run storybook` to run the storybook server
+- `npm run build-storybook` to build storybook
 
-To create a production version of your app:
+## Running a build of the project
 
-```bash
-npm run build
-```
+- `npm run build` to create build the project
+- `npm run start` to run the build project
 
-You can preview the production build with `npm run preview`.
+## Deployment environments
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- We have a [staging environment](http://cometchat-web-staging.vercel.app/) that is bound to the `main` branch
+- We have a [production environment](http://cometchat-web-production.vercel.app/) that is deployed when new releases are published
+
+All the environments are deployed on [Vercel](https://vercel.com/)
