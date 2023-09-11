@@ -134,7 +134,17 @@
                     class="flex flex-col gap-[2px] text-md font-semibold leading-tight tracking-wide text-gray-12"
                   >
                     <p>{author.content.name}</p>
-                    <p class="opacity-74">{author.content.role}, {author.content.company}</p>
+                    <p class="opacity-74">
+                      {#if author.content.role}
+                        {author.content.role}
+                      {/if}
+                      {#if author.content.role && author.content.company}
+                        ,
+                      {/if}
+                      {#if author.content.company}
+                        {author.content.company}
+                      {/if}
+                    </p>
                   </div>
                 </div>
                 <div class="text-lg-richtext font-medium leading-snug tracking-wide text-gray-12">
