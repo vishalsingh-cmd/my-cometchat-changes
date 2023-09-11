@@ -104,12 +104,12 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-09-01T09:22:28.178Z",
+      "updated_at": "2023-09-11T11:23:31.258Z",
       "id": 4258189,
       "schema": {
         "cover": {
           "type": "asset",
-          "required": true,
+          "required": false,
           "key": "cover",
           "pos": 0
         },
@@ -205,7 +205,8 @@
             "link",
             "paragraph",
             "strike",
-            "underline"
+            "underline",
+            "h2"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [
@@ -4993,7 +4994,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-08-29T14:07:40.739Z",
+      "updated_at": "2023-09-11T15:11:45.744Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -5177,7 +5178,8 @@
             "paragraph",
             "strike",
             "underline",
-            "h2"
+            "h2",
+            "code"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [
