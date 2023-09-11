@@ -51,7 +51,7 @@ export interface RichtextStoryblok {
 }
 
 export interface BlogPostStoryblok {
-  cover: AssetStoryblok;
+  cover?: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
     | ''

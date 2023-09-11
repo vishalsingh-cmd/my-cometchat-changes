@@ -24,5 +24,6 @@
   "a11y.author": "Author",
   "a11y.published": "Date published",
   "a11y.role": "Role",
-  "directory.no_results_found": "No results found"
+  "directory.no_results_found": "No results found",
+  "reviews.g2_text": "G2 Review"
 }

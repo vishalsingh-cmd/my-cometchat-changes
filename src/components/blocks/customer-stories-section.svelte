@@ -24,16 +24,16 @@
 
   const reactions: Reaction[] = [
     {
-      styles: '-rotate-12 absolute right-4 -top-12 xl:-top-11 xl:right-16',
+      styles: 'pointer-events-none -rotate-12 absolute right-4 -top-12 xl:-top-11 xl:right-16',
       emoji: PartyFaceEmoji
     },
     {
-      styles: 'absolute bottom-[280px] left-[70px] hidden rotate-12 xl:flex',
+      styles: 'pointer-events-none absolute bottom-[280px] left-[70px] hidden rotate-12 xl:flex',
       emoji: CometEmoji
     },
     {
       styles:
-        'absolute -left-11 top-0 md:-top-2 md:left-2 lg:-top-2 xl:left-96 xl:top-[36px] -rotate-12',
+        'pointer-events-none absolute -left-11 top-0 md:-top-2 md:left-2 lg:-top-2 xl:left-96 xl:top-[36px] -rotate-12',
       emoji: StarsFaceEmoji
     }
   ];
@@ -54,7 +54,7 @@
       class="container relative mx-auto flex w-full flex-col justify-between px-container xl:mt-20 xl:flex-row"
     >
       <div
-        class="absolute -bottom-[450px] -left-48 h-[400px] w-[400px] -rotate-90 bg-gradient-to-r from-[#fcb8a8] via-[#b968a4] to-[#756cf7] blur-[200px] xl:-bottom-72 xl:-left-10"
+        class="pointer-events-none absolute -bottom-[450px] -left-48 h-[400px] w-[400px] -rotate-90 bg-gradient-to-r from-[#fcb8a8] via-[#b968a4] to-[#756cf7] blur-[200px] xl:-bottom-72 xl:-left-10"
         style="transform: translate3d(0, 0, 0);"
       />
 
@@ -71,7 +71,11 @@
 
       {#if testimonials}
         <div class="relative flex w-full flex-col gap-0 pb-12 xl:max-w-2xl xl:gap-5">
-          <img alt="" src={Orbit} class="absolute hidden xl:-right-6 xl:bottom-28 xl:inline" />
+          <img
+            alt=""
+            src={Orbit}
+            class="pointer-events-none absolute hidden xl:-right-6 xl:bottom-28 xl:inline"
+          />
 
           <div class={cn(reactionEmojiStyle, reactions[1].styles)}>
             <img alt="" src={reactions[1].emoji} class="w-7" />
@@ -86,7 +90,7 @@
                 <img
                   alt=""
                   src={Comet}
-                  class="absolute -right-[90px] -top-[156px] h-[300px] w-[300px] md:-right-[40px] xl:-left-[330px] xl:top-0"
+                  class="pointer-events-none absolute -right-[90px] -top-[156px] h-[300px] w-[300px] md:-right-[40px] xl:-left-[330px] xl:top-0"
                 />
               {/if}
 
