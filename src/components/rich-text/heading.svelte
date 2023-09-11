@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { cn } from '$lib/utils';
   import { RichTextResolver, type ISbRichtext } from '@storyblok/js';
 
   export let content: ISbRichtext;
@@ -6,7 +7,14 @@
   const resolver = new RichTextResolver();
 </script>
 
-<h3 class="my-3 text-xl font-semibold leading-tighter md:mt-5">
+<svelte:element
+  this={content?.attrs?.level == 2 ? 'h2' : 'h3'}
+  class={cn(
+    'pb-2.5 pt-5 md:pb-3 md:pt-10',
+    'font-semibold leading-tighter text-gray-12',
+    content?.attrs?.level == 2 ? 'text-2xl' : 'text-xl'
+  )}
+>
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
   {@html resolver.render(content)}
-</h3>
+</svelte:element>
