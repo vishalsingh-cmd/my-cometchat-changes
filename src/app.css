@@ -9,6 +9,7 @@
     -webkit-tap-highlight-color: transparent;
 
     overflow-y: auto;
+    color-scheme: dark;
   }
 
   * {
