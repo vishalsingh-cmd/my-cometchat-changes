@@ -13,7 +13,7 @@
 </script>
 
 <section
-  class={cn('relative bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
+  class={cn('text-gray-122 relative bg-gray-1', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
@@ -102,6 +102,6 @@
 
   <!-- Bottom Gradient -->
   <div
-    class="absolute bottom-0 left-0 h-[100px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+    class="absolute bottom-0 left-0 h-[100px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
   />
 </section>
