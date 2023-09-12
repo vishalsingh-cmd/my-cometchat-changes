@@ -8,7 +8,7 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: transparent;
 
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   * {
