@@ -5,7 +5,12 @@
 </script>
 
 {#if content.content && content?.content[0] && content?.content[0].text}
-  <div class="overflow-hidden rounded-2xl border border-gray-1" style="color-scheme: dark;">
-    <Code language={content?.attrs.class.split('language-')[1]} code={content?.content[0]?.text} />
+  <div class="my-1 overflow-hidden rounded-2xl bg-gray-12/95 p-px" style="color-scheme: dark;">
+    <div class="overflow-hidden rounded-[15.5px]">
+      <Code
+        language={content?.attrs.class.split('language-')[1]}
+        code={content?.content[0]?.text}
+      />
+    </div>
   </div>
 {/if}
