@@ -134,7 +134,7 @@
       </button>
     {/each}
   </div>
-  <div class="h-full overflow-auto" style="color-scheme: dark;">
+  <div class="h-full overflow-auto">
     {#each snippets as snippet, i}
       {#if i === selectedLanguageIndex}
         {@const { code, language } = snippet}

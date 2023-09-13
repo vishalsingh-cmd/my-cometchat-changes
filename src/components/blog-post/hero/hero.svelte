@@ -13,7 +13,7 @@
 </script>
 
 <section
-  class={cn('text-gray-122 relative bg-gray-1', block.content.imported_from_old_site && 'h-auto')}
+  class={cn('relative bg-gray-1 text-gray-12', block.content.imported_from_old_site && 'h-auto')}
   data-theme="dark"
 >
   {#if block.content.imported_from_old_site}
