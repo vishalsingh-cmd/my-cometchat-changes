@@ -12,7 +12,8 @@
     java: () => import('svelte-highlight/languages/java'),
     kotlin: () => import('svelte-highlight/languages/kotlin'),
     php: () => import('svelte-highlight/languages/php'),
-    dart: () => import('svelte-highlight/languages/dart')
+    dart: () => import('svelte-highlight/languages/dart'),
+    ruby: () => import('svelte-highlight/languages/ruby')
   } as const;
 
   function isValidLanguage(language: string): language is keyof typeof languages {
