@@ -22,7 +22,20 @@
 </script>
 
 {#if isValidLanguage(language)}
-  {#await languages[language]() then { default: language }}
+  {#await languages[language]()}
+    <div role="status" data-theme="dark" class="animate-pulse space-y-2.5 bg-gray-2 p-5">
+      <div class="flex w-full flex-col space-y-2">
+        {#each Array(code.split('\n').length) as line}
+          {@const lineWidth = Math.min(Math.max(Math.round(Math.random() * 100), 20), 80)}
+          <div
+            data-theme="dark"
+            class="h-2.5 w-[--width] rounded-full bg-gray-12/8"
+            style:--width="{lineWidth}%"
+          />
+        {/each}
+      </div>
+    </div>
+  {:then { default: language }}
     <Highlight {language} {code} let:highlighted>
       <LineNumbers {highlighted} wrapLines />
     </Highlight>
