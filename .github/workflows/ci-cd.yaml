@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
   release:
     types:
@@ -15,14 +16,14 @@ jobs:
     name: CI/CD
     permissions:
       contents: read
-      packages: read
+      packages: write
       deployments: write
-    uses: significa/actions/.github/workflows/vercel-app.yaml@main
+    uses: significa/actions/.github/workflows/npm-library.yaml@main
     with:
-      staging_domain: ${{ vars.STAGING_DOMAIN }}
-      production_domain: ${{ vars.PRODUCTION_DOMAIN }}
-      vercel_scope: ${{ vars.VERCEL_SCOPE }}
-    secrets:
-      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      lint_command: 'npm run lint'
+      test_command: 'npm run test'
+      build_command: ''
+      # FIXME: For building to work we must provide the requred env var PUBLIC_STORYBLOK_TOKEN
+      # 'npm run build'
+      publish_to_github_registry: false
+      publish_to_npm_registry: false
