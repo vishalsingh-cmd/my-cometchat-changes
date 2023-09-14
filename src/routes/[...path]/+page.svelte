@@ -51,7 +51,7 @@
     <meta property="og:image" content="/_static/default-og-image.png" />
     <meta property="twitter:image" content="/_static/default-og-image.png" />
   {/if}
-  <meta property="og:url" content={$page.url.toString()} />
+  <meta property="og:url" content={`https://www.cometchat.com` + $page.url.pathname} />
   <meta property="og:type" content="website" />
 
   <!-- SEO options -->
