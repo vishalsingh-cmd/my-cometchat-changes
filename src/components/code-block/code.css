@@ -51,7 +51,7 @@ code.hljs {
 .hljs-number,
 .hljs-symbol,
 .hljs-variable.constant_ {
-  color: #8C7CE0;
+  color: #8c7ce0;
 }
 .hljs-class .hljs-title,
 .hljs-title,
@@ -80,7 +80,7 @@ code.hljs {
 .hljs-section,
 .hljs-title.function_,
 .ruby .hljs-property {
-  color: #FF884B;
+  color: #ff884b;
 }
 .diff .hljs-meta,
 .hljs-keyword,
