@@ -5,13 +5,7 @@ import { formatDate } from '$lib/utils/dates';
 export const RESULTS_PER_PAGE = 12;
 
 export type Panel = {
-  type:
-    | 'category'
-    | 'technology'
-    | 'tutorial_type'
-    | 'industries'
-    | 'integration_tool'
-    | 'industry';
+  type: 'category' | 'tutorial_type' | 'industries' | 'integration_tool' | 'industry';
   title: string;
   tags: { name: string; value: string }[];
   selectedTags: string[];
@@ -32,10 +26,6 @@ export const parseItem = (
 
         if (item.content.tutorial_type) {
           tags.push(item.content.tutorial_type);
-        }
-
-        if (item.content.technology) {
-          tags.push(...item.content.technology);
         }
 
         if (item.content.integration_tool) {
@@ -61,7 +51,7 @@ export const parseItem = (
     link: item.full_slug as string,
     customer: content_type === 'customer-story' ? item.content.customer.content : undefined,
     author: item.content.author ? item.content.author.name : '',
-    date: formatDate(new Date(item.created_at))
+    date: formatDate(item.created_at ? new Date(item.created_at) : new Date())
   };
 };
 

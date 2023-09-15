@@ -46,12 +46,6 @@
 
   $: panels = [
     {
-      type: 'technology',
-      title: 'Technology',
-      tags: $page.data.datasourceTechnologies,
-      selectedTags: []
-    },
-    {
       type: 'tutorial_type',
       title: 'Tutorial Type',
       tags: $page.data.datasourceTutorialTypes,
@@ -71,10 +65,7 @@
     }
   ] as Panel[];
 
-  const toggleTag = (
-    tag: string,
-    type: 'technology' | 'tutorial_type' | 'industries' | 'integration_tool'
-  ) => {
+  const toggleTag = (tag: string, type: 'tutorial_type' | 'industries' | 'integration_tool') => {
     const panel = getPanel(panels, type);
 
     if (panel.selectedTags.includes(tag)) {
@@ -127,15 +118,12 @@
   $: numberOfSelectedTags = getNumberOfSelectedTags();
 
   $: filter_query = {
-    technology: panels[0].selectedTags.length
-      ? { any_in_array: panels[0].selectedTags.join(',') }
+    tutorial_type: panels[0].selectedTags.length ? { in: panels[0].selectedTags.join(',') } : null,
+    industries: panels[1].selectedTags.length
+      ? { any_in_array: panels[1].selectedTags.join(',') }
       : null,
-    tutorial_type: panels[1].selectedTags.length ? { in: panels[1].selectedTags.join(',') } : null,
-    industries: panels[2].selectedTags.length
-      ? { any_in_array: panels[2].selectedTags.join(',') }
-      : null,
-    integration_tool: panels[3].selectedTags.length
-      ? { in: panels[3].selectedTags.join(',') }
+    integration_tool: panels[2].selectedTags.length
+      ? { in: panels[2].selectedTags.join(',') }
       : null
   };
 

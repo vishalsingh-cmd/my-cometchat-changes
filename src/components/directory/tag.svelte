@@ -7,7 +7,6 @@
 
   export let tag: { name: string; value: string };
   export let panelType:
-    | 'technology'
     | 'tutorial_type'
     | 'industries'
     | 'integration_tool'
