@@ -104,12 +104,12 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-09-11T11:23:31.258Z",
+      "updated_at": "2023-09-11T16:12:50.830Z",
       "id": 4258189,
       "schema": {
         "cover": {
           "type": "asset",
-          "required": false,
+          "required": true,
           "key": "cover",
           "pos": 0
         },
@@ -2057,6 +2057,81 @@
       "color": null,
       "icon": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "image-with-list-section",
+      "display_name": null,
+      "created_at": "2023-09-15T13:35:18.714Z",
+      "updated_at": "2023-09-15T14:40:12.001Z",
+      "id": 4580921,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 0,
+          "options": [
+            {
+              "_uid": "71b5ba87-b343-4926-820f-b189bdede651",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "c641e129-8aa6-4074-86d5-da2e3cdf2027",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "light",
+          "key": "theme"
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "options": [
+            {
+              "_uid": "65baa6bf-73c3-4524-8588-04b265021d6b",
+              "name": "brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "c95b592e-3440-4987-8197-49f3451c3bba",
+              "value": "orange",
+              "name": "orange"
+            }
+          ],
+          "default_value": "brand",
+          "key": "accent_colour"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "key": "Image",
+          "required": true
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["list-item"],
+          "pos": 3,
+          "key": "items"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "image-with-list-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "implementation-list-section",
@@ -4994,12 +5069,12 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-09-11T15:11:45.744Z",
+      "updated_at": "2023-09-15T13:05:38.310Z",
       "id": 4303307,
       "schema": {
         "cover": {
           "type": "asset",
-          "required": true,
+          "required": false,
           "key": "cover",
           "pos": 0
         },
@@ -5108,7 +5183,8 @@
             }
           ],
           "source": "internal",
-          "datasource_slug": "technologies"
+          "datasource_slug": "technologies",
+          "display_name": "Technology"
         },
         "tutorial_type": {
           "type": "option",
@@ -5158,10 +5234,155 @@
           "source": "internal",
           "datasource_slug": "integration-tools"
         },
+        "product": {
+          "type": "options",
+          "options": [
+            {
+              "_uid": "40f3c653-e2a4-4514-9615-3610db9bc5e4",
+              "name": "Chat",
+              "value": "Chat"
+            },
+            {
+              "_uid": "8dd9ab77-db5f-46d2-8353-f746326fcc75",
+              "value": "Voice and Video",
+              "name": "Voice and Video"
+            }
+          ],
+          "pos": 6,
+          "key": "product"
+        },
+        "platform": {
+          "type": "options",
+          "options": [
+            {
+              "_uid": "c180287d-3fcb-4a16-bf78-10a9b01f07af",
+              "name": "Android",
+              "value": "Android"
+            },
+            {
+              "_uid": "16071ab6-1ae3-4e2e-b710-66fa5cec8645",
+              "value": "iOS",
+              "name": "iOS"
+            },
+            {
+              "_uid": "fae73e70-d7e9-4251-82f5-2befd1d0b893",
+              "value": "Web",
+              "name": "Web"
+            }
+          ],
+          "pos": 7,
+          "key": "platform"
+        },
+        "features": {
+          "type": "options",
+          "options": [
+            {
+              "_uid": "10dbe2ee-d1da-4276-af2c-d01ea7c06f0c",
+              "name": "1 to 1 chat",
+              "value": "1 to 1 chat"
+            },
+            {
+              "_uid": "b48a5e4b-3a30-43bc-9c00-79fcbf772678",
+              "value": "Typing indicators",
+              "name": "Typing indicators"
+            },
+            {
+              "_uid": "14679d9e-6cd6-4e6f-a707-6545ede7b90a",
+              "value": "Push Notifications",
+              "name": "Push Notifications"
+            }
+          ],
+          "pos": 8,
+          "key": "features"
+        },
+        "language": {
+          "type": "options",
+          "pos": 9,
+          "key": "Language",
+          "display_name": "",
+          "options": [
+            {
+              "_uid": "cbfe297b-5c2f-4dc1-9f72-541e73949575",
+              "name": "Javascript",
+              "value": "Javascript"
+            },
+            {
+              "_uid": "515d48d1-8e73-40c4-9c25-9b9c98700f1a",
+              "value": "Kotlin",
+              "name": "Kotlin"
+            },
+            {
+              "_uid": "d4578e70-0f65-428d-a880-9e579118f244",
+              "value": "Java",
+              "name": "Java"
+            },
+            {
+              "_uid": "6f88f770-03a1-41e6-bf6b-d5d3f0a265c3",
+              "value": "Swift",
+              "name": "Swift"
+            }
+          ]
+        },
+        "framework": {
+          "type": "options",
+          "pos": 10,
+          "options": [
+            {
+              "_uid": "be8dc222-5489-437a-9389-61e332ac235a",
+              "name": "Angular",
+              "value": "Angular"
+            },
+            {
+              "_uid": "defea368-cb0e-4769-8657-1950f01a0d00",
+              "value": "Flutter",
+              "name": "Flutter"
+            },
+            {
+              "_uid": "c598c70c-1cb7-470c-9c28-2543bf0c7ccb",
+              "value": "React",
+              "name": "React"
+            },
+            {
+              "_uid": "a69df1e8-459e-4e94-9ad1-98658733a8c3",
+              "value": "Ionic",
+              "name": "Ionic"
+            },
+            {
+              "_uid": "49860915-c738-461c-80fe-e2930f8e7e06",
+              "value": "Nextjs",
+              "name": "Nextjs"
+            },
+            {
+              "_uid": "c50d3865-a418-44b8-a4e6-15d567461a84",
+              "value": "Nodejs",
+              "name": "Nodejs"
+            },
+            {
+              "_uid": "7a31c9eb-19c4-453f-a715-c596a03fd90a",
+              "value": "PHP",
+              "name": "PHP"
+            },
+            {
+              "_uid": "57142364-8463-4bda-b0b1-d0f157231004",
+              "value": "React Native",
+              "name": "React Native"
+            },
+            {
+              "_uid": "a2c99cc1-0b9b-4f99-b675-806c53cfea28",
+              "value": "Vue",
+              "name": "Vue"
+            }
+          ]
+        },
         "imported_from_old_site": {
           "type": "boolean",
-          "key": "is_old_post",
-          "pos": 6
+          "key": "imported_from_old_site",
+          "pos": 11
+        },
+        "created_at": {
+          "type": "datetime",
+          "pos": 12,
+          "key": "created_at"
         },
         "body": {
           "type": "richtext",
@@ -5193,7 +5414,7 @@
             "youtube-video"
           ],
           "key": "body",
-          "pos": 7
+          "pos": 13
         },
         "related": {
           "type": "bloks",
@@ -5203,7 +5424,7 @@
           "restrict_components": true,
           "component_whitelist": ["related-stories-section"],
           "key": "related",
-          "pos": 8
+          "pos": 14
         },
         "pre_footer": {
           "type": "bloks",
@@ -5212,7 +5433,7 @@
           "restrict_components": true,
           "component_whitelist": ["pre-footer_copy", "synced-block"],
           "key": "pre_footer",
-          "pos": 9
+          "pos": 15
         },
         "seo": {
           "type": "bloks",
@@ -5223,7 +5444,7 @@
           "maximum": 1,
           "minimum": 1,
           "key": "seo",
-          "pos": 10
+          "pos": 16
         },
         "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50": {
           "display_name": "Metadata",
@@ -5238,21 +5459,27 @@
             "integration_tool",
             "first_created_on",
             "imported_from_old_site",
-            "created_at"
+            "created_at",
+            "Product",
+            "Platform",
+            "Features",
+            "Language",
+            "product",
+            "platform",
+            "features",
+            "language",
+            "framework"
           ],
-          "pos": 11,
+          "pos": 17,
           "type": "tab",
           "key": "tab-1bbf2158-4d5e-4a3f-93fc-590d4bbc4e50"
         },
         "tab-d4b92494-da23-4bdc-9772-3bd93f710d34": {
           "display_name": "SEO",
           "keys": ["fields", "seo"],
-          "pos": 12,
+          "pos": 18,
           "type": "tab",
           "key": "tab-d4b92494-da23-4bdc-9772-3bd93f710d34"
-        },
-        "created_at": {
-          "type": "datetime"
         }
       },
       "image": null,
