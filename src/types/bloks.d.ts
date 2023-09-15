@@ -497,16 +497,6 @@ export interface ImageTitleDescriptionTagsItemStoryblok {
   [k: string]: any;
 }
 
-export interface ImageWithListSectionStoryblok {
-  theme?: '' | 'dark' | 'light';
-  accent_colour?: '' | 'brand' | 'orange';
-  image: AssetStoryblok;
-  items: ListItemStoryblok[];
-  _uid: string;
-  component: 'image-with-list-section';
-  [k: string]: any;
-}
-
 export interface ImplementationListSectionStoryblok {
   label: string;
   title: string;
@@ -574,7 +564,6 @@ export interface IndustryStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
-    | ImageWithListSectionStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -585,6 +574,7 @@ export interface IndustryStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -682,6 +672,16 @@ export interface LogoShowcaseStoryblok {
   [k: string]: any;
 }
 
+export interface MediaWithListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour?: '' | 'brand' | 'orange';
+  image: AssetStoryblok;
+  items: ListItemStoryblok[];
+  _uid: string;
+  component: 'media-with-list-section';
+  [k: string]: any;
+}
+
 export interface MetricsStoryblok {
   metrics?: MetricsItemStoryblok[];
   _uid: string;
@@ -740,7 +740,6 @@ export interface PageStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
-    | ImageWithListSectionStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -751,6 +750,7 @@ export interface PageStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -971,7 +971,6 @@ export interface SyncedBlockContentStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
-    | ImageWithListSectionStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -982,6 +981,7 @@ export interface SyncedBlockContentStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -1056,7 +1056,6 @@ export interface TechnologyStoryblok {
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HomepageHeroStoryblok
-    | ImageWithListSectionStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -1067,6 +1066,7 @@ export interface TechnologyStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok

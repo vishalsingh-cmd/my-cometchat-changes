@@ -7,7 +7,7 @@
   import ListSection from './list-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
   import DesktopTabs from '$components/features-at-glance-section/desktop-tabs.svelte';
-  import ImageWithList from '$components/image-with-list.svelte';
+  import MediaWithList from '$components/media-with-list.svelte';
 
   let activeTab = 0;
   let activeButtonsTab = 0;
@@ -82,7 +82,7 @@
         {#if block.features[activeTab].feature_list[activeButtonsTab]}
           {@const { image, items_right_of_image: items } =
             block.features[activeTab].feature_list[activeButtonsTab]}
-          <ImageWithList {items} {image} />
+          <MediaWithList {items} {image} />
         {/if}
       </div>
 

@@ -2059,81 +2059,6 @@
       "component_group_name": "Internal Blocks"
     },
     {
-      "name": "image-with-list-section",
-      "display_name": null,
-      "created_at": "2023-09-15T13:35:18.714Z",
-      "updated_at": "2023-09-15T14:40:12.001Z",
-      "id": 4580921,
-      "schema": {
-        "theme": {
-          "type": "option",
-          "use_uuid": true,
-          "pos": 0,
-          "options": [
-            {
-              "_uid": "71b5ba87-b343-4926-820f-b189bdede651",
-              "name": "Dark",
-              "value": "dark"
-            },
-            {
-              "_uid": "c641e129-8aa6-4074-86d5-da2e3cdf2027",
-              "value": "light",
-              "name": "Light"
-            }
-          ],
-          "default_value": "light",
-          "key": "theme"
-        },
-        "accent_colour": {
-          "type": "option",
-          "use_uuid": true,
-          "pos": 1,
-          "options": [
-            {
-              "_uid": "65baa6bf-73c3-4524-8588-04b265021d6b",
-              "name": "brand",
-              "value": "brand"
-            },
-            {
-              "_uid": "c95b592e-3440-4987-8197-49f3451c3bba",
-              "value": "orange",
-              "name": "orange"
-            }
-          ],
-          "default_value": "brand",
-          "key": "accent_colour"
-        },
-        "image": {
-          "type": "asset",
-          "pos": 2,
-          "key": "Image",
-          "required": true
-        },
-        "items": {
-          "type": "bloks",
-          "required": true,
-          "maximum": 4,
-          "restrict_type": "",
-          "restrict_components": true,
-          "component_whitelist": ["list-item"],
-          "pos": 3,
-          "key": "items"
-        }
-      },
-      "image": null,
-      "preview_field": null,
-      "is_root": false,
-      "preview_tmpl": null,
-      "is_nestable": true,
-      "all_presets": [],
-      "preset_id": null,
-      "real_name": "image-with-list-section",
-      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
-      "color": null,
-      "icon": null,
-      "component_group_name": "Blocks"
-    },
-    {
       "name": "implementation-list-section",
       "display_name": null,
       "created_at": "2023-08-09T11:13:33.358Z",
@@ -2803,6 +2728,81 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "logo-showcase",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "media-with-list-section",
+      "display_name": null,
+      "created_at": "2023-09-15T13:35:18.714Z",
+      "updated_at": "2023-09-15T15:45:25.644Z",
+      "id": 4580921,
+      "schema": {
+        "theme": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 0,
+          "options": [
+            {
+              "_uid": "71b5ba87-b343-4926-820f-b189bdede651",
+              "name": "Dark",
+              "value": "dark"
+            },
+            {
+              "_uid": "c641e129-8aa6-4074-86d5-da2e3cdf2027",
+              "value": "light",
+              "name": "Light"
+            }
+          ],
+          "default_value": "light",
+          "key": "theme"
+        },
+        "accent_colour": {
+          "type": "option",
+          "use_uuid": true,
+          "pos": 1,
+          "options": [
+            {
+              "_uid": "65baa6bf-73c3-4524-8588-04b265021d6b",
+              "name": "brand",
+              "value": "brand"
+            },
+            {
+              "_uid": "c95b592e-3440-4987-8197-49f3451c3bba",
+              "value": "orange",
+              "name": "orange"
+            }
+          ],
+          "default_value": "brand",
+          "key": "accent_colour"
+        },
+        "image": {
+          "type": "asset",
+          "pos": 2,
+          "key": "Image",
+          "required": true
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["list-item"],
+          "pos": 3,
+          "key": "items"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "media-with-list-section",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,

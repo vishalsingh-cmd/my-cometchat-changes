@@ -1,20 +1,18 @@
 <script lang="ts">
-  import ImageWithList from '$components/image-with-list.svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { ImageWithListSectionStoryblok } from '$types/bloks';
 
-  let className: undefined | string = undefined;
-  export { className as class };
+  import MediaWithList from '$components/media-with-list.svelte';
+  import type { MediaWithListSectionStoryblok } from '$types/bloks';
 
-  export let block: ImageWithListSectionStoryblok;
+  export let block: MediaWithListSectionStoryblok;
 </script>
 
 <div
   use:storyblokEditable={block}
-  class={className}
+  class="container mx-auto px-container pb-8 md:pb-12 md:pt-12"
   data-theme={block?.theme ? block.theme : 'light'}
 >
-  <ImageWithList
+  <MediaWithList
     image={block?.image}
     items={block?.items}
     accentColour={block?.accent_colour || 'brand'}
