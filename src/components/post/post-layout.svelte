@@ -109,7 +109,7 @@
       >
         <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
 
-        <div class="relative" id="content">
+        <div class="relative overflow-hidden" id="content">
           {#each block.content.body.content as b}
             <RichTextRenderer block={b} />
           {/each}

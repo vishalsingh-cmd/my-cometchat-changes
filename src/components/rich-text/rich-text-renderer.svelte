@@ -7,6 +7,7 @@
   import OrderedList from './ordered-list.svelte';
   import Paragraph from './paragraph.svelte';
   import UnorderedList from './unordered-list.svelte';
+  import CodeBlock from './code-block.svelte';
 
   import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
 
@@ -16,7 +17,8 @@
     heading: Heading,
     ordered_list: OrderedList,
     bullet_list: UnorderedList,
-    paragraph: Paragraph
+    paragraph: Paragraph,
+    code_block: CodeBlock
   };
 
   const component = block.type && block.type in map ? map[block.type as keyof typeof map] : null;
