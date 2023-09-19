@@ -7,6 +7,10 @@
     color-scheme: dark;
   }
 
+  #hubspot-messages-iframe-container {
+    color-scheme: light;
+  }
+
   html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
