@@ -675,7 +675,7 @@ export interface LogoShowcaseStoryblok {
 export interface MediaWithListSectionStoryblok {
   theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
-  image: AssetStoryblok;
+  media: AssetStoryblok;
   items: ListItemStoryblok[];
   _uid: string;
   component: 'media-with-list-section';

@@ -1,25 +1,32 @@
 <script lang="ts">
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
   import Media from '$components/media.svelte';
+  import { cn } from '$lib/utils';
   import type { AssetStoryblok, ListItemStoryblok } from '$types/bloks';
 
-  export let image: AssetStoryblok;
+  export let media: AssetStoryblok;
   export let items: ListItemStoryblok[];
   export let accentColour: 'orange' | 'brand' = 'brand';
 </script>
 
 <div class="grid grid-cols-1 gap-12 lg:grid-cols-[2fr,1fr] lg:gap-[54px]">
-  {#if image}
+  {#if media}
+    {@const mediaFile = media.filename.toLowerCase()}
     <div
-      class="order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1"
+      class={cn(
+        'order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1',
+        (mediaFile.includes('mp4') || mediaFile.includes('mov')) && 'h-fit py-0'
+      )}
     >
-      <div class="min-w-[318px] max-w-[555px] lg:w-full">
-        <Media
-          imageTransformOptions={{ size: [555, 0] }}
-          media={image}
-          class="w-full object-cover"
-        />
-      </div>
+      {#if mediaFile.includes('mp4') || mediaFile.includes('mov')}
+        <div class="h-full lg:w-full">
+          <Media {media} class="w-full object-cover" />
+        </div>
+      {:else}
+        <div class="min-w-[318px] max-w-[555px] lg:w-full">
+          <Media imageTransformOptions={{ size: [555, 0] }} {media} class="w-full object-cover" />
+        </div>
+      {/if}
     </div>
   {/if}
 

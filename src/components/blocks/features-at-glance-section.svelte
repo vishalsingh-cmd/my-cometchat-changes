@@ -80,9 +80,9 @@
 
       <div class="container mx-auto px-container pb-8 md:pb-12 md:pt-12">
         {#if block.features[activeTab].feature_list[activeButtonsTab]}
-          {@const { image, items_right_of_image: items } =
+          {@const { image: media, items_right_of_image: items } =
             block.features[activeTab].feature_list[activeButtonsTab]}
-          <MediaWithList {items} {image} />
+          <MediaWithList {items} {media} />
         {/if}
       </div>
 

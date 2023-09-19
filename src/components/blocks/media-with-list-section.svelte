@@ -13,7 +13,7 @@
   data-theme={block?.theme ? block.theme : 'light'}
 >
   <MediaWithList
-    image={block?.image}
+    media={block?.media}
     items={block?.items}
     accentColour={block?.accent_colour || 'brand'}
   />
