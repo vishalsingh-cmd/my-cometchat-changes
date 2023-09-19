@@ -2737,7 +2737,7 @@
       "name": "media-with-list-section",
       "display_name": null,
       "created_at": "2023-09-15T13:35:18.714Z",
-      "updated_at": "2023-09-15T15:45:25.644Z",
+      "updated_at": "2023-09-19T11:38:46.098Z",
       "id": 4580921,
       "schema": {
         "theme": {
@@ -2778,7 +2778,7 @@
           "default_value": "brand",
           "key": "accent_colour"
         },
-        "image": {
+        "media": {
           "type": "asset",
           "pos": 2,
           "key": "Image",

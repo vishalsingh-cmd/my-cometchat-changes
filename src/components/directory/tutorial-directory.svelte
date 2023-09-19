@@ -62,10 +62,51 @@
       title: 'Integration Tool',
       tags: $page.data.datasourceIntegrationTools,
       selectedTags: []
+    },
+    {
+      type: 'products',
+      title: 'Products',
+      tags: $page.data.datasourceProducts,
+      selectedTags: []
+    },
+    {
+      type: 'platforms',
+      title: 'Platforms',
+      tags: $page.data.datasourcePlatforms,
+      selectedTags: []
+    },
+    {
+      type: 'features',
+      title: 'Features',
+      tags: $page.data.datasourceFeatures,
+      selectedTags: []
+    },
+    {
+      type: 'languages',
+      title: 'Languages',
+      tags: $page.data.datasourceLanguages,
+      selectedTags: []
+    },
+    {
+      type: 'frameworks',
+      title: 'Frameworks',
+      tags: $page.data.datasourceFrameworks,
+      selectedTags: []
     }
   ] as Panel[];
 
-  const toggleTag = (tag: string, type: 'tutorial_type' | 'industries' | 'integration_tool') => {
+  const toggleTag = (
+    tag: string,
+    type:
+      | 'tutorial_type'
+      | 'industries'
+      | 'integration_tool'
+      | 'products'
+      | 'platforms'
+      | 'features'
+      | 'languages'
+      | 'frameworks'
+  ) => {
     const panel = getPanel(panels, type);
 
     if (panel.selectedTags.includes(tag)) {
