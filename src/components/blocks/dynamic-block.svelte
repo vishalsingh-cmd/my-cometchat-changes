@@ -24,6 +24,7 @@
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
+  import MediaWithListSection from './media-with-list-section.svelte';
   import LegalHero from './legal-hero.svelte';
   import ListSection from './list-section.svelte';
   import ListsSection from './lists-section.svelte';
@@ -77,6 +78,7 @@
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'infrastructure-section': InfrastructureSection,
+    'media-with-list-section': MediaWithListSection,
     'legal-hero': LegalHero,
     'list-section': ListSection,
     'lists-section': ListsSection,

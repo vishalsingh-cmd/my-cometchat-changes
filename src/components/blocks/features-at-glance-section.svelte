@@ -2,13 +2,12 @@
   import type { FeaturesAtGlanceSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import Media from '$components/media.svelte';
   import Sticky from '$components/sticky.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
   import ListSection from './list-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
-  import ListSectionItem from '$components/list-section/list-section-item.svelte';
   import DesktopTabs from '$components/features-at-glance-section/desktop-tabs.svelte';
+  import MediaWithList from '$components/media-with-list.svelte';
 
   let activeTab = 0;
   let activeButtonsTab = 0;
@@ -18,7 +17,12 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="relative bg-gray-1 text-gray-12">
+  <section
+    use:storyblokEditable={block}
+    data-theme="light"
+    class="relative bg-gray-1 text-gray-12"
+    style="color-scheme: light;"
+  >
     {#if block.title}
       <p
         class="container mx-auto px-container pb-5 pt-10 text-2xl font-semibold leading-tighter lg:pb-[42px] lg:pt-20"
@@ -76,33 +80,9 @@
 
       <div class="container mx-auto px-container pb-8 md:pb-12 md:pt-12">
         {#if block.features[activeTab].feature_list[activeButtonsTab]}
-          {@const { image, items_right_of_image } =
+          {@const { image: media, items_right_of_image: items } =
             block.features[activeTab].feature_list[activeButtonsTab]}
-          <div class="grid grid-cols-1 gap-12 lg:grid-cols-[2fr,1fr] lg:gap-[54px]">
-            {#if image}
-              <div
-                class="order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1"
-              >
-                <div class="min-w-[318px] max-w-[555px] lg:w-full">
-                  <Media
-                    imageTransformOptions={{ size: [555, 0] }}
-                    media={image}
-                    class="w-full object-cover"
-                  />
-                </div>
-              </div>
-            {/if}
-
-            {#if items_right_of_image}
-              <div
-                class="order-1 mt-8 flex flex-col gap-12 md:mt-0 md:grid md:grid-cols-2 md:gap-10 lg:order-2 lg:grid-cols-1 lg:flex-col xl:flex"
-              >
-                {#each items_right_of_image as item}
-                  <ListSectionItem accentColour="brand" block={item} />
-                {/each}
-              </div>
-            {/if}
-          </div>
+          <MediaWithList {items} {media} />
         {/if}
       </div>
 

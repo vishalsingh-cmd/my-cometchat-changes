@@ -51,7 +51,7 @@ export interface RichtextStoryblok {
 }
 
 export interface BlogPostStoryblok {
-  cover?: AssetStoryblok;
+  cover: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
     | ''
@@ -574,6 +574,7 @@ export interface IndustryStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -671,6 +672,16 @@ export interface LogoShowcaseStoryblok {
   [k: string]: any;
 }
 
+export interface MediaWithListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour?: '' | 'brand' | 'orange';
+  media: AssetStoryblok;
+  items: ListItemStoryblok[];
+  _uid: string;
+  component: 'media-with-list-section';
+  [k: string]: any;
+}
+
 export interface MetricsStoryblok {
   metrics?: MetricsItemStoryblok[];
   _uid: string;
@@ -739,6 +750,7 @@ export interface PageStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -969,6 +981,7 @@ export interface SyncedBlockContentStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -1053,6 +1066,7 @@ export interface TechnologyStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
     | NewsletterSectionStoryblok
@@ -1276,7 +1290,7 @@ export interface TopnavTechnologiesPanelStoryblok {
 }
 
 export interface TutorialStoryblok {
-  cover: AssetStoryblok;
+  cover?: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   industries?: (number | string)[];
   technology?: (
@@ -1300,12 +1314,28 @@ export interface TutorialStoryblok {
   )[];
   tutorial_type: '' | 'video' | 'text';
   integration_tool: '' | 'sdk' | 'ui-kits' | 'widget';
+  product?: ('' | 'Chat' | 'Voice and Video')[];
+  platform?: ('' | 'Android' | 'iOS' | 'Web')[];
+  features?: ('' | '1 to 1 chat' | 'Typing indicators' | 'Push Notifications')[];
+  language?: ('' | 'Javascript' | 'Kotlin' | 'Java' | 'Swift')[];
+  framework?: (
+    | ''
+    | 'Angular'
+    | 'Flutter'
+    | 'React'
+    | 'Ionic'
+    | 'Nextjs'
+    | 'Nodejs'
+    | 'PHP'
+    | 'React Native'
+    | 'Vue'
+  )[];
   imported_from_old_site?: boolean;
+  created_at?: string;
   body: RichtextStoryblok;
   related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
   seo?: SeoFieldsStoryblok[];
-  created_at?: string;
   _uid: string;
   component: 'tutorial';
   [k: string]: any;
