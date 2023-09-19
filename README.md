@@ -8,7 +8,7 @@
 - Ensure you have the `.env` file with the values according to `.env.example`
 - Ensure you have the required dependencies installed, `npm install` or `npm ci` according to your needs.
 
-## Next development server
+## Development server
 
 - `npm run dev` to start the Next development server.
 
