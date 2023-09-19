@@ -5,6 +5,7 @@
 
   import Media from '$components/media.svelte';
   import ListSectionItem from '$components/list-section/list-section-item.svelte';
+  import { VIDEO_EXTENSIONS, getFileExtension } from '$lib/utils/media-extensions';
 
   export let media: AssetStoryblok;
   export let items: ListItemStoryblok[];
@@ -13,14 +14,14 @@
 
 <div class="grid grid-cols-1 gap-12 lg:grid-cols-[2fr,1fr] lg:gap-[54px]">
   {#if media}
-    {@const mediaFile = media.filename.toLowerCase()}
+    {@const mediaFileExtension = getFileExtension(media.filename.toLowerCase())}
     <div
       class={cn(
         'order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1',
-        (mediaFile.includes('mp4') || mediaFile.includes('mov')) && 'h-fit py-0'
+        VIDEO_EXTENSIONS.includes(mediaFileExtension) && 'h-fit py-0'
       )}
     >
-      {#if mediaFile.includes('mp4') || mediaFile.includes('mov')}
+      {#if VIDEO_EXTENSIONS.includes(mediaFileExtension)}
         <div class="h-full lg:w-full">
           <Media {media} class="w-full object-cover" />
         </div>
