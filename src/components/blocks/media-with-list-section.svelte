@@ -1,8 +1,8 @@
 <script lang="ts">
+  import type { MediaWithListSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import MediaWithList from '$components/media-with-list.svelte';
-  import type { MediaWithListSectionStoryblok } from '$types/bloks';
 
   export let block: MediaWithListSectionStoryblok;
 </script>

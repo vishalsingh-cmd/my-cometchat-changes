@@ -1,8 +1,10 @@
 <script lang="ts">
-  import ListSectionItem from '$components/list-section/list-section-item.svelte';
-  import Media from '$components/media.svelte';
-  import { cn } from '$lib/utils';
   import type { AssetStoryblok, ListItemStoryblok } from '$types/bloks';
+
+  import { cn } from '$lib/utils';
+
+  import Media from '$components/media.svelte';
+  import ListSectionItem from '$components/list-section/list-section-item.svelte';
 
   export let media: AssetStoryblok;
   export let items: ListItemStoryblok[];
