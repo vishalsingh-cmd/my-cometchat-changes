@@ -31,16 +31,15 @@
   let expanded = false; // mobile
   let activeIndex = -1;
   $: isSolid = activeIndex > -1 || scrollY > 0 || expanded;
+  const isMobile = createMediaStore('(max-width: 1023px)');
 
   let scrollY = 0;
-  $: scrollLock(expanded || activeIndex > -1);
+  $: scrollLock(expanded || !isMobile);
 
   beforeNavigate(() => {
     expanded = false;
     activeIndex = -1;
   });
-
-  const isMobile = createMediaStore('(max-width: 1023px)');
 
   const panelTransition = (
     node: HTMLElement,
