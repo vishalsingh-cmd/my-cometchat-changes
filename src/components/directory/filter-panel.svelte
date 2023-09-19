@@ -11,7 +11,16 @@
   import Accordion from '$components/accordion.svelte';
 
   export let panels: {
-    type: 'tutorial_type' | 'industries' | 'integration_tool' | 'category' | 'industry';
+    type:
+      | 'category'
+      | 'tutorial_type'
+      | 'industries'
+      | 'integration_tool'
+      | 'products'
+      | 'platforms'
+      | 'features'
+      | 'languages'
+      | 'frameworks';
     title: string;
     tags: {
       name: string;

@@ -25,5 +25,13 @@
   "a11y.published": "Date published",
   "a11y.role": "Role",
   "directory.no_results_found": "No results found",
-  "reviews.g2_text": "G2 Review"
+  "reviews.g2_text": "G2 Review",
+  "directory.filter.tutorial_type.label": "Tutorial Type",
+  "directory.filter.industries.label": "Industries",
+  "directory.filter.integration_tool.label": "Integration Tool",
+  "directory.filter.products.label": "Products",
+  "directory.filter.platforms.label": "Platforms",
+  "directory.filter.features.label": "Features",
+  "directory.filter.languages.label": "Languages",
+  "directory.filter.frameworks.label": "Frameworks"
 }

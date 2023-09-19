@@ -87,7 +87,7 @@ export const load = async ({ cookies, fetch, params }) => {
         datasourceTutorialTypes = await getEntriesBasedOnDatasource('tutorial-types');
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');
         datasourceIntegrationTools = await getEntriesBasedOnDatasource('integration-tools');
-        datasourceProducts = await getEntriesBasedOnDatasource('products');
+        datasourceProducts = await getEntriesBasedOnDatasource('product');
         datasourcePlatforms = await getEntriesBasedOnDatasource('platforms');
         datasourceFeatures = await getEntriesBasedOnDatasource('features');
         datasourceLanguages = await getEntriesBasedOnDatasource('languages');

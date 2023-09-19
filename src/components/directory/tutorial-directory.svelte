@@ -25,6 +25,7 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
+  import { string } from '$lib/strings';
 
   export let block: DirectorySectionStoryblok;
 
@@ -47,49 +48,49 @@
   $: panels = [
     {
       type: 'tutorial_type',
-      title: 'Tutorial Type',
+      title: string('directory.filter.tutorial_type.label'),
       tags: $page.data.datasourceTutorialTypes,
       selectedTags: []
     },
     {
       type: 'industries',
-      title: 'Industries',
+      title: string('directory.filter.industries.label'),
       tags: $page.data.datasourceIndustries,
       selectedTags: []
     },
     {
       type: 'integration_tool',
-      title: 'Integration Tool',
+      title: string('directory.filter.integration_tool.label'),
       tags: $page.data.datasourceIntegrationTools,
       selectedTags: []
     },
     {
       type: 'products',
-      title: 'Products',
+      title: string('directory.filter.products.label'),
       tags: $page.data.datasourceProducts,
       selectedTags: []
     },
     {
       type: 'platforms',
-      title: 'Platforms',
+      title: string('directory.filter.platforms.label'),
       tags: $page.data.datasourcePlatforms,
       selectedTags: []
     },
     {
       type: 'features',
-      title: 'Features',
+      title: string('directory.filter.features.label'),
       tags: $page.data.datasourceFeatures,
       selectedTags: []
     },
     {
       type: 'languages',
-      title: 'Languages',
+      title: string('directory.filter.languages.label'),
       tags: $page.data.datasourceLanguages,
       selectedTags: []
     },
     {
       type: 'frameworks',
-      title: 'Frameworks',
+      title: string('directory.filter.frameworks.label'),
       tags: $page.data.datasourceFrameworks,
       selectedTags: []
     }
@@ -160,12 +161,14 @@
 
   $: filter_query = {
     tutorial_type: panels[0].selectedTags.length ? { in: panels[0].selectedTags.join(',') } : null,
-    industries: panels[1].selectedTags.length
-      ? { any_in_array: panels[1].selectedTags.join(',') }
-      : null,
     integration_tool: panels[2].selectedTags.length
       ? { in: panels[2].selectedTags.join(',') }
-      : null
+      : null,
+    products: panels[3].selectedTags.length ? { in: panels[3].selectedTags.join(',') } : null,
+    platforms: panels[4].selectedTags.length ? { in: panels[4].selectedTags.join(',') } : null,
+    features: panels[5].selectedTags.length ? { in: panels[5].selectedTags.join(',') } : null,
+    languages: panels[6].selectedTags.length ? { in: panels[6].selectedTags.join(',') } : null,
+    frameworks: panels[7].selectedTags.length ? { in: panels[7].selectedTags.join(',') } : null
   };
 
   const toggleNewPage = (pageNumber: number) => {
@@ -213,7 +216,7 @@
         <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
 
         <FilterPanel
-          {panels}
+          panels={panels.filter((panel) => panel.type !== 'industries')}
           on:selectTag={(e) => toggleTag(e.detail.i, e.detail.j)}
           on:clearFilters={() => clearFilters()}
         />

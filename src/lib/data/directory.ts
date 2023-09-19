@@ -5,7 +5,16 @@ import { formatDate } from '$lib/utils/dates';
 export const RESULTS_PER_PAGE = 12;
 
 export type Panel = {
-  type: 'category' | 'tutorial_type' | 'industries' | 'integration_tool' | 'industry';
+  type:
+    | 'category'
+    | 'tutorial_type'
+    | 'industries'
+    | 'integration_tool'
+    | 'products'
+    | 'platforms'
+    | 'features'
+    | 'languages'
+    | 'frameworks';
   title: string;
   tags: { name: string; value: string }[];
   selectedTags: string[];
@@ -24,6 +33,10 @@ export const parseItem = (
       case 'tutorial': {
         const tags = [];
 
+        if (item.content.industries) {
+          tags.push(...item.content.industries);
+        }
+
         if (item.content.tutorial_type) {
           tags.push(item.content.tutorial_type);
         }
@@ -32,8 +45,24 @@ export const parseItem = (
           tags.push(item.content.integration_tool);
         }
 
-        if (item.content.industries) {
-          tags.push(...item.content.industries);
+        if (item.content.product) {
+          tags.push(...item.content.product);
+        }
+
+        if (item.content.platform) {
+          tags.push(...item.content.platform);
+        }
+
+        if (item.content.features) {
+          tags.push(...item.content.features);
+        }
+
+        if (item.content.language) {
+          tags.push(...item.content.language);
+        }
+
+        if (item.content.framework) {
+          tags.push(...item.content.framework);
         }
 
         return tags;
