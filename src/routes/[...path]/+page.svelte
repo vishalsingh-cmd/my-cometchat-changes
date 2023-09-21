@@ -41,8 +41,8 @@
   <!-- OG Image -->
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  {#if data.page?.content?.seo?.[0] && data.page?.content?.seo?.[0].filename}
-    {@const { src } = getImageAttributes(data.page.content.seo_og_image, {
+  {#if data.page?.content?.seo?.[0] && data.page?.content?.seo?.[0].og_image?.filename}
+    {@const { src } = getImageAttributes(data.page?.content?.seo?.[0].og_image, {
       size: [1200, 630]
     })}
     <meta property="og:image" content={src} />
