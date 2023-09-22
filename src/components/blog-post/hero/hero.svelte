@@ -65,6 +65,7 @@
 
       <div class="z-10 flex flex-col justify-between gap-8">
         <Title
+          titleHeadingType="h1"
           label={{
             content: block.content.category,
             color: 'brand'

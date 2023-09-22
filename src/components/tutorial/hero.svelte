@@ -69,6 +69,7 @@
 
       <div class="z-10 flex flex-col justify-between gap-8">
         <Title
+          titleHeadingType="h1"
           label={block.content.technology && { content: tags, color: 'brand' }}
           class="pl-0 pr-0 pt-0 lg:p-0"
           title={block.name}
