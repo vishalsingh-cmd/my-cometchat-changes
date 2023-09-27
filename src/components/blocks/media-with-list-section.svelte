@@ -9,7 +9,7 @@
 
 <div
   use:storyblokEditable={block}
-  class="container mx-auto px-container pb-8 md:pb-12 md:pt-12"
+  class="container mx-auto bg-gray-1 px-container pb-8 md:pb-12 md:pt-12"
   data-theme={block?.theme ? block.theme : 'light'}
 >
   <MediaWithList
