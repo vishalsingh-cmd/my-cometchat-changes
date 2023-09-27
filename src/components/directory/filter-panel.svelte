@@ -16,11 +16,11 @@
       | 'tutorial_type'
       | 'industries'
       | 'integration_tool'
-      | 'products'
-      | 'platforms'
+      | 'product'
+      | 'platform'
       | 'features'
-      | 'languages'
-      | 'frameworks';
+      | 'language'
+      | 'framework';
     title: string;
     tags: {
       name: string;

@@ -65,13 +65,13 @@
       selectedTags: []
     },
     {
-      type: 'products',
+      type: 'product',
       title: string('directory.filter.products.label'),
       tags: $page.data.datasourceProducts,
       selectedTags: []
     },
     {
-      type: 'platforms',
+      type: 'platform',
       title: string('directory.filter.platforms.label'),
       tags: $page.data.datasourcePlatforms,
       selectedTags: []
@@ -83,13 +83,13 @@
       selectedTags: []
     },
     {
-      type: 'languages',
+      type: 'language',
       title: string('directory.filter.languages.label'),
       tags: $page.data.datasourceLanguages,
       selectedTags: []
     },
     {
-      type: 'frameworks',
+      type: 'framework',
       title: string('directory.filter.frameworks.label'),
       tags: $page.data.datasourceFrameworks,
       selectedTags: []
@@ -102,11 +102,11 @@
       | 'tutorial_type'
       | 'industries'
       | 'integration_tool'
-      | 'products'
-      | 'platforms'
+      | 'product'
+      | 'platform'
       | 'features'
-      | 'languages'
-      | 'frameworks'
+      | 'language'
+      | 'framework'
   ) => {
     const panel = getPanel(panels, type);
 
@@ -164,11 +164,21 @@
     integration_tool: panels[2].selectedTags.length
       ? { in: panels[2].selectedTags.join(',') }
       : null,
-    products: panels[3].selectedTags.length ? { in: panels[3].selectedTags.join(',') } : null,
-    platforms: panels[4].selectedTags.length ? { in: panels[4].selectedTags.join(',') } : null,
-    features: panels[5].selectedTags.length ? { in: panels[5].selectedTags.join(',') } : null,
-    languages: panels[6].selectedTags.length ? { in: panels[6].selectedTags.join(',') } : null,
-    frameworks: panels[7].selectedTags.length ? { in: panels[7].selectedTags.join(',') } : null
+    product: panels[3].selectedTags.length
+      ? { any_in_array: panels[3].selectedTags.join(',') }
+      : null,
+    platform: panels[4].selectedTags.length
+      ? { any_in_array: panels[4].selectedTags.join(',') }
+      : null,
+    features: panels[5].selectedTags.length
+      ? { any_in_array: panels[5].selectedTags.join(',') }
+      : null,
+    language: panels[6].selectedTags.length
+      ? { any_in_array: panels[6].selectedTags.join(',') }
+      : null,
+    framework: panels[7].selectedTags.length
+      ? { any_in_array: panels[7].selectedTags.join(',') }
+      : null
   };
 
   const toggleNewPage = (pageNumber: number) => {
