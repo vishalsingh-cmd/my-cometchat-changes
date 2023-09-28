@@ -7,12 +7,15 @@
 
   export let tag: { name: string; value: string };
   export let panelType:
-    | 'technology'
+    | 'category'
     | 'tutorial_type'
     | 'industries'
     | 'integration_tool'
-    | 'category'
-    | 'industry';
+    | 'product'
+    | 'platform'
+    | 'features'
+    | 'language'
+    | 'framework';
   export let isTagSelected: boolean;
 
   const dispatch = createEventDispatcher();
