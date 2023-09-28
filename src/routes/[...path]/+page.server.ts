@@ -1,8 +1,8 @@
 import type { ISbStoryData, SbBlokData } from '@storyblok/js';
 import { error } from '@sveltejs/kit';
-import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
 import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
+import { getStoryVersion } from '$lib/utils';
 import type {
   CustomerStoryStoryblok,
   IndustryStoryblok,
@@ -11,7 +11,7 @@ import type {
 } from '$types/bloks.js';
 
 export const load = async ({ cookies, fetch, params }) => {
-  const version: 'draft' | 'published' = cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
+  const version = getStoryVersion(cookies);
   const storyblok = getStoryblok({ fetch });
 
   const relations = [

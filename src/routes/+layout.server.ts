@@ -7,9 +7,10 @@ import { getStoryblok } from '$lib/storyblok.js';
 import type { TopNavigationStoryblok } from '$types/bloks.js';
 import type { ISbStoryData } from '@storyblok/js';
 import { error } from '@sveltejs/kit';
+import { getStoryVersion } from '$lib/utils';
 
 export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
-  const version: 'draft' | 'published' = cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
+  const version = getStoryVersion(cookies);
   const storyblok = getStoryblok({ fetch });
 
   try {
@@ -30,6 +31,7 @@ export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
     ]);
 
     return {
+      version,
       topnav: topnav.data.story as ISbStoryData<TopNavigationStoryblok>,
       footer
     };
