@@ -14,7 +14,7 @@ export interface AssetStoryblok {
 export interface AuthorStoryblok {
   name: string;
   role?: string;
-  company: string;
+  company?: string;
   avatar: AssetStoryblok;
   description: string;
   _uid: string;
@@ -215,7 +215,7 @@ export interface CustomerStoriesSectionStoryblok {
 
 export interface CustomerStoryStoryblok {
   cover: AssetStoryblok;
-  customer?: StoryblokStory<CustomerStoryblok> | string;
+  customer: StoryblokStory<CustomerStoryblok> | string;
   author?: StoryblokStory<AuthorStoryblok> | string;
   industry: number | string;
   imported_from_old_site?: boolean;
@@ -574,6 +574,7 @@ export interface IndustryStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
     | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
@@ -672,6 +673,25 @@ export interface LogoShowcaseStoryblok {
   [k: string]: any;
 }
 
+export interface MediaTabStoryblok {
+  customer: StoryblokStory<CustomerStoryblok> | string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: 'media-tab';
+  [k: string]: any;
+}
+
+export interface MediaTabsSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
+  accent_colour?: '' | 'brand' | 'orange';
+  title: TitleStoryblok[];
+  tabs_side?: '' | 'left' | 'right';
+  tabs: MediaTabStoryblok[];
+  _uid: string;
+  component: 'media-tabs-section';
+  [k: string]: any;
+}
+
 export interface MediaWithListSectionStoryblok {
   theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
@@ -750,6 +770,7 @@ export interface PageStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
     | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
@@ -981,6 +1002,7 @@ export interface SyncedBlockContentStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
     | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
@@ -1066,6 +1088,7 @@ export interface TechnologyStoryblok {
     | ListSectionStoryblok
     | ListsSectionStoryblok
     | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
     | MediaWithListSectionStoryblok
     | MetricsStoryblok
     | ModerationFeaturesStoryblok
@@ -1175,10 +1198,10 @@ export interface TitleImageSectionStoryblok {
 }
 
 export interface TitleSectionStoryblok {
-  title: TitleStoryblok[];
+  theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
   alignment?: '' | 'center' | 'left';
-  theme?: '' | 'dark' | 'light';
+  title: TitleStoryblok[];
   _uid: string;
   component: 'title-section';
   [k: string]: any;
@@ -1312,8 +1335,8 @@ export interface TutorialStoryblok {
     | 'java'
     | 'swift'
   )[];
-  tutorial_type: '' | 'video' | 'text';
-  integration_tool: '' | 'sdk' | 'ui-kits' | 'widget';
+  tutorial_type?: '' | 'video' | 'text';
+  integration_tool?: '' | 'sdk' | 'ui-kits' | 'widget';
   product?: ('' | 'Chat' | 'Voice and Video')[];
   platform?: ('' | 'Android' | 'IOS' | 'Web')[];
   features?: ('' | '1 to 1 chat' | 'Typing indicators' | 'Push Notifications')[];
