@@ -7,8 +7,10 @@ import {
   type SbSDKOptions,
   type ISbStoriesParams
 } from '@storyblok/js';
-import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 import { onMount } from 'svelte';
+import { get } from 'svelte/store';
+import { page } from '$app/stores';
+import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 
 const PUBLIC_STORYBLOK_TOKEN = env.PUBLIC_STORYBLOK_TOKEN;
 
@@ -55,7 +57,7 @@ export function startStoryblokBridge<T extends { story: ISbStoryData<any> }>(
 
 export const getStories = async (params: ISbStoriesParams = {}) => {
   return await storyblok.get('cdn/stories', {
-    version: 'draft',
+    version: get(page).data.version,
     sort_by: 'updated_at:desc',
     resolve_relations: [
       'customer-story.author',

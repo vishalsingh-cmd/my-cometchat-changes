@@ -20,6 +20,10 @@
       frame.contentWindow.document.head.innerHTML += `
         <style>
         @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css');
+          .gist {
+            color-scheme: dark;
+          }
+
           .gist .gist-data {
             background-color:hsla(246, 21%, 9%, 1) !important;
             border-bottom: 1px solid hsla(240, 100%, 99%, 0.08) !important;
@@ -71,7 +75,7 @@
 </script>
 
 {#if block}
-  <div use:storyblokEditable={block} class="my-8">
+  <div use:storyblokEditable={block} class="my-8" style="color-scheme: dark;">
     <iframe class="container w-full" src="about:blank" bind:this={frame} title="Gist" />
   </div>
 {/if}

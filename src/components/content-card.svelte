@@ -73,7 +73,10 @@
 
 {#if isLoading}
   <div class="relative">
-    <div class="absolute left-3 top-4 h-[30px] w-[92px] rounded-xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    {#if customer}
+      <div class="absolute left-3 top-4 h-[30px] w-[92px] rounded-xl bg-[hsl(246,21%,9%)]/[0.04]" />
+    {/if}
+
     <div
       class="mb-4 aspect-video h-[202px] w-full rounded-2xl border border-[hsl(246,21%,9%)]/[0.04] bg-[hsl(246,21%,9%)]/[0.03] object-cover md:mb-5 md:h-[238px]"
     />

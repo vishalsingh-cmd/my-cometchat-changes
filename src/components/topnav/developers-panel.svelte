@@ -1,9 +1,11 @@
 <script lang="ts">
-  import type { TechnologyStoryblok, TopnavTechnologiesPanelStoryblok } from '$types/bloks';
   import type { ISbStoryData } from '@storyblok/js';
-  import TopnavItem, { getItemAsset } from './topnav-item.svelte';
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import type { TechnologyStoryblok, TopnavTechnologiesPanelStoryblok } from '$types/bloks';
+
+  import { getAnchorFromCmsLink, sanitizeSlug } from '$lib/storyblok';
+
   import Divider from '$components/divider.svelte';
+  import TopnavItem, { getItemAsset } from './topnav-item.svelte';
 
   export let data: TopnavTechnologiesPanelStoryblok;
   $: links = data.technologies_links as unknown as ISbStoryData<TechnologyStoryblok>[]; // layout.server is resolving relations for this field
@@ -17,11 +19,8 @@
         {#each links as link}
           {@const doc = link.content.documentation_link?.[0]}
           {#if doc}
-            {@const { href, target, rel } = getAnchorFromCmsLink(doc.link)}
             <TopnavItem
-              {href}
-              {target}
-              {rel}
+              href={sanitizeSlug(link.full_slug)}
               title={doc.label || link.name}
               asset={typeof doc.icon === 'string'
                 ? { icon: doc.icon, color: 'secondary' }

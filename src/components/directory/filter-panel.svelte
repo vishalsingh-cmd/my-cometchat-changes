@@ -12,12 +12,16 @@
 
   export let panels: {
     type:
-      | 'technology'
+      | 'category'
       | 'tutorial_type'
+      | 'industry'
       | 'industries'
       | 'integration_tool'
-      | 'category'
-      | 'industry';
+      | 'product'
+      | 'platform'
+      | 'features'
+      | 'language'
+      | 'framework';
     title: string;
     tags: {
       name: string;

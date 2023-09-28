@@ -19,7 +19,12 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
+  <section
+    use:storyblokEditable={block}
+    data-theme="light"
+    class="bg-gray-1 text-gray-12"
+    style="color-scheme: light;"
+  >
     <div class="mx-auto max-w-content">
       {#if block.header && block.header[0]}
         {@const header = block.header[0]}

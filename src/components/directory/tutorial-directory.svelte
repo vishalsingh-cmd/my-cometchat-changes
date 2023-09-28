@@ -25,6 +25,7 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
+  import { string } from '$lib/strings';
 
   export let block: DirectorySectionStoryblok;
 
@@ -46,34 +47,66 @@
 
   $: panels = [
     {
-      type: 'technology',
-      title: 'Technology',
-      tags: $page.data.datasourceTechnologies,
-      selectedTags: []
-    },
-    {
       type: 'tutorial_type',
-      title: 'Tutorial Type',
+      title: string('directory.filter.tutorial_type.label'),
       tags: $page.data.datasourceTutorialTypes,
       selectedTags: []
     },
     {
       type: 'industries',
-      title: 'Industries',
+      title: string('directory.filter.industries.label'),
       tags: $page.data.datasourceIndustries,
       selectedTags: []
     },
     {
       type: 'integration_tool',
-      title: 'Integration Tool',
+      title: string('directory.filter.integration_tool.label'),
       tags: $page.data.datasourceIntegrationTools,
+      selectedTags: []
+    },
+    {
+      type: 'product',
+      title: string('directory.filter.products.label'),
+      tags: $page.data.datasourceProducts,
+      selectedTags: []
+    },
+    {
+      type: 'platform',
+      title: string('directory.filter.platforms.label'),
+      tags: $page.data.datasourcePlatforms,
+      selectedTags: []
+    },
+    {
+      type: 'features',
+      title: string('directory.filter.features.label'),
+      tags: $page.data.datasourceFeatures,
+      selectedTags: []
+    },
+    {
+      type: 'language',
+      title: string('directory.filter.languages.label'),
+      tags: $page.data.datasourceLanguages,
+      selectedTags: []
+    },
+    {
+      type: 'framework',
+      title: string('directory.filter.frameworks.label'),
+      tags: $page.data.datasourceFrameworks,
       selectedTags: []
     }
   ] as Panel[];
 
   const toggleTag = (
     tag: string,
-    type: 'technology' | 'tutorial_type' | 'industries' | 'integration_tool'
+    type:
+      | 'tutorial_type'
+      | 'industries'
+      | 'integration_tool'
+      | 'product'
+      | 'platform'
+      | 'features'
+      | 'language'
+      | 'framework'
   ) => {
     const panel = getPanel(panels, type);
 
@@ -127,15 +160,24 @@
   $: numberOfSelectedTags = getNumberOfSelectedTags();
 
   $: filter_query = {
-    technology: panels[0].selectedTags.length
-      ? { any_in_array: panels[0].selectedTags.join(',') }
+    tutorial_type: panels[0].selectedTags.length ? { in: panels[0].selectedTags.join(',') } : null,
+    integration_tool: panels[2].selectedTags.length
+      ? { in: panels[2].selectedTags.join(',') }
       : null,
-    tutorial_type: panels[1].selectedTags.length ? { in: panels[1].selectedTags.join(',') } : null,
-    industries: panels[2].selectedTags.length
-      ? { any_in_array: panels[2].selectedTags.join(',') }
+    product: panels[3].selectedTags.length
+      ? { any_in_array: panels[3].selectedTags.join(',') }
       : null,
-    integration_tool: panels[3].selectedTags.length
-      ? { in: panels[3].selectedTags.join(',') }
+    platform: panels[4].selectedTags.length
+      ? { any_in_array: panels[4].selectedTags.join(',') }
+      : null,
+    features: panels[5].selectedTags.length
+      ? { any_in_array: panels[5].selectedTags.join(',') }
+      : null,
+    language: panels[6].selectedTags.length
+      ? { any_in_array: panels[6].selectedTags.join(',') }
+      : null,
+    framework: panels[7].selectedTags.length
+      ? { any_in_array: panels[7].selectedTags.join(',') }
       : null
   };
 
@@ -184,7 +226,7 @@
         <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
 
         <FilterPanel
-          {panels}
+          panels={panels.filter((panel) => panel.type !== 'industries')}
           on:selectTag={(e) => toggleTag(e.detail.i, e.detail.j)}
           on:clearFilters={() => clearFilters()}
         />

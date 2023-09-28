@@ -1,7 +1,10 @@
+import type { Cookies } from '@sveltejs/kit/types/internal';
+import { PREVIEW_COOKIE_KEY } from './constants';
+
 import { browser } from '$app/environment';
+
 import { clsx, type ClassValue } from 'clsx';
 import { extendTailwindMerge } from 'tailwind-merge';
-
 export const twMergeCustom = extendTailwindMerge({
   classGroups: {
     'font-size': [{ text: ['xxs'] }]
@@ -36,3 +39,6 @@ export const getLabelInfo = (label: string | undefined, color: 'orange' | 'brand
     color: color
   };
 };
+
+export const getStoryVersion = (cookies: Cookies) =>
+  cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
