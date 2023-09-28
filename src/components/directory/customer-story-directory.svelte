@@ -199,17 +199,8 @@
       {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
         {#each $getDirectoryDataWithFilters.data.stories as item}
           {@const parsedItem = parseItem(item, 'customer-story')}
-          {@const { image, title, tags, link, customer, author, date } = parsedItem}
-          <ContentCard
-            {image}
-            {title}
-            {tags}
-            {link}
-            {customer}
-            {author}
-            {date}
-            badgeSize="medium"
-          />
+          {@const { image, title, tags, link, author, date } = parsedItem}
+          <ContentCard {image} {title} {tags} {link} {author} {date} badgeSize="medium" />
         {/each}
       {/if}
     </div>
