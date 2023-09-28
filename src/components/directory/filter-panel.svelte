@@ -14,6 +14,7 @@
     type:
       | 'category'
       | 'tutorial_type'
+      | 'industry'
       | 'industries'
       | 'integration_tool'
       | 'product'
