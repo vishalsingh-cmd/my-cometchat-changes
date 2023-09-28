@@ -2,7 +2,7 @@
   import { sanitizeSlug } from '$lib/storyblok';
   import { string } from '$lib/strings';
 
-  import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
+  import type { AssetStoryblok } from '$types/bloks';
 
   import Badge from './badge.svelte';
   import Media from './media.svelte';
@@ -11,7 +11,6 @@
   export let title: string | undefined = undefined;
   export let tags: string[] | undefined = undefined;
   export let link: string | undefined = undefined;
-  export let customer: CustomerStoryblok | undefined = undefined;
   export let author: string | undefined = undefined;
   export let date: string | undefined = undefined;
   export let isLoading = false;
@@ -23,15 +22,6 @@
     href={sanitizeSlug(link)}
     class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
-    {#if customer}
-      <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
-        <Media
-          imageTransformOptions={{ size: [0, 200] }}
-          media={customer.logo}
-          class="h-3.5 w-full"
-        />
-      </div>
-    {/if}
     {#if image && image.filename}
       <Media
         imageTransformOptions={{ size: [0, 800] }}
@@ -73,7 +63,6 @@
 
 {#if isLoading}
   <div class="relative">
-    <div class="absolute left-3 top-4 h-[30px] w-[92px] rounded-xl bg-[hsl(246,21%,9%)]/[0.04]" />
     <div
       class="mb-4 aspect-video h-[202px] w-full rounded-2xl border border-[hsl(246,21%,9%)]/[0.04] bg-[hsl(246,21%,9%)]/[0.03] object-cover md:mb-5 md:h-[238px]"
     />
