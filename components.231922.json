@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-09-11T16:12:50.830Z",
+      "updated_at": "2023-09-20T13:30:27.322Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -667,7 +667,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-08-29T14:07:29.659Z",
+      "updated_at": "2023-09-26T12:57:54.025Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -723,12 +723,10 @@
         },
         "metrics": {
           "type": "bloks",
-          "required": true,
+          "required": false,
           "restrict_type": "",
           "restrict_components": true,
           "component_whitelist": ["metrics"],
-          "minimum": 1,
-          "maximum": 1,
           "pos": 8
         },
         "body": {
@@ -1642,13 +1640,15 @@
       "name": "gist",
       "display_name": null,
       "created_at": "2023-07-11T15:31:28.076Z",
-      "updated_at": "2023-07-27T13:27:44.419Z",
+      "updated_at": "2023-09-27T12:57:56.803Z",
       "id": 4259241,
       "schema": {
         "gist_script": {
           "type": "textarea",
           "required": true,
-          "translatable": true
+          "translatable": true,
+          "description": "Copy the embed from Github",
+          "tooltip": true
         }
       },
       "image": "//a.storyblok.com/f/231922/x/61e48f9dcb/device-desktop.png",
@@ -2812,14 +2812,15 @@
       "name": "metrics",
       "display_name": null,
       "created_at": "2023-06-09T16:23:37.805Z",
-      "updated_at": "2023-06-23T10:31:29.987Z",
+      "updated_at": "2023-09-26T12:57:31.529Z",
       "id": 4103575,
       "schema": {
         "metrics": {
           "type": "bloks",
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["metrics-item"]
+          "component_whitelist": ["metrics-item"],
+          "required": false
         }
       },
       "image": "//a.storyblok.com/f/231922/x/3e81c68d12/screenshot-2023-06-23-at-11-31-15.png",
@@ -5069,7 +5070,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-09-15T13:05:38.310Z",
+      "updated_at": "2023-09-27T15:57:55.841Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -5249,7 +5250,10 @@
             }
           ],
           "pos": 6,
-          "key": "product"
+          "key": "product",
+          "source": "internal",
+          "datasource_slug": "product",
+          "use_uuid": true
         },
         "platform": {
           "type": "options",
@@ -5261,8 +5265,8 @@
             },
             {
               "_uid": "16071ab6-1ae3-4e2e-b710-66fa5cec8645",
-              "value": "iOS",
-              "name": "iOS"
+              "value": "IOS",
+              "name": "IOS"
             },
             {
               "_uid": "fae73e70-d7e9-4251-82f5-2befd1d0b893",
@@ -5271,7 +5275,9 @@
             }
           ],
           "pos": 7,
-          "key": "platform"
+          "key": "platform",
+          "source": "internal",
+          "datasource_slug": "platforms"
         },
         "features": {
           "type": "options",
@@ -5293,7 +5299,9 @@
             }
           ],
           "pos": 8,
-          "key": "features"
+          "key": "features",
+          "source": "internal",
+          "datasource_slug": "features"
         },
         "language": {
           "type": "options",
@@ -5321,7 +5329,9 @@
               "value": "Swift",
               "name": "Swift"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "languages"
         },
         "framework": {
           "type": "options",
@@ -5372,7 +5382,9 @@
               "value": "Vue",
               "name": "Vue"
             }
-          ]
+          ],
+          "source": "internal",
+          "datasource_slug": "frameworks"
         },
         "imported_from_old_site": {
           "type": "boolean",

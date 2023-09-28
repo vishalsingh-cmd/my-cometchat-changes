@@ -25,7 +25,15 @@ export const StringKeys = [
   'a11y.published',
   'a11y.role',
   'directory.no_results_found',
-  'reviews.g2_text'
+  'reviews.g2_text',
+  'directory.filter.tutorial_type.label',
+  'directory.filter.industries.label',
+  'directory.filter.integration_tool.label',
+  'directory.filter.products.label',
+  'directory.filter.platforms.label',
+  'directory.filter.features.label',
+  'directory.filter.languages.label',
+  'directory.filter.frameworks.label'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

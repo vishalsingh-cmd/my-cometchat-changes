@@ -60,9 +60,13 @@ export const load = async ({ cookies, fetch, params }) => {
 
     let datasourceCategories = [];
     let datasourceIndustries = [];
-    let datasourceTechnologies = [];
     let datasourceTutorialTypes = [];
     let datasourceIntegrationTools = [];
+    let datasourceProducts = [];
+    let datasourcePlatforms = [];
+    let datasourceFeatures = [];
+    let datasourceLanguages = [];
+    let datasourceFrameworks = [];
 
     const directorySection =
       page.data?.story?.content?.component === 'page' &&
@@ -80,10 +84,14 @@ export const load = async ({ cookies, fetch, params }) => {
       } else if (directorySection.content_type === 'customer-story') {
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');
       } else if (directorySection.content_type === 'tutorial') {
-        datasourceTechnologies = await getEntriesBasedOnDatasource('technologies');
         datasourceTutorialTypes = await getEntriesBasedOnDatasource('tutorial-types');
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');
         datasourceIntegrationTools = await getEntriesBasedOnDatasource('integration-tools');
+        datasourceProducts = await getEntriesBasedOnDatasource('product');
+        datasourcePlatforms = await getEntriesBasedOnDatasource('platforms');
+        datasourceFeatures = await getEntriesBasedOnDatasource('features');
+        datasourceLanguages = await getEntriesBasedOnDatasource('languages');
+        datasourceFrameworks = await getEntriesBasedOnDatasource('frameworks');
       }
     }
 
@@ -94,9 +102,13 @@ export const load = async ({ cookies, fetch, params }) => {
       industries: industries.data.stories as ISbStoryData<IndustryStoryblok>[],
       datasourceCategories,
       datasourceIndustries,
-      datasourceTechnologies,
       datasourceTutorialTypes,
-      datasourceIntegrationTools
+      datasourceIntegrationTools,
+      datasourceProducts,
+      datasourcePlatforms,
+      datasourceFeatures,
+      datasourceLanguages,
+      datasourceFrameworks
     };
   } catch (err) {
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');

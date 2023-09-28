@@ -222,7 +222,7 @@ export interface CustomerStoryStoryblok {
   created_at?: string;
   Quote?: any;
   quote: string;
-  metrics: MetricsStoryblok[];
+  metrics?: MetricsStoryblok[];
   body: RichtextStoryblok;
   related: RelatedStoriesSectionStoryblok[];
   pre_footer?: PreFooterCopyStoryblok[];
@@ -1315,7 +1315,7 @@ export interface TutorialStoryblok {
   tutorial_type: '' | 'video' | 'text';
   integration_tool: '' | 'sdk' | 'ui-kits' | 'widget';
   product?: ('' | 'Chat' | 'Voice and Video')[];
-  platform?: ('' | 'Android' | 'iOS' | 'Web')[];
+  platform?: ('' | 'Android' | 'IOS' | 'Web')[];
   features?: ('' | '1 to 1 chat' | 'Typing indicators' | 'Push Notifications')[];
   language?: ('' | 'Javascript' | 'Kotlin' | 'Java' | 'Swift')[];
   framework?: (
