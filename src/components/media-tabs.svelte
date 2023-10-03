@@ -1,10 +1,12 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import type { AssetStoryblok } from '$types/bloks';
   import { createEventDispatcher } from 'svelte';
-  import Icon from './icon/icon.svelte';
-  import Media from './media.svelte';
+  import type { AssetStoryblok } from '$types/bloks';
+
   import { getImageAttributes } from '$lib/storyblok';
+
+  import Media from '$components/media.svelte';
+  import Icon from '$components/icon/icon.svelte';
 
   let className: string | undefined = undefined;
   export { className as class };
@@ -134,9 +136,8 @@
   </div>
   <div class="h-full overflow-hidden">
     {#if tabs[selectedTabIndex].image}
-      {@const { width, height } = getImageAttributes(tabs[selectedTabIndex].image)}
+      {@const { width } = getImageAttributes(tabs[selectedTabIndex].image)}
       {@const widthNumber = Number(width)}
-      {@const heightNumber = Number(height)}
 
       <div
         class="mb-12 mt-5 h-[400px] overflow-hidden md:h-[500px] md:max-h-[500px] lg:mb-0 lg:mt-0"

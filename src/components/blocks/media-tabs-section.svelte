@@ -2,32 +2,35 @@
   import { cn } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import type { CustomerStoryStoryblok, MediaTabsSectionStoryblok } from '$types/bloks';
+  import type {
+    CustomerStoryStoryblok,
+    CustomerStoryblok,
+    MediaTabsSectionStoryblok
+  } from '$types/bloks';
   import type { StoryblokStory } from 'storyblok-generate-ts';
-  import type { ISbStoryData, StoryblokComponentType } from '@storyblok/js/dist/types/types';
   import MediaTabs from '$components/media-tabs.svelte';
   import Button from '$components/buttons/button.svelte';
-  import { sanitizeSlug } from '$lib/storyblok';
+  import { isCmsStory, sanitizeSlug } from '$lib/storyblok';
   import { formatDateUSMedium } from '$lib/utils/dates';
 
   export let block: MediaTabsSectionStoryblok;
 
   const parsedTabs =
     block.tabs && block.tabs.length > 0
-      ? block.tabs.map((tab) => {
-          return {
-            logo: tab.customer?.content?.logo,
-            image: tab.image
-          };
-        })
-      : undefined;
+      ? block.tabs
+          .map((tab) => {
+            const customer: StoryblokStory<CustomerStoryblok> =
+              tab.customer as StoryblokStory<CustomerStoryblok>;
 
-  export function isCmsStory<B extends StoryblokComponentType<string>>(
-    story: ISbStoryData<B> | string
-  ): story is ISbStoryData<B> {
-    if (typeof story === 'string') return false;
-    return true;
-  }
+            return {
+              logo: customer.content.logo,
+              image: tab.image
+            };
+          })
+          .filter((tab) => {
+            return tab !== null && tab !== undefined;
+          })
+      : undefined;
 
   const typeFeaturedStory = (story: string | StoryblokStory<CustomerStoryStoryblok>) =>
     story as StoryblokStory<CustomerStoryStoryblok>;
@@ -53,7 +56,10 @@
         {@const story = typeFeaturedStory(block.highlighted_story)}
         {@const content = story.content}
         {@const storyLink = sanitizeSlug(story.full_slug)}
-        {@const author = story.content?.author?.name}
+        {@const author =
+          story.content?.author && isCmsStory(story.content?.author)
+            ? story.content?.author?.name
+            : null}
         {@const date = story.created_at
           ? formatDateUSMedium(new Date(story?.created_at))
           : undefined}
