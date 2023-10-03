@@ -11,23 +11,25 @@
   let containerRef: HTMLElement | null = null;
   export let block: SocialProofsStoryblok;
   const customers = block.customers as StoryblokStory<CustomerStoryblok>[];
-  $: arrayOfCustomersToShow = [...customers];
+  $: customersArray = [...customers];
 
   let initialScrollWidth = 0;
+  let containerWidth = 0;
+  let containerScrollWidth = 0;
 
   function handleResize() {
     if (!containerRef) return;
 
-    const containerWidth = containerRef.clientWidth;
-    const containerScrollWidth = containerRef.scrollWidth;
+    containerWidth = containerRef.clientWidth;
+    containerScrollWidth = containerRef.scrollWidth;
 
     if (containerWidth < initialScrollWidth) {
-      arrayOfCustomersToShow = Array.from({ length: 5 }, () => customers).flat();
+      customersArray = Array.from({ length: 5 }, () => customers).flat();
       const slidePx = containerScrollWidth - containerWidth + 32;
       containerRef.style.setProperty('--slide-px', `-${slidePx}px`);
       containerRef.classList.add('animate-slide');
     } else {
-      arrayOfCustomersToShow = customers;
+      customersArray = customers;
       containerRef.classList.remove('animate-slide');
     }
   }
@@ -50,17 +52,31 @@
   >
     <div class="container mx-auto flex flex-col items-center justify-center gap-8 pb-20 pt-16">
       <p class="text-lg tracking-wide text-gray-12 opacity-54">{block.title}</p>
-      {#if customers}
-        <div bind:this={containerRef} class={cn('flex w-full justify-center gap-8 md:gap-14')}>
-          {#each arrayOfCustomersToShow as customer}
-            <Media
-              imageTransformOptions={{ size: [0, 150] }}
-              media={customer.content.logo}
-              class="h-6 w-fit flex-shrink-0 opacity-54"
-            />
+      <div bind:this={containerRef} class={cn('flex w-full flex-col justify-center gap-8')}>
+        {#if customers}
+          {@const needsTwoLines = customers.length > 6}
+          {@const arrayHalfNumber = customers.length / 2}
+          {@const isOverflowing = containerWidth < initialScrollWidth}
+
+          {@const firstHalfArrayOfCustumers = customersArray.slice(0, arrayHalfNumber)}
+          {@const secondHalfArrayOfCustumers = customersArray.slice(-arrayHalfNumber)}
+
+          {#each needsTwoLines ? (isOverflowing ? Array(1) : Array(2)) : Array(1) as _, i}
+            {@const customersLineArray =
+              i === 0 ? firstHalfArrayOfCustumers : secondHalfArrayOfCustumers}
+            {@const twoLinesArray = isOverflowing ? customersArray : customersLineArray}
+            <div class="flex w-full justify-center gap-8 md:gap-14">
+              {#each needsTwoLines ? twoLinesArray : customersArray as customer}
+                <Media
+                  imageTransformOptions={{ size: [0, 150] }}
+                  media={customer.content.logo}
+                  class="h-6 w-fit flex-shrink-0 opacity-54"
+                />
+              {/each}
+            </div>
           {/each}
-        </div>
-      {/if}
+        {/if}
+      </div>
     </div>
   </section>
 {/if}
