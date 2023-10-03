@@ -682,10 +682,9 @@ export interface MediaTabStoryblok {
 }
 
 export interface MediaTabsSectionStoryblok {
-  theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
   highlighted_story: StoryblokStory<CustomerStoryStoryblok> | string;
-  button_label?: string;
+  button_label: string;
   tabs_side?: '' | 'left' | 'right';
   tabs: MediaTabStoryblok[];
   _uid: string;

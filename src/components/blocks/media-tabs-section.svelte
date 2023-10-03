@@ -83,8 +83,10 @@
               {#if author}
                 <span aria-label={`Author: ${author}`}>{author}</span>
               {/if}
-              {#if date}
+              {#if author && date}
                 <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
+              {/if}
+              {#if date}
                 <span aria-label={`Published: ${date}`}>{date}</span>
               {/if}
             </p>
