@@ -112,4 +112,4 @@ async function main() {
   fs.writeFileSync('static/sitemap.xml', xml);
 }
 
-main();
+await main();
