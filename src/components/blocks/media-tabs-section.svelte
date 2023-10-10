@@ -44,7 +44,7 @@
 {#if block}
   <section
     use:storyblokEditable={block}
-    class="relative mx-auto flex max-w-content overflow-hidden"
+    class="relative mx-auto flex max-w-content overflow-hidden py-10 md:pb-20 md:pt-12"
   >
     <div
       class={cn(
@@ -81,13 +81,13 @@
             {/if}
             <p class="mb-6 flex flex-row items-center gap-[10px] md:mb-8">
               {#if author}
-                <span aria-label={`Author: ${author}`}>{author}</span>
+                <span aria-label="author">{author}</span>
               {/if}
               {#if author && date}
-                <span class="h-[5px] w-[5px] rounded-full bg-gray-12" />
+                <span>•</span>
               {/if}
               {#if date}
-                <span aria-label={`Published: ${date}`}>{date}</span>
+                <span aria-label="published date">{date}</span>
               {/if}
             </p>
             <Button variant="secondary" as="a" href={storyLink}>{block.button_label}</Button>
