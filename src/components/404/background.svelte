@@ -31,13 +31,13 @@
 </div>
 
 <!-- Blurs -->
-<!-- <div
+<div
   class={cn(
     blur(),
-    'left-[180px] top-[80px] h-[710.96px] w-[1423.31px] rotate-[-18deg] bg-[hsl(245,63%,24%)]/30 blur-[58px]'
+    'left-[180px] top-[100px] h-[710.96px] w-[1000px] rotate-[-18deg] bg-[hsl(245,63%,20%)]/30 blur-[58px]'
   )}
   style="transform: translate3d(0, 0, 0);"
-/> -->
+/>
 
 <!-- Blur Planets -->
 <div class="pointer-events-none absolute right-[100px] top-[50px] hidden md:block">
@@ -53,6 +53,10 @@
 />
 
 <!-- Planets - In Front of side gradients -->
+<div class="pointer-events-none absolute left-[150px] top-[150px] hidden md:block">
+  <img role="presentation" src={Orbit} alt="" class="h-full w-full" />
+</div>
+
 <div
   class="pointer-events-none absolute -left-[260px] top-[20px] scale-50 md:top-[150px] md:scale-100"
 >
@@ -60,7 +64,7 @@
 </div>
 
 <div
-  class="pointer-events-none absolute -top-[10px] left-[30px] scale-[70%] lg:left-[100px] lg:top-[60px] lg:scale-100 xl:left-[280px] xl:top-[150px] xl:scale-100"
+  class="pointer-events-none absolute -top-[10px] left-[30px] scale-[70%] md:left-[150px] md:top-[100px] md:scale-100 lg:left-[150px] lg:top-[150px] xl:left-[280px] xl:top-[150px] xl:scale-100"
 >
   <img role="presentation" src={PinkPlanet} alt="" class="h-full w-full" />
 </div>
@@ -74,13 +78,13 @@
 </div>
 
 <div
-  class="pointer-events-none absolute bottom-[230px] left-[150px] h-[147px] w-[80px] scale-75 md:left-1/2 md:top-[180px] md:-translate-x-[28px] md:scale-[110%]"
+  class="pointer-events-none absolute bottom-[230px] left-1/2 h-[147px] w-[80px] -translate-x-[40px] scale-75 md:left-1/2 md:top-[180px] md:-translate-x-[28px] md:scale-[110%]"
 >
   <img role="presentation" src={Zero} alt="" class="h-full w-full" />
 </div>
 
 <div
-  class="pointer-events-none absolute left-1/2 top-[140px] min-w-[230px] -translate-x-[60px] scale-125 md:top-[100px] lg:-translate-x-[200px] lg:scale-75 xl:-translate-x-[100px] xl:scale-100"
+  class="pointer-events-none absolute left-1/2 top-[140px] h-[230px] w-[230px] -translate-x-[60px] md:top-[140px] md:h-[300px] md:w-[300px] md:-translate-x-[80px] lg:top-[100px] lg:h-[400px] lg:w-[400px] lg:-translate-x-[100px]"
 >
   <img role="presentation" src={BigRedPlanet} alt="" class="h-full w-full" />
 </div>
