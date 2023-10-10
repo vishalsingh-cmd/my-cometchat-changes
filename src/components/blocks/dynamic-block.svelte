@@ -52,6 +52,7 @@
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksHero from './webhooks-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
+  import PageNotFound from '$components/404/page-not-found.svelte';
 
   export let block: SbBlokData;
 
