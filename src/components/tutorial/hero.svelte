@@ -108,6 +108,6 @@
 
   <!-- Bottom Gradient -->
   <div
-    class="absolute bottom-0 left-0 h-[100px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+    class="absolute bottom-0 left-0 h-[100px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
   />
 </section>

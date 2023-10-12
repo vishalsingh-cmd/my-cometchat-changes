@@ -61,7 +61,7 @@
 </div>
 
 <div
-  class="absolute bottom-0 h-[163px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0 md:-translate-x-1/2"
+  class="absolute bottom-0 h-[163px] w-screen bg-gradient-to-t from-gray-1/100 to-transparent md:-translate-x-1/2"
 />
 
 <style>

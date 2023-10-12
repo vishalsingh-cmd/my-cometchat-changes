@@ -76,10 +76,10 @@
 
 <!-- Side Gradients -->
 <div
-  class="pointer-events-none absolute left-[-2px] top-0 h-[970px] w-[104px] bg-gradient-to-r from-gray-1/60 to-gray-1/0 2xl:hidden"
+  class="pointer-events-none absolute left-[-2px] top-0 h-[970px] w-[104px] bg-gradient-to-r from-gray-1/60 to-transparent 2xl:hidden"
 />
 <div
-  class="pointer-events-none absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-gray-1/0 2xl:hidden"
+  class="pointer-events-none absolute right-[-2px] top-0 h-[970px] w-[191px] bg-gradient-to-l from-gray-1/60 to-transparent 2xl:hidden"
 />
 
 <!-- Planets - In Front of side gradients -->
