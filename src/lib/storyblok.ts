@@ -5,7 +5,8 @@ import {
   useStoryblokBridge,
   type ISbStoryData,
   type SbSDKOptions,
-  type ISbStoriesParams
+  type ISbStoriesParams,
+  type StoryblokComponentType
 } from '@storyblok/js';
 import { onMount } from 'svelte';
 import { get } from 'svelte/store';
@@ -330,4 +331,11 @@ export function getImageAttributes(
     src,
     ...imgSizeAttr
   };
+}
+
+export function isCmsStory<B extends StoryblokComponentType<string>>(
+  story: ISbStoryData<B> | string
+): story is ISbStoryData<B> {
+  if (typeof story === 'string') return false;
+  return true;
 }
