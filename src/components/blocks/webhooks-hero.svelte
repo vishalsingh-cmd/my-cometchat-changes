@@ -18,10 +18,18 @@
     data-theme="dark"
     class="h-[730px] overflow-hidden bg-gray-1 text-gray-12"
   >
-    <div class="container relative mx-auto h-full w-full overflow-x-visible">
+    <div
+      class="container relative mx-auto flex h-full w-full flex-col-reverse overflow-x-visible md:flex-row"
+    >
       <Background />
 
-      <div class="isolate z-10 mt-[52px] lg:ml-[112px] lg:mt-0">
+      {#if block.illustration}
+        <div class="isolate md:absolute md:-right-40 md:top-[30px] md:w-[1000px]">
+          <Media imageTransformOptions={{ size: [1600, 0] }} media={block.illustration} />
+        </div>
+      {/if}
+
+      <div class="isolate mt-[52px] lg:ml-[112px] lg:mt-0">
         {#if block.title && block.title[0]}
           {@const { title, description, links } = block.title[0]}
           {@const label = getLabelInfo(block.title[0].label, 'brand')}
@@ -35,11 +43,6 @@
           />
         {/if}
       </div>
-      {#if block.illustration}
-        <div class="isolate z-10 md:absolute md:-right-40 md:top-[30px] md:w-[1000px]">
-          <Media imageTransformOptions={{ size: [1600, 0] }} media={block.illustration} />
-        </div>
-      {/if}
     </div>
   </section>
 {/if}

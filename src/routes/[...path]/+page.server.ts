@@ -28,7 +28,9 @@ export const load = async ({ cookies, fetch, params }) => {
     'technologies-section.technologies',
     'related-stories-section.items',
     'customer-story.author',
-    'solutions-hero.solution_type'
+    'solutions-hero.solution_type',
+    'media-tabs-section.highlighted_story',
+    'media-tab.customer'
   ];
 
   const getEntriesBasedOnDatasource = async (datasource: string) => {
