@@ -4,6 +4,8 @@
   import { onMount } from 'svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
+  import { getHeroForm } from '$lib/storyblok';
+
   import Background from '$components/hero-form//background.svelte';
   export let block: HeroFormStoryblok;
 
@@ -27,20 +29,7 @@
     try {
       await loadHubSpotForm();
 
-      let form =
-        block.form == 'contact'
-          ? {
-              region: 'na1',
-              portalId: '8969037',
-              formId: '5f696aa0-6c83-4bbd-946c-20b856f92ed5',
-              target: '#hubspot-form'
-            }
-          : {
-              region: 'na1',
-              portalId: '8969037',
-              formId: 'dc4c38fe-487e-48b7-853b-2b514f344dae',
-              target: '#hubspot-form'
-            };
+      let form = getHeroForm(block.form_title);
       // Create the HubSpot form
       window.hbspt.forms.create(form);
       isLoading = false;
