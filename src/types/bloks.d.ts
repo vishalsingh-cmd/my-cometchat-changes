@@ -51,7 +51,7 @@ export interface RichtextStoryblok {
 }
 
 export interface BlogPostStoryblok {
-  cover: AssetStoryblok;
+  cover?: AssetStoryblok;
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
     | ''
@@ -250,7 +250,7 @@ export interface DirectorySectionStoryblok {
 }
 
 export interface DisclaimerStoryblok {
-  label: string;
+  label?: string;
   description: string;
   _uid: string;
   component: 'disclaimer';
@@ -437,6 +437,16 @@ export interface HeaderWithImageStoryblok {
   [k: string]: any;
 }
 
+export interface HeroFormStoryblok {
+  title: string;
+  description: string;
+  form_title: string;
+  form?: '' | 'partners' | 'contact';
+  _uid: string;
+  component: 'hero-form';
+  [k: string]: any;
+}
+
 export interface HeroHeaderStoryblok {
   title: RichtextStoryblok;
   description?: string;
@@ -563,6 +573,7 @@ export interface IndustryStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -682,9 +693,9 @@ export interface MediaTabStoryblok {
 }
 
 export interface MediaTabsSectionStoryblok {
-  theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
-  title: TitleStoryblok[];
+  highlighted_story: StoryblokStory<CustomerStoryStoryblok> | string;
+  button_label: string;
   tabs_side?: '' | 'left' | 'right';
   tabs: MediaTabStoryblok[];
   _uid: string;
@@ -759,6 +770,7 @@ export interface PageStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -921,7 +933,7 @@ export interface SinglePostResourcesPanelStoryblok {
   image: AssetStoryblok;
   link: MultilinkStoryblok;
   date: string;
-  author: string;
+  author?: string;
   _uid: string;
   component: 'single-post-resources-panel';
   [k: string]: any;
@@ -991,6 +1003,7 @@ export interface SyncedBlockContentStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -1056,7 +1069,7 @@ export interface TechnologiesSectionCopyStoryblok {
 }
 
 export interface TechnologyStoryblok {
-  short_name?: string;
+  short_name: string;
   documentation_link: LinkStoryblok[];
   code_snippet_language?: string;
   code_snippet?: string;
@@ -1077,6 +1090,7 @@ export interface TechnologyStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok

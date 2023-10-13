@@ -17,6 +17,7 @@
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
   import HeaderAndListSection from './header-and-list-section.svelte';
+  import HeroForm from './hero-form.svelte';
   import HomepageHero from './homepage-hero.svelte';
   import ImplementationSection from './implementation-section.svelte';
   import ImplementationSectionV2 from './implementation-section-v2.svelte';
@@ -71,6 +72,7 @@
     'features-section': FeaturesSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
+    'hero-form': HeroForm,
     'homepage-hero': HomepageHero,
     'implementation-section': ImplementationSection,
     'implementation-section-v2': ImplementationSectionV2,
