@@ -332,7 +332,7 @@ export function getImageAttributes(
   };
 }
 
-export function getHeroForm(formType: string) {
+export function getHubspotForm(formType: string) {
   switch (formType) {
     case 'contact':
       return {

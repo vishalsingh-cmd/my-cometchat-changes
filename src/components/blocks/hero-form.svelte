@@ -4,7 +4,7 @@
   import { onMount } from 'svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import { getHeroForm } from '$lib/storyblok';
+  import { getHubspotForm } from '$lib/storyblok';
 
   import Background from '$components/hero-form//background.svelte';
   export let block: HeroFormStoryblok;
@@ -29,7 +29,7 @@
     try {
       await loadHubSpotForm();
 
-      let form = getHeroForm(block.form_title);
+      let form = getHubspotForm(block.form_title);
       // Create the HubSpot form
       window.hbspt.forms.create(form);
       isLoading = false;
