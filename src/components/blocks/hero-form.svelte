@@ -7,6 +7,8 @@
   import { getHubspotForm } from '$lib/storyblok';
 
   import Background from '$components/hero-form//background.svelte';
+  import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
+
   export let block: HeroFormStoryblok;
 
   let isLoading = true;
@@ -67,20 +69,9 @@
         </h2>
 
         {#if isLoading}
-          <div class="flex w-full animate-pulse flex-col space-y-[16px]">
-            {#each Array(4) as _}
-              <div class="space-y-[6px]">
-                <div data-theme="dark" class="h-[18px] w-[20%] rounded-2xl bg-gray-12/8" />
-                <div data-theme="dark" class="h-11 w-full rounded-2xl bg-gray-12/8" />
-              </div>
-            {/each}
-            <div class="space-y-[6px]">
-              <div data-theme="dark" class="h-[18px] w-[20%] rounded-2xl bg-gray-12/8" />
-              <div data-theme="dark" class="h-[140px] w-full rounded-2xl bg-gray-12/8" />
-            </div>
-            <div data-theme="dark" class="h-11 w-[127px] rounded-[14px] bg-gray-12/8" />
-          </div>
+          <FormSkeleton />
         {:else}
+          <!-- Hubspot form -->
           <div class="isolate z-10 w-full" id="hubspot-form" />
         {/if}
       </div>
