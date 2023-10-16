@@ -24,6 +24,7 @@
   import ImplementationListSection from './implementation-list-section.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
+  import IpadIframe from './ipad-iframe.svelte';
   import MediaTabsSection from './media-tabs-section.svelte';
   import MediaWithListSection from './media-with-list-section.svelte';
   import LegalHero from './legal-hero.svelte';
@@ -53,7 +54,6 @@
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksHero from './webhooks-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
-  import PageNotFound from '$components/404/page-not-found.svelte';
 
   export let block: SbBlokData;
 
@@ -80,6 +80,7 @@
     'implementation-list-section': ImplementationListSection,
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'infrastructure-section': InfrastructureSection,
+    'ipad-iframe': IpadIframe,
     'media-tabs-section': MediaTabsSection,
     'media-with-list-section': MediaWithListSection,
     'legal-hero': LegalHero,
