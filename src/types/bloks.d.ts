@@ -437,6 +437,16 @@ export interface HeaderWithImageStoryblok {
   [k: string]: any;
 }
 
+export interface HeroFormStoryblok {
+  title: string;
+  description: string;
+  form_title: string;
+  form?: '' | 'partners' | 'contact';
+  _uid: string;
+  component: 'hero-form';
+  [k: string]: any;
+}
+
 export interface HeroHeaderStoryblok {
   title: RichtextStoryblok;
   description?: string;
@@ -563,6 +573,7 @@ export interface IndustryStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -570,6 +581,7 @@ export interface IndustryStoryblok {
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
@@ -581,6 +593,7 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingHeroStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -611,6 +624,13 @@ export interface InfrastructureSectionStoryblok {
   items?: BulletPointStoryblok[];
   _uid: string;
   component: 'infrastructure-section';
+  [k: string]: any;
+}
+
+export interface IpadIframeStoryblok {
+  iframe?: string;
+  _uid: string;
+  component: 'ipad-iframe';
   [k: string]: any;
 }
 
@@ -759,6 +779,7 @@ export interface PageStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -766,6 +787,7 @@ export interface PageStoryblok {
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
@@ -777,6 +799,7 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingHeroStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -853,6 +876,91 @@ export interface PreFooterStoryblok {
   call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
+  [k: string]: any;
+}
+
+export interface PricingStoryblok {
+  Content?: (
+    | AwardsSectionStoryblok
+    | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
+    | CustomersHeroStoryblok
+    | CustomerStoriesSectionStoryblok
+    | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
+    | FaqSectionStoryblok
+    | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
+    | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
+    | HomepageHeroStoryblok
+    | ImplementationListSectionStoryblok
+    | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
+    | InDepthAnalyticsSectionStoryblok
+    | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
+    | LegalHeroStoryblok
+    | ListSectionStoryblok
+    | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
+    | MediaWithListSectionStoryblok
+    | MetricsStoryblok
+    | ModerationFeaturesStoryblok
+    | NewsletterSectionStoryblok
+    | PlatformSectionStoryblok
+    | PreFooterStoryblok
+    | PricingHeroStoryblok
+    | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
+    | RichTextSectionStoryblok
+    | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
+    | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
+    | SyncedBlockStoryblok
+    | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
+    | TitleFeaturesSectionStoryblok
+    | TitleImageSectionStoryblok
+    | TitleSectionStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
+    | WebhooksSectionStoryblok
+  )[];
+  _uid: string;
+  component: 'pricing';
+  [k: string]: any;
+}
+
+export interface PricingHeroStoryblok {
+  title: string;
+  description: string;
+  bullet_points?: any[];
+  yearly_discount: number;
+  pricing_plans: (StoryblokStory<PricingPlanStoryblok> | string)[];
+  _uid: string;
+  component: 'pricing-hero';
+  [k: string]: any;
+}
+
+export interface PricingPlanStoryblok {
+  one_k_price: number;
+  ten_k_price: number;
+  twentyfive_k_price: number;
+  fifty_k_price: number;
+  fifty_k_plus_price: number;
+  Name: string;
+  highlights: string;
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan';
   [k: string]: any;
 }
 
@@ -991,6 +1099,7 @@ export interface SyncedBlockContentStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -998,6 +1107,7 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
@@ -1009,6 +1119,7 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingHeroStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -1077,6 +1188,7 @@ export interface TechnologyStoryblok {
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
@@ -1084,6 +1196,7 @@ export interface TechnologyStoryblok {
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
     | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
     | ListsSectionStoryblok
@@ -1095,6 +1208,7 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingHeroStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok

@@ -1803,6 +1803,60 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "hero-form",
+      "display_name": null,
+      "created_at": "2023-10-10T18:31:56.991Z",
+      "updated_at": "2023-10-11T14:27:09.693Z",
+      "id": 4699166,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "form_title": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        },
+        "form": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "60c98516-8550-4441-b05d-ab8844ea8efa",
+              "name": "partners",
+              "value": "partners"
+            },
+            {
+              "_uid": "f182a6ee-4833-4955-8d53-7d1f887140f6",
+              "value": "contact",
+              "name": "contact"
+            }
+          ],
+          "default_value": "contact",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hero-form",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "hero-header",
       "display_name": null,
       "created_at": "2023-06-26T11:13:46.505Z",
@@ -2441,6 +2495,30 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "infrastructure-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "ipad-iframe",
+      "display_name": null,
+      "created_at": "2023-10-16T13:55:54.773Z",
+      "updated_at": "2023-10-16T13:56:58.040Z",
+      "id": 4728344,
+      "schema": {
+        "iframe": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "ipad-iframe",
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
@@ -3428,6 +3506,168 @@
       "color": null,
       "icon": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing",
+      "display_name": null,
+      "created_at": "2023-10-16T09:47:53.632Z",
+      "updated_at": "2023-10-16T09:58:14.868Z",
+      "id": 4725812,
+      "schema": {
+        "Content": {
+          "type": "bloks",
+          "required": false,
+          "restrict_type": "groups",
+          "restrict_components": true,
+          "component_whitelist": [],
+          "component_group_whitelist": ["618c5cae-6c2f-4ae7-8d59-af973d0efe85"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing",
+      "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Pages"
+    },
+    {
+      "name": "pricing-hero",
+      "display_name": "Pricing Hero",
+      "created_at": "2023-10-16T09:53:46.965Z",
+      "updated_at": "2023-10-16T10:03:13.795Z",
+      "id": 4725866,
+      "schema": {
+        "title": {
+          "type": "text",
+          "key": "title",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "key": "Description",
+          "pos": 1,
+          "required": true
+        },
+        "bullet_points": {
+          "type": "bloks",
+          "key": "bullet_points",
+          "pos": 2
+        },
+        "yearly_discount": {
+          "type": "number",
+          "display_name": "Yearly Discount in % ",
+          "default_value": "10",
+          "required": true
+        },
+        "pricing_plans": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": ["pricing-plan"],
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Pricing Hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-plan",
+      "display_name": null,
+      "created_at": "2023-10-16T09:38:16.579Z",
+      "updated_at": "2023-10-16T10:02:00.600Z",
+      "id": 4725758,
+      "schema": {
+        "one_k_price": {
+          "type": "number",
+          "pos": 0,
+          "required": true,
+          "display_name": "Up to 1k Maus Price"
+        },
+        "ten_k_price": {
+          "type": "number",
+          "pos": 1,
+          "required": true,
+          "display_name": "Up to 10k Price"
+        },
+        "twentyfive_k_price": {
+          "type": "number",
+          "pos": 2,
+          "required": true,
+          "display_name": "Up to 25k Price"
+        },
+        "fifty_k_price": {
+          "type": "number",
+          "pos": 3,
+          "required": true,
+          "display_name": "Up to 50k Price"
+        },
+        "fifty_k_plus_price": {
+          "type": "number",
+          "pos": 4,
+          "required": true,
+          "display_name": "50k + Pricing"
+        },
+        "Name": {
+          "type": "text",
+          "required": true,
+          "pos": 5
+        },
+        "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
+          "display_name": "Pricing Tiers",
+          "keys": [
+            "one_k_price",
+            "ten_k_price",
+            "twentyfive_k_price",
+            "fifty_k_price",
+            "fifty_k_plus_price"
+          ],
+          "pos": 6,
+          "type": "tab"
+        },
+        "highlights": {
+          "type": "textarea",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry."
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Database"
     },
     {
       "name": "product-display-item",
