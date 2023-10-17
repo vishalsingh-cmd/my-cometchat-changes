@@ -77,12 +77,6 @@
       selectedTags: []
     },
     {
-      type: 'features',
-      title: string('directory.filter.features.label'),
-      tags: $page.data.datasourceFeatures,
-      selectedTags: []
-    },
-    {
       type: 'language',
       title: string('directory.filter.languages.label'),
       tags: $page.data.datasourceLanguages,
@@ -104,7 +98,6 @@
       | 'integration_tool'
       | 'product'
       | 'platform'
-      | 'features'
       | 'language'
       | 'framework'
   ) => {
@@ -170,14 +163,11 @@
     platform: panels[4].selectedTags.length
       ? { any_in_array: panels[4].selectedTags.join(',') }
       : null,
-    features: panels[5].selectedTags.length
+    language: panels[5].selectedTags.length
       ? { any_in_array: panels[5].selectedTags.join(',') }
       : null,
-    language: panels[6].selectedTags.length
+    framework: panels[6].selectedTags.length
       ? { any_in_array: panels[6].selectedTags.join(',') }
-      : null,
-    framework: panels[7].selectedTags.length
-      ? { any_in_array: panels[7].selectedTags.join(',') }
       : null
   };
 
@@ -194,6 +184,7 @@
         content_type: 'tutorial',
         filter_query: filter_query,
         per_page: 12,
+        page: currentPage,
         search_term: $debouncedSearch
       });
 
@@ -295,6 +286,8 @@
       >
         <Pagination
           onPageChange={toggleNewPage}
+          onPageDecrement={() => (currentPage -= 1)}
+          onPageIncrement={() => (currentPage += 1)}
           totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
           registersPerPage={RESULTS_PER_PAGE}
           {currentPage}

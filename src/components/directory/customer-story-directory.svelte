@@ -215,6 +215,8 @@
       >
         <Pagination
           onPageChange={toggleNewPage}
+          onPageDecrement={() => (currentPage -= 1)}
+          onPageIncrement={() => (currentPage += 1)}
           totalCountOfRegisters={$getDirectoryDataWithFilters.data.total}
           registersPerPage={RESULTS_PER_PAGE}
           {currentPage}
