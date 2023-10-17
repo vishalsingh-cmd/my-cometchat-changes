@@ -8,6 +8,8 @@
   export let registersPerPage = 10;
   export let currentPage = 1;
   export let onPageChange: (page: number) => void;
+  export let onPageDecrement: () => void;
+  export let onPageIncrement: () => void;
 
   let className: string | undefined = undefined;
   export { className as class };
@@ -23,7 +25,7 @@
 
 <div class={cn('flex h-6 gap-[14px]', className)} data-theme="light">
   <button
-    on:click={() => (currentPage -= 1)}
+    on:click={onPageDecrement}
     disabled={currentPage <= 1}
     class="flex h-6 w-6 items-center justify-center disabled:opacity-40"
   >
@@ -41,7 +43,7 @@
   </div>
 
   <button
-    on:click={() => (currentPage += 1)}
+    on:click={onPageIncrement}
     disabled={currentPage === lastPage}
     class="flex h-6 w-6 items-center justify-center disabled:opacity-40"
   >
