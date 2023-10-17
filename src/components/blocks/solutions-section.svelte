@@ -134,7 +134,7 @@
         </div>
       {/if}
       <div
-        class="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-gray-1 to-gray-1/0"
+        class="absolute bottom-0 left-0 right-0 h-[80px] bg-gradient-to-t from-gray-1 to-transparent"
       />
     </div>
 
@@ -219,7 +219,7 @@
         {/each}
       {/if}
       <div
-        class="absolute bottom-0 left-0 right-0 h-[160px] bg-gradient-to-t from-gray-1 to-gray-1/0"
+        class="absolute bottom-0 left-0 right-0 h-[160px] bg-gradient-to-t from-gray-1 to-transparent"
       />
     </div>
   </section>

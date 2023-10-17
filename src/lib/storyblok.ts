@@ -339,3 +339,30 @@ export function isCmsStory<B extends StoryblokComponentType<string>>(
   if (typeof story === 'string') return false;
   return true;
 }
+
+export function getHubspotForm(formType: string) {
+  switch (formType) {
+    case 'contact':
+      return {
+        region: 'na1',
+        portalId: '8969037',
+        formId: '5f696aa0-6c83-4bbd-946c-20b856f92ed5',
+        target: '#hubspot-form'
+      };
+    case 'partners':
+      return {
+        region: 'na1',
+        portalId: '8969037',
+        formId: 'dc4c38fe-487e-48b7-853b-2b514f344dae',
+        target: '#hubspot-form'
+      };
+
+    default:
+      return {
+        region: 'na1',
+        portalId: '8969037',
+        formId: '5f696aa0-6c83-4bbd-946c-20b856f92ed5',
+        target: '#hubspot-form'
+      };
+  }
+}
