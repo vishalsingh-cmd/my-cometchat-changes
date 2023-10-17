@@ -20,6 +20,6 @@
 
 <style>
   :global(iframe) {
-    @apply absolute left-[12px] top-[12px] z-0 h-[calc(100%-22px)] w-[calc(100%-22px)] rounded-3xl;
+    @apply absolute left-[22px] top-[22px] z-0 h-[calc(100%-44px)] w-[calc(100%-44px)] rounded-3xl;
   }
 </style>
