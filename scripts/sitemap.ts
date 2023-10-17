@@ -112,4 +112,8 @@ async function main() {
   fs.writeFileSync('static/sitemap.xml', xml);
 }
 
-await main();
+try {
+  await main();
+} catch (error) {
+  console.error('Uncaught error on sitemap', error);
+}
