@@ -19,7 +19,13 @@
 {/if}
 
 <style>
-  :global(iframe) {
-    @apply absolute left-[22px] top-[22px] z-0 h-[calc(100%-44px)] w-[calc(100%-44px)] rounded-3xl;
+  section :global(iframe) {
+    position: absolute;
+    left: 22px;
+    top: 22px;
+    z-index: 0;
+    height: calc(100% - 44px);
+    width: calc(100% - 44px);
+    border-radius: 12px;
   }
 </style>
