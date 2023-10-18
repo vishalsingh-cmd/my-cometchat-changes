@@ -11,7 +11,7 @@
 </script>
 
 {#if block}
-  <div use:storyblokEditable={block} class="pb-6 pt-4 font-semibold leading-tighter md:mb-3">
+  <div use:storyblokEditable={block} class="pb-6 pt-4 font-semibold leading-tighter">
     <svelte:element this={block.is_numeric ? 'ol' : 'ul'}>
       {#each block.items as item, i}
         <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
