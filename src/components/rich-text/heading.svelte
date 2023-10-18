@@ -10,9 +10,9 @@
 <svelte:element
   this={`h${content.attrs.level}`}
   class={cn(
-    'pb-2.5 pt-5 md:pb-3 md:pt-10',
     'font-semibold leading-tighter text-gray-12',
-    content?.attrs?.level == 2 ? 'text-2xl' : 'text-xl'
+    content?.attrs?.level == 2 ? 'text-2xl' : 'text-xl',
+    content?.attrs?.level == 2 ? 'mb-2.5 mt-5 md:mb-3 md:mt-10' : 'my-3 md:mb-3 md:mt-5'
   )}
 >
   <!-- eslint-disable-next-line svelte/no-at-html-tags -->
