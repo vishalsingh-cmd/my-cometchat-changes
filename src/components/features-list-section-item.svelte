@@ -12,7 +12,7 @@
   export let item: FeaturesListSubItemStoryblok;
 </script>
 
-<div class={cn('flex h-full flex-col')}>
+<div class={cn('flex h-full flex-col md:h-fit lg:h-full')}>
   <h4
     class={cn(
       ' pb-6 pl-container pt-10 text-xl font-semibold leading-tighter',

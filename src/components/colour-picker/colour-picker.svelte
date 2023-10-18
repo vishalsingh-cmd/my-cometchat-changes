@@ -134,7 +134,7 @@
 
   <div class="relative isolate flex w-full justify-center overflow-hidden">
     <div
-      class="absolute bottom-0 left-0 z-10 h-full w-[205px] bg-gradient-to-r from-gray-1 to-gray-1/0 md:w-[473px] md:to-30% xl:left-[79px] xl:h-full"
+      class="absolute bottom-0 left-0 z-10 h-full w-[205px] bg-gradient-to-r from-gray-1 to-transparent md:w-[473px] md:to-30% xl:left-[79px] xl:h-full"
     />
     <div class="relative">
       <img src={IphoneFrame} alt="" role="presentation" class="h-full w-full max-w-[417px]" />

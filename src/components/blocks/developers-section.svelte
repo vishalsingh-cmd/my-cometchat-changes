@@ -98,7 +98,7 @@
 
     <!-- Bottom Gradient -->
     <div
-      class="absolute bottom-0 left-0 h-[50px] w-screen bg-gradient-to-t from-gray-1/100 to-gray-1/0 lg:h-[100px]"
+      class="absolute bottom-0 left-0 h-[50px] w-screen bg-gradient-to-t from-gray-1/100 to-transparent lg:h-[100px]"
     />
   </section>
 {/if}

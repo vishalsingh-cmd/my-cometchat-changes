@@ -33,5 +33,7 @@
   "directory.filter.platforms.label": "Platforms",
   "directory.filter.features.label": "Features",
   "directory.filter.languages.label": "Languages",
-  "directory.filter.frameworks.label": "Frameworks"
+  "directory.filter.frameworks.label": "Frameworks",
+  "not_found.message": "Looks like your floating in space!  Or maybe this page doesn’t exist.",
+  "not_found.cta.label": "Back to homepage"
 }

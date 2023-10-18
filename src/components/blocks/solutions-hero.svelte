@@ -69,10 +69,10 @@
         <Stars backgroundColours={['bg-brand-7', 'bg-brand-9', 'bg-gray-8']} />
       </div>
       <div
-        class="absolute right-0 hidden h-full w-[145px] bg-gradient-to-l from-gray-1/100 to-gray-1/0 md:block"
+        class="absolute right-0 hidden h-full w-[145px] bg-gradient-to-l from-gray-1/100 to-transparent md:block"
       />
       <div
-        class="absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0"
+        class="absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
       />
     </div>
   </section>

@@ -1,5 +1,4 @@
 import type { LayoutServerLoad } from './$types';
-import { PREVIEW_COOKIE_KEY } from '$lib/constants.js';
 import { env } from '$env/dynamic/private';
 import { getFooter } from '$lib/data/footer.js';
 import { isStatusError } from '$lib/error.js';

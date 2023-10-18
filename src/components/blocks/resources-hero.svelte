@@ -23,7 +23,7 @@
     </div>
 
     <div
-      class="absolute bottom-0 left-0 h-[350px] w-full bg-gradient-to-t from-gray-1/100 to-gray-1/0 to-50%"
+      class="absolute bottom-0 left-0 h-[350px] w-full bg-gradient-to-t from-gray-1/100 to-transparent to-50%"
     />
   </section>
 {/if}
