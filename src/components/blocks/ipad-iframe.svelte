@@ -1,6 +1,7 @@
 <script lang="ts">
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { IpadIframeStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Frame from '$components/ipad-iframe/assets/ipad-frame.png';
 
   export let block: IpadIframeStoryblok;
