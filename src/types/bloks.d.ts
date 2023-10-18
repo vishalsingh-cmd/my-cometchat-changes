@@ -440,8 +440,7 @@ export interface HeaderWithImageStoryblok {
 export interface HeroFormStoryblok {
   title: string;
   description: string;
-  form_title: string;
-  form?: '' | 'partners' | 'contact';
+  form?: HubspotFormStoryblok[];
   _uid: string;
   component: 'hero-form';
   [k: string]: any;
@@ -487,6 +486,16 @@ export interface HrefLangStoryblok {
   hreflang: string;
   _uid: string;
   component: 'href-lang';
+  [k: string]: any;
+}
+
+export interface HubspotFormStoryblok {
+  form_title: string;
+  api_region?: string;
+  api_portal_id?: string;
+  api_form_id: string;
+  _uid: string;
+  component: 'hubspot-form';
   [k: string]: any;
 }
 

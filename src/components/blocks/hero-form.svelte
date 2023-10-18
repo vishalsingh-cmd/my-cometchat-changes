@@ -1,44 +1,15 @@
 <script lang="ts">
   import type { HeroFormStoryblok } from '$types/bloks';
 
-  import { onMount } from 'svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import { getHubspotForm } from '$lib/storyblok';
+  import { hubspotForm } from '$lib/actions/hubspot-form';
 
   import Background from '$components/hero-form//background.svelte';
   import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
 
   export let block: HeroFormStoryblok;
-
   let isLoading = true;
-
-  function loadHubSpotForm() {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.charset = 'utf-8';
-      script.type = 'text/javascript';
-      script.src = '//js.hsforms.net/forms/embed/v2.js';
-
-      script.onload = resolve;
-      script.onerror = reject;
-
-      document.body.appendChild(script);
-    });
-  }
-
-  onMount(async () => {
-    try {
-      await loadHubSpotForm();
-
-      let form = getHubspotForm(block.form_title);
-      // Create the HubSpot form
-      window.hbspt.forms.create(form);
-      isLoading = false;
-    } catch (error) {
-      console.error('Error loading HubSpot form:', error);
-    }
-  });
 </script>
 
 {#if block}
@@ -61,20 +32,32 @@
         {/if}
       </div>
 
-      <div
-        class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-gray-12/[0.08] p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
-      >
-        <h2 class="mb-[18px] text-2xl/tighter font-semibold text-gray-12 lg:mb-[26px]">
-          {block.form_title}
-        </h2>
+      {#if block.form && block.form[0]}
+        {@const { form_title, api_form_id, api_region, api_portal_id } = block.form[0]}
+        <div
+          class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-gray-12/[0.08] p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
+        >
+          <h2 class="mb-[18px] text-2xl/tighter font-semibold text-gray-12 lg:mb-[26px]">
+            {form_title}
+          </h2>
 
-        {#if isLoading}
-          <FormSkeleton />
-        {:else}
+          {#if isLoading}
+            <FormSkeleton />
+          {/if}
           <!-- Hubspot form -->
-          <div class="isolate z-10 w-full" id="hubspot-form" />
-        {/if}
-      </div>
+          <div
+            id="hubspot-form"
+            use:hubspotForm={{
+              formId: api_form_id,
+              region: api_region ? api_region : undefined,
+              portalId: api_portal_id ? api_portal_id : undefined
+            }}
+            on:complete={() => {
+              isLoading = false;
+            }}
+          />
+        </div>
+      {/if}
 
       <Background />
     </div>

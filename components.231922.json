@@ -104,7 +104,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-09-29T09:52:44.513Z",
+      "updated_at": "2023-10-16T16:04:33.693Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -206,7 +206,10 @@
             "paragraph",
             "strike",
             "underline",
-            "h2"
+            "h2",
+            "h4",
+            "h5",
+            "h6"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [
@@ -667,7 +670,7 @@
       "name": "customer-story",
       "display_name": "Customer Story",
       "created_at": "2023-06-05T15:34:11.948Z",
-      "updated_at": "2023-09-28T09:25:43.042Z",
+      "updated_at": "2023-10-16T16:05:43.311Z",
       "id": 4079335,
       "schema": {
         "cover": {
@@ -759,7 +762,11 @@
             "strike",
             "paragraph",
             "image",
-            "h3"
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "h2"
           ]
         },
         "related": {
@@ -1806,7 +1813,7 @@
       "name": "hero-form",
       "display_name": null,
       "created_at": "2023-10-10T18:31:56.991Z",
-      "updated_at": "2023-10-11T14:27:09.693Z",
+      "updated_at": "2023-10-18T13:53:12.534Z",
       "id": 4699166,
       "schema": {
         "title": {
@@ -1819,13 +1826,8 @@
           "pos": 1,
           "required": true
         },
-        "form_title": {
-          "type": "text",
-          "pos": 2,
-          "required": true
-        },
         "form": {
-          "type": "option",
+          "type": "bloks",
           "use_uuid": true,
           "options": [
             {
@@ -1839,8 +1841,12 @@
               "name": "contact"
             }
           ],
-          "default_value": "contact",
-          "pos": 3
+          "default_value": "",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["hubspot-form"],
+          "maximum": 1
         }
       },
       "image": null,
@@ -2037,6 +2043,48 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "href-lang",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "hubspot-form",
+      "display_name": null,
+      "created_at": "2023-10-18T13:47:43.770Z",
+      "updated_at": "2023-10-18T13:49:49.746Z",
+      "id": 4747904,
+      "schema": {
+        "form_title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "api_region": {
+          "type": "text",
+          "key": "api_region",
+          "pos": 1
+        },
+        "api_portal_id": {
+          "type": "text",
+          "key": "api_portal_id",
+          "pos": 2
+        },
+        "api_form_id": {
+          "type": "text",
+          "required": true,
+          "key": "form_id",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "hubspot-form",
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
@@ -2504,11 +2552,12 @@
       "name": "ipad-iframe",
       "display_name": null,
       "created_at": "2023-10-16T13:55:54.773Z",
-      "updated_at": "2023-10-16T13:56:58.040Z",
+      "updated_at": "2023-10-17T16:46:02.665Z",
       "id": 4728344,
       "schema": {
         "iframe": {
-          "type": "text"
+          "type": "text",
+          "description": "⚠️ Please remove the height and width from the iframe so that the frame properly resizes ⚠️"
         }
       },
       "image": null,
@@ -5450,7 +5499,7 @@
       "name": "tutorial",
       "display_name": null,
       "created_at": "2023-07-20T11:07:17.894Z",
-      "updated_at": "2023-09-28T08:14:17.904Z",
+      "updated_at": "2023-10-16T16:05:20.771Z",
       "id": 4303307,
       "schema": {
         "cover": {
@@ -5792,7 +5841,11 @@
             "strike",
             "underline",
             "h2",
-            "code"
+            "code",
+            "h3",
+            "h4",
+            "h5",
+            "h6"
           ],
           "component_group_whitelist": [],
           "component_whitelist": [
