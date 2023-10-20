@@ -30,7 +30,8 @@ export const load = async ({ cookies, fetch, params }) => {
     'customer-story.author',
     'solutions-hero.solution_type',
     'media-tabs-section.highlighted_story',
-    'media-tab.customer'
+    'media-tab.customer',
+    'pricing-hero.pricing_plans'
   ];
 
   const getEntriesBasedOnDatasource = async (datasource: string) => {
