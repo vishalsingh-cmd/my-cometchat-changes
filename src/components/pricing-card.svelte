@@ -1,5 +1,6 @@
 <script lang="ts">
-  import type { ButtonLinkStoryblok, TextStoryblok } from '$types/bloks';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import type { ButtonLinkStoryblok, PricingPlanStoryblok, TextStoryblok } from '$types/bloks';
   import Button from './buttons/button.svelte';
   import Icon from './icon/icon.svelte';
 
@@ -7,12 +8,17 @@
   export let price: number;
   export let highlights: TextStoryblok[];
   export let cta: ButtonLinkStoryblok;
+
+  export let block: PricingPlanStoryblok;
 </script>
 
-<div class="w-full max-w-[304px] rounded-3xl border border-brand-12/2 bg-brand-12/[0.03] p-6">
+<div
+  use:storyblokEditable={block}
+  class="w-full max-w-[304px] rounded-3xl border border-brand-12/2 bg-brand-12/[0.03] p-6 backdrop-blur-[30px]"
+>
   <div class="flex flex-col gap-3 text-gray-12">
     <p class="text-xl/tighter font-semibold opacity-74">{name}</p>
-    <p class="text-2xl/tighter font-semibold">{price}</p>
+    <span class="text-2xl/tighter font-semibold">&#36;{price}</span>
   </div>
 
   <div class="mt-16 flex flex-col gap-3">

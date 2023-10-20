@@ -95,8 +95,6 @@
               fifty_k_price,
               fifty_k_plus_price
             } = typedPricingPlan.content}
-            {@const parsedPrice = pricingTiers[activePricingTier].tier_key}
-            <!-- {console.log(parsedPrice)} -->
             {@const currentPrice =
               pricingTiers[activePricingTier].id == 0
                 ? one_k_price
@@ -110,7 +108,13 @@
                 ? fifty_k_plus_price
                 : 0}
 
-            <PricingCard {name} price={currentPrice} {highlights} cta={cta[0]} />
+            <PricingCard
+              {name}
+              price={currentPrice}
+              {highlights}
+              cta={cta[0]}
+              block={typedPricingPlan.content}
+            />
           {/each}
         {/if}
       </div>
