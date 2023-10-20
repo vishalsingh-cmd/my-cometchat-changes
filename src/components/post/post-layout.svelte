@@ -119,7 +119,7 @@
             {@const author = typedAuthor(block.content.author)}
             <div class="py-8 md:py-6">
               <div
-                class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-4 backdrop-blur-[20px] md:p-5"
+                class="flex flex-col gap-3 rounded-2xl border border-gray-12/[0.04] bg-gray-12/2 p-4 backdrop-blur-[20px] md:p-5"
                 style="transform: translate3d(0, 0, 0);"
               >
                 <div class="flex items-center gap-3">

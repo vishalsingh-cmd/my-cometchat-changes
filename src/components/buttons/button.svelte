@@ -48,8 +48,8 @@
           secondary: `
               text-gray-12
               
-              bg-gray-12/[0.02]
-              hover:bg-brand-9/[0.02]
+              bg-gray-12/2
+              hover:bg-brand-9/2
               
               border
               border-gray-12/10

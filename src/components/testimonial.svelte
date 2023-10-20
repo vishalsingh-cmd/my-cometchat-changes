@@ -34,7 +34,7 @@
 
     <div
       data-theme="dark"
-      class="flex w-full max-w-sm flex-col rounded-2xl border border-gray-2/[0.04] bg-gray-1/[0.02] p-4 backdrop-blur-[10px]"
+      class="flex w-full max-w-sm flex-col rounded-2xl border border-gray-2/[0.04] bg-gray-1/2 p-4 backdrop-blur-[10px]"
       style="transform: translate3d(0, 0, 0);"
     >
       <p data-theme="light" class="text-lg/snug font-medium tracking-wide text-gray-12">

@@ -124,6 +124,7 @@ export default {
         smooth: 'cubic-bezier(1, 0, 0, 1)'
       },
       opacity: {
+        2: '0.02',
         8: '0.08',
         15: '0.15',
         54: '0.54',

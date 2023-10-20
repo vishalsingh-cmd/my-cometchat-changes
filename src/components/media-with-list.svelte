@@ -17,7 +17,7 @@
     {@const mediaFileExtension = getFileExtension(media.filename.toLowerCase())}
     <div
       class={cn(
-        'order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/[0.02] py-8 backdrop-blur-[20px] lg:order-1',
+        'order-2 flex max-w-[864px] items-center justify-center overflow-hidden rounded-3xl border border-gray-12/[.04] bg-gray-12/2 py-8 backdrop-blur-[20px] lg:order-1',
         VIDEO_EXTENSIONS.includes(mediaFileExtension) && 'h-fit py-0'
       )}
     >
