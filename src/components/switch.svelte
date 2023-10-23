@@ -6,8 +6,7 @@
     'relative',
     'cursor-pointer',
     'break-keep',
-    'px-4 py-3',
-    'rounded-2xl',
+    'px-2.5 py-1.5 md:px-4 md:py-3',
     'text-lg leading-tight text-center font-semibold text-brand-12',
     'motion-safe:transition-opacity'
   );
@@ -19,12 +18,14 @@
   export let checked = false;
 </script>
 
-<label class={cn('rounded-2xl border border-brand-12/2 bg-brand-12/2 p-1', className)}>
+<label
+  class={cn('rounded-xl border border-brand-12/2 bg-brand-12/2 p-1 md:rounded-2xl', className)}
+>
   <div class="relative inline-flex">
     <input type="checkbox" {name} bind:checked class="peer sr-only" />
     <span
       style:--width="{halfWidth}px"
-      class="absolute left-0 top-0 h-full w-full max-w-[--width] rounded-2xl border border-brand-9/2 bg-brand-9/64 peer-checked:max-w-[calc(100%-var(--width))] peer-checked:translate-x-[--width] motion-safe:transition-all"
+      class="absolute left-0 top-0 h-full w-full max-w-[--width] rounded-[10px] border border-brand-9/2 bg-brand-9/64 peer-checked:max-w-[calc(100%-var(--width))] peer-checked:translate-x-[--width] motion-safe:transition-all md:rounded-2xl"
     />
     <div
       bind:clientWidth={halfWidth}

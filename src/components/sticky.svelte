@@ -29,9 +29,10 @@
   <!-- Element that is going to translate -->
   <div
     class={cn(
-      'bg-gray-1 transition-transform duration-300 ease-motion md:translate-y-0',
+      'transition-transform duration-300 ease-motion md:translate-y-0',
       isSticky && $scrollDirection === 'up' ? 'translate-y-16' : 'translate-y-0',
       isSticky && !alwaysHaveBorder && 'border-b border-gray-12/8 md:border-b-0',
+      isSticky ? 'bg-gray-1 md:bg-transparent' : 'bg-transparent',
       alwaysHaveBorder && 'border-b border-gray-12/8 md:border-b-0'
     )}
   >
