@@ -5,6 +5,7 @@
   import PricingTableData from '$components/pricing/table/pricing-table-data.svelte';
   import PricingTableHeader from '$components/pricing/table/pricing-table-header.svelte';
 
+  let activePlanIndex = 0;
   export let block: PricingTableStoryblok;
 </script>
 
@@ -14,11 +15,11 @@
     <div class="container relative z-10 mx-auto px-container">
       <!-- Header -->
       {#if header}
-        <PricingTableHeader {header} />
+        <PricingTableHeader bind:activeTab={activePlanIndex} {header} />
       {/if}
       <!-- Data -->
       {#if data}
-        <PricingTableData {data} />
+        <PricingTableData activeTab={activePlanIndex} {data} />
       {/if}
     </div>
   </section>

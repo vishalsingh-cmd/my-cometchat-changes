@@ -42,3 +42,20 @@ export const getLabelInfo = (label: string | undefined, color: 'orange' | 'brand
 
 export const getStoryVersion = (cookies: Cookies) =>
   cookies.get(PREVIEW_COOKIE_KEY) ? 'draft' : 'published';
+
+const typeIcon = (icon: string | number) => {
+  return icon as string;
+};
+
+export const getPricingIcon = (pricingType: 'included' | 'paid-add-on' | 'none') => {
+  switch (pricingType) {
+    case 'included':
+      return { icon: typeIcon('check-verified-01'), color: 'text-brand-9' };
+    case 'paid-add-on':
+      return { icon: typeIcon('coins'), color: 'text-brand-11' };
+    case 'none':
+      return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
+    default:
+      return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
+  }
+};

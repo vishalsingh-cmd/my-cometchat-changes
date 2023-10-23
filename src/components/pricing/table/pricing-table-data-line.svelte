@@ -2,26 +2,9 @@
   import type { PricingTableGroupLineStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import { cn } from '$lib/utils';
+  import { cn, getPricingIcon } from '$lib/utils';
 
   import Icon from '$components/icon/icon.svelte';
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
-
-  const getPricingIcon = (pricingType: 'included' | 'paid-add-on' | 'none') => {
-    switch (pricingType) {
-      case 'included':
-        return { icon: typeIcon('check-verified-01'), color: 'text-brand-9' };
-      case 'paid-add-on':
-        return { icon: typeIcon('coins'), color: 'text-brand-11' };
-      case 'none':
-        return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
-      default:
-        return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
-    }
-  };
 
   export let line: PricingTableGroupLineStoryblok;
 </script>
