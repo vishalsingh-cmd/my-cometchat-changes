@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Sticky from '$components/sticky.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
   import type { PricingTableHeaderColumnStoryblok } from '$types/bloks';
   import PricingTableHeaderCaptions from './pricing-table-header-captions.svelte';
@@ -25,13 +26,15 @@
   </div>
 
   <!-- Mobile -->
-  <div class="flex flex-col lg:hidden">
-    <Tabs
-      options={parsedTabs}
-      {activeTab}
-      on:optionSelect={(e) => (activeTab = e.detail.i)}
-      class="mx-0 pl-0 pr-0"
-    />
-    <PricingTableHeaderCaptions />
-  </div>
+  <Sticky>
+    <div class="flex flex-col lg:hidden">
+      <Tabs
+        options={parsedTabs}
+        {activeTab}
+        on:optionSelect={(e) => (activeTab = e.detail.i)}
+        class="mx-0 pl-0 pr-0"
+      />
+      <PricingTableHeaderCaptions />
+    </div>
+  </Sticky>
 {/if}

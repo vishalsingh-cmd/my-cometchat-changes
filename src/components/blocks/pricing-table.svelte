@@ -11,7 +11,7 @@
 
 {#if block}
   {@const { header, data } = block}
-  <section data-theme="dark" class="overflow-hidden" use:storyblokEditable={block}>
+  <section data-theme="dark" use:storyblokEditable={block}>
     <div class="container relative z-10 mx-auto px-container">
       <!-- Header -->
       {#if header}
