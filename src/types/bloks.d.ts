@@ -955,7 +955,8 @@ export interface PricingHeroStoryblok {
   title: string;
   description: string;
   info_items?: PricingHeroInfoItemStoryblok[];
-  yearly_discount: number;
+  monthly_discount?: number;
+  yearly_discount?: number;
   pricing_plans: (StoryblokStory<PricingPlanStoryblok> | string)[];
   _uid: string;
   component: 'pricing-hero';
@@ -972,14 +973,19 @@ export interface PricingHeroInfoItemStoryblok {
 }
 
 export interface PricingPlanStoryblok {
-  one_k_price: number;
-  ten_k_price: number;
-  twentyfive_k_price: number;
-  fifty_k_price: number;
-  fifty_k_plus_price: number;
   name: string;
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
+  month_one_k_price: number;
+  month_ten_k_price: number;
+  month_twentyfive_k_price: number;
+  month_fifty_k_price: number;
+  month_fifty_k_plus_price: number;
+  year_one_k_price: number;
+  year_ten_k_price: number;
+  year_twentyfive_k_price: number;
+  year_fifty_k_price: number;
+  year_fifty_k_plus_price: number;
   _uid: string;
   component: 'pricing-plan';
   [k: string]: any;

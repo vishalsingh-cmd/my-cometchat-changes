@@ -3593,7 +3593,7 @@
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
-      "updated_at": "2023-10-18T17:16:25.875Z",
+      "updated_at": "2023-10-20T21:10:45.131Z",
       "id": 4725866,
       "schema": {
         "title": {
@@ -3617,13 +3617,19 @@
           "restrict_components": true,
           "component_whitelist": ["pricing-hero-info-item"]
         },
+        "monthly_discount": {
+          "type": "number",
+          "pos": 3,
+          "required": false,
+          "display_name": "Monthly Discount in % "
+        },
         "yearly_discount": {
           "type": "number",
           "display_name": "Yearly Discount in % ",
           "default_value": "10",
-          "required": true,
+          "required": false,
           "key": "yearly_discount",
-          "pos": 3
+          "pos": 4
         },
         "pricing_plans": {
           "type": "options",
@@ -3631,7 +3637,7 @@
           "filter_content_type": ["pricing-plan"],
           "required": true,
           "key": "pricing_plans",
-          "pos": 4
+          "pos": 5
         }
       },
       "image": null,
@@ -3689,62 +3695,14 @@
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-10-20T17:08:38.825Z",
+      "updated_at": "2023-10-20T21:37:54.612Z",
       "id": 4725758,
       "schema": {
-        "one_k_price": {
-          "type": "number",
-          "pos": 0,
-          "required": true,
-          "display_name": "Up to 1k Maus Price",
-          "key": "one_k_price"
-        },
-        "ten_k_price": {
-          "type": "number",
-          "pos": 1,
-          "required": true,
-          "display_name": "Up to 10k Price",
-          "key": "ten_k_price"
-        },
-        "twentyfive_k_price": {
-          "type": "number",
-          "pos": 2,
-          "required": true,
-          "display_name": "Up to 25k Price",
-          "key": "twentyfive_k_price"
-        },
-        "fifty_k_price": {
-          "type": "number",
-          "pos": 3,
-          "required": true,
-          "display_name": "Up to 50k Price",
-          "key": "fifty_k_price"
-        },
-        "fifty_k_plus_price": {
-          "type": "number",
-          "pos": 4,
-          "required": true,
-          "display_name": "50k + Pricing",
-          "key": "fifty_k_plus_price"
-        },
         "name": {
           "type": "text",
           "required": true,
-          "pos": 5,
-          "key": "Name"
-        },
-        "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
-          "display_name": "Pricing Tiers",
-          "keys": [
-            "one_k_price",
-            "ten_k_price",
-            "twentyfive_k_price",
-            "fifty_k_price",
-            "fifty_k_plus_price"
-          ],
-          "pos": 6,
-          "type": "tab",
-          "key": "tab-2e4f9533-152a-402d-8e21-27b0c849197a"
+          "pos": 0,
+          "key": "name"
         },
         "highlights": {
           "type": "bloks",
@@ -3755,7 +3713,7 @@
           "restrict_components": true,
           "component_whitelist": ["text"],
           "key": "highlights",
-          "pos": 7
+          "pos": 2
         },
         "cta": {
           "type": "bloks",
@@ -3766,7 +3724,106 @@
           "restrict_components": true,
           "component_whitelist": ["button-link"],
           "key": "cta",
-          "pos": 8
+          "pos": 3
+        },
+        "month_one_k_price": {
+          "type": "number",
+          "pos": 4,
+          "required": true,
+          "display_name": "Up to 1k Maus Price",
+          "key": "month_one_k_price"
+        },
+        "month_ten_k_price": {
+          "type": "number",
+          "pos": 5,
+          "required": true,
+          "display_name": "Up to 10k Price",
+          "key": "month_ten_k_price"
+        },
+        "month_twentyfive_k_price": {
+          "type": "number",
+          "pos": 6,
+          "required": true,
+          "display_name": "Up to 25k Price",
+          "key": "twentyfive_k_price"
+        },
+        "month_fifty_k_price": {
+          "type": "number",
+          "pos": 7,
+          "required": true,
+          "display_name": "Up to 50k Price",
+          "key": "fifty_k_price"
+        },
+        "month_fifty_k_plus_price": {
+          "type": "number",
+          "pos": 8,
+          "required": true,
+          "display_name": "50k + Pricing",
+          "key": "fifty_k_plus_price"
+        },
+        "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
+          "display_name": "Month Tiers Prices",
+          "keys": [
+            "one_k_price",
+            "ten_k_price",
+            "twentyfive_k_price",
+            "fifty_k_price",
+            "fifty_k_plus_price",
+            "discount",
+            "month_one_k_price",
+            "month_ten_k_price",
+            "month_twentyfive_k_price",
+            "month_fifty_k_price",
+            "month_fifty_k_plus_price"
+          ],
+          "pos": 9,
+          "type": "tab",
+          "name": "tab-2e4f9533-152a-402d-8e21-27b0c849197a",
+          "key": "tab-2e4f9533-152a-402d-8e21-27b0c849197a"
+        },
+        "tab-c19fddc1-304d-4778-98ed-beca18aab415": {
+          "display_name": "Year Tiers Prices",
+          "keys": [
+            "year_one_k_price",
+            "year_ten_k_price",
+            "year_twentyfive_k_price",
+            "year_fifty_k_price",
+            "year_fifty_k_plus_price"
+          ],
+          "pos": 10,
+          "type": "tab",
+          "name": "tab-c19fddc1-304d-4778-98ed-beca18aab415",
+          "key": "tab-c19fddc1-304d-4778-98ed-beca18aab415"
+        },
+        "year_one_k_price": {
+          "type": "number",
+          "required": true,
+          "display_name": "Year 1K Price",
+          "pos": 11
+        },
+        "year_ten_k_price": {
+          "type": "number",
+          "required": true,
+          "display_name": "Year 10K Price",
+          "pos": 12
+        },
+        "year_twentyfive_k_price": {
+          "type": "number",
+          "required": true,
+          "display_name": "Year 25K Price",
+          "pos": 13
+        },
+        "year_fifty_k_price": {
+          "type": "number",
+          "display_name": "Year 50K Price",
+          "pos": 14,
+          "required": true
+        },
+        "year_fifty_k_plus_price": {
+          "type": "number",
+          "required": true,
+          "display_name": "Year 50+ Price",
+          "pos": 15
         }
       },
       "image": null,
