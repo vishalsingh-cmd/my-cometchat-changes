@@ -38,6 +38,7 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingHero from './pricing-hero.svelte';
+  import PricingTable from './pricing-table.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
   import RelatedStoriesSection from './related-stories-section.svelte';
@@ -97,6 +98,7 @@
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
+    'pricing-table': PricingTable,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,

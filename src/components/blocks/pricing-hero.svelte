@@ -1,17 +1,24 @@
 <script lang="ts">
-  import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import Icon from '$components/icon/icon.svelte';
-  import Switch from '$components/switch.svelte';
-  import Tabs from '$components/tabs/tabs.svelte';
-
-  import PricingTierTabs from '$components/pricing/pricing-tier-tabs.svelte';
-  import Badge from '$components/badge.svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
-  import PricingCard from '$components/pricing-card.svelte';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
+
+  import Badge from '$components/badge.svelte';
+  import Switch from '$components/switch.svelte';
   import Sticky from '$components/sticky.svelte';
-  // import Button from '$components/buttons/button.svelte';
+  import Icon from '$components/icon/icon.svelte';
+
+  import PricingCard from '$components/pricing-card.svelte';
+  import PricingTierTabs from '$components/pricing/pricing-tier-tabs.svelte';
+
   import Background from '$components/pricing/hero/background.svelte';
+
+  const typeIcon = (icon: string | number) => {
+    return icon as string;
+  };
+
+  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
+    story as StoryblokStory<PricingPlanStoryblok>;
 
   const pricingTiers = [
     { id: 0, label: 'Up to 1k MAUS' },
@@ -24,13 +31,6 @@
   export let block: PricingHeroStoryblok;
   let activePricingTier = 0;
   let isYearly = false;
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
-
-  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
-    story as StoryblokStory<PricingPlanStoryblok>;
 </script>
 
 {#if block}
