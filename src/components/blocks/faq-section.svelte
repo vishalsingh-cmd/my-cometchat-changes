@@ -42,7 +42,7 @@
               {@const { title, text, _uid } = faq}
               <Accordion
                 id={_uid}
-                class="rounded-2xl border border-gray-12/[0.04] bg-gray-12/[0.02] p-5 text-xl backdrop-blur-[20px]"
+                class="rounded-2xl border border-gray-12/[0.04] bg-gray-12/2 p-5 text-xl backdrop-blur-[20px]"
               >
                 <div slot="header" let:expanded let:attributes let:onClick class="w-full">
                   <button

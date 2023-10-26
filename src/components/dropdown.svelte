@@ -36,7 +36,7 @@
 
       'text-brand-12',
 
-      'bg-gray-12/[0.02]',
+      'bg-gray-12/2',
       'hover:bg-brand-9/[0.03]',
 
       'border',
@@ -47,15 +47,15 @@
       'hover:border-brand-9/30',
 
       'focus-within:border-brand-9/40',
-      'focus-within:bg-brand-9/[0.02]',
+      'focus-within:bg-brand-9/2',
 
-      'focus-visible:bg-brand-9/[0.02]',
+      'focus-visible:bg-brand-9/2',
       'focus-visible:ring-4',
       'ring-brand-9/30',
 
       'active:border-brand-7',
       'active:border-brand-9/60',
-      'active:bg-brand-9/[0.02]',
+      'active:bg-brand-9/2',
 
       'disabled:opacity-60',
       'disabled:pointer-events-none',
