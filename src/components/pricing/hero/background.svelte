@@ -1,8 +1,4 @@
 <script lang="ts">
-  import { cva } from 'class-variance-authority';
-
-  import { cn } from '$lib/utils';
-
   import Stars from '$components/stars.svelte';
   import BlurPlanets from './assets/blur-planets.svg';
   import BigOrangePlanet from './assets/orange-planet.svg';

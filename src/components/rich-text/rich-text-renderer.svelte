@@ -1,17 +1,60 @@
+<script lang="ts" context="module">
+  export const schema = cloneDeep(RichTextSchema);
+
+  // Fix links href to sanitize url
+  schema.marks.link = (node) => {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    const { story, uuid, linktype = 'url', ...attrs } = node.attrs;
+
+    attrs.class = 'link';
+
+    if (linktype === 'email') {
+      attrs.href = `mailto:${attrs.href}`;
+    }
+
+    if (attrs.href && linktype === 'story') {
+      attrs.href = attrs.href.replace(STORYBLOK_PAGES_PREFIX, '');
+    }
+
+    if (attrs.anchor) {
+      attrs.href = `${attrs.href}#${attrs.anchor}`;
+      delete attrs.anchor;
+    }
+
+    if (attrs.custom) {
+      for (const key in attrs.custom) {
+        attrs[key] = attrs.custom[key];
+      }
+      delete attrs.custom;
+    }
+
+    return {
+      tag: [{ tag: 'a', attrs: attrs }]
+    };
+  };
+
+  export const resolver = new RichTextResolver(schema);
+</script>
+
 <script lang="ts">
-  import type { ISbRichtext } from '@storyblok/js';
+  import cloneDeep from 'clone-deep';
+  import type { HTMLAttributes } from 'svelte/elements';
+  import { RichTextResolver, type ISbRichtext, RichTextSchema } from '@storyblok/js';
 
-  import { dev } from '$app/environment';
+  import { STORYBLOK_PAGES_PREFIX } from '$lib/constants';
 
-  import Heading from './heading.svelte';
-  import OrderedList from './ordered-list.svelte';
-  import Paragraph from './paragraph.svelte';
-  import UnorderedList from './unordered-list.svelte';
-  import CodeBlock from './code-block.svelte';
-
+  import Heading from '$components/rich-text/heading.svelte';
+  import Paragraph from '$components/rich-text/paragraph.svelte';
+  import CodeBlock from '$components/rich-text/code-block.svelte';
+  import UnorderedList from '$components/rich-text/unordered-list.svelte';
+  import OrderedList from '$components/rich-text/ordered-list.svelte';
   import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
 
-  export let block: ISbRichtext;
+  type $$Props = HTMLAttributes<HTMLDivElement> & {
+    doc: ISbRichtext;
+  };
+
+  export let doc: $$Props['doc'];
 
   const map = {
     heading: Heading,
@@ -21,20 +64,16 @@
     code_block: CodeBlock
   };
 
-  const component = block.type && block.type in map ? map[block.type as keyof typeof map] : null;
-  const isBlok = block.type === 'blok';
-
-  if (!component && !isBlok && dev) {
-    console.error('Uncaught component:', block);
-  }
+  const isBlok = doc.type === 'blok';
+  const component = doc.type && doc.type in map ? map[doc.type as keyof typeof map] : null;
 </script>
 
 {#if component}
-  <svelte:component this={component} content={block} {...$$restProps} />
+  <svelte:component this={component} content={doc} {...$$restProps} />
 {/if}
 
 {#if isBlok}
-  {#each block.attrs.body as b}
+  {#each doc.attrs.body as b}
     <RichTextDynamicBlock block={b} />
   {/each}
 {/if}

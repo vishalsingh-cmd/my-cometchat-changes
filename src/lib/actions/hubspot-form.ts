@@ -33,8 +33,6 @@ export const hubspotForm = (
       .finally(() => {
         node.ariaBusy = 'false';
         node.dispatchEvent(new CustomEvent('complete'));
-
-        console.log('finally');
       });
   };
 
