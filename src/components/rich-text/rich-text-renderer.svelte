@@ -13,7 +13,7 @@
     }
 
     if (attrs.href && linktype === 'story') {
-      attrs.href = attrs.href.replace('pages/', '');
+      attrs.href = attrs.href.replace(STORYBLOK_PAGES_PREFIX, '');
     }
 
     if (attrs.anchor) {
@@ -40,6 +40,8 @@
   import cloneDeep from 'clone-deep';
   import type { HTMLAttributes } from 'svelte/elements';
   import { RichTextResolver, type ISbRichtext, RichTextSchema } from '@storyblok/js';
+
+  import { STORYBLOK_PAGES_PREFIX } from '$lib/constants';
 
   import Heading from '$components/rich-text/heading.svelte';
   import Paragraph from '$components/rich-text/paragraph.svelte';
