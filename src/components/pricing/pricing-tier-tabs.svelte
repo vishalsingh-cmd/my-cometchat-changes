@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { FeatureItemStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
   import { createEventDispatcher } from 'svelte';
 

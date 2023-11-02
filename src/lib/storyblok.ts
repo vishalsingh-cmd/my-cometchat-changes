@@ -13,6 +13,9 @@ import { get } from 'svelte/store';
 import { page } from '$app/stores';
 import type { AssetStoryblok, MultilinkStoryblok } from '$types/bloks';
 
+import { STORYBLOK_PAGES_PREFIX } from '$lib/constants';
+import { removeLeadingSlash, removeMultipleSlashes, removeTrailingSlash } from '$lib/utils/url';
+
 const PUBLIC_STORYBLOK_TOKEN = env.PUBLIC_STORYBLOK_TOKEN;
 
 if (!PUBLIC_STORYBLOK_TOKEN) {
@@ -31,7 +34,7 @@ const { storyblokApi } = storyblokInit({
 export const storyblok = storyblokApi as NonNullable<
   ReturnType<typeof storyblokInit>['storyblokApi']
 >;
-export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
+
 export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
   const { storyblokApi } = storyblokInit({
     accessToken: PUBLIC_STORYBLOK_TOKEN,
@@ -42,7 +45,7 @@ export const getStoryblok = (apiOptions: SbSDKOptions['apiOptions'] = {}) => {
     }
   });
 
-  return storyblokApi as Storyblok;
+  return storyblokApi as NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,20 +74,14 @@ export const getStories = async (params: ISbStoriesParams = {}) => {
 };
 
 /** Slugs and paths */
-
 export const sanitizeSlug = (slug: string) => {
-  // nothing for now, but it's good to have a centralized function that we pass all slugs through
-  if (slug && slug.startsWith('http')) return slug;
+  if (slug.startsWith('http')) return slug;
 
-  // remove the "pages" folder, always start with a slash, and end with no slash
-  if (slug)
-    return (
-      '/' +
-      slug
-        .replace(/^pages/, '')
-        .replace(/^\/+/, '')
-        .replace(/\/+$/, '')
-    );
+  // our stories are located in a root "pages" folder that shouldn't be considered in paths
+  const path = slug.replace(STORYBLOK_PAGES_PREFIX, '');
+  const sanitizedPath = `/${removeMultipleSlashes(removeLeadingSlash(removeTrailingSlash(path)))}`;
+
+  return sanitizedPath;
 };
 
 export function getAnchorFromCmsLink(link: MultilinkStoryblok | undefined) {

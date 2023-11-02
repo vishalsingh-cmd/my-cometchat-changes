@@ -11,14 +11,12 @@
     TutorialStoryblok
   } from '$types/bloks';
 
-  import Sidebar from '$components/post/sidebar.svelte';
-
-  import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
-
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
-  import PreFooter from '$components/blocks/pre-footer.svelte';
-  import Media from '$components/media.svelte';
   import Share from './share.svelte';
+  import Media from '$components/media.svelte';
+  import Sidebar from '$components/post/sidebar.svelte';
+  import PreFooter from '$components/blocks/pre-footer.svelte';
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -111,7 +109,7 @@
 
         <div class="relative overflow-hidden" id="content">
           {#each block.content.body.content as b}
-            <RichTextRenderer block={b} />
+            <RichTextRenderer doc={b} />
           {/each}
 
           <!-- Author -->

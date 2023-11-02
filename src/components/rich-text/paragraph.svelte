@@ -1,12 +1,11 @@
 <script lang="ts">
   import { cva } from 'class-variance-authority';
-  import { RichTextResolver, type ISbRichtext } from '@storyblok/js';
+  import type { ISbRichtext } from '@storyblok/js';
 
   import { cn } from '$lib/utils';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   export let content: ISbRichtext;
-
-  const resolver = new RichTextResolver();
 
   const paragraph = cva([
     'mt-2 mb-6',
@@ -34,6 +33,8 @@
 </script>
 
 {#if content.content}
-  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-  <p class={cn(paragraph(), 'text-lg-richtext')}>{@html resolver.render(content)}</p>
+  <p class={cn(paragraph(), 'text-lg-richtext')}>
+    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+    {@html resolver.render(content)}
+  </p>
 {/if}
