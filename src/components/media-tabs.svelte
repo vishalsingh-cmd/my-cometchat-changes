@@ -6,7 +6,6 @@
   import { getImageAttributes } from '$lib/storyblok';
 
   import Media from '$components/media.svelte';
-  import Icon from '$components/icon/icon.svelte';
 
   let className: string | undefined = undefined;
   export { className as class };
