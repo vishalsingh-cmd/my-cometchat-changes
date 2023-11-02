@@ -4,8 +4,8 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import Sidebar from '$components/post/sidebar.svelte';
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: RichTextSectionStoryblok;
 
@@ -93,7 +93,7 @@
           />
           <div class="relative" id="content">
             {#each block.body.content as b}
-              <RichTextRenderer block={b} />
+              <RichTextRenderer doc={b} />
             {/each}
           </div>
         </div>
