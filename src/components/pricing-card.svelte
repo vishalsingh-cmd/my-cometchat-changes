@@ -22,7 +22,7 @@
 {#if block}
   <div
     use:storyblokEditable={block}
-    class="w-full rounded-3xl border border-brand-12/2 bg-brand-12/[0.03] p-5 backdrop-blur-[30px] md:max-w-[304px] md:p-6"
+    class="w-full rounded-3xl border border-brand-12/2 bg-brand-12/[0.03] p-5 backdrop-blur-[30px] md:p-6 xl:max-w-[304px]"
   >
     <div class="flex flex-col gap-1 text-gray-12 md:gap-3">
       <p class="text-xl/tighter font-semibold opacity-74">{name}</p>
