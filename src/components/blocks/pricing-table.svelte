@@ -4,6 +4,7 @@
 
   import PricingTableData from '$components/pricing/table/pricing-table-data.svelte';
   import PricingTableHeader from '$components/pricing/table/pricing-table-header.svelte';
+  import Sticky from '$components/sticky.svelte';
 
   let activePlanIndex = 0;
   export let block: PricingTableStoryblok;
@@ -15,7 +16,9 @@
     <div class="container relative z-10 mx-auto px-container">
       <!-- Header -->
       {#if header}
-        <PricingTableHeader bind:activeTab={activePlanIndex} {header} />
+        <Sticky>
+          <PricingTableHeader bind:activeTab={activePlanIndex} {header} />
+        </Sticky>
       {/if}
       <!-- Data -->
       {#if data}
