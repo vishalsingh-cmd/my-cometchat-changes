@@ -602,6 +602,7 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -809,6 +810,7 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -926,6 +928,7 @@ export interface PricingStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -948,6 +951,41 @@ export interface PricingStoryblok {
   )[];
   _uid: string;
   component: 'pricing';
+  [k: string]: any;
+}
+
+export interface PricingBetaHeroStoryblok {
+  title: string;
+  description: string;
+  info_items?: PricingHeroInfoItemStoryblok[];
+  pricing_beta_plans: PricingBetaHeroPlansStoryblok[];
+  _uid: string;
+  component: 'pricing-beta-hero';
+  [k: string]: any;
+}
+
+export interface PricingBetaHeroPlansStoryblok {
+  title: string;
+  description: string;
+  cta: ButtonLinkStoryblok[];
+  plans?: (
+    | StoryblokStory<PricingPlanBetaStoryblok>
+    | StoryblokStory<PricingBetaPlanStoryblok>
+    | string
+  )[];
+  _uid: string;
+  component: 'pricing-beta-hero-plans';
+  [k: string]: any;
+}
+
+export interface PricingBetaPlanStoryblok {
+  name: string;
+  price_label: string;
+  price: number;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-beta-plan';
   [k: string]: any;
 }
 
@@ -1186,6 +1224,7 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -1276,6 +1315,7 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
