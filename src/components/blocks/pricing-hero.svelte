@@ -1,7 +1,9 @@
 <script lang="ts">
   import type { StoryblokStory } from 'storyblok-generate-ts';
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
+
+  import { typeIcon } from '$lib/storyblok';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import Badge from '$components/badge.svelte';
   import Switch from '$components/switch.svelte';
@@ -12,10 +14,6 @@
   import PricingTierTabs from '$components/pricing/pricing-tier-tabs.svelte';
 
   import Background from '$components/pricing/hero/background.svelte';
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
 
   const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
     story as StoryblokStory<PricingPlanStoryblok>;
