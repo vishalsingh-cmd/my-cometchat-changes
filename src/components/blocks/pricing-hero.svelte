@@ -42,7 +42,7 @@
     <div class="container relative z-10 mx-auto">
       <Background />
       <div
-        class="container mx-auto mb-8 flex flex-col items-start justify-center gap-8 px-container md:items-center"
+        class="container mx-auto mb-8 flex flex-col items-start justify-center gap-6 px-container md:items-center md:gap-8"
       >
         <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-5">
           <h1 class="text-4xl">{block.title}</h1>
@@ -52,7 +52,7 @@
         </div>
 
         {#if block.info_items && block.info_items.length > 0}
-          <div class="flex flex-wrap gap-8 gap-y-3">
+          <div class="flex flex-wrap gap-5 gap-y-3 md:gap-8">
             {#each block.info_items as { icon, name, description }}
               {@const typedIcon = typeIcon(icon)}
               <div class="flex items-center gap-2">
@@ -102,9 +102,6 @@
           {#each block.pricing_plans as pricingPlan}
             {@const typedPricingPlan = getTypedPricingPlan(pricingPlan)}
             {@const {
-              name,
-              cta,
-              highlights,
               month_one_k_price,
               month_ten_k_price,
               month_twentyfive_k_price,
@@ -127,12 +124,9 @@
               monthAndYearPricings[activePricingTier][isYearly ? 'yearly' : 'monthly']}
 
             <PricingCard
-              discount={isYearly ? block.yearly_discount : block.monthly_discount}
-              {name}
               {price}
-              {highlights}
-              cta={cta[0]}
               block={typedPricingPlan.content}
+              discount={isYearly ? block.yearly_discount : block.monthly_discount}
             />
           {/each}
         {/if}
