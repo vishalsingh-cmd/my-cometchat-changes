@@ -189,6 +189,16 @@ export interface CodeBlockItemStoryblok {
   [k: string]: any;
 }
 
+export interface CometCreditsSectionStoryblok {
+  title: TitleSectionStoryblok[];
+  panels_title: string;
+  panels_description: string;
+  panels: PanelItemStoryblok[];
+  _uid: string;
+  component: 'comet-credits-section';
+  [k: string]: any;
+}
+
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   industry: StoryblokStory<IndustryStoryblok> | string;
