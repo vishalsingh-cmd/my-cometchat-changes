@@ -602,9 +602,49 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "comet-credits-section",
-      "component_group_uuid": null,
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
-      "icon": null
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "core-features-pricing-section",
+      "display_name": null,
+      "created_at": "2023-11-13T17:01:22.388Z",
+      "updated_at": "2023-11-13T17:04:23.719Z",
+      "id": 4876266,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title-section"]
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["lists-section-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "core-features-pricing-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "customer",

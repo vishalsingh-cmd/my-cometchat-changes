@@ -199,6 +199,14 @@ export interface CometCreditsSectionStoryblok {
   [k: string]: any;
 }
 
+export interface CoreFeaturesPricingSectionStoryblok {
+  title: TitleSectionStoryblok[];
+  items: ListsSectionItemStoryblok[];
+  _uid: string;
+  component: 'core-features-pricing-section';
+  [k: string]: any;
+}
+
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   industry: StoryblokStory<IndustryStoryblok> | string;
@@ -581,6 +589,8 @@ export interface IndustryStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -789,6 +799,8 @@ export interface PageStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -907,6 +919,8 @@ export interface PricingStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -1203,6 +1217,8 @@ export interface SyncedBlockContentStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -1294,6 +1310,8 @@ export interface TechnologyStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
