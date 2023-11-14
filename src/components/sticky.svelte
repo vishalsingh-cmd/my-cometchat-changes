@@ -1,20 +1,22 @@
 <script lang="ts">
-  import { cn } from '$lib/utils';
   import { onMount } from 'svelte';
+
+  import { cn } from '$lib/utils';
   import scrollDirection from '$lib/stores/scroll-direction';
 
   let isSticky = false;
   let topOffset: number;
   let containerRef: HTMLDivElement;
-  export let alwaysHaveBorder = false;
+  export let translateOnDesktop = false;
 
   let className: undefined | string = undefined;
   export { className as class };
 
   function updateStickyState() {
     if (containerRef) {
+      const topStyle = window.getComputedStyle(containerRef).top;
       topOffset = containerRef.getBoundingClientRect().top;
-      isSticky = topOffset <= 0;
+      isSticky = topOffset <= parseInt(topStyle, 10);
     }
     requestAnimationFrame(updateStickyState);
   }
@@ -25,15 +27,18 @@
 </script>
 
 <!-- Sticky Element -->
-<div bind:this={containerRef} class={cn('sticky left-0 top-0 z-10', className)}>
+<div
+  data-sticky={isSticky ? '' : null}
+  bind:this={containerRef}
+  class={cn('sticky left-0 top-0 z-20', className)}
+>
   <!-- Element that is going to translate -->
   <div
     class={cn(
       'translate-y-0 transition-transform duration-300 ease-motion',
-      isSticky && $scrollDirection === 'up' ? 'translate-y-16' : 'translate-y-0',
-      isSticky && !alwaysHaveBorder && 'border-b border-gray-12/8 md:border-b-0',
-      isSticky ? 'bg-gray-1 md:bg-transparent' : 'bg-transparent',
-      alwaysHaveBorder && 'border-b border-gray-12/8 md:border-b-0'
+      isSticky && $scrollDirection === 'up' ? 'translate-y-top-nav' : 'translate-y-0',
+      !translateOnDesktop && 'md:translate-y-0',
+      isSticky ? 'bg-gray-1' : 'bg-transparent'
     )}
   >
     <slot />

@@ -16,7 +16,10 @@
     <div class="container relative z-10 mx-auto px-container">
       <!-- Header -->
       {#if header}
-        <Sticky>
+        <Sticky
+          translateOnDesktop
+          class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
+        >
           <PricingTableHeader bind:activeTab={activePlanIndex} {header} />
         </Sticky>
       {/if}

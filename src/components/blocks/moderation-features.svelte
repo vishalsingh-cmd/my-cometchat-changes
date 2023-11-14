@@ -92,13 +92,17 @@
       </div>
     {/if}
 
-    <Sticky alwaysHaveBorder class="lg:hidden">
+    <Sticky
+      translateOnDesktop
+      class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:hidden"
+    >
       <Tabs
-        options={headings.map((h, id) => ({ id, label: h.innerText }))}
         {activeTab}
+        options={headings.map((h, id) => ({ id, label: h.innerText }))}
         on:optionSelect={(e) => {
           activeTab = e.detail.i;
         }}
+        class="bg-gray-1"
       />
     </Sticky>
 

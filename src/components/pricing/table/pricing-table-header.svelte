@@ -15,7 +15,7 @@
     label: title
   }))}
   <!-- Descktop -->
-  <div class="hidden w-full grid-cols-4 gap-10 border-b border-gray-12/[.08] bg-gray-1 lg:grid">
+  <div class="hidden w-full grid-cols-4 gap-10 border-b border-gray-12/8 bg-gray-1 lg:grid">
     <PricingTableHeaderCaptions />
     {#if header.length > 0}
       {#each header as column}
@@ -25,7 +25,7 @@
   </div>
 
   <!-- Mobile -->
-  <div class="flex flex-col lg:hidden">
+  <div class="flex flex-col bg-gray-1 lg:hidden">
     <Tabs
       options={parsedTabs}
       {activeTab}
