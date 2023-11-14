@@ -14,7 +14,7 @@
     id: i,
     label: title
   }))}
-  <!-- Descktop -->
+  <!-- Desktop -->
   <div class="hidden w-full grid-cols-4 gap-10 border-b border-gray-12/8 bg-gray-1 lg:grid">
     <PricingTableHeaderCaptions />
     {#if header.length > 0}
