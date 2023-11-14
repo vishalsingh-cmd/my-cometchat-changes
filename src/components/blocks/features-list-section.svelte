@@ -37,7 +37,7 @@
           label: item.title,
           content: item.items
         }))}
-        <Sticky alwaysHaveBorder>
+        <Sticky alwaysHaveBorder class="md:static">
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}
