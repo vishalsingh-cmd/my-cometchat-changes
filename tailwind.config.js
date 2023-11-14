@@ -173,6 +173,9 @@ export default {
             height: '40px'
           }
         }
+      },
+      spacing: {
+        'top-nav': '64px'
       }
     }
   },
