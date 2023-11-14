@@ -189,6 +189,24 @@ export interface CodeBlockItemStoryblok {
   [k: string]: any;
 }
 
+export interface CometCreditsSectionStoryblok {
+  title: TitleSectionStoryblok[];
+  panels_title: string;
+  panels_description: string;
+  panels: PanelItemStoryblok[];
+  _uid: string;
+  component: 'comet-credits-section';
+  [k: string]: any;
+}
+
+export interface CoreFeaturesPricingSectionStoryblok {
+  title: TitleSectionStoryblok[];
+  items: ListsSectionItemStoryblok[];
+  _uid: string;
+  component: 'core-features-pricing-section';
+  [k: string]: any;
+}
+
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   industry: StoryblokStory<IndustryStoryblok> | string;
@@ -571,6 +589,8 @@ export interface IndustryStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -602,6 +622,7 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -778,6 +799,8 @@ export interface PageStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -809,6 +832,7 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -895,6 +919,8 @@ export interface PricingStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -926,6 +952,7 @@ export interface PricingStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -948,6 +975,41 @@ export interface PricingStoryblok {
   )[];
   _uid: string;
   component: 'pricing';
+  [k: string]: any;
+}
+
+export interface PricingBetaHeroStoryblok {
+  title: string;
+  description: string;
+  info_items?: PricingHeroInfoItemStoryblok[];
+  pricing_beta_plans: PricingBetaHeroPlansStoryblok[];
+  _uid: string;
+  component: 'pricing-beta-hero';
+  [k: string]: any;
+}
+
+export interface PricingBetaHeroPlansStoryblok {
+  title: string;
+  description: string;
+  cta: ButtonLinkStoryblok[];
+  plans?: (
+    | StoryblokStory<PricingPlanBetaStoryblok>
+    | StoryblokStory<PricingBetaPlanStoryblok>
+    | string
+  )[];
+  _uid: string;
+  component: 'pricing-beta-hero-plans';
+  [k: string]: any;
+}
+
+export interface PricingBetaPlanStoryblok {
+  name: string;
+  price_label: string;
+  price: number;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-beta-plan';
   [k: string]: any;
 }
 
@@ -1025,7 +1087,7 @@ export interface PricingTableHeaderStoryblok {
 
 export interface PricingTableHeaderColumnStoryblok {
   title: string;
-  description: string;
+  description?: string;
   _uid: string;
   component: 'pricing-table-header-column';
   [k: string]: any;
@@ -1155,6 +1217,8 @@ export interface SyncedBlockContentStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -1186,6 +1250,7 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
@@ -1245,6 +1310,8 @@ export interface TechnologyStoryblok {
     | AwardsSectionStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | CometCreditsSectionStoryblok
+    | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
@@ -1276,6 +1343,7 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
     | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
     | RelatedStoriesSectionStoryblok
