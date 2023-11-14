@@ -17,7 +17,7 @@
   {#each options as { id, label }, i}
     <PricingTierTab
       {id}
-      {label}
+      label={`${label} ${activeTab == i ? ' MAUS' : ''}`}
       isActive={activeTab === i}
       on:click={() =>
         dispatch('pricingTierSelected', {

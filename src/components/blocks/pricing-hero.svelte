@@ -21,7 +21,7 @@
     story as StoryblokStory<PricingPlanStoryblok>;
 
   const pricingTiers = [
-    { id: 0, label: 'Up to 1k MAUS' },
+    { id: 0, label: 'Up to 1k' },
     { id: 1, label: 'Up to 10k' },
     { id: 2, label: 'Up to 25k' },
     { id: 3, label: 'Up to 50k' },
