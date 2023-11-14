@@ -18,7 +18,7 @@
 
 <!-- Planets - In Front of side gradients -->
 <div
-  class="pointer-events-none absolute -left-[160px] top-[718px] h-[380px] w-[380px] min-w-[380px] md:-left-[280px] md:-top-[220px] md:h-[600px] md:w-[600px]"
+  class="pointer-events-none absolute -left-[160px] top-[718px] h-[380px] w-[380px] min-w-[380px] md:-left-[320px] md:-top-[140px] md:h-[700px] md:w-[700px]"
 >
   <img role="presentation" src={BigOrangePlanet} alt="" class="h-full w-full" />
 </div>
@@ -29,7 +29,7 @@
   <img role="presentation" src={BigPurplePlanet} alt="" class="h-full w-full" />
 </div>
 
-<div class="pointer-events-none absolute -left-0 top-[50px] hidden lg:block">
+<div class="pointer-events-none absolute -left-0 top-[200px] hidden lg:block">
   <img role="presentation" src={SmallPurplePlanet} alt="" class="h-full w-full" />
 </div>
 

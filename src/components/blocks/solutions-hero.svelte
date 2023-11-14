@@ -65,14 +65,14 @@
         />
       {/if}
 
-      <div class="absolute left-6 top-0 h-[803px] w-[1389px]">
+      <div class="pointer-events-none absolute left-6 top-0 h-[803px] w-[1389px]">
         <Stars backgroundColours={['bg-brand-7', 'bg-brand-9', 'bg-gray-8']} />
       </div>
       <div
-        class="absolute right-0 hidden h-full w-[145px] bg-gradient-to-l from-gray-1/100 to-transparent md:block"
+        class="pointer-events-none absolute right-0 hidden h-full w-[145px] bg-gradient-to-l from-gray-1/100 to-transparent md:block"
       />
       <div
-        class="absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
+        class="pointer-events-none absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
       />
     </div>
   </section>

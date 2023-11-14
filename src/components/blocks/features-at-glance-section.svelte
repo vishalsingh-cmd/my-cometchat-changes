@@ -40,7 +40,7 @@
         value: title
       }))}
 
-      <Sticky>
+      <Sticky class="md:static">
         <Tabs
           {activeTab}
           options={parsedTabsFeatures}
