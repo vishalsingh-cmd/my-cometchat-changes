@@ -13,13 +13,6 @@
   import Background from '$components/pricing/hero/background.svelte';
   import PricingTierTabs from '$components/pricing/pricing-tier-tabs.svelte';
 
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
-
-  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
-    story as StoryblokStory<PricingPlanStoryblok>;
-
   const pricingTiers = [
     { id: 0, label: 'Up to 1k' },
     { id: 1, label: 'Up to 10k' },
@@ -28,28 +21,27 @@
     { id: 4, label: '50k +' }
   ];
 
+  const typeIcon = (icon: string | number) => {
+    return icon as string;
+  };
+
+  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
+    story as StoryblokStory<PricingPlanStoryblok>;
+
   let isYearly = false;
   let activePricingTier = 0;
   export let block: PricingHeroStoryblok;
-
-  $: discount = isYearly ? block.yearly_discount : block.monthly_discount;
 
   function getDiscount(initialValue: number, discountPercentage: number) {
     if (initialValue < 1) return 0;
     return parseInt((initialValue - (initialValue * discountPercentage) / 100).toFixed(0));
   }
 
-  const typedPricingPlans = block.pricing_plans.map((pricingPlan) =>
-    getTypedPricingPlan(pricingPlan)
-  );
+  const typedPricingPlans = block.pricing_plans
+    .map((pricingPlan) => getTypedPricingPlan(pricingPlan))
+    .map((pricingPlan) => pricingPlan.content);
 
-  const pricingPlansContent = typedPricingPlans.map((pricingPlan) => {
-    return {
-      ...pricingPlan.content
-    };
-  });
-
-  const pricingPlanMonthAndYearPricings = pricingPlansContent.map(
+  const pricingPlanMonthAndYearPricings = typedPricingPlans.map(
     ({
       month_one_k_price,
       month_ten_k_price,
@@ -72,17 +64,13 @@
     }
   );
 
-  $: {
-    const currentPricings: number[] = pricingPlanMonthAndYearPricings
-      .map((pricingPlan) => {
-        const price = pricingPlan[activePricingTier][isYearly ? 'yearly' : 'monthly'];
-        return discount ? getDiscount(price, discount) : price;
-      })
-      .filter((n) => n)
-      .flat(0);
+  $: discount = isYearly ? block.yearly_discount : block.monthly_discount;
 
-    pricingTiersCurrentPrice.set(currentPricings);
-  }
+  $: $pricingTiersCurrentPrice = pricingPlanMonthAndYearPricings.map((pricingPlan) => {
+    const price = pricingPlan[activePricingTier][isYearly ? 'yearly' : 'monthly'];
+    const finalPrice = discount ? getDiscount(price, discount) : price;
+    return +finalPrice;
+  });
 </script>
 
 {#if block}
@@ -156,23 +144,17 @@
       <div
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
       >
-        {#if pricingPlansContent && pricingPlansContent.length > 0}
-          {#each pricingPlansContent as pricingPlan, i}
-            {@const { name, cta, highlights } = pricingPlan}
-            {@const price =
-              pricingPlanMonthAndYearPricings[i][activePricingTier][
-                isYearly ? 'yearly' : 'monthly'
-              ]}
+        {#each typedPricingPlans as pricingPlan, i}
+          {@const { name, cta, highlights } = pricingPlan}
 
-            <PricingCard
-              {name}
-              {highlights}
-              cta={cta[0]}
-              price={discount ? getDiscount(price, discount) : price}
-              block={pricingPlan}
-            />
-          {/each}
-        {/if}
+          <PricingCard
+            {name}
+            {highlights}
+            cta={cta[0]}
+            price={$pricingTiersCurrentPrice[i]}
+            block={pricingPlan}
+          />
+        {/each}
       </div>
     </div>
   </section>

@@ -10,15 +10,13 @@
   {@const { title, description } = column}
   <div use:storyblokEditable={column} class="flex flex-col gap-1.5 pb-8 pt-12 text-gray-12">
     <p class="text-xl/tighter font-semibold">{title}</p>
-    <p class="racking-wide text-lg/snug font-medium opacity-74">
-      {#if price}
-        {#if price == 0}
-          Free
-        {:else}
-          starts at &#36;{price}
-        {/if}
-      {:else if description}
-        description
+    <p class="text-lg/snug font-medium tracking-wide opacity-74">
+      {#if price === 0}
+        Free
+      {:else if price}
+        starts at &#36;{price}
+      {:else}
+        {description}
       {/if}
     </p>
   </div>

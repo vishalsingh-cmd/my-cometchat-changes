@@ -4,8 +4,8 @@
 
   import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
 
-  import PricingTableHeaderCaptions from './pricing-table-header-captions.svelte';
-  import PricingTableHeaderColumn from './pricing-table-header-column.svelte';
+  import PricingTableHeaderColumn from '$components/pricing/table//pricing-table-header-column.svelte';
+  import PricingTableHeaderCaptions from '$components/pricing/table/pricing-table-header-captions.svelte';
 
   export let activeTab = 0;
   export let header: PricingTableHeaderColumnStoryblok[];
