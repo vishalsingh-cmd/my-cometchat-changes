@@ -32,7 +32,7 @@
   let activePricingTier = 0;
   export let block: PricingHeroStoryblok;
 
-  let discount = isYearly ? block.yearly_discount : block.monthly_discount;
+  $: discount = isYearly ? block.yearly_discount : block.monthly_discount;
 
   function getDiscount(initialValue: number, discountPercentage: number) {
     if (initialValue < 1) return 0;
