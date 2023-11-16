@@ -35,7 +35,8 @@ export const StringKeys = [
   'directory.filter.languages.label',
   'directory.filter.frameworks.label',
   'not_found.message',
-  'not_found.cta.label'
+  'not_found.cta.label',
+  'pricing.beta_price_caption'
 ] as const;
 
 export type StringKey = (typeof StringKeys)[number];

@@ -2,6 +2,7 @@
   import type { StoryblokStory } from 'storyblok-generate-ts';
   import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
 
+  import { typeIcon } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
 
@@ -20,10 +21,6 @@
     { id: 3, label: 'Up to 50k' },
     { id: 4, label: '50k +' }
   ];
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
 
   const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
     story as StoryblokStory<PricingPlanStoryblok>;
@@ -145,15 +142,7 @@
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
       >
         {#each typedPricingPlans as pricingPlan, i}
-          {@const { name, cta, highlights } = pricingPlan}
-
-          <PricingCard
-            {name}
-            {highlights}
-            cta={cta[0]}
-            price={$pricingTiersCurrentPrice[i]}
-            block={pricingPlan}
-          />
+          <PricingCard price={$pricingTiersCurrentPrice[i]} block={pricingPlan} />
         {/each}
       </div>
     </div>
