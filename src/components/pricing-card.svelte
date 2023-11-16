@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { PricingBetaPlanStoryblok, PricingPlanStoryblok } from '$types/bloks';
+
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
