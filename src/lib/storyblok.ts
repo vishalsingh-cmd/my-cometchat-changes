@@ -363,3 +363,7 @@ export function getHubspotForm(formType: string) {
       };
   }
 }
+
+export const typeIcon = (icon: string | number) => {
+  return icon as string;
+};

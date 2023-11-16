@@ -40,7 +40,7 @@
         value: title
       }))}
 
-      <Sticky class="md:static">
+      <Sticky translateOnDesktop class="data-[sticky]:border-b data-[sticky]:border-gray-12/8">
         <Tabs
           {activeTab}
           options={parsedTabsFeatures}
@@ -53,9 +53,9 @@
 
         <div class="border-t border-gray-12/8">
           <!-- Mobile Dropdown -->
-          <div class="container mx-auto w-full px-container md:hidden">
+          <div class="container mx-auto w-full bg-gray-1 px-container py-4 md:hidden">
             <Dropdown
-              class="my-4 w-full justify-between"
+              class="w-full justify-between"
               flyOutClass="w-full justify-between"
               options={parsedDropdownFeatures}
               selectedOption={selectedFeatureIndex}
@@ -68,7 +68,7 @@
 
           <!-- Desktop Tabs -->
           <DesktopTabs
-            class="container mx-auto mt-4 px-container"
+            class="container mx-auto bg-gray-1 px-container py-4"
             options={block.features[activeTab].feature_list}
             activeTab={activeButtonsTab}
             on:optionSelect={(e) => {
@@ -78,7 +78,7 @@
         </div>
       </Sticky>
 
-      <div class="container mx-auto px-container pb-8 md:pb-12 md:pt-12">
+      <div class="container mx-auto px-container pb-8 md:pb-12 md:pt-4">
         {#if block.features[activeTab].feature_list[activeButtonsTab]}
           {@const { image: media, items_right_of_image: items } =
             block.features[activeTab].feature_list[activeButtonsTab]}

@@ -35,7 +35,7 @@
       {#if block.form && block.form[0]}
         {@const { form_title, api_form_id, api_region, api_portal_id } = block.form[0]}
         <div
-          class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-gray-12/[0.08] p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
+          class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-gray-12/8 p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
         >
           <h2 class="mb-[18px] text-2xl/tighter font-semibold text-gray-12 lg:mb-[26px]">
             {form_title}

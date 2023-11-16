@@ -1,36 +1,73 @@
 <script lang="ts">
   import type { StoryblokStory } from 'storyblok-generate-ts';
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
+
+  import { typeIcon } from '$lib/storyblok';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
 
   import Badge from '$components/badge.svelte';
   import Switch from '$components/switch.svelte';
   import Sticky from '$components/sticky.svelte';
   import Icon from '$components/icon/icon.svelte';
-
   import PricingCard from '$components/pricing-card.svelte';
+  import Background from '$components/pricing/hero/background.svelte';
   import PricingTierTabs from '$components/pricing/pricing-tier-tabs.svelte';
 
-  import Background from '$components/pricing/hero/background.svelte';
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
-
-  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
-    story as StoryblokStory<PricingPlanStoryblok>;
-
   const pricingTiers = [
-    { id: 0, label: 'Up to 1k MAUS' },
+    { id: 0, label: 'Up to 1k' },
     { id: 1, label: 'Up to 10k' },
     { id: 2, label: 'Up to 25k' },
     { id: 3, label: 'Up to 50k' },
     { id: 4, label: '50k +' }
   ];
 
-  export let block: PricingHeroStoryblok;
-  let activePricingTier = 0;
+  const getTypedPricingPlan = (story: string | StoryblokStory<PricingPlanStoryblok>) =>
+    story as StoryblokStory<PricingPlanStoryblok>;
+
   let isYearly = false;
+  let activePricingTier = 0;
+  export let block: PricingHeroStoryblok;
+
+  function getDiscount(initialValue: number, discountPercentage: number) {
+    if (initialValue < 1) return 0;
+    return parseInt((initialValue - (initialValue * discountPercentage) / 100).toFixed(0));
+  }
+
+  const typedPricingPlans = block.pricing_plans
+    .map((pricingPlan) => getTypedPricingPlan(pricingPlan))
+    .map((pricingPlan) => pricingPlan.content);
+
+  const pricingPlanMonthAndYearPricings = typedPricingPlans.map(
+    ({
+      month_one_k_price,
+      month_ten_k_price,
+      month_twentyfive_k_price,
+      month_fifty_k_price,
+      month_fifty_k_plus_price,
+      year_one_k_price,
+      year_ten_k_price,
+      year_twentyfive_k_price,
+      year_fifty_k_price,
+      year_fifty_k_plus_price
+    }) => {
+      return [
+        { monthly: month_one_k_price, yearly: year_one_k_price },
+        { monthly: month_ten_k_price, yearly: year_ten_k_price },
+        { monthly: month_twentyfive_k_price, yearly: year_twentyfive_k_price },
+        { monthly: month_fifty_k_price, yearly: year_fifty_k_price },
+        { monthly: month_fifty_k_plus_price, yearly: year_fifty_k_plus_price }
+      ];
+    }
+  );
+
+  $: discount = isYearly ? block.yearly_discount : block.monthly_discount;
+
+  $: $pricingTiersCurrentPrice = pricingPlanMonthAndYearPricings.map((pricingPlan) => {
+    const price = pricingPlan[activePricingTier][isYearly ? 'yearly' : 'monthly'];
+    const finalPrice = discount ? getDiscount(price, discount) : price;
+    return +finalPrice;
+  });
 </script>
 
 {#if block}
@@ -104,44 +141,9 @@
       <div
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
       >
-        {#if block.pricing_plans && block.pricing_plans.length > 0}
-          {#each block.pricing_plans as pricingPlan}
-            {@const typedPricingPlan = getTypedPricingPlan(pricingPlan)}
-            {@const {
-              name,
-              cta,
-              highlights,
-              month_one_k_price,
-              month_ten_k_price,
-              month_twentyfive_k_price,
-              month_fifty_k_price,
-              month_fifty_k_plus_price,
-              year_one_k_price,
-              year_ten_k_price,
-              year_twentyfive_k_price,
-              year_fifty_k_price,
-              year_fifty_k_plus_price
-            } = typedPricingPlan.content}
-            {@const monthAndYearPricings = [
-              { monthly: month_one_k_price, yearly: year_one_k_price },
-              { monthly: month_ten_k_price, yearly: year_ten_k_price },
-              { monthly: month_twentyfive_k_price, yearly: year_twentyfive_k_price },
-              { monthly: month_fifty_k_price, yearly: year_fifty_k_price },
-              { monthly: month_fifty_k_plus_price, yearly: year_fifty_k_plus_price }
-            ]}
-            {@const price =
-              monthAndYearPricings[activePricingTier][isYearly ? 'yearly' : 'monthly']}
-
-            <PricingCard
-              discount={isYearly ? block.yearly_discount : block.monthly_discount}
-              {name}
-              {price}
-              {highlights}
-              cta={cta[0]}
-              block={typedPricingPlan.content}
-            />
-          {/each}
-        {/if}
+        {#each typedPricingPlans as pricingPlan, i}
+          <PricingCard price={$pricingTiersCurrentPrice[i]} block={pricingPlan} />
+        {/each}
       </div>
     </div>
   </section>

@@ -5,17 +5,13 @@
 
   import type { PanelItemStoryblok } from '$types/bloks';
 
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
   import { string } from '$lib/strings';
   import { cn } from '$lib/utils';
 
   let className: undefined | string = undefined;
   export { className as class };
   export let item: PanelItemStoryblok;
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
 </script>
 
 <div class={cn('flex flex-col items-start', className)}>
