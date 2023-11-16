@@ -28,7 +28,7 @@
         class="container mx-auto mb-8 flex flex-col items-start justify-center gap-6 px-container md:items-center md:gap-12"
       >
         <div
-          class="z-20 flex flex-col items-start gap-3 md:items-center md:gap-5 md:text-center xl:max-w-[700px]"
+          class="z-20 flex max-w-[700px] flex-col items-start gap-3 md:items-center md:gap-5 md:text-center"
         >
           <h1 class="text-3xl/tighter font-semibold">{block.title}</h1>
           <p class="text-xl/snug font-medium tracking-wide opacity-74">
@@ -75,7 +75,10 @@
           {#if plans && plans.length > 0}
             {#each plans as pricingPlan}
               {@const typedPricingPlan = getTypedPricingBetaPlan(pricingPlan)}
-              <PricingCard block={typedPricingPlan.content} />
+              <PricingCard
+                price={typedPricingPlan.content.price}
+                block={typedPricingPlan.content}
+              />
             {/each}
           {/if}
         </div>

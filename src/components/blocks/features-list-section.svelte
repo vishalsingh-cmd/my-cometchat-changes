@@ -37,7 +37,7 @@
           label: item.title,
           content: item.items
         }))}
-        <Sticky alwaysHaveBorder class="md:static">
+        <Sticky translateOnDesktop class="data-[sticky]:border-b data-[sticky]:border-gray-12/8">
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}

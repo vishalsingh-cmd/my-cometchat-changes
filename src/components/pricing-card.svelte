@@ -9,20 +9,14 @@
   import Icon from './icon/icon.svelte';
   import Button from './buttons/button.svelte';
 
-  function getDiscount(initialValue: number, discountPercentage: number) {
-    if (initialValue < 1) return 0;
-    return (initialValue - (initialValue * discountPercentage) / 100).toFixed(0);
-  }
-
   export const isPricingBetaPlan = (story: PricingBetaPlanStoryblok | PricingPlanStoryblok) => {
     return story.component === 'pricing-beta-plan';
   };
 
+  export let price: number;
   export let block: PricingPlanStoryblok | PricingBetaPlanStoryblok;
-  export let price: number = block.price;
-  export let discount: number | undefined = undefined;
 
-  const isPricingBeta = isPricingBetaPlan(block);
+  let isPricingBeta = isPricingBetaPlan(block);
 </script>
 
 {#if block}
@@ -54,7 +48,7 @@
               {#if price == 0}
                 Free
               {:else}
-                &#36;{discount ? getDiscount(price, discount) : price}
+                &#36;{price}
               {/if}
             </span>
             {#if isPricingBeta}

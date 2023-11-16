@@ -1087,7 +1087,7 @@ export interface PricingTableHeaderStoryblok {
 
 export interface PricingTableHeaderColumnStoryblok {
   title: string;
-  description: string;
+  description?: string;
   _uid: string;
   component: 'pricing-table-header-column';
   [k: string]: any;
