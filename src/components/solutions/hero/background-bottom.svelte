@@ -3,9 +3,9 @@
 </script>
 
 <div
-  class="blur1 filter-[50px] absolute -right-[71px] top-[76px] h-[500px] w-[900px] opacity-[0.22] mix-blend-hard-light"
+  class="blur1 filter-[50px] pointer-events-none absolute -right-[71px] top-[76px] h-[500px] w-[900px] opacity-[0.22] mix-blend-hard-light"
 />
-<img class="absolute bottom-0" src={Noise} alt="" />
+<img class="pointer-events-none absolute bottom-0" src={Noise} alt="" />
 
 <style lang="postcss">
   .blur1 {
