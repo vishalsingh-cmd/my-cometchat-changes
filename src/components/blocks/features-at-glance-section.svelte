@@ -40,10 +40,7 @@
         value: title
       }))}
 
-      <Sticky
-        translateOnDesktop
-        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 md:data-[sticky]:border-b-0"
-      >
+      <Sticky translateOnDesktop class="data-[sticky]:border-b data-[sticky]:border-gray-12/8">
         <Tabs
           {activeTab}
           options={parsedTabsFeatures}
