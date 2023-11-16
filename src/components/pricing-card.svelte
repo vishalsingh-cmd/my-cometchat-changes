@@ -1,20 +1,16 @@
 <script lang="ts">
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import type { ButtonLinkStoryblok, PricingPlanStoryblok, TextStoryblok } from '$types/bloks';
-  import Button from './buttons/button.svelte';
+
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { storyblokEditable } from '$lib/actions/storyblok-editable';
+
   import Icon from './icon/icon.svelte';
+  import Button from './buttons/button.svelte';
 
   export let name: string;
   export let price: number;
-  export let discount: number | undefined = undefined;
   export let highlights: TextStoryblok[];
   export let cta: ButtonLinkStoryblok;
-
-  function getDiscount(initialValue: number, discountPercentage: number) {
-    if (initialValue < 1) return 0;
-    return (initialValue - (initialValue * discountPercentage) / 100).toFixed(0);
-  }
 
   export let block: PricingPlanStoryblok;
 </script>
@@ -30,7 +26,7 @@
         {#if price == 0}
           Free
         {:else}
-          &#36;{discount ? getDiscount(price, discount) : price}
+          &#36;{price}
         {/if}
       </span>
     </div>

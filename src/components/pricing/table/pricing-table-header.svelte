@@ -1,8 +1,10 @@
 <script lang="ts">
   import Tabs from '$components/tabs/tabs.svelte';
   import type { PricingTableHeaderColumnStoryblok } from '$types/bloks';
-  import PricingTableHeaderCaptions from './pricing-table-header-captions.svelte';
 
+  import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
+
+  import PricingTableHeaderCaptions from './pricing-table-header-captions.svelte';
   import PricingTableHeaderColumn from './pricing-table-header-column.svelte';
 
   export let activeTab = 0;
@@ -18,8 +20,8 @@
   <div class="hidden w-full grid-cols-4 gap-10 border-b border-gray-12/8 bg-gray-1 lg:grid">
     <PricingTableHeaderCaptions />
     {#if header.length > 0}
-      {#each header as column}
-        <PricingTableHeaderColumn {column} />
+      {#each header as column, i}
+        <PricingTableHeaderColumn price={$pricingTiersCurrentPrice[i + 1]} {column} />
       {/each}
     {/if}
   </div>
@@ -27,10 +29,10 @@
   <!-- Mobile -->
   <div class="flex flex-col bg-gray-1 lg:hidden">
     <Tabs
-      options={parsedTabs}
       {activeTab}
-      on:optionSelect={(e) => (activeTab = e.detail.i)}
+      options={parsedTabs}
       class="mx-0 pl-0 pr-0"
+      on:optionSelect={(e) => (activeTab = e.detail.i)}
     />
     <PricingTableHeaderCaptions />
   </div>
