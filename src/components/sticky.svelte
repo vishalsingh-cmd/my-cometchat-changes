@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
 
   import { cn } from '$lib/utils';
+  import { page } from '$app/stores';
   import scrollDirection from '$lib/stores/scroll-direction';
 
   let isSticky = false;
@@ -36,7 +37,9 @@
   <div
     class={cn(
       'translate-y-0 transition-transform duration-300 ease-motion',
-      isSticky && $scrollDirection === 'up' ? 'translate-y-top-nav' : 'translate-y-0',
+      isSticky && $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/')
+        ? 'translate-y-top-nav'
+        : 'translate-y-0',
       !translateOnDesktop && 'md:translate-y-0 md:bg-transparent',
       isSticky ? 'bg-gray-1' : 'bg-transparent'
     )}
