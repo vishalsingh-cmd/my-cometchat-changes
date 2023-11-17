@@ -37,7 +37,7 @@
           label: item.title,
           content: item.items
         }))}
-        <Sticky alwaysHaveBorder class="md:static">
+        <Sticky translateOnDesktop class="data-[sticky]:border-b data-[sticky]:border-gray-12/8">
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}
@@ -51,12 +51,12 @@
           <!-- Tablet -->
           <div
             class={cn(
-              'hidden flex-row border border-t-0 border-b-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)]',
+              'hidden flex-row border border-t-0 border-b-gray-12/8 shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)]',
               i === selectedItemIndex && 'hidden md:flex lg:hidden'
             )}
           >
             {#each subArrays as array, i}
-              <div class={cn('flex-1', i === 0 && 'border-r border-r-gray-12/[0.08]')}>
+              <div class={cn('flex-1', i === 0 && 'border-r border-r-gray-12/8')}>
                 {#each array as item, f}
                   <FeaturesListSectionItem {item} i={f} />
                 {/each}
@@ -67,7 +67,7 @@
           <!-- Mobile and Desktop -->
           <div
             class={cn(
-              'hidden flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/[0.08] bg-gray-12/[0.08] shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] lg:grid-cols-3',
+              'hidden flex-col gap-px border border-l-0 border-r-0 border-t-0 border-b-gray-12/8 bg-gray-12/8 shadow-[0_-1px_0_0_hsla(246,21%,9%,0.08)] lg:grid-cols-3',
               i === selectedItemIndex && 'flex md:hidden lg:grid'
             )}
           >

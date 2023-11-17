@@ -16,7 +16,7 @@
   <h4
     class={cn(
       ' pb-6 pl-container pt-10 text-xl font-semibold leading-tighter',
-      i !== 0 && 'border-t-gray-12/[0.08] px-5 md:border-t md:px-10 lg:border-t-0'
+      i !== 0 && 'border-t-gray-12/8 px-5 md:border-t md:px-10 lg:border-t-0'
     )}
   >
     {item.title}

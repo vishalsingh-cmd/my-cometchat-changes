@@ -558,6 +558,95 @@
       "component_group_name": "Internal Blocks"
     },
     {
+      "name": "comet-credits-section",
+      "display_name": null,
+      "created_at": "2023-11-10T23:46:01.750Z",
+      "updated_at": "2023-11-10T23:54:32.215Z",
+      "id": 4867193,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title-section"],
+          "required": true,
+          "maximum": 1,
+          "pos": 0
+        },
+        "panels_title": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "panels_description": {
+          "type": "text",
+          "pos": 2,
+          "required": true
+        },
+        "panels": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["panel-item"],
+          "maximum": 4,
+          "minimum": 1,
+          "required": true,
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "comet-credits-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "core-features-pricing-section",
+      "display_name": null,
+      "created_at": "2023-11-13T17:01:22.388Z",
+      "updated_at": "2023-11-13T17:04:23.719Z",
+      "id": 4876266,
+      "schema": {
+        "title": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["title-section"]
+        },
+        "items": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["lists-section-item"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "core-features-pricing-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "customer",
       "display_name": "Customer",
       "created_at": "2023-06-02T13:38:21.932Z",
@@ -3590,6 +3679,171 @@
       "component_group_name": "Pages"
     },
     {
+      "name": "pricing-beta-hero",
+      "display_name": null,
+      "created_at": "2023-11-08T11:31:04.805Z",
+      "updated_at": "2023-11-08T15:32:53.895Z",
+      "id": 4854216,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true,
+          "key": "title",
+          "pos": 0
+        },
+        "description": {
+          "type": "text",
+          "required": true,
+          "key": "description",
+          "pos": 1
+        },
+        "info_items": {
+          "type": "bloks",
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-hero-info-item"],
+          "key": "info_items",
+          "pos": 2
+        },
+        "pricing_beta_plans": {
+          "type": "bloks",
+          "tooltip": false,
+          "required": true,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-beta-hero-plans"],
+          "maximum": 1,
+          "minimum": 1,
+          "key": "plans",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-beta-hero",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-beta-hero-plans",
+      "display_name": null,
+      "created_at": "2023-11-08T11:49:43.339Z",
+      "updated_at": "2023-11-08T11:56:31.004Z",
+      "id": 4854229,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        },
+        "plans": {
+          "type": "options",
+          "restrict_type": "",
+          "restrict_components": false,
+          "component_whitelist": [],
+          "component_group_whitelist": [],
+          "source": "internal_stories",
+          "folder_slug": "",
+          "filter_content_type": ["pricing-plan-beta", "pricing-beta-plan"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-beta-hero-plans",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "pricing-beta-plan",
+      "display_name": null,
+      "created_at": "2023-11-08T11:41:58.077Z",
+      "updated_at": "2023-11-08T15:16:38.593Z",
+      "id": 4854219,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "title",
+          "display_name": "Name"
+        },
+        "price_label": {
+          "type": "text",
+          "pos": 1,
+          "required": true,
+          "key": "price_label"
+        },
+        "price": {
+          "type": "number",
+          "pos": 2,
+          "description": "/per Comet Credit",
+          "tooltip": false,
+          "required": true,
+          "key": "price"
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-beta-plan",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "component_group_name": "Database"
+    },
+    {
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
@@ -3695,7 +3949,7 @@
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-10-20T21:37:54.612Z",
+      "updated_at": "2023-10-20T22:10:25.318Z",
       "id": 4725758,
       "schema": {
         "name": {
@@ -3731,35 +3985,40 @@
           "pos": 4,
           "required": true,
           "display_name": "Up to 1k Maus Price",
-          "key": "month_one_k_price"
+          "key": "month_one_k_price",
+          "default_value": "0"
         },
         "month_ten_k_price": {
           "type": "number",
           "pos": 5,
           "required": true,
           "display_name": "Up to 10k Price",
-          "key": "month_ten_k_price"
+          "key": "month_ten_k_price",
+          "default_value": "0"
         },
         "month_twentyfive_k_price": {
           "type": "number",
           "pos": 6,
           "required": true,
           "display_name": "Up to 25k Price",
-          "key": "twentyfive_k_price"
+          "key": "twentyfive_k_price",
+          "default_value": "0"
         },
         "month_fifty_k_price": {
           "type": "number",
           "pos": 7,
           "required": true,
           "display_name": "Up to 50k Price",
-          "key": "fifty_k_price"
+          "key": "fifty_k_price",
+          "default_value": "0"
         },
         "month_fifty_k_plus_price": {
           "type": "number",
           "pos": 8,
           "required": true,
           "display_name": "50k + Pricing",
-          "key": "fifty_k_plus_price"
+          "key": "fifty_k_plus_price",
+          "default_value": "0"
         },
         "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
           "display_name": "Month Tiers Prices",
@@ -3799,31 +4058,37 @@
           "type": "number",
           "required": true,
           "display_name": "Year 1K Price",
-          "pos": 11
+          "pos": 11,
+          "default_value": "0"
         },
         "year_ten_k_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 10K Price",
-          "pos": 12
+          "pos": 12,
+          "default_value": "0"
         },
         "year_twentyfive_k_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 25K Price",
-          "pos": 13
+          "pos": 13,
+          "default_value": "0"
         },
         "year_fifty_k_price": {
           "type": "number",
           "display_name": "Year 50K Price",
           "pos": 14,
-          "required": true
+          "required": true,
+          "description": "",
+          "default_value": "0"
         },
         "year_fifty_k_plus_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 50+ Price",
-          "pos": 15
+          "pos": 15,
+          "default_value": "0"
         }
       },
       "image": null,
@@ -4033,7 +4298,7 @@
       "name": "pricing-table-header-column",
       "display_name": null,
       "created_at": "2023-10-19T11:00:48.083Z",
-      "updated_at": "2023-10-19T11:01:17.641Z",
+      "updated_at": "2023-11-14T14:48:48.805Z",
       "id": 4753725,
       "schema": {
         "title": {
@@ -4042,7 +4307,7 @@
         },
         "description": {
           "type": "text",
-          "required": true
+          "required": false
         }
       },
       "image": null,

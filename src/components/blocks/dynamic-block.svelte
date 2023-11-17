@@ -5,6 +5,8 @@
   import AwardsSection from './awards-section.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
+  import CometCreditsSection from './comet-credits-section.svelte';
+  import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
@@ -38,6 +40,7 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingHero from './pricing-hero.svelte';
+  import PricingBetaHero from './pricing-beta-hero.svelte';
   import PricingTable from './pricing-table.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
@@ -64,6 +67,8 @@
     'awards-section': AwardsSection,
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
+    'comet-credits-section': CometCreditsSection,
+    'core-features-pricing-section': CoreFeaturesPricingSection,
     'customers-hero': CustomersHero,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
@@ -98,6 +103,7 @@
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
+    'pricing-beta-hero': PricingBetaHero,
     'pricing-table': PricingTable,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,

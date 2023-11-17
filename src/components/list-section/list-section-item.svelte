@@ -5,17 +5,13 @@
   import Icon from '$components/icon/icon.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
 
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
   import type { ListItemStoryblok } from '$types/bloks';
+  import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
 
   let className: undefined | string = undefined;
   export { className as class };
   export let block: ListItemStoryblok;
   export let accentColour: 'orange' | 'brand' = 'orange';
-
-  const typeIcon = (icon: string | number) => {
-    return icon as string;
-  };
 </script>
 
 {#if block}
