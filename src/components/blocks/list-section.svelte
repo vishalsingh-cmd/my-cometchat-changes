@@ -12,7 +12,7 @@
 
 {#if block}
   <section
-    data-theme="light"
+    data-theme={block.theme}
     class="bg-gray-1 pb-12 pt-6 md:pb-20 md:pt-12"
     use:storyblokEditable={block}
   >
