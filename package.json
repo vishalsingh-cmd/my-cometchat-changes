@@ -47,6 +47,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-svelte": "^2.26.0",
+    "eslint-plugin-svelte3": "^4.0.0",
     "husky": "^8.0.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.0",
