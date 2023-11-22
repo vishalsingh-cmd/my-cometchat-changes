@@ -58,11 +58,20 @@
   {#if data.page?.content?.seo?.[0] && data.page?.content.seo?.[0].canonical_url}
     <link rel="canonical" href={data.page.content.seo[0].canonical_url} />
   {/if}
+
+  {#if data.page?.content?.seo?.[0] && data.page?.content.seo?.[0].structured_data_markup}
+    {@html `
+    <script type="application/ld+json">
+    ${data.page?.content.seo?.[0].structured_data_markup}
+    </script>`}
+  {/if}
+
   {#if data.page?.content?.seo?.[0] && data.page?.content.seo?.[0].robots && data.page?.content.seo?.[0].robots.length > 0}
     {#each data.page.content.seo[0].robots as robot}
       <meta name={robot.name} content={robot.content} />
     {/each}
   {/if}
+
   {#if data.page?.content?.seo?.[0] && data.page?.content.seo?.[0].href_lang && data.page?.content.seo?.[0].href_lang.length > 0}
     {#each data.page.content.seo[0].href_lang as hrefLang}
       {@const { rel, href, hreflang } = hrefLang}
