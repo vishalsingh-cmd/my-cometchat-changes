@@ -57,7 +57,7 @@
         )}
       >
         <Background />
-        <div class="isoalte">
+        <div class="isolate">
           {#if block.is_highlight && block.label !== ''}
             <p
               data-theme="dark"
@@ -83,7 +83,7 @@
 {/if}
 
 <style lang="postcss">
-  :global(form) {
+  section :global(form) {
     max-width: 450px;
     width: 100%;
 
@@ -151,7 +151,7 @@
     & .hs-button {
       padding: 12px 16px;
 
-      background-color: #6852d6;
+      background-color: hsl(var(--color-brand-9));
       border-radius: 12px;
 
       font-size: 14px;
