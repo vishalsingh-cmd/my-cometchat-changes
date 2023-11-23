@@ -15,11 +15,11 @@
       <div class="flex flex-col items-start justify-center pb-20 pt-24 sm:items-center xl:py-36">
         <div class="flex flex-col items-start sm:items-center">
           {#if block.title && block.title !== ''}
-            <p class="z-20 text-3xl text-gray-12">{block.title}</p>
+            <p class="z-20 text-3xl leading-tighter text-gray-12">{block.title}</p>
           {/if}
           {#if block.description && block.description !== ''}
             <p
-              class="z-20 mt-1 max-w-md whitespace-pre-line text-xl leading-tight text-gray-12 opacity-70 sm:text-center"
+              class="z-20 mt-1 max-w-md whitespace-pre-line text-xl leading-snug text-gray-12 opacity-70 sm:text-center"
             >
               {block.description}
             </p>
