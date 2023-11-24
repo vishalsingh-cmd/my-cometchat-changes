@@ -692,6 +692,7 @@ export interface ListItemStoryblok {
 }
 
 export interface ListSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
   items: ListItemStoryblok[];
   _uid: string;
   component: 'list-section';
@@ -1146,6 +1147,7 @@ export interface SeoFieldsStoryblok {
   description?: string;
   og_image?: AssetStoryblok;
   canonical_url?: string;
+  structured_data_markup?: string;
   robots?: RobotStoryblok[];
   href_lang?: HrefLangStoryblok[];
   _uid: string;

@@ -70,7 +70,7 @@
 {/if}
 
 <style lang="postcss">
-  :global(form) {
+  section :global(form) {
     max-width: 100% !important;
     display: flex;
     align-items: flex-start !important;
@@ -226,10 +226,10 @@
       margin-top: 24px !important;
     }
 
-    & button {
+    & .hs-button {
       padding: 12px 16px;
 
-      background-color: var(--color--brand-09);
+      background-color: hsl(var(--color-brand-9));
       border-radius: 12px;
 
       font-size: 14px;
