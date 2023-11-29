@@ -23,7 +23,7 @@
       {#if block.header && block.header[0]}
         {@const { description, title, links } = block.header[0]}
         {@const label = getLabelInfo(block.header[0].label, 'brand')}
-        <div class="isolate z-10 flex justify-center">
+        <div class="isolate z-10 flex lg:justify-center">
           <Title {label} {description} {title} buttons={links} class="max-w-[528px] pl-0 pr-0" />
         </div>
       {/if}

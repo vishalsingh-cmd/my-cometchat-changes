@@ -22,7 +22,7 @@
 {#if block}
   <section
     class={cn(
-      'relative h-[626px] overflow-hidden bg-gray-1 text-gray-12 md:h-[555px]',
+      'relative overflow-hidden bg-gray-1 pb-[240px] pt-[100px] text-gray-12 md:pb-20 md:pt-[148px]',
       block.image &&
         block.image.filename !== '' &&
         block.image.filename !== null &&
@@ -38,14 +38,14 @@
   >
     <div
       class={cn(
-        'container relative mx-auto flex h-full flex-col px-container pt-[100px] md:pt-[148px]',
+        'container mx-auto flex h-full flex-col px-container',
         block.header_alignment === 'center' && 'items-center'
       )}
     >
       <div
         class={cn(
           'isolate z-10 w-full max-w-[528px]',
-          block.header_alignment === 'left' && 'md:max-w-[640px] md:pl-[112px]'
+          block.header_alignment === 'left' && 'lg:max-w-[640px] lg:pl-[112px]'
         )}
       >
         {#if block.has_coming_soon_tag}
@@ -104,7 +104,7 @@
       />
     {:else if !(block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left')}
       <div
-        class="absolute bottom-0 h-[187px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
+        class="absolute bottom-0 h-[120px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
       />
     {/if}
   </section>
