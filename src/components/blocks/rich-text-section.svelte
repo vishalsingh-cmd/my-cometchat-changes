@@ -83,7 +83,7 @@
     <div class="container mx-auto px-container">
       {#if block.body.content}
         <div
-          class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
+          class="grid-col-1 container relative grid pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
         >
           <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
           <div class="relative" id="content">
