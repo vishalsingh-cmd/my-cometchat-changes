@@ -72,7 +72,7 @@
       {#if block.image}
         <div
           class={cn(
-            ' aspect-square h-full max-h-[640px] w-full flex-1 overflow-hidden',
+            'aspect-square h-full w-full flex-1 overflow-hidden lg:max-h-[640px]',
             block.image_side === 'center' && 'lg:relative lg:aspect-auto lg:w-[1440px]'
           )}
         >

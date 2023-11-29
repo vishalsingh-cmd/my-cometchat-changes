@@ -85,12 +85,7 @@
         <div
           class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
         >
-          <Sidebar
-            {headings}
-            {activeHeadingIndex}
-            on:scrollIntoView={onScrollIntoView}
-            hasShareOptions={false}
-          />
+          <Sidebar {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
           <div class="relative" id="content">
             {#each block.body.content as b}
               <RichTextRenderer doc={b} />

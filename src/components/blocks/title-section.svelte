@@ -11,7 +11,7 @@
 {#if block}
   <section
     use:storyblokEditable={block}
-    class="container mx-auto bg-gray-1 text-gray-12"
+    class=" mx-auto bg-gray-1 text-gray-12"
     data-theme={block.theme === 'light' ? 'light' : 'dark'}
   >
     {#if block.title && block.title[0]}
