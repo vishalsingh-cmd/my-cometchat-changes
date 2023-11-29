@@ -123,7 +123,8 @@
         filter_query: filter_query,
         per_page: 12,
         page: currentPage,
-        search_term: $debouncedSearch
+        search_term: $debouncedSearch,
+        sort_by: 'created_at:desc'
       });
 
       return { stories: res.data.stories, total: res.total };
@@ -145,7 +146,6 @@
     bind:value={$search}
     {areFiltersOpen}
   />
-
   <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}>
     {#if areFiltersOpen}
       <div
