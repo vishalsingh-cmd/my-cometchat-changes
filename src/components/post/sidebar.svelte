@@ -10,7 +10,7 @@
 
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
-  export let hasShareOptions = true;
+  export let hasShareOptions = false;
 </script>
 
 <div
