@@ -1037,6 +1037,7 @@ export interface PricingHeroInfoItemStoryblok {
 
 export interface PricingPlanStoryblok {
   name: string;
+  description?: string;
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
   month_one_k_price: number;
