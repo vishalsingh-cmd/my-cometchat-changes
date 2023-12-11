@@ -11,12 +11,13 @@
   <div use:storyblokEditable={column} class="flex flex-col gap-1.5 pb-8 pt-12 text-gray-12">
     <p class="text-xl/tighter font-semibold">{title}</p>
     <p class="text-lg/snug font-medium tracking-wide opacity-74">
-      {#if price === 0}
-        Free
-      {:else if price}
-        starts at &#36;{price}
-      {:else}
+      {#if description}
         {description}
+      {:else}
+        {#if price === 0}
+          Free
+        {/if}
+        starts at &#36;{price}
       {/if}
     </p>
   </div>
