@@ -20,7 +20,7 @@
 </script>
 
 {#if block}
-  {@const { name, price_label, highlights, cta } = block}
+  {@const { name, description, price_label, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -45,7 +45,9 @@
           {/if}
           <div class="flex h-full items-end gap-1">
             <span class={cn('text-2xl/tighter font-semibold', isPricingBeta && 'text-3xl/tighter')}>
-              {#if price == 0}
+              {#if description}
+                {description}
+              {:else if price === 0}
                 Free
               {:else}
                 &#36;{price}
@@ -65,7 +67,7 @@
         <div class="flex flex-col gap-2">
           {#each highlights as highlight}
             <div class="flex items-center gap-2">
-              <Icon icon="star-04" class="h-3.5 w-3.5 text-brand-9" />
+              <Icon icon="star-04" class="h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
               <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
             </div>
           {/each}

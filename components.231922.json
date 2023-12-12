@@ -3969,7 +3969,7 @@
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-10-20T22:10:25.318Z",
+      "updated_at": "2023-12-11T17:45:56.553Z",
       "id": 4725758,
       "schema": {
         "name": {
@@ -3977,6 +3977,13 @@
           "required": true,
           "pos": 0,
           "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1,
+          "default_value": "",
+          "description": "By default the value shown is the price according to the selected tier, if you fill in this field, the value will replace the price",
+          "key": "show_price"
         },
         "highlights": {
           "type": "bloks",
@@ -4021,7 +4028,7 @@
           "pos": 6,
           "required": true,
           "display_name": "Up to 25k Price",
-          "key": "twentyfive_k_price",
+          "key": "month_twentyfive_k_price",
           "default_value": "0"
         },
         "month_fifty_k_price": {
@@ -4029,7 +4036,7 @@
           "pos": 7,
           "required": true,
           "display_name": "Up to 50k Price",
-          "key": "fifty_k_price",
+          "key": "month_fifty_k_price",
           "default_value": "0"
         },
         "month_fifty_k_plus_price": {
@@ -4037,7 +4044,7 @@
           "pos": 8,
           "required": true,
           "display_name": "50k + Pricing",
-          "key": "fifty_k_plus_price",
+          "key": "month_fifty_k_plus_price",
           "default_value": "0"
         },
         "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
@@ -4079,21 +4086,24 @@
           "required": true,
           "display_name": "Year 1K Price",
           "pos": 11,
-          "default_value": "0"
+          "default_value": "0",
+          "key": "year_one_k_price"
         },
         "year_ten_k_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 10K Price",
           "pos": 12,
-          "default_value": "0"
+          "default_value": "0",
+          "key": "year_ten_k_price"
         },
         "year_twentyfive_k_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 25K Price",
           "pos": 13,
-          "default_value": "0"
+          "default_value": "0",
+          "key": "year_twentyfive_k_price"
         },
         "year_fifty_k_price": {
           "type": "number",
@@ -4101,14 +4111,16 @@
           "pos": 14,
           "required": true,
           "description": "",
-          "default_value": "0"
+          "default_value": "0",
+          "key": "year_fifty_k_price"
         },
         "year_fifty_k_plus_price": {
           "type": "number",
           "required": true,
           "display_name": "Year 50+ Price",
           "pos": 15,
-          "default_value": "0"
+          "default_value": "0",
+          "key": "year_fifty_k_plus_price"
         }
       },
       "image": null,
@@ -4318,7 +4330,7 @@
       "name": "pricing-table-header-column",
       "display_name": null,
       "created_at": "2023-10-19T11:00:48.083Z",
-      "updated_at": "2023-11-14T14:48:48.805Z",
+      "updated_at": "2023-12-11T17:41:03.957Z",
       "id": 4753725,
       "schema": {
         "title": {
@@ -4327,7 +4339,8 @@
         },
         "description": {
           "type": "text",
-          "required": false
+          "required": false,
+          "description": "By default the value shown is the price according to the selected tier, if you fill in this field, the value will replace the price"
         }
       },
       "image": null,
