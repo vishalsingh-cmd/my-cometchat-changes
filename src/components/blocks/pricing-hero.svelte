@@ -3,6 +3,7 @@
   import type { PricingHeroStoryblok, PricingPlanStoryblok } from '$types/bloks';
 
   import { typeIcon } from '$lib/storyblok';
+  import { isNumber } from '$lib/strings/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
 
@@ -65,8 +66,13 @@
 
   $: $pricingTiersCurrentPrice = pricingPlanMonthAndYearPricings.map((pricingPlan) => {
     const price = pricingPlan[activePricingTier][isYearly ? 'yearly' : 'monthly'];
-    const finalPrice = discount ? getDiscount(price, discount) : price;
-    return +finalPrice;
+
+    if (isNumber(price)) {
+      const finalPrice = discount ? getDiscount(Number(price), discount) : price;
+      return +finalPrice;
+    }
+
+    return price;
   });
 </script>
 
@@ -142,7 +148,11 @@
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
       >
         {#each typedPricingPlans as pricingPlan, i}
-          <PricingCard price={$pricingTiersCurrentPrice[i]} block={pricingPlan} />
+          <PricingCard
+            price={$pricingTiersCurrentPrice[i]}
+            priceLabel={isYearly ? block.yearly_price_label : block.monthly_price_label}
+            block={pricingPlan}
+          />
         {/each}
       </div>
     </div>

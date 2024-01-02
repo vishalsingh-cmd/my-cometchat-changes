@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
 
-const pricingTiersCurrentPrice = writable<number[]>([]);
+const pricingTiersCurrentPrice = writable<(string | number)[]>([]);
 
 export default pricingTiersCurrentPrice;
