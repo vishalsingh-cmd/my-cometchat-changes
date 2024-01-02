@@ -13,14 +13,15 @@
     return story.component === 'pricing-beta-plan';
   };
 
-  export let price: number;
+  export let price: string | number;
+  export let priceLabel: string | null = null;
   export let block: PricingPlanStoryblok | PricingBetaPlanStoryblok;
 
   let isPricingBeta = isPricingBetaPlan(block);
 </script>
 
 {#if block}
-  {@const { name, description, price_label, highlights, cta } = block}
+  {@const { name, price_label, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -45,18 +46,22 @@
           {/if}
           <div class="flex h-full items-end gap-1">
             <span class={cn('text-2xl/tighter font-semibold', isPricingBeta && 'text-3xl/tighter')}>
-              {#if description}
-                {description}
-              {:else if price === 0}
-                Free
+              {#if typeof price === 'number'}
+                {#if Number(price) == 0}
+                  Free
+                {:else}
+                  &#36;{Number(price).toLocaleString()}
+                {/if}
               {:else}
-                &#36;{price}
+                {price}
               {/if}
             </span>
             {#if isPricingBeta}
               <p class="text-lg/tight font-semibold opacity-54">
                 {string('pricing.beta_price_caption')}
               </p>
+            {:else if typeof price === 'number' && priceLabel && price != 0}
+              <p class="text-lg/tight font-semibold opacity-54">{priceLabel}</p>
             {/if}
           </div>
         </div>
@@ -66,8 +71,8 @@
         <p class="text-lg/tight font-semibold">Highlights</p>
         <div class="flex flex-col gap-2">
           {#each highlights as highlight}
-            <div class="flex items-center gap-2">
-              <Icon icon="star-04" class="h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+            <div class="flex items-start gap-2">
+              <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
               <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
             </div>
           {/each}
