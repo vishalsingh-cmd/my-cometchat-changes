@@ -40,3 +40,8 @@ export const parseMatchesForKey = <T extends Record<string, unknown> = Record<st
 export const getParts = (message: string): string[] => {
   return message.split(PATTERN);
 };
+
+export const isNumber = (inputString: string): boolean => {
+  // Use a regular expression to check if the string contains a number
+  return /\d/.test(inputString);
+};

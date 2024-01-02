@@ -3867,7 +3867,7 @@
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
-      "updated_at": "2023-10-20T21:10:45.131Z",
+      "updated_at": "2023-12-28T15:21:00.690Z",
       "id": 4725866,
       "schema": {
         "title": {
@@ -3884,7 +3884,7 @@
         },
         "info_items": {
           "type": "bloks",
-          "key": "bullet_points",
+          "key": "info_items",
           "pos": 2,
           "maximum": 4,
           "restrict_type": "",
@@ -3895,7 +3895,8 @@
           "type": "number",
           "pos": 3,
           "required": false,
-          "display_name": "Monthly Discount in % "
+          "display_name": "Monthly Discount in % ",
+          "key": "monthly_discount"
         },
         "yearly_discount": {
           "type": "number",
@@ -3905,13 +3906,23 @@
           "key": "yearly_discount",
           "pos": 4
         },
+        "monthly_price_label": {
+          "type": "text",
+          "key": "month_price_label",
+          "pos": 5
+        },
+        "yearly_price_label": {
+          "type": "text",
+          "key": "yearly_price_label",
+          "pos": 6
+        },
         "pricing_plans": {
           "type": "options",
           "source": "internal_stories",
           "filter_content_type": ["pricing-plan"],
           "required": true,
           "key": "pricing_plans",
-          "pos": 5
+          "pos": 7
         }
       },
       "image": null,
@@ -3969,7 +3980,7 @@
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-12-11T17:45:56.553Z",
+      "updated_at": "2023-12-28T16:10:05.409Z",
       "id": 4725758,
       "schema": {
         "name": {
@@ -3977,13 +3988,6 @@
           "required": true,
           "pos": 0,
           "key": "name"
-        },
-        "description": {
-          "type": "text",
-          "pos": 1,
-          "default_value": "",
-          "description": "By default the value shown is the price according to the selected tier, if you fill in this field, the value will replace the price",
-          "key": "show_price"
         },
         "highlights": {
           "type": "bloks",
@@ -4008,7 +4012,7 @@
           "pos": 3
         },
         "month_one_k_price": {
-          "type": "number",
+          "type": "text",
           "pos": 4,
           "required": true,
           "display_name": "Up to 1k Maus Price",
@@ -4016,7 +4020,7 @@
           "default_value": "0"
         },
         "month_ten_k_price": {
-          "type": "number",
+          "type": "text",
           "pos": 5,
           "required": true,
           "display_name": "Up to 10k Price",
@@ -4024,7 +4028,7 @@
           "default_value": "0"
         },
         "month_twentyfive_k_price": {
-          "type": "number",
+          "type": "text",
           "pos": 6,
           "required": true,
           "display_name": "Up to 25k Price",
@@ -4032,7 +4036,7 @@
           "default_value": "0"
         },
         "month_fifty_k_price": {
-          "type": "number",
+          "type": "text",
           "pos": 7,
           "required": true,
           "display_name": "Up to 50k Price",
@@ -4040,7 +4044,7 @@
           "default_value": "0"
         },
         "month_fifty_k_plus_price": {
-          "type": "number",
+          "type": "text",
           "pos": 8,
           "required": true,
           "display_name": "50k + Pricing",
@@ -4082,7 +4086,7 @@
           "key": "tab-c19fddc1-304d-4778-98ed-beca18aab415"
         },
         "year_one_k_price": {
-          "type": "number",
+          "type": "text",
           "required": true,
           "display_name": "Year 1K Price",
           "pos": 11,
@@ -4090,7 +4094,7 @@
           "key": "year_one_k_price"
         },
         "year_ten_k_price": {
-          "type": "number",
+          "type": "text",
           "required": true,
           "display_name": "Year 10K Price",
           "pos": 12,
@@ -4098,7 +4102,7 @@
           "key": "year_ten_k_price"
         },
         "year_twentyfive_k_price": {
-          "type": "number",
+          "type": "text",
           "required": true,
           "display_name": "Year 25K Price",
           "pos": 13,
@@ -4106,7 +4110,7 @@
           "key": "year_twentyfive_k_price"
         },
         "year_fifty_k_price": {
-          "type": "number",
+          "type": "text",
           "display_name": "Year 50K Price",
           "pos": 14,
           "required": true,
@@ -4115,7 +4119,7 @@
           "key": "year_fifty_k_price"
         },
         "year_fifty_k_plus_price": {
-          "type": "number",
+          "type": "text",
           "required": true,
           "display_name": "Year 50+ Price",
           "pos": 15,
