@@ -15,9 +15,11 @@
 {#if data}
   <!-- Descktop -->
   <div class="hidden flex-col lg:grid">
-    {#each data as group}
-      <PricingTableDataGroup {group} />
-    {/each}
+    <AccordionGroup expanded={data[0].title}>
+      {#each data as group, i}
+        <PricingTableDataGroup {group} />
+      {/each}
+    </AccordionGroup>
   </div>
 
   <!-- Mobile -->
