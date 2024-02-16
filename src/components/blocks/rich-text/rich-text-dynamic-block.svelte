@@ -7,7 +7,10 @@
     'paragraph-heading': ParagraphHeading,
     'paragraph-list': ParagraphList,
     'testimonial-block': TestimonialBlock,
-    'youtube-video': YoutubeVideo
+    'youtube-video': YoutubeVideo,
+    'blog-announcement-card': BlogAnnouncementCard,
+    'center-static-banner': CenterStaticBanner,
+    'toolkit-links-banner': ToolkitLinksBanner
   };
 
   export type RichTextBlocks = keyof typeof map;
@@ -29,6 +32,9 @@
   import ParagraphHeading from '$components/blocks/rich-text/paragraph-heading.svelte';
   import TestimonialBlock from '$components/blocks/rich-text/testimonial-block.svelte';
   import HighlightsParagraph from '$components/blocks/rich-text/highlights-paragraph.svelte';
+  import BlogAnnouncementCard from '$components/blog-announcement-card.svelte';
+  import CenterStaticBanner from '$components/center-static-banner.svelte';
+  import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
 
   type ComponentRestProps =
     | Omit<ComponentProps<Disclaimer>, 'class' | 'block'>
@@ -38,7 +44,10 @@
     | Omit<ComponentProps<ParagraphHeading>, 'class' | 'block'>
     | Omit<ComponentProps<ParagraphList>, 'class' | 'block'>
     | Omit<ComponentProps<TestimonialBlock>, 'class' | 'block'>
-    | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>;
+    | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogAnnouncementCard>, 'class' | 'block'>
+    | Omit<ComponentProps<CenterStaticBanner>, 'class' | 'block'>
+    | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>;
 
   export let block: { component: string };
   export let richTextBlockProps: ComponentRestProps | undefined = undefined;

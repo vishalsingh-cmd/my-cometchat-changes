@@ -17,6 +17,7 @@
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
+  import BlogAnnouncementSidebarCard from '$components/blog-announcement-sidebar-card.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -159,6 +160,10 @@
 
           <Share class="pb-8 md:hidden" />
         </div>
+
+        {#if block.content.announcement && block.content.announcement.length > 0}
+          <BlogAnnouncementSidebarCard block={block.content.announcement[0]} />
+        {/if}
       </div>
     {/if}
   </section>
