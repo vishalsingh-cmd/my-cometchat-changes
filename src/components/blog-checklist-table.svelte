@@ -1,7 +1,8 @@
 <script lang="ts">
-  import type { BlogSuperTableStoryblok } from '$types/bloks';
+  import type { BlogChecklistTableStoryblok } from '$types/bloks';
+  import Icon from './icon/icon.svelte';
 
-  export let block: BlogSuperTableStoryblok;
+  export let block: BlogChecklistTableStoryblok;
 </script>
 
 {#if block.table}
@@ -26,9 +27,21 @@
             {#each block?.table.tbody as row, i}
               <tr class="divide-x divide-gray-6">
                 {#each row.body as col, i}
-                  <td class="text-gray-900 whitespace-nowrap px-12 py-4 text-sm font-medium sm:px-6"
-                    >{col.value}</td
+                  <td
+                    class="text-gray-900 whitespace-nowrap px-12 py-4 text-sm font-medium sm:px-6"
                   >
+                    {#if col.value === 'Yes'}
+                      <div class="h-6 w-6">
+                        <Icon icon="check-verified-01" size="sm" class="h-3 w-3 text-brand-10" />
+                      </div>
+                    {:else if col.value === 'No'}
+                      <div class="h-6 w-6">
+                        <Icon icon="x-circle" size="sm" class="h-5 w-5 text-brand-12" />
+                      </div>
+                    {:else}
+                      {col.value}
+                    {/if}
+                  </td>
                 {/each}
               </tr>
             {/each}

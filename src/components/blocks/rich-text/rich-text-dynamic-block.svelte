@@ -10,7 +10,9 @@
     'youtube-video': YoutubeVideo,
     'blog-announcement-card': BlogAnnouncementCard,
     'center-static-banner': CenterStaticBanner,
-    'toolkit-links-banner': ToolkitLinksBanner
+    'toolkit-links-banner': ToolkitLinksBanner,
+    'blog-super-table': BlogSuperTable,
+    'blog-checklist-table': BlogChecklistTable
   };
 
   export type RichTextBlocks = keyof typeof map;
@@ -35,6 +37,8 @@
   import BlogAnnouncementCard from '$components/blog-announcement-card.svelte';
   import CenterStaticBanner from '$components/center-static-banner.svelte';
   import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
+  import BlogSuperTable from '$components/blog-super-table.svelte';
+  import BlogChecklistTable from '$components/blog-checklist-table.svelte';
 
   type ComponentRestProps =
     | Omit<ComponentProps<Disclaimer>, 'class' | 'block'>
@@ -47,7 +51,9 @@
     | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>
     | Omit<ComponentProps<BlogAnnouncementCard>, 'class' | 'block'>
     | Omit<ComponentProps<CenterStaticBanner>, 'class' | 'block'>
-    | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>;
+    | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogSuperTable>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>;
 
   export let block: { component: string };
   export let richTextBlockProps: ComponentRestProps | undefined = undefined;

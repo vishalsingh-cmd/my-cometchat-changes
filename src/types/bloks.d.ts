@@ -76,6 +76,20 @@ export interface BlogAnnouncementSidebarStoryblok {
   [k: string]: any;
 }
 
+export interface BlogSuperTableStoryblok {
+  table?: TableStoryblok;
+  _uid: string;
+  component: 'blog-super-table';
+  [k: string]: any;
+}
+
+export interface BlogChecklistTableStoryblok {
+  table?: TableStoryblok;
+  _uid: string;
+  component: 'blog-checklist-table';
+  [k: string]: any;
+}
+
 export interface BlogAnnouncementStoryblok {
   title?: string;
   description?: string;

@@ -11,7 +11,7 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'relative flex h-auto w-full flex-col gap-3 overflow-clip rounded-2xl bg-white p-8 shadow-md'
+      'relative flex h-auto w-full flex-col gap-3 overflow-clip rounded-3xl bg-white p-8 shadow-md'
     )}
   >
     <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
