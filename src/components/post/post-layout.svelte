@@ -167,15 +167,18 @@
 
           <Share class="pb-8 md:hidden" />
         </div>
-        <div class="flex flex-col gap-6">
-          {#each block.content.sidebar_right_slot as slot}
-            {#if slot.component === 'side-static-banner'}
-              <SideStaticBanner block={slot} />
-            {:else if slot.component === 'related-blogs'}
-              <RelatedBlogs block={slot} />
-            {/if}
-          {/each}
-        </div>
+
+        {#if block.content.sidebar_right_slot && block.content.sidebar_right_slot.length > 0}
+          <div class="flex flex-col gap-6">
+            {#each block.content.sidebar_right_slot as slot}
+              {#if slot.component === 'side-static-banner'}
+                <SideStaticBanner block={slot} />
+              {:else if slot.component === 'related-blogs'}
+                <RelatedBlogs block={slot} />
+              {/if}
+            {/each}
+          </div>
+        {/if}
       </div>
     {/if}
   </section>

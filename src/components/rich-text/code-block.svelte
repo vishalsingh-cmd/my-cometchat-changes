@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { toast } from 'svelte-french-toast';
   import type { ISbRichtext } from '@storyblok/js';
   import Code from '$components/code-block/highlighted-code.svelte';
   export let content: ISbRichtext;
 
   async function copyCode() {
     if (content?.content[0]?.text) {
-      await navigator.clipboard.writeText(content.content[0].text);
+      await navigator.clipboard.writeText(content.content[0].text).then(() => {
+        toast.success('Code copied to clipboard');
+      });
     }
   }
 </script>
