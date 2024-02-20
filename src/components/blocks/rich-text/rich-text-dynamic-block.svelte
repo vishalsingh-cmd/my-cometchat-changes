@@ -8,8 +8,8 @@
     'paragraph-list': ParagraphList,
     'testimonial-block': TestimonialBlock,
     'youtube-video': YoutubeVideo,
-    'blog-announcement-card': BlogAnnouncementCard,
-    'center-static-banner': CenterStaticBanner,
+    'center-static-banner-v01': CenterStaticBannerV01,
+    'center-static-banner-v02': CenterStaticBannerV02,
     'toolkit-links-banner': ToolkitLinksBanner,
     'blog-super-table': BlogSuperTable,
     'blog-checklist-table': BlogChecklistTable
@@ -34,8 +34,8 @@
   import ParagraphHeading from '$components/blocks/rich-text/paragraph-heading.svelte';
   import TestimonialBlock from '$components/blocks/rich-text/testimonial-block.svelte';
   import HighlightsParagraph from '$components/blocks/rich-text/highlights-paragraph.svelte';
-  import BlogAnnouncementCard from '$components/blog-announcement-card.svelte';
-  import CenterStaticBanner from '$components/center-static-banner.svelte';
+  import CenterStaticBannerV01 from '$components/center-static-banner-v01.svelte';
+  import CenterStaticBannerV02 from '$components/center-static-banner-v02.svelte';
   import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
   import BlogSuperTable from '$components/blog-super-table.svelte';
   import BlogChecklistTable from '$components/blog-checklist-table.svelte';
@@ -49,8 +49,8 @@
     | Omit<ComponentProps<ParagraphList>, 'class' | 'block'>
     | Omit<ComponentProps<TestimonialBlock>, 'class' | 'block'>
     | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>
-    | Omit<ComponentProps<BlogAnnouncementCard>, 'class' | 'block'>
-    | Omit<ComponentProps<CenterStaticBanner>, 'class' | 'block'>
+    | Omit<ComponentProps<CenterStaticBannerV01>, 'class' | 'block'>
+    | Omit<ComponentProps<CenterStaticBannerV02>, 'class' | 'block'>
     | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>
     | Omit<ComponentProps<BlogSuperTable>, 'class' | 'block'>
     | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>;

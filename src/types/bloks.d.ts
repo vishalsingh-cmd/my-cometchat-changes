@@ -1,16 +1,46 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
-// {
-//                   "_uid": "ec033866-868c-45b4-8c47-1ac393a060f6",
-//                   "link": {
-//                     "id": "",
-//                     "url": "https://app.storyblok.com/#/me/spaces/231922/stories/0/0/430303855",
-//                     "linktype": "url",
-//                     "fieldtype": "multilink",
-//                     "cached_url": "https://app.storyblok.com/#/me/spaces/231922/stories/0/0/430303855"
-//                   },
-//                   "name": "link 1",
-//                   "component": "toolkit-link-block"
-//                 },
+
+export interface AssetStoryblok {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  focus?: string;
+  [k: string]: any;
+}
+
+export interface AuthorStoryblok {
+  name: string;
+  role?: string;
+  company?: string;
+  avatar: AssetStoryblok;
+  description: string;
+  _uid: string;
+  component: 'author';
+  [k: string]: any;
+}
+
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface AwardsSectionStoryblok {
+  theme: '' | 'light' | 'dark';
+  title: string;
+  awards: MultiassetStoryblok;
+  _uid: string;
+  component: 'awards-section';
+  [k: string]: any;
+}
+
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
@@ -66,128 +96,12 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
-export interface BlogAnnouncementSidebarStoryblok {
+export interface BlogAnnouncementSidebarCardStoryblok {
   title?: string;
   description?: string;
   link?: MultilinkStoryblok;
-  image?: string;
   _uid: string;
   component: 'blog-announcement-sidebar-card';
-  [k: string]: any;
-}
-
-export interface BlogSuperTableStoryblok {
-  table?: TableStoryblok;
-  _uid: string;
-  component: 'blog-super-table';
-  [k: string]: any;
-}
-
-export interface BlogChecklistTableStoryblok {
-  table?: TableStoryblok;
-  _uid: string;
-  component: 'blog-checklist-table';
-  [k: string]: any;
-}
-
-export interface BlogAnnouncementStoryblok {
-  title?: string;
-  description?: string;
-  image?: string;
-  link?: MultilinkStoryblok;
-  _uid: string;
-  component: 'blog-announcement-card';
-  [k: string]: any;
-}
-
-export interface CenterStaticBannerStoryblok {
-  title?: string;
-  link?: MultilinkStoryblok;
-  _uid: string;
-  component: 'center-static-banner';
-  [k: string]: any;
-}
-
-export interface ToolKitLinksBannerStoryblok {
-  links?: MultilinkStoryblok[];
-  _uid: string;
-  component: 'toolkit-links-banner';
-  [k: string]: any;
-}
-
-export interface AssetStoryblok {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  focus?: string;
-  [k: string]: any;
-}
-
-export interface AuthorStoryblok {
-  name: string;
-  role?: string;
-  company?: string;
-  avatar: AssetStoryblok;
-  description: string;
-  _uid: string;
-  component: 'author';
-  [k: string]: any;
-}
-
-export type MultiassetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  [k: string]: any;
-}[];
-
-export interface AwardsSectionStoryblok {
-  theme: '' | 'light' | 'dark';
-  title: string;
-  awards: MultiassetStoryblok;
-  _uid: string;
-  component: 'awards-section';
-  [k: string]: any;
-}
-
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
-  [k: string]: any;
-}
-
-export interface BlogPostStoryblok {
-  cover?: AssetStoryblok;
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
-  imported_from_old_site?: boolean;
-  created_at?: string;
-  body: RichtextStoryblok;
-  related?: RelatedStoriesSectionStoryblok[];
-  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
-  seo?: SeoFieldsStoryblok[];
-  announcement?: any[];
-  _uid: string;
-  component: 'blog-post';
   [k: string]: any;
 }
 
@@ -212,11 +126,81 @@ export interface TableStoryblok {
   [k: string]: any;
 }
 
-export interface BlogTableStoryblok {
-  title?: string;
-  blog_table?: TableStoryblok;
+export interface BlogChecklistTableStoryblok {
+  table?: TableStoryblok;
   _uid: string;
-  component: 'blog-table';
+  component: 'blog-checklist-table';
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface BlogPostStoryblok {
+  cover?: AssetStoryblok;
+  sidebar_right_slot?: any[];
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  category:
+    | ''
+    | 'explorer'
+    | 'video'
+    | 'webinar'
+    | 'how-to-guide'
+    | 'chat'
+    | 'calling'
+    | 'insights'
+    | 'industry'
+    | 'best-practices';
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related?: RelatedStoriesSectionStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
+  _uid: string;
+  component: 'blog-post';
+  [k: string]: any;
+}
+
+export interface BlogSuperTableStoryblok {
+  table?: TableStoryblok;
+  _uid: string;
+  component: 'blog-super-table';
+  [k: string]: any;
+}
+
+export interface BlogTableCellStoryblok {
+  content?: string;
+  _uid: string;
+  component: 'blog-table-cell';
+  [k: string]: any;
+}
+
+export interface BlogTableRowStoryblok {
+  cells?: any[];
+  _uid: string;
+  component: 'blog-table-row';
+  [k: string]: any;
+}
+
+export interface BlogTextTableStoryblok {
+  rows?: BlogTableRowStoryblok[];
+  _uid: string;
+  component: 'blog-text-table';
+  [k: string]: any;
+}
+
+export interface BreadcumbsStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'breadcumbs';
   [k: string]: any;
 }
 
@@ -242,6 +226,25 @@ export interface ButtonLinkStoryblok {
   link?: MultilinkStoryblok;
   _uid: string;
   component: 'button-link';
+  [k: string]: any;
+}
+
+export interface CenterStaticBannerV01Storyblok {
+  title?: string;
+  description?: string;
+  image?: string;
+  link?: MultilinkStoryblok;
+  cta_slot?: any[];
+  _uid: string;
+  component: 'center-static-banner-v01';
+  [k: string]: any;
+}
+
+export interface CenterStaticBannerV02Storyblok {
+  title?: string;
+  cta_slot?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'center-static-banner-v02';
   [k: string]: any;
 }
 
@@ -676,8 +679,9 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   body?: (
-    | AnnouncementCardStoryblok
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -719,6 +723,8 @@ export interface IndustryStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -888,8 +894,9 @@ export interface NewsletterSectionStoryblok {
 
 export interface PageStoryblok {
   body?: (
-    | AnnouncementCardStoryblok
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -931,6 +938,8 @@ export interface PageStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1009,8 +1018,9 @@ export interface PreFooterStoryblok {
 
 export interface PricingStoryblok {
   body?: (
-    | AnnouncementCardStoryblok
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -1052,6 +1062,8 @@ export interface PricingStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1250,6 +1262,22 @@ export interface SeoFieldsStoryblok {
   [k: string]: any;
 }
 
+export interface SidebarSlotStoryblok {
+  _uid: string;
+  component: 'sidebar-slot';
+  [k: string]: any;
+}
+
+export interface SideStaticBannerStoryblok {
+  title?: string;
+  description?: string;
+  image?: string;
+  cta_slot?: any[];
+  _uid: string;
+  component: 'side-static-banner';
+  [k: string]: any;
+}
+
 export interface SinglePostResourcesPanelStoryblok {
   title: string;
   image: AssetStoryblok;
@@ -1311,8 +1339,9 @@ export interface SyncedBlockStoryblok {
 
 export interface SyncedBlockContentStoryblok {
   body?: (
-    | AnnouncementCardStoryblok
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -1354,6 +1383,8 @@ export interface SyncedBlockContentStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1405,8 +1436,9 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   body: (
-    | AnnouncementCardStoryblok
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -1448,6 +1480,8 @@ export interface TechnologyStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1565,6 +1599,21 @@ export interface TitleWithIconLabelStoryblok {
   links?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'title-with-icon-label';
+  [k: string]: any;
+}
+
+export interface ToolkitLinkBlockStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'toolkit-link-block';
+  [k: string]: any;
+}
+
+export interface ToolkitLinksBannerStoryblok {
+  links?: ToolkitLinkBlockStoryblok[];
+  _uid: string;
+  component: 'toolkit-links-banner';
   [k: string]: any;
 }
 

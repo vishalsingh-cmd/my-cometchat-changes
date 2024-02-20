@@ -16,7 +16,7 @@
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
-  import BlogAnnouncementSidebarCard from '$components/blog-announcement-sidebar-card.svelte';
+  import SideStaticBanner from '$components/side-static-banner.svelte';
   import Toc from '$components/toc.svelte';
   import Breadcumbs from '$components/breadcumbs.svelte';
   import { page } from '$app/stores';
@@ -167,8 +167,8 @@
           <Share class="pb-8 md:hidden" />
         </div>
 
-        {#if block.content.announcement && block.content.announcement.length > 0}
-          <BlogAnnouncementSidebarCard block={block.content.announcement[0]} />
+        {#if block.content.sidebar_right_slot && block.content.sidebar_right_slot.length > 0}
+          <SideStaticBanner block={block.content.announcement[0]} />
         {/if}
       </div>
     {/if}
