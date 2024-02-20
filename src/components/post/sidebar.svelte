@@ -3,12 +3,14 @@
   import { cn } from '$lib/utils';
   import Background from './assets/background.png';
   import Share from './share.svelte';
+  // import Breadcumbs from '$components/breadcumbs.svelte';
 
   const dispatch = createEventDispatcher();
 
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
   export let hasShareOptions = false;
+  // export let slug = '';
 </script>
 
 <div class="wrap sticky top-[80px] h-fit w-full max-w-[272px] overflow-visible pb-6 md:block">
@@ -20,6 +22,10 @@
       draggable="false"
       class="pointer-events-none absolute -bottom-1/2 -right-1/4 min-h-[680px] min-w-[680px] select-none opacity-20"
     />
+
+    <!-- <div class="absolute left-0 -top-16 w-full">
+      <Breadcumbs {slug} />
+    </div> -->
 
     <div
       id="table-of-content-desktop"
