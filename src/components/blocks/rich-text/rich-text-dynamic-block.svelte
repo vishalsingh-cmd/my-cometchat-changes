@@ -11,7 +11,7 @@
     'center-static-banner-v01': CenterStaticBannerV01,
     'center-static-banner-v02': CenterStaticBannerV02,
     'toolkit-links-banner': ToolkitLinksBanner,
-    'blog-super-table': BlogSuperTable,
+    'blog-text-table': BlogTextTable,
     'blog-checklist-table': BlogChecklistTable
   };
 
@@ -37,7 +37,7 @@
   import CenterStaticBannerV01 from '$components/center-static-banner-v01.svelte';
   import CenterStaticBannerV02 from '$components/center-static-banner-v02.svelte';
   import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
-  import BlogSuperTable from '$components/blog-super-table.svelte';
+  import BlogTextTable from '$components/blog-text-table.svelte';
   import BlogChecklistTable from '$components/blog-checklist-table.svelte';
 
   type ComponentRestProps =
@@ -52,7 +52,7 @@
     | Omit<ComponentProps<CenterStaticBannerV01>, 'class' | 'block'>
     | Omit<ComponentProps<CenterStaticBannerV02>, 'class' | 'block'>
     | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>
-    | Omit<ComponentProps<BlogSuperTable>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogTextTable>, 'class' | 'block'>
     | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>;
 
   export let block: { component: string };

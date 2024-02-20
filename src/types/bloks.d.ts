@@ -168,13 +168,6 @@ export interface BlogPostStoryblok {
   [k: string]: any;
 }
 
-export interface BlogSuperTableStoryblok {
-  table?: TableStoryblok;
-  _uid: string;
-  component: 'blog-super-table';
-  [k: string]: any;
-}
-
 export interface BlogTableCellStoryblok {
   content?: string;
   _uid: string;
@@ -190,7 +183,7 @@ export interface BlogTableRowStoryblok {
 }
 
 export interface BlogTextTableStoryblok {
-  rows?: BlogTableRowStoryblok[];
+  table?: TableStoryblok;
   _uid: string;
   component: 'blog-text-table';
   [k: string]: any;

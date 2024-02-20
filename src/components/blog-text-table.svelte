@@ -1,7 +1,7 @@
 <script lang="ts">
-  import type { BlogSuperTableStoryblok } from '$types/bloks';
+  import type { BlogTextTableStoryblok } from '$types/bloks';
 
-  export let block: BlogSuperTableStoryblok;
+  export let block: BlogTextTableStoryblok;
 </script>
 
 {#if block.table}
