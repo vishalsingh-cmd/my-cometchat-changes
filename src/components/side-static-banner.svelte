@@ -11,7 +11,7 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'wrap sticky top-[80px] flex h-fit max-w-[272px] flex-col gap-3 space-y-3 overflow-clip rounded-3xl bg-white p-6 text-black shadow-lg md:block'
+      'wrap sticky top-[80px] hidden h-fit w-full max-w-[272px] flex-col gap-3 space-y-3 overflow-clip rounded-3xl bg-white p-6 text-black shadow-lg md:block'
     )}
   >
     <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
