@@ -18,6 +18,7 @@
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
   import BlogAnnouncementSidebarCard from '$components/blog-announcement-sidebar-card.svelte';
+  import Toc from '$components/toc.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -106,6 +107,8 @@
       <div
         class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
       >
+        <Toc {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
+
         <Sidebar
           {headings}
           {activeHeadingIndex}

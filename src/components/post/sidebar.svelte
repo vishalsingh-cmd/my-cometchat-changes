@@ -20,22 +20,11 @@
       draggable="false"
       class="pointer-events-none absolute -bottom-1/2 -right-1/4 min-h-[680px] min-w-[680px] select-none opacity-20"
     />
+
     <div
-      id="sidebar-mobile"
-      class="inline-flex w-full flex-col items-start border border-gray-3 bg-white md:hidden"
+      id="table-of-content-desktop"
+      class="ml-3 inline-flex hidden flex-col items-start md:block"
     >
-      <select
-        on:change={(e) => (activeHeadingIndex = e?.target?.selectedIndex)}
-        class="w-full bg-white"
-      >
-        {#each headings as heading, i}
-          <option class="w-full bg-white" value={i} selected={activeHeadingIndex === i}
-            >{heading.innerText}</option
-          >
-        {/each}
-      </select>
-    </div>
-    <div class="ml-3 inline-flex hidden flex-col items-start md:block">
       {#if headings.length > 0}
         {#each headings as heading, i}
           <button
