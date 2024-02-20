@@ -1,9 +1,9 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { ToolKitLinksBannerStoryblok } from '$types/bloks';
+  import type { ToolkitLinksBannerStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
 
-  export let block: ToolKitLinksBannerStoryblok;
+  export let block: ToolkitLinksBannerStoryblok;
 </script>
 
 {#if block}

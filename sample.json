@@ -1,0 +1,2159 @@
+{
+  "story": {
+    "name": "Top 17 API’s to build healthcare applications",
+    "created_at": "2024-01-22T09:26:03.510Z",
+    "published_at": "2024-02-20T19:42:34.649Z",
+    "id": 430303855,
+    "uuid": "190cbad3-982d-4968-959a-b2982de6dbd0",
+    "content": {
+      "seo": [
+        {
+          "_uid": "34b72aec-f18a-4f4a-9625-eed21c178c14",
+          "title": "Top 17 Healthcare APIs for Advanced Patient-Centric Solutions",
+          "robots": [],
+          "og_image": {
+            "id": 13889467,
+            "alt": "",
+            "name": "",
+            "focus": "",
+            "title": "",
+            "source": "",
+            "filename": "https://a.storyblok.com/f/231922/1726x1040/ef33145c22/healthcare-api-cover-image.png",
+            "copyright": "",
+            "fieldtype": "asset",
+            "meta_data": {},
+            "is_private": "",
+            "is_external_url": false
+          },
+          "component": "seo-fields",
+          "href_lang": [],
+          "description": "Explore our carefully curated list of the top 17 Healthcare APIs. Leverage these tools to provide enhanced patient care and improve healthcare operations.",
+          "canonical_url": "",
+          "structured_data_markup": ""
+        }
+      ],
+      "_uid": "513869d8-726f-492a-b9e8-928c122a3baf",
+      "body": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "APIs have completely transformed the landscape of application development, by seamlessly connecting different systems and paving a smoother path for developers and businesses to build top-notch software. ",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "eda14e3d-752c-4f0c-b36d-5b3197252fad",
+              "body": [
+                {
+                  "_uid": "i-baf573a6-71ef-4c58-bd60-80bdcbc30479",
+                  "link": {
+                    "id": "",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": ""
+                  },
+                  "image": "//a.storyblok.com/f/231922/1304x1280/3074a1a591/insights_2.png",
+                  "title": "Introducing CometChat Ul Kits v4 Beta",
+                  "cta_slot": [
+                    {
+                      "_uid": "99301ab5-0229-453b-a7a2-a5fbcc2bd221",
+                      "icon": "",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "label": "Purchase now",
+                      "variant": "primary",
+                      "component": "button-link"
+                    }
+                  ],
+                  "component": "center-static-banner-v01",
+                  "description": "Ensuring compliance with patient data protection laws like HIPAA in the US or PIPEDA in Canada makes the job even more difficult."
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "This is particularly beneficial for those working in the healthcare industry, where the task often involves building internal and external facing applications that connect with various systems and datacenters. ",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "9a47fd7f-0d2d-4164-aabd-7b0d12dcd249",
+              "body": [
+                {
+                  "_uid": "i-44493a88-0f0e-4f28-bf20-71d75927e68c",
+                  "title": "Imagine this: you've been given the task to build a telehealth application that allows therapists to provide aftercare support to their clients.",
+                  "cta_slot": [
+                    {
+                      "_uid": "b0423a12-ec14-4034-8f8f-b32b38917c0a",
+                      "icon": "",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "label": "Look now",
+                      "variant": "primary",
+                      "component": "button-link"
+                    }
+                  ],
+                  "component": "center-static-banner-v02"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Ensuring compliance with patient data protection laws like HIPAA in the US or PIPEDA in Canada makes the job even more difficult.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "text": "Imagine this:", "type": "text", "marks": [{ "type": "bold" }] },
+              {
+                "text": " you've been given the task to build a telehealth application that allows therapists to provide aftercare support to their clients.",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "926ce0a9-e2ce-4015-abc1-4a17f8ecdbaa",
+              "body": [
+                {
+                  "_uid": "i-1665538c-ae62-4f3e-9662-b25d30dd5f50",
+                  "links": [
+                    {
+                      "_uid": "ec033866-868c-45b4-8c47-1ac393a060f6",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "name": "Beta Bliss: CometChat UI Kits v4 Redefines Messaging Interfaces",
+                      "component": "toolkit-link-block"
+                    },
+                    {
+                      "_uid": "87e5a191-5388-4344-819d-2d1a5783153e",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "name": "Sneak Peek: CometChat UI Kits v4 Beta for Enhanced User Experiences",
+                      "component": "toolkit-link-block"
+                    },
+                    {
+                      "_uid": "8c83febf-15e7-4af5-bb15-849b0d7fa9df",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "name": "Exploring the Next Frontier: CometChat UI Kits v4 Beta Unleashed",
+                      "component": "toolkit-link-block"
+                    },
+                    {
+                      "_uid": "49838275-4449-4bdf-8d23-3df869c0a03f",
+                      "link": {
+                        "id": "2ef0cb0b-fce5-422d-a5f3-cb707eda9aff",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/hipaa-compliant-chat-api"
+                      },
+                      "name": "Comet Chat CLI",
+                      "component": "toolkit-link-block"
+                    }
+                  ],
+                  "component": "toolkit-links-banner"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "But as you begin, you realize the monumental task ahead – you need to build everything from scratch, create a communication infrastructure with video conferencing and messaging feature to facilitate therapy sessions, ensure that health records (lab results, prescriptions and consultation data) are stored securely and can be accessed safely, and even integrate with various medical databases for patient data and insurance verification.",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "93839f16-8e0b-42fc-b3c1-58851e238e03",
+              "body": [
+                {
+                  "_uid": "i-4fba795c-a0a6-4be1-86b8-7863103e97ed",
+                  "table": {
+                    "tbody": [
+                      {
+                        "_uid": "74413a0a-8e68-4adb-9831-045932a98e5f",
+                        "body": [
+                          {
+                            "_uid": "e80521a7-8ac3-4281-8345-0f82228792b4",
+                            "value": "1",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "6e893fde-45cc-4b63-a4c3-2788d0caf39b",
+                            "value": "Comet Chat",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "5e8ffcc8-c7c5-4076-a46a-758f6330eb30",
+                            "value": "nice",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "3c18ffbf-4f46-4863-9d7e-18e4245dae35",
+                            "value": "nice",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      },
+                      {
+                        "_uid": "174d86d2-71f8-414e-9924-0152296712d2",
+                        "body": [
+                          {
+                            "_uid": "7da8d5ef-7c48-4878-8672-f1351bb364a7",
+                            "value": "2",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "718f4516-a45c-44fd-8fd8-4d5204f6c149",
+                            "value": "Comet Chat 2",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "b5f9a088-75db-4fba-9b59-c0382bebbd7f",
+                            "value": "nice",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "9a8040c0-faa7-4222-ac3d-6296cf228bfe",
+                            "value": "nice",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      }
+                    ],
+                    "thead": [
+                      {
+                        "_uid": "26665f7a-76d4-4e2f-8758-1ded813fa980",
+                        "value": "S.no",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "d1089e6f-a0c8-4dd2-9c6e-2e4dbbbfa1e1",
+                        "value": "Title",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "fc067229-6e4c-4fc0-ad14-75454f87e9ec",
+                        "value": "Description",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "766ef7b9-08a7-41f3-b132-15b89388d88a",
+                        "value": "Status",
+                        "component": "_table_head"
+                      }
+                    ],
+                    "fieldtype": "table"
+                  },
+                  "component": "blog-text-table"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "But what if there were a way to make this process simpler and avoid the complex task of building and integrating with different systems? That's exactly what APIs can do. They can help you tap into existing capabilities and save you from having to build everything manually.",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "722c9ca0-ecbf-4c8e-aeb2-c6f3d85fba8d",
+              "body": [
+                {
+                  "_uid": "i-7f6530cf-1003-42ac-b2e1-58c1fab9928c",
+                  "table": {
+                    "tbody": [
+                      {
+                        "_uid": "d56a5a4f-9164-4a7e-8bdc-e6ec21f8a21b",
+                        "body": [
+                          {
+                            "_uid": "a0d1e6ea-5a88-48a2-975f-e1fc0a62b70f",
+                            "value": "Realtime communication",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "479dce9f-7923-4e34-b1b4-1eb1fd96c1ed",
+                            "value": "No",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "7d1d0712-339c-413c-a647-6395d268a1e7",
+                            "value": "Yes",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "b7cee702-a9f6-41b3-a6c7-37e1d008f982",
+                            "value": "Yes",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      },
+                      {
+                        "_uid": "e32137f6-7435-44dc-8e57-a71087b92ff3",
+                        "body": [
+                          {
+                            "_uid": "7eb0a7ca-3a01-4858-830f-6d53d451a5f6",
+                            "value": "Customize UI Kit",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "d60728b5-19f7-4d33-9014-b88b1291449c",
+                            "value": "No",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "a4e91218-20f3-4b3f-a47a-944b93ad823f",
+                            "value": "No",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "66445d83-84c9-4467-9ba9-678bef7dcc99",
+                            "value": "Yes",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      }
+                    ],
+                    "thead": [
+                      {
+                        "_uid": "38379060-c011-495b-a20d-e3d59b97daa6",
+                        "value": "Features",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "6e1c7cd1-b144-4b84-80f1-9700fa91507f",
+                        "value": "Starter",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "aa513089-5d90-4f02-bbba-0032ed20f5dc",
+                        "value": "Pro",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "4ea429f1-a6d6-4cc6-854d-520b3aa687b7",
+                        "value": "Enterprise",
+                        "component": "_table_head"
+                      }
+                    ],
+                    "fieldtype": "table"
+                  },
+                  "component": "blog-checklist-table"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "For instance, if you need a HIPAA compliant chat and video conferencing system, you can use CometChat. If you require a scheduling system, tools like Calendly can help. This way, you can leverage the expertise of companies that specialize in these areas, accelerating your app development process while ensuring top-notch quality and security.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "In this article, we take a deep dive into the vast options of healthcare APIs. We will also unpack their unique capabilities and reveal the essential APIs for every developer's toolkit.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-f5cc3f88-6dd7-4c8a-8665-680200a90c55",
+                  "label": "",
+                  "heading": "Different types of healthcare API’s ",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-c5774075-84a5-4456-86bb-0e26710a7d06",
+                  "label": "",
+                  "heading": "1. Consolidated patient data APIs",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Consolidated Patient Data APIs play a vital role in healthcare. They unify patient data from a variety of sources (electronic health records, lab test results, pharmacy systems, and imaging data) into a centralized hub. The outcome is a unified patient profile that facilitates informed decision-making, enhances the quality of patient care, and optimizes healthcare outcomes. ",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "For instance, in a telehealth context, providers can utilize these APIs to access and review a patient's complete health history prior to a virtual consultation.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Some of the common consolidated patient data APIs include - ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "1. Apple healthcare record API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Apple healthcare record API ",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://www.apple.com/healthcare/health-records/",
+                      "uuid": null,
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "url"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "designed by Apple provides its users with easy and organized access to their personal health data. This API gathers information from a user’s iPhone and Apple watch.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815612,
+                  "alt": "Apple Healthcare API",
+                  "src": "https://a.storyblok.com/f/231922/2116x1188/8296f4d446/apple-health-record.png",
+                  "title": "Apple Healthcare API",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The data collected by the Health Records API includes information such as medical conditions, immunization details, lab results, medications, and more. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "In addition to making it easier for its users to view their health information at one place, Apple has also made it available for developers to utilize the vast health data to create apps that are personalized to the user’s medical history and health needs, whether it's a medication reminder app, a fitness tracker, or an app that provides insights from lab results.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "2. Particle health API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815658,
+                  "alt": "Particle health API",
+                  "src": "https://a.storyblok.com/f/231922/2137x1108/6cd783c8a0/particle-health-api.png",
+                  "title": "Particle health API",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Particle Health API is a comprehensive tool that gathers patient data from various sources such as healthcare organization, electronic health records (EHR), etc. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "With its expansive reach, encompassing a vast network of over 280 million individuals, the Particle Health API is a critical asset in optimizing healthcare delivery and improving patient outcomes.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": " 3. Human API", "type": "text" }]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815660,
+                  "alt": "Human API",
+                  "src": "https://a.storyblok.com/f/231922/2026x853/1b03f91cb5/human-api.png",
+                  "title": "Human API",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Human API",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://www.humanapi.co/",
+                      "uuid": null,
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "url"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": " is also a data platform that brings together different health data into one place. This includes data from medical records, wearable devices, and wellness apps. It makes it easy for businesses like insurance companies. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-fce2f2ba-cb4c-4eff-b10a-77dbbe510806",
+                  "label": "",
+                  "heading": "2. Clinical data management, analytics and insights APIs",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Clinical data management, analytics, and insights APIs are transformative tools that revolutionize health data handling and utilization. They automate the tedious process of data collection, standardize diverse data sets for easier analysis, and provide in-depth insights to drive decision-making. Their ability to convert complex health data into actionable intelligence makes them truly transformative.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Clinical data management APIs helps vastly in organizing and storing health data efficiently, ensuring it's accurate, secure, and easily accessible. For instance, these APIs can manage patient records, test results, and treatment plans, allowing healthcare professionals to access a patient's comprehensive history at the click of a button.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "On the contrary, analytics and insights APIs analyze data to reveal significant patterns. For example, they can process public health data to identify disease trends, assisting in intervention development and outbreak prediction.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "4. Amazon cloud comprehend", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815727,
+                  "alt": "Amazon cloud comprehend API",
+                  "src": "https://a.storyblok.com/f/231922/2121x1177/df89464668/amazon-cloud-comprehend.png",
+                  "title": "Amazon cloud comprehend API",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Amazon comprehend ",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://aws.amazon.com/comprehend/medical/",
+                      "uuid": null,
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "url"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "API leverages natural language processing systems to extract vital information like doctor's reports, test results, and medication prescriptions from user data, identify the user's health state, and connect it with pertinent medical terminology, enhancing healthcare experiences.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "This API is equipped with several powerful features to decipher unstructured data.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-13a8b2b8-7cea-4d67-9467-441a0370572e",
+                  "items": [
+                    {
+                      "_uid": "97a3fb17-6f2b-40ab-8157-a30ab860306d",
+                      "title": "Named Entity Recognition",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Recognises and categorizes medical concepts in texts, which might include diseases, treatments, or tests.",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          { "type": "paragraph" }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "c42116ce-d91b-4da3-ba13-bbb5a7fd94cf",
+                      "title": "Sentiment Analysis",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Determines the sentiment expressed in the text - whether it's positive, negative, or neutral, which can be pivotal in patient feedback or reviews.",
+                                "type": "text"
+                              }
+                            ]
+                          },
+                          { "type": "paragraph" }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "203bb4cd-6195-4945-be3d-4ca223d5f277",
+                      "title": "Syntax Analysis",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Breaks down text into its syntactic components, aiding in better understanding of the user's input.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "42a11645-89ce-49bf-8f51-27b696ae54b9",
+                      "title": "Language Detection",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Identifies the language of the text, vital for multilingual healthcare settings.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "7ddf27e4-7e56-4d5b-9f99-4a302e55acc2",
+                      "title": "Text Classification",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Categorizes text into predefined classes, helping to sort medical records effectively.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "a0cef56e-d7e4-4d48-8982-f996a3ee1f0e",
+                      "title": "Topic Modeling",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Identifies the main themes present in the text, useful for understanding common trends in patient concerns or feedback.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "component": "paragraph-list",
+                  "is_numeric": true
+                }
+              ]
+            }
+          },
+          { "type": "heading", "attrs": { "level": 3 } },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "5. Science.io", "type": "text" }]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815715,
+                  "alt": "science.io",
+                  "src": "https://a.storyblok.com/f/231922/2100x1177/959b5f2e30/science-io.png",
+                  "title": "science.io",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Science.io uses artificial intelligence to make sense of complex medical text, turning it into easy-to-use data. It finds important health information from patient conferences, which helps in creating patient profiles. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "It simplifies processes like patient screening and clinical trial recruitment by using key data like diagnoses and test results. This tool can even sort medical documents into over 9 million healthcare categories, demonstrating its ability to handle large amounts of data effectively. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "By using advanced technology, Science.io is changing how we manage health data, leading to better patient care.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "6. Google cloud healthcare API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Google cloud healthcare API",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "https://cloud.google.com/healthcare-api",
+                      "uuid": null,
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "url"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": " is a robust tool designed to facilitate the exchange of healthcare data. It effectively bridges the gap between care systems and applications built on Google Cloud. By integrating this API, health data from various sources can be standardized into one format, making it easier to understand and analyze.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815732,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2064x1077/bc4251c3e6/google-cloud.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "This API supports key healthcare standards, including DICOM (for imaging data), HL7v2 (for hospital records), and FHIR (for patient data). This ensures compatibility and seamless data exchange with various healthcare systems.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "An important feature of the Google Cloud Healthcare API is its ability to de-identify personal health information (PHI), which adds an extra layer of security and ensures data privacy. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-30a42e61-a18f-4b63-8cc7-8f3d6323000b",
+                  "label": "",
+                  "heading": "3. Telehealth APIs",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Telehealth API  is a blend of diverse APIs and services that are specifically designed to benefit telehealth applications, ensuring efficient functionality and user-friendly operation. Some of the Telehealth APIs include - ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "1. Communication APIs", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "In-app communication is a critical component in telehealth and without it building a telehealth platform is impossible. Building in-app communication from scratch is a very difficult task to endure. This is where communication APIs help you. With these API you can build an in-app messaging system that lets users talk with doctors and support staff, integrate a video conferencing feature for live consultation, SMS and text message reminders for scheduled appointments and more.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "text": "A prominent example of a communication API is-", "type": "text" }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 4 },
+            "content": [{ "text": "7. CometChat:", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815749,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2119x1201/1b6a14170c/cometchat.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              { "text": "CometChat is a powerful ", "type": "text" },
+              {
+                "text": "chat API and in-app messaging SDK ",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "/pages/blog/introducing-cometchat-pro-extensible-chat-sdks-api-for-developers",
+                      "uuid": "fc1402cf-01ec-4248-a364-ae7cab9e7186",
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "story"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": "provider. It allows healthcare organizations to add chat, video, and voice calling features into their mobile apps and websites in real-time. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "text": "CometChat supports a", "type": "text" },
+              {
+                "text": " wide range of use cases within telehealth",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "/pages/solutions/healthcare",
+                      "uuid": "3c25264a-d659-4cdf-a535-591cb89b295f",
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "story"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": ".  Digital-first healthcare startups like JumpingMinds, BeyondBMI, and RecoveryOne use CometChat’s HIPAA compliant messaging solution to power in-app communication between doctors and patients. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Traditional healthcare institutions like Kokilaben Hospitals, and healthcare SaaS applications like Cloud9 Telehealth and MDProspects also use us to integrate chat and calling features into their systems.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              { "text": "Some of the key features of CometChat includes - ", "type": "text" }
+            ]
+          },
+          {
+            "type": "bullet_list",
+            "content": [
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Customizable UI Kits",
+                        "type": "text",
+                        "marks": [{ "type": "bold" }]
+                      },
+                      { "text": " -  CometChat offers customizable", "type": "text" },
+                      {
+                        "text": " UI Kits",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/ui-kits",
+                              "uuid": "66838033-9a82-4335-8909-d055a5c23544",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "text": " - these are ready-to-use UI components grouped into modules. These modules can be customized to suit your specific needs, whether you need to change the color scheme, alter the layout, or modify functionalities. In other words, it gives you the flexibility to design your user interface in a way that best meets your needs and improves user experience. ",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Comprehensive suite of features",
+                        "type": "text",
+                        "marks": [{ "type": "bold" }]
+                      },
+                      {
+                        "text": " -  CometChat offers a wide range of features to boost real-time communication between patients and healthcare professionals. It includes ",
+                        "type": "text"
+                      },
+                      {
+                        "text": "one-on-one chat,",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/chat-and-messaging",
+                              "uuid": "9fa41d53-46f9-405f-b439-67e97bbb9462",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      { "text": " private and group chats, ", "type": "text" },
+                      {
+                        "text": "voice and video call capabilities",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/voice-and-video-calls",
+                              "uuid": "93a5648d-f2f2-4f5c-b672-b6414b672a6c",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      { "text": ", ", "type": "text" },
+                      {
+                        "text": "moderation",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/features/moderation",
+                              "uuid": "689b2442-c587-44e8-85de-0fd8ca0a32a9",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      { "text": " and ", "type": "text" },
+                      {
+                        "text": "analytics",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/features/analytics-insights",
+                              "uuid": "47cf3844-2931-4a02-99be-34b20e2204c2",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      { "text": " all within a single product.", "type": "text" }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Interactive messages",
+                        "type": "text",
+                        "marks": [{ "type": "bold" }]
+                      },
+                      {
+                        "text": " - CometChat's interactive messages offer telehealth services more than just simple text formats. Appointment reminders and new patient requests can be displayed as interactive cards with call-to-action buttons for immediate action. Interactive forms can be used to collect patient information during patient intake. Plus, interactive calendar message type makes scheduling follow-up appointments a breeze",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Automated clinical notes",
+                        "type": "text",
+                        "marks": [{ "type": "bold" }]
+                      },
+                      { "text": " - CometChat employs its ", "type": "text" },
+                      {
+                        "text": "generative AI model, M87",
+                        "type": "text",
+                        "marks": [
+                          {
+                            "type": "link",
+                            "attrs": {
+                              "href": "/pages/blog/introducing-cometchat-ai-m87",
+                              "uuid": "6dd7f0fc-b490-4172-913e-a0760c9b5ccc",
+                              "anchor": null,
+                              "target": "_self",
+                              "linktype": "story"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "text": ", to effectively analyze and extract medical concepts and Protected Health Information (PHI) from live consultations and chat histories. This analysis is then transformed into structured, clinical notes, such as SOAP notes, which can be shared with healthcare teams. This procedure streamlines note-taking, enhancing efficiency and effectiveness in healthcare management.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      { "text": "File sharing", "type": "text", "marks": [{ "type": "bold" }] },
+                      {
+                        "text": " - CometChat's file-sharing feature allows healthcare providers to securely share a wide range of files, including images, videos, and PDFs, directly in the chat. This ensures a quick and secure transfer of essential medical records and reports, enhancing the efficiency of communication and healthcare delivery.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "How does CometChat maintain HIPAA compliance:",
+                "type": "text",
+                "marks": [{ "type": "bold" }]
+              }
+            ]
+          },
+          {
+            "type": "bullet_list",
+            "content": [
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Compliance, especially in healthcare, is a cornerstone of CometChat's services. With certifications like HIPAA and PIPEDA, HITRUST, and SOC2, CometChat prioritizes data security and privacy.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "CometChat is devoted to protecting Protected Health Information (PHI) and signs Business Associate Agreements (BAAs) to demonstrate this. With encryption protocols like AES-256 and TLS 1.2, data is securely encrypted both when stored and when transferred.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list_item",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "CometChat also offers detailed access controls, role-based permissions, multi-factor authentication, and single sign-on integration support. The API tracks user activity and data access, providing secure audit trails for compliance checks.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "2. Patient engagement APIs", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Patient Engagement APIs play an essential role in enhancing patient interaction and engagement. They enable healthcare organizations to integrate various app functionalities that spur patients to take an active part in their care.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": " Key features that can be developed using these APIs include appointment scheduling, medication reminders, access to lab results, secure messaging, and wellness tracking. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "For instance, smart bots powered by these APIs can manage patient interactions, like sending appointment reminders and welcome messages. Additionally, they can enable symptom checkers for initial self-diagnosis and understanding the effects of current medications.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "By facilitating personalized, effective communication and ease of access to health information, these APIs significantly enhance the patient experience. The resulting improved patient satisfaction can lead to increased patient retention and better health outcomes.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Patient Engagement APIs also help healthcare providers meet the patient engagement mandates of regulatory frameworks like Meaningful Use and the Merit-based Incentive Payment System.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Here are some of the most commonly used Patient Engagement APIs:",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 4 },
+            "content": [{ "text": "8. Dr chrono API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "DrChrono API facilitates integration with the DrChrono Electronic Health Record (EHR) system and is designed to streamline health management tasks, making it beneficial for hospitals and clinics that require efficient access to EHR.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815763,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2100x999/f97df857cf/dr-chrono.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "For example, Apara, a health app, leverages DrChrono API to interact directly with patient data, to schedule appointments, send patient reminders, and access real-time patient data.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "3. Billing, Payment and Health Insurance API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Billing, payment, and health insurance APIs are crucial for smoothing out financial processes and information exchanges in healthcare.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Billing APIs help healthcare providers automate billing, reducing admin work and mistakes. Payment APIs ensure secure, instant transactions, allowing providers to get paid on time and patients to easily pay their bills.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Health insurance APIs quickly verify a patient's insurance details, coverage, and eligibility, making financial processes easier and more transparent for both patients and providers.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Together, these APIs greatly improve the financial side of healthcare, encouraging seamless, secure, and efficient financial operations.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "text": "Here are some typical examples of these APIs:", "type": "text" }]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 4 },
+            "content": [{ "text": "9. Change healthcare", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Change Healthcare API  provides a host of services like checking insurance eligibility and benefits, submitting electronic claims, and handling payments. This API helps healthcare providers quickly verify a patient's insurance eligibility and coverage, cutting down on manual work. It also enables electronic claim submissions, speeding up the process and making tracking easier.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815815,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2068x1188/a8fcece03b/change.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              { "text": "Key features of the Change Healthcare API include:", "type": "text" }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-897b00ba-cc79-45f3-acc4-353906527156",
+                  "items": [
+                    {
+                      "_uid": "27caffae-3ca1-44b2-b10d-520093ebfae2",
+                      "title": "Excellent at automation, making processes more efficient.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    },
+                    {
+                      "_uid": "ea801b53-b897-46f4-8129-a41ee1d8489a",
+                      "title": "Reduces administrative workload, saving time and resources.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    },
+                    {
+                      "_uid": "5ed31dfe-bd63-44b0-a1bc-0c9f0c08fa8a",
+                      "title": "Promotes transparency and trust, enhancing patient-provider relationships.\n\n",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    }
+                  ],
+                  "component": "paragraph-list",
+                  "is_numeric": true
+                }
+              ]
+            }
+          },
+          { "type": "paragraph" },
+          {
+            "type": "heading",
+            "attrs": { "level": 4 },
+            "content": [{ "text": "10. Eligible", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Eligible is a healthcare tech company that offers solutions to streamline tasks like checking patient insurance eligibility and benefits, submitting claims, and giving cost estimates for procedures.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815849,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2100x1113/136b65b473/elgible.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Eligible's goal is to better the financial aspect of healthcare by providing services that lessen admin work, reduce billing mistakes, and improve revenue cycles for healthcare providers. Their services help not just healthcare providers, but also insurance payers and patients, promoting clear and efficient interactions in healthcare billing and insurance.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 4 },
+            "content": [{ "text": "11. Stripe API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Stripe API, known for its flexibility and wide range of features, is frequently used in healthcare to handle online payments. It lets healthcare providers accept all major debit and credit cards from patients worldwide and supports other payment methods like Apple Pay. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815865,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2107x1180/e7be59a804/stripe.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Stripe ensures secure transactions and simplifies the payment process in healthcare. It can also be integrated with existing patient management systems.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-f2fe0dee-9e23-4891-92f5-0d584ff5711b",
+                  "label": "",
+                  "heading": "4. Drug and symptoms checker APIs",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Drug and symptoms checker APIs help healthcare organizations build internal systems that assist doctors with diagnoses and care plans. They cross-reference symptoms and drug databases, offering key insights into patient diagnosis and treatment. In telehealth apps, these APIs also allow the creation of engagement bots for initial self-diagnosis and patient data collection.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "12. Mayoclinic", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Mayo Clinic API gives access to top-quality healthcare information from Mayo Clinic, a globally recognized medical institution. Developers can use this API to draw a broad range of health content and services from Mayo Clinic, including symptoms, diseases, procedures, and much more. This information, coming from a reliable source, can improve their health apps by ensuring they deliver accurate and dependable health data.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815890,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2083x1099/2de9d719ab/mayoclinic.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "The Mayo Clinic API is designed to be flexible, fitting the needs of various health applications and use cases. Whether it's a fitness app, a telehealth platform, or a hospital patient portal, the Mayo Clinic API can supply valuable insights and data.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "13. Isabel healthcare", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Isabel Healthcare API is an advanced health tool designed to give developers and healthcare establishments access to a sophisticated Clinical Decision Support System (CDSS). Integrating this API into various platforms and systems can enhance patient care through quicker and more accurate diagnoses and treatment strategies.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815922,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2116x1182/0bd8776666/isabel.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Key features of this API include advanced diagnostic assistance using AI and Natural Language Processing to analyze patient data and propose possible diagnoses. It also provides healthcare providers with triage tools to prioritize patients based on the severity of their condition. This API is designed to integrate seamlessly with various applications and healthcare systems, enabling the use of advanced diagnostic and triage tools.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The Isabel Healthcare API always stays updated, ensuring the most recent information for smart patient care decisions. Its customizable queries let developers adapt API responses to fit specific needs.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "14. Drugbank", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "DrugBank is a comprehensive pharmaceutical knowledge base that provides a variety of standalone APIs ready for integration, supporting different formats like JSON, XML, and SQL. This powerful tool allows detailed drug searches across a massive database of more than 100,000 drugs. Search can be done using NDC numbers, RxNorm codes, or other identifiers, making it easy to access needed drug information.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815940,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2100x1117/8dd4bcf43c/drugbank.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "A standout feature of DrugBank is its drug-drug interaction database, with over 1.4 million interactions. This database is updated daily, ensuring healthcare professionals have the most recent and accurate information. This ultimately assists in providing safe and effective patient care. With its broad capabilities, DrugBank showcases the impact of digital transformation in the pharmaceutical industry.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "15. OpenFDA", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "OpenFDA APIs serve as an open-source platform that offers a wealth of information pertaining to drugs for both humans and animals, as well as medical devices, foods, tobacco, and more. ",
+                "type": "text"
+              },
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13815968,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2097x1203/d7ea3af517/openfda.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "When it comes to human medications, this platform provides critical insights including:",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "ab516c8b-e2ea-489d-b077-6c1122cbd7d4",
+              "body": [
+                {
+                  "_uid": "i-a6f6beb8-9736-4c9b-8dac-dd331d49b605",
+                  "items": [
+                    {
+                      "_uid": "419c4bb3-2b91-45be-a3ba-ada4c34fbd8e",
+                      "title": "Reports on adverse events and medical errors",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "These reports can provide crucial information about potential risks and side effects associated with various medications.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "69bc44d2-cb28-47b0-9f23-bba5e035a0c5",
+                      "title": "SPL-formatted drug labels",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Structured Product Labeling (SPL) is a document markup standard for the exchange of product and facility information. The API provides access to these labels for an in-depth view of drug-related data.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "875690c5-8d22-4fd9-979e-45ff0d2bbcc9",
+                      "title": "NDC numbers",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "The National Drug Code (NDC) is a unique identifier for drugs in the U.S. The API allows users to access related information for drugs marketed in the U.S.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "d4544ae2-247f-415e-a1b4-4e2ad42b5f03",
+                      "title": "Data on drug recalls",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "This involves information on events when medications are removed from the market due to safety or effectiveness concerns.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "component": "paragraph-list",
+                  "is_numeric": true
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "All the APIs return responses in the widely-used JSON format, allowing for easy integration and interpretation of data.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "8322a512-73eb-4b57-b925-dff575c9e618",
+              "body": [
+                {
+                  "_uid": "i-92d83413-a291-4ce9-8e51-e035498b7a06",
+                  "label": "",
+                  "heading": "5. EHR APIs",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Electronic Health Record (EHR) APIs play an instrumental role in modern healthcare technology, acting as a bridge connecting different EHR systems to allow for seamless access to patient data. EHR APIs can facilitate the tracking and monitoring of a patient's health status, enabling healthcare professionals to make more informed decisions about patient care. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "They ensure that critical health information is not siloed within individual systems, but accessible across different platforms in an organized and standardized format. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "text": "Some of the commonly used EHR APIs include :", "type": "text" }]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "16. Allscripts", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Allscripts FHIR is an Electronic Health Record (EHR) API that allows easy connection to both patient-focused and provider-focused applications. It's especially useful for apps aimed at outpatient and in-hospital patient care. Its broad interoperability lets healthcare providers access and share crucial health information with patients, insurance companies, and other healthcare providers, improving care coordination and quality.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13816012,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2044x1198/a9f608a3bb/allscitps.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "By using Allscripts FHIR, healthcare providers can make their workflows smoother, increase patient engagement and record accuracy, and meet compliance regulations",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [{ "text": "17. MEDITECH Patient Health Data API", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Meditech's data APIs are designed to simplify the integration of acute care and home health Electronic Health Record (EHR) applications for healthcare providers. These APIs are vital in improving the quality of care in mobile urgent care, senior care, or home health services.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 13816037,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2104x1194/618a7c186a/medietch.png",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Using Meditech's APIs, your platform can offer a safe, centralized, and complete view of a patient's health history. This thorough overview allows the care team to make informed decisions about treatment, ensuring personalized and effective patient care.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "The ability to centralize a patient's health history minimizes information fragmentation and simplifies the data access process for everyone involved in the patient's care.",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "cover": {
+        "id": 13889467,
+        "alt": "",
+        "name": "",
+        "focus": "",
+        "title": "",
+        "source": "",
+        "filename": "https://a.storyblok.com/f/231922/1726x1040/ef33145c22/healthcare-api-cover-image.png",
+        "copyright": "",
+        "fieldtype": "asset",
+        "meta_data": {},
+        "is_private": "",
+        "is_external_url": false
+      },
+      "author": "447cfb40-e35f-41e6-85e9-a531ee9ea11a",
+      "related": [],
+      "category": "Insights",
+      "component": "blog-post",
+      "created_at": "2024-01-29 17:23",
+      "pre_footer": [],
+      "announcement": [
+        {
+          "_uid": "74767d5f-2fea-4232-bb0e-e5dad142b857",
+          "link": {
+            "id": "ff9b81da-6eab-4be5-9c09-d5cdf0a62811",
+            "url": "",
+            "linktype": "story",
+            "fieldtype": "multilink",
+            "cached_url": "pages/blog/beyond-the-bubble-airbnb"
+          },
+          "image": "https://a.storyblok.com/f/231922/1742x1266/ab43a478e3/webhooks-hero.png",
+          "title": "Introducing CometChat Ul Kits v4 Beta",
+          "cta_slot": [
+            {
+              "_uid": "f261950e-9619-48eb-a479-41ebaa50bc5e",
+              "icon": "",
+              "link": {
+                "id": "c15a3aa7-f21a-4b70-a544-49752f416654",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "pages/ai-m87-signup"
+              },
+              "label": "Visit link",
+              "variant": "primary",
+              "component": "button-link"
+            }
+          ],
+          "component": "side-static-banner",
+          "description": "V4 Ul kits offer a modular design, extended functionality, and enhanced customization for a tailored chat experience."
+        }
+      ],
+      "sidebar_right_slot": [
+        {
+          "_uid": "adbe8c48-8af2-43f5-94fa-67e5d96d25ff",
+          "link": {
+            "id": "",
+            "url": "",
+            "linktype": "story",
+            "fieldtype": "multilink",
+            "cached_url": ""
+          },
+          "image": "https://a.storyblok.com/f/231922/1742x1266/ab43a478e3/webhooks-hero.png",
+          "title": "Introducing CometChat Side Static Banner",
+          "cta_slot": [
+            {
+              "_uid": "07259a29-5cf0-4e03-87cd-22dbbfc1c81b",
+              "icon": "",
+              "link": {
+                "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "pages/pricing-beta"
+              },
+              "label": "Visit link",
+              "variant": "primary",
+              "component": "button-link"
+            }
+          ],
+          "component": "side-static-banner",
+          "description": "V4 UI kits offer a modular design, extended functionality and enhanced customisation for a tailored chat experience."
+        },
+        {
+          "_uid": "80670be2-5ff0-4969-9846-a858a9646dd8",
+          "blogs": [
+            {
+              "_uid": "5d139c1a-dfab-48e2-b1a0-c9cfebeef561",
+              "link": {
+                "id": "645c637d-7f6f-4385-80cf-d8dc5d33ac22",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "pages/interactive-demo-signup"
+              },
+              "name": "Top 17 api's to build healthcare applications",
+              "component": "related-blogs-link-block"
+            },
+            {
+              "_uid": "7febbfb5-855c-42b2-82b9-4ce08694d26b",
+              "link": {
+                "id": "645c637d-7f6f-4385-80cf-d8dc5d33ac22",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "pages/interactive-demo-signup"
+              },
+              "name": "Leverage tools to provide enhanced patient care",
+              "component": "related-blogs-link-block"
+            }
+          ],
+          "component": "related-blogs"
+        }
+      ],
+      "imported_from_old_site": false
+    },
+    "slug": "healthcare-apis",
+    "full_slug": "pages/blog/healthcare-apis",
+    "sort_by_date": null,
+    "position": 50,
+    "tag_list": [],
+    "is_startpage": false,
+    "parent_id": 319617462,
+    "meta_data": null,
+    "group_id": "b5c57281-6322-477f-b4a8-0607ed1d2ea8",
+    "first_published_at": "2024-01-29T12:00:02.777Z",
+    "release_id": null,
+    "lang": "default",
+    "path": null,
+    "alternates": [],
+    "default_full_slug": null,
+    "translated_slugs": null
+  },
+  "cv": 1708458154,
+  "rels": [],
+  "links": []
+}

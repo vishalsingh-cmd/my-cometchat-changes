@@ -20,6 +20,7 @@
   import Toc from '$components/toc.svelte';
   import Breadcumbs from '$components/breadcumbs.svelte';
   import { page } from '$app/stores';
+  import RelatedBlogs from '$components/related-blogs.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -166,10 +167,15 @@
 
           <Share class="pb-8 md:hidden" />
         </div>
-
-        {#if block.content.sidebar_right_slot && block.content.sidebar_right_slot.length > 0}
-          <SideStaticBanner block={block.content.announcement[0]} />
-        {/if}
+        <div class="flex flex-col gap-6">
+          {#each block.content.sidebar_right_slot as slot}
+            {#if slot.component === 'side-static-banner'}
+              <SideStaticBanner block={slot} />
+            {:else if slot.component === 'related-blogs'}
+              <RelatedBlogs block={slot} />
+            {/if}
+          {/each}
+        </div>
       </div>
     {/if}
   </section>

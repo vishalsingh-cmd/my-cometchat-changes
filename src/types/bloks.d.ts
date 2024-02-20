@@ -713,6 +713,7 @@ export interface IndustryStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -928,6 +929,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -1052,6 +1054,7 @@ export interface PricingStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -1201,6 +1204,21 @@ export interface ProductDisplayItemStoryblok {
   link?: LinkStoryblok[];
   _uid: string;
   component: 'product-display-item';
+  [k: string]: any;
+}
+
+export interface RelatedBlogsStoryblok {
+  blogs?: RelatedBlogsLinkBlockStoryblok[];
+  _uid: string;
+  component: 'related-blogs';
+  [k: string]: any;
+}
+
+export interface RelatedBlogsLinkBlockStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'related-blogs-link-block';
   [k: string]: any;
 }
 
@@ -1373,6 +1391,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
@@ -1470,6 +1489,7 @@ export interface TechnologyStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
