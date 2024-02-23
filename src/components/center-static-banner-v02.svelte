@@ -11,7 +11,7 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'flex h-auto w-full gap-3 overflow-clip rounded-2xl bg-gradient-to-r p-8 text-white shadow-md',
+      'flex h-auto w-full gap-3 overflow-clip rounded-3xl bg-gradient-to-r p-8 text-white shadow-md',
       'flex-col sm:from-brand-10 sm:to-brand-12', // Flex direction is column on responsive screens
       'from-brand-12 to-brand-10 sm:flex-row lg:flex-row' // Flex direction is row on large screens
     )}
