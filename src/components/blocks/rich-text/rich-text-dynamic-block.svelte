@@ -12,7 +12,8 @@
     'center-static-banner-v02': CenterStaticBannerV02,
     'toolkit-links-banner': ToolkitLinksBanner,
     'blog-text-table': BlogTextTable,
-    'blog-checklist-table': BlogChecklistTable
+    'blog-checklist-table': BlogChecklistTable,
+    'blog-comparison-table': BlogComparisonTable
   };
 
   export type RichTextBlocks = keyof typeof map;
@@ -39,6 +40,7 @@
   import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
   import BlogTextTable from '$components/blog-text-table.svelte';
   import BlogChecklistTable from '$components/blog-checklist-table.svelte';
+  import BlogComparisonTable from '$components/blog-comparison-table.svelte';
 
   type ComponentRestProps =
     | Omit<ComponentProps<Disclaimer>, 'class' | 'block'>
@@ -53,7 +55,8 @@
     | Omit<ComponentProps<CenterStaticBannerV02>, 'class' | 'block'>
     | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>
     | Omit<ComponentProps<BlogTextTable>, 'class' | 'block'>
-    | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>;
+    | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogComparisonTable>, 'class' | 'block'>;
 
   export let block: { component: string };
   export let richTextBlockProps: ComponentRestProps | undefined = undefined;

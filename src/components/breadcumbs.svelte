@@ -7,6 +7,7 @@
     href: string | null;
   };
 
+  export let current_page_title: string;
   export let slug: string;
   let breadcrumbs: BreadcrumbItem[] = [];
 
@@ -21,7 +22,7 @@
       const isLastItem = index === slugParts.length - 1;
 
       return {
-        label: capitalize(part),
+        label: isLastItem ? current_page_title : capitalize(part),
         href: isLastItem ? null : `/${slugParts.slice(0, index + 1).join('/')}`
       };
     });
@@ -38,13 +39,12 @@
 
   onMount(() => {
     breadcrumbs = slugToBreadcrumbs(slug);
-    console.log(breadcrumbs);
   });
 </script>
 
 <nav aria-label="Breadcrumb" class="absolute left-16 hidden py-5 md:block">
-  <ul class="flex flex-row gap-2 font-medium">
-    <div class="w-5">
+  <ul class="flex cursor-pointer flex-row gap-2 font-medium">
+    <div class="w-5 hover:cursor-pointer">
       <Icon icon="home-02" size="md" class="text-brand-9" />
     </div>
     {#each breadcrumbs as item, index}
@@ -52,12 +52,15 @@
         {#if item.href}
           <a
             href={item.href}
-            class={index < breadcrumbs.length - 1 ? 'font-bold text-brand-9' : 'text-brand-12'}
-            >{item.label}</a
+            class={index < breadcrumbs.length - 1
+              ? 'font-bold text-brand-9 hover:cursor-pointer'
+              : 'text-brand-12 hover:cursor-pointer'}>{item.label}</a
           >
         {:else}
-          <span class={index < breadcrumbs.length - 1 ? 'font-bold text-brand-9' : 'text-brand-12'}
-            >{item.label}</span
+          <span
+            class={index < breadcrumbs.length - 1
+              ? 'font-bold text-brand-9 hover:cursor-pointer'
+              : 'text-brand-12 hover:cursor-pointer'}>{item.label}</span
           >
         {/if}
 
@@ -66,7 +69,9 @@
             <Icon
               icon="chevron-right"
               size="md"
-              class={index < breadcrumbs.length - 2 ? 'text-brand-9' : 'text-brand-12'}
+              class={index < breadcrumbs.length - 2
+                ? 'text-brand-9 hover:cursor-pointer'
+                : 'text-brand-12 hover:cursor-pointer'}
             />
           </div>
         {/if}

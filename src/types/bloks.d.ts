@@ -133,6 +133,14 @@ export interface BlogChecklistTableStoryblok {
   [k: string]: any;
 }
 
+export interface BlogComparisonTableStoryblok {
+  column_slot?: BlogTableColumnStoryblok[];
+  rows_slot?: BlogTableRowStoryblok[];
+  _uid: string;
+  component: 'blog-comparison-table';
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -168,15 +176,29 @@ export interface BlogPostStoryblok {
   [k: string]: any;
 }
 
-export interface BlogTableCellStoryblok {
-  content?: string;
+export interface BlogTableCellImageStoryblok {
+  image?: string;
   _uid: string;
-  component: 'blog-table-cell';
+  component: 'blog-table-cell-image';
+  [k: string]: any;
+}
+
+export interface BlogTableCellTextStoryblok {
+  text?: string;
+  _uid: string;
+  component: 'blog-table-cell-text';
+  [k: string]: any;
+}
+
+export interface BlogTableColumnStoryblok {
+  title?: string;
+  _uid: string;
+  component: 'blog-table-column';
   [k: string]: any;
 }
 
 export interface BlogTableRowStoryblok {
-  cells?: any[];
+  cells?: (BlogTableCellTextStoryblok | BlogTableCellImageStoryblok)[];
   _uid: string;
   component: 'blog-table-row';
   [k: string]: any;
@@ -367,6 +389,12 @@ export interface DoublePanelSectionStoryblok {
   panels: PanelItemStoryblok[];
   _uid: string;
   component: 'double-panel-section';
+  [k: string]: any;
+}
+
+export interface ExperimentalTableStoryblok {
+  _uid: string;
+  component: 'experimental-table';
   [k: string]: any;
 }
 
@@ -1293,7 +1321,7 @@ export interface SinglePostResourcesPanelStoryblok {
   title: string;
   image: AssetStoryblok;
   link: MultilinkStoryblok;
-  date: string;
+  date?: string;
   author?: string;
   _uid: string;
   component: 'single-post-resources-panel';

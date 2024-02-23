@@ -105,7 +105,7 @@
   <slot />
 
   <section use:storyblokEditable={block} data-theme="light" class="mx-auto bg-gray-1 text-gray-12">
-    <Breadcumbs slug={$page.url.pathname} />
+    <Breadcumbs slug={$page.url.pathname} current_page_title={block.name} />
 
     {#if block.content.body && block.content.body.content}
       <div
