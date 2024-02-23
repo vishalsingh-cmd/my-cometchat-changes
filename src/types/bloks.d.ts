@@ -41,55 +41,6 @@ export interface AwardsSectionStoryblok {
   [k: string]: any;
 }
 
-export interface RichtextStoryblok {
-  type: string;
-  content?: RichtextStoryblok[];
-  marks?: RichtextStoryblok[];
-  attrs?: any;
-  text?: string;
-  [k: string]: any;
-}
-
-export interface BlogPostStoryblok {
-  cover?: AssetStoryblok;
-  author?: StoryblokStory<AuthorStoryblok> | string;
-  category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
-  imported_from_old_site?: boolean;
-  created_at?: string;
-  body: RichtextStoryblok;
-  related?: RelatedStoriesSectionStoryblok[];
-  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
-  seo?: SeoFieldsStoryblok[];
-  _uid: string;
-  component: 'blog-post';
-  [k: string]: any;
-}
-
-export interface BulletPointStoryblok {
-  item: string;
-  coming_soon?: boolean;
-  _uid: string;
-  component: 'bullet-point';
-  [k: string]: any;
-}
-
-export interface BulletPointsStoryblok {
-  items: BulletPointStoryblok[];
-  _uid: string;
-  component: 'bullet-points';
-  [k: string]: any;
-}
-
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
@@ -145,6 +96,144 @@ export type MultilinkStoryblok =
       [k: string]: any;
     };
 
+export interface BlogAnnouncementSidebarCardStoryblok {
+  title?: string;
+  description?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'blog-announcement-sidebar-card';
+  [k: string]: any;
+}
+
+export interface TableStoryblok {
+  thead: {
+    _uid: string;
+    value?: string;
+    component: number;
+    [k: string]: any;
+  }[];
+  tbody: {
+    _uid: string;
+    body: {
+      _uid?: string;
+      value?: string;
+      component?: number;
+      [k: string]: any;
+    }[];
+    component: number;
+    [k: string]: any;
+  }[];
+  [k: string]: any;
+}
+
+export interface BlogChecklistTableStoryblok {
+  table?: TableStoryblok;
+  _uid: string;
+  component: 'blog-checklist-table';
+  [k: string]: any;
+}
+
+export interface BlogComparisonTableStoryblok {
+  column_slot?: BlogTableColumnStoryblok[];
+  rows_slot?: BlogTableRowStoryblok[];
+  _uid: string;
+  component: 'blog-comparison-table';
+  [k: string]: any;
+}
+
+export interface RichtextStoryblok {
+  type: string;
+  content?: RichtextStoryblok[];
+  marks?: RichtextStoryblok[];
+  attrs?: any;
+  text?: string;
+  [k: string]: any;
+}
+
+export interface BlogPostStoryblok {
+  cover?: AssetStoryblok;
+  sidebar_right_slot?: any[];
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  category:
+    | ''
+    | 'explorer'
+    | 'video'
+    | 'webinar'
+    | 'how-to-guide'
+    | 'chat'
+    | 'calling'
+    | 'insights'
+    | 'industry'
+    | 'best-practices';
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related?: RelatedStoriesSectionStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
+  _uid: string;
+  component: 'blog-post';
+  [k: string]: any;
+}
+
+export interface BlogTableCellImageStoryblok {
+  image?: string;
+  _uid: string;
+  component: 'blog-table-cell-image';
+  [k: string]: any;
+}
+
+export interface BlogTableCellTextStoryblok {
+  text?: string;
+  _uid: string;
+  component: 'blog-table-cell-text';
+  [k: string]: any;
+}
+
+export interface BlogTableColumnStoryblok {
+  title?: string;
+  _uid: string;
+  component: 'blog-table-column';
+  [k: string]: any;
+}
+
+export interface BlogTableRowStoryblok {
+  cells?: (BlogTableCellTextStoryblok | BlogTableCellImageStoryblok)[];
+  _uid: string;
+  component: 'blog-table-row';
+  [k: string]: any;
+}
+
+export interface BlogTextTableStoryblok {
+  table?: TableStoryblok;
+  _uid: string;
+  component: 'blog-text-table';
+  [k: string]: any;
+}
+
+export interface BreadcumbsStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'breadcumbs';
+  [k: string]: any;
+}
+
+export interface BulletPointStoryblok {
+  item: string;
+  coming_soon?: boolean;
+  _uid: string;
+  component: 'bullet-point';
+  [k: string]: any;
+}
+
+export interface BulletPointsStoryblok {
+  items: BulletPointStoryblok[];
+  _uid: string;
+  component: 'bullet-points';
+  [k: string]: any;
+}
+
 export interface ButtonLinkStoryblok {
   variant: 'primary' | 'secondary';
   icon?: number | string;
@@ -152,6 +241,25 @@ export interface ButtonLinkStoryblok {
   link?: MultilinkStoryblok;
   _uid: string;
   component: 'button-link';
+  [k: string]: any;
+}
+
+export interface CenterStaticBannerV01Storyblok {
+  title?: string;
+  description?: string;
+  image?: string;
+  link?: MultilinkStoryblok;
+  cta_slot?: any[];
+  _uid: string;
+  component: 'center-static-banner-v01';
+  [k: string]: any;
+}
+
+export interface CenterStaticBannerV02Storyblok {
+  title?: string;
+  cta_slot?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'center-static-banner-v02';
   [k: string]: any;
 }
 
@@ -281,6 +389,12 @@ export interface DoublePanelSectionStoryblok {
   panels: PanelItemStoryblok[];
   _uid: string;
   component: 'double-panel-section';
+  [k: string]: any;
+}
+
+export interface ExperimentalTableStoryblok {
+  _uid: string;
+  component: 'experimental-table';
   [k: string]: any;
 }
 
@@ -587,6 +701,8 @@ export interface IndustryStoryblok {
   description: string;
   body?: (
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -625,9 +741,12 @@ export interface IndustryStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -798,6 +917,8 @@ export interface NewsletterSectionStoryblok {
 export interface PageStoryblok {
   body?: (
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -836,9 +957,12 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -918,6 +1042,8 @@ export interface PreFooterStoryblok {
 export interface PricingStoryblok {
   body?: (
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -956,9 +1082,12 @@ export interface PricingStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1029,7 +1158,7 @@ export interface PricingHeroStoryblok {
 }
 
 export interface PricingHeroInfoItemStoryblok {
-  icon: number | string;
+  icon?: number | string;
   name: string;
   description?: string;
   _uid: string;
@@ -1106,6 +1235,21 @@ export interface ProductDisplayItemStoryblok {
   [k: string]: any;
 }
 
+export interface RelatedBlogsStoryblok {
+  blogs?: RelatedBlogsLinkBlockStoryblok[];
+  _uid: string;
+  component: 'related-blogs';
+  [k: string]: any;
+}
+
+export interface RelatedBlogsLinkBlockStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'related-blogs-link-block';
+  [k: string]: any;
+}
+
 export interface RelatedStoriesSectionStoryblok {
   header: TitleStoryblok[];
   title_alignment?: '' | 'left' | 'center';
@@ -1157,11 +1301,27 @@ export interface SeoFieldsStoryblok {
   [k: string]: any;
 }
 
+export interface SidebarSlotStoryblok {
+  _uid: string;
+  component: 'sidebar-slot';
+  [k: string]: any;
+}
+
+export interface SideStaticBannerStoryblok {
+  title?: string;
+  description?: string;
+  image?: string;
+  cta_slot?: any[];
+  _uid: string;
+  component: 'side-static-banner';
+  [k: string]: any;
+}
+
 export interface SinglePostResourcesPanelStoryblok {
   title: string;
   image: AssetStoryblok;
   link: MultilinkStoryblok;
-  date: string;
+  date?: string;
   author?: string;
   _uid: string;
   component: 'single-post-resources-panel';
@@ -1219,6 +1379,8 @@ export interface SyncedBlockStoryblok {
 export interface SyncedBlockContentStoryblok {
   body?: (
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -1257,9 +1419,12 @@ export interface SyncedBlockContentStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1312,6 +1477,8 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   body: (
     | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
     | CometCreditsSectionStoryblok
@@ -1350,9 +1517,12 @@ export interface TechnologyStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingTableStoryblok
+    | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
     | SocialProofsStoryblok
     | SolutionsHeroStoryblok
     | SolutionsSectionStoryblok
@@ -1470,6 +1640,21 @@ export interface TitleWithIconLabelStoryblok {
   links?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'title-with-icon-label';
+  [k: string]: any;
+}
+
+export interface ToolkitLinkBlockStoryblok {
+  name?: string;
+  link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'toolkit-link-block';
+  [k: string]: any;
+}
+
+export interface ToolkitLinksBannerStoryblok {
+  links?: ToolkitLinkBlockStoryblok[];
+  _uid: string;
+  component: 'toolkit-links-banner';
   [k: string]: any;
 }
 

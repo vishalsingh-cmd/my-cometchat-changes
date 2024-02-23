@@ -6,6 +6,7 @@
   import Topnav from '$components/topnav/topnav.svelte';
   import Footer from '$components/footer.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
+  import { Toaster } from 'svelte-french-toast';
 
   export let data;
 
@@ -30,6 +31,8 @@
 </script>
 
 <svelte:window bind:scrollY />
+
+<Toaster />
 
 <QueryClientProvider client={queryClient}>
   <Topnav data={data.topnav.content} />
