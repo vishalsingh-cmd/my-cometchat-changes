@@ -24,7 +24,7 @@
   {#if headings.length > 0}
     <div
       class={cn(
-        'bg-gray-100 absolute z-30 min-w-[230px] max-w-[500px] rounded-lg border border-gray-6 bg-white py-5',
+        'bg-gray-100 absolute z-30 flex h-auto min-w-[230px] max-w-[500px] flex-col rounded-lg border border-gray-6 bg-white py-5',
         menuOpen ? 'block' : 'hidden',
         {
           'translate-y-0': $scrollDirection === 'up',
@@ -35,13 +35,14 @@
       {#each headings as heading, i}
         <button
           class={cn(
-            'relative px-3 py-2 text-left text-lg font-semibold leading-tight opacity-50',
+            'relative px-3 py-2 text-left text-lg font-semibold leading-tight opacity-50 ',
             activeHeadingIndex === i && 'opacity-100',
             i === 0 &&
               'after:absolute after:-left-3 after:top-0 after:h-0.5 after:w-0.5 after:-translate-x-[0.5px] after:rounded-full after:bg-brand-9 after:shadow-[0_0_8px_8px_hsl(var(--color-brand-9)/0.05)]',
             i !== 0 && 'pt-4',
             (i < activeHeadingIndex || activeHeadingIndex === i) &&
-              'opacity-100 before:absolute before:-left-3 before:top-0 before:h-full before:w-px before:bg-brand-9'
+              'opacity-100 before:absolute before:-left-3 before:top-0 before:h-full before:w-px before:bg-brand-9',
+            'flex flex-col'
           )}
           on:click={() => {
             activeHeadingIndex = i;
