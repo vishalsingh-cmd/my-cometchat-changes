@@ -42,7 +42,7 @@
   });
 </script>
 
-<nav aria-label="Breadcrumb" class="absolute left-16 hidden py-5 md:block">
+<nav aria-label="Breadcrumb" class="absolute hidden py-5 md:left-8 md:block lg:left-16">
   <ul class="flex cursor-pointer flex-row gap-2 font-medium">
     <div class="w-5 hover:cursor-pointer">
       <Icon icon="home-02" size="md" class="text-brand-9" />
