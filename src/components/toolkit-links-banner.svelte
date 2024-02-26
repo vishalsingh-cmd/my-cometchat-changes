@@ -11,12 +11,12 @@
     use:storyblokEditable={block}
     class={cn('w-full gap-3 rounded-3xl border border-brand-7 bg-brand-10/5 p-8')}
   >
-    <h3 class="w-full text-start text-xl font-semibold leading-tight">Toolkit Links</h3>
+    <h3 class="w-full text-start text-xl font-semibold leading-tight">Toolkit</h3>
 
     {#if block.links}
-      <div class="sm:columns-1 md:columns-2">
+      <div class="mt-3 items-start justify-start sm:columns-1 md:columns-2">
         {#each block.links as item, i}
-          <div class="mt-3 flex flex-row items-start justify-start gap-3">
+          <div class="flex flex-row items-start justify-start gap-3">
             <svg
               width="16"
               height="16"
@@ -40,9 +40,7 @@
               </g>
             </svg>
 
-            <a
-              href={item.link}
-              class="w-full font-medium text-black hover:text-brand-10 hover:underline"
+            <a href={item.link} class="w-full font-medium text-brand-10 hover:underline"
               >{item.name}</a
             >
           </div>
