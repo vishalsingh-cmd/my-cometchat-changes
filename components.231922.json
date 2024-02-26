@@ -194,7 +194,7 @@
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2024-02-23T03:02:35.185Z",
+      "updated_at": "2024-02-26T11:19:46.188Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -204,7 +204,10 @@
           "pos": 0
         },
         "sidebar_right_slot": {
-          "type": "bloks"
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["side-static-banner", "related-blogs"]
         },
         "author": {
           "type": "option",
@@ -5045,7 +5048,7 @@
       "name": "side-static-banner",
       "display_name": "Side Static Banner",
       "created_at": "2024-02-09T06:21:26.613Z",
-      "updated_at": "2024-02-20T17:56:28.692Z",
+      "updated_at": "2024-02-26T11:20:56.789Z",
       "id": 5315058,
       "schema": {
         "title": {
@@ -5062,7 +5065,10 @@
           "add_https": true
         },
         "cta_slot": {
-          "type": "bloks"
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
         }
       },
       "image": null,

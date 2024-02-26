@@ -152,7 +152,7 @@ export interface RichtextStoryblok {
 
 export interface BlogPostStoryblok {
   cover?: AssetStoryblok;
-  sidebar_right_slot?: any[];
+  sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
     | ''
@@ -1311,7 +1311,7 @@ export interface SideStaticBannerStoryblok {
   title?: string;
   description?: string;
   image?: string;
-  cta_slot?: any[];
+  cta_slot?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'side-static-banner';
   [k: string]: any;

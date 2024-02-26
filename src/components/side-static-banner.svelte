@@ -11,20 +11,22 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'wrap sticky top-[80px] hidden h-fit w-full max-w-[272px] flex-col gap-3 space-y-3 overflow-clip rounded-3xl bg-white p-6 text-black shadow-lg md:block'
+      'wrap sticky top-[80px] hidden h-[300px] w-full max-w-[500px] flex-col gap-3 space-y-3 overflow-clip rounded-3xl border border-gray-4 bg-brand-3 p-5 text-black shadow-lg lg:block'
     )}
   >
     <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
-    <p class="text-md font-normal">{block.description}</p>
+    <p class="text-sm font-normal">{block.description}</p>
 
     {#if block.cta_slot}
       <div class="flex gap-3">
         {#each block.cta_slot as button}
-          <Button as="a" block={button.link} class="w-fit">{button.label}</Button>
+          <Button block={button.link} class="z-10 w-fit">{button.label}</Button>
         {/each}
       </div>
     {/if}
 
-    <img src={block.image} alt="Comet Chat" class="absolute -right-16 top-48 w-96" />
+    {#if block.image}
+      <img src={block.image} alt="Comet Chat" class="absolute -right-12 top-[200px] w-44" />
+    {/if}
   </div>
 {/if}
