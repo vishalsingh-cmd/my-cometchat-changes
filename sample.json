@@ -2,7 +2,7 @@
   "story": {
     "name": "Top 17 API’s to build healthcare applications",
     "created_at": "2024-01-22T09:26:03.510Z",
-    "published_at": "2024-02-26T15:45:44.999Z",
+    "published_at": "2024-02-26T16:09:03.063Z",
     "id": 430303855,
     "uuid": "190cbad3-982d-4968-959a-b2982de6dbd0",
     "content": {
@@ -1826,6 +1826,13 @@
       "sidebar_right_slot": [
         {
           "_uid": "fda9060a-b12c-434a-bec9-abb7435d6421",
+          "link": {
+            "id": "8febbdad-ff14-42d0-bda3-0a0598169184",
+            "url": "",
+            "linktype": "story",
+            "fieldtype": "multilink",
+            "cached_url": "pages/vs/pubnub"
+          },
           "image": "https://a.storyblok.com/f/231922/150x150/5f9a0beadf/comet-solo.png",
           "title": "Introducing CometChat Ul Kits v4 Beta",
           "cta_slot": [
@@ -1833,11 +1840,11 @@
               "_uid": "4277686a-be7d-4c99-af2f-8206c7e942a1",
               "icon": "",
               "link": {
-                "id": "d5c8d00a-e023-4b3b-8f66-d5446ec70b07",
+                "id": "50dad34f-1a51-46d3-86b2-ecb22c20dcde",
                 "url": "",
                 "linktype": "story",
                 "fieldtype": "multilink",
-                "cached_url": "pages/tutorials/"
+                "cached_url": "pages/blog/"
               },
               "label": "Visit now",
               "component": "link"
@@ -1884,7 +1891,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1708962345,
+  "cv": 1708963743,
   "rels": [],
   "links": []
 }
