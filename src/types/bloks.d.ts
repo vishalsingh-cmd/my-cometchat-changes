@@ -1311,7 +1311,7 @@ export interface SideStaticBannerStoryblok {
   title: string;
   description: string;
   image: string;
-  cta_slot: ButtonLinkStoryblok[];
+  cta_slot: LinkStoryblok[];
   _uid: string;
   component: 'side-static-banner';
   [k: string]: any;

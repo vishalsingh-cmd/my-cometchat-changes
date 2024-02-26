@@ -20,7 +20,8 @@
     {#if block.cta_slot}
       <div class="flex gap-3">
         {#each block.cta_slot as button}
-          <Button block={button.link} class="z-10 w-fit">{button.label}</Button>
+          <Button class="hidden sm:inline-flex" as="a" href={button.link.url}>{button.label}</Button
+          >
         {/each}
       </div>
     {/if}
