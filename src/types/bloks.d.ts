@@ -1308,10 +1308,10 @@ export interface SidebarSlotStoryblok {
 }
 
 export interface SideStaticBannerStoryblok {
-  title?: string;
-  description?: string;
-  image?: string;
-  cta_slot?: ButtonLinkStoryblok[];
+  title: string;
+  description: string;
+  image: string;
+  cta_slot: ButtonLinkStoryblok[];
   _uid: string;
   component: 'side-static-banner';
   [k: string]: any;
