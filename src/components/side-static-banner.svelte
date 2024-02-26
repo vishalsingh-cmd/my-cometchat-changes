@@ -4,6 +4,11 @@
   import { cn } from '$lib/utils';
   import Button from './buttons/button.svelte';
 
+  // remove "/pages" from the button.link.cached_url to make it work
+  function removePagesFromUrl(url: string): string {
+    return url.replace('/pages', '');
+  }
+
   export let block: SideStaticBannerStoryblok;
 </script>
 
@@ -20,7 +25,10 @@
     {#if block.cta_slot}
       <div class="flex gap-3">
         {#each block.cta_slot as button}
-          <Button class="hidden sm:inline-flex" as="a" href={button.link.url}>{button.label}</Button
+          <Button
+            class="hidden sm:inline-flex"
+            as="a"
+            href={removePagesFromUrl(button.link.cached_url)}>{button.label}</Button
           >
         {/each}
       </div>
