@@ -59,3 +59,8 @@ export const getPricingIcon = (pricingType: 'included' | 'paid-add-on' | 'none')
       return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
   }
 };
+
+// truncate a string to a certain length
+export const truncateString = (str: string, length: number) => {
+  return str.length > length ? str.substring(0, length) + '...' : str;
+};

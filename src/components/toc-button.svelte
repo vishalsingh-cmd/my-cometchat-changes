@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { cn } from '$lib/utils';
+  import { cn, truncateString } from '$lib/utils';
   import Icon from './icon/icon.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
 
@@ -19,7 +19,7 @@
   )}
 >
   <button on:click class="flex w-full cursor-pointer flex-col text-start font-medium"
-    >{activeHeading}
+    >{truncateString(activeHeading, 24)}
   </button>
 
   <Icon icon="chevron-up" class={cn(menuOpen ? 'transform' : 'rotate-180 transform ease-in-out')} />

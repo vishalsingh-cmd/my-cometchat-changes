@@ -211,6 +211,14 @@ export default {
           position: 'absolute',
           width: '1px',
           'white-space': 'nowrap'
+        },
+        '.multiline-ellipsis': {
+          position: 'relative',
+          maxHeight: '1.4em',
+          overflow: 'hidden',
+          display: '-webkit-box',
+          '-webkit-line-clamp': '3',
+          '-webkit-box-orient': 'vertical'
         }
       });
     })
