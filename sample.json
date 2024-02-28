@@ -2,7 +2,7 @@
   "story": {
     "name": "Top 17 API’s to build healthcare applications",
     "created_at": "2024-01-22T09:26:03.510Z",
-    "published_at": "2024-02-26T16:09:03.063Z",
+    "published_at": "2024-02-28T18:36:54.683Z",
     "id": 430303855,
     "uuid": "190cbad3-982d-4968-959a-b2982de6dbd0",
     "content": {
@@ -56,6 +56,71 @@
           },
           { "type": "paragraph" },
           {
+            "type": "blok",
+            "attrs": {
+              "id": "2d789b80-5c64-4a1f-a137-d2bd47eeec2c",
+              "body": [
+                {
+                  "_uid": "i-74fe226c-3181-4275-ab1a-77d7939ba079",
+                  "table": {
+                    "tbody": [
+                      {
+                        "_uid": "4a07d2fa-4e5a-4a0d-9c42-8a60902a6a17",
+                        "body": [
+                          {
+                            "_uid": "8914cfa3-0c88-4c26-915f-709b1e4299f0",
+                            "value": "Comet Chat",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "1759902c-1020-4d31-9ce0-554a3e76bc4c",
+                            "value": "Top 17 apis to build healthcare application with ease with comet chat",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "042b0165-02e2-4086-adac-5e432e9bf735",
+                            "value": "Easy integrations with payment gateways",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "6b525854-81f1-41ce-855e-d690f589c16b",
+                            "value": "Cool new features",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      }
+                    ],
+                    "thead": [
+                      {
+                        "_uid": "8ff8cb86-bcc9-4833-9956-aee1910c77fd",
+                        "value": "S.no",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "b680e144-b902-4ffe-8ed0-e24f2462363a",
+                        "value": "Brands",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "f9bad536-33c2-451c-a976-7c30ccf5a207",
+                        "value": "Nice to have",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "af36fa6c-efb5-4c57-af33-2ba3a213a93e",
+                        "value": "Upcoming",
+                        "component": "_table_head"
+                      }
+                    ],
+                    "fieldtype": "table"
+                  },
+                  "component": "blog-text-table"
+                }
+              ]
+            }
+          },
+          {
             "type": "paragraph",
             "content": [
               {
@@ -78,6 +143,97 @@
           {
             "type": "blok",
             "attrs": {
+              "id": "9decf5d2-1da9-444a-b3d7-a55d4d110f17",
+              "body": [
+                {
+                  "_uid": "i-ab67410a-d6f7-4dde-96fb-677ec0cbb67f",
+                  "table": {
+                    "tbody": [
+                      {
+                        "_uid": "e92ee564-76ee-44b2-87f6-9d9422dd5017",
+                        "body": [
+                          {
+                            "_uid": "661f434a-44b6-4bcf-bad1-49d01e63456e",
+                            "value": "Comet Chat",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "0e85904f-b758-459d-a66d-d5d03f5b43f1",
+                            "value": "Yes",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "ef5c4d9e-4c33-4e2b-8d89-1312a5cc2374",
+                            "value": "Yes",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "5a22dfad-5f32-47a9-a7f0-e46fe788b0a5",
+                            "value": "In progress",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      },
+                      {
+                        "_uid": "908c037b-02f8-46c9-8af8-a259836ae003",
+                        "body": [
+                          {
+                            "_uid": "4241e7bb-d801-46a8-af42-5a3891c520f5",
+                            "value": "Instant Chat",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "aa7df1f2-8263-44a6-a227-ffe40810c465",
+                            "value": "No",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "ab71448d-9cc7-4df8-81d9-882f2594881a",
+                            "value": "No",
+                            "component": "_table_col"
+                          },
+                          {
+                            "_uid": "7a40b839-c43e-4abe-9db3-8fe79b934006",
+                            "value": "No",
+                            "component": "_table_col"
+                          }
+                        ],
+                        "component": "_table_row"
+                      }
+                    ],
+                    "thead": [
+                      {
+                        "_uid": "7e840ed2-4f07-44e6-b3f4-c64f305c04a5",
+                        "value": "Brand",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "99331d08-6eb7-4d66-b4ac-2096cc55aa86",
+                        "value": "Features",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "9cd7327f-00b2-41dc-b3a1-a5542696fc74",
+                        "value": "Ratings",
+                        "component": "_table_head"
+                      },
+                      {
+                        "_uid": "41c36c6f-ec4b-4ec7-a602-88de59c8c0dc",
+                        "value": "Roadmap",
+                        "component": "_table_head"
+                      }
+                    ],
+                    "fieldtype": "table"
+                  },
+                  "component": "blog-checklist-table"
+                }
+              ]
+            }
+          },
+          {
+            "type": "blok",
+            "attrs": {
               "id": "51466965-fd85-47ca-80ea-6fe12c14ed43",
               "body": [
                 {
@@ -89,30 +245,20 @@
                       "cells": [
                         {
                           "_uid": "9974bd31-c169-4125-b918-60bd7ca3c010",
-                          "image": "",
+                          "image": "//a.storyblok.com/f/231922/744x144/995523fc6f/image.png",
                           "component": "blog-table-cell-image"
                         },
                         {
                           "_uid": "9175b51f-9198-49f1-aae3-dbab0634cb17",
-                          "text": "",
+                          "text": "$5.99",
                           "component": "blog-table-cell-text"
                         },
                         {
                           "_uid": "dcae5b1e-84c8-40e5-9570-d320870df375",
-                          "text": "",
+                          "text": "4.5 stars",
                           "component": "blog-table-cell-text"
                         }
                       ],
-                      "component": "blog-table-row"
-                    },
-                    {
-                      "_uid": "d5dca36a-f2e7-4498-8675-393778ccaa02",
-                      "cells": [],
-                      "component": "blog-table-row"
-                    },
-                    {
-                      "_uid": "9367c6fe-9a9b-4b70-a7be-3f58b0d3d28b",
-                      "cells": [],
                       "component": "blog-table-row"
                     }
                   ],
@@ -147,6 +293,46 @@
             ]
           },
           { "type": "paragraph" },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "2d789b80-5c64-4a1f-a137-d2bd47eeec2c",
+              "body": [
+                {
+                  "_uid": "i-4186d9a3-d8a6-4b4f-a5f2-4d8bd779f401",
+                  "links": [
+                    {
+                      "_uid": "555c8b46-daf7-4540-9986-0eadcf191cb6",
+                      "link": {
+                        "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/contact-sales"
+                      },
+                      "name": "Comet chat ui kit Links",
+                      "component": "toolkit-link-block"
+                    },
+                    {
+                      "_uid": "f569ffc1-c81d-4dc3-8cff-fa3e8f9834d3",
+                      "link": {
+                        "id": "34ca1d58-2297-45a9-8eb3-43491b007239",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing"
+                      },
+                      "name": "New SDK for Comet Chat",
+                      "component": "toolkit-link-block"
+                    }
+                  ],
+                  "title": "Toolkit",
+                  "component": "toolkit-links-banner"
+                }
+              ]
+            }
+          },
           {
             "type": "paragraph",
             "content": [
@@ -1840,11 +2026,11 @@
               "_uid": "4277686a-be7d-4c99-af2f-8206c7e942a1",
               "icon": "",
               "link": {
-                "id": "50dad34f-1a51-46d3-86b2-ecb22c20dcde",
-                "url": "",
-                "linktype": "story",
+                "id": "",
+                "url": "/blog",
+                "linktype": "url",
                 "fieldtype": "multilink",
-                "cached_url": "pages/blog/"
+                "cached_url": "/blog"
               },
               "label": "Visit now",
               "component": "link"
@@ -1891,7 +2077,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1708963743,
+  "cv": 1709145414,
   "rels": [],
   "links": []
 }

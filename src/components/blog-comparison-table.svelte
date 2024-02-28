@@ -54,7 +54,7 @@
             {#each thead as item}
               <th
                 scope="col"
-                class="text-gray-900 px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
+                class="text-gray-900 min-w-[160px] px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
                 >{item.value}</th
               >
             {/each}
@@ -65,10 +65,10 @@
             <tr class="divide-x divide-gray-6">
               {#each row.body as cell}
                 <td
-                  class="text-gray-900 w-auto overflow-auto whitespace-normal break-words px-12 py-4 text-sm font-medium sm:px-6"
+                  class="text-gray-900 min-w-[160px] whitespace-nowrap px-12 py-4 text-sm font-medium sm:px-6"
                 >
                   {#if cell.type === 'image'}
-                    <img src={cell.value} alt="company logo" class="w-24" />
+                    <img src={cell.value} alt="company logo" class="w-20" />
                   {:else}
                     <span>{cell.value}</span>
                   {/if}

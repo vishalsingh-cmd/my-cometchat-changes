@@ -1463,7 +1463,7 @@
       "name": "faq",
       "display_name": "FAQ",
       "created_at": "2023-08-24T15:11:06.621Z",
-      "updated_at": "2023-08-24T15:22:39.896Z",
+      "updated_at": "2024-02-27T11:19:14.812Z",
       "id": 4472691,
       "schema": {
         "title": {
@@ -1471,8 +1471,10 @@
           "required": true
         },
         "text": {
-          "type": "textarea",
-          "required": true
+          "type": "richtext",
+          "required": true,
+          "customize_toolbar": true,
+          "toolbar": ["paragraph"]
         }
       },
       "image": null,
@@ -5048,27 +5050,35 @@
       "name": "side-static-banner",
       "display_name": "Side Static Banner",
       "created_at": "2024-02-09T06:21:26.613Z",
-      "updated_at": "2024-02-26T11:20:56.789Z",
+      "updated_at": "2024-02-26T16:07:10.111Z",
       "id": 5315058,
       "schema": {
         "title": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "description": {
-          "type": "text"
+          "type": "text",
+          "required": true
         },
         "image": {
           "type": "image",
           "display_name": "image",
           "asset_folder_id": 266057,
           "tooltip": false,
-          "add_https": true
+          "add_https": true,
+          "required": false
         },
         "cta_slot": {
           "type": "bloks",
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["button-link"]
+          "component_whitelist": ["button-link", "link"],
+          "required": true
+        },
+        "link": {
+          "type": "multilink",
+          "force_link_scope": true
         }
       },
       "image": null,
@@ -6184,14 +6194,21 @@
       "name": "toolkit-links-banner",
       "display_name": "Toolkit Links Banner",
       "created_at": "2024-02-16T16:43:10.973Z",
-      "updated_at": "2024-02-16T17:08:28.603Z",
+      "updated_at": "2024-02-28T18:24:55.376Z",
       "id": 5354793,
       "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
         "links": {
           "type": "bloks",
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["toolkit-link-block"]
+          "component_whitelist": ["toolkit-link-block"],
+          "pos": 1,
+          "required": true
         }
       },
       "image": null,

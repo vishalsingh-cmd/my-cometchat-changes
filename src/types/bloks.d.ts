@@ -400,7 +400,7 @@ export interface ExperimentalTableStoryblok {
 
 export interface FaqStoryblok {
   title: string;
-  text: string;
+  text: RichtextStoryblok;
   _uid: string;
   component: 'faq';
   [k: string]: any;
@@ -1310,8 +1310,9 @@ export interface SidebarSlotStoryblok {
 export interface SideStaticBannerStoryblok {
   title: string;
   description: string;
-  image: string;
-  cta_slot: LinkStoryblok[];
+  image?: string;
+  cta_slot: (ButtonLinkStoryblok | LinkStoryblok)[];
+  link?: MultilinkStoryblok;
   _uid: string;
   component: 'side-static-banner';
   [k: string]: any;
@@ -1652,7 +1653,8 @@ export interface ToolkitLinkBlockStoryblok {
 }
 
 export interface ToolkitLinksBannerStoryblok {
-  links?: ToolkitLinkBlockStoryblok[];
+  title: string;
+  links: ToolkitLinkBlockStoryblok[];
   _uid: string;
   component: 'toolkit-links-banner';
   [k: string]: any;

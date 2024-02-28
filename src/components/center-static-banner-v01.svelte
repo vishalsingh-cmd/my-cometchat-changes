@@ -15,7 +15,7 @@
     )}
   >
     <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
-    <p class="text-md font-normal">{block.description}</p>
+    <p class="max-w-xs text-md font-normal">{block.description}</p>
     {#if block.cta_slot}
       <div class="flex gap-3">
         {#each block.cta_slot as button}
@@ -23,6 +23,9 @@
         {/each}
       </div>
     {/if}
-    <img src={block.image} alt="Comet Chat" class="absolute -right-24 top-24 w-96" />
+
+    {#if block.image}
+      <img src={block.image} alt="Comet Chat" class="absolute -right-24 top-24 w-96" />
+    {/if}
   </div>
 {/if}

@@ -17,7 +17,7 @@
               {#each block?.table.thead as item, i}
                 <th
                   scope="col"
-                  class="text-gray-900 px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
+                  class="text-gray-900 min-w-[160px] px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
                   >{item.value}</th
                 >
               {/each}
@@ -28,18 +28,24 @@
               <tr class="divide-x divide-gray-6">
                 {#each row.body as col, i}
                   <td
-                    class="text-gray-900 whitespace-nowrap px-12 py-4 text-sm font-medium sm:px-6"
+                    class="text-gray-900 min-w-[160px] whitespace-nowrap px-12 py-4 text-sm font-medium sm:px-6"
                   >
                     {#if col.value === 'Yes'}
-                      <div class="h-6 w-6">
-                        <Icon icon="check-verified-01" size="sm" class="h-3 w-3 text-brand-10" />
+                      <div class="flex w-full items-center justify-center">
+                        <div class="h-6 w-6">
+                          <Icon icon="check-verified-01" size="sm" class="h-3 w-3 text-brand-10" />
+                        </div>
                       </div>
                     {:else if col.value === 'No'}
-                      <div class="h-6 w-6">
-                        <Icon icon="x-circle" size="sm" class="h-5 w-5 text-brand-12" />
+                      <div class="flex w-full items-center justify-center">
+                        <div class="h-6 w-6">
+                          <Icon icon="x-circle" size="sm" class="h-5 w-5 text-brand-12" />
+                        </div>
                       </div>
                     {:else}
-                      {col.value}
+                      <div class="flex w-full items-start justify-start">
+                        {col.value}
+                      </div>
                     {/if}
                   </td>
                 {/each}

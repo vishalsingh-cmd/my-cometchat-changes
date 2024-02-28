@@ -19,7 +19,7 @@
   )}
 >
   <button on:click class="flex w-full cursor-pointer flex-col text-start font-medium"
-    >{truncateString(activeHeading, 24)}
+    >{truncateString(activeHeading, 26)}
   </button>
 
   <Icon icon="chevron-up" class={cn(menuOpen ? 'transform' : 'rotate-180 transform ease-in-out')} />

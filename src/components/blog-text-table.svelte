@@ -17,7 +17,7 @@
                 {#each block?.table.thead as item}
                   <th
                     scope="col"
-                    class="text-gray-900 max-w-full whitespace-normal px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
+                    class="text-gray-900 min-w-[200px] max-w-full whitespace-normal px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
                     >{item.value}</th
                   >
                 {/each}
@@ -28,7 +28,7 @@
                 <tr class="divide-x divide-gray-6">
                   {#each row.body as col}
                     <td
-                      class="text-gray-900 max-w-full whitespace-normal px-12 py-4 text-sm font-medium sm:px-6"
+                      class="text-gray-900 min-w-[200px] max-w-full items-start justify-start whitespace-normal px-12 py-4 text-sm font-medium sm:px-6"
                       >{col.value}</td
                     >
                   {/each}
