@@ -21,20 +21,11 @@
         {#each block.blogs as item, i}
           {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
 
-          <!-- <Link
-            {href}
-            {target}
-            {rel}
-            class="w-full text-lg-richtext font-medium text-brand-10 hover:underline"
-          >
-            {item.name}
-          </Link> -->
-
           <a
             {href}
             {target}
             {rel}
-            class="w-full text-lg-richtext font-medium text-brand-10 hover:underline"
+            class="w-full text-lg-richtext font-medium text-brand-12 hover:text-brand-9 hover:underline"
           >
             {item.name}
           </a>
