@@ -2,6 +2,8 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { RelatedBlogsLinkBlockStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import Link from './buttons/link.svelte';
 
   export let block: RelatedBlogsLinkBlockStoryblok;
 </script>
@@ -18,11 +20,11 @@
     {#if block}
       <div class="flex flex-col">
         {#each block.blogs as item, i}
-          <a
-            href={item.link}
-            class="mt-3 flex w-full items-start justify-start gap-3 font-medium text-black hover:text-brand-10 hover:underline"
-            >{item.name}</a
-          >
+          {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
+
+          <Link {href} {target} {rel} class="w-full font-medium text-brand-10 hover:underline">
+            {item.name}
+          </Link>
         {/each}
       </div>
     {/if}
