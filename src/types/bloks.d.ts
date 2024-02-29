@@ -245,19 +245,19 @@ export interface ButtonLinkStoryblok {
 }
 
 export interface CenterStaticBannerV01Storyblok {
-  title?: string;
-  description?: string;
+  title: string;
+  cta_slot: any[];
+  description: string;
   image?: string;
-  link?: MultilinkStoryblok;
-  cta_slot?: any[];
+  link: MultilinkStoryblok;
   _uid: string;
   component: 'center-static-banner-v01';
   [k: string]: any;
 }
 
 export interface CenterStaticBannerV02Storyblok {
-  title?: string;
-  cta_slot?: ButtonLinkStoryblok[];
+  title: string;
+  cta_slot: ButtonLinkStoryblok[];
   _uid: string;
   component: 'center-static-banner-v02';
   [k: string]: any;

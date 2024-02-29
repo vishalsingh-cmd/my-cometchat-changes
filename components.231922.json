@@ -670,28 +670,33 @@
       "name": "center-static-banner-v01",
       "display_name": "Center Static banner V01",
       "created_at": "2024-02-15T14:19:40.974Z",
-      "updated_at": "2024-02-20T18:43:10.132Z",
+      "updated_at": "2024-02-29T02:58:48.648Z",
       "id": 5347410,
       "schema": {
         "title": {
           "type": "text",
-          "pos": 0
+          "pos": 0,
+          "required": true
+        },
+        "cta_slot": {
+          "type": "bloks",
+          "required": true
         },
         "description": {
           "type": "text",
-          "pos": 1
+          "pos": 1,
+          "required": true
         },
         "image": {
           "type": "image",
-          "pos": 2
+          "pos": 2,
+          "required": false
         },
         "link": {
           "type": "multilink",
           "display_name": "link",
-          "pos": 3
-        },
-        "cta_slot": {
-          "type": "bloks"
+          "pos": 3,
+          "required": true
         }
       },
       "image": null,
@@ -711,19 +716,21 @@
       "name": "center-static-banner-v02",
       "display_name": "Center Static Banner V02",
       "created_at": "2024-02-16T15:51:21.496Z",
-      "updated_at": "2024-02-20T18:58:41.424Z",
+      "updated_at": "2024-02-29T10:44:33.707Z",
       "id": 5354572,
       "schema": {
         "title": {
           "type": "text",
-          "pos": 0
+          "pos": 0,
+          "required": true
         },
         "cta_slot": {
           "type": "bloks",
           "pos": 2,
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["button-link"]
+          "component_whitelist": ["button-link"],
+          "required": true
         }
       },
       "image": null,

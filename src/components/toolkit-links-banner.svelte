@@ -2,6 +2,8 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { ToolkitLinksBannerStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import Link from './buttons/link.svelte';
 
   export let block: ToolkitLinksBannerStoryblok;
 </script>
@@ -16,6 +18,8 @@
     {#if block.links}
       <div class="mt-3 items-start justify-start sm:columns-1 md:columns-2">
         {#each block.links as item, i}
+          {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
+
           <div class="flex flex-row items-center justify-center gap-3">
             <svg
               width="16"
@@ -40,9 +44,9 @@
               </g>
             </svg>
 
-            <a href={item.link?.cached_url} class="w-full font-medium text-brand-10 hover:underline"
-              >{item.name}</a
-            >
+            <Link {href} {target} {rel} class="w-full font-medium text-brand-10 hover:underline">
+              {item.name}
+            </Link>
           </div>
         {/each}
       </div>
