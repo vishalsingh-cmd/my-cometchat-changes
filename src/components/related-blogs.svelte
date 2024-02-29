@@ -15,7 +15,7 @@
       'wrap sticky top-[400px]  hidden h-fit w-full max-w-[272px] flex-col gap-3 space-y-3 overflow-clip  rounded-3xl p-6 text-black md:block'
     )}
   >
-    <h3 class="w-full text-start text-xl font-semibold leading-tight">Related Blogs</h3>
+    <h3 class="w-full text-start text-xl font-semibold leading-tight">{block.heading}</h3>
 
     {#if block}
       <div class="flex flex-col">

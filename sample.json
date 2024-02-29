@@ -2,7 +2,7 @@
   "story": {
     "name": "Top 17 API’s to build healthcare applications",
     "created_at": "2024-01-22T09:26:03.510Z",
-    "published_at": "2024-02-28T18:36:54.683Z",
+    "published_at": "2024-02-29T12:31:06.205Z",
     "id": 430303855,
     "uuid": "190cbad3-982d-4968-959a-b2982de6dbd0",
     "content": {
@@ -55,6 +55,74 @@
             ]
           },
           { "type": "paragraph" },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "85f0f46a-4d85-4cbd-8ac5-9ba903a38eb2",
+              "body": [
+                {
+                  "_uid": "i-10f4534a-9af7-4a65-aa3e-9f7dd92ef516",
+                  "link": {
+                    "id": "",
+                    "url": "/blogs",
+                    "linktype": "url",
+                    "fieldtype": "multilink",
+                    "cached_url": "/blogs"
+                  },
+                  "image": "//a.storyblok.com/f/231922/150x150/5f9a0beadf/comet-solo.png",
+                  "title": "Top 17 API’s to build healthcare applications",
+                  "cta_slot": [
+                    {
+                      "_uid": "e80feb83-cafa-4acf-affe-4a391780a09b",
+                      "icon": "",
+                      "link": {
+                        "id": "a80e1097-483c-410a-b8c1-29395937886a",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/pricing-beta"
+                      },
+                      "label": "Visit link",
+                      "variant": "primary",
+                      "component": "button-link"
+                    }
+                  ],
+                  "component": "center-static-banner-v01",
+                  "description": "Explore our carefully curated list of the top 17 Healthcare APIs. Leverage these tools to provide enhanced patient care and improve healthcare operations."
+                }
+              ]
+            }
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "6b3a6098-9b67-4346-98da-edb560840e58",
+              "body": [
+                {
+                  "_uid": "i-56e4d625-ec53-442c-a148-cbb4ae528127",
+                  "title": "APIs have completely transformed the landscape of application development",
+                  "cta_slot": [
+                    {
+                      "_uid": "a48370db-cd8c-435f-a583-0a451b4742cc",
+                      "icon": "",
+                      "link": {
+                        "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/contact-sales"
+                      },
+                      "label": "Register now",
+                      "variant": "primary",
+                      "component": "button-link"
+                    }
+                  ],
+                  "component": "center-static-banner-v02"
+                }
+              ]
+            }
+          },
           {
             "type": "blok",
             "attrs": {
@@ -245,7 +313,7 @@
                       "cells": [
                         {
                           "_uid": "9974bd31-c169-4125-b918-60bd7ca3c010",
-                          "image": "//a.storyblok.com/f/231922/744x144/995523fc6f/image.png",
+                          "image": "//a.storyblok.com/f/231922/1000x475/9b5cf357ae/edtech.webp",
                           "component": "blog-table-cell-image"
                         },
                         {
@@ -2026,11 +2094,11 @@
               "_uid": "4277686a-be7d-4c99-af2f-8206c7e942a1",
               "icon": "",
               "link": {
-                "id": "",
-                "url": "/blog",
-                "linktype": "url",
+                "id": "67b3bf1a-453c-48d9-85da-a1f9bdc8c437",
+                "url": "",
+                "linktype": "story",
                 "fieldtype": "multilink",
-                "cached_url": "/blog"
+                "cached_url": "pages/customer-stories/"
               },
               "label": "Visit now",
               "component": "link"
@@ -2055,6 +2123,7 @@
               "component": "related-blogs-link-block"
             }
           ],
+          "heading": "Related blogs heading",
           "component": "related-blogs"
         }
       ],
@@ -2077,7 +2146,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1709145414,
+  "cv": 1709209866,
   "rels": [],
   "links": []
 }

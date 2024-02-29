@@ -1236,6 +1236,7 @@ export interface ProductDisplayItemStoryblok {
 }
 
 export interface RelatedBlogsStoryblok {
+  heading?: string;
   blogs?: RelatedBlogsLinkBlockStoryblok[];
   _uid: string;
   component: 'related-blogs';
