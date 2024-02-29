@@ -3,6 +3,7 @@
   import type { CenterStaticBannerV01Storyblok } from '$types/bloks';
   import { cn } from '$lib/utils';
   import Button from './buttons/button.svelte';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
 
   export let block: CenterStaticBannerV01Storyblok;
 </script>
@@ -19,7 +20,10 @@
     {#if block.cta_slot}
       <div class="flex gap-3">
         {#each block.cta_slot as button}
-          <Button as="a" block={button.link} class="w-fit">{button.label}</Button>
+          {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
+          <Button variant={'primary'} as="a" {href} {target} {rel}>
+            {button.label}
+          </Button>
         {/each}
       </div>
     {/if}
