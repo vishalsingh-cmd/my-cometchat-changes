@@ -3,7 +3,6 @@
   import type { RelatedBlogsLinkBlockStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
-  import Link from './buttons/link.svelte';
 
   export let block: RelatedBlogsLinkBlockStoryblok;
 </script>
@@ -22,14 +21,23 @@
         {#each block.blogs as item, i}
           {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
 
-          <Link
+          <!-- <Link
             {href}
             {target}
             {rel}
             class="w-full text-lg-richtext font-medium text-brand-10 hover:underline"
           >
             {item.name}
-          </Link>
+          </Link> -->
+
+          <a
+            {href}
+            {target}
+            {rel}
+            class="w-full text-lg-richtext font-medium text-brand-10 hover:underline"
+          >
+            {item.name}
+          </a>
         {/each}
       </div>
     {/if}
