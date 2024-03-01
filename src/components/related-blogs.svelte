@@ -25,7 +25,7 @@
             {href}
             {target}
             {rel}
-            class="w-full text-lg-richtext font-medium text-brand-12 hover:text-brand-9 hover:underline"
+            class="mb-4 w-full text-lg-richtext font-medium text-brand-12 hover:text-brand-9 hover:underline"
           >
             {item.name}
           </a>

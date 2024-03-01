@@ -3,7 +3,6 @@
   import type { ToolkitLinksBannerStoryblok } from '$types/bloks';
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
-  import Link from './buttons/link.svelte';
 
   export let block: ToolkitLinksBannerStoryblok;
 </script>
@@ -16,11 +15,11 @@
     <h3 class="w-full text-start text-xl font-semibold leading-tight">{block.title}</h3>
 
     {#if block.links}
-      <div class="mt-3 items-start justify-start sm:columns-1 md:columns-2">
+      <div class="mt-3 items-start justify-start gap-3 sm:columns-1 md:columns-2">
         {#each block.links as item, i}
           {@const { href, target, rel } = getAnchorFromCmsLink(item.link)}
 
-          <div class="flex flex-row items-center justify-center gap-3">
+          <div class="mb-4 flex flex-row items-center justify-center gap-3">
             <svg
               width="16"
               height="16"
@@ -44,9 +43,9 @@
               </g>
             </svg>
 
-            <Link {href} {target} {rel} class="w-full font-medium text-brand-10 hover:underline">
+            <a {href} {target} {rel} class="w-full font-medium text-brand-10 hover:underline">
               {item.name}
-            </Link>
+            </a>
           </div>
         {/each}
       </div>
