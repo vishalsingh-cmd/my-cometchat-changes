@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PricingHeroEnhancements from './pricing-hero-enhancements.svelte';
   import type { SbBlokData } from '@storyblok/js';
   import type { ComponentType } from 'svelte';
 
@@ -104,6 +105,7 @@
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
+    'pricing-hero=enhancements': PricingHeroEnhancements,
     'pricing-table': PricingTable,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,

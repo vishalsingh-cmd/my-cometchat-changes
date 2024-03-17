@@ -246,10 +246,9 @@ export interface ButtonLinkStoryblok {
 
 export interface CenterStaticBannerV01Storyblok {
   title: string;
-  cta_slot: any[];
   description: string;
   image?: string;
-  link: MultilinkStoryblok;
+  cta_slot: any[];
   _uid: string;
   component: 'center-static-banner-v01';
   [k: string]: any;
@@ -740,6 +739,7 @@ export interface IndustryStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
@@ -956,6 +956,7 @@ export interface PageStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
@@ -1081,6 +1082,7 @@ export interface PricingStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
@@ -1157,6 +1159,20 @@ export interface PricingHeroStoryblok {
   [k: string]: any;
 }
 
+export interface PricingHeroEnhancementsStoryblok {
+  title: string;
+  description: string;
+  info_items?: PricingHeroInfoItemStoryblok[];
+  monthly_discount?: number;
+  yearly_discount?: number;
+  monthly_price_label?: string;
+  yearly_price_label?: string;
+  pricing_plans: (StoryblokStory<PricingPlanEnhancementStoryblok> | string)[];
+  _uid: string;
+  component: 'pricing-hero-enhancements';
+  [k: string]: any;
+}
+
 export interface PricingHeroInfoItemStoryblok {
   icon?: number | string;
   name: string;
@@ -1182,6 +1198,25 @@ export interface PricingPlanStoryblok {
   year_fifty_k_plus_price: string;
   _uid: string;
   component: 'pricing-plan';
+  [k: string]: any;
+}
+
+export interface PricingPlanEnhancementStoryblok {
+  name: string;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  month_one_k_price: string;
+  month_ten_k_price: string;
+  month_twentyfive_k_price: string;
+  month_fifty_k_price: string;
+  month_fifty_k_plus_price: string;
+  year_one_k_price: string;
+  year_ten_k_price: string;
+  year_twentyfive_k_price: string;
+  year_fifty_k_price: string;
+  year_fifty_k_plus_price: string;
+  _uid: string;
+  component: 'pricing-plan-enhancement';
   [k: string]: any;
 }
 
@@ -1420,6 +1455,7 @@ export interface SyncedBlockContentStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
@@ -1518,6 +1554,7 @@ export interface TechnologyStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
