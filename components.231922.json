@@ -4317,7 +4317,7 @@
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
-      "updated_at": "2023-12-28T15:21:00.690Z",
+      "updated_at": "2024-03-18T03:01:09.100Z",
       "id": 4725866,
       "schema": {
         "title": {
@@ -4393,7 +4393,7 @@
       "name": "pricing-hero-enhancements",
       "display_name": "Pricing Hero Enhancements",
       "created_at": "2024-03-17T21:08:13.974Z",
-      "updated_at": "2024-03-17T21:31:04.886Z",
+      "updated_at": "2024-03-18T04:47:25.704Z",
       "id": 5509903,
       "schema": {
         "title": {
@@ -4401,6 +4401,12 @@
           "key": "title",
           "pos": 0,
           "required": true
+        },
+        "plans": {
+          "type": "options",
+          "required": true,
+          "source": "internal_stories",
+          "filter_content_type": ["pricing-plan"]
         },
         "description": {
           "type": "text",
@@ -4417,38 +4423,20 @@
           "restrict_components": true,
           "component_whitelist": ["pricing-hero-info-item"]
         },
-        "monthly_discount": {
-          "type": "number",
-          "pos": 3,
-          "required": false,
-          "display_name": "Monthly Discount in % ",
-          "key": "monthly_discount"
-        },
-        "yearly_discount": {
-          "type": "number",
-          "display_name": "Yearly Discount in % ",
-          "default_value": "10",
-          "required": false,
-          "key": "yearly_discount",
-          "pos": 4
-        },
-        "monthly_price_label": {
-          "type": "text",
-          "key": "month_price_label",
-          "pos": 5
-        },
-        "yearly_price_label": {
-          "type": "text",
-          "key": "yearly_price_label",
-          "pos": 6
-        },
         "pricing_plans": {
           "type": "options",
           "source": "internal_stories",
-          "filter_content_type": ["pricing-plan-enhancement"],
+          "filter_content_type": [
+            "pricing-plan-enhancement",
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-grow",
+            "pricing-plan-enhancement-scale"
+          ],
           "required": true,
           "key": "pricing_plans",
-          "pos": 7
+          "pos": 7,
+          "entry_appearance": "link",
+          "tooltip": false
         }
       },
       "image": null,
@@ -4669,10 +4657,10 @@
       "component_group_name": "Database"
     },
     {
-      "name": "pricing-plan-enhancement",
+      "name": "pricing-plan-enhancement-free",
       "display_name": null,
       "created_at": "2024-03-17T21:10:35.395Z",
-      "updated_at": "2024-03-17T21:10:51.234Z",
+      "updated_at": "2024-03-17T22:16:53.262Z",
       "id": 5509904,
       "schema": {
         "name": {
@@ -4680,6 +4668,10 @@
           "required": true,
           "pos": 0,
           "key": "name"
+        },
+        "price": {
+          "type": "text",
+          "pos": 1
         },
         "highlights": {
           "type": "bloks",
@@ -4702,121 +4694,6 @@
           "component_whitelist": ["button-link"],
           "key": "cta",
           "pos": 3
-        },
-        "month_one_k_price": {
-          "type": "text",
-          "pos": 4,
-          "required": true,
-          "display_name": "Up to 1k Maus Price",
-          "key": "month_one_k_price",
-          "default_value": "0"
-        },
-        "month_ten_k_price": {
-          "type": "text",
-          "pos": 5,
-          "required": true,
-          "display_name": "Up to 10k Price",
-          "key": "month_ten_k_price",
-          "default_value": "0"
-        },
-        "month_twentyfive_k_price": {
-          "type": "text",
-          "pos": 6,
-          "required": true,
-          "display_name": "Up to 25k Price",
-          "key": "month_twentyfive_k_price",
-          "default_value": "0"
-        },
-        "month_fifty_k_price": {
-          "type": "text",
-          "pos": 7,
-          "required": true,
-          "display_name": "Up to 50k Price",
-          "key": "month_fifty_k_price",
-          "default_value": "0"
-        },
-        "month_fifty_k_plus_price": {
-          "type": "text",
-          "pos": 8,
-          "required": true,
-          "display_name": "50k + Pricing",
-          "key": "month_fifty_k_plus_price",
-          "default_value": "0"
-        },
-        "tab-2e4f9533-152a-402d-8e21-27b0c849197a": {
-          "display_name": "Month Tiers Prices",
-          "keys": [
-            "one_k_price",
-            "ten_k_price",
-            "twentyfive_k_price",
-            "fifty_k_price",
-            "fifty_k_plus_price",
-            "discount",
-            "month_one_k_price",
-            "month_ten_k_price",
-            "month_twentyfive_k_price",
-            "month_fifty_k_price",
-            "month_fifty_k_plus_price"
-          ],
-          "pos": 9,
-          "type": "tab",
-          "name": "tab-2e4f9533-152a-402d-8e21-27b0c849197a",
-          "key": "tab-2e4f9533-152a-402d-8e21-27b0c849197a"
-        },
-        "tab-c19fddc1-304d-4778-98ed-beca18aab415": {
-          "display_name": "Year Tiers Prices",
-          "keys": [
-            "year_one_k_price",
-            "year_ten_k_price",
-            "year_twentyfive_k_price",
-            "year_fifty_k_price",
-            "year_fifty_k_plus_price"
-          ],
-          "pos": 10,
-          "type": "tab",
-          "name": "tab-c19fddc1-304d-4778-98ed-beca18aab415",
-          "key": "tab-c19fddc1-304d-4778-98ed-beca18aab415"
-        },
-        "year_one_k_price": {
-          "type": "text",
-          "required": true,
-          "display_name": "Year 1K Price",
-          "pos": 11,
-          "default_value": "0",
-          "key": "year_one_k_price"
-        },
-        "year_ten_k_price": {
-          "type": "text",
-          "required": true,
-          "display_name": "Year 10K Price",
-          "pos": 12,
-          "default_value": "0",
-          "key": "year_ten_k_price"
-        },
-        "year_twentyfive_k_price": {
-          "type": "text",
-          "required": true,
-          "display_name": "Year 25K Price",
-          "pos": 13,
-          "default_value": "0",
-          "key": "year_twentyfive_k_price"
-        },
-        "year_fifty_k_price": {
-          "type": "text",
-          "display_name": "Year 50K Price",
-          "pos": 14,
-          "required": true,
-          "description": "",
-          "default_value": "0",
-          "key": "year_fifty_k_price"
-        },
-        "year_fifty_k_plus_price": {
-          "type": "text",
-          "required": true,
-          "display_name": "Year 50+ Price",
-          "pos": 15,
-          "default_value": "0",
-          "key": "year_fifty_k_plus_price"
         }
       },
       "image": null,
@@ -4826,7 +4703,122 @@
       "is_nestable": false,
       "all_presets": [],
       "preset_id": null,
-      "real_name": "pricing-plan-enhancement",
+      "real_name": "pricing-plan-enhancement-free",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-grow",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:25.428Z",
+      "updated_at": "2024-03-17T22:17:16.166Z",
+      "id": 5509913,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "price": {
+          "type": "text",
+          "pos": 1
+        },
+        "mau": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"]
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-grow",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-scale",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:44.594Z",
+      "updated_at": "2024-03-17T22:19:07.929Z",
+      "id": 5509914,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "price": {
+          "type": "text",
+          "pos": 1
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 2
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 3
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-scale",
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,

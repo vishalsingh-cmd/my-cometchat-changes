@@ -1161,13 +1161,16 @@ export interface PricingHeroStoryblok {
 
 export interface PricingHeroEnhancementsStoryblok {
   title: string;
+  plans: (StoryblokStory<PricingPlanStoryblok> | string)[];
   description: string;
   info_items?: PricingHeroInfoItemStoryblok[];
-  monthly_discount?: number;
-  yearly_discount?: number;
-  monthly_price_label?: string;
-  yearly_price_label?: string;
-  pricing_plans: (StoryblokStory<PricingPlanEnhancementStoryblok> | string)[];
+  pricing_plans: (
+    | StoryblokStory<PricingPlanEnhancementStoryblok>
+    | StoryblokStory<PricingPlanEnhancementFreeStoryblok>
+    | StoryblokStory<PricingPlanEnhancementGrowStoryblok>
+    | StoryblokStory<PricingPlanEnhancementScaleStoryblok>
+    | string
+  )[];
   _uid: string;
   component: 'pricing-hero-enhancements';
   [k: string]: any;
@@ -1201,22 +1204,34 @@ export interface PricingPlanStoryblok {
   [k: string]: any;
 }
 
-export interface PricingPlanEnhancementStoryblok {
+export interface PricingPlanEnhancementFreeStoryblok {
   name: string;
+  price?: string;
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
-  month_one_k_price: string;
-  month_ten_k_price: string;
-  month_twentyfive_k_price: string;
-  month_fifty_k_price: string;
-  month_fifty_k_plus_price: string;
-  year_one_k_price: string;
-  year_ten_k_price: string;
-  year_twentyfive_k_price: string;
-  year_fifty_k_price: string;
-  year_fifty_k_plus_price: string;
   _uid: string;
-  component: 'pricing-plan-enhancement';
+  component: 'pricing-plan-enhancement-free';
+  [k: string]: any;
+}
+
+export interface PricingPlanEnhancementGrowStoryblok {
+  name: string;
+  price?: string;
+  mau?: TextStoryblok[];
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan-enhancement-grow';
+  [k: string]: any;
+}
+
+export interface PricingPlanEnhancementScaleStoryblok {
+  name: string;
+  price?: string;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan-enhancement-scale';
   [k: string]: any;
 }
 

@@ -105,7 +105,7 @@
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
-    'pricing-hero=enhancements': PricingHeroEnhancements,
+    'pricing-hero-enhancements': PricingHeroEnhancements,
     'pricing-table': PricingTable,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
