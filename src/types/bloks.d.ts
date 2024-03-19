@@ -1323,6 +1323,7 @@ export interface PricingTableGroupLineStoryblok {
 
 export interface PricingTableGroupLineEnhancedStoryblok {
   name: string;
+  tooltip?: string;
   grow?: '' | 'none' | 'included' | 'paid-add-on';
   scale?: '' | 'none' | 'included' | 'paid-add-on';
   _uid: string;

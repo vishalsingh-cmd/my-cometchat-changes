@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-03-19T08:32:39.333Z",
+    "published_at": "2024-03-19T14:07:19.485Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -10,7 +10,169 @@
       "body": [
         {
           "_uid": "16b239a6-5306-4c21-b1fc-8ace9d1e9674",
-          "plans": [
+          "title": "CometChat pricing",
+          "component": "pricing-hero-enhancements",
+          "info_items": [
+            {
+              "_uid": "7c0d1873-f244-4b66-b591-81dc9d23265f",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "27a8bd7f-d891-48e7-bfde-b26c079ffa6e",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "683bf32a-7420-40b1-a088-88808805379a",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "6ae3dc92-aae4-41c4-b9f8-4663350f0841",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            }
+          ],
+          "description": "Streamlined, efficient packages designed for companies of all sizes.",
+          "pricing_plans": [
+            "48aa2e59-e493-41de-b255-eaab84450223",
+            "0c005036-e03d-4d36-a339-eb870544a911",
+            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
+          ],
+          "voice_and_video_plans": [
+            {
+              "cta": [
+                {
+                  "_uid": "2e3612ed-4b97-4b0e-92e7-7fe9650b36b3",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Try for free",
+                  "variant": "secondary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "e7a9f84c-ee9b-4801-97ab-38806e3df967",
+              "name": "Developer",
+              "price": "Free",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "f934a2f3-ea54-4003-9428-8d10e1b2b859",
+                  "value": "Try all Pro Plan features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8602f004-eee6-483e-9e40-5d6c20d2c78d",
+                  "value": "Free up to 25 users",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "b011e7c4-e52c-4444-8594-426f6c6058a2",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Schedule a demo",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "df7e2458-e7d6-4d2d-93f1-1b85e1a8dcbd",
+              "name": "Pay-as-you-go",
+              "component": "pricing-plan-enhancement-pay-as-you-go",
+              "highlights": [
+                {
+                  "_uid": "83547051-cff1-494a-b31f-bddb841e3a95",
+                  "value": "$0.001",
+                  "component": "text"
+                },
+                {
+                  "_uid": "0b21e076-99d1-493b-b1b9-e4eb20f201e2",
+                  "value": "$0.001",
+                  "component": "text"
+                },
+                {
+                  "_uid": "f5900060-25e5-4d9d-b1ab-bf4a03b16272",
+                  "value": "$0.001",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "3c5bcd7b-85fa-485e-9d99-ff1984f19bfd",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Schedule a demo",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "65e4ab50-e4ad-48c7-931e-e4d9eab73cf1",
+              "name": "Contact Us",
+              "price": "Contact Us",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "30a9fe2a-82cb-4d35-8d55-4a8105ef2cf9",
+                  "value": "Multi-Tenancy",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
+                  "component": "text"
+                },
+                {
+                  "_uid": "e5d2d253-7384-4383-9b5f-e8b2dcec76cf",
+                  "value": "Shared or dedicated cloud deployment",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
+                  "component": "text"
+                },
+                {
+                  "_uid": "5a7ab168-33d1-4fc6-a24f-3528020f8eb7",
+                  "value": "Conversational AI, Insights AI and Moderation AI",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user",
+                  "component": "text"
+                },
+                {
+                  "_uid": "e00620a4-1a5e-4d09-83eb-03bedfb3b5bc",
+                  "value": "Vertical based pricing",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            }
+          ],
+          "chat_and_messaging_plans": [
             {
               "cta": [
                 {
@@ -43,7 +205,8 @@
                   "value": "Free up to 25 users",
                   "component": "text"
                 }
-              ]
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
             },
             {
               "cta": [
@@ -57,7 +220,7 @@
                     "fieldtype": "multilink",
                     "cached_url": "pages/pricing"
                   },
-                  "label": "Get started now",
+                  "label": "Schedule a demo",
                   "variant": "primary",
                   "component": "button-link"
                 }
@@ -65,6 +228,11 @@
               "mau": [
                 {
                   "_uid": "55c84785-855f-45e7-aeaf-c1ca7344c330",
+                  "value": "0",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8e2b4026-2632-4f85-a717-9a5b352f3e0b",
                   "value": "500",
                   "component": "text"
                 },
@@ -114,7 +282,8 @@
                   "value": "Robust, global infrastructure",
                   "component": "text"
                 }
-              ]
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
             },
             {
               "cta": [
@@ -158,46 +327,9 @@
                   "value": "Vertical based pricing",
                   "component": "text"
                 }
-              ]
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
             }
-          ],
-          "title": "CometChat pricing",
-          "component": "pricing-hero-enhancements",
-          "info_items": [
-            {
-              "_uid": "7c0d1873-f244-4b66-b591-81dc9d23265f",
-              "icon": "shield-zap",
-              "name": "ISO",
-              "component": "pricing-hero-info-item",
-              "description": "27001"
-            },
-            {
-              "_uid": "27a8bd7f-d891-48e7-bfde-b26c079ffa6e",
-              "icon": "shield-zap",
-              "name": "ISO",
-              "component": "pricing-hero-info-item",
-              "description": "27001"
-            },
-            {
-              "_uid": "683bf32a-7420-40b1-a088-88808805379a",
-              "icon": "shield-zap",
-              "name": "ISO",
-              "component": "pricing-hero-info-item",
-              "description": "27001"
-            },
-            {
-              "_uid": "6ae3dc92-aae4-41c4-b9f8-4663350f0841",
-              "icon": "shield-zap",
-              "name": "ISO",
-              "component": "pricing-hero-info-item",
-              "description": "27001"
-            }
-          ],
-          "description": "Streamlined, efficient packages designed for companies of all sizes.",
-          "pricing_plans": [
-            "48aa2e59-e493-41de-b255-eaab84450223",
-            "0c005036-e03d-4d36-a339-eb870544a911",
-            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
           ]
         },
         {
@@ -237,6 +369,55 @@
                     }
                   ],
                   "title": "Core messaging experience",
+                  "component": "pricing-table-subgroup-enhanced"
+                }
+              ],
+              "component": "pricing-table-group-enhanced"
+            },
+            {
+              "_uid": "d8bb02f2-198b-4b29-9ab8-c734815099d1",
+              "title": "Voice \u0026 Video Calling/Conferencing\t",
+              "subgroup": [
+                {
+                  "_uid": "264eb16d-bd50-48c4-8918-00d10a18e86d",
+                  "lines": [
+                    {
+                      "_uid": "701e0812-b705-4529-9d9b-319569653676",
+                      "grow": "paid-add-on",
+                      "name": "One-on-one private chat",
+                      "scale": "included",
+                      "component": "pricing-table-group-line-enhanced"
+                    }
+                  ],
+                  "title": "Core messaging experience",
+                  "component": "pricing-table-subgroup-enhanced"
+                },
+                {
+                  "_uid": "14caa92a-c6ff-4b9d-bd23-2d587418a3a4",
+                  "lines": [
+                    {
+                      "_uid": "11a91c46-e4a8-4707-842b-adcb0ccd1d0b",
+                      "grow": "paid-add-on",
+                      "name": "One-on-one private chat",
+                      "scale": "included",
+                      "component": "pricing-table-group-line-enhanced"
+                    }
+                  ],
+                  "title": "Deeper user engagement",
+                  "component": "pricing-table-subgroup-enhanced"
+                },
+                {
+                  "_uid": "4f281a86-0317-4d98-a0bf-4990055ae46d",
+                  "lines": [
+                    {
+                      "_uid": "2b0f0b2a-b1a3-4f89-ab09-9e606264f576",
+                      "grow": "paid-add-on",
+                      "name": "One-on-one private chat",
+                      "scale": "included",
+                      "component": "pricing-table-group-line-enhanced"
+                    }
+                  ],
+                  "title": "Interactive messages",
                   "component": "pricing-table-subgroup-enhanced"
                 }
               ],
@@ -373,7 +554,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1710837159,
+  "cv": 1710857239,
   "rels": [],
   "links": []
 }

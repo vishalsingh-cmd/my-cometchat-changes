@@ -5,6 +5,8 @@
   import type { PricingTableGroupEnhancedStoryblok } from '$types/bloks';
   import { cn, getPricingIcon } from '$lib/utils';
   import AccordionGroup from '$components/accordion-group.svelte';
+  import tippy from 'svelte-tippy';
+  import 'tippy.js/dist/tippy.css'; // optional
 
   let expanded = false;
   export let group: PricingTableGroupEnhancedStoryblok;
@@ -71,26 +73,40 @@
 
                     <div id="line" class="col-span-6 w-full items-center justify-center">
                       {#each lines as item}
+                        {@const { name, tooltip, scale, grow } = item}
                         <div
                           id="line"
-                          use:storyblokEditable={line}
                           class="ml-12 grid grid-cols-6 gap-10 border-b border-gray-12/[.08]"
                         >
-                          <p
-                            class="col-span-2 self-center py-5 text-lg/snug font-medium tracking-wide"
+                          <div
+                            class="col-span-2 flex flex-row gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
                           >
-                            {item.name}
-                          </p>
-                          {#if item.scale}
-                            {@const { icon, color } = getPricingIcon(item.scale)}
+                            <span>
+                              {name}
+                            </span>
+
+                            {#if tooltip}
+                              <div
+                                class="h-6 w-6"
+                                use:tippy={{
+                                  content: `${tooltip}`,
+                                  placement: 'right'
+                                }}
+                              >
+                                <Icon icon="info-circle" size="xs" />
+                              </div>
+                            {/if}
+                          </div>
+                          {#if scale}
+                            {@const { icon, color } = getPricingIcon(scale)}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="flex w-6 flex-col items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             </div>
                           {/if}
-                          {#if item.grow}
-                            {@const { icon, color } = getPricingIcon(item.grow)}
+                          {#if grow}
+                            {@const { icon, color } = getPricingIcon(grow)}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="w-6 items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
