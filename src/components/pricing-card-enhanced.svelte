@@ -6,84 +6,86 @@
     PricingPlanEnhancementGrowStoryblok,
     PricingPlanEnhancementScaleStoryblok
   } from '$types/bloks';
-  export let pricingPlan: string;
-  export let price: string | number;
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import Icon from './icon/icon.svelte';
+  import Button from './buttons/button.svelte';
+  import PricingRangeSlider from './PricingRangeSlider.svelte';
+
+  // get current pricing plan it can be PrcingPlanEnhancementFreeStoryblok or PricingPlanEnhancementGrowStoryblok or PricingPlanEnhancementScaleStoryblok
+  export const getPricingPlanName = (
+    story:
+      | PricingPlanEnhancementFreeStoryblok
+      | PricingPlanEnhancementGrowStoryblok
+      | PricingPlanEnhancementScaleStoryblok
+  ) => {
+    return story.name;
+  };
+
+  export let price: string;
   export let priceLabel: string | null = null;
   export let block:
     | PricingPlanEnhancementFreeStoryblok
     | PricingPlanEnhancementGrowStoryblok
     | PricingPlanEnhancementScaleStoryblok;
+
+  $: currentGrowPrice = '149';
+
+  // let currentPricingPlan = getPricingPlanName(block);
+
+  function updatePricing(event: CustomEvent<string>) {
+    if (event.detail === '500') {
+      currentGrowPrice = '149';
+    } else if (event.detail === '5000') {
+      currentGrowPrice = '349';
+    } else if (event.detail === '10000') {
+      currentGrowPrice = '449';
+    } else if (event.detail === '50000') {
+      currentGrowPrice = 'Contact Us';
+    } else if (event.detail === '100000') {
+      currentGrowPrice = 'Contact Us';
+    }
+  }
 </script>
 
 {#if block}
+  {@const { name, price, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
       'p-5 md:p-6',
       'w-full',
-      'flex flex-col justify-between',
+      'flex w-full flex-col justify-between',
       'rounded-3xl border border-brand-12/2',
       'bg-brand-12/[0.03] backdrop-blur-[30px]'
     )}
   >
-    {#if pricingPlan === 'pricing-plan-enhancement-free'}
-      <h1 class="bg-red-9">free plan</h1>
-      <p>{block.name}</p>
-      <p>{block.price}</p>
-    {:else if pricingPlan === 'pricing-plan-enhancement-grow'}
-      <h1 class="bg-red-9">grow plan</h1>
-    {:else if pricingPlan === 'pricing-plan-enhancement-scale'}
-      <h1 class="bg-red-9">scale plan</h1>
-    {/if}
-  </div>
-{/if}
-
-<!-- 
-{#if block}
-  {@const { name, price_label, highlights, cta } = block}
-  <div
-    use:storyblokEditable={block}
-    class={cn(
-      'p-5 md:p-6',
-      'w-full',
-      !isPricingBeta && 'md:max-w-[304px]',
-      'flex flex-col justify-between',
-      'rounded-3xl border border-brand-12/2',
-      'bg-brand-12/[0.03] backdrop-blur-[30px]'
-    )}
-  >
-    <div class={cn('flex flex-col gap-5 md:gap-16', isPricingBeta && 'gap-8 md:gap-8')}>
-      <div
-        class={cn('flex flex-col gap-1 text-gray-12 md:gap-3', isPricingBeta && 'gap-5 md:gap-8')}
-      >
-        <p class={cn('text-xl/tighter font-semibold opacity-74', isPricingBeta && 'opacity-100')}>
+    <div class={cn('flex flex-col gap-5 md:gap-16')}>
+      <div class={cn('flex flex-col gap-1 text-gray-12 md:gap-3')}>
+        <p class={cn('text-xl/tighter font-semibold opacity-74')}>
           {name}
         </p>
-        <div class={cn('flex flex-col gap-1 md:gap-2')}>
-          {#if isPricingBeta && price_label}
-            <p class="text-lg/tight font-semibold opacity-54">{price_label}</p>
-          {/if}
-          <div class="flex h-full items-end gap-1">
-            <span class={cn('text-2xl/tighter font-semibold', isPricingBeta && 'text-3xl/tighter')}>
-              {#if typeof price === 'number'}
-                {#if Number(price) == 0}
-                  Free
-                {:else}
-                  &#36;{Number(price).toLocaleString()}
-                {/if}
+        <div class={cn('text-2xl/tighter font-semibold')}>
+          {#if price === 'Free'}
+            Free
+          {:else if price === 'Contact Us'}
+            <span class="text-brand-9"> Contact Us </span>
+          {:else}
+            <div class="flex flex-row gap-2">
+              {#if currentGrowPrice !== 'Contact Us'}
+                ${currentGrowPrice}
+                <p class="items-baseline text-lg/tight font-semibold opacity-54">/month</p>
               {:else}
-                {price}
+                <span class="text-brand-9">
+                  {currentGrowPrice}
+                </span>
               {/if}
-            </span>
-            {#if isPricingBeta}
-              <p class="text-lg/tight font-semibold opacity-54">
-                {string('pricing.beta_price_caption')}
-              </p>
-            {:else if typeof price === 'number' && priceLabel && price != 0}
-              <p class="text-lg/tight font-semibold opacity-54">{priceLabel}</p>
-            {/if}
-          </div>
+            </div>
+          {/if}
         </div>
+
+        {#if block.name === 'Grow'}
+          <PricingRangeSlider maus={block.mau} on:value={updatePricing} />
+        {/if}
       </div>
 
       <div class="flex flex-col gap-3">
@@ -109,6 +111,20 @@
         {rel}
         class="mt-5 w-full self-start md:mt-6 md:w-fit">{cta[0].label}</Button
       >
+    {/if}
+  </div>
+{/if}
+
+<!-- {#if block}
+  <div use:storyblokEditable={block}>
+    {#if currentPricingPlan === 'Free'}
+      <h1>Free</h1>
+    {:else if currentPricingPlan === 'Grow'}
+      <h1>Grow</h1>
+    {:else if currentPricingPlan === 'Scale'}
+      <h1>Scale</h1>
+    {:else}
+      <h1>Unknown</h1>
     {/if}
   </div>
 {/if} -->

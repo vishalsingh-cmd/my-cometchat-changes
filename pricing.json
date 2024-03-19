@@ -1,28 +1,58 @@
 {
   "story": {
-    "name": "Pricing enhancements",
-    "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-03-18T03:24:16.141Z",
-    "id": 462339136,
-    "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
+    "name": "Pricing",
+    "created_at": "2023-10-16T09:57:48.354Z",
+    "published_at": "2024-03-18T12:05:42.999Z",
+    "id": 389799831,
+    "uuid": "34ca1d58-2297-45a9-8eb3-43491b007239",
     "content": {
       "_uid": "ae7a1c00-9636-4c85-82a4-9190abf1bccf",
       "body": [
         {
-          "_uid": "16b239a6-5306-4c21-b1fc-8ace9d1e9674",
+          "_uid": "15175964-f5a7-42e7-aa60-aa8c7b64265c",
           "title": "CometChat pricing",
-          "component": "pricing-hero-enhancements",
-          "info_items": [],
+          "component": "pricing-hero",
+          "info_items": [
+            {
+              "_uid": "cb01d72b-debe-4c1c-af12-f2a3e1372c83",
+              "icon": "shield-tick",
+              "name": "GDPR",
+              "component": "pricing-hero-info-item",
+              "description": "Compliant"
+            },
+            {
+              "_uid": "39d3e892-fbd2-4656-933c-8a4dd086c31a",
+              "icon": "shield-plus",
+              "name": "SOC2",
+              "component": "pricing-hero-info-item",
+              "description": "Compliant"
+            },
+            {
+              "_uid": "497eacbb-62f3-4a6b-aa0e-c8264708e793",
+              "icon": "activity-heart",
+              "name": "HIPAA Compliant",
+              "component": "pricing-hero-info-item",
+              "description": ""
+            },
+            {
+              "_uid": "24756de6-7489-4464-bd0a-1ced668883fd",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            }
+          ],
           "description": "Streamlined, efficient packages designed for companies of all sizes.",
           "pricing_plans": [
-            "48aa2e59-e493-41de-b255-eaab84450223",
-            "0c005036-e03d-4d36-a339-eb870544a911",
-            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
+            "149b57b8-21e5-4eb7-afb9-0d729a604374",
+            "6d870a9c-f1d1-4740-a311-3ebd8158e852",
+            "cddd283b-3b3f-4411-9fad-2cc50a5354c1",
+            "fbd08a6b-a55d-4e9d-855e-04aae1486567"
           ],
-          "yearly_discount": "10",
+          "yearly_discount": "20",
           "monthly_discount": "",
-          "yearly_price_label": "",
-          "monthly_price_label": ""
+          "yearly_price_label": "/month",
+          "monthly_price_label": "/month"
         },
         {
           "_uid": "4c03482d-1114-4a0e-bdac-8359d91cb004",
@@ -945,7 +975,7 @@
           "_uid": "e6c8bf9b-286a-48ef-b438-4ce9cac79062",
           "faqs": [
             {
-              "_uid": "bfceca86-7cd7-4950-ab18-008101b9987c",
+              "_uid": "8cdf668c-8fcd-4b17-9972-162b9538be27",
               "text": {
                 "type": "doc",
                 "content": [
@@ -953,13 +983,7 @@
                     "type": "paragraph",
                     "content": [
                       {
-                        "text": "Every plan includes Voice and video functionality with Pro and Custom plans including free voice and video minutes. ",
-                        "type": "text"
-                      },
-                      { "type": "hard_break" },
-                      { "type": "hard_break" },
-                      {
-                        "text": "Pro customers get 15k voice and video minutes per month; Custom plan customers get 50k voice and video minutes per month. Minutes are split equally between voice and video regardless of plan. Essential plans do not include free voice and video minutes.",
+                        "text": "Every plan includes Voice and video functionality with Pro and Custom plans including free voice and video minutes. Pro customers get 15k voice and video minutes per month; Custom plan customers get 50k voice and video minutes per month. Minutes are split equally between voice and video regardless of plan. Essential plans do not include free voice and video minutes.",
                         "type": "text"
                       }
                     ]
@@ -971,7 +995,20 @@
             },
             {
               "_uid": "245b8566-8ff5-4af2-83d5-b2b151a8c730",
-              "text": "Yes! Our chat is HIPAA compliant. In every case HIPAA requires a Business Associate Agreement (BAA). In the Essentials and Pro plans it’s a paid add-on. In the Custom plan BAA is an included add-on. Please reach out to get one set up.",
+              "text": {
+                "type": "doc",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Yes, our chat is HIPAA compliant. In every case HIPAA requires a Business Associate Agreement (BAA). In the Essentials and Pro plans it’s a paid add-on. In the Custom plan BAA is an included add-on. Please reach out to get one set up.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
               "title": "Do you offer HIPAA compliance?",
               "component": "faq"
             },
@@ -1028,8 +1065,8 @@
       ],
       "component": "pricing"
     },
-    "slug": "pricing-enhancements",
-    "full_slug": "pages/pricing-enhancements",
+    "slug": "pricing",
+    "full_slug": "pages/pricing",
     "sort_by_date": null,
     "position": 130,
     "tag_list": [],
@@ -1043,11 +1080,11 @@
     "path": null,
     "alternates": [
       {
-        "id": 389799831,
-        "name": "Pricing",
-        "slug": "pricing",
+        "id": 462339136,
+        "name": "Pricing enhancements",
+        "slug": "pricing-enhancements",
         "published": true,
-        "full_slug": "pages/pricing",
+        "full_slug": "pages/pricing-enhancements",
         "is_folder": false,
         "parent_id": 316987388
       }
@@ -1055,7 +1092,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1710732256,
+  "cv": 1710767215,
   "rels": [],
   "links": []
 }

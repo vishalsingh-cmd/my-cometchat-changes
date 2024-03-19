@@ -1,42 +1,18 @@
 <script lang="ts">
-  import type {
-    PricingHeroEnhancementsStoryblok,
-    PricingPlanEnhancementFreeStoryblok,
-    PricingPlanEnhancementGrowStoryblok,
-    PricingPlanEnhancementScaleStoryblok
-  } from '$types/bloks';
+  import type { PricingHeroEnhancementsStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
-  import Badge from '$components/badge.svelte';
-  import Switch from '$components/switch.svelte';
-  import Sticky from '$components/sticky.svelte';
   import Icon from '$components/icon/icon.svelte';
   import Background from '$components/pricing/hero/background.svelte';
-  import type { StoryblokStory } from 'storyblok-generate-ts';
+  import PricingCardEnhanced from '$components/pricing-card-enhanced.svelte';
+  import Sticky from '$components/sticky.svelte';
+  import PricingSwitch from '$components/PricingSwitch.svelte';
 
-  const getTypedPricingPlan = (
-    story:
-      | string
-      | StoryblokStory<PricingPlanEnhancementFreeStoryblok>
-      | StoryblokStory<PricingPlanEnhancementGrowStoryblok>
-      | StoryblokStory<PricingPlanEnhancementScaleStoryblok>
-  ) =>
-    story as
-      | StoryblokStory<PricingPlanEnhancementFreeStoryblok>
-      | StoryblokStory<PricingPlanEnhancementGrowStoryblok>
-      | StoryblokStory<PricingPlanEnhancementScaleStoryblok>;
-
-  let isYearly = false;
+  let is_chat_and_messaging_tab = false;
   export let block: PricingHeroEnhancementsStoryblok;
-
-  const typedPricingPlans = block.pricing_plans
-    .map((pricingPlan) => getTypedPricingPlan(pricingPlan))
-    .map((pricingPlan) => pricingPlan.content);
 </script>
 
 {#if block}
-  <div>{JSON.stringify(block.plans[0])}</div>
-
   <section
     data-theme="dark"
     use:storyblokEditable={block}
@@ -80,34 +56,29 @@
         <div
           class="container z-10 mx-auto flex flex-col items-start gap-4 px-container pb-4 pt-4 md:items-center md:gap-8 md:pb-8"
         >
-          <Switch bind:checked={isYearly}>
-            <div slot="unchecked" class="flex items-center justify-center gap-1.5">
-              Pay monthly
-              {#if block.monthly_discount && block.monthly_discount > 0}
-                <Badge label="- {block.monthly_discount}%" />
-              {/if}
+          <PricingSwitch bind:checked={is_chat_and_messaging_tab}>
+            <div slot="unchecked" class="flex flex-row items-center justify-center gap-4">
+              <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
+              Chat & Messaging
             </div>
-            <div slot="checked" class="flex items-center justify-center gap-1.5">
-              Pay yearly
-              {#if block.yearly_discount && block.yearly_discount > 0}
-                <Badge label="- {block.yearly_discount}%" />
-              {/if}
+            <div slot="checked" class="flex flex-row items-center justify-center gap-4">
+              <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
+              Voice & video calling
             </div>
-          </Switch>
-          <!-- 
-          <PricingTierTabs
-            class="flex items-start md:items-center md:justify-center"
-            activeTab={activePricingTier}
-            options={block.pricing_plans[0]}
-            on:pricingTierSelected={(e) => (activePricingTier = e.detail.i)}
-          /> -->
+          </PricingSwitch>
         </div>
       </Sticky>
 
       <div
-        class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-4"
+        class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"
       >
-        <div>{JSON.stringify(typedPricingPlans)}</div>
+        {#if is_chat_and_messaging_tab}
+          <h1>Voice & video calling</h1>
+        {:else}
+          {#each block.plans as plan, i}
+            <PricingCardEnhanced price={plan.price} priceLabel={plan.name} block={plan} />
+          {/each}
+        {/if}
       </div>
     </div>
   </section>

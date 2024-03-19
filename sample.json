@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-03-18T04:48:03.862Z",
+    "published_at": "2024-03-19T02:29:02.971Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -11,10 +11,155 @@
         {
           "_uid": "16b239a6-5306-4c21-b1fc-8ace9d1e9674",
           "plans": [
-            "fbd08a6b-a55d-4e9d-855e-04aae1486567",
-            "149b57b8-21e5-4eb7-afb9-0d729a604374",
-            "cddd283b-3b3f-4411-9fad-2cc50a5354c1",
-            "6d870a9c-f1d1-4740-a311-3ebd8158e852"
+            {
+              "cta": [
+                {
+                  "_uid": "1218ca8a-1938-4f8b-9d1b-ed919ab51819",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Get started now",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "030163d6-65be-4d15-8bfc-709866afe204",
+              "name": "Developer",
+              "price": "Free",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "6ee12ccd-9dbe-4f71-9577-56b03d9be6e8",
+                  "value": "Try all Pro Plan features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "58510724-2c7d-4060-abc2-17a28f8232fa",
+                  "value": "Free up to 25 users",
+                  "component": "text"
+                }
+              ]
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "3857f6c0-dd15-4eb6-9e11-e788d7495ac1",
+                  "icon": "",
+                  "link": {
+                    "id": "34ca1d58-2297-45a9-8eb3-43491b007239",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/pricing"
+                  },
+                  "label": "Get started now",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "mau": [
+                {
+                  "_uid": "55c84785-855f-45e7-aeaf-c1ca7344c330",
+                  "value": "500",
+                  "component": "text"
+                },
+                {
+                  "_uid": "f7757fd5-3d6b-4b5e-926a-42df294c3144",
+                  "value": "5000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c7b10654-47bb-4c94-b812-496138f1b6a7",
+                  "value": "10000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "a439d662-7f27-40b1-b19f-2956199fdd5b",
+                  "value": "50000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c7c580bb-3a76-4d91-b057-65f6afe9391e",
+                  "value": "100000",
+                  "component": "text"
+                }
+              ],
+              "_uid": "1da0f98d-91f2-4c1b-8cfc-5879285257b9",
+              "name": "Grow",
+              "price": "149",
+              "component": "pricing-plan-enhancement-grow",
+              "highlights": [
+                {
+                  "_uid": "a7daef99-808d-47a7-bb7d-3fd26c97e8e1",
+                  "value": "Core chat features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "dd46af03-396c-416b-8275-17e9540cacf3",
+                  "value": "Easy integration using our no-code chat widget, UI Kits, SDKs and APIs",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c6737354-e01d-4181-9b9e-f7d4861f8cb4",
+                  "value": "Robust user engagement, experience, and moderation features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8b1f69ad-c9c8-4087-9efd-ebe1461011d6",
+                  "value": "Robust, global infrastructure",
+                  "component": "text"
+                }
+              ]
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "42d4a88f-f315-44f9-806b-397227c80f2d",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Contact us",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "e1efdd2f-955d-40c7-977e-979110f5298d",
+              "name": "Scale",
+              "price": "Contact Us",
+              "component": "pricing-plan-enhancement-scale",
+              "highlights": [
+                {
+                  "_uid": "5f7bcdd1-596b-4bba-bb99-b4c6550d88ba",
+                  "value": "Multi-Tenancy",
+                  "component": "text"
+                },
+                {
+                  "_uid": "40704971-1de6-4d7f-bd10-a8650c98c398",
+                  "value": "Shared or dedicated cloud deployment",
+                  "component": "text"
+                },
+                {
+                  "_uid": "470f2a0c-877f-465a-9091-01ebf6382adb",
+                  "value": "Conversational AI, Insights AI and Moderation AI",
+                  "component": "text"
+                },
+                {
+                  "_uid": "87c3b214-ca12-4b40-a93b-e4ed678c794f",
+                  "value": "Vertical based pricing",
+                  "component": "text"
+                }
+              ]
+            }
           ],
           "title": "CometChat pricing",
           "component": "pricing-hero-enhancements",
@@ -25,18 +170,35 @@
               "name": "ISO",
               "component": "pricing-hero-info-item",
               "description": "27001"
+            },
+            {
+              "_uid": "27a8bd7f-d891-48e7-bfde-b26c079ffa6e",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "683bf32a-7420-40b1-a088-88808805379a",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "6ae3dc92-aae4-41c4-b9f8-4663350f0841",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
             }
           ],
           "description": "Streamlined, efficient packages designed for companies of all sizes.",
           "pricing_plans": [
-            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8",
+            "48aa2e59-e493-41de-b255-eaab84450223",
             "0c005036-e03d-4d36-a339-eb870544a911",
-            "48aa2e59-e493-41de-b255-eaab84450223"
-          ],
-          "yearly_discount": "10",
-          "monthly_discount": "",
-          "yearly_price_label": "",
-          "monthly_price_label": ""
+            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
+          ]
         },
         {
           "_uid": "4c03482d-1114-4a0e-bdac-8359d91cb004",
@@ -1069,7 +1231,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1710737283,
+  "cv": 1710815343,
   "rels": [],
   "links": []
 }

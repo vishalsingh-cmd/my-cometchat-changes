@@ -685,7 +685,7 @@
       "name": "center-static-banner-v01",
       "display_name": "Center Static banner V01",
       "created_at": "2024-02-15T14:19:40.974Z",
-      "updated_at": "2024-03-01T12:34:11.687Z",
+      "updated_at": "2024-03-19T03:54:48.794Z",
       "id": 5347410,
       "schema": {
         "title": {
@@ -706,7 +706,10 @@
         "cta_slot": {
           "type": "bloks",
           "required": true,
-          "pos": 3
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
         }
       },
       "image": null,
@@ -3612,6 +3615,40 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "message-box-with-link",
+      "display_name": null,
+      "created_at": "2024-03-19T03:52:34.815Z",
+      "updated_at": "2024-03-19T03:53:43.322Z",
+      "id": 5518688,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "message": {
+          "type": "text"
+        },
+        "cta": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "message-box-with-link",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
       "name": "metrics",
       "display_name": null,
       "created_at": "2023-06-09T16:23:37.805Z",
@@ -4393,7 +4430,7 @@
       "name": "pricing-hero-enhancements",
       "display_name": "Pricing Hero Enhancements",
       "created_at": "2024-03-17T21:08:13.974Z",
-      "updated_at": "2024-03-18T04:47:25.704Z",
+      "updated_at": "2024-03-19T02:33:37.305Z",
       "id": 5509903,
       "schema": {
         "title": {
@@ -4401,12 +4438,6 @@
           "key": "title",
           "pos": 0,
           "required": true
-        },
-        "plans": {
-          "type": "options",
-          "required": true,
-          "source": "internal_stories",
-          "filter_content_type": ["pricing-plan"]
         },
         "description": {
           "type": "text",
@@ -4423,6 +4454,18 @@
           "restrict_components": true,
           "component_whitelist": ["pricing-hero-info-item"]
         },
+        "plans": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-grow",
+            "pricing-plan-enhancement-scale"
+          ],
+          "pos": 3,
+          "required": true
+        },
         "pricing_plans": {
           "type": "options",
           "source": "internal_stories",
@@ -4432,11 +4475,12 @@
             "pricing-plan-enhancement-grow",
             "pricing-plan-enhancement-scale"
           ],
-          "required": true,
+          "required": false,
           "key": "pricing_plans",
-          "pos": 7,
+          "pos": 4,
           "entry_appearance": "link",
-          "tooltip": false
+          "tooltip": false,
+          "allow_advanced_search": true
         }
       },
       "image": null,

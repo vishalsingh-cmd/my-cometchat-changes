@@ -248,7 +248,7 @@ export interface CenterStaticBannerV01Storyblok {
   title: string;
   description: string;
   image?: string;
-  cta_slot: any[];
+  cta_slot: ButtonLinkStoryblok[];
   _uid: string;
   component: 'center-static-banner-v01';
   [k: string]: any;
@@ -873,6 +873,15 @@ export interface MediaWithListSectionStoryblok {
   [k: string]: any;
 }
 
+export interface MessageBoxWithLinkStoryblok {
+  title?: string;
+  message?: string;
+  cta?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'message-box-with-link';
+  [k: string]: any;
+}
+
 export interface MetricsStoryblok {
   metrics?: MetricsItemStoryblok[];
   _uid: string;
@@ -1161,10 +1170,14 @@ export interface PricingHeroStoryblok {
 
 export interface PricingHeroEnhancementsStoryblok {
   title: string;
-  plans: (StoryblokStory<PricingPlanStoryblok> | string)[];
   description: string;
   info_items?: PricingHeroInfoItemStoryblok[];
-  pricing_plans: (
+  plans: (
+    | PricingPlanEnhancementFreeStoryblok
+    | PricingPlanEnhancementGrowStoryblok
+    | PricingPlanEnhancementScaleStoryblok
+  )[];
+  pricing_plans?: (
     | StoryblokStory<PricingPlanEnhancementStoryblok>
     | StoryblokStory<PricingPlanEnhancementFreeStoryblok>
     | StoryblokStory<PricingPlanEnhancementGrowStoryblok>
