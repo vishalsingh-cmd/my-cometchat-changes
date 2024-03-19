@@ -87,13 +87,13 @@
 
                             {#if tooltip}
                               <div
-                                class="h-6 w-6"
+                                class="h-6 w-6 cursor-pointer hover:text-brand-9"
                                 use:tippy={{
                                   content: `${tooltip}`,
                                   placement: 'right'
                                 }}
                               >
-                                <Icon icon="info-circle" size="xs" />
+                                <Icon icon="info-circle" size="xs" class="hover:text-brand-9" />
                               </div>
                             {/if}
                           </div>
