@@ -50,7 +50,7 @@
   />
   <div class="mt-3 flex items-center justify-between">
     <p class="text-lg/tight font-semibold text-white">{convertToK(Number(currentValue))} MAU</p>
-    <p class="text-lg/tight font-semibold opacity-64">{maxValue}k</p>
+    <p class="text-lg/tight font-semibold opacity-64">{convertToK(Number(maxValue))}</p>
   </div>
 </div>
 
