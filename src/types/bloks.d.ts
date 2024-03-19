@@ -741,6 +741,7 @@ export interface IndustryStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableEnhancedStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -967,6 +968,7 @@ export interface PageStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableEnhancedStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1093,6 +1095,7 @@ export interface PricingStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableEnhancedStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1172,10 +1175,15 @@ export interface PricingHeroEnhancementsStoryblok {
   title: string;
   description: string;
   info_items?: PricingHeroInfoItemStoryblok[];
-  plans: (
+  chat_and_messaging_plans: (
     | PricingPlanEnhancementFreeStoryblok
     | PricingPlanEnhancementGrowStoryblok
     | PricingPlanEnhancementScaleStoryblok
+  )[];
+  voice_and_video_plans?: (
+    | PricingPlanEnhancementFreeStoryblok
+    | PricingPlanEnhancementPayAsYouGoStoryblok
+    | PricingPlanEnhancementContactUsStoryblok
   )[];
   pricing_plans?: (
     | StoryblokStory<PricingPlanEnhancementStoryblok>
@@ -1217,8 +1225,19 @@ export interface PricingPlanStoryblok {
   [k: string]: any;
 }
 
+export interface PricingPlanEnhancementContactUsStoryblok {
+  name: string;
+  description?: string;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan-enhancement-contact-us';
+  [k: string]: any;
+}
+
 export interface PricingPlanEnhancementFreeStoryblok {
   name: string;
+  description?: string;
   price?: string;
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
@@ -1229,6 +1248,7 @@ export interface PricingPlanEnhancementFreeStoryblok {
 
 export interface PricingPlanEnhancementGrowStoryblok {
   name: string;
+  description?: string;
   price?: string;
   mau?: TextStoryblok[];
   highlights: TextStoryblok[];
@@ -1238,8 +1258,19 @@ export interface PricingPlanEnhancementGrowStoryblok {
   [k: string]: any;
 }
 
+export interface PricingPlanEnhancementPayAsYouGoStoryblok {
+  name: string;
+  description?: string;
+  highlights: TextStoryblok[];
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan-enhancement-pay-as-you-go';
+  [k: string]: any;
+}
+
 export interface PricingPlanEnhancementScaleStoryblok {
   name: string;
+  description?: string;
   price?: string;
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
@@ -1256,11 +1287,27 @@ export interface PricingTableStoryblok {
   [k: string]: any;
 }
 
+export interface PricingTableEnhancedStoryblok {
+  header: PricingTableHeaderEnhancedStoryblok[];
+  data: PricingTableGroupEnhancedStoryblok[];
+  _uid: string;
+  component: 'pricing-table-enhanced';
+  [k: string]: any;
+}
+
 export interface PricingTableGroupStoryblok {
   title: string;
   lines: PricingTableGroupLineStoryblok[];
   _uid: string;
   component: 'pricing-table-group';
+  [k: string]: any;
+}
+
+export interface PricingTableGroupEnhancedStoryblok {
+  title: string;
+  subgroup?: PricingTableSubgroupEnhancedStoryblok[];
+  _uid: string;
+  component: 'pricing-table-group-enhanced';
   [k: string]: any;
 }
 
@@ -1271,6 +1318,15 @@ export interface PricingTableGroupLineStoryblok {
   enterprise?: '' | 'none' | 'included' | 'paid-add-on';
   _uid: string;
   component: 'pricing-table-group-line';
+  [k: string]: any;
+}
+
+export interface PricingTableGroupLineEnhancedStoryblok {
+  name: string;
+  grow?: '' | 'none' | 'included' | 'paid-add-on';
+  scale?: '' | 'none' | 'included' | 'paid-add-on';
+  _uid: string;
+  component: 'pricing-table-group-line-enhanced';
   [k: string]: any;
 }
 
@@ -1285,6 +1341,22 @@ export interface PricingTableHeaderColumnStoryblok {
   description?: string;
   _uid: string;
   component: 'pricing-table-header-column';
+  [k: string]: any;
+}
+
+export interface PricingTableHeaderEnhancedStoryblok {
+  title: string;
+  description?: string;
+  _uid: string;
+  component: 'pricing-table-header-enhanced';
+  [k: string]: any;
+}
+
+export interface PricingTableSubgroupEnhancedStoryblok {
+  title: string;
+  lines: PricingTableGroupLineEnhancedStoryblok[];
+  _uid: string;
+  component: 'pricing-table-subgroup-enhanced';
   [k: string]: any;
 }
 
@@ -1485,6 +1557,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableEnhancedStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1584,6 +1657,7 @@ export interface TechnologyStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableEnhancedStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok

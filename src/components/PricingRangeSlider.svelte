@@ -10,7 +10,7 @@
 
   export let maus: Mau[] = [];
 
-  let selectedIndex = 0;
+  let selectedIndex = 1;
 
   $: maxValue = maus[maus.length - 1].value;
   $: stepValue = Math.floor(maus.length / 5);
@@ -20,7 +20,7 @@
   $: progress = (selectedIndex / (maus.length - 1)) * 100;
 
   // Dynamically update the gradient based on the progress
-  $: gradient = `linear-gradient(to right, #5D41CE 0%, #7b5cf5 ${progress}%, gray ${progress}%)`;
+  $: gradient = `linear-gradient(to right, #5D41CE 0%, #a993ff ${progress}%, #353535 ${progress}%)`;
 
   // display the current value
   const dispatch = createEventDispatcher();
@@ -36,12 +36,12 @@
   }%)`;
 </script>
 
-<div class="flex w-full flex-col">
+<div class="mt-5 flex w-full flex-col">
   <label for="steps-range-slider-usage" class="sr-only">Grow plan pricing range</label>
   <input
     type="range"
     class="w-full cursor-pointer appearance-none rounded-full focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-    style="--thumb-color: white; --thumb-border-color: #ccc; --slider-bg-gradient: {gradient}; --slider-lines: {lines};"
+    style="--thumb-color: white; --thumb-border-color: #55506C; --slider-bg-gradient: {gradient}; --slider-lines: {lines};"
     id="steps-range-slider-usage"
     min="0"
     max={steps}
@@ -61,8 +61,8 @@
     --slider-bg-gradient: linear-gradient(to right, #8a2be2, #4b0082);
     --slider-lines: repeating-linear-gradient(
       to right,
-      #ffffff30,
-      #ffffff30 1px,
+      #353535,
+      #353535 1px,
       transparent 1px,
       transparent 5%
     );
@@ -70,19 +70,18 @@
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid var(--thumb-border-color);
+    width: 24px;
+    height: 24px;
+    border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -5px;
+    margin-top: 0px;
   }
-
   input[type='range']::-moz-range-thumb {
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid var(--thumb-border-color);
+    width: 24px;
+    height: 24px;
+    border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;

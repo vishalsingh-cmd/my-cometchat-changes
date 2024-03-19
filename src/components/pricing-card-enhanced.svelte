@@ -10,6 +10,7 @@
   import Icon from './icon/icon.svelte';
   import Button from './buttons/button.svelte';
   import PricingRangeSlider from './PricingRangeSlider.svelte';
+  import ToggleButton from './toggle-button.svelte';
 
   // get current pricing plan it can be PrcingPlanEnhancementFreeStoryblok or PricingPlanEnhancementGrowStoryblok or PricingPlanEnhancementScaleStoryblok
   export const getPricingPlanName = (
@@ -21,6 +22,7 @@
     return story.name;
   };
 
+  let isAnnual = false;
   export let price: string;
   export let priceLabel: string | null = null;
   export let block:
@@ -45,10 +47,22 @@
       currentGrowPrice = 'Contact Us';
     }
   }
+
+  // get toggle event
+  function handleToggle(event: CustomEvent<boolean>) {
+    console.log(event.detail);
+    isAnnual = event.detail;
+
+    if (isAnnual) {
+      currentGrowPrice = '139';
+    } else {
+      currentGrowPrice = '149';
+    }
+  }
 </script>
 
 {#if block}
-  {@const { name, price, highlights, cta } = block}
+  {@const { name, price, description, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -59,11 +73,18 @@
       'bg-brand-12/[0.03] backdrop-blur-[30px]'
     )}
   >
-    <div class={cn('flex flex-col gap-5 md:gap-16')}>
+    <div class={cn('flex flex-col gap-6')}>
       <div class={cn('flex flex-col gap-1 text-gray-12 md:gap-3')}>
-        <p class={cn('text-xl/tighter font-semibold opacity-74')}>
-          {name}
-        </p>
+        <div class="flow-row flex w-full items-center justify-between">
+          <p class={cn('text-xl/tighter font-semibold opacity-74')}>
+            {name}
+          </p>
+
+          {#if block.name === 'Grow'}
+            <ToggleButton on:toggle={handleToggle} />
+          {/if}
+        </div>
+
         <div class={cn('text-2xl/tighter font-semibold')}>
           {#if price === 'Free'}
             Free
@@ -75,13 +96,15 @@
                 ${currentGrowPrice}
                 <p class="items-baseline text-lg/tight font-semibold opacity-54">/month</p>
               {:else}
-                <span class="text-brand-9">
-                  {currentGrowPrice}
-                </span>
+                <span class="text-brand-9"> {currentGrowPrice} </span>
               {/if}
             </div>
           {/if}
         </div>
+
+        <p class={cn('font-semibold opacity-74')}>
+          {description}
+        </p>
 
         {#if block.name === 'Grow'}
           <PricingRangeSlider maus={block.mau} on:value={updatePricing} />

@@ -7,8 +7,11 @@
   import PricingCardEnhanced from '$components/pricing-card-enhanced.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingSwitch from '$components/PricingSwitch.svelte';
+  // import TabItem from '$components/tabs/tab-item.svelte';
+  import { fade } from 'svelte/transition';
+  import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
 
-  let is_chat_and_messaging_tab = false;
+  let isActive = false;
   export let block: PricingHeroEnhancementsStoryblok;
 </script>
 
@@ -56,11 +59,19 @@
         <div
           class="container z-10 mx-auto flex flex-col items-start gap-4 px-container pb-4 pt-4 md:items-center md:gap-8 md:pb-8"
         >
-          <PricingSwitch bind:checked={is_chat_and_messaging_tab}>
+          <PricingSwitch bind:checked={isActive}>
             <div slot="unchecked" class="flex flex-row items-center justify-center gap-4">
               <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
               Chat & Messaging
+
+              {#if isActive}
+                <div
+                  in:fade
+                  class="absolute -bottom-5 left-0 h-14 w-3/4 translate-x-0 animate-slide-back-and-foward-smothly bg-[radial-gradient(50%_50.00%_at_50%_50.00%,_var(--tw-gradient-stops))] from-[rgba(104,82,214,1)] to-[rgba(104,82,214,0.00)] opacity-[12%]"
+                />
+              {/if}
             </div>
+
             <div slot="checked" class="flex flex-row items-center justify-center gap-4">
               <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
               Voice & video calling
@@ -69,13 +80,20 @@
         </div>
       </Sticky>
 
+      <!-- <div>
+        <TabItem id={0} label="Chat & Messages" {isActive} />
+        <TabItem id={0} label="Voice & Video calling" {isActive} />
+      </div> -->
+
       <div
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"
       >
-        {#if is_chat_and_messaging_tab}
-          <h1>Voice & video calling</h1>
+        {#if isActive}
+          {#each block.voice_and_video_plans as plan, i}
+            <PricingCardVideoAndVoiceEnhanced price={plan.price} block={plan} />
+          {/each}
         {:else}
-          {#each block.plans as plan, i}
+          {#each block.chat_and_messaging_plans as plan, i}
             <PricingCardEnhanced price={plan.price} priceLabel={plan.name} block={plan} />
           {/each}
         {/if}
