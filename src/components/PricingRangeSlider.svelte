@@ -70,22 +70,24 @@
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
     margin-top: 0px;
+    margin-right: -5px;
   }
   input[type='range']::-moz-range-thumb {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: -5px;
+    margin-top: 0px;
+    margin-right: -5px;
   }
 
   input[type='range']::-webkit-slider-runnable-track {

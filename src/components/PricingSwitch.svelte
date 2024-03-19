@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
+  import { fade } from 'svelte/transition';
 
   let halfWidth: number | string = 132;
   const switchItemClass = cn(
@@ -30,9 +31,23 @@
       class={cn(switchItemClass, 'opacity-100 peer-checked:opacity-64')}
     >
       <slot name="unchecked" />
+
+      {#if checked}
+        <div
+          in:fade
+          class="absolute -bottom-5 left-0 h-14 w-3/4 translate-x-0 animate-slide-back-and-foward-smothly bg-[radial-gradient(50%_50.00%_at_50%_50.00%,_var(--tw-gradient-stops))] from-[rgba(104,82,214,1)] to-[rgba(104,82,214,0.00)] opacity-[12%]"
+        />
+      {/if}
     </div>
     <div class={cn(switchItemClass, 'opacity-64 peer-checked:opacity-100')}>
       <slot name="checked" />
+
+      {#if checked}
+        <div
+          in:fade
+          class="absolute -bottom-5 left-0 h-14 w-3/4 translate-x-0 animate-slide-back-and-foward-smothly bg-[radial-gradient(50%_50.00%_at_50%_50.00%,_var(--tw-gradient-stops))] from-[rgba(104,82,214,1)] to-[rgba(104,82,214,0.00)] opacity-[12%]"
+        />
+      {/if}
     </div>
   </div>
 </label>

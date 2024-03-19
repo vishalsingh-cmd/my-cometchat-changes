@@ -1,4 +1,5 @@
 <script lang="ts">
+  import PricingTabSwitch from './../pricing-tab-switch.svelte';
   import type { PricingHeroEnhancementsStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
@@ -6,12 +7,11 @@
   import Background from '$components/pricing/hero/background.svelte';
   import PricingCardEnhanced from '$components/pricing-card-enhanced.svelte';
   import Sticky from '$components/sticky.svelte';
-  import PricingSwitch from '$components/PricingSwitch.svelte';
-  // import TabItem from '$components/tabs/tab-item.svelte';
-  import { fade } from 'svelte/transition';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
 
   let isActive = false;
+  $: ischatActive = isActive ? 'chat' : 'voice';
+
   export let block: PricingHeroEnhancementsStoryblok;
 </script>
 
@@ -56,10 +56,37 @@
 
     <div>
       <Sticky class="md:static">
-        <div
-          class="container z-10 mx-auto flex flex-col items-start gap-4 px-container pb-4 pt-4 md:items-center md:gap-8 md:pb-8"
-        >
-          <PricingSwitch bind:checked={isActive}>
+        <div class="flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          <PricingTabSwitch
+            id={0}
+            isActive={ischatActive === 'voice' && true}
+            on:click={() => {
+              isActive = !isActive;
+            }}
+          >
+            <div class="flex flex-row items-center justify-center gap-4 text-lg">
+              <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
+              Chat & Messaging
+            </div>
+          </PricingTabSwitch>
+
+          <PricingTabSwitch
+            id={1}
+            isActive={ischatActive === 'chat' && true}
+            on:click={() => {
+              isActive = !isActive;
+            }}
+          >
+            <div class="flex flex-row items-center justify-center gap-4 text-lg">
+              <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
+              Voice & video calling
+            </div>
+          </PricingTabSwitch>
+        </div>
+        <!-- <div
+          class="container z-10 mx-auto flex flex-row items-start gap-4 px-container pb-4 pt-4 md:items-center md:gap-8 md:pb-8"
+        > -->
+        <!-- <PricingSwitch bind:checked={isActive}>
             <div slot="unchecked" class="flex flex-row items-center justify-center gap-4">
               <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
               Chat & Messaging
@@ -76,14 +103,9 @@
               <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
               Voice & video calling
             </div>
-          </PricingSwitch>
-        </div>
+          </PricingSwitch> -->
+        <!-- </div> -->
       </Sticky>
-
-      <!-- <div>
-        <TabItem id={0} label="Chat & Messages" {isActive} />
-        <TabItem id={0} label="Voice & Video calling" {isActive} />
-      </div> -->
 
       <div
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"
