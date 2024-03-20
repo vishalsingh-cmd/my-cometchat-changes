@@ -70,7 +70,9 @@
                   </button>
                 </div>
 
-                <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
+                <div
+                  class="whitespace-pre-line pt-3 font-medium leading-snug tracking-wide opacity-74"
+                >
                   {text?.content?.[0]?.content?.[0]?.text ?? 'Loading...'}
                 </div>
               </Accordion>
