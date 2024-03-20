@@ -10,7 +10,7 @@
 {#if block}
   <section use:storyblokEditable={block} class="container mx-auto my-12">
     <div class="flex items-center justify-center overflow-hidden px-container">
-      <div class="relative max-w-[1200px]">
+      <div class="relative max-w-[960px]">
         <!-- eslint-disable-next-line -->
         {@html block.iframe}
         <img src={Frame} class="h-full w-full" alt="IPad Frame" />
