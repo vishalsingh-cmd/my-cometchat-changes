@@ -72,7 +72,7 @@
                 <div
                   class="whitespace-pre-line pt-3 font-medium leading-snug tracking-wide opacity-74"
                 >
-                  {text?.content?.[0]?.content?.[0]?.text ?? 'Loading...'}
+                  {text?.content?.[0]?.content?.map((content) => content.text).join('\n')}
                 </div>
               </Accordion>
             {/each}
