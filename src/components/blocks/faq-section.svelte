@@ -39,7 +39,7 @@
       {#if block.faqs && block.faqs.length > 0}
         <div class="mt-10 flex w-full max-w-[751px] flex-col flex-wrap gap-4 text-gray-12 md:mt-16">
           <AccordionGroup>
-            {#each block.faqs as faq}
+            {#each block.faqs as faq, i}
               {@const { title, text, _uid } = faq}
               <Accordion
                 id={_uid}
@@ -69,9 +69,16 @@
                     />
                   </button>
                 </div>
-                <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
-                  {text}
-                </div>
+
+                {#if i === 0 && text && text.content && text.content[0] && text.content[0].content && text.content[0].content[0]}
+                  <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
+                    {text.content[i].content[0].text}
+                  </div>
+                {:else}
+                  <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
+                    {text}
+                  </div>
+                {/if}
               </Accordion>
             {/each}
           </AccordionGroup>
