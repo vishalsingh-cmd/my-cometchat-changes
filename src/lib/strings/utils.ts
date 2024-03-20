@@ -45,3 +45,12 @@ export const isNumber = (inputString: string): boolean => {
   // Use a regular expression to check if the string contains a number
   return /\d/.test(inputString);
 };
+
+// i have string for mau that can be a 500, 5000, 10000, 50000, 100000. now write a function that can convert it to 500, 5k, 10k, 50k, 100k
+export const convertToK = (value: number): string => {
+  if (value >= 1000) {
+    return `${value / 1000}k`;
+  }
+
+  return value.toString();
+};

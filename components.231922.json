@@ -47,6 +47,7 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -98,6 +99,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -129,6 +131,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -153,6 +156,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -188,13 +192,14 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2024-02-26T11:19:46.188Z",
+      "updated_at": "2024-03-19T04:14:15.673Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -330,7 +335,8 @@
             "blog-table-cell",
             "blog-table-column",
             "blog-table-row",
-            "blog-comparison-table"
+            "blog-comparison-table",
+            "message-box-with-link"
           ],
           "key": "body",
           "pos": 5
@@ -398,6 +404,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -422,6 +429,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -446,6 +454,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -470,6 +479,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -497,6 +507,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -521,6 +532,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -550,6 +562,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -579,6 +592,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -607,6 +621,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -664,22 +679,19 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
       "name": "center-static-banner-v01",
       "display_name": "Center Static banner V01",
       "created_at": "2024-02-15T14:19:40.974Z",
-      "updated_at": "2024-02-29T02:58:48.648Z",
+      "updated_at": "2024-03-19T03:54:48.794Z",
       "id": 5347410,
       "schema": {
         "title": {
           "type": "text",
           "pos": 0,
-          "required": true
-        },
-        "cta_slot": {
-          "type": "bloks",
           "required": true
         },
         "description": {
@@ -692,11 +704,13 @@
           "pos": 2,
           "required": false
         },
-        "link": {
-          "type": "multilink",
-          "display_name": "link",
+        "cta_slot": {
+          "type": "bloks",
+          "required": true,
           "pos": 3,
-          "required": true
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
         }
       },
       "image": null,
@@ -710,6 +724,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -744,6 +759,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -779,6 +795,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -810,6 +827,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -895,6 +913,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -945,6 +964,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -984,6 +1004,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1020,6 +1041,7 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -1054,6 +1076,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1095,6 +1118,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1262,6 +1286,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -1302,6 +1327,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1355,6 +1381,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1386,6 +1413,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -1444,6 +1472,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1464,6 +1493,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -1495,6 +1525,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1534,6 +1565,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1566,6 +1598,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1617,6 +1650,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1661,6 +1695,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1693,6 +1728,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1729,6 +1765,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1766,6 +1803,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1801,6 +1839,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1850,6 +1889,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1926,6 +1966,7 @@
       "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Configuration"
     },
     {
@@ -1963,6 +2004,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1991,6 +2033,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2029,6 +2072,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2064,6 +2108,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2095,6 +2140,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2123,6 +2169,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -2218,6 +2265,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2260,6 +2308,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2313,6 +2362,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2353,6 +2403,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2382,6 +2433,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -2420,6 +2472,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -2466,6 +2519,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2499,6 +2553,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2541,6 +2596,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2567,6 +2623,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2612,6 +2669,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2653,6 +2711,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2692,6 +2751,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2755,6 +2815,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2837,6 +2898,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2867,6 +2929,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2948,6 +3011,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -2999,6 +3063,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3024,6 +3089,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3049,6 +3115,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3093,6 +3160,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3138,6 +3206,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3185,6 +3254,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3253,6 +3323,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3288,6 +3359,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3330,6 +3402,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3371,6 +3444,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3462,6 +3536,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3537,7 +3612,42 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "message-box-with-link",
+      "display_name": null,
+      "created_at": "2024-03-19T03:52:34.815Z",
+      "updated_at": "2024-03-19T04:13:51.869Z",
+      "id": 5518688,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "message": {
+          "type": "text"
+        },
+        "cta": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "message-box-with-link",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "metrics",
@@ -3565,6 +3675,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3595,6 +3706,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3640,6 +3752,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3678,6 +3791,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3713,6 +3827,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3759,6 +3874,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -3834,6 +3950,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3864,6 +3981,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3895,6 +4013,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -3927,6 +4046,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -3987,6 +4107,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4027,6 +4148,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4058,6 +4180,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -4112,6 +4235,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4159,7 +4283,8 @@
       "real_name": "pricing-beta-hero-plans",
       "component_group_uuid": null,
       "color": null,
-      "icon": null
+      "icon": null,
+      "content_type_asset_preview": null
     },
     {
       "name": "pricing-beta-plan",
@@ -4223,13 +4348,14 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
-      "updated_at": "2023-12-28T15:21:00.690Z",
+      "updated_at": "2024-03-18T03:01:09.100Z",
       "id": 4725866,
       "schema": {
         "title": {
@@ -4298,6 +4424,90 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-hero-enhancements",
+      "display_name": "Pricing Hero Enhancements",
+      "created_at": "2024-03-17T21:08:13.974Z",
+      "updated_at": "2024-03-19T12:47:05.821Z",
+      "id": 5509903,
+      "schema": {
+        "title": {
+          "type": "text",
+          "key": "title",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "key": "description",
+          "pos": 1,
+          "required": true
+        },
+        "info_items": {
+          "type": "bloks",
+          "key": "info_items",
+          "pos": 2,
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-hero-info-item"]
+        },
+        "chat_and_messaging_plans": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-grow",
+            "pricing-plan-enhancement-scale"
+          ],
+          "pos": 3,
+          "required": true,
+          "key": "plans"
+        },
+        "voice_and_video_plans": {
+          "type": "bloks",
+          "pos": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-pay-as-you-go",
+            "pricing-plan-enhancement-contact-us"
+          ]
+        },
+        "pricing_plans": {
+          "type": "options",
+          "source": "internal_stories",
+          "filter_content_type": [
+            "pricing-plan-enhancement",
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-grow",
+            "pricing-plan-enhancement-scale"
+          ],
+          "required": false,
+          "key": "pricing_plans",
+          "pos": 5,
+          "entry_appearance": "link",
+          "tooltip": false,
+          "allow_advanced_search": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Pricing Hero Enhancements",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4335,13 +4545,14 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-12-28T16:10:05.409Z",
+      "updated_at": "2024-03-17T21:18:47.971Z",
       "id": 4725758,
       "schema": {
         "name": {
@@ -4499,6 +4710,296 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-contact-us",
+      "display_name": null,
+      "created_at": "2024-03-19T12:43:51.730Z",
+      "updated_at": "2024-03-19T12:44:51.719Z",
+      "id": 5521841,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-contact-us",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-free",
+      "display_name": null,
+      "created_at": "2024-03-17T21:10:35.395Z",
+      "updated_at": "2024-03-19T12:37:56.446Z",
+      "id": 5509904,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "price": {
+          "type": "text",
+          "pos": 2
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-free",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-grow",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:25.428Z",
+      "updated_at": "2024-03-19T12:39:11.553Z",
+      "id": 5509913,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "price": {
+          "type": "text",
+          "pos": 2
+        },
+        "mau": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"]
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 4
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 5
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-grow",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-pay-as-you-go",
+      "display_name": null,
+      "created_at": "2024-03-19T12:45:41.326Z",
+      "updated_at": "2024-03-19T12:46:05.458Z",
+      "id": 5521971,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-pay-as-you-go",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-scale",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:44.594Z",
+      "updated_at": "2024-03-19T12:39:33.641Z",
+      "id": 5509914,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "price": {
+          "type": "text",
+          "pos": 2
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-scale",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -4537,6 +5038,46 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-table-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:56:49.187Z",
+      "updated_at": "2024-03-19T08:39:58.648Z",
+      "id": 5519104,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "maximum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-header-enhanced"]
+        },
+        "data": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "required": true,
+          "component_whitelist": ["pricing-table-group-enhanced"],
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-enhanced",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4569,6 +5110,39 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-group-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:54:30.301Z",
+      "updated_at": "2024-03-19T08:08:54.162Z",
+      "id": 5519096,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "subgroup": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-subgroup-enhanced"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-group-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4669,6 +5243,88 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-group-line-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:55:45.009Z",
+      "updated_at": "2024-03-19T14:09:45.942Z",
+      "id": 5519102,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "key": "name",
+          "pos": 0
+        },
+        "tooltip": {
+          "type": "text",
+          "pos": 1
+        },
+        "grow": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "f6a7962f-db6f-44e1-9ac7-fd859fb43a33",
+              "name": "none",
+              "value": "none"
+            },
+            {
+              "_uid": "46ae7607-8e95-4590-a661-a1462c1fb619",
+              "value": "included",
+              "name": "included"
+            },
+            {
+              "_uid": "bc475188-6f75-4896-9a77-1cf6e0fe452e",
+              "value": "paid-add-on",
+              "name": "paid-add-on"
+            }
+          ],
+          "default_value": "none",
+          "required": false,
+          "key": "grow",
+          "pos": 2
+        },
+        "scale": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "dfbe88a8-b7cb-447c-ae71-eeb351636cd6",
+              "name": "none",
+              "value": "none"
+            },
+            {
+              "_uid": "49eb5e02-9d2f-44a2-9d4c-cd104109eeca",
+              "value": "included",
+              "name": "included"
+            },
+            {
+              "_uid": "f0c002cc-9a65-4055-b050-55d25ed864c1",
+              "value": "paid-add-on",
+              "name": "paid-add-on"
+            }
+          ],
+          "key": "pro",
+          "pos": 3,
+          "default_value": "none"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-group-line-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4689,6 +5345,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4719,6 +5376,70 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-header-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:53:44.019Z",
+      "updated_at": "2024-03-19T08:00:22.863Z",
+      "id": 5519094,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-header-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-subgroup-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:55:01.556Z",
+      "updated_at": "2024-03-19T08:09:22.546Z",
+      "id": 5519101,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "lines": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-group-line-enhanced"],
+          "required": true,
+          "display_name": "subgroup"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-subgroup-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4762,6 +5483,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4794,6 +5516,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4823,6 +5546,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -4881,6 +5605,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4912,6 +5637,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4949,6 +5675,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4978,6 +5705,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5036,6 +5764,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5056,6 +5785,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5104,6 +5834,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5148,6 +5879,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5187,6 +5919,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5235,6 +5968,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5279,6 +6013,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5344,6 +6079,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5372,6 +6108,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5400,6 +6137,7 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -5426,6 +6164,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5464,6 +6203,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5501,6 +6241,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5608,6 +6349,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -5648,6 +6390,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5681,6 +6424,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5736,6 +6480,7 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -5784,13 +6529,14 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
       "name": "text",
       "display_name": null,
       "created_at": "2023-08-23T12:56:09.289Z",
-      "updated_at": "2023-08-23T12:56:28.145Z",
+      "updated_at": "2024-03-19T14:09:09.702Z",
       "id": 4465701,
       "schema": {
         "value": {
@@ -5809,6 +6555,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5873,6 +6620,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5927,6 +6675,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6029,6 +6778,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6113,6 +6863,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6171,6 +6922,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6200,6 +6952,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -6234,6 +6987,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -6273,6 +7027,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6312,6 +7067,7 @@
       "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Configuration"
     },
     {
@@ -6372,6 +7128,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6404,6 +7161,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6444,6 +7202,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6526,6 +7285,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6610,6 +7370,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6656,6 +7417,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6701,6 +7463,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -7147,6 +7910,7 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -7176,6 +7940,7 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -7223,6 +7988,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -7258,6 +8024,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -7288,6 +8055,7 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -7313,6 +8081,7 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     }
   ]

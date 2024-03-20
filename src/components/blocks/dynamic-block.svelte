@@ -40,8 +40,10 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingHero from './pricing-hero.svelte';
+  import PricingHeroEnhancements from './pricing-hero-enhancements.svelte';
   import PricingBetaHero from './pricing-beta-hero.svelte';
   import PricingTable from './pricing-table.svelte';
+  import PricingTableEnhanced from './pricing-table-enhanced.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
   import RelatedStoriesSection from './related-stories-section.svelte';
@@ -104,7 +106,9 @@
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
+    'pricing-hero-enhancements': PricingHeroEnhancements,
     'pricing-table': PricingTable,
+    'pricing-table-enhanced': PricingTableEnhanced,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
