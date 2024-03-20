@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing",
     "created_at": "2023-10-16T09:57:48.354Z",
-    "published_at": "2024-03-20T11:11:43.765Z",
+    "published_at": "2024-03-20T11:15:41.240Z",
     "id": 389799831,
     "uuid": "34ca1d58-2297-45a9-8eb3-43491b007239",
     "content": {
@@ -994,33 +994,25 @@
               "component": "faq"
             },
             {
-              "_uid": "9835a5f4-1847-4331-bd91-56d1352fc907",
-              "text": "A Monthly Active User (MAU) is a user that has connected to CometChat servers during the 30 day subscription period.",
+              "_uid": "6c7b8fb3-9d06-4154-a32f-bd00c951dadb",
+              "text": {
+                "type": "doc",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "A Monthly Active User (MAU) is a user that has connected to CometChat servers during the 30 day subscription period.",
+                        "type": "text",
+                        "marks": [
+                          { "type": "textStyle", "attrs": { "color": "rgb(158, 206, 106)" } }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
               "title": "What are Monthly Active Users?",
-              "component": "faq"
-            },
-            {
-              "_uid": "a170b4ca-fcd0-48a3-b0e9-ff8a3b1ee5d9",
-              "text": "The maximum number of devices connected to CometChat at the same time. Note that this is the number of devices connected, not users. One user may be connected via two devices, which results in two concurrent connections.",
-              "title": "What are Peak Concurrent Connections (PCCs)?",
-              "component": "faq"
-            },
-            {
-              "_uid": "8d73b592-9293-44be-bef6-45657800b2f2",
-              "text": "All plans include 5% Peak Concurrent Connections (PCC). For single-tenant subscriptions, this is calculated as the maximum number of connections to CometChat at any given time. For example, if your plan includes 10,000 MAU, 500 devices can be connected to CometChat at the same time. Beyond 5%, overages fees will apply.",
-              "title": "How many Peak Concurrent Connections are included?",
-              "component": "faq"
-            },
-            {
-              "_uid": "00134b80-2483-4094-a1cd-7868908e6b95",
-              "text": "If you exceed your MAUs, Voice and Video Minutes, or Peak Concurrent Connections (PCC) limits, you will be automatically charged an overage fee. For up to 50K MAUs, you'll be charged $0.12 per MAU. Similarly for Video calls, $0.003 /min. per user, and $0.001 /min. per user for Voice call minutes. For every PCC you'll be charged $1.\nContact us if you have further queries.",
-              "title": "What happens if I exceed my plan’s limits?",
-              "component": "faq"
-            },
-            {
-              "_uid": "a9258936-2772-42cd-a757-a8f2ed3609cd",
-              "text": "Yes, we do offer custom plans if you're looking for vertical specific functionalities, multi-tenant use case, or high concurrency needs. Contact us and we’ll work with you to find a plan and concurrency level that works for you. For example, if you're in the events or live chat business, you can purchase a plan that includes very high concurrency.",
-              "title": "Do you offer custom pricing plans?",
               "component": "faq"
             }
           ],
@@ -1067,7 +1059,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1710933103,
+  "cv": 1710933341,
   "rels": [],
   "links": []
 }

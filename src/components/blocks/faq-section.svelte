@@ -70,15 +70,9 @@
                   </button>
                 </div>
 
-                {#if i === 0 && text && text.content && text.content[0] && text.content[0].content && text.content[0].content[0]}
-                  <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
-                    {text.content[i].content[0].text}
-                  </div>
-                {:else}
-                  <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
-                    {text}
-                  </div>
-                {/if}
+                <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
+                  {JSON.stringify(text)}
+                </div>
               </Accordion>
             {/each}
           </AccordionGroup>
