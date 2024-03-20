@@ -71,7 +71,7 @@
                 </div>
 
                 <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
-                  {JSON.stringify(text)}
+                  {text?.content?.[0]?.content?.[0]?.text ?? 'Loading...'}
                 </div>
               </Accordion>
             {/each}
