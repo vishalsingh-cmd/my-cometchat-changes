@@ -2,7 +2,6 @@
   import type { FaqSectionStoryblok } from '$types/bloks';
   import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
   import Title from '$components/title.svelte';
   import Icon from '$components/icon/icon.svelte';
   import Accordion from '$components/accordion.svelte';
