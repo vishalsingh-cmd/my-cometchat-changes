@@ -2,7 +2,6 @@
   import type { FaqSectionStoryblok } from '$types/bloks';
   import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
   import Title from '$components/title.svelte';
   import Icon from '$components/icon/icon.svelte';
   import Accordion from '$components/accordion.svelte';
@@ -70,8 +69,10 @@
                   </button>
                 </div>
 
-                <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
-                  {text?.content?.[0]?.content?.[0]?.text ?? 'Loading...'}
+                <div
+                  class="whitespace-pre-line pt-3 font-medium leading-snug tracking-wide opacity-74"
+                >
+                  {text?.content?.[0]?.content?.map((content) => content.text).join('\n')}
                 </div>
               </Accordion>
             {/each}
