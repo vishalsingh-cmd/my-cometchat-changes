@@ -23,7 +23,7 @@
           let:expanded
           let:attributes
           let:onClick
-          class="ml-0 w-full border-b border-gray-12/[.08] md:ml-12"
+          class="ml-0 w-full border-b border-gray-12/[.08]"
         >
           <button
             {...attributes}
@@ -56,7 +56,13 @@
                 {@const { title, lines } = line}
                 <AccordionGroup {expanded}>
                   <Accordion id={title}>
-                    <div slot="header" let:expanded let:attributes let:onClick class="w-full">
+                    <div
+                      slot="header"
+                      let:expanded
+                      let:attributes
+                      let:onClick
+                      class="ml-0 w-full md:ml-3"
+                    >
                       <button
                         {...attributes}
                         class={cn(
@@ -90,7 +96,7 @@
 
                         <div
                           id="line"
-                          class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-12"
+                          class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-1"
                         >
                           <div
                             class="col-span-2 flex flex-row items-center justify-center gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
