@@ -83,28 +83,6 @@
             </div>
           </PricingTabSwitch>
         </div>
-        <!-- <div
-          class="container z-10 mx-auto flex flex-row items-start gap-4 px-container pb-4 pt-4 md:items-center md:gap-8 md:pb-8"
-        > -->
-        <!-- <PricingSwitch bind:checked={isActive}>
-            <div slot="unchecked" class="flex flex-row items-center justify-center gap-4">
-              <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
-              Chat & Messaging
-
-              {#if isActive}
-                <div
-                  in:fade
-                  class="absolute -bottom-5 left-0 h-14 w-3/4 translate-x-0 animate-slide-back-and-foward-smothly bg-[radial-gradient(50%_50.00%_at_50%_50.00%,_var(--tw-gradient-stops))] from-[rgba(104,82,214,1)] to-[rgba(104,82,214,0.00)] opacity-[12%]"
-                />
-              {/if}
-            </div>
-
-            <div slot="checked" class="flex flex-row items-center justify-center gap-4">
-              <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
-              Voice & video calling
-            </div>
-          </PricingSwitch> -->
-        <!-- </div> -->
       </Sticky>
 
       <div

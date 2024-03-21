@@ -17,14 +17,21 @@
   <div use:storyblokEditable={group} class="col-span-6 flex w-full flex-col">
     <div class="flex flex-col">
       <Accordion id={title}>
-        <div id="group" slot="header" let:expanded let:attributes let:onClick class="w-full">
+        <div
+          id="group"
+          slot="header"
+          let:expanded
+          let:attributes
+          let:onClick
+          class="ml-0 w-full border-b border-gray-12/[.08] md:ml-12"
+        >
           <button
             {...attributes}
             class="flex w-full items-center justify-start gap-3 text-gray-12"
             on:click={onClick}
           >
             {#if expanded}
-              <Icon icon="minus" size="sm" />
+              <Icon icon="minus" size="sm" class="text-brand-9" />
             {:else}
               <Icon icon="plus" size="sm" />
             {/if}
@@ -39,6 +46,8 @@
             </p>
           </button>
         </div>
+
+        <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
 
         <div id="subgroup" class="col-span-6">
           {#if subgroup}
@@ -72,14 +81,19 @@
                     </div>
 
                     <div id="line" class="col-span-6 w-full items-center justify-center">
-                      {#each lines as item}
+                      {#each lines as item, i}
                         {@const { name, tooltip, scale, grow } = item}
+
+                        {#if i === 0}
+                          <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
+                        {/if}
+
                         <div
                           id="line"
-                          class="ml-12 grid grid-cols-6 gap-10 border-b border-gray-12/[.08]"
+                          class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-12"
                         >
                           <div
-                            class="col-span-2 flex flex-row gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
+                            class="col-span-2 flex flex-row items-center justify-center gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
                           >
                             <span>
                               {name}
@@ -117,6 +131,7 @@
                       {/each}
                     </div>
                   </Accordion>
+                  <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
                 </AccordionGroup>
               {/if}
             {/each}

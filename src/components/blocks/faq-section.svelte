@@ -6,6 +6,7 @@
   import Icon from '$components/icon/icon.svelte';
   import Accordion from '$components/accordion.svelte';
   import AccordionGroup from '$components/accordion-group.svelte';
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: FaqSectionStoryblok;
 </script>
@@ -69,11 +70,13 @@
                   </button>
                 </div>
 
-                <div
-                  class="whitespace-pre-line pt-3 font-medium leading-snug tracking-wide opacity-74"
-                >
-                  {text?.content?.[0]?.content?.map((content) => content.text).join('\n')}
-                </div>
+                {#if text.content}
+                  {#each text.content as b}
+                    <RichTextRenderer doc={b} class="text-xl first:mt-0" />
+                  {/each}
+                {:else}
+                  {text}
+                {/if}
               </Accordion>
             {/each}
           </AccordionGroup>
