@@ -741,7 +741,9 @@ export interface IndustryStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
+    | PricingTableSectionStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -968,7 +970,9 @@ export interface PageStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
+    | PricingTableSectionStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1095,7 +1099,9 @@ export interface PricingStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
+    | PricingTableSectionStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1287,6 +1293,14 @@ export interface PricingTableStoryblok {
   [k: string]: any;
 }
 
+export interface PricingTableCategoryEnhancedStoryblok {
+  title?: string;
+  category?: PricingTableEnhancedStoryblok[];
+  _uid: string;
+  component: 'pricing-table-category-enhanced';
+  [k: string]: any;
+}
+
 export interface PricingTableEnhancedStoryblok {
   header: PricingTableHeaderEnhancedStoryblok[];
   data: PricingTableGroupEnhancedStoryblok[];
@@ -1350,6 +1364,13 @@ export interface PricingTableHeaderEnhancedStoryblok {
   description?: string;
   _uid: string;
   component: 'pricing-table-header-enhanced';
+  [k: string]: any;
+}
+
+export interface PricingTableSectionStoryblok {
+  pricing_table?: PricingTableCategoryEnhancedStoryblok[];
+  _uid: string;
+  component: 'pricing-table-section';
   [k: string]: any;
 }
 
@@ -1558,7 +1579,9 @@ export interface SyncedBlockContentStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
+    | PricingTableSectionStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1658,7 +1681,9 @@ export interface TechnologyStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
+    | PricingTableSectionStoryblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok

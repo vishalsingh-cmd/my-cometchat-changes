@@ -4155,7 +4155,7 @@
       "name": "pricing",
       "display_name": null,
       "created_at": "2023-10-16T09:47:53.632Z",
-      "updated_at": "2023-10-18T17:45:08.101Z",
+      "updated_at": "2024-03-22T05:32:37.503Z",
       "id": 4725812,
       "schema": {
         "body": {
@@ -5042,6 +5042,39 @@
       "component_group_name": "Blocks"
     },
     {
+      "name": "pricing-table-category-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-22T05:28:18.227Z",
+      "updated_at": "2024-03-22T06:37:12.626Z",
+      "id": 5540016,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "category": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-enhanced"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-category-enhanced",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
       "name": "pricing-table-enhanced",
       "display_name": null,
       "created_at": "2024-03-19T07:56:49.187Z",
@@ -5407,6 +5440,34 @@
       "icon": null,
       "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-section",
+      "display_name": null,
+      "created_at": "2024-03-22T05:42:24.570Z",
+      "updated_at": "2024-03-22T06:36:45.190Z",
+      "id": 5540050,
+      "schema": {
+        "pricing_table": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-category-enhanced"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-section",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "pricing-table-subgroup-enhanced",

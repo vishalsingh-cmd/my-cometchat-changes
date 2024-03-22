@@ -1,0 +1,98 @@
+{
+  "_uid": "e0e593f7-b673-4d7b-aa2e-bfab55f47753",
+  "title": "Voice & Video Calling",
+  "category": [
+    {
+      "_uid": "a1596fa3-88ef-4882-9fdb-0586881daf72",
+      "data": [
+        {
+          "_uid": "acdf989b-8eb8-47ce-ac25-ac17b9c8b578",
+          "title": "In-app messaging\t",
+          "subgroup": [
+            {
+              "_uid": "472280b7-6a2b-4481-b484-7e6d4a7017f7",
+              "lines": [
+                {
+                  "_uid": "1e2402e0-2157-4b9c-8101-dd3bc88a42c9",
+                  "grow": "paid-add-on",
+                  "name": "One-on-one private chat",
+                  "scale": "included",
+                  "tooltip": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem.",
+                  "component": "pricing-table-group-line-enhanced"
+                }
+              ],
+              "title": "Core messaging experience",
+              "component": "pricing-table-subgroup-enhanced"
+            }
+          ],
+          "component": "pricing-table-group-enhanced"
+        },
+        {
+          "_uid": "23034751-25d5-4080-a235-fa3b9dba55eb",
+          "title": "Voice & Video Calling/Conferencing\t",
+          "subgroup": [
+            {
+              "_uid": "3a5c4fb4-74df-4ec0-99ad-29d7c165177d",
+              "lines": [
+                {
+                  "_uid": "5387152b-4fbc-45bf-a279-ea04dbc8332e",
+                  "grow": "paid-add-on",
+                  "name": "One-on-one private chat",
+                  "scale": "included",
+                  "component": "pricing-table-group-line-enhanced"
+                }
+              ],
+              "title": "Core messaging experience",
+              "component": "pricing-table-subgroup-enhanced"
+            },
+            {
+              "_uid": "823913c0-61b6-4c61-a5b8-1146be5b01c8",
+              "lines": [
+                {
+                  "_uid": "8cebda92-dd84-453e-9a8e-9b4be9acdb44",
+                  "grow": "paid-add-on",
+                  "name": "One-on-one private chat",
+                  "scale": "included",
+                  "component": "pricing-table-group-line-enhanced"
+                }
+              ],
+              "title": "Deeper user engagement",
+              "component": "pricing-table-subgroup-enhanced"
+            },
+            {
+              "_uid": "6e609ceb-05e0-44ee-9cf6-6fbbb2c6d2fc",
+              "lines": [
+                {
+                  "_uid": "09de7466-ad12-46e3-a99e-04ed16d9430a",
+                  "grow": "paid-add-on",
+                  "name": "One-on-one private chat",
+                  "scale": "included",
+                  "component": "pricing-table-group-line-enhanced"
+                }
+              ],
+              "title": "Interactive messages",
+              "component": "pricing-table-subgroup-enhanced"
+            }
+          ],
+          "component": "pricing-table-group-enhanced"
+        }
+      ],
+      "header": [
+        {
+          "_uid": "02dc87fa-354d-4e75-8144-aa3542988e66",
+          "title": "Grow",
+          "component": "pricing-table-header-enhanced",
+          "description": "starts at $149"
+        },
+        {
+          "_uid": "4d52ff36-b7a4-4b4e-808a-2a39b70cf285",
+          "title": "Scale",
+          "component": "pricing-table-header-enhanced",
+          "description": "contact us"
+        }
+      ],
+      "component": "pricing-table-enhanced"
+    }
+  ],
+  "component": "pricing-table-category-enhanced"
+}
