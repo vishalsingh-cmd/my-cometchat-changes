@@ -1338,8 +1338,8 @@ export interface PricingTableGroupLineStoryblok {
 export interface PricingTableGroupLineEnhancedStoryblok {
   name: string;
   tooltip?: string;
-  grow?: '' | 'none' | 'included' | 'paid-add-on';
-  scale?: '' | 'none' | 'included' | 'paid-add-on';
+  grow?: string;
+  scale?: string;
   _uid: string;
   component: 'pricing-table-group-line-enhanced';
   [k: string]: any;

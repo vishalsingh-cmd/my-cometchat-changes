@@ -5283,7 +5283,7 @@
       "name": "pricing-table-group-line-enhanced",
       "display_name": null,
       "created_at": "2024-03-19T07:55:45.009Z",
-      "updated_at": "2024-03-19T14:09:45.942Z",
+      "updated_at": "2024-03-22T06:57:39.891Z",
       "id": 5519102,
       "schema": {
         "name": {
@@ -5297,7 +5297,7 @@
           "pos": 1
         },
         "grow": {
-          "type": "option",
+          "type": "text",
           "use_uuid": true,
           "options": [
             {
@@ -5319,10 +5319,11 @@
           "default_value": "none",
           "required": false,
           "key": "grow",
-          "pos": 2
+          "pos": 2,
+          "exclude_empty_option": false
         },
         "scale": {
-          "type": "option",
+          "type": "text",
           "use_uuid": true,
           "options": [
             {
