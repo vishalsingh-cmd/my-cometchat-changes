@@ -47,8 +47,6 @@
           </button>
         </div>
 
-        <!-- <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" /> -->
-
         <div id="subgroup" class="col-span-6">
           {#if subgroup}
             {#each subgroup as line}
