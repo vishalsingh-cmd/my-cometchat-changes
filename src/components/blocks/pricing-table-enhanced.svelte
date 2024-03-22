@@ -7,7 +7,7 @@
   import Sticky from '$components/sticky.svelte';
 
   let activePlanIndex = 0;
-  export let block: PricingTableEnhancedStoryblok;
+  export let block: PricingTableEnhancedStoryblok | undefined;
 </script>
 
 {#if block}

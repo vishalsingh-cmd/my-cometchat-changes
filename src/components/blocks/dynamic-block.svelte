@@ -44,6 +44,7 @@
   import PricingBetaHero from './pricing-beta-hero.svelte';
   import PricingTable from './pricing-table.svelte';
   import PricingTableEnhanced from './pricing-table-enhanced.svelte';
+  import PricingTableSection from './pricing-table-section.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
   import RelatedStoriesSection from './related-stories-section.svelte';
@@ -109,6 +110,7 @@
     'pricing-hero-enhancements': PricingHeroEnhancements,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
+    'pricing-table-section': PricingTableSection,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,

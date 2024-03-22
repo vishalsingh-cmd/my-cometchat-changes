@@ -8,9 +8,17 @@
   import PricingCardEnhanced from '$components/pricing-card-enhanced.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
+  import { activePricingTab } from '$lib/stores/pricing-stores';
 
   let isActive = false;
   $: ischatActive = isActive ? 'chat' : 'voice';
+
+  // on ischatActive change, reset isActive
+  $: if (ischatActive === 'chat') {
+    $activePricingTab = 1;
+  } else {
+    $activePricingTab = 0;
+  }
 
   export let block: PricingHeroEnhancementsStoryblok;
 </script>
