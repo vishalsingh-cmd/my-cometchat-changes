@@ -35,22 +35,35 @@
   // let currentPricingPlan = getPricingPlanName(block);
 
   function updatePricing(event: CustomEvent<string>) {
-    if (event.detail === '500') {
-      currentGrowPrice = '149';
-    } else if (event.detail === '5000') {
-      currentGrowPrice = '349';
-    } else if (event.detail === '10000') {
-      currentGrowPrice = '449';
-    } else if (event.detail === '50000') {
-      currentGrowPrice = 'Contact Us';
-    } else if (event.detail === '100000') {
-      currentGrowPrice = 'Contact Us';
+    if (isAnnual) {
+      if (event.detail === '500') {
+        currentGrowPrice = '139'; // update this to your annual price for 500
+      } else if (event.detail === '5000') {
+        currentGrowPrice = '324'; // update this to your annual price for 5000
+      } else if (event.detail === '10000') {
+        currentGrowPrice = '412'; // update this to your annual price for 10000
+      } else if (event.detail === '50000') {
+        currentGrowPrice = 'Contact Us';
+      } else if (event.detail === '100000') {
+        currentGrowPrice = 'Contact Us';
+      }
+    } else {
+      if (event.detail === '500') {
+        currentGrowPrice = '149';
+      } else if (event.detail === '5000') {
+        currentGrowPrice = '349';
+      } else if (event.detail === '10000') {
+        currentGrowPrice = '449';
+      } else if (event.detail === '50000') {
+        currentGrowPrice = 'Contact Us';
+      } else if (event.detail === '100000') {
+        currentGrowPrice = 'Contact Us';
+      }
     }
   }
 
   // get toggle event
   function handleToggle(event: CustomEvent<boolean>) {
-    console.log(event.detail);
     isAnnual = event.detail;
 
     if (isAnnual) {
