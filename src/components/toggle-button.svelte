@@ -11,7 +11,7 @@
   }
 </script>
 
-<div class="flex flex-row items-center justify-center gap-2">
+<div class="flex flex-row items-center justify-center gap-2 font-medium">
   <span>Monthly</span>
 
   <button

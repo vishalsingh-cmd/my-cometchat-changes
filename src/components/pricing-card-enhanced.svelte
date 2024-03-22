@@ -12,6 +12,7 @@
   import PricingRangeSlider from './PricingRangeSlider.svelte';
   import ToggleButton from './toggle-button.svelte';
 
+  let currentGrowPrice = '149';
   // get current pricing plan it can be PrcingPlanEnhancementFreeStoryblok or PricingPlanEnhancementGrowStoryblok or PricingPlanEnhancementScaleStoryblok
   export const getPricingPlanName = (
     story:
@@ -30,33 +31,31 @@
     | PricingPlanEnhancementGrowStoryblok
     | PricingPlanEnhancementScaleStoryblok;
 
-  $: currentGrowPrice = '149';
+  let currentRangeValue = '500'; // initialize this with your default range value
 
-  // let currentPricingPlan = getPricingPlanName(block);
-
-  function updatePricing(event: CustomEvent<string>) {
+  function updatePricing(rangeValue: string) {
     if (isAnnual) {
-      if (event.detail === '500') {
+      if (rangeValue === '500') {
         currentGrowPrice = '139'; // update this to your annual price for 500
-      } else if (event.detail === '5000') {
+      } else if (rangeValue === '5000') {
         currentGrowPrice = '324'; // update this to your annual price for 5000
-      } else if (event.detail === '10000') {
+      } else if (rangeValue === '10000') {
         currentGrowPrice = '412'; // update this to your annual price for 10000
-      } else if (event.detail === '50000') {
+      } else if (rangeValue === '50000') {
         currentGrowPrice = 'Contact Us';
-      } else if (event.detail === '100000') {
+      } else if (rangeValue === '100000') {
         currentGrowPrice = 'Contact Us';
       }
     } else {
-      if (event.detail === '500') {
+      if (rangeValue === '500') {
         currentGrowPrice = '149';
-      } else if (event.detail === '5000') {
+      } else if (rangeValue === '5000') {
         currentGrowPrice = '349';
-      } else if (event.detail === '10000') {
+      } else if (rangeValue === '10000') {
         currentGrowPrice = '449';
-      } else if (event.detail === '50000') {
+      } else if (rangeValue === '50000') {
         currentGrowPrice = 'Contact Us';
-      } else if (event.detail === '100000') {
+      } else if (rangeValue === '100000') {
         currentGrowPrice = 'Contact Us';
       }
     }
@@ -65,12 +64,13 @@
   // get toggle event
   function handleToggle(event: CustomEvent<boolean>) {
     isAnnual = event.detail;
+    updatePricing(currentRangeValue);
+  }
 
-    if (isAnnual) {
-      currentGrowPrice = '139';
-    } else {
-      currentGrowPrice = '149';
-    }
+  // get range event
+  function handleRange(event: CustomEvent<string>) {
+    currentRangeValue = event.detail;
+    updatePricing(currentRangeValue);
   }
 </script>
 
@@ -115,12 +115,10 @@
           {/if}
         </div>
 
-        <p class={cn('font-semibold opacity-74')}>
-          {description}
-        </p>
+        <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
 
         {#if block.name === 'Grow'}
-          <PricingRangeSlider maus={block.mau} on:value={updatePricing} />
+          <PricingRangeSlider maus={block.mau} on:value={handleRange} />
         {/if}
       </div>
 

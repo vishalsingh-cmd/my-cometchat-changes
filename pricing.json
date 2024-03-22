@@ -1,98 +1,681 @@
 {
-  "_uid": "e0e593f7-b673-4d7b-aa2e-bfab55f47753",
-  "title": "Voice & Video Calling",
-  "category": [
-    {
-      "_uid": "a1596fa3-88ef-4882-9fdb-0586881daf72",
-      "data": [
+  "story": {
+    "name": "Pricing enhancements",
+    "created_at": "2024-03-17T20:12:45.479Z",
+    "published_at": "2024-03-22T07:31:39.902Z",
+    "id": 462339136,
+    "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
+    "content": {
+      "_uid": "ae7a1c00-9636-4c85-82a4-9190abf1bccf",
+      "body": [
         {
-          "_uid": "acdf989b-8eb8-47ce-ac25-ac17b9c8b578",
-          "title": "In-app messaging\t",
-          "subgroup": [
+          "_uid": "16b239a6-5306-4c21-b1fc-8ace9d1e9674",
+          "title": "CometChat pricing",
+          "component": "pricing-hero-enhancements",
+          "info_items": [
             {
-              "_uid": "472280b7-6a2b-4481-b484-7e6d4a7017f7",
-              "lines": [
-                {
-                  "_uid": "1e2402e0-2157-4b9c-8101-dd3bc88a42c9",
-                  "grow": "paid-add-on",
-                  "name": "One-on-one private chat",
-                  "scale": "included",
-                  "tooltip": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem.",
-                  "component": "pricing-table-group-line-enhanced"
-                }
-              ],
-              "title": "Core messaging experience",
-              "component": "pricing-table-subgroup-enhanced"
-            }
-          ],
-          "component": "pricing-table-group-enhanced"
-        },
-        {
-          "_uid": "23034751-25d5-4080-a235-fa3b9dba55eb",
-          "title": "Voice & Video Calling/Conferencing\t",
-          "subgroup": [
-            {
-              "_uid": "3a5c4fb4-74df-4ec0-99ad-29d7c165177d",
-              "lines": [
-                {
-                  "_uid": "5387152b-4fbc-45bf-a279-ea04dbc8332e",
-                  "grow": "paid-add-on",
-                  "name": "One-on-one private chat",
-                  "scale": "included",
-                  "component": "pricing-table-group-line-enhanced"
-                }
-              ],
-              "title": "Core messaging experience",
-              "component": "pricing-table-subgroup-enhanced"
+              "_uid": "7c0d1873-f244-4b66-b591-81dc9d23265f",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
             },
             {
-              "_uid": "823913c0-61b6-4c61-a5b8-1146be5b01c8",
-              "lines": [
-                {
-                  "_uid": "8cebda92-dd84-453e-9a8e-9b4be9acdb44",
-                  "grow": "paid-add-on",
-                  "name": "One-on-one private chat",
-                  "scale": "included",
-                  "component": "pricing-table-group-line-enhanced"
-                }
-              ],
-              "title": "Deeper user engagement",
-              "component": "pricing-table-subgroup-enhanced"
+              "_uid": "27a8bd7f-d891-48e7-bfde-b26c079ffa6e",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
             },
             {
-              "_uid": "6e609ceb-05e0-44ee-9cf6-6fbbb2c6d2fc",
-              "lines": [
-                {
-                  "_uid": "09de7466-ad12-46e3-a99e-04ed16d9430a",
-                  "grow": "paid-add-on",
-                  "name": "One-on-one private chat",
-                  "scale": "included",
-                  "component": "pricing-table-group-line-enhanced"
-                }
-              ],
-              "title": "Interactive messages",
-              "component": "pricing-table-subgroup-enhanced"
+              "_uid": "683bf32a-7420-40b1-a088-88808805379a",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
+            },
+            {
+              "_uid": "6ae3dc92-aae4-41c4-b9f8-4663350f0841",
+              "icon": "shield-zap",
+              "name": "ISO",
+              "component": "pricing-hero-info-item",
+              "description": "27001"
             }
           ],
-          "component": "pricing-table-group-enhanced"
-        }
-      ],
-      "header": [
-        {
-          "_uid": "02dc87fa-354d-4e75-8144-aa3542988e66",
-          "title": "Grow",
-          "component": "pricing-table-header-enhanced",
-          "description": "starts at $149"
+          "description": "Streamlined, efficient packages designed for companies of all sizes.",
+          "pricing_plans": [
+            "48aa2e59-e493-41de-b255-eaab84450223",
+            "0c005036-e03d-4d36-a339-eb870544a911",
+            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
+          ],
+          "voice_and_video_plans": [
+            {
+              "cta": [
+                {
+                  "_uid": "2e3612ed-4b97-4b0e-92e7-7fe9650b36b3",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Try for free",
+                  "variant": "secondary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "e7a9f84c-ee9b-4801-97ab-38806e3df967",
+              "name": "Developer",
+              "price": "Free",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "f934a2f3-ea54-4003-9428-8d10e1b2b859",
+                  "value": "Try all Pro Plan features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8602f004-eee6-483e-9e40-5d6c20d2c78d",
+                  "value": "Free up to 25 users",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "b011e7c4-e52c-4444-8594-426f6c6058a2",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Schedule a demo",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "df7e2458-e7d6-4d2d-93f1-1b85e1a8dcbd",
+              "name": "Pay-as-you-go",
+              "component": "pricing-plan-enhancement-pay-as-you-go",
+              "highlights": [
+                {
+                  "_uid": "6661fd3c-b417-43c8-8e66-ec0be007dc9e",
+                  "price": "$0.001",
+                  "services": "Voice and video",
+                  "component": "pricing-pay-as-you-go-highlights"
+                },
+                {
+                  "_uid": "1492f542-e839-4a7a-9841-f6b5669eae7e",
+                  "price": "$0.003",
+                  "services": "Voice",
+                  "component": "pricing-pay-as-you-go-highlights"
+                },
+                {
+                  "_uid": "7bb79046-b82d-4563-b7ba-012f2dc76a57",
+                  "price": "$0.006",
+                  "services": "Voice and video call recording",
+                  "component": "pricing-pay-as-you-go-highlights"
+                },
+                {
+                  "_uid": "e6faf0a6-73f6-4c57-8488-620f848a61dd",
+                  "price": "$0.003",
+                  "services": "Video broadcasting",
+                  "component": "pricing-pay-as-you-go-highlights"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "3c5bcd7b-85fa-485e-9d99-ff1984f19bfd",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Schedule a demo",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "65e4ab50-e4ad-48c7-931e-e4d9eab73cf1",
+              "name": "Contact Us",
+              "price": "Contact Us",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "30a9fe2a-82cb-4d35-8d55-4a8105ef2cf9",
+                  "value": "Multi-Tenancy",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
+                  "component": "text"
+                },
+                {
+                  "_uid": "e5d2d253-7384-4383-9b5f-e8b2dcec76cf",
+                  "value": "Shared or dedicated cloud deployment",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
+                  "component": "text"
+                },
+                {
+                  "_uid": "5a7ab168-33d1-4fc6-a24f-3528020f8eb7",
+                  "value": "Conversational AI, Insights AI and Moderation AI",
+                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user",
+                  "component": "text"
+                },
+                {
+                  "_uid": "e00620a4-1a5e-4d09-83eb-03bedfb3b5bc",
+                  "value": "Vertical based pricing",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            }
+          ],
+          "chat_and_messaging_plans": [
+            {
+              "cta": [
+                {
+                  "_uid": "1218ca8a-1938-4f8b-9d1b-ed919ab51819",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Try for free",
+                  "variant": "secondary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "030163d6-65be-4d15-8bfc-709866afe204",
+              "name": "Developer",
+              "price": "Free",
+              "component": "pricing-plan-enhancement-free",
+              "highlights": [
+                {
+                  "_uid": "6ee12ccd-9dbe-4f71-9577-56b03d9be6e8",
+                  "value": "Try all Pro Plan features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "58510724-2c7d-4060-abc2-17a28f8232fa",
+                  "value": "Free up to 25 users",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "3857f6c0-dd15-4eb6-9e11-e788d7495ac1",
+                  "icon": "",
+                  "link": {
+                    "id": "34ca1d58-2297-45a9-8eb3-43491b007239",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/pricing"
+                  },
+                  "label": "Schedule a demo",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "mau": [
+                {
+                  "_uid": "55c84785-855f-45e7-aeaf-c1ca7344c330",
+                  "value": "0",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8e2b4026-2632-4f85-a717-9a5b352f3e0b",
+                  "value": "500",
+                  "component": "text"
+                },
+                {
+                  "_uid": "f7757fd5-3d6b-4b5e-926a-42df294c3144",
+                  "value": "5000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c7b10654-47bb-4c94-b812-496138f1b6a7",
+                  "value": "10000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "a439d662-7f27-40b1-b19f-2956199fdd5b",
+                  "value": "50000",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c7c580bb-3a76-4d91-b057-65f6afe9391e",
+                  "value": "100000",
+                  "component": "text"
+                }
+              ],
+              "_uid": "1da0f98d-91f2-4c1b-8cfc-5879285257b9",
+              "name": "Grow",
+              "price": "149",
+              "component": "pricing-plan-enhancement-grow",
+              "highlights": [
+                {
+                  "_uid": "a7daef99-808d-47a7-bb7d-3fd26c97e8e1",
+                  "value": "Core chat features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "dd46af03-396c-416b-8275-17e9540cacf3",
+                  "value": "Easy integration using our no-code chat widget, UI Kits, SDKs and APIs",
+                  "component": "text"
+                },
+                {
+                  "_uid": "c6737354-e01d-4181-9b9e-f7d4861f8cb4",
+                  "value": "Robust user engagement, experience, and moderation features",
+                  "component": "text"
+                },
+                {
+                  "_uid": "8b1f69ad-c9c8-4087-9efd-ebe1461011d6",
+                  "value": "Robust, global infrastructure",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            },
+            {
+              "cta": [
+                {
+                  "_uid": "42d4a88f-f315-44f9-806b-397227c80f2d",
+                  "icon": "",
+                  "link": {
+                    "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                    "url": "",
+                    "linktype": "story",
+                    "fieldtype": "multilink",
+                    "cached_url": "pages/contact-sales"
+                  },
+                  "label": "Contact us",
+                  "variant": "primary",
+                  "component": "button-link"
+                }
+              ],
+              "_uid": "e1efdd2f-955d-40c7-977e-979110f5298d",
+              "name": "Scale",
+              "price": "Contact Us",
+              "component": "pricing-plan-enhancement-scale",
+              "highlights": [
+                {
+                  "_uid": "5f7bcdd1-596b-4bba-bb99-b4c6550d88ba",
+                  "value": "Multi-Tenancy",
+                  "component": "text"
+                },
+                {
+                  "_uid": "40704971-1de6-4d7f-bd10-a8650c98c398",
+                  "value": "Shared or dedicated cloud deployment",
+                  "component": "text"
+                },
+                {
+                  "_uid": "470f2a0c-877f-465a-9091-01ebf6382adb",
+                  "value": "Conversational AI, Insights AI and Moderation AI",
+                  "component": "text"
+                },
+                {
+                  "_uid": "87c3b214-ca12-4b40-a93b-e4ed678c794f",
+                  "value": "Vertical based pricing",
+                  "component": "text"
+                }
+              ],
+              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+            }
+          ]
         },
         {
-          "_uid": "4d52ff36-b7a4-4b4e-808a-2a39b70cf285",
-          "title": "Scale",
-          "component": "pricing-table-header-enhanced",
-          "description": "contact us"
+          "_uid": "4c03482d-1114-4a0e-bdac-8359d91cb004",
+          "theme": "dark",
+          "title": [
+            {
+              "_uid": "54226008-90e1-4bb1-a440-5d97e0818c45",
+              "size": "large",
+              "label": "All features",
+              "links": [],
+              "title": "Compare plans \u0026 features",
+              "component": "title",
+              "description": ""
+            }
+          ],
+          "alignment": "center",
+          "component": "title-section",
+          "accent_colour": "brand"
+        },
+        {
+          "_uid": "b083f344-ad1c-47d8-8b71-7d3cc694086b",
+          "component": "pricing-table-section",
+          "pricing_table": [
+            {
+              "_uid": "6a16dea0-baec-42b9-8fef-16eaee729a82",
+              "title": "Chat \u0026 Messaging",
+              "category": [
+                {
+                  "_uid": "ae75d169-2e4d-41b5-b792-954e8f878078",
+                  "data": [
+                    {
+                      "_uid": "27145580-70b6-4cb2-bdb9-c128e147a5fb",
+                      "title": "In-app messaging\t",
+                      "subgroup": [
+                        {
+                          "_uid": "0c1f9103-1cf2-4933-ad4f-ed166ed6b4a1",
+                          "lines": [
+                            {
+                              "_uid": "d2865273-36b5-4b3b-9367-7297f9a90557",
+                              "grow": "none",
+                              "name": "One-on-one private chat",
+                              "scale": "pay as you go",
+                              "tooltip": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Core messaging experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "e455d67e-adc7-4085-befd-c9c991e62e17",
+                      "title": "Voice \u0026 Video Calling/Conferencing\t",
+                      "subgroup": [
+                        {
+                          "_uid": "d55b0937-9adc-4e27-afc3-e4a33b42d811",
+                          "lines": [
+                            {
+                              "_uid": "7350b390-1983-4e97-a3e5-8730bd19dd6f",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Core messaging experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "58ceb7b4-7fc4-4c98-bb4a-b7afc3d5a5b4",
+                          "lines": [
+                            {
+                              "_uid": "7f5bc365-1a08-4330-81b7-c4d536d2abfa",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Deeper user engagement",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "4e947ed3-8d56-41ca-99c8-35020622fe3b",
+                          "lines": [
+                            {
+                              "_uid": "cbe9fe89-4557-4d18-a593-c5ebabf9f097",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Interactive messages",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    }
+                  ],
+                  "header": [
+                    {
+                      "_uid": "5d56d616-3d8c-4d04-a076-382797a2e854",
+                      "title": "Grow",
+                      "component": "pricing-table-header-enhanced",
+                      "description": "starts at $149"
+                    },
+                    {
+                      "_uid": "321e86dd-13ba-406f-a88c-059b7770eac3",
+                      "title": "Scale",
+                      "component": "pricing-table-header-enhanced",
+                      "description": "contact us"
+                    }
+                  ],
+                  "component": "pricing-table-enhanced"
+                }
+              ],
+              "component": "pricing-table-category-enhanced"
+            },
+            {
+              "_uid": "e0e593f7-b673-4d7b-aa2e-bfab55f47753",
+              "title": "Voice \u0026 Video Calling",
+              "category": [
+                {
+                  "_uid": "a1596fa3-88ef-4882-9fdb-0586881daf72",
+                  "data": [
+                    {
+                      "_uid": "acdf989b-8eb8-47ce-ac25-ac17b9c8b578",
+                      "title": "Paid In-app messaging\t",
+                      "subgroup": [
+                        {
+                          "_uid": "472280b7-6a2b-4481-b484-7e6d4a7017f7",
+                          "lines": [
+                            {
+                              "_uid": "1e2402e0-2157-4b9c-8101-dd3bc88a42c9",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "tooltip": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Core messaging experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "23034751-25d5-4080-a235-fa3b9dba55eb",
+                      "title": "Voice \u0026 Video Calling/Conferencing\t",
+                      "subgroup": [
+                        {
+                          "_uid": "3a5c4fb4-74df-4ec0-99ad-29d7c165177d",
+                          "lines": [
+                            {
+                              "_uid": "5387152b-4fbc-45bf-a279-ea04dbc8332e",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Core messaging experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "823913c0-61b6-4c61-a5b8-1146be5b01c8",
+                          "lines": [
+                            {
+                              "_uid": "8cebda92-dd84-453e-9a8e-9b4be9acdb44",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Deeper user engagement",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "6e609ceb-05e0-44ee-9cf6-6fbbb2c6d2fc",
+                          "lines": [
+                            {
+                              "_uid": "09de7466-ad12-46e3-a99e-04ed16d9430a",
+                              "grow": "paid-add-on",
+                              "name": "One-on-one private chat",
+                              "scale": "included",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Interactive messages",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    }
+                  ],
+                  "header": [
+                    {
+                      "_uid": "02dc87fa-354d-4e75-8144-aa3542988e66",
+                      "title": "Pay-as-you-go",
+                      "component": "pricing-table-header-enhanced",
+                      "description": "Contact Us"
+                    },
+                    {
+                      "_uid": "4d52ff36-b7a4-4b4e-808a-2a39b70cf285",
+                      "title": "Contact Us",
+                      "component": "pricing-table-header-enhanced",
+                      "description": "contact us"
+                    }
+                  ],
+                  "component": "pricing-table-enhanced"
+                }
+              ],
+              "component": "pricing-table-category-enhanced"
+            }
+          ]
+        },
+        {
+          "_uid": "e6c8bf9b-286a-48ef-b438-4ce9cac79062",
+          "faqs": [
+            {
+              "_uid": "bfceca86-7cd7-4950-ab18-008101b9987c",
+              "text": {
+                "type": "doc",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Every plan includes Voice and video functionality with Pro and Custom plans including free voice and video minutes. ",
+                        "type": "text"
+                      },
+                      { "type": "hard_break" },
+                      { "type": "hard_break" },
+                      {
+                        "text": "Pro customers get 15k voice and video minutes per month; Custom plan customers get 50k voice and video minutes per month. Minutes are split equally between voice and video regardless of plan. Essential plans do not include free voice and video minutes.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "title": "Is voice and video calling included?",
+              "component": "faq"
+            },
+            {
+              "_uid": "245b8566-8ff5-4af2-83d5-b2b151a8c730",
+              "text": "Yes! Our chat is HIPAA compliant. In every case HIPAA requires a Business Associate Agreement (BAA). In the Essentials and Pro plans it’s a paid add-on. In the Custom plan BAA is an included add-on. Please reach out to get one set up.",
+              "title": "Do you offer HIPAA compliance?",
+              "component": "faq"
+            },
+            {
+              "_uid": "334b0318-debd-4fd3-a1ee-123113a81664",
+              "text": "A Monthly Active User (MAU) is a user that has connected to CometChat servers during the 30 day subscription period.",
+              "title": "What are Monthly Active Users?",
+              "component": "faq"
+            },
+            {
+              "_uid": "48aa8255-2637-4be6-820a-d74a0d5ece87",
+              "text": "The maximum number of devices connected to CometChat at the same time. Note that this is the number of devices connected, not users. One user may be connected via two devices, which results in two concurrent connections.",
+              "title": "What are Peak Concurrent Connections (PCCs)?",
+              "component": "faq"
+            },
+            {
+              "_uid": "3c8bb183-76bf-4563-8a50-317c8f595e25",
+              "text": "All plans include 5% Peak Concurrent Connections (PCC). For single-tenant subscriptions, this is calculated as the maximum number of connections to CometChat at any given time. For example, if your plan includes 10,000 MAU, 500 devices can be connected to CometChat at the same time. Beyond 5%, overages fees will apply.",
+              "title": "How many Peak Concurrent Connections are included?",
+              "component": "faq"
+            },
+            {
+              "_uid": "31d909c8-489e-4548-a76d-c6383b05d2c3",
+              "text": "If you exceed your MAUs, Voice and Video Minutes, or Peak Concurrent Connections (PCC) limits, you will be automatically charged an overage fee. For up to 50K MAUs, you'll be charged $0.12 per MAU. Similarly for Video calls, $0.003 /min. per user, and $0.001 /min. per user for Voice call minutes. For every PCC you'll be charged $1.\nContact us if you have further queries.",
+              "title": "What happens if I exceed my plan’s limits?",
+              "component": "faq"
+            },
+            {
+              "_uid": "6e957b47-500c-4f40-8d58-3ec3dbcbe4b9",
+              "text": "Yes we do. Some of our notable customers who use CometChat for a multi-tenant use case are Kahoot, Vaave, Entole, Gosource, etc. For such subscriptions, PCC is measured by individual app and aggregated to the day level and the highest day during the subscription month is used.",
+              "title": "Do you offer multi-tenancy features?",
+              "component": "faq"
+            },
+            {
+              "_uid": "a9258936-2772-42cd-a757-a8f2ed3609cd",
+              "text": "Yes, we do offer custom plans if you're looking for vertical specific functionalities, multi-tenant use case, or high concurrency needs. Contact us and we’ll work with you to find a plan and concurrency level that works for you. For example, if you're in the events or live chat business, you can purchase a plan that includes very high concurrency.",
+              "title": "Do you offer custom pricing plans?",
+              "component": "faq"
+            }
+          ],
+          "title": [
+            {
+              "_uid": "4cc572c9-b0e7-4029-9254-c0d2545501bd",
+              "size": "large",
+              "label": "",
+              "links": [],
+              "title": "Frequently asked questions\n",
+              "component": "title",
+              "description": ""
+            }
+          ],
+          "component": "faq-section"
         }
       ],
-      "component": "pricing-table-enhanced"
-    }
-  ],
-  "component": "pricing-table-category-enhanced"
+      "component": "pricing"
+    },
+    "slug": "pricing-enhancements",
+    "full_slug": "pages/pricing-enhancements",
+    "sort_by_date": null,
+    "position": 130,
+    "tag_list": [],
+    "is_startpage": false,
+    "parent_id": 316987388,
+    "meta_data": null,
+    "group_id": "9ca3dbd8-422f-466e-b2d6-1d0f610b3229",
+    "first_published_at": "2023-12-22T12:30:14.898Z",
+    "release_id": null,
+    "lang": "default",
+    "path": null,
+    "alternates": [
+      {
+        "id": 389799831,
+        "name": "Pricing",
+        "slug": "pricing",
+        "published": true,
+        "full_slug": "pages/pricing",
+        "is_folder": false,
+        "parent_id": 316987388
+      }
+    ],
+    "default_full_slug": null,
+    "translated_slugs": null
+  },
+  "cv": 1711092700,
+  "rels": [],
+  "links": []
 }

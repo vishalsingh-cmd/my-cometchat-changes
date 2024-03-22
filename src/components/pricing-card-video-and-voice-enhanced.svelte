@@ -27,7 +27,7 @@
 </script>
 
 {#if block}
-  {@const { price, highlights, cta } = block}
+  {@const { name, price, description, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -52,14 +52,32 @@
       </div>
 
       <div class="flex flex-col gap-3">
-        <p class="text-lg/tight font-semibold">Highlights</p>
+        <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
+
+        {#if name !== 'Pay-as-you-go'}
+          <p class="mt-3 text-lg/tight font-semibold">Highlights</p>
+        {/if}
         <div class="flex flex-col gap-2">
-          {#each highlights as highlight}
-            <div class="flex items-start gap-2">
-              <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-              <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
-            </div>
-          {/each}
+          {#if name === 'Pay-as-you-go'}
+            {#each highlights as highlight}
+              <div class="mt-2 flex flex-col items-start gap-2">
+                <p class="text-lg/snug font-semibold tracking-wide">
+                  {highlight.price}
+                  <span class="text-sm opacity-64">/user minutes</span>
+                </p>
+                <p class="text-lg/snug font-medium tracking-wide opacity-64">
+                  {highlight.services}
+                </p>
+              </div>
+            {/each}
+          {:else}
+            {#each highlights as highlight}
+              <div class="flex items-start gap-2">
+                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+                <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+              </div>
+            {/each}
+          {/if}
         </div>
       </div>
     </div>
