@@ -4431,7 +4431,7 @@
       "name": "pricing-hero-enhancements",
       "display_name": "Pricing Hero Enhancements",
       "created_at": "2024-03-17T21:08:13.974Z",
-      "updated_at": "2024-03-19T12:47:05.821Z",
+      "updated_at": "2024-03-22T07:25:28.017Z",
       "id": 5509903,
       "schema": {
         "title": {
@@ -4478,22 +4478,6 @@
             "pricing-plan-enhancement-pay-as-you-go",
             "pricing-plan-enhancement-contact-us"
           ]
-        },
-        "pricing_plans": {
-          "type": "options",
-          "source": "internal_stories",
-          "filter_content_type": [
-            "pricing-plan-enhancement",
-            "pricing-plan-enhancement-free",
-            "pricing-plan-enhancement-grow",
-            "pricing-plan-enhancement-scale"
-          ],
-          "required": false,
-          "key": "pricing_plans",
-          "pos": 5,
-          "entry_appearance": "link",
-          "tooltip": false,
-          "allow_advanced_search": true
         }
       },
       "image": null,
@@ -4547,6 +4531,34 @@
       "icon": null,
       "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-pay-as-you-go-highlights",
+      "display_name": null,
+      "created_at": "2024-03-22T07:28:40.289Z",
+      "updated_at": "2024-03-22T07:29:10.084Z",
+      "id": 5540331,
+      "schema": {
+        "price": {
+          "type": "text"
+        },
+        "services": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-pay-as-you-go-highlights",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "pricing-plan",
@@ -4894,7 +4906,7 @@
       "name": "pricing-plan-enhancement-pay-as-you-go",
       "display_name": null,
       "created_at": "2024-03-19T12:45:41.326Z",
-      "updated_at": "2024-03-19T12:46:05.458Z",
+      "updated_at": "2024-03-22T07:30:09.543Z",
       "id": 5521971,
       "schema": {
         "name": {
@@ -4914,7 +4926,7 @@
           "description": "Each new line will be shown as a new entry.",
           "restrict_type": "",
           "restrict_components": true,
-          "component_whitelist": ["text"],
+          "component_whitelist": ["text", "pricing-pay-as-you-go-highlights"],
           "key": "highlights",
           "pos": 3
         },

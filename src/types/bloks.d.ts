@@ -740,6 +740,7 @@ export interface IndustryStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -969,6 +970,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1098,6 +1100,7 @@ export interface PricingStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1191,13 +1194,6 @@ export interface PricingHeroEnhancementsStoryblok {
     | PricingPlanEnhancementPayAsYouGoStoryblok
     | PricingPlanEnhancementContactUsStoryblok
   )[];
-  pricing_plans?: (
-    | StoryblokStory<PricingPlanEnhancementStoryblok>
-    | StoryblokStory<PricingPlanEnhancementFreeStoryblok>
-    | StoryblokStory<PricingPlanEnhancementGrowStoryblok>
-    | StoryblokStory<PricingPlanEnhancementScaleStoryblok>
-    | string
-  )[];
   _uid: string;
   component: 'pricing-hero-enhancements';
   [k: string]: any;
@@ -1209,6 +1205,14 @@ export interface PricingHeroInfoItemStoryblok {
   description?: string;
   _uid: string;
   component: 'pricing-hero-info-item';
+  [k: string]: any;
+}
+
+export interface PricingPayAsYouGoHighlightsStoryblok {
+  price?: string;
+  services?: string;
+  _uid: string;
+  component: 'pricing-pay-as-you-go-highlights';
   [k: string]: any;
 }
 
@@ -1267,7 +1271,7 @@ export interface PricingPlanEnhancementGrowStoryblok {
 export interface PricingPlanEnhancementPayAsYouGoStoryblok {
   name: string;
   description?: string;
-  highlights: TextStoryblok[];
+  highlights: (TextStoryblok | PricingPayAsYouGoHighlightsStoryblok)[];
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-plan-enhancement-pay-as-you-go';
@@ -1578,6 +1582,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1680,6 +1685,7 @@ export interface TechnologyStoryblok {
     | PricingBetaHeroStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
