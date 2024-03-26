@@ -97,7 +97,7 @@
                           class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-1"
                         >
                           <div
-                            class="col-span-2 flex flex-row items-center justify-center gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
+                            class="col-span-2 ml-12 flex flex-row items-start justify-start gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
                           >
                             <span>
                               {name}
