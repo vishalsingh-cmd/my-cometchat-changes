@@ -116,19 +116,19 @@
                             {/if}
                           </div>
                           <!-- scale can have values like none, paid-add-on, included or other text(note for other text just render the text instead of icon for none it's -) -->
-                          {#if scale === 'none'}
+                          {#if scale === 'no'}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <span class="self-center">-</span>
                             </div>
-                          {:else if scale === 'paid-add-on'}
-                            {@const { icon, color } = getPricingIcon(scale)}
+                          {:else if scale === 'addon'}
+                            {@const { icon, color } = getPricingIcon('paid-add-on')}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="flex w-6 flex-col items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             </div>
-                          {:else if scale === 'included'}
-                            {@const { icon, color } = getPricingIcon(scale)}
+                          {:else if scale === 'yes'}
+                            {@const { icon, color } = getPricingIcon('included')}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="flex w-6 flex-col items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
@@ -141,19 +141,19 @@
                           {/if}
 
                           <!-- same for the grow -->
-                          {#if grow === 'none'}
+                          {#if grow === 'no'}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <span class="self-center">-</span>
                             </div>
-                          {:else if grow === 'paid-add-on'}
-                            {@const { icon, color } = getPricingIcon(grow)}
+                          {:else if grow === 'addon'}
+                            {@const { icon, color } = getPricingIcon('paid-add-on')}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="w-6 items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             </div>
-                          {:else if grow === 'included'}
-                            {@const { icon, color } = getPricingIcon(grow)}
+                          {:else if grow === 'yes'}
+                            {@const { icon, color } = getPricingIcon('included')}
                             <div class="col-span-2 flex w-full items-center justify-center">
                               <div class="w-6 items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
