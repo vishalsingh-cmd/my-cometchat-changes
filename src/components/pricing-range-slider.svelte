@@ -4,7 +4,9 @@
 
   interface Mau {
     _uid: string;
-    value: string;
+    mau: string;
+    yearly: string;
+    monthly: string;
     component: string;
   }
 
@@ -12,9 +14,9 @@
 
   let selectedIndex = 1;
 
-  $: maxValue = maus[maus.length - 1].value;
-  $: stepValue = Math.floor(maus.length / 5);
-  $: currentValue = maus[selectedIndex].value;
+  $: maxValue = maus[maus.length - 1].mau;
+  $: stepValue = Math.floor(maus.length / Number(maxValue));
+  $: currentValue = maus[selectedIndex].mau;
 
   // Calculate the percentage of progress
   $: progress = (selectedIndex / (maus.length - 1)) * 100;
@@ -43,7 +45,7 @@
     class="w-full cursor-pointer appearance-none rounded-full focus:outline-none disabled:pointer-events-none disabled:opacity-50"
     style="--thumb-color: white; --thumb-border-color: #55506C; --slider-bg-gradient: {gradient}; --slider-lines: {lines};"
     id="steps-range-slider-usage"
-    min="0"
+    min={0}
     max={steps}
     step={stepValue}
     bind:value={selectedIndex}
@@ -70,33 +72,35 @@
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0px;
-    margin-right: -5px;
+    margin-top: -6px;
+    margin-right: 0px;
+    margin-bottom: -6px;
   }
   input[type='range']::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0px;
-    margin-right: -5px;
+    margin-top: -6px;
+    margin-right: 0px;
+    margin-bottom: -6px;
   }
 
   input[type='range']::-webkit-slider-runnable-track {
     background: var(--slider-lines), var(--slider-bg-gradient);
-    border-radius: 0.5rem;
+    border-radius: 0.9rem;
   }
 
   input[type='range']::-moz-range-track {
     background: var(--slider-lines), var(--slider-bg-gradient);
-    border-radius: 0.5rem;
+    border-radius: 0.9rem;
   }
 </style>

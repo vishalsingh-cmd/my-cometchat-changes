@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-03-22T07:31:39.902Z",
+    "published_at": "2024-03-28T11:30:19.840Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -14,36 +14,41 @@
           "component": "pricing-hero-enhancements",
           "info_items": [
             {
-              "_uid": "7c0d1873-f244-4b66-b591-81dc9d23265f",
-              "icon": "shield-zap",
-              "name": "ISO",
+              "_uid": "54529494-6561-4ee3-b323-7ea871007f00",
+              "icon": "shield-tick",
+              "name": "GDPR",
               "component": "pricing-hero-info-item",
-              "description": "27001"
+              "description": "Compliant"
             },
             {
-              "_uid": "27a8bd7f-d891-48e7-bfde-b26c079ffa6e",
-              "icon": "shield-zap",
-              "name": "ISO",
+              "_uid": "92f889c7-e905-472e-9b74-02bbe24f2f2c",
+              "icon": "shield-plus",
+              "name": "SOC2",
               "component": "pricing-hero-info-item",
-              "description": "27001"
+              "description": "Compliant"
             },
             {
-              "_uid": "683bf32a-7420-40b1-a088-88808805379a",
-              "icon": "shield-zap",
-              "name": "ISO",
+              "_uid": "ab54dfeb-a310-44f7-bcad-b32736badb9e",
+              "icon": "activity-heart",
+              "name": "HIPAA Compliant",
               "component": "pricing-hero-info-item",
-              "description": "27001"
+              "description": ""
             },
             {
-              "_uid": "6ae3dc92-aae4-41c4-b9f8-4663350f0841",
+              "_uid": "9e25c1b7-76b3-4353-8b31-627d73ba5c40",
               "icon": "shield-zap",
               "name": "ISO",
               "component": "pricing-hero-info-item",
               "description": "27001"
             }
           ],
-          "description": "Streamlined, efficient packages designed for companies of all sizes.",
+          "description": "Simple, scalable, built for success.",
           "pricing_plans": [
+            "48aa2e59-e493-41de-b255-eaab84450223",
+            "0c005036-e03d-4d36-a339-eb870544a911",
+            "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
+          ],
+          "something_test_plan": [
             "48aa2e59-e493-41de-b255-eaab84450223",
             "0c005036-e03d-4d36-a339-eb870544a911",
             "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
@@ -67,22 +72,22 @@
                 }
               ],
               "_uid": "e7a9f84c-ee9b-4801-97ab-38806e3df967",
-              "name": "Developer",
+              "name": "Build",
               "price": "Free",
               "component": "pricing-plan-enhancement-free",
               "highlights": [
                 {
                   "_uid": "f934a2f3-ea54-4003-9428-8d10e1b2b859",
-                  "value": "Try all Pro Plan features",
+                  "value": "Try all Growth plan features",
                   "component": "text"
                 },
                 {
                   "_uid": "8602f004-eee6-483e-9e40-5d6c20d2c78d",
-                  "value": "Free up to 25 users",
+                  "value": "Free up to 1000 voice and video minutes",
                   "component": "text"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "A sandbox plan for you to create an MVP and test out CometChat for free."
             },
             {
               "cta": [
@@ -108,13 +113,13 @@
                 {
                   "_uid": "6661fd3c-b417-43c8-8e66-ec0be007dc9e",
                   "price": "$0.001",
-                  "services": "Voice and video",
+                  "services": "Voice",
                   "component": "pricing-pay-as-you-go-highlights"
                 },
                 {
                   "_uid": "1492f542-e839-4a7a-9841-f6b5669eae7e",
                   "price": "$0.003",
-                  "services": "Voice",
+                  "services": "Video",
                   "component": "pricing-pay-as-you-go-highlights"
                 },
                 {
@@ -130,7 +135,7 @@
                   "component": "pricing-pay-as-you-go-highlights"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "Seamlessly add voice and video capabilities to your app and pay for usage. "
             },
             {
               "cta": [
@@ -150,35 +155,17 @@
                 }
               ],
               "_uid": "65e4ab50-e4ad-48c7-931e-e4d9eab73cf1",
-              "name": "Contact Us",
-              "price": "Contact Us",
+              "name": "Custom Pricing",
+              "price": "Contact Us Update",
               "component": "pricing-plan-enhancement-free",
               "highlights": [
                 {
-                  "_uid": "30a9fe2a-82cb-4d35-8d55-4a8105ef2cf9",
-                  "value": "Multi-Tenancy",
-                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
-                  "component": "text"
-                },
-                {
-                  "_uid": "e5d2d253-7384-4383-9b5f-e8b2dcec76cf",
-                  "value": "Shared or dedicated cloud deployment",
-                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user, and get notified about online presence of a logged in user's friends.",
-                  "component": "text"
-                },
-                {
-                  "_uid": "5a7ab168-33d1-4fc6-a24f-3528020f8eb7",
-                  "value": "Conversational AI, Insights AI and Moderation AI",
-                  "tooltip": "Functionality to add or remove friends, fetch online presence of a user",
-                  "component": "text"
-                },
-                {
-                  "_uid": "e00620a4-1a5e-4d09-83eb-03bedfb3b5bc",
-                  "value": "Vertical based pricing",
+                  "_uid": "325eb4c0-860d-4b77-956f-8356746399a3",
+                  "value": "Volume Discounts",
                   "component": "text"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "Custom plans for businesses anticipating higher voice and video usage. "
             }
           ],
           "chat_and_messaging_plans": [
@@ -200,13 +187,13 @@
                 }
               ],
               "_uid": "030163d6-65be-4d15-8bfc-709866afe204",
-              "name": "Developer",
+              "name": "Build",
               "price": "Free",
               "component": "pricing-plan-enhancement-free",
               "highlights": [
                 {
                   "_uid": "6ee12ccd-9dbe-4f71-9577-56b03d9be6e8",
-                  "value": "Try all Pro Plan features",
+                  "value": "Get access to all Growth plan features",
                   "component": "text"
                 },
                 {
@@ -215,7 +202,7 @@
                   "component": "text"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "A sandbox plan for you to create an MVP and test out CometChat for free."
             },
             {
               "cta": [
@@ -246,28 +233,72 @@
                   "component": "text"
                 },
                 {
-                  "_uid": "f7757fd5-3d6b-4b5e-926a-42df294c3144",
+                  "_uid": "c7b10654-47bb-4c94-b812-496138f1b6a7",
                   "value": "5000",
                   "component": "text"
                 },
                 {
-                  "_uid": "c7b10654-47bb-4c94-b812-496138f1b6a7",
+                  "_uid": "a439d662-7f27-40b1-b19f-2956199fdd5b",
                   "value": "10000",
                   "component": "text"
                 },
                 {
-                  "_uid": "a439d662-7f27-40b1-b19f-2956199fdd5b",
+                  "_uid": "7f9debe4-7b60-4e0d-b989-63d4cc5ce7df",
                   "value": "50000",
                   "component": "text"
                 },
                 {
-                  "_uid": "c7c580bb-3a76-4d91-b057-65f6afe9391e",
+                  "_uid": "dd215078-cd40-4328-a863-1f70ff82f3d5",
                   "value": "100000",
                   "component": "text"
                 }
               ],
               "_uid": "1da0f98d-91f2-4c1b-8cfc-5879285257b9",
-              "name": "Grow",
+              "name": "Growth",
+              "plans": [
+                {
+                  "mau": "20",
+                  "_uid": "9aa40389-42da-4afc-9f94-b9a4aea54392",
+                  "yearly": "0",
+                  "monthly": "0",
+                  "component": "pricing-plan-grow-segment"
+                },
+                {
+                  "mau": "500",
+                  "_uid": "cb4d8806-66b9-4e23-af54-bb928f1e4c46",
+                  "yearly": "129",
+                  "monthly": "149",
+                  "component": "pricing-plan-grow-segment"
+                },
+                {
+                  "mau": "5000",
+                  "_uid": "0057d38b-b2d8-4d52-af34-66a2b7d88799",
+                  "yearly": "219",
+                  "monthly": "249",
+                  "component": "pricing-plan-grow-segment"
+                },
+                {
+                  "mau": "10000",
+                  "_uid": "bdd8635e-78c7-49ee-824b-05de2fa0ba07",
+                  "yearly": "329",
+                  "monthly": "349",
+                  "component": "pricing-plan-grow-segment"
+                },
+                {
+                  "mau": "50000",
+                  "_uid": "9ff4b249-2673-4524-a988-05eab8af2f92",
+                  "yearly": "Contact Us",
+                  "monthly": "Contact Us",
+                  "component": "pricing-plan-grow-segment"
+                },
+                {
+                  "mau": "100000",
+                  "_uid": "6cdfc801-f9a3-4d20-8e10-1611e16910f5",
+                  "yearly": "Contact Us",
+                  "monthly": "Contact Us",
+                  "component": "pricing-plan-grow-segment"
+                }
+              ],
               "price": "149",
               "component": "pricing-plan-enhancement-grow",
               "highlights": [
@@ -292,7 +323,7 @@
                   "component": "text"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "All of the essentials to launch a robust chat experience. "
             },
             {
               "cta": [
@@ -313,12 +344,17 @@
               ],
               "_uid": "e1efdd2f-955d-40c7-977e-979110f5298d",
               "name": "Scale",
-              "price": "Contact Us",
+              "price": "Custom Pricing",
               "component": "pricing-plan-enhancement-scale",
               "highlights": [
                 {
-                  "_uid": "5f7bcdd1-596b-4bba-bb99-b4c6550d88ba",
-                  "value": "Multi-Tenancy",
+                  "_uid": "87c3b214-ca12-4b40-a93b-e4ed678c794f",
+                  "value": "Vertical based pricing",
+                  "component": "text"
+                },
+                {
+                  "_uid": "5a05de29-6ab9-453a-9a9a-d708e7d2449c",
+                  "value": "High usage and concurrency plans",
                   "component": "text"
                 },
                 {
@@ -327,17 +363,17 @@
                   "component": "text"
                 },
                 {
-                  "_uid": "470f2a0c-877f-465a-9091-01ebf6382adb",
-                  "value": "Conversational AI, Insights AI and Moderation AI",
+                  "_uid": "5f7bcdd1-596b-4bba-bb99-b4c6550d88ba",
+                  "value": "Multi-Tenancy",
                   "component": "text"
                 },
                 {
-                  "_uid": "87c3b214-ca12-4b40-a93b-e4ed678c794f",
-                  "value": "Vertical based pricing",
+                  "_uid": "470f2a0c-877f-465a-9091-01ebf6382adb",
+                  "value": "Advanced Features: Conversational AI, Insights,  AI Moderation, Announcements",
                   "component": "text"
                 }
               ],
-              "description": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem."
+              "description": "Advanced and diversified offerings for creating the ultimate communication platform."
             }
           ]
         },
@@ -379,14 +415,384 @@
                           "lines": [
                             {
                               "_uid": "d2865273-36b5-4b3b-9367-7297f9a90557",
-                              "grow": "none",
-                              "name": "One-on-one private chat",
-                              "scale": "pay as you go",
-                              "tooltip": "Lorem ipsum dolor sit amet consectetur. Cras ornare viverra id purus nec sem.",
+                              "grow": "yes",
+                              "name": "One-to-one private chat",
+                              "scale": "yes",
+                              "tooltip": "A secure, private channel for direct communication between two users.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2a2338ce-2488-4b13-9d8b-dfb2af920fa0",
+                              "grow": "yes",
+                              "name": "Group chat (Private, Public and password protected)",
+                              "scale": "yes",
+                              "tooltip": "Facilitate discussions in groups; Private (admin-invite only), Protected (requires a password), and Public (open for all).",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "6bc91e26-883b-4ac3-ad63-2a4ec8091046",
+                              "grow": "yes",
+                              "name": "Users and friends list",
+                              "scale": "yes",
+                              "tooltip": "Enable your users to view a list all other users in the app and specifically access the friends list of the logged-in user.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1fea404d-ace9-407a-a128-cd1a3081cff2",
+                              "grow": "yes",
+                              "name": "Users \u0026 friends presence",
+                              "scale": "yes",
+                              "tooltip": "Track the online status of users and their friends, including real-time online presence notifications.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "3674c399-febc-472d-8927-d5b17fc1826a",
+                              "grow": "yes",
+                              "name": "Typing Indicators",
+                              "scale": "yes",
+                              "tooltip": "Real-time indicators to show if someone is typing a message within a conversation.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d80e92f3-ca9a-48c2-9aec-23446c8fbd88",
+                              "grow": "yes",
+                              "name": "Message delivery and read receipts",
+                              "scale": "yes",
+                              "tooltip": "Shows which users have received and read messages.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d4ebd004-50f9-41dc-9d18-1c4b8f0ee46a",
+                              "grow": "yes",
+                              "name": "Text \u0026 Custom Structured Messages",
+                              "scale": "yes",
+                              "tooltip": "Supports sending text messages and custom message types, such as location data, for versatile communication.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "cae06d57-1341-4357-8a02-d2cb7fa45b5b",
+                              "grow": "yes",
+                              "name": "Threaded Conversations \u0026 Message Replies",
+                              "scale": "yes",
+                              "tooltip": "Enable organized discussion threads and tracking of individual replies within a conversation for clarity.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "cacee77a-7477-45e8-ae18-55721f0e583d",
+                              "grow": "yes",
+                              "name": "Image and Video Sharing",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to attach and share images, videos, and documents seamlessly in chats.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2cdc8dc5-b4f6-4a36-a725-1efc423e6046",
+                              "grow": "yes",
+                              "name": "Voice Notes",
+                              "scale": "yes",
+                              "tooltip": "Provides the option to record and send voice messages, enriching the communication experience.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "5bb5db73-e190-4515-a26d-b3b0a6312785",
+                              "grow": "yes",
+                              "name": "Chat History",
+                              "scale": "yes",
+                              "tooltip": "Offers access to a comprehensive list of all past messages and discussion threads for reference.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a964ffbf-6efc-4e8e-bcea-ed8c76238809",
+                              "grow": "yes",
+                              "name": "Users, groups, and conversation tags",
+                              "scale": "yes",
+                              "tooltip": "Assign custom tags to users, groups, and conversations for quick searching and categorization.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "7fe4afb4-9b18-4087-a855-2eaf5c49dc9f",
+                              "grow": "yes",
+                              "name": "User roles",
+                              "scale": "yes",
+                              "tooltip": "Enables custom role assignments to users, allowing fine-tuned control over permissions for various features.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "ac53c949-4263-4b84-9f40-8bf93716a9ec",
+                              "grow": "yes",
+                              "name": "Edit and delete messages",
+                              "scale": "yes",
+                              "tooltip": "Gives the ability to modify or remove messages after they've been sent.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e003dc0e-67d0-485d-b51f-691ca73dcd34",
+                              "grow": "yes",
+                              "name": "Localization",
+                              "scale": "yes",
+                              "tooltip": "Adapt the app interface and functionality to match the user's preferred language and regional settings",
                               "component": "pricing-table-group-line-enhanced"
                             }
                           ],
                           "title": "Core messaging experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "7f0f263a-5d7f-42b2-8318-ddc092daa506",
+                          "lines": [
+                            {
+                              "_uid": "b61e4cc2-41d0-4c39-bc81-340bcacd65e6",
+                              "grow": "yes",
+                              "name": "Mentions",
+                              "scale": "yes",
+                              "tooltip": "Enable your users to directly mention (@) others in a conversation, track all mentions, and easily navigate through mentioned content.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8c9233ec-bb0a-4328-adea-6d3342d12d08",
+                              "grow": "yes",
+                              "name": "Reactions",
+                              "scale": "yes",
+                              "tooltip": "Offer your users a quick way to engage by reacting to messages with emojis, along with tracking who reacted and how.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "86c10ce2-bde0-4bf3-9022-650cf804f596",
+                              "grow": "yes",
+                              "name": "Pin and bookmark messages",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to pin or bookmark messages within a conversation for quick reference by all participants.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "af90c52e-dba3-4b5d-8b71-fb2c00581921",
+                              "grow": "yes",
+                              "name": "Link Preview",
+                              "scale": "yes",
+                              "tooltip": "Provide a preview of media content from links within messages.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "b114ddb0-c424-4d38-89b0-3bbfee8ef53c",
+                              "grow": "yes",
+                              "name": "Stickers \u0026 GIFs ",
+                              "scale": "yes",
+                              "tooltip": "Enhance expression through a wide range of stickers and GIFs sourced from popular providers.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "5fa56574-1b10-4811-a802-cde76d61fd9a",
+                              "grow": "yes",
+                              "name": "URL Shorteners",
+                              "scale": "yes",
+                              "tooltip": "Shorten lengthy URLs to optimize message space and maintain a clean chat appearance.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2037a269-8535-4d55-a21f-f35fc7863823",
+                              "grow": "yes",
+                              "name": "Thumbnail Generation",
+                              "scale": "yes",
+                              "tooltip": "Automatically create image thumbnails tailored to different screen sizes for efficient media display.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "63a6ba28-8091-44e2-bea5-752647eca06e",
+                              "grow": "yes",
+                              "name": "Polls",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to send polls within conversations and aggregate responses for collective insight.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e5a41383-57e6-48bb-8794-3fcb66174797",
+                              "grow": "yes",
+                              "name": "Reminders",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to set time-based reminders within a conversation, that delivers a prompt message at the specified time.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "87f6720e-036e-4dcd-9565-c13a96dd6e10",
+                              "grow": "yes",
+                              "name": "Message Translation",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to translate messages to their preferred language",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "38451244-7dfb-43f2-961a-a5357b4abeca",
+                              "grow": "yes",
+                              "name": "Message Shortcuts",
+                              "scale": "yes",
+                              "tooltip": "Build the ability to recognize and expand short messages or acronyms (e.g., ROFL) into their full meaning for clarity.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "af1974e0-25f9-4f3e-9085-afef62c17037",
+                              "grow": "yes",
+                              "name": "Voice Transcription",
+                              "scale": "yes",
+                              "tooltip": "Convert voice messages into text, making audio content easily accessible and readable.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Deeper user engagement",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "ba1fe115-7448-4106-86a6-320c943130d2",
+                          "lines": [
+                            {
+                              "_uid": "998b8318-5d6f-4804-b8c5-b72a05bf1bd5",
+                              "grow": "no",
+                              "name": "Collaborative whiteboards and documents",
+                              "scale": "yes",
+                              "tooltip": "Enable real-time collaboration on whiteboards and documents, allowing all conversation participants to edit and contribute simultaneously.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Collaboration",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "f3cabba4-3e9b-4dd1-b172-8c1d453289b4",
+                          "lines": [
+                            {
+                              "_uid": "ef1797b8-6f3b-4818-99ec-1a8a52dca60c",
+                              "grow": "no",
+                              "name": "Live Reaction",
+                              "scale": "yes",
+                              "tooltip": "Allow sending real-time reactions visible to the entire conversation.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "bb5b68bb-0061-4a6d-b3ca-4bec395b6412",
+                              "grow": "no",
+                              "name": "Slow mode",
+                              "scale": "yes",
+                              "tooltip": "Curb spam by limiting the frequency of messages a user can send within a specified time interval.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Live Events Experience",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "e0b7feb2-0279-4cf7-b814-6c653b03d8bc",
+                          "lines": [
+                            {
+                              "_uid": "e6dbbf59-e43e-4ff9-9e23-788c06fa1ee2",
+                              "grow": "no",
+                              "name": "Form Message",
+                              "scale": "yes",
+                              "tooltip": "Send interactive forms within the chat, complete with an action URL, allowing users to fill out and submit responses directly.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "58b3477c-771f-4d5a-82e0-7e5f44d18ec5",
+                              "grow": "no",
+                              "name": "Card Message",
+                              "scale": "yes",
+                              "tooltip": "Deliver a message in the form of a card, ideal for quick polls or RSVPs directly within the chat environment.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "67c15f25-f806-4296-88c8-2c6a04c1286b",
+                              "grow": "no",
+                              "name": "Meeting Scheduler",
+                              "scale": "yes",
+                              "tooltip": "Provide an interactive way to propose and select meeting times, including integration with calendar files (ICS) for easy scheduling.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "ff5efa85-b373-434f-b131-7806161ef4dc",
+                              "grow": "no",
+                              "name": "Location Sharing",
+                              "scale": "yes",
+                              "tooltip": "Offer the capability for users to share their current location, facilitating meet-ups or location-specific discussions.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "eed0970b-8767-48f1-bf21-9be4a7a2732a",
+                              "grow": "no",
+                              "name": "Custom Interactive Messages",
+                              "scale": "yes",
+                              "tooltip": "Supports the creation and sharing of custom interactive messages tailored to specific use cases and workflows, enhancing user engagement.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Interactive messages",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "327158d8-a924-4c6d-8269-206e2b4522fa",
+                          "lines": [
+                            {
+                              "_uid": "28c24e44-7698-483c-8fa3-2ed59e7a2e5c",
+                              "grow": "yes",
+                              "name": "Unread messages, threads, and mentions count",
+                              "scale": "yes",
+                              "tooltip": "Display counts of unread messages, threads, and mentions for both one-on-one and group chats",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a427c370-b6b8-475f-9c82-6765650003d1",
+                              "grow": "yes",
+                              "name": "Users, Groups \u0026 Messages Search",
+                              "scale": "yes",
+                              "tooltip": "Enable comprehensive search functionality across messages, users, and groups to quickly find the desired content.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1f421d41-f070-4910-a795-03b89f4bc169",
+                              "grow": "yes",
+                              "name": "Reactions, threads, and mentions feed",
+                              "scale": "yes",
+                              "tooltip": "Provide a feed showcasing all reactions, threads and mentions with their latest message and respective unread counts.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "7aaa5d73-02f0-4f41-8808-50eb3aa4e3b9",
+                              "grow": "yes",
+                              "name": "Mark a conversation as read or unread",
+                              "scale": "yes",
+                              "tooltip": "Offer your users the flexibility to mark entire conversations as read or unread.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a2a63e10-2de3-405b-9821-b12ac292f610",
+                              "grow": "yes",
+                              "name": "Mark up to a message as read",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to mark a conversation as read up to a specific message.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Counts and Feeds",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "5729e47e-d130-45ea-be4b-6ddff0849e1b",
+                          "lines": [
+                            {
+                              "_uid": "2028884c-5d6c-4f6e-8787-1d5f755ae054",
+                              "grow": "yes",
+                              "name": "Configurable Last message Preview",
+                              "scale": "yes",
+                              "tooltip": "Customize the preview of the last message in conversation lists, allowing control over which messages are summarized without entering the conversation.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e9a72258-cf53-457b-b690-54d6c37ee0b0",
+                              "grow": "no",
+                              "name": "Custom websocket connection behaviour",
+                              "scale": "yes",
+                              "tooltip": "Gives you full control over WebSocket connections, enabling tailored management of user presence.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Advanced chat experience",
                           "component": "pricing-table-subgroup-enhanced"
                         }
                       ],
@@ -401,13 +807,54 @@
                           "lines": [
                             {
                               "_uid": "7350b390-1983-4e97-a3e5-8730bd19dd6f",
-                              "grow": "paid-add-on",
-                              "name": "One-on-one private chat",
-                              "scale": "included",
+                              "grow": "Pay-as-you-go",
+                              "name": "One-on-one Voice Calling",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Enable direct voice calls between users, facilitating personal and private audio communication within the app.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "9cdde90d-8f10-4c80-885a-ea2b659b0137",
+                              "grow": "Pay-as-you-go",
+                              "name": "One-on-one Video Calling",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Allow users to engage in private video calls, offering a face-to-face communication experience with other app users.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a95c1f22-d3d0-450b-b8a2-92f20f409417",
+                              "grow": "Pay-as-you-go",
+                              "name": "Group Video Conference",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Build the ability to have video calls among multiple group members.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "32e76d5d-9fd7-4d39-b5f8-37ef7bd5de1c",
+                              "grow": "Pay-as-you-go",
+                              "name": "Group Voice Conference",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Empower users to initiate a voice conference, inviting others to join for collaborative audio meetings.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a0ae5b3c-edeb-4e9c-9244-1cf9804f0a34",
+                              "grow": "yes",
+                              "name": "Customise video call experience",
+                              "scale": "yes",
+                              "tooltip": "Offer your users the options to tailor the video call interface, including aspect ratios, tile positioning, and custom actions for an enhanced calling experience.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "f7407577-922b-47bf-90ad-c59d780b9475",
+                              "grow": "yes",
+                              "name": "Call logs",
+                              "scale": "yes",
+                              "tooltip": "Gives you access to detailed call logs and recordings via the dashboard, with support for automated retrieval and download through APIs.",
                               "component": "pricing-table-group-line-enhanced"
                             }
                           ],
-                          "title": "Core messaging experience",
+                          "title": "Core Calling",
                           "component": "pricing-table-subgroup-enhanced"
                         },
                         {
@@ -415,27 +862,1030 @@
                           "lines": [
                             {
                               "_uid": "7f5bc365-1a08-4330-81b7-c4d536d2abfa",
-                              "grow": "paid-add-on",
-                              "name": "One-on-one private chat",
-                              "scale": "included",
+                              "grow": "Pay-as-you-go",
+                              "name": "Call Recording",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Offers the functionality to record calls, enabling users to view, and download these recordings from the call logs dashboard or programmatically through APIs.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "4b62dbf8-fedb-4bb5-80e7-374a7a0ad528",
+                              "grow": "Pay-as-you-go",
+                              "name": "Video Broadcasting",
+                              "scale": "Pay-as-you-go",
+                              "tooltip": "Facilitates a specialized broadcasting setup, allowing designated users to share audio and video in a conference while others engage in a listen/view-only mode, ideal for formats like podcasts or talk shows.",
                               "component": "pricing-table-group-line-enhanced"
                             }
                           ],
-                          "title": "Deeper user engagement",
+                          "title": "Advanced Calling",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "593bd1f3-ec6a-4b71-95fc-7a1f804f37e6",
+                      "title": "AI",
+                      "subgroup": [
+                        {
+                          "_uid": "234cad76-1077-4930-bf30-8b32a9103ace",
+                          "lines": [
+                            {
+                              "_uid": "beceb3db-180d-4653-be74-59a403f9acb6",
+                              "grow": "no",
+                              "name": "Conversation starter",
+                              "scale": "yes",
+                              "tooltip": "Leverage AI to provide conversation starters, helping users initiate interactions with individuals or groups smoothly.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "488038a5-d745-4205-94f9-7e4aae5d33cb",
+                              "grow": "no",
+                              "name": "Smart replies",
+                              "scale": "yes",
+                              "tooltip": "Utilize AI to suggest contextually relevant replies.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "413c2dba-3b71-40cd-8d97-35267dd43c5f",
+                              "grow": "no",
+                              "name": "Conversation summarizer",
+                              "scale": "yes",
+                              "tooltip": "Employ AI to provide concise summaries of conversations, making it easier to catch up on discussions quickly.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a094440c-218c-41b4-a7b5-9901cefac91e",
+                              "grow": "no",
+                              "name": "AI Bots (with custom personalities + pre-trained data)",
+                              "scale": "yes",
+                              "tooltip": "Pre-trained data feature coming soon - Setup AI bots with customizable personalities or the use of pre-trained data profiles for automated, personality-consistent responses.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "ba3a7890-d5b5-4d89-b13d-a859c4559190",
+                              "grow": "no",
+                              "name": "AI Bots as Conversation Assistants",
+                              "scale": "yes",
+                              "tooltip": "Enable AI bots to serve as conversation assistants, offering side discussions about the ongoing conversation for advice or coaching.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d143f594-19c5-42d7-8ab5-617aa6f3de03",
+                              "grow": "no",
+                              "name": "Grammar \u0026 tone helper",
+                              "scale": "yes",
+                              "tooltip": "Coming soon - Use AI to assist in correcting grammar and adjusting the tone of messages",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Conversations",
                           "component": "pricing-table-subgroup-enhanced"
                         },
                         {
-                          "_uid": "4e947ed3-8d56-41ca-99c8-35020622fe3b",
+                          "_uid": "3b265e53-6aa7-4d98-9e93-5cec6ebb4712",
                           "lines": [
                             {
-                              "_uid": "cbe9fe89-4557-4d18-a593-c5ebabf9f097",
-                              "grow": "paid-add-on",
-                              "name": "One-on-one private chat",
-                              "scale": "included",
+                              "_uid": "de988aa1-922c-4bd1-8069-922430ab89b3",
+                              "grow": "",
+                              "name": "Refer to Insights section",
+                              "scale": "",
+                              "tooltip": "",
                               "component": "pricing-table-group-line-enhanced"
                             }
                           ],
-                          "title": "Interactive messages",
+                          "title": "Insights",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "88bee483-eac9-4a53-900b-d22a6e34b317",
+                          "lines": [
+                            {
+                              "_uid": "4448adda-08c2-4013-bcc1-14f2d041d80c",
+                              "grow": "",
+                              "name": "Refer to moderation section",
+                              "scale": "",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Moderation",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "2c356c22-0aa9-43f0-9685-72305bcadd69",
+                      "title": "Platform",
+                      "subgroup": [
+                        {
+                          "_uid": "160c2dfe-f70d-4fa3-a2b1-d3dcbaabae04",
+                          "lines": [
+                            {
+                              "_uid": "fa1b7f15-b996-4208-a787-171d077e8f18",
+                              "grow": "yes",
+                              "name": "Bots (non-AI)",
+                              "scale": "yes",
+                              "tooltip": "Create custom bots to automatically respond to messages, and provide predefined answers or actions based on user interactions.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Bots",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "15c9833d-65c7-4eca-877a-24b652a41bdb",
+                          "lines": [
+                            {
+                              "_uid": "2ce5d9a6-58e1-4c95-aaef-38744c13e0d2",
+                              "grow": "yes",
+                              "name": "Messaging webhooks",
+                              "scale": "yes",
+                              "tooltip": "Implement webhook events for actions like messages being sent, edited, or deleted.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "69e22cc5-608c-49ce-b08e-55744691fd64",
+                              "grow": "no",
+                              "name": "User webhooks",
+                              "scale": "yes",
+                              "tooltip": "Trigger webhook events for activities related to user management such as users being blocked or unblocked by others.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "3ae8123f-1a3e-4fb2-ac0b-2fe2ef6ae153",
+                              "grow": "no",
+                              "name": "Group webhooks",
+                              "scale": "yes",
+                              "tooltip": "Capture events related to group dynamics, including creation or deletion, member updates, and changes in group details or ownership through webhooks.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "5c0eccfa-678f-4049-8f90-b3d417618c6b",
+                              "grow": "no",
+                              "name": "Calling webhooks",
+                              "scale": "yes",
+                              "tooltip": "Webhook events for call-related activities, including initiation, start, participant joining, leaving, and call or meeting conclusion.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "dbaac69d-e4bd-42b3-b3ee-39dd9cadc343",
+                              "grow": "no",
+                              "name": "Advanced webhooks",
+                              "scale": "addon",
+                              "tooltip": "Comprehensive webhook events for nuanced user interactions, including presence changes, call recording generation, message interactions like delivery, read receipts, reactions, and mentions.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Webhooks",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "182b9761-e158-47a5-b6e4-4331343499c9",
+                          "lines": [
+                            {
+                              "_uid": "ba9c6972-24ba-4fb4-8d91-e537545d9168",
+                              "grow": "no",
+                              "name": "Real-time Migration (Real-time Sync APIs)",
+                              "scale": "yes",
+                              "tooltip": "Bi-directional synchronization between existing communication platforms and CometChat, minimizing data discrepancies during the migration process.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1c206733-5665-4d5b-b28b-01b976929b16",
+                              "grow": "yes",
+                              "name": "Historical Migration (Data Import APIs)",
+                              "scale": "yes",
+                              "tooltip": "Migrate historical messages and data through a dedicated API, ensuring continuity of conversation histories.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "03974b80-9202-4062-a5df-c0424ae601cb",
+                              "grow": "no",
+                              "name": "White-gloved Migration",
+                              "scale": "addon",
+                              "tooltip": "Comprehensive, hands-free migration assistance, offering expert support throughout the data transfer process to CometChat.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Migration",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "47b47bb2-d56f-4dcd-aacf-f799f1656694",
+                      "title": "Notifications \u0026 Replies\t",
+                      "subgroup": [
+                        {
+                          "_uid": "87951ad0-818e-432a-ba7f-48364047e144",
+                          "lines": [
+                            {
+                              "_uid": "e00ce369-dc8c-47da-b49d-a3dbc9f8924b",
+                              "grow": "yes",
+                              "name": "Push Notifications ",
+                              "scale": "yes",
+                              "tooltip": "Facilitates sending mobile push notifications for new messages.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "bbde492e-9857-438c-aab9-f619313727ec",
+                              "grow": "no",
+                              "name": "SMS Notifications and replies",
+                              "scale": "yes",
+                              "tooltip": "Facilitates sending SMS notifications for new messages and allows users to reply back via SMS.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "f09130a8-1fdb-4327-8059-ff61a83f72a7",
+                              "grow": "no",
+                              "name": "Email Notifications and replies",
+                              "scale": "yes",
+                              "tooltip": "Facilitates sending email notifications for new messages and allows users to reply back via email.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e04988d8-6840-4b2f-84d9-a7225b4d61fc",
+                              "grow": "no",
+                              "name": "WhatsApp Notifications",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Facilitates sending Whatsapp notifications for new messages.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Channels",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "a6e4e8cd-6086-410c-9069-0352da93dc9d",
+                          "lines": [
+                            {
+                              "_uid": "5738b937-2827-43ed-8fe2-2db8258330b0",
+                              "grow": "no",
+                              "name": "Fine grained notification preferences",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Have detailed control over notification settings, including the type of message, conversation context, and user preferences, for personalized notification management.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d892e65d-2892-4799-828c-8d32a28acf68",
+                              "grow": "no",
+                              "name": "End user notification management",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to customize their notification settings, including scheduling notifications for preferred times.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d0dd2980-ba17-4041-8477-872dfb4546b8",
+                              "grow": "no",
+                              "name": "Notification templates \u0026 custom sound",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Customizable notification templates and sounds, enabling a tailored notification experience based on message context or user settings.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Advanced Features",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "32e99167-89f2-474d-96b7-5bfe4e4dfbcc",
+                      "title": "Moderation\t",
+                      "subgroup": [
+                        {
+                          "_uid": "9d19536f-bd63-4bbe-a3aa-7bea86a26a6d",
+                          "lines": [
+                            {
+                              "_uid": "8d0d3dcb-c7aa-47b5-8b2a-35f13228a804",
+                              "grow": "yes",
+                              "name": "User-to-user Blocking",
+                              "scale": "yes",
+                              "tooltip": "Empower your users to block unwanted messages from other users, ensuring a safe communication environment.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a929ba30-d366-4839-a26a-38699544ea1c",
+                              "grow": "yes",
+                              "name": "Moderators \u0026 Ability to Kick/Ban Users",
+                              "scale": "yes",
+                              "tooltip": "Enable appointed moderators to manage group dynamics by banning or removing users from group conversations.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "ffb6eb6c-5e10-435b-ad55-ea08005683d3",
+                              "grow": "yes",
+                              "name": "Report Message ",
+                              "scale": "yes",
+                              "tooltip": "Allow your users to report inappropriate messages, facilitating content moderation and community standards enforcement.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8fb2d4d7-1c0d-438d-b6eb-4a603991cf62",
+                              "grow": "yes",
+                              "name": "Report User ",
+                              "scale": "yes",
+                              "tooltip": "Provide a mechanism for users to report others who violate chat guidelines or engage in abusive behavior.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "User-level Moderation",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "692e4bb7-e150-460d-be68-20334af2502a",
+                          "lines": [
+                            {
+                              "_uid": "a4e1e9e8-730f-4a84-a722-91d316d42a3a",
+                              "grow": "yes",
+                              "name": "XSS Filter ",
+                              "scale": "yes",
+                              "tooltip": "Implement filtering to remove embedded code from messages, protecting against cross-site scripting attacks.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1563287c-ecdd-49a1-9cc2-b7793da45efc",
+                              "grow": "yes",
+                              "name": "Profanity Filter ",
+                              "scale": "yes",
+                              "tooltip": "Automatically filter out profane language from messages, maintaining a respectful and appropriate chat environment.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "09dcbd41-442d-460b-95de-96a8d484e3e9",
+                              "grow": "yes",
+                              "name": "Data Masking ",
+                              "scale": "yes",
+                              "tooltip": "Mask sensitive information within chat messages, such as social security numbers or email addresses, to protect user privacy.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "ce0001d6-2da8-4e1f-ab99-86e3113108e1",
+                              "grow": "yes",
+                              "name": "Image Moderation ",
+                              "scale": "yes",
+                              "tooltip": "Utilize AI-based moderation to identify and manage inappropriate or sensitive images shared within the platform.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "109dca94-cc66-4228-8c3e-2ae2ef6e2afa",
+                              "grow": "yes",
+                              "name": "Virus \u0026 Malware Scanner",
+                              "scale": "yes",
+                              "tooltip": "Scan attachments for viruses and malware, ensuring the safe sharing of files and documents.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "cca2b9b6-ab02-4fc8-92e7-fb951d1d23b0",
+                              "grow": "yes",
+                              "name": "Live Manual Moderation",
+                              "scale": "yes",
+                              "tooltip": "Enables real-time monitoring and moderation of messages through the admin dashboard, allowing for immediate action.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Core moderation",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "8ff812d9-4688-4314-ab5a-098ead1e5609",
+                          "lines": [
+                            {
+                              "_uid": "f95798f0-9367-491d-b54d-760a19a453c5",
+                              "grow": "no",
+                              "name": "Sentiment Analysis ",
+                              "scale": "yes",
+                              "tooltip": "Give your users insights into the emotional tone on messages and encourage cautious engagement when necessary.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "64bf37e3-6797-4779-9f36-4bdd551c0385",
+                              "grow": "no",
+                              "name": "In-flight Manual Message Moderation ",
+                              "scale": "yes",
+                              "tooltip": "Allow moderators to review messages before they reach their recipients, ensuring compliance with community standards and preventing the spread of harmful content.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Advanced moderation",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "7938ad37-13e9-44e5-9db6-138e88c403eb",
+                          "lines": [
+                            {
+                              "_uid": "f4467aea-14a9-4db4-bae0-d382d9387a78",
+                              "grow": "no",
+                              "name": "Moderation engine with conditional moderation",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Utilize advanced rule-based moderation that activates under specific conditions, with customizable actions to ensure a safe chatting environment.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e89ce6a7-08b8-43ae-b257-95745b72b251",
+                              "grow": "no",
+                              "name": "User/group based conditions",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Implement moderation rules influenced by sender, receiver, or group attributes, allowing for nuanced content control.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8663f0ea-8996-4e68-aaa7-d6d298570d50",
+                              "grow": "no",
+                              "name": "Message based conditions",
+                              "scale": "yes",
+                              "tooltip": "Coming soon -  Define moderation actions based on message content.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2d2426fc-262a-4c1a-ac14-2bfbe81e1966",
+                              "grow": "no",
+                              "name": "Message sentiment based conditions",
+                              "scale": "yes",
+                              "tooltip": "Coming soon",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d5c4fc50-1425-4d83-a155-09d29d23e4c1",
+                              "grow": "no",
+                              "name": "Message volume based conditions",
+                              "scale": "yes",
+                              "tooltip": "Coming soon",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d8d3814d-8255-4128-b872-ecad8c002c33",
+                              "grow": "no",
+                              "name": "Image explicity based conditions",
+                              "scale": "yes",
+                              "tooltip": "Coming soon",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "dd9ffdd9-de53-4f7f-a272-27b21ba52c46",
+                              "grow": "no",
+                              "name": "Semantic similarity based conditions",
+                              "scale": "Yes",
+                              "tooltip": "Coming soon",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Rule-based moderation",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "81056dce-c05f-48da-b3c1-e176ee7e6b0d",
+                      "title": "Analytics \u0026 Insights",
+                      "subgroup": [
+                        {
+                          "_uid": "c9226b76-e66e-4b80-a38b-d38c79b95484",
+                          "lines": [
+                            {
+                              "_uid": "0effd3c8-e4c2-4e8c-80ec-7552b4b99ceb",
+                              "grow": "yes",
+                              "name": "Usage reports",
+                              "scale": "yes",
+                              "tooltip": "Detailed reports on chat usage, user activity, and messaging patterns.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8c5dc545-2a56-449a-9341-becad9c35d41",
+                              "grow": "none",
+                              "name": "Multi-tenant reports",
+                              "scale": "yes",
+                              "tooltip": "Dashboard reports for all tenant apps under a master app",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Reports",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "4fdcdab1-c2d3-4889-8077-e59b6c73b1f4",
+                          "lines": [
+                            {
+                              "_uid": "bfdf5f11-7753-41f7-a027-9f34bb51b8a1",
+                              "grow": "Demo",
+                              "name": "User and group insights",
+                              "scale": "yes",
+                              "tooltip": "Detailed analytics on user and group activity, including engagement, retention, and behavior patterns.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "222b443e-217f-4e50-afd5-b785b6884529",
+                              "grow": "Demo",
+                              "name": "Messaging insights",
+                              "scale": "yes",
+                              "tooltip": "Comprehensive data on messaging trends, including types of messages, engagement rates, and conversational health indicators.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "36a8858d-26ca-41c3-ad55-afd7074fb00f",
+                              "grow": "Demo",
+                              "name": "Voice \u0026 Video Calling insights",
+                              "scale": "yes",
+                              "tooltip": "Gauge the scope of voice and video communication within the platform, tracking call durations and participant statistics.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Insights",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "e90519a4-11f9-4928-93b6-da3eebc4e0f5",
+                          "lines": [
+                            {
+                              "_uid": "6a14b58c-e409-4f25-9c8f-4856ac2d88f8",
+                              "grow": "none",
+                              "name": "Funnel Insights",
+                              "scale": "addon",
+                              "tooltip": "Chat engagement data to offer deeper insights into user behavior throughout the engagement funnel.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "33e9f4a6-3507-454c-a7a3-26a0e95d8805",
+                              "grow": "none",
+                              "name": "User Insights",
+                              "scale": "addon",
+                              "tooltip": "Build rich user profiles through AI-generated insights from behavioral and conversational data, enhancing user understanding.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1f55d7d6-de1e-4ad3-8d73-422640a320a2",
+                              "grow": "none",
+                              "name": "Entity Insights",
+                              "scale": "addon",
+                              "tooltip": "Extract and categorizes information from conversations based on various entities such as location, images, and more for deeper analysis.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "55fe4ede-fe01-451b-9812-2edc24fa70c8",
+                              "grow": "none",
+                              "name": "Ask your data anything",
+                              "scale": "addon",
+                              "tooltip": "Enables you to query conversation data for specific insights.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "M87 AI Powered Insights",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "bf33fec2-841c-4709-bfcf-159b691457f7",
+                      "title": "Integration",
+                      "subgroup": [
+                        {
+                          "_uid": "0e5bc77b-e801-4737-ab39-cb1256ea3d31",
+                          "lines": [
+                            {
+                              "_uid": "6e747a96-825c-4018-8c54-14ab0d7ddece",
+                              "grow": "yes",
+                              "name": "UI Kits",
+                              "scale": "yes",
+                              "tooltip": "Comprehensive support for developing rich user interfaces across a variety of platforms including Android (Java/Kotlin), iOS, React, React Native (Hermes), Angular, Vue, Flutter, Expo, Ionic (Capacitor), Next.js, and Nuxt.js.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "26755e98-5289-45e6-a02f-4bbe13b351bb",
+                              "grow": "yes",
+                              "name": "UI Kits (Figma Design)",
+                              "scale": "yes",
+                              "tooltip": "Figma design templates for UI Kits, letting you build high fidelity mockups before development",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "73341750-09f0-41bd-81fe-48a9549fa345",
+                              "grow": "yes",
+                              "name": "SDKs",
+                              "scale": "yes",
+                              "tooltip": "Seamless integration and development with Software Development Kits for Android, iOS, React, React Native, Flutter, and Ionic (Capacitor).",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8dc03578-0e2f-4643-abce-1839f6c81012",
+                              "grow": "yes",
+                              "name": "Chat APIs",
+                              "scale": "yes",
+                              "tooltip": "Rich set of APIs for managing and monitoring the CometChat platform, enabling robust chat functionality and customization.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a42bbd43-b78c-4449-bf4e-d3e0054c16d2",
+                              "grow": "none",
+                              "name": "App APIs (multi-tenancy)",
+                              "scale": "Yes",
+                              "tooltip": "APIs designed to manage multi-tenant systems, allowing for feature toggling, app creation, and destruction in an automated manner.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "08db15f4-8ea0-4bc9-8182-335d31a5b32d",
+                              "grow": "yes",
+                              "name": "Migration APIs ",
+                              "scale": "yes",
+                              "tooltip": "APIs to facilitate the migration process into CometChat for both real-time and historical data import, ensuring smooth platform transitions.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Integration methods",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "cb895196-bf97-451f-b971-84b9765a3268",
+                          "lines": [
+                            {
+                              "_uid": "b28a80f7-36bf-426e-8b24-5f60d34f7713",
+                              "grow": "yes",
+                              "name": "Intercom",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "17426800-d7b2-439a-bfae-d01b24d3fad4",
+                              "grow": "yes",
+                              "name": "ChatWoot",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a16267da-59cc-4c7d-af6e-af4ac1188de6",
+                              "grow": "yes",
+                              "name": "Zapier",
+                              "scale": "yes",
+                              "tooltip": "Coming soon! ",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Third Party Integrations",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "fc124e06-fbc0-46d9-9285-a9fa61cc3e02",
+                      "title": "Infrastructure",
+                      "subgroup": [
+                        {
+                          "_uid": "c9dadda6-55f3-4ef4-afd2-ef43bc3bc40a",
+                          "lines": [
+                            {
+                              "_uid": "0fd7f254-e139-4121-8e29-69ee4b98e968",
+                              "grow": "addon",
+                              "name": "Multi-tenancy",
+                              "scale": "yes",
+                              "tooltip": "Manage multiple client apps within one application, streamlining data and user segmentation for each.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "20ad2d59-132c-4dac-8aa7-25b696486ea8",
+                              "grow": "yes",
+                              "name": "High-availability data centers in US, EU and India",
+                              "scale": "yes",
+                              "tooltip": "Ensure maximum uptime through high-availability deployments across multiple regions, protecting against regional cloud service failures.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "bfb77463-5ac1-4f31-83ce-d714ab8a8e8b",
+                              "grow": "none",
+                              "name": "Private Dedicated Region Deployment",
+                              "scale": "addon",
+                              "tooltip": "Get the option for a dedicated stack deployment in a region closest to your users for optimized performance.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "107c2697-ea4a-43c8-8688-4c294b50fc0b",
+                              "grow": "none",
+                              "name": "Global Edge Network",
+                              "scale": "yes",
+                              "tooltip": "Reduces latency for your end users through a global content delivery network, ensuring a seamless user experience.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "a50a8a22-8fae-4e4d-8670-37e92c9a0ebb",
+                              "grow": "addon",
+                              "name": "99.99% Uptime SLA",
+                              "scale": "addon",
+                              "tooltip": "Guaranteed uptime service level agreement to maintain consistent and reliable user experiences.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "dbb33e1c-a686-4c4e-b535-721d90587bf3",
+                              "grow": "none",
+                              "name": "Custom domain",
+                              "scale": "addon",
+                              "tooltip": "Support for using a custom, white-label domain for seamless integration and easier firewall provision.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "bac3f620-3ff6-4baf-bdcf-6bdf4c4003f2",
+                              "grow": "none",
+                              "name": "Public Static IP",
+                              "scale": "addon",
+                              "tooltip": "Allows a public static IP address for straightforward networking and security setups.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Infrastructure",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "9035fc8a-b9c9-41df-bcbe-2a848f2832d4",
+                      "title": "Support",
+                      "subgroup": [
+                        {
+                          "_uid": "add420a1-2098-4cd5-b2d3-b6fcfe6360ea",
+                          "lines": [
+                            {
+                              "_uid": "6904fbd3-6e49-4e62-bbdf-e16baac30524",
+                              "grow": "yes",
+                              "name": "Developer Documentation",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "e40e3a61-d49c-4d67-be48-e4b3229c215d",
+                              "grow": "yes",
+                              "name": "Help center",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1abfa4f2-9862-49dc-8237-75aa1bd1f7a2",
+                              "grow": "yes",
+                              "name": "Tutorials, Guides, Recipes",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "05cd204e-d5ae-41bf-b831-122278116cd2",
+                              "grow": "yes",
+                              "name": "24/5 Ticketed Support",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "21cd39d4-3f23-4923-b856-64cf2527414e",
+                              "grow": "no",
+                              "name": "24/7 Priority Support",
+                              "scale": "addon",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "f2a5458e-9636-4030-bcf5-41b9941eff8c",
+                              "grow": "no",
+                              "name": "Shared Slack Channel",
+                              "scale": "addon",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "d4eb28c5-16c0-48f3-aead-e918240ddbaf",
+                              "grow": "none",
+                              "name": "24/7 Emergency Phone Support",
+                              "scale": "addon",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "05ba8d4e-7097-45c1-b9a9-ecdecdee1dc3",
+                              "grow": "yes",
+                              "name": "Status Page",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Standard Support",
+                          "component": "pricing-table-subgroup-enhanced"
+                        },
+                        {
+                          "_uid": "664f5ca8-d6be-4e1a-ae3e-51f862435445",
+                          "lines": [
+                            {
+                              "_uid": "354bc92a-6a86-4a5f-9fee-930879b5ac0b",
+                              "grow": "yes",
+                              "name": "Solution Office Hours",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "b69c3649-e0f1-445d-9403-badace5a2562",
+                              "grow": "none",
+                              "name": "Guided Solution Architecting ",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2cfedbd2-078d-467c-8934-7d37236e408b",
+                              "grow": "none",
+                              "name": "Expedited Feature Requests",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "1af2b256-bb0d-41bd-b0fa-efdc6d25b8f0",
+                              "grow": "none",
+                              "name": "UI Kit Customization (to match your UI)",
+                              "scale": "addon",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Onboarding Support",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "ffc36522-6427-41b7-a530-50e8f516cf88",
+                      "title": "Security \u0026 Compliance",
+                      "subgroup": [
+                        {
+                          "_uid": "3573233f-fdee-4b1e-ac58-b92484de1cf7",
+                          "lines": [
+                            {
+                              "_uid": "6cc8f911-2bdb-4b96-9bec-c958b1b99ac7",
+                              "grow": "yes",
+                              "name": "ISO 27001",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "200301cb-9c37-4b02-8def-3dd192647746",
+                              "grow": "yes",
+                              "name": "SOC 2 compliance",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "7e69eefe-ff95-4ee4-9a5e-50c690692d63",
+                              "grow": "yes",
+                              "name": "GDPR compliance",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "39daf1a7-3431-4e17-9452-d868f6b01523",
+                              "grow": "yes",
+                              "name": "CCPA compliance as per Californian Law",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "70fc9f24-ac69-4192-b055-9e67aef2a424",
+                              "grow": "addon",
+                              "name": "PIPEDA compliance",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "8b586668-328a-4421-a6b8-c3db0467ce04",
+                              "grow": "addon",
+                              "name": "HIPAA w/ BAA compliance for healthcare vertical",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "74571901-ed67-4b94-a000-5479b6be72d6",
+                              "grow": "yes",
+                              "name": "Support for SSL and TLS security protocols",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "6818cb7e-4424-471f-b0b4-70d87ce3dab2",
+                              "grow": "yes",
+                              "name": "Encryption of data using AES 256 algorithm",
+                              "scale": "yes",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "6cd9d45b-21b9-4258-a678-86708410cf0a",
+                              "grow": "yes",
+                              "name": "Protect every file or attachment access by a valid access token tied to a user",
+                              "scale": "yes",
+                              "tooltip": "Secure media and file access within the platform, requiring valid user-specific access tokens for viewing or downloading attachments.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "bdcb8c62-27ea-4817-8a91-edde747df026",
+                              "grow": "yes",
+                              "name": "Disappearing messages (after a certain interval) to protect privacy",
+                              "scale": "yes",
+                              "tooltip": "Enhance user privacy through messages that automatically disappear after a specified time interval.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "2ce2c676-eb25-44eb-8f0f-ee31af4ccc1b",
+                              "grow": "none",
+                              "name": "Different roles and permissions for both end application chat users and also for admin dashboard administrators",
+                              "scale": "yes",
+                              "tooltip": "Implement varied roles and permissions for both end-application users and admin dashboard administrators, ensuring secure and appropriate access levels.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "eaffae72-fe10-49d8-9ada-ac0bf8edffde",
+                              "grow": "yes",
+                              "name": "Allow team members access to limited functionality in the dashboard",
+                              "scale": "yes",
+                              "tooltip": "Allow specific dashboard functionalities to be accessible to team members based on their roles, optimizing operational security and efficiency.",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "eb651f56-554c-4770-9808-85a72cc04449",
+                              "grow": "none",
+                              "name": "End to end encryption using Virgil Security",
+                              "scale": "addon",
+                              "tooltip": "Robust privacy protection with end-to-end encryption for all communications, powered by Virgil Security.",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Compliance",
+                          "component": "pricing-table-subgroup-enhanced"
+                        }
+                      ],
+                      "component": "pricing-table-group-enhanced"
+                    },
+                    {
+                      "_uid": "e03d0222-1452-49c9-8416-da8a78113fe1",
+                      "title": "Limits \u0026 Usage",
+                      "subgroup": [
+                        {
+                          "_uid": "25b3cee4-a19c-4d3d-8ca8-09dc403c7700",
+                          "lines": [
+                            {
+                              "_uid": "504cfbeb-7cfa-4904-8715-7e2621dedd85",
+                              "grow": "Unlimited",
+                              "name": "Messages per month",
+                              "scale": "Unlimited",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "4f90e3b3-b3e6-4cf9-a5e0-2810d7f7154b",
+                              "grow": "6 months",
+                              "name": "Media Retention",
+                              "scale": "Flexible",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "f79d639b-d245-48b5-9193-4c6108c0a486",
+                              "grow": "6 Months",
+                              "name": "Message Retention",
+                              "scale": "Flexible",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "38b00f9e-e3db-43b2-a2c8-47138ce351f3",
+                              "grow": "5%",
+                              "name": "Peak Concurrent Connections",
+                              "scale": "Flexible",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            },
+                            {
+                              "_uid": "acfb724f-1001-4a31-ae4f-157ac9588790",
+                              "grow": "100 MB",
+                              "name": "Maximum Media size",
+                              "scale": "Flexible",
+                              "tooltip": "",
+                              "component": "pricing-table-group-line-enhanced"
+                            }
+                          ],
+                          "title": "Limits",
                           "component": "pricing-table-subgroup-enhanced"
                         }
                       ],
@@ -675,7 +2125,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1711092700,
+  "cv": 1711625420,
   "rels": [],
   "links": []
 }

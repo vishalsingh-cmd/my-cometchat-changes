@@ -12,7 +12,7 @@
 </script>
 
 <div class="flex flex-row items-center justify-center gap-2 font-medium">
-  <span>Monthly</span>
+  <span class={cn(isChecked ? 'opacity-50' : 'opacity-100')}>Monthly</span>
 
   <button
     type="button"
@@ -34,5 +34,5 @@
     />
   </button>
 
-  <span>Yearly</span>
+  <span class={cn(isChecked ? 'opacity-100' : 'opacity-50')}>Yearly</span>
 </div>

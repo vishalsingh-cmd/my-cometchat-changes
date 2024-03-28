@@ -9,7 +9,16 @@
   import 'tippy.js/dist/tippy.css'; // optional
 
   let expanded = false;
+  export let tab_index = 0;
   export let group: PricingTableGroupEnhancedStoryblok;
+
+  // Set expanded to true for the first element of group and subgroup
+  $: if (group && group[0]) {
+    group[0].expanded = true;
+    if (group[0].subgroup) {
+      group[0].subgroup.forEach((subgroup: any) => (subgroup.expanded = true));
+    }
+  }
 </script>
 
 {#if group}
@@ -38,7 +47,7 @@
             <p
               id="group-title"
               class={cn(
-                'bg-gray-1 py-8 text-xl/tighter font-semibold text-gray-12',
+                'bg-gray-1 py-8 text-start text-xl/tighter font-semibold text-gray-12',
                 expanded ? 'text-brand-9' : 'text-gray-12'
               )}
             >
@@ -47,13 +56,13 @@
           </button>
         </div>
 
-        <div id="subgroup" class="col-span-6">
+        <div id="subgroup" class="col-span-6 text-start">
           {#if subgroup}
             {#each subgroup as line}
               {#if line}
                 {@const { title, lines } = line}
-                <AccordionGroup {expanded}>
-                  <Accordion id={title}>
+                <AccordionGroup expanded={expanded ? 'true' : 'false'}>
+                  <Accordion id={title} {expanded}>
                     <div
                       slot="header"
                       let:expanded
@@ -64,7 +73,7 @@
                       <button
                         {...attributes}
                         class={cn(
-                          'flex w-full items-center justify-start gap-3 text-gray-12',
+                          'flex w-full items-center justify-start gap-3 text-start text-gray-12',
                           // if expanded change the color of the title
                           { 'text-gray-12': !expanded, 'text-brand-9': expanded }
                         )}
@@ -77,29 +86,34 @@
                         {/if}
                         <p
                           id="subgroup-title"
-                          class="ml-3 self-center py-5 text-lg/snug font-medium tracking-wide"
+                          class="ml-3 w-full py-5 text-start text-lg/snug font-medium tracking-wide"
                         >
                           {title}
                         </p>
                       </button>
                     </div>
 
-                    <div id="line" class="col-span-6 w-full items-center justify-center">
+                    <!-- show only on desktop -->
+                    <div
+                      id="line"
+                      class="col-span-6 hidden w-full items-center justify-center lg:block"
+                    >
                       {#each lines as item, i}
                         {@const { name, tooltip, scale, grow } = item}
 
                         {#if i === 0}
-                          <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
+                          <div id="line" class="ml-0 border-b border-gray-12/[.08]" />
                         {/if}
 
                         <div
-                          id="line"
-                          class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-1"
+                          id="line-container"
+                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08]"
                         >
                           <div
-                            class="col-span-2 flex flex-row items-center justify-center gap-3 self-center py-5 text-lg/snug font-medium tracking-wide"
+                            id="line-title-container"
+                            class="col-span-2 ml-12 flex w-full flex-row items-center justify-center gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
                           >
-                            <span>
+                            <span id="line-title" class="flex w-full text-start">
                               {name}
                             </span>
 
@@ -115,55 +129,141 @@
                               </div>
                             {/if}
                           </div>
-                          <!-- scale can have values like none, paid-add-on, included or other text(note for other text just render the text instead of icon for none it's -) -->
-                          {#if scale === 'none'}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <span class="self-center">-</span>
-                            </div>
-                          {:else if scale === 'paid-add-on'}
-                            {@const { icon, color } = getPricingIcon(scale)}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <div class="flex w-6 flex-col items-center justify-center">
-                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
-                              </div>
-                            </div>
-                          {:else if scale === 'included'}
-                            {@const { icon, color } = getPricingIcon(scale)}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <div class="flex w-6 flex-col items-center justify-center">
-                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
-                              </div>
-                            </div>
-                          {:else}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <span class="self-center">{scale}</span>
-                            </div>
-                          {/if}
 
-                          <!-- same for the grow -->
-                          {#if grow === 'none'}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <span class="self-center">-</span>
-                            </div>
-                          {:else if grow === 'paid-add-on'}
-                            {@const { icon, color } = getPricingIcon(grow)}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <div class="w-6 items-center justify-center">
+                          <!-- show line grow and scale only on desktop -->
+                          <div id="grow" class="col-span-2">
+                            {#if grow === 'no'}
+                              {@const { icon, color } = getPricingIcon('none')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
-                            </div>
-                          {:else if grow === 'included'}
-                            {@const { icon, color } = getPricingIcon(grow)}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <div class="w-6 items-center justify-center">
+                            {:else if grow === 'addon'}
+                              {@const { icon, color } = getPricingIcon('paid-add-on')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
                                 <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
-                            </div>
-                          {:else}
-                            <div class="col-span-2 flex w-full items-center justify-center">
-                              <span class="self-center">{grow}</span>
-                            </div>
-                          {/if}
+                            {:else if grow === 'yes'}
+                              {@const { icon, color } = getPricingIcon('included')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
+                              </div>
+                            {:else}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <span class="self-center">{grow}</span>
+                              </div>
+                            {/if}
+                          </div>
+
+                          <div id="scale" class="col-span-2">
+                            {#if scale === 'no'}
+                              {@const { icon, color } = getPricingIcon('none')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
+                              </div>
+                            {:else if scale === 'addon'}
+                              {@const { icon, color } = getPricingIcon('paid-add-on')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
+                              </div>
+                            {:else if scale === 'yes'}
+                              {@const { icon, color } = getPricingIcon('included')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
+                              </div>
+                            {:else}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <span class="self-center">{scale}</span>
+                              </div>
+                            {/if}
+                          </div>
+                        </div>
+                      {/each}
+                    </div>
+
+                    <!-- show only on mobile -->
+                    <div
+                      id="line"
+                      class="col-span-6 block w-full items-center justify-center lg:hidden"
+                    >
+                      {#each lines as item, i}
+                        {@const { name, tooltip, scale, grow } = item}
+
+                        {#if i === 0}
+                          <div id="line" class="ml-0 border-b border-gray-12/[.08]" />
+                        {/if}
+
+                        <div
+                          id="line-container"
+                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08]"
+                        >
+                          <div
+                            id="line-title-container"
+                            class="col-span-4 ml-12 flex w-full flex-row items-center justify-center gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
+                          >
+                            <span id="line-title" class="flex w-full text-start">
+                              {name}
+                            </span>
+
+                            {#if tooltip}
+                              <div
+                                class="h-5 w-5 cursor-pointer hover:text-brand-9"
+                                use:tippy={{
+                                  content: `${tooltip}`,
+                                  placement: 'right'
+                                }}
+                              >
+                                <Icon icon="info-circle" size="xs" class="hover:text-brand-9" />
+                              </div>
+                            {/if}
+                          </div>
+
+                          <!-- show line grow and scale only on mobile -->
+                          <div
+                            id="line+grow+scale"
+                            class="col-span-2 block h-auto items-center justify-center lg:hidden"
+                          >
+                            {#if tab_index === 0}
+                              {#if grow === 'no'}
+                                {@const { icon, color } = getPricingIcon('none')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else if grow === 'addon'}
+                                {@const { icon, color } = getPricingIcon('paid-add-on')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else if grow === 'yes'}
+                                {@const { icon, color } = getPricingIcon('included')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <span class="self-center">{grow}</span>
+                                </div>
+                              {/if}
+                            {:else if scale === 'no'}
+                              {@const { icon, color } = getPricingIcon('none')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
+                            {:else if scale === 'addon'}
+                              {@const { icon, color } = getPricingIcon('paid-add-on')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
+                            {:else if scale === 'yes'}
+                              {@const { icon, color } = getPricingIcon('included')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
+                            {:else}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <span class="self-center">{scale}</span>
+                              </div>
+                            {/if}
+                          </div>
                         </div>
                       {/each}
                     </div>
