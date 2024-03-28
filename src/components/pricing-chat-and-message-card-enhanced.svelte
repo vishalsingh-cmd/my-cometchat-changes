@@ -4,9 +4,9 @@
     PricingPlanEnhancementGrowStoryblok,
     PricingPlanEnhancementScaleStoryblok
   } from '$types/bloks';
-  import PricingFreeCard from './pricing/card/pricing-free-card.svelte';
-  import PricingGrowCard from './pricing/card/pricing-grow-card.svelte';
-  import PricingScaleCard from './pricing/card/pricing-scale-card.svelte';
+  import PricingFreeCard from './pricing/card/chat-and-message/pricing-free-card.svelte';
+  import PricingGrowCard from './pricing/card/chat-and-message/pricing-grow-card.svelte';
+  import PricingScaleCard from './pricing/card/chat-and-message/pricing-scale-card.svelte';
 
   export const getPricingPlanName = (
     story:

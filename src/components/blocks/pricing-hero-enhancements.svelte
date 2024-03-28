@@ -116,11 +116,11 @@
         class="container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3 xl:grid-cols-3"
       >
         {#if isActive}
-          {#each block.voice_and_video_plans ?? [] as plan, i}
-            <PricingCardVideoAndVoiceEnhanced price={plan.price} block={plan} />
+          {#each block.voice_and_video_plans ?? [] as plan}
+            <PricingCardVideoAndVoiceEnhanced block={plan} />
           {/each}
         {:else}
-          {#each block.chat_and_messaging_plans as plan, i}
+          {#each block.chat_and_messaging_plans as plan}
             <PricingChatAndMessageCardEnhanced block={plan} />
           {/each}
         {/if}
