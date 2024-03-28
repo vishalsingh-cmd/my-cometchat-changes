@@ -72,24 +72,26 @@
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0px;
+    margin-top: -6px;
     margin-right: 0px;
+    margin-bottom: -6px;
   }
   input[type='range']::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border: 4px solid var(--thumb-border-color);
     background-color: var(--thumb-color);
     border-radius: 50%;
     cursor: pointer;
-    margin-top: 0px;
+    margin-top: -6px;
     margin-right: 0px;
+    margin-bottom: -6px;
   }
 
   input[type='range']::-webkit-slider-runnable-track {

@@ -9,6 +9,7 @@
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import { activePricingTab } from '$lib/stores/pricing-stores';
+  import { cn } from '$lib/utils';
 
   let isActive = false;
   $: ischatActive = isActive ? 'chat' : 'voice';
@@ -74,8 +75,16 @@
               isActive = !isActive;
             }}
           >
-            <div class="flex flex-row items-center justify-center gap-4 text-lg">
-              <Icon icon="chat-and-message" size="xs" class="flex-shrink-0 text-brand-9" />
+            <div class="group flex flex-row items-center justify-center gap-4 text-lg">
+              <Icon
+                icon="chat-and-message"
+                size="xs"
+                class={cn(
+                  'flex-shrink-0 text-brand-9',
+                  ischatActive === 'voice' ? 'opacity-100' : 'opacity-50',
+                  'group-hover:opacity-100'
+                )}
+              />
               Chat & Messaging
             </div>
           </PricingTabSwitch>
@@ -87,8 +96,16 @@
               isActive = !isActive;
             }}
           >
-            <div class="flex flex-row items-center justify-center gap-4 text-lg">
-              <Icon icon="voice-and-calls" size="xs" class="flex-shrink-0 text-brand-9" />
+            <div class="group flex flex-row items-center justify-center gap-4 text-lg">
+              <Icon
+                icon="voice-and-calls"
+                size="xs"
+                class={cn(
+                  'flex-shrink-0 text-brand-9',
+                  ischatActive === 'chat' ? 'opacity-100' : 'opacity-50',
+                  'group-hover:opacity-100'
+                )}
+              />
               Voice & video calling
             </div>
           </PricingTabSwitch>
