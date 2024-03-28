@@ -2,6 +2,7 @@
   import { getPricingIcon } from '$lib/utils';
   import Icon from '$components/icon/icon.svelte';
   import { cn } from '$lib/utils';
+  import tippy from 'tippy.js';
 
   export let name: string;
   export let scale: string;

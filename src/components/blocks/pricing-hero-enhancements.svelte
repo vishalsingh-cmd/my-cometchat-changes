@@ -4,8 +4,8 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
-  import Background from '$components/pricing/hero/background.svelte';
-  import PricingCardEnhanced from '$components/pricing-card-enhanced.svelte';
+  import PricingBackground from '$components/pricing/hero/pricing-background.svelte';
+  import PricingChatAndMessageCardEnhanced from '$components/pricing-chat-and-message-card-enhanced.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import { activePricingTab } from '$lib/stores/pricing-stores';
@@ -30,10 +30,10 @@
     class="relative pt-[100px] md:pt-[148px]"
   >
     <div class="absolute left-0 top-0 h-full w-full overflow-hidden">
-      <Background />
+      <PricingBackground />
     </div>
-    <div>
-      <div class="container z-10 mx-auto">
+    <div class="relative z-50 w-full">
+      <div class="container z-50 mx-auto">
         <div
           class="container mx-auto mb-8 flex flex-col items-start justify-center gap-8 px-container md:items-center"
         >
@@ -47,7 +47,7 @@
           {#if block.info_items && block.info_items.length > 0}
             <div class="flex flex-wrap gap-8 gap-y-3">
               {#each block.info_items as { icon, name, description }}
-                {@const typedIcon = typeIcon(icon)}
+                {@const typedIcon = typeIcon(icon || '')}
                 <div class="flex items-center gap-2">
                   <Icon icon={typedIcon} size="xs" class="flex-shrink-0 text-brand-9" />
                   <div class="flex items-center gap-1">
@@ -62,9 +62,11 @@
       </div>
     </div>
 
-    <div>
+    <div class="relative z-50 w-full">
       <Sticky class="md:static">
-        <div class="flex flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+        <div
+          class="flex w-full flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6"
+        >
           <PricingTabSwitch
             id={0}
             isActive={ischatActive === 'voice' && true}
@@ -102,7 +104,7 @@
           {/each}
         {:else}
           {#each block.chat_and_messaging_plans as plan, i}
-            <PricingCardEnhanced price={plan.price} priceLabel={plan.name} block={plan} />
+            <PricingChatAndMessageCardEnhanced block={plan} />
           {/each}
         {/if}
       </div>

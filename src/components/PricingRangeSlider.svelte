@@ -4,7 +4,9 @@
 
   interface Mau {
     _uid: string;
-    value: string;
+    mau: string;
+    yearly: string;
+    monthly: string;
     component: string;
   }
 
@@ -12,9 +14,9 @@
 
   let selectedIndex = 1;
 
-  $: maxValue = maus[maus.length - 1].value;
-  $: stepValue = Math.floor(maus.length / 5);
-  $: currentValue = maus[selectedIndex].value;
+  $: maxValue = maus[maus.length - 1].mau;
+  $: stepValue = Math.floor(maus.length / Number(maxValue));
+  $: currentValue = maus[selectedIndex].mau;
 
   // Calculate the percentage of progress
   $: progress = (selectedIndex / (maus.length - 1)) * 100;
@@ -43,7 +45,7 @@
     class="w-full cursor-pointer appearance-none rounded-full focus:outline-none disabled:pointer-events-none disabled:opacity-50"
     style="--thumb-color: white; --thumb-border-color: #55506C; --slider-bg-gradient: {gradient}; --slider-lines: {lines};"
     id="steps-range-slider-usage"
-    min="0"
+    min={0}
     max={steps}
     step={stepValue}
     bind:value={selectedIndex}

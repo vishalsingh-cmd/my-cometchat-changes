@@ -741,6 +741,7 @@ export interface IndustryStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -971,6 +972,7 @@ export interface PageStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1101,6 +1103,7 @@ export interface PricingStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1249,7 +1252,7 @@ export interface PricingPlanEnhancementFreeStoryblok {
   name: string;
   description?: string;
   price?: string;
-  highlights: TextStoryblok[];
+  highlights?: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-plan-enhancement-free';
@@ -1258,6 +1261,7 @@ export interface PricingPlanEnhancementFreeStoryblok {
 
 export interface PricingPlanEnhancementGrowStoryblok {
   name: string;
+  plans?: PricingPlanGrowSegmentStoryblok[];
   description?: string;
   price?: string;
   mau?: TextStoryblok[];
@@ -1286,6 +1290,15 @@ export interface PricingPlanEnhancementScaleStoryblok {
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-plan-enhancement-scale';
+  [k: string]: any;
+}
+
+export interface PricingPlanGrowSegmentStoryblok {
+  monthly: string;
+  yearly: string;
+  mau?: string;
+  _uid: string;
+  component: 'pricing-plan-grow-segment';
   [k: string]: any;
 }
 
@@ -1583,6 +1596,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
@@ -1686,6 +1700,7 @@ export interface TechnologyStoryblok {
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
     | PricingTableStoryblok
     | PricingTableCategoryEnhancedStoryblok
     | PricingTableEnhancedStoryblok
