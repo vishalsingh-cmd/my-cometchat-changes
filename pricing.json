@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-03-28T09:22:44.305Z",
+    "published_at": "2024-03-28T11:30:19.840Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -156,7 +156,7 @@
               ],
               "_uid": "65e4ab50-e4ad-48c7-931e-e4d9eab73cf1",
               "name": "Custom Pricing",
-              "price": "Contact Us",
+              "price": "Contact Us Update",
               "component": "pricing-plan-enhancement-free",
               "highlights": [
                 {
@@ -272,21 +272,21 @@
                 },
                 {
                   "mau": "5000",
-                  "_uid": "bdd8635e-78c7-49ee-824b-05de2fa0ba07",
+                  "_uid": "0057d38b-b2d8-4d52-af34-66a2b7d88799",
                   "yearly": "219",
                   "monthly": "249",
                   "component": "pricing-plan-grow-segment"
                 },
                 {
-                  "mau": "50000",
-                  "_uid": "9ff4b249-2673-4524-a988-05eab8af2f92",
-                  "yearly": "429",
-                  "monthly": "449",
+                  "mau": "10000",
+                  "_uid": "bdd8635e-78c7-49ee-824b-05de2fa0ba07",
+                  "yearly": "329",
+                  "monthly": "349",
                   "component": "pricing-plan-grow-segment"
                 },
                 {
                   "mau": "50000",
-                  "_uid": "cc5ac208-17ce-450d-b6a8-ad9ca1fd0aeb",
+                  "_uid": "9ff4b249-2673-4524-a988-05eab8af2f92",
                   "yearly": "Contact Us",
                   "monthly": "Contact Us",
                   "component": "pricing-plan-grow-segment"
@@ -344,7 +344,7 @@
               ],
               "_uid": "e1efdd2f-955d-40c7-977e-979110f5298d",
               "name": "Scale",
-              "price": "Contact Us",
+              "price": "Custom Pricing",
               "component": "pricing-plan-enhancement-scale",
               "highlights": [
                 {
@@ -2125,7 +2125,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1711617764,
+  "cv": 1711625420,
   "rels": [],
   "links": []
 }
