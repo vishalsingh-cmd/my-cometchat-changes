@@ -79,7 +79,7 @@
     border-radius: 50%;
     cursor: pointer;
     margin-top: 0px;
-    margin-right: -5px;
+    margin-right: 0px;
   }
   input[type='range']::-moz-range-thumb {
     width: 20px;
@@ -89,16 +89,16 @@
     border-radius: 50%;
     cursor: pointer;
     margin-top: 0px;
-    margin-right: -5px;
+    margin-right: 0px;
   }
 
   input[type='range']::-webkit-slider-runnable-track {
     background: var(--slider-lines), var(--slider-bg-gradient);
-    border-radius: 0.5rem;
+    border-radius: 0.9rem;
   }
 
   input[type='range']::-moz-range-track {
     background: var(--slider-lines), var(--slider-bg-gradient);
-    border-radius: 0.5rem;
+    border-radius: 0.9rem;
   }
 </style>

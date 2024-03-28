@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PricingRangeSlider from '$components/PricingRangeSlider.svelte';
+  import PricingRangeSlider from '$components/pricing-range-slider.svelte';
   import Button from '$components/buttons/button.svelte';
   import Icon from '$components/icon/icon.svelte';
   import ToggleButton from '$components/toggle-button.svelte';
@@ -60,10 +60,12 @@
         <div class={cn('text-2xl/tighter font-semibold')}>
           <div class="flex flex-row gap-2">
             {#if currentGrowPrice !== 'Contact Us'}
-              ${currentGrowPrice}
-              <p class="items-baseline text-lg/tight font-semibold opacity-54">/month</p>
+              <p class="tracking-wid text-2xl/snug font-semibold">
+                ${currentGrowPrice}
+                <span class="text-sm opacity-64">/month</span>
+              </p>
             {:else}
-              <span class="text-brand-9"> {currentGrowPrice} </span>
+              <span class="text-brand-9">{currentGrowPrice} </span>
             {/if}
           </div>
         </div>
