@@ -82,7 +82,7 @@
                 class={cn(
                   'flex-shrink-0 text-brand-9',
                   ischatActive === 'voice' ? 'opacity-100' : 'opacity-50',
-                  'group-hover:opacity-100'
+                  'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
               Chat & Messaging
@@ -103,7 +103,7 @@
                 class={cn(
                   'flex-shrink-0 text-brand-9',
                   ischatActive === 'chat' ? 'opacity-100' : 'opacity-50',
-                  'group-hover:opacity-100'
+                  'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
               Voice & video calling
