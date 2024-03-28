@@ -5,7 +5,6 @@
 
   export let activeTab = 0;
   export let data: PricingTableGroupEnhancedStoryblok[];
-  // $: selectedTabName = (['grow', 'scale'] as const)[activeTab];
 </script>
 
 {#if data}
@@ -17,15 +16,4 @@
       {/each}
     </AccordionGroup>
   </div>
-
-  <!-- Mobile -->
-  <!-- <div class="flex grid-cols-6 flex-col lg:hidden">
-    <AccordionGroup expanded={data[0].title}>
-      {#each data as group, i}
-        <Accordion title={group.title} expanded={i === activeTab}>
-          <PricingTableDataGroupEnhanced {group} />
-        </Accordion>
-      {/each}
-    </AccordionGroup>
-  </div> -->
 {/if}

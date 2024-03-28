@@ -102,12 +102,12 @@
                         {@const { name, tooltip, scale, grow } = item}
 
                         {#if i === 0}
-                          <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
+                          <div id="line" class="ml-0 border-b border-gray-12/[.08]" />
                         {/if}
 
                         <div
                           id="line-container"
-                          class="ml-0 grid grid-cols-6 gap-10 border-b border-gray-12/[.08] md:ml-1"
+                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08]"
                         >
                           <div
                             id="line-title-container"
@@ -131,125 +131,49 @@
                           </div>
 
                           <!-- show line grow and scale only on desktop -->
-                          <div id="line+grow+scale" class="hidden lg:block">
-                            <!-- same for the grow -->
+                          <div id="grow" class="col-span-2">
                             {#if grow === 'no'}
                               {@const { icon, color } = getPricingIcon('none')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="flex w-6 flex-col items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else if grow === 'addon'}
                               {@const { icon, color } = getPricingIcon('paid-add-on')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="w-6 items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else if grow === 'yes'}
                               {@const { icon, color } = getPricingIcon('included')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="w-6 items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else}
                               <div class="col-span-2 flex w-full items-center justify-center">
                                 <span class="self-center">{grow}</span>
                               </div>
                             {/if}
+                          </div>
 
-                            <!-- scale can have values like none, paid-add-on, included or other text(note for other text just render the text instead of icon for none it's -) -->
+                          <div id="scale" class="col-span-2">
                             {#if scale === 'no'}
                               {@const { icon, color } = getPricingIcon('none')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="flex w-6 flex-col items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else if scale === 'addon'}
                               {@const { icon, color } = getPricingIcon('paid-add-on')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="flex w-6 flex-col items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else if scale === 'yes'}
                               {@const { icon, color } = getPricingIcon('included')}
                               <div class="col-span-2 flex w-full items-center justify-center">
-                                <div class="flex w-6 flex-col items-center justify-center">
-                                  <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                </div>
+                                <Icon {icon} class={cn(color, 'self-center')} size="sm" />
                               </div>
                             {:else}
                               <div class="col-span-2 flex w-full items-center justify-center">
                                 <span class="self-center">{scale}</span>
                               </div>
-                            {/if}
-                          </div>
-
-                          <!-- show line grow and scale only on mobile -->
-                          <div
-                            id="line+grow+scale"
-                            class="col-span-4 block h-auto items-center justify-center lg:hidden"
-                          >
-                            {#if tab_index === 0}
-                              <!-- same for the grow -->
-                              {#if grow === 'no'}
-                                {@const { icon, color } = getPricingIcon('none')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex w-6 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if grow === 'addon'}
-                                {@const { icon, color } = getPricingIcon('paid-add-on')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="w-6 items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if grow === 'yes'}
-                                {@const { icon, color } = getPricingIcon('included')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="w-6 items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <span class="self-center">{grow}</span>
-                                </div>
-                              {/if}
-                            {:else}
-                              <!-- scale can have values like none, paid-add-on, included or other text(note for other text just render the text instead of icon for none it's -) -->
-                              {#if scale === 'no'}
-                                {@const { icon, color } = getPricingIcon('none')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex w-6 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if scale === 'addon'}
-                                {@const { icon, color } = getPricingIcon('paid-add-on')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex w-6 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if scale === 'yes'}
-                                {@const { icon, color } = getPricingIcon('included')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex w-6 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <span class="self-center">{scale}</span>
-                                </div>
-                              {/if}
                             {/if}
                           </div>
                         </div>
@@ -265,12 +189,12 @@
                         {@const { name, tooltip, scale, grow } = item}
 
                         {#if i === 0}
-                          <div id="line" class="ml-0 border-b border-gray-12/[.08] md:ml-12" />
+                          <div id="line" class="ml-0 border-b border-gray-12/[.08]" />
                         {/if}
 
                         <div
                           id="line-container"
-                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08] md:ml-1"
+                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08]"
                         >
                           <div
                             id="line-title-container"
@@ -299,61 +223,45 @@
                             class="col-span-2 block h-auto items-center justify-center lg:hidden"
                           >
                             {#if tab_index === 0}
-                              <!-- same for the grow -->
                               {#if grow === 'no'}
                                 {@const { icon, color } = getPricingIcon('none')}
                                 <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex h-5 w-5 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
                                 </div>
                               {:else if grow === 'addon'}
                                 {@const { icon, color } = getPricingIcon('paid-add-on')}
                                 <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="h-5 w-5 items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
                                 </div>
                               {:else if grow === 'yes'}
                                 {@const { icon, color } = getPricingIcon('included')}
                                 <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="h-5 w-5 items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
                                 </div>
                               {:else}
                                 <div class="col-span-2 flex w-full items-center justify-center">
                                   <span class="self-center">{grow}</span>
                                 </div>
                               {/if}
+                            {:else if scale === 'no'}
+                              {@const { icon, color } = getPricingIcon('none')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
+                            {:else if scale === 'addon'}
+                              {@const { icon, color } = getPricingIcon('paid-add-on')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
+                            {:else if scale === 'yes'}
+                              {@const { icon, color } = getPricingIcon('included')}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                              </div>
                             {:else}
-                              <!-- scale can have values like none, paid-add-on, included or other text(note for other text just render the text instead of icon for none it's -) -->
-                              {#if scale === 'no'}
-                                {@const { icon, color } = getPricingIcon('none')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex h-5 w-5 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if scale === 'addon'}
-                                {@const { icon, color } = getPricingIcon('paid-add-on')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex h-5 w-5 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else if scale === 'yes'}
-                                {@const { icon, color } = getPricingIcon('included')}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <div class="flex h-5 w-5 flex-col items-center justify-center">
-                                    <Icon {icon} class={cn(color, 'self-center')} size="xs" />
-                                  </div>
-                                </div>
-                              {:else}
-                                <div class="col-span-2 flex w-full items-center justify-center">
-                                  <span class="self-center">{scale}</span>
-                                </div>
-                              {/if}
+                              <div class="col-span-2 flex w-full items-center justify-center">
+                                <span class="self-center">{scale}</span>
+                              </div>
                             {/if}
                           </div>
                         </div>

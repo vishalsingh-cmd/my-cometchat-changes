@@ -11,7 +11,6 @@
   {@const { pricing_table } = block}
 
   <div use:storyblokEditable={block}>
-    <h1>{$activePricingTab}</h1>
     <PricingTableEnhanced block={pricing_table?.[$activePricingTab]?.category?.[0]} />
   </div>
 {/if}
