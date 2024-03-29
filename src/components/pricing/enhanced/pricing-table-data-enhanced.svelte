@@ -3,16 +3,15 @@
   import type { PricingTableGroupEnhancedStoryblok } from '$types/bloks';
   import PricingTableDataGroupEnhanced from './pricing-table-data-group-enhanced.svelte';
 
-  export let activeTab = 0;
+  export let activeTabIndex = 0;
   export let data: PricingTableGroupEnhancedStoryblok[];
 </script>
 
 {#if data}
-  <!-- Descktop -->
   <div class="flex grid-cols-6 flex-col lg:grid">
     <AccordionGroup expanded={data[0].title}>
-      {#each data as group, i}
-        <PricingTableDataGroupEnhanced {group} />
+      {#each data as group}
+        <PricingTableDataGroupEnhanced {group} {activeTabIndex} />
       {/each}
     </AccordionGroup>
   </div>

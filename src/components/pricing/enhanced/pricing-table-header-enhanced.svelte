@@ -4,6 +4,8 @@
   import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
   import PricingTableHeaderColumn from '$components/pricing/enhanced/pricing-table-header-column-enhanced.svelte';
   import PricingTableHeaderCaptionsEnhanced from '$components/pricing/enhanced/pricing-table-header-captions-enhanced.svelte';
+  import { createEventDispatcher } from 'svelte';
+  const dispatch = createEventDispatcher();
 
   export let activeTab = 0;
   export let header: PricingTableHeaderEnhancedStoryblok[];
@@ -30,8 +32,12 @@
       {activeTab}
       options={parsedTabs}
       class="mx-0 pl-0 pr-0"
-      on:optionSelect={(e) => (activeTab = e.detail.i)}
+      on:optionSelect={(e) => {
+        activeTab = e.detail.i;
+        dispatch('tabChange', e.detail.i);
+      }}
     />
+
     <PricingTableHeaderCaptionsEnhanced />
   </div>
 {/if}

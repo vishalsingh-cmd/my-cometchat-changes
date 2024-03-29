@@ -7,9 +7,10 @@
   import AccordionGroup from '$components/accordion-group.svelte';
   import tippy from 'svelte-tippy';
   import 'tippy.js/dist/tippy.css'; // optional
+  import 'tippy.js/animations/scale.css';
 
   let expanded = false;
-  export let tab_index = 0;
+  export let activeTabIndex = 0;
   export let group: PricingTableGroupEnhancedStoryblok;
 
   // Set expanded to true for the first element of group and subgroup
@@ -68,7 +69,7 @@
                       let:expanded
                       let:attributes
                       let:onClick
-                      class="ml-0 w-full md:ml-3"
+                      class="ml-0 w-full overflow-clip md:ml-3"
                     >
                       <button
                         {...attributes}
@@ -111,21 +112,22 @@
                         >
                           <div
                             id="line-title-container"
-                            class="col-span-2 ml-12 flex w-full flex-row items-center justify-center gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
+                            class="col-span-2 ml-14 flex w-full flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
                           >
-                            <span id="line-title" class="flex w-full text-start">
+                            <span id="line-title" class="flex w-auto text-start">
                               {name}
                             </span>
 
                             {#if tooltip}
                               <div
-                                class="h-5 w-5 cursor-pointer hover:text-brand-9"
+                                class="h-5 w-5 cursor-help hover:text-brand-9"
                                 use:tippy={{
                                   content: `${tooltip}`,
-                                  placement: 'right'
+                                  placement: 'bottom',
+                                  animation: 'scale'
                                 }}
                               >
-                                <Icon icon="info-circle" size="xs" class="hover:text-brand-9" />
+                                <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
                               </div>
                             {/if}
                           </div>
@@ -183,7 +185,7 @@
                     <!-- show only on mobile -->
                     <div
                       id="line"
-                      class="col-span-6 block w-full items-center justify-center lg:hidden"
+                      class="col-span-6 ml-0 block w-full items-center justify-center lg:hidden"
                     >
                       {#each lines as item, i}
                         {@const { name, tooltip, scale, grow } = item}
@@ -198,9 +200,9 @@
                         >
                           <div
                             id="line-title-container"
-                            class="col-span-4 ml-12 flex w-full flex-row items-center justify-center gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
+                            class="col-span-4 ml-0 flex w-full flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide md:ml-14"
                           >
-                            <span id="line-title" class="flex w-full text-start">
+                            <span id="line-title" class="flex w-auto text-start">
                               {name}
                             </span>
 
@@ -209,10 +211,11 @@
                                 class="h-5 w-5 cursor-pointer hover:text-brand-9"
                                 use:tippy={{
                                   content: `${tooltip}`,
-                                  placement: 'right'
+                                  placement: 'bottom',
+                                  animation: 'scale'
                                 }}
                               >
-                                <Icon icon="info-circle" size="xs" class="hover:text-brand-9" />
+                                <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
                               </div>
                             {/if}
                           </div>
@@ -222,7 +225,7 @@
                             id="line+grow+scale"
                             class="col-span-2 block h-auto items-center justify-center lg:hidden"
                           >
-                            {#if tab_index === 0}
+                            {#if activeTabIndex === 0}
                               {#if grow === 'no'}
                                 {@const { icon, color } = getPricingIcon('none')}
                                 <div class="col-span-2 flex w-full items-center justify-center">
@@ -243,25 +246,27 @@
                                   <span class="self-center">{grow}</span>
                                 </div>
                               {/if}
-                            {:else if scale === 'no'}
-                              {@const { icon, color } = getPricingIcon('none')}
-                              <div class="col-span-2 flex w-full items-center justify-center">
-                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
-                              </div>
-                            {:else if scale === 'addon'}
-                              {@const { icon, color } = getPricingIcon('paid-add-on')}
-                              <div class="col-span-2 flex w-full items-center justify-center">
-                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
-                              </div>
-                            {:else if scale === 'yes'}
-                              {@const { icon, color } = getPricingIcon('included')}
-                              <div class="col-span-2 flex w-full items-center justify-center">
-                                <Icon {icon} size="sm" class={cn(color, 'self-center')} />
-                              </div>
-                            {:else}
-                              <div class="col-span-2 flex w-full items-center justify-center">
-                                <span class="self-center">{scale}</span>
-                              </div>
+                            {:else if activeTabIndex === 1}
+                              {#if scale === 'no'}
+                                {@const { icon, color } = getPricingIcon('none')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else if scale === 'addon'}
+                                {@const { icon, color } = getPricingIcon('paid-add-on')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else if scale === 'yes'}
+                                {@const { icon, color } = getPricingIcon('included')}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <Icon {icon} size="sm" class={cn(color, 'self-center')} />
+                                </div>
+                              {:else}
+                                <div class="col-span-2 flex w-full items-center justify-center">
+                                  <span class="self-center">{scale}</span>
+                                </div>
+                              {/if}
                             {/if}
                           </div>
                         </div>
