@@ -123,7 +123,7 @@
                                 class="h-5 w-5 cursor-help hover:text-brand-9"
                                 use:tippy={{
                                   content: `${tooltip}`,
-                                  placement: 'bottom',
+                                  placement: 'right',
                                   animation: 'scale'
                                 }}
                               >
