@@ -3,10 +3,10 @@
   import PricingTableDataEnhanced from './../pricing/enhanced/pricing-table-data-enhanced.svelte';
   import type { PricingTableEnhancedStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
   import Sticky from '$components/sticky.svelte';
 
   let activePlanIndex = 0;
+  let activeTabIndex = 0;
   export let block: PricingTableEnhancedStoryblok | undefined;
 </script>
 
@@ -20,12 +20,18 @@
           translateOnDesktop
           class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
         >
-          <PricingTableHeaderEnhanced bind:activeTab={activePlanIndex} {header} />
+          <PricingTableHeaderEnhanced
+            bind:activeTab={activePlanIndex}
+            {header}
+            on:tabChange={(e) => {
+              activeTabIndex = e.detail;
+            }}
+          />
         </Sticky>
       {/if}
       <!-- Data -->
       {#if data}
-        <PricingTableDataEnhanced activeTab={activePlanIndex} {data} />
+        <PricingTableDataEnhanced activeTab={activePlanIndex} {data} {activeTabIndex} />
       {/if}
     </div>
   </section>
