@@ -31,16 +31,18 @@
       <div class="flex flex-col gap-3">
         <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
 
-        <h3 class="mt-3 text-lg/tight font-semibold">Highlights</h3>
+        {#if highlights?.length > 0}
+          <h3 class="mt-3 text-lg/tight font-semibold">Highlights</h3>
 
-        <div class="flex flex-col gap-2">
-          {#each highlights as highlight}
-            <div class="flex items-start gap-2">
-              <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-              <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
-            </div>
-          {/each}
-        </div>
+          <div class="flex flex-col gap-2">
+            {#each highlights as highlight}
+              <div class="flex items-start gap-2">
+                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+                <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+              </div>
+            {/each}
+          </div>
+        {/if}
       </div>
     </div>
 
