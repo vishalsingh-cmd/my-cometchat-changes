@@ -16,11 +16,10 @@
     <p class="text-lg/snug font-medium tracking-wide opacity-74">
       {#if description}
         {description}
+      {:else if price === 0}
+        Free
       {:else}
-        {#if price === 0}
-          Free
-        {/if}
-        starts at &#36;{price}
+        Starts at &#36;{price}
       {/if}
     </p>
   </div>
