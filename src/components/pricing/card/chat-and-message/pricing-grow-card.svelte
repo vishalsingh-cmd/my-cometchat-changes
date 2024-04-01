@@ -7,10 +7,13 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { PricingPlanEnhancementGrowStoryblok } from '$types/bloks';
+  import { isStringContainOnlyNumbers } from '$lib/strings/utils';
+  import { onMount } from 'svelte';
 
   let isAnnual = false;
-  let currentGrowPrice = '0';
-  let currentRangeValue = '500'; // initialize this with your default range value
+  let currentGrowPrice = '';
+  let currentRangeValue = ''; // initialize this with your default range value
+  let currentRangeIndex = 0;
   export let block: PricingPlanEnhancementGrowStoryblok;
 
   function updatePricingFromBlock(rangeValue: string) {
@@ -33,6 +36,17 @@
     currentRangeValue = event.detail;
     updatePricingFromBlock(currentRangeValue);
   }
+
+  // update the price when the block is loaded using the default range index
+  onMount(() => {
+    if (block?.plans?.length > 0) {
+      currentGrowPrice = block?.plans[currentRangeIndex].monthly;
+    }
+  });
+
+  $: isAnnual
+    ? (currentGrowPrice = block.plans[currentRangeIndex].yearly)
+    : (currentGrowPrice = block.plans[currentRangeIndex].monthly);
 </script>
 
 {#if block}
@@ -59,7 +73,7 @@
 
         <div class={cn('text-2xl/tighter font-semibold')}>
           <div class="flex flex-row gap-2">
-            {#if currentGrowPrice !== 'Contact Us'}
+            {#if isStringContainOnlyNumbers(currentGrowPrice)}
               <p class="tracking-wid text-2xl/snug font-semibold">
                 ${currentGrowPrice}
                 <span class="text-sm opacity-64">/month</span>
