@@ -13,12 +13,9 @@
   export let activeTabIndex = 0;
   export let group: PricingTableGroupEnhancedStoryblok;
 
-  // Set expanded to true for the first element of group and subgroup
-  $: if (group && group[0]) {
-    group[0].expanded = true;
-    if (group[0].subgroup) {
-      group[0].subgroup.forEach((subgroup: any) => (subgroup.expanded = true));
-    }
+  // Set expanded to true for the first element of group and all its subgroups
+  if (activeTabIndex === 0) {
+    expanded = true;
   }
 </script>
 
@@ -26,7 +23,7 @@
   {@const { title, subgroup } = group}
   <div use:storyblokEditable={group} class="col-span-6 flex w-full flex-col">
     <div class="flex flex-col">
-      <Accordion id={title}>
+      <Accordion id={title + '-group' + activeTabIndex} {expanded}>
         <div
           id="group"
           slot="header"
@@ -119,15 +116,17 @@
                             </span>
 
                             {#if tooltip}
-                              <div
-                                class="h-5 w-5 cursor-help hover:text-brand-9"
-                                use:tippy={{
-                                  content: `${tooltip}`,
-                                  placement: 'right',
-                                  animation: 'scale'
-                                }}
-                              >
-                                <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
+                              <div class="min-w-fit">
+                                <div
+                                  class="h-5 w-5 cursor-help hover:text-brand-9"
+                                  use:tippy={{
+                                    content: `${tooltip}`,
+                                    placement: 'right',
+                                    animation: 'scale'
+                                  }}
+                                >
+                                  <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
+                                </div>
                               </div>
                             {/if}
                           </div>
@@ -207,7 +206,7 @@
                             </span>
 
                             {#if tooltip}
-                              <div class=" min-w-fit">
+                              <div class="min-w-fit">
                                 <div
                                   class="h-5 w-5 cursor-help hover:text-brand-9"
                                   use:tippy={{
