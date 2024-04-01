@@ -196,26 +196,28 @@
 
                         <div
                           id="line-container"
-                          class="ml-0 grid grid-cols-6 items-center justify-center gap-10 border-b border-gray-12/[.08]"
+                          class="ml-0 grid w-full grid-cols-6 items-center justify-center border-b border-gray-12/[.08]"
                         >
                           <div
                             id="line-title-container"
-                            class="col-span-4 ml-0 flex w-full flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide md:ml-14"
+                            class="col-span-4 ml-0 flex w-full flex-shrink-0 flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide md:ml-14"
                           >
-                            <span id="line-title" class="flex w-auto text-start">
+                            <span id="line-title" class="flex w-auto min-w-0 text-start">
                               {name}
                             </span>
 
                             {#if tooltip}
-                              <div
-                                class="h-5 w-5 cursor-pointer hover:text-brand-9"
-                                use:tippy={{
-                                  content: `${tooltip}`,
-                                  placement: 'bottom',
-                                  animation: 'scale'
-                                }}
-                              >
-                                <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
+                              <div class=" min-w-fit">
+                                <div
+                                  class="h-5 w-5 cursor-help hover:text-brand-9"
+                                  use:tippy={{
+                                    content: `${tooltip}`,
+                                    placement: 'bottom',
+                                    animation: 'scale'
+                                  }}
+                                >
+                                  <Icon icon="info-circle" size="sm" class="hover:text-brand-9" />
+                                </div>
                               </div>
                             {/if}
                           </div>

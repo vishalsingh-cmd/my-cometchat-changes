@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { convertToK } from '$lib/strings/utils';
+  import { convertToKandMandB } from '$lib/strings/utils';
   import { createEventDispatcher } from 'svelte';
 
   interface Mau {
@@ -12,7 +12,7 @@
 
   export let maus: Mau[] = [];
 
-  let selectedIndex = 1;
+  let selectedIndex = 0;
 
   $: maxValue = maus[maus.length - 1].mau;
   $: stepValue = Math.floor(maus.length / Number(maxValue));
@@ -51,8 +51,10 @@
     bind:value={selectedIndex}
   />
   <div class="mt-3 flex items-center justify-between">
-    <p class="text-lg/tight font-semibold text-white">{convertToK(Number(currentValue))} MAU</p>
-    <p class="text-lg/tight font-semibold opacity-64">{convertToK(Number(maxValue))}</p>
+    <p class="text-lg/tight font-semibold text-white">
+      {convertToKandMandB(Number(currentValue))} MAUs
+    </p>
+    <p class="text-lg/tight font-semibold opacity-64">{convertToKandMandB(Number(maxValue))}</p>
   </div>
 </div>
 

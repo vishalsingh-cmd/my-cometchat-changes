@@ -7,10 +7,13 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { PricingPlanEnhancementGrowStoryblok } from '$types/bloks';
+  import { isStringContainOnlyNumbers } from '$lib/strings/utils';
+  import { onMount } from 'svelte';
 
   let isAnnual = false;
-  let currentGrowPrice = '0';
-  let currentRangeValue = '500'; // initialize this with your default range value
+  let currentGrowPrice = '';
+  let currentRangeValue = ''; // initialize this with your default range value
+  let currentRangeIndex = 0;
   export let block: PricingPlanEnhancementGrowStoryblok;
 
   function updatePricingFromBlock(rangeValue: string) {
@@ -33,6 +36,17 @@
     currentRangeValue = event.detail;
     updatePricingFromBlock(currentRangeValue);
   }
+
+  // update the price when the block is loaded using the default range index
+  onMount(() => {
+    if (block?.plans?.length > 0) {
+      currentGrowPrice = block?.plans[currentRangeIndex].monthly;
+    }
+  });
+
+  $: isAnnual
+    ? (currentGrowPrice = block.plans[currentRangeIndex].yearly)
+    : (currentGrowPrice = block.plans[currentRangeIndex].monthly);
 </script>
 
 {#if block}
@@ -59,7 +73,7 @@
 
         <div class={cn('text-2xl/tighter font-semibold')}>
           <div class="flex flex-row gap-2">
-            {#if currentGrowPrice !== 'Contact Us'}
+            {#if isStringContainOnlyNumbers(currentGrowPrice)}
               <p class="tracking-wid text-2xl/snug font-semibold">
                 ${currentGrowPrice}
                 <span class="text-sm opacity-64">/month</span>
@@ -75,17 +89,19 @@
         <PricingRangeSlider maus={block.plans} on:value={handleRange} />
       </div>
 
-      <div class="flex flex-col gap-3">
-        <p class="text-lg/tight font-semibold">Highlights</p>
-        <div class="flex flex-col gap-2">
-          {#each highlights as highlight}
-            <div class="flex items-start gap-2">
-              <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-              <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
-            </div>
-          {/each}
+      {#if highlights?.length > 0}
+        <div class="flex flex-col gap-3">
+          <p class="text-lg/tight font-semibold">Highlights</p>
+          <div class="flex flex-col gap-2">
+            {#each highlights as highlight}
+              <div class="flex items-start gap-2">
+                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+                <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+              </div>
+            {/each}
+          </div>
         </div>
-      </div>
+      {/if}
     </div>
 
     {#if cta[0].link}

@@ -30,21 +30,23 @@
       <div class="flex flex-col gap-3">
         <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
 
-        <h3 class="mt-3 text-lg/tight font-semibold">Highlights</h3>
+        {#if highlights?.length > 0}
+          <h3 class="mt-3 text-lg/tight font-semibold">Highlights</h3>
 
-        <div class="flex flex-col gap-2">
-          {#each highlights as highlight}
-            <div class="mt-2 flex flex-col items-start gap-2">
-              <p class="text-lg/snug font-semibold tracking-wide">
-                {highlight.price}
-                <span class="text-sm opacity-64">/user minutes</span>
-              </p>
-              <p class="text-lg/snug font-medium tracking-wide opacity-64">
-                {highlight.services}
-              </p>
-            </div>
-          {/each}
-        </div>
+          <div class="flex flex-col gap-2">
+            {#each highlights as highlight}
+              <div class="mt-2 flex flex-col items-start gap-2">
+                <p class="text-lg/snug font-semibold tracking-wide">
+                  {highlight.price}
+                  <span class="text-sm opacity-64">/user minutes</span>
+                </p>
+                <p class="text-lg/snug font-medium tracking-wide opacity-64">
+                  {highlight.services}
+                </p>
+              </div>
+            {/each}
+          </div>
+        {/if}
       </div>
     </div>
 
