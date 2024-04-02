@@ -79,7 +79,9 @@
                 <span class="text-sm opacity-64">/month</span>
               </p>
             {:else}
-              <span class="text-brand-9">{currentGrowPrice} </span>
+              <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
+                {currentGrowPrice}
+              </p>
             {/if}
           </div>
         </div>
