@@ -10,7 +10,7 @@
   import { isStringContainOnlyNumbers } from '$lib/strings/utils';
   import { onMount } from 'svelte';
 
-  let isAnnual = true;
+  let isAnnual = false;
   let currentGrowPrice = '';
   let currentRangeValue = ''; // initialize this with your default range value
   let currentRangeIndex = 0;
