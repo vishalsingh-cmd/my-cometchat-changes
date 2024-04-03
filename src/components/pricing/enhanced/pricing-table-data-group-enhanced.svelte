@@ -4,20 +4,43 @@
   import Accordion from '$components/accordion.svelte';
   import type { PricingTableGroupEnhancedStoryblok } from '$types/bloks';
   import { cn, getPricingIcon } from '$lib/utils';
-  import AccordionGroup from '$components/accordion-group.svelte';
+  import AccordionGroupPricing from '$components/accordion-group/accordion-group-pricing-enhanced/accordion-group-pricing.svelte';
   import tippy from 'svelte-tippy';
   import 'tippy.js/dist/tippy.css'; // optional
   import 'tippy.js/animations/scale.css';
+  import AccordionGroup from '$components/accordion-group.svelte';
 
   let expanded = false;
   export let activeTabIndex = 0;
   export let group: PricingTableGroupEnhancedStoryblok;
 
-  // Set expanded to true for the first element of group and all its subgroups
-  if (activeTabIndex === 0) {
-    expanded = true;
-  }
+  // const data: IAccordionGroup[] = [
+  //   {
+  //     groupTitle: 'Group 1',
+  //     subgroups: [
+  //       {
+  //         subgroupTitle: 'Subgroup 1.1',
+  //         lines: ['Line 1.1.1', 'Line 1.1.2']
+  //       },
+  //       {
+  //         subgroupTitle: 'Subgroup 1.2',
+  //         lines: ['Line 1.2.1']
+  //       }
+  //     ]
+  //   },
+  //   {
+  //     groupTitle: 'Group 2',
+  //     subgroups: [
+  //       {
+  //         subgroupTitle: 'Subgroup 2.1',
+  //         lines: ['Line 2.1.1', 'Line 2.1.2', 'Line 2.1.3']
+  //       }
+  //     ]
+  //   }
+  // ];
 </script>
+
+<AccordionGroupPricing {group} index={0} {activeTabIndex} />
 
 {#if group}
   {@const { title, subgroup } = group}
@@ -56,7 +79,7 @@
 
         <div id="subgroup" class="col-span-6 text-start">
           {#if subgroup}
-            {#each subgroup as line}
+            {#each subgroup as line, i}
               {#if line}
                 {@const { title, lines } = line}
                 <AccordionGroup expanded={expanded ? 'true' : 'false'}>
