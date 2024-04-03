@@ -8,7 +8,6 @@
   import { cn } from '$lib/utils';
   import type { PricingPlanEnhancementGrowStoryblok } from '$types/bloks';
   import { isStringContainOnlyNumbers } from '$lib/strings/utils';
-  import { onMount } from 'svelte';
 
   let isAnnual = true;
   let currentGrowPrice = '';
@@ -34,17 +33,18 @@
   // get range event
   function handleRange(event: CustomEvent<string>) {
     currentRangeValue = event.detail;
+    currentRangeIndex = block.plans.findIndex((plan) => plan.mau === currentRangeValue);
     updatePricingFromBlock(currentRangeValue);
   }
 
   // update the price when the block is loaded using the default range index
-  onMount(() => {
-    if (block?.plans?.length > 0) {
-      currentGrowPrice = isAnnual
-        ? block.plans[currentRangeIndex].yearly
-        : block.plans[currentRangeIndex].monthly;
-    }
-  });
+  // onMount(() => {
+  //   if (block?.plans?.length > 0) {
+  //     currentGrowPrice = isAnnual
+  //       ? block.plans[currentRangeIndex].yearly
+  //       : block.plans[currentRangeIndex].monthly;
+  //   }
+  // });
 
   $: isAnnual
     ? (currentGrowPrice = block.plans[currentRangeIndex].yearly)
