@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-04-03T08:36:06.781Z",
+    "published_at": "2024-04-03T09:26:47.516Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -48,6 +48,7 @@
             "0c005036-e03d-4d36-a339-eb870544a911",
             "4adc5c35-0fa0-4f6b-8a05-ce8b6f3713b8"
           ],
+          "chat_and_messaging": "Chat \u0026 Messaging",
           "something_test_plan": [
             "48aa2e59-e493-41de-b255-eaab84450223",
             "0c005036-e03d-4d36-a339-eb870544a911",
@@ -108,13 +109,13 @@
                 {
                   "_uid": "6661fd3c-b417-43c8-8e66-ec0be007dc9e",
                   "price": "$0.001",
-                  "services": "Voice",
+                  "services": "Voice calling/ conferencing",
                   "component": "pricing-pay-as-you-go-highlights"
                 },
                 {
                   "_uid": "1492f542-e839-4a7a-9841-f6b5669eae7e",
                   "price": "$0.003",
-                  "services": "Video",
+                  "services": "Video calling/ conferencing",
                   "component": "pricing-pay-as-you-go-highlights"
                 },
                 {
@@ -124,8 +125,8 @@
                   "component": "pricing-pay-as-you-go-highlights"
                 },
                 {
-                  "_uid": "e6faf0a6-73f6-4c57-8488-620f848a61dd",
-                  "price": "$0.003",
+                  "_uid": "7c8baf4b-ea5f-4614-b563-3b07c004c4a1",
+                  "price": "0.003",
                   "services": "Video broadcasting",
                   "component": "pricing-pay-as-you-go-highlights"
                 }
@@ -156,6 +157,7 @@
               "description": "Custom plans for businesses anticipating higher voice and video usage."
             }
           ],
+          "voice_and_video_calling": " Voice \u0026 video calling",
           "chat_and_messaging_plans": [
             {
               "cta": [
@@ -299,17 +301,17 @@
               "highlights": [
                 {
                   "_uid": "a7daef99-808d-47a7-bb7d-3fd26c97e8e1",
-                  "value": "Core chat features",
-                  "component": "text"
-                },
-                {
-                  "_uid": "dd46af03-396c-416b-8275-17e9540cacf3",
-                  "value": "Easy integration using our no-code chat widget, UI Kits, SDKs and APIs",
+                  "value": "Core messaging \u0026 advanced interactions",
                   "component": "text"
                 },
                 {
                   "_uid": "c6737354-e01d-4181-9b9e-f7d4861f8cb4",
-                  "value": "Robust user engagement, experience, and moderation features",
+                  "value": "Image, video, voice notes and file sharing",
+                  "component": "text"
+                },
+                {
+                  "_uid": "9ed03add-5850-4050-9c36-0019eca58775",
+                  "value": "Message translation and content moderation",
                   "component": "text"
                 },
                 {
@@ -2709,7 +2711,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1712133366,
+  "cv": 1712136407,
   "rels": [],
   "links": []
 }

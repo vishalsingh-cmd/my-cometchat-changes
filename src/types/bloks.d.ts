@@ -1185,6 +1185,8 @@ export interface PricingHeroStoryblok {
 
 export interface PricingHeroEnhancementsStoryblok {
   title: string;
+  chat_and_messaging: string;
+  voice_and_video_calling: string;
   description: string;
   info_items?: PricingHeroInfoItemStoryblok[];
   chat_and_messaging_plans: (
@@ -1241,7 +1243,7 @@ export interface PricingPlanStoryblok {
 export interface PricingPlanEnhancementContactUsStoryblok {
   name: string;
   description?: string;
-  highlights: TextStoryblok[];
+  highlights?: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-plan-enhancement-contact-us';
@@ -1263,7 +1265,6 @@ export interface PricingPlanEnhancementGrowStoryblok {
   name: string;
   plans?: PricingPlanGrowSegmentStoryblok[];
   description?: string;
-  price?: string;
   mau?: TextStoryblok[];
   highlights: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
@@ -1772,7 +1773,7 @@ export interface TestimonialBlockStoryblok {
 }
 
 export interface TextStoryblok {
-  value: string;
+  value?: string;
   _uid: string;
   component: 'text';
   [k: string]: any;
