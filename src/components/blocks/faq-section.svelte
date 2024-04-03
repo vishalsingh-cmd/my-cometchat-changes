@@ -63,7 +63,7 @@
                       icon="chevron-up"
                       class={cn(
                         'shrink-0 opacity-74 transition-transform duration-300',
-                        expanded && 'rotate-0 opacity-100'
+                        expanded ? 'rotate-0 opacity-100' : 'rotate-180 opacity-74'
                       )}
                       size="sm"
                     />
