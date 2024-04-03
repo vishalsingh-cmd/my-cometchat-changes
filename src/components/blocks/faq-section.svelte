@@ -31,7 +31,7 @@
             title={title.title}
             description={title.description}
             buttons={block.title?.[0].links}
-            class="max-full pb-0 pl-0 pr-0 pt-0 md:items-center lg:pb-0 lg:pt-0"
+            class="w-full items-center p-0 text-start md:text-center"
           />
         {/if}
       {/if}
