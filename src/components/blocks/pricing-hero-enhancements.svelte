@@ -85,7 +85,7 @@
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
-              {block.story.content.body[2].pricing_table[0].title}
+              Chat & Messaging
             </div>
           </PricingTabSwitch>
 
@@ -106,7 +106,7 @@
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
-              {block.story.content.body[2].pricing_table[1].title}
+              Voice & video calling
             </div>
           </PricingTabSwitch>
         </div>
