@@ -2,7 +2,7 @@
   import type { PricingTableHeaderColumnStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  export let price: number | null = null;
+  // export let price: number | null = null;
   export let column: PricingTableHeaderColumnStoryblok;
 </script>
 
@@ -13,11 +13,6 @@
     <p class="text-lg/snug font-medium tracking-wide opacity-74">
       {#if description}
         {description}
-      {:else}
-        {#if price === 0}
-          Free
-        {/if}
-        starts at &#36;{price}
       {/if}
     </p>
   </div>
