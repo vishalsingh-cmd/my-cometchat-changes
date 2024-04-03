@@ -38,7 +38,11 @@
               <div class="mt-2 flex flex-col items-start gap-2">
                 <p class="text-lg/snug font-semibold tracking-wide">
                   {highlight.price}
-                  <span class="text-sm opacity-64">/user minutes</span>
+                  {#if highlight.services === 'Voice and video call recording'}
+                    <span class="text-sm opacity-64">/minute</span>
+                  {:else}
+                    <span class="text-sm opacity-64">/user minute</span>
+                  {/if}
                 </p>
                 <p class="text-lg/snug font-medium tracking-wide opacity-64">
                   {highlight.services}
