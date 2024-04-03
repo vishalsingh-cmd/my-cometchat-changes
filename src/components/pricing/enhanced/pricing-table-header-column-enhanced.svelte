@@ -17,6 +17,6 @@
       <p class="text-lg/snug font-medium tracking-wide opacity-74">
         {description}
       </p>
-    {/if}π
+    {/if}
   </div>
 {/if}
