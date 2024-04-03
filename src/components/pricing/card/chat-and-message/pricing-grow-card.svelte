@@ -10,15 +10,15 @@
   import { isStringContainOnlyNumbers } from '$lib/strings/utils';
   import { onMount } from 'svelte';
 
-  let isAnnual = false;
+  let isAnnual = true;
   let currentGrowPrice = '';
   let currentRangeValue = ''; // initialize this with your default range value
   let currentRangeIndex = 0;
   export let block: PricingPlanEnhancementGrowStoryblok;
 
   function updatePricingFromBlock(rangeValue: string) {
-    for (let i = 0; i < block.plans.length; i++) {
-      if (rangeValue === block.plans[i].mau) {
+    for (let i = 0; i < (block.plans ?? []).length; i++) {
+      if (rangeValue === (block.plans ?? [])[i]?.mau) {
         currentGrowPrice = isAnnual ? block.plans[i].yearly : block.plans[i].monthly;
         break;
       }
@@ -40,7 +40,9 @@
   // update the price when the block is loaded using the default range index
   onMount(() => {
     if (block?.plans?.length > 0) {
-      currentGrowPrice = block?.plans[currentRangeIndex].monthly;
+      currentGrowPrice = isAnnual
+        ? block.plans[currentRangeIndex].yearly
+        : block.plans[currentRangeIndex].monthly;
     }
   });
 

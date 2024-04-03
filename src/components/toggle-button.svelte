@@ -3,7 +3,7 @@
   import { createEventDispatcher } from 'svelte';
 
   const dispatch = createEventDispatcher();
-  let isChecked = false;
+  let isChecked = true;
 
   function toggle() {
     isChecked = !isChecked;
