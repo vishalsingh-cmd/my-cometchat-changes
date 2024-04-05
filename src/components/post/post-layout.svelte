@@ -10,7 +10,7 @@
     TutorialStoryblok
   } from '$types/bloks';
 
-  import Share from './share.svelte';
+  // import Share from './share.svelte';
   import Media from '$components/media.svelte';
   import Sidebar from '$components/post/sidebar.svelte';
   import PreFooter from '$components/blocks/pre-footer.svelte';
@@ -165,7 +165,7 @@
             </div>
           {/if}
 
-          <Share class="pb-8 md:hidden" />
+          <!-- <Share class="pb-8 md:hidden" /> -->
         </div>
 
         {#if block.content.sidebar_right_slot && block.content.sidebar_right_slot.length > 0}
