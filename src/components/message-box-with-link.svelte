@@ -46,7 +46,13 @@
       </div>
     {:else}
       <div class="mt-3 flex gap-3">
-        <Button variant={'primary'} href={'https://cometchat.com/docs/home'}>See our docs</Button>
+        <Button
+          variant={'primary'}
+          href={'https://cometchat.com/docs/home'}
+          as="a"
+          target="_blank"
+          rel="noopener noreferrer">See our docs</Button
+        >
       </div>
     {/if}
   </div>

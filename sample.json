@@ -2,7 +2,7 @@
   "story": {
     "name": "Your first SwiftUI screen (2/7)",
     "created_at": "2023-08-24T17:08:09.019Z",
-    "published_at": "2024-04-05T11:42:01.161Z",
+    "published_at": "2024-04-05T11:46:24.844Z",
     "id": 359910705,
     "uuid": "48de110b-19ac-4211-8d42-414571fd810a",
     "content": {
@@ -50,7 +50,22 @@
               "id": "d8fd3efa-28f1-40d5-8016-5a5e3e6c439a",
               "body": [
                 {
-                  "cta": [],
+                  "cta": [
+                    {
+                      "_uid": "546b4841-887b-42aa-bab9-6dedd54700c5",
+                      "icon": "",
+                      "link": {
+                        "id": "16431bec-57bc-4329-b6cc-66890e6dc06f",
+                        "url": "",
+                        "linktype": "story",
+                        "fieldtype": "multilink",
+                        "cached_url": "pages/react-chat-ui-kit"
+                      },
+                      "label": "hello this is link",
+                      "variant": "primary",
+                      "component": "button-link"
+                    }
+                  ],
                   "_uid": "i-d8911437-b72a-479d-a2dd-3e0ca37223e1",
                   "title": "Important",
                   "message": "This tutorial is outdated. We're currently working on an updated version. In the meantime, for instructions on building a chat app using CometChat, please visit our documentation.",
@@ -2105,7 +2120,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1712317321,
+  "cv": 1712317585,
   "rels": [],
   "links": []
 }
