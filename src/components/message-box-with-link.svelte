@@ -20,8 +20,21 @@
     class="absolute left-0 top-0 h-full w-12 rounded-l-xl bg-gradient-to-r from-brand-9/30 to-transparent"
   />
   <div class="ml-3 p-4">
-    <div class="text-lg-richtext font-semibold text-brand-9">{block.title}</div>
-    <p class="w-full whitespace-pre-line">{block.message}</p>
+    {#if block.title && block.title.length > 0}
+      <div class="text-lg-richtext font-semibold text-brand-9">{block.title}</div>
+    {:else}
+      <div class="text-lg-richtext font-semibold text-brand-9">Important</div>
+    {/if}
+
+    {#if block.message && block.message.length > 0}
+      <p class="w-full whitespace-pre-line">{block.message}</p>
+    {:else}
+      <p class="w-full whitespace-pre-line">
+        This tutorial is outdated. We're currently working on an updated version. In the meantime,
+        for instructions on building a chat app using CometChat, please visit our documentation.
+      </p>
+    {/if}
+
     {#if block.cta}
       <div class="mt-3 flex gap-3">
         {#each block.cta as button}
@@ -30,6 +43,10 @@
             {button.label}
           </Button>
         {/each}
+      </div>
+    {:else}
+      <div class="mt-3 flex gap-3">
+        <Button variant={'primary'} href={'https://cometchat.com/docs/home'}>See our docs</Button>
       </div>
     {/if}
   </div>

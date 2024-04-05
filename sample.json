@@ -2,7 +2,7 @@
   "story": {
     "name": "Pricing enhancements",
     "created_at": "2024-03-17T20:12:45.479Z",
-    "published_at": "2024-04-03T09:26:47.516Z",
+    "published_at": "2024-04-03T10:49:47.220Z",
     "id": 462339136,
     "uuid": "9873e00e-d448-4798-b948-37a5e6fb587d",
     "content": {
@@ -2626,6 +2626,31 @@
               "component": "faq"
             },
             {
+              "_uid": "f0df0030-0668-4b9b-8743-f28e0d39cf1d",
+              "text": {
+                "type": "doc",
+                "content": [
+                  {
+                    "type": "paragraph",
+                    "content": [
+                      {
+                        "text": "Every plan includes Voice and video functionality with Pro and Custom plans including free voice and video minutes. ",
+                        "type": "text"
+                      },
+                      { "type": "hard_break" },
+                      { "type": "hard_break" },
+                      {
+                        "text": "Pro customers get 15k voice and video minutes per month; Custom plan customers get 50k voice and video minutes per month. Minutes are split equally between voice and video regardless of plan. Essential plans do not include free voice and video minutes.",
+                        "type": "text"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "title": "Is voice and video calling included?",
+              "component": "faq"
+            },
+            {
               "_uid": "245b8566-8ff5-4af2-83d5-b2b151a8c730",
               "text": "Yes! Our chat is HIPAA compliant. In every case HIPAA requires a Business Associate Agreement (BAA). In the Essentials and Pro plans it’s a paid add-on. In the Custom plan BAA is an included add-on. Please reach out to get one set up.",
               "title": "Do you offer HIPAA compliance?",
@@ -2684,8 +2709,8 @@
       ],
       "component": "pricing"
     },
-    "slug": "pricing-enhancements",
-    "full_slug": "pages/pricing-enhancements",
+    "slug": "pricing",
+    "full_slug": "pages/pricing",
     "sort_by_date": null,
     "position": 130,
     "tag_list": [],
@@ -2701,9 +2726,9 @@
       {
         "id": 389799831,
         "name": "Pricing",
-        "slug": "pricing",
+        "slug": "pricing-old",
         "published": true,
-        "full_slug": "pages/pricing",
+        "full_slug": "pages/pricing-old",
         "is_folder": false,
         "parent_id": 316987388
       }
@@ -2711,7 +2736,7 @@
     "default_full_slug": null,
     "translated_slugs": null
   },
-  "cv": 1712136407,
+  "cv": 1712141387,
   "rels": [],
   "links": []
 }
