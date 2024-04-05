@@ -39,14 +39,17 @@
       <div class="mt-3 flex gap-3">
         {#each block.cta as button}
           {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
-          <Button variant={'primary'} as="a" {href} {target} {rel}>
-            {button.label}
-          </Button>
+
+          {#if href && href.length > 0 && target && target.length > 0 && rel && rel.length > 0}
+            <Button variant={'primary'} as="a" {href} {target} {rel}>
+              {button.label}
+            </Button>
+          {:else}
+            <Button variant={'primary'} href={'https://cometchat.com/docs/home'}
+              >See our docs</Button
+            >
+          {/if}
         {/each}
-      </div>
-    {:else}
-      <div class="mt-3 flex gap-3">
-        <Button variant={'primary'} href={'https://cometchat.com/docs/home'}>See our docs</Button>
       </div>
     {/if}
   </div>
