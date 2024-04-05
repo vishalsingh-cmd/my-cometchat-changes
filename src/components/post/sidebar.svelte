@@ -2,7 +2,7 @@
   import { createEventDispatcher } from 'svelte';
   import { cn } from '$lib/utils';
   import Background from './assets/background.png';
-  import Share from './share.svelte';
+  // import Share from './share.svelte';
 
   const dispatch = createEventDispatcher();
 
@@ -47,9 +47,9 @@
         {/each}
       {/if}
 
-      {#if hasShareOptions}
+      <!-- {#if hasShareOptions}
         <Share class="ml-3 mt-[100px]" />
-      {/if}
+      {/if} -->
     </div>
   </div>
 </div>
