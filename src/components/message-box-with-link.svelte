@@ -35,7 +35,7 @@
       </p>
     {/if}
 
-    {#if block.cta?.length > 0}
+    {#if block.cta}
       <div class="mt-3 flex gap-3">
         {#each block.cta as button}
           {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
