@@ -15,7 +15,7 @@
       'wrap sticky top-[80px] mb-44 hidden h-[300px] w-full max-w-[500px] flex-col gap-3 space-y-3 overflow-clip rounded-3xl border border-gray-6  bg-[#F8F8F8] p-5 text-black shadow-sm lg:block'
     )}
   >
-    <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
+    <h3 class="text-xl font-semibold leading-tight">{block.title}</h3>
     <p class="text-sm font-normal">{block.description}</p>
 
     {#if block.cta_slot}

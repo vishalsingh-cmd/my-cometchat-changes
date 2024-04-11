@@ -15,7 +15,7 @@
       'relative flex h-auto w-full flex-col gap-3 overflow-clip rounded-3xl border border-gray-6 bg-[#F8F8F8] p-8 shadow-md'
     )}
   >
-    <h1 class="text-xl font-semibold leading-tight">{block.title}</h1>
+    <h3 class="text-xl font-semibold leading-tight">{block.title}</h3>
     <p class="max-w-xs text-md font-normal">{block.description}</p>
     {#if block.cta_slot}
       <div class="flex gap-3">
