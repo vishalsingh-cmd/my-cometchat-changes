@@ -12,7 +12,11 @@
 <div
   id="message-box-with-link"
   use:storyblokEditable={block}
-  class={cn('relative flex w-full flex-col gap-2 rounded-xl', 'border border-brand-4')}
+  class={cn(
+    'relative flex w-full flex-col gap-2 rounded-2xl',
+    'border border-brand-4',
+    'overflow-clip'
+  )}
 >
   <!-- add border to the left -->
   <div class="absolute left-0 top-0 h-full w-2 rounded-l-xl bg-brand-9" />
