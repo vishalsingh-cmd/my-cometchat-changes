@@ -4,6 +4,7 @@
   import { cn } from '$lib/utils';
   import type { MessageBoxWithLinkStoryblok } from '$types/bloks';
   import Button from './buttons/button.svelte';
+  import Icon from './icon/icon.svelte';
 
   export let block: MessageBoxWithLinkStoryblok;
 </script>
@@ -19,6 +20,11 @@
   <div
     class="absolute left-0 top-0 h-full w-12 rounded-l-xl bg-gradient-to-r from-brand-9/30 to-transparent"
   />
+
+  <div class="inline-flex items-center justify-center bg-brand-5 p-6">
+    <Icon icon="triangle-warning" size="sm" class="h-6 w-6 text-brand-9" />
+  </div>
+
   <div class="ml-3 p-4">
     {#if block.title && block.title.length > 0}
       <div class="text-lg-richtext font-semibold text-brand-9">{block.title}</div>
