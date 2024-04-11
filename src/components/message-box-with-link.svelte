@@ -26,7 +26,7 @@
   />
 
   <div class="flex w-full flex-col gap-2">
-    <div class="ml-6 w-fit items-center justify-center rounded-full bg-brand-5 p-3">
+    <div class="ml-6 mt-3 w-fit items-center justify-center rounded-full bg-brand-5 p-3">
       <Icon icon="triangle-warning" size="sm" class="h-6 w-6 text-brand-9" />
     </div>
 
