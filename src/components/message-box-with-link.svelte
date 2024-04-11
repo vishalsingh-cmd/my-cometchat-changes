@@ -25,7 +25,7 @@
     class="absolute left-0 top-0 h-full w-12 rounded-l-xl bg-gradient-to-r from-brand-9/30 to-transparent"
   />
 
-  <div class="flex w-full flex-col gap-2">
+  <div class="flex w-full flex-col">
     <div class="ml-6 mt-3 w-fit items-center justify-center rounded-full bg-brand-5 p-3">
       <Icon icon="triangle-warning" size="sm" class="h-6 w-6 text-brand-9" />
     </div>
