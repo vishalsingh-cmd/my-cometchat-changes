@@ -11,7 +11,7 @@
   const paragraph = cva([
     'font-medium',
     'text-gray-12',
-    'leading-snug',
+    'leading-none',
     'tracking-wide',
 
     '[&_a]:text-brand-9',

@@ -40,7 +40,7 @@
       {#if block.message && block.message.length > 0}
         <p class="w-full whitespace-pre-line font-medium">{block.message}</p>
       {:else}
-        <p class="w-full whitespace-pre-line font-medium">
+        <p class="w-full font-medium">
           This tutorial is outdated. We're currently working on an updated version. In the meantime,
           for instructions on building a chat app using CometChat, please visit our documentation.
         </p>
