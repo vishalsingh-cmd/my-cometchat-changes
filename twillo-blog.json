@@ -1,0 +1,812 @@
+{
+  "story": {
+    "name": "Switching from Twilio? Discover the Best Alternatives to Twilio Programmable Video",
+    "created_at": "2023-12-12T12:33:53.258Z",
+    "published_at": "2024-03-21T09:27:21.605Z",
+    "id": 417685671,
+    "uuid": "dd8a1635-499c-473e-b9e9-7063d4d3cc24",
+    "content": {
+      "seo": [
+        {
+          "_uid": "190caccf-fe0c-4c44-aaba-6a20094d3427",
+          "title": "The Top 6 Twilio Video Alternatives for 2023",
+          "robots": [],
+          "og_image": {
+            "id": 13248578,
+            "alt": "",
+            "name": "",
+            "focus": "",
+            "title": "",
+            "source": "",
+            "filename": "https://a.storyblok.com/f/231922/1726x1040/a61c9f7213/blog-twilio-vs-cometchat-image.jpg",
+            "copyright": "",
+            "fieldtype": "asset",
+            "meta_data": {},
+            "is_external_url": false
+          },
+          "component": "seo-fields",
+          "href_lang": [],
+          "description": "As Twilio phases out Programmable Video, finding reliable alternatives is crucial. Our guide helps you explore options that ensure a seamless transition and continuous video communication support for your business.",
+          "canonical_url": "",
+          "structured_data_markup": ""
+        }
+      ],
+      "_uid": "5e8301e5-a09a-4cf2-91bc-308a3d6d5003",
+      "body": {
+        "type": "doc",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Businesses have always looked for better alternatives for Twilio video as it is not a core offering of Twilio. The need for a clear alternative has become inevitable now with Twilio bringing down the curtains on the Twilio programmable video product. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "While existing users will have access to the service until the ",
+                "type": "text"
+              },
+              {
+                "text": "End of Life (EOL) date",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "/pages/blog/twilio-video-is-shutting-down",
+                      "uuid": "a17ba793-ca0a-4340-8e85-cc3805b52fe3",
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "story"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": ", they will no longer receive new feature updates or technical support. This necessitates proactive exploration of alternative solutions and devising a migration plan to maintain seamless and uninterrupted video communication capabilities.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [{ "text": "Here are some key steps to consider - ", "type": "text" }]
+          },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "08022f00-4ae6-4c69-a839-ac2ec2abcd6b",
+              "body": [
+                {
+                  "_uid": "i-7f1b5517-524d-436e-b2f5-89bec5c514a4",
+                  "items": [
+                    {
+                      "_uid": "6b94e05d-32ae-434e-ad62-0d8ee716ea01",
+                      "title": "Evaluate your present video communication needs and highlight the crucial features that align with your business objectives. Might be a good time to also pull up the features or enhancements that you have deprioritised over time.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    },
+                    {
+                      "_uid": "8f2b2a4a-ea7c-433d-aab8-f72dea1294e5",
+                      "title": "Explore alternative video conferencing platforms that can align with your business needs and budget. While doing so, evaluate necessary factors like feature offerings, scalability, pricing models, and user-friendliness.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    },
+                    {
+                      "_uid": "0fe60593-0c3f-4b60-b504-857376967730",
+                      "title": "Develop a clear timeline and assign responsibilities to ensure a smooth transition.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    },
+                    {
+                      "_uid": "208a6246-a0f7-4748-b437-11f332bb0398",
+                      "title": "Thoroughly test your new platform and make adjustments to optimize performance and user experience.",
+                      "component": "paragraph-list-item",
+                      "description": { "type": "doc", "content": [{ "type": "paragraph" }] }
+                    }
+                  ],
+                  "component": "paragraph-list",
+                  "is_numeric": true
+                }
+              ]
+            }
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "08022f00-4ae6-4c69-a839-ac2ec2abcd6b",
+              "body": [
+                {
+                  "_uid": "i-f7bffefe-0978-4060-84ca-709265636ac5",
+                  "label": "",
+                  "heading": " Twilio Video Conferencing Alternatives ",
+                  "component": "paragraph-heading"
+                }
+              ]
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "It's important to explore and compare different providers to identify the solution that best meets your specific requirements. Below, we delve into a range of Twilio video conferencing alternatives, detailing their unique offerings, advantages, and how they stack up against each other",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "CometChat", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 11369303,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2202x1148/08f01c543f/cometchat.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "CometChat",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "/pages/",
+                      "uuid": "b0d55ba1-9ff6-4b56-906f-9cb7d0e5f57d",
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "story"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": " empowers developers and businesses with the tools they need to build robust and engaging in-app communication experiences. CometChat provides a simple yet powerful way to integrate text chat, voice, and video functionality into websites and apps across diverse industries. From established enterprises to innovative startups, businesses of all sizes rely on CometChat to elevate their user engagement and drive growth.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 3 },
+            "content": [
+              {
+                "text": "CometChat stands out due to its comprehensive array of exceptional features and unique distinguishing aspects:",
+                "type": "text"
+              }
+            ]
+          },
+          { "type": "paragraph" },
+          {
+            "type": "blok",
+            "attrs": {
+              "id": "c0ae2ec3-362e-4db2-8c90-78c2b5a5e4b2",
+              "body": [
+                {
+                  "_uid": "i-15ba2701-26a3-441e-a4ba-2611ca8fc07d",
+                  "items": [
+                    {
+                      "_uid": "b149001a-7fad-4c2e-b6c1-925bd20bf45d",
+                      "title": "Complete engagement suite",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "CometChat offers a complete engagement suite that allows you to build ",
+                                "type": "text"
+                              },
+                              {
+                                "text": "in-app chat",
+                                "type": "text",
+                                "marks": [
+                                  {
+                                    "type": "link",
+                                    "attrs": {
+                                      "href": "/pages/chat-sdks-api",
+                                      "uuid": "5c9df7ce-e685-4a69-be82-8b2798979b37",
+                                      "anchor": null,
+                                      "target": "_self",
+                                      "linktype": "story"
+                                    }
+                                  }
+                                ]
+                              },
+                              { "text": ", ", "type": "text" },
+                              {
+                                "text": "voice and video capabilities",
+                                "type": "text",
+                                "marks": [
+                                  {
+                                    "type": "link",
+                                    "attrs": {
+                                      "href": "/pages/voice-and-video-calls",
+                                      "uuid": "93a5648d-f2f2-4f5c-b672-b6414b672a6c",
+                                      "anchor": null,
+                                      "target": "_self",
+                                      "linktype": "story"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "text": " into your applications with a single platform. This simplifies development and provides a consistent experience for your users under a single package. ",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "2ed8dbb2-afe9-4ee8-ba8a-ef1acfb7eb6e",
+                      "title": "Faster time to market",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "CometChat offers a fast time to market for adding real-time engagement features to your app. Our ",
+                                "type": "text"
+                              },
+                              {
+                                "text": "UI Kits ",
+                                "type": "text",
+                                "marks": [
+                                  {
+                                    "type": "link",
+                                    "attrs": {
+                                      "href": "/pages/ui-kits",
+                                      "uuid": "66838033-9a82-4335-8909-d055a5c23544",
+                                      "anchor": null,
+                                      "target": "_self",
+                                      "linktype": "story"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "text": "simplify the process,enabling implementation in mere hours. This swift integration allows for quicker app launches and faster user engagement.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "6f3d19a9-87f2-47aa-8765-c6cee0024c49",
+                      "title": "Scalability and Reliability",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": " No matter your user base, CometChat scales seamlessly. Whether you're a ",
+                                "type": "text"
+                              },
+                              {
+                                "text": "fledgling startup ",
+                                "type": "text",
+                                "marks": [
+                                  {
+                                    "type": "link",
+                                    "attrs": {
+                                      "href": "/pages/for-startups",
+                                      "uuid": "3f7736e3-7aa5-4493-b408-694845bda2cc",
+                                      "anchor": null,
+                                      "target": "_self",
+                                      "linktype": "story"
+                                    }
+                                  }
+                                ]
+                              },
+                              { "text": "with a few thousand users or a ", "type": "text" },
+                              {
+                                "text": "global behemoth ",
+                                "type": "text",
+                                "marks": [
+                                  {
+                                    "type": "link",
+                                    "attrs": {
+                                      "href": "/pages/for-enterprise",
+                                      "uuid": "5e88c428-5779-4f2a-a92a-bedecc964cd3",
+                                      "anchor": null,
+                                      "target": "_self",
+                                      "linktype": "story"
+                                    }
+                                  }
+                                ]
+                              },
+                              {
+                                "text": "with millions, CometChat adapts effortlessly.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "d7a0bade-7c12-4e9e-a33e-8ea8da6abd71",
+                      "title": "1:1 and group video calls",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "CometChat offers seamless 1:1 and group video calling, enabling effortless calling within your app. Enjoy crystal-clear audio and video and enhanced collaboration with screen sharing and recording.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "ce364d83-b4ab-400b-a479-801fa5d4ebff",
+                      "title": "Screenshare",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "CometChat empowers participants to display their screens to others, facilitating seamless presentations, demonstrations, and collaborative tasks. ",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "567fe3bc-c3d1-4d97-84f9-1034ed608c6b",
+                      "title": "Interactive whiteboard",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Brainstorm ideas, sketch concepts, and annotate documents together in real-time on a virtual whiteboard, fostering dynamic interaction.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "f6cf831d-f6f2-476e-8258-513a376d88af",
+                      "title": "Breakout rooms",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Facilitates focused discussions or teamwork by dividing your meeting into smaller, private rooms for targeted collaboration and brainstorming.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "8ff1eda8-9a55-4c0a-8319-caefa795f72d",
+                      "title": "Grid, tile \u0026 spotlight layouts",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Empowers users to switch between classic grid layouts, spotlighting individual speakers, or prioritising active participants for optimal engagement.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "95acf5ba-e6dc-4cb4-b718-086ae07d1567",
+                      "title": "Broadcast video",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Reach a wider audience with live video streams, engage your community, host webinars, or conduct online training sessions with just a few clicks.",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "cec02534-b90d-4aad-9a0c-27499047a626",
+                      "title": "Collaborative document",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Work on documents together in real-time, edit, share, and co-create directly within the video call",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "_uid": "77da50b0-355d-4569-955c-9b5fcffd6127",
+                      "title": "Picture-in-picture",
+                      "component": "paragraph-list-item",
+                      "description": {
+                        "type": "doc",
+                        "content": [
+                          {
+                            "type": "paragraph",
+                            "content": [
+                              {
+                                "text": "Users can multitask without leaving the video call by keeping an eye on the conversation ",
+                                "type": "text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "component": "paragraph-list",
+                  "is_numeric": false
+                }
+              ]
+            }
+          },
+          { "type": "heading", "attrs": { "level": 3 } },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "Daily.co", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 11368332,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2193x1095/315e5c9f00/daily.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "When it comes to video chat SDKs, Daily.co shines with its effortless native integration. This approach drastically reduces development time and complexity, allowing developers to focus on crafting a smooth and intuitive user experience. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Daily.co's adaptable user interface goes beyond just technical ease. It allows for seamless branding and customization, ensuring a consistent and familiar experience for users, fostering trust and engagement.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "CometChat has expanded its capabilities by integrating Daily.co's technology. This ",
+                "type": "text"
+              },
+              {
+                "text": "partnership",
+                "type": "text",
+                "marks": [
+                  {
+                    "type": "link",
+                    "attrs": {
+                      "href": "/pages/blog/daily-partnership",
+                      "uuid": "1dc1cec7-a58d-4c41-84a2-2b6a4146bd75",
+                      "anchor": null,
+                      "target": "_self",
+                      "linktype": "story"
+                    }
+                  }
+                ]
+              },
+              {
+                "text": " unlocks powerful features like real-time video streaming, including live broadcasting and video streaming for CometChat’s customers.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "However, while Daily.co excels in integration ease, it's important to consider its limitations. For applications requiring highly specialized or unique features beyond the SDK's standard options, developers might need to invest additional time and effort in custom development. This trade-off between ease and customization is a crucial factor to consider when choosing Daily.co.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "VideoSDK.live", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 11369188,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2213x862/2bcd12f781/videosdk.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "VideoSDK.live robust platform built for developers with a versatile toolset for crafting real-time audio-video communication and live streaming solutions. Its feature set includes granular control for defining user roles, live event broadcasting capabilities for real-time audience engagement, and JWT authentication to ensure secure and reliable access.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "While VideoSDK excels in these areas, it currently lacks a built-in chat feature for text-based communication during video and audio conferences. This absence might lead developers to seek additional solutions to integrate chat functionality. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "Dyte ", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 11369184,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2183x967/8c9260d980/dyte.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Dyte's video conference SDK \u0026 API empowers developers to effortlessly weave seamless video experiences into any application. Prioritising security, reliability, and ease of use, Dyte lets you embed scalable, customizable, and interactive video calls within minutes. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "However, similar to VideoSDK.live, a dedicated chat SDK is currently missing, meaning text-based communication during Dyte video calls isn't yet available. ",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "100ms", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 12305614,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2128x990/55c90dcc76/100ms.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "100ms provides a robust cloud infrastructure for seamlessly integrating live video and audio into your apps. Its API, SDK, and intuitive dashboard empower you to capture, distribute, record, and render interactive content with ease.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "However, its high-end features come at a heavy cost. For applications with substantial traffic, the price tag might be a hurdle. Additionally, implementing and configuring the system can be complex, especially for those new to live video streaming. And switching to another provider down the line might not be a smooth ride.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "attrs": { "level": 2 },
+            "content": [{ "text": "Agora ", "type": "text" }]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "type": "image",
+                "attrs": {
+                  "id": 11368278,
+                  "alt": "",
+                  "src": "https://a.storyblok.com/f/231922/2202x1148/3968c628d4/agora.PNG",
+                  "title": "",
+                  "source": "",
+                  "copyright": "",
+                  "meta_data": {}
+                }
+              },
+              {
+                "text": "Agora's video chat SDK is built with mobile in mind. Seamlessly integrated with iOS and Android, it ensures compatibility across countless devices and OS versions. This \"Mobile-First\" approach makes it a strong contender for app developers targeting mobile-first audiences.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Agora structures its pricing model based on factors like user volume, duration of usage, and specific feature utilisation. While this approach is flexible, it can also surprise, costs can escalate quickly for applications with substantial user base and intensive usage.",
+                "type": "text"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              {
+                "text": "Extensive customization, while possible with Agora, might require additional development efforts, potentially extending your project timeline and resource needs. Be prepared to invest extra time and expertise to tailor Agora to your unique vision.",
+                "type": "text"
+              }
+            ]
+          }
+        ]
+      },
+      "cover": {
+        "id": 13248578,
+        "alt": "",
+        "name": "",
+        "focus": "",
+        "title": "",
+        "source": "",
+        "filename": "https://a.storyblok.com/f/231922/1726x1040/a61c9f7213/blog-twilio-vs-cometchat-image.jpg",
+        "copyright": "",
+        "fieldtype": "asset",
+        "meta_data": {},
+        "is_external_url": false
+      },
+      "author": "447cfb40-e35f-41e6-85e9-a531ee9ea11a",
+      "related": [],
+      "category": "Insights",
+      "component": "blog-post",
+      "created_at": "",
+      "pre_footer": [],
+      "sidebar_right_slot": [
+        {
+          "_uid": "f858ce35-a3fb-497c-8544-4b06029fc58f",
+          "link": {
+            "id": "",
+            "url": "",
+            "linktype": "story",
+            "fieldtype": "multilink",
+            "cached_url": ""
+          },
+          "image": "https://a.storyblok.com/f/231922/150x150/5f9a0beadf/comet-solo.png",
+          "title": "CometChat is a powerful, scalable alternative to Twilio Video.",
+          "cta_slot": [
+            {
+              "_uid": "9f0740f2-8b91-4bc4-bfb0-8ab8f4234505",
+              "icon": "",
+              "link": {
+                "id": "b71d2d0a-8447-49c7-83a2-3bc8f617880f",
+                "url": "",
+                "linktype": "story",
+                "fieldtype": "multilink",
+                "cached_url": "pages/contact-sales"
+              },
+              "label": "Schedule a demo",
+              "variant": "primary",
+              "component": "button-link"
+            }
+          ],
+          "component": "side-static-banner",
+          "description": "Discover how we can elevate your video calling experience."
+        }
+      ],
+      "imported_from_old_site": false
+    },
+    "slug": "twilio-video-alternatives",
+    "full_slug": "pages/blog/twilio-video-alternatives",
+    "sort_by_date": null,
+    "position": 100,
+    "tag_list": [],
+    "is_startpage": false,
+    "parent_id": 319617462,
+    "meta_data": null,
+    "group_id": "c1aa89fa-b091-4a8a-b191-af6d13d71919",
+    "first_published_at": "2023-12-12T14:57:19.425Z",
+    "release_id": null,
+    "lang": "default",
+    "path": null,
+    "alternates": [],
+    "default_full_slug": null,
+    "translated_slugs": null
+  },
+  "cv": 1712844352,
+  "rels": [],
+  "links": []
+}
