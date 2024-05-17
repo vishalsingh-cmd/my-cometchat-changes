@@ -78,7 +78,7 @@
             {#if isStringContainOnlyNumbers(currentGrowPrice)}
               <p class="tracking-wid text-2xl/snug font-semibold">
                 ${currentGrowPrice}
-                <span class="text-sm opacity-64">/month</span>
+                <span class="text-sm opacity-64">/month{isAnnual ? ', billed annually' : ''}</span>
               </p>
             {:else}
               <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
