@@ -48,7 +48,7 @@
       {/if}
     </div>
 
-    {#if cta[0].link}
+    {#if cta[0]?.link}
       {@const { href, target, rel } = getAnchorFromCmsLink(cta[0].link)}
       <Button
         as="a"

@@ -47,12 +47,13 @@
   // });
 
   $: isAnnual
-    ? (currentGrowPrice = block.plans[currentRangeIndex].yearly)
-    : (currentGrowPrice = block.plans[currentRangeIndex].monthly);
+    ? (currentGrowPrice = block?.plans[currentRangeIndex]?.yearly)
+    : (currentGrowPrice = block?.plans[currentRangeIndex]?.monthly);
+  console.log('pricinggrowcard', block);
 </script>
 
 {#if block}
-  {@const { name, description, highlights, cta } = block}
+  {@const { name, price, description, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -69,28 +70,34 @@
           <p class={cn('text-xl/tighter font-semibold opacity-74')}>
             {name}
           </p>
-
-          <ToggleButton on:toggle={handleToggle} />
+          {#if price == ''}
+            <ToggleButton on:toggle={handleToggle} />
+          {/if}
         </div>
 
         <div class={cn('text-2xl/tighter font-semibold')}>
-          <div class="flex flex-row gap-2">
-            {#if isStringContainOnlyNumbers(currentGrowPrice)}
-              <p class="tracking-wid text-2xl/snug font-semibold">
-                ${currentGrowPrice}
-                <span class="text-sm opacity-64">/month{isAnnual ? ', billed annually' : ''}</span>
-              </p>
-            {:else}
-              <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
-                {currentGrowPrice}
-              </p>
-            {/if}
-          </div>
+          {#if price}
+            {price}
+          {:else}
+            <div class="flex flex-row gap-2">
+              {#if isStringContainOnlyNumbers(currentGrowPrice)}
+                <p class="tracking-wid text-2xl/snug font-semibold">
+                  ${currentGrowPrice}
+                  <span class="text-sm opacity-64">/month{isAnnual ? ', billed annually' : ''}</span
+                  >
+                </p>
+              {:else}
+                <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
+                  {currentGrowPrice}
+                </p>
+              {/if}
+            </div>
+          {/if}
         </div>
-
         <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
-
-        <PricingRangeSlider maus={block.plans} on:value={handleRange} />
+        {#if price == ''}
+          <PricingRangeSlider maus={block.plans} on:value={handleRange} />
+        {/if}
       </div>
 
       {#if highlights?.length > 0}
