@@ -1,26 +1,23 @@
 <script lang="ts">
-  import PricingPayAsYouGoCard from './pricing/card/voice-and-video/pricing-pay-as-you-go-card.svelte';
-  import PricingFreeCard from './pricing/card/voice-and-video/pricing-free-card.svelte';
+  import PricingFreeCard from './pricing/card/chat-and-message/pricing-free-card.svelte';
   import type {
     PricingPlanEnhancementFreeStoryblok,
-    PricingPlanEnhancementPayAsYouGoStoryblok,
-    PricingPlanEnhancementContactUsStoryblok
+    PricingPlanEnhancementContactUsStoryblok,
+    PricingPlanEnhancementGrowStoryblok
   } from '$types/bloks';
 
-  import PricingContactUsCard from './pricing/card/voice-and-video/pricing-contact-us-card.svelte';
+  import PricingGrowCard from './pricing/card/chat-and-message/pricing-grow-card.svelte';
 
   export let block:
     | PricingPlanEnhancementFreeStoryblok
-    | PricingPlanEnhancementPayAsYouGoStoryblok
+    | PricingPlanEnhancementGrowStoryblok
     | PricingPlanEnhancementContactUsStoryblok;
 </script>
 
 {#if block}
   {#if block.component === 'pricing-plan-enhancement-free'}
     <PricingFreeCard {block} />
-  {:else if block.component === 'pricing-plan-enhancement-pay-as-you-go'}
-    <PricingPayAsYouGoCard {block} />
-  {:else if block.component === 'pricing-plan-enhancement-contact-us'}
-    <PricingContactUsCard {block} />
+  {:else if block.component === 'pricing-plan-enhancement-grow'}
+    <PricingGrowCard {block} />
   {/if}
 {/if}
