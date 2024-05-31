@@ -13,7 +13,7 @@
 
 {#if data}
   <!-- Descktop -->
-  <div class="hidden flex-col lg:grid">
+  <div class="hidden flex-col gap-5 lg:grid">
     <AccordionGroup expanded={data[0].title}>
       {#each data as group, i}
         <PricingTableDataGroupRevamp {group} />

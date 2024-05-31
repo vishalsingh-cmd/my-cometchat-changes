@@ -6,7 +6,7 @@
     PricingPlanEnhancementGrowStoryblok
   } from '$types/bloks';
 
-  import PricingGrowCard from './pricing/card/chat-and-message/pricing-grow-card.svelte';
+  import PricingGrowCard from './pricing/card/pricing-grow-card.svelte';
 
   export let block:
     | PricingPlanEnhancementFreeStoryblok

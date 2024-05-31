@@ -40,8 +40,12 @@
         <div
           class="container mx-auto mb-8 flex flex-col items-start justify-center gap-8 px-container md:items-center"
         >
-          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:gap-5 md:text-center">
-            <h1 class="text-4xl">{block.title}</h1>
+          <div
+            class="z-20 flex flex-col items-start gap-3 md:max-w-[658px] md:gap-5 md:text-center"
+          >
+            <div class="flex w-full justify-center">
+              <h1 class="text-4xl leading-tighter md:w-[548px]">{block.title}</h1>
+            </div>
             <p class="text-xl font-medium tracking-wide opacity-74 md:text-center">
               {block.description}
             </p>
