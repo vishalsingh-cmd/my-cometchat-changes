@@ -1,0 +1,108 @@
+<script lang="ts">
+  import { convertToKandMandB } from '$lib/strings/utils';
+  import { createEventDispatcher } from 'svelte';
+
+  interface Mau {
+    _uid: string;
+    mau: string;
+    yearly: string;
+    monthly: string;
+    component: string;
+  }
+
+  export let maus: Mau[] = [];
+
+  let selectedIndex = 0;
+
+  $: maxValue = maus[maus.length - 1].mau;
+  $: stepValue = Math.floor(maus.length / Number(maxValue));
+  $: currentValue = maus[selectedIndex].mau;
+
+  // Calculate the percentage of progress
+  $: progress = (selectedIndex / (maus.length - 1)) * 100;
+
+  // Dynamically update the gradient based on the progress
+  $: gradient = `linear-gradient(to right, #5D41CE 0%, #a993ff ${progress}%, #353535 ${progress}%)`;
+
+  // display the current value
+  const dispatch = createEventDispatcher();
+
+  $: dispatch('value', currentValue);
+
+  // Calculate the number of steps
+  $: steps = maus.length - 1;
+
+  // Create the vertical line indicators
+  $: lines = `repeating-linear-gradient(to right, #ffffff30, #ffffff30 1px, transparent 1px, transparent ${
+    100 / steps
+  }%)`;
+</script>
+
+<div class="mt-5 flex w-full flex-col">
+  <label for="steps-range-slider-usage" class="sr-only">Grow plan pricing range</label>
+  <input
+    type="range"
+    class="w-full cursor-pointer appearance-none rounded-full focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+    style="--thumb-color: white; --thumb-border-color: #55506C; --slider-bg-gradient: {gradient}; --slider-lines: {lines};"
+    id="steps-range-slider-usage"
+    min={0}
+    max={steps}
+    step={stepValue}
+    bind:value={selectedIndex}
+  />
+  <div class="mt-3 flex items-center justify-between">
+    <p class="text-lg/tight font-semibold text-white">
+      {convertToKandMandB(Number(currentValue))} MAUs
+    </p>
+    <p class="text-lg/tight font-semibold opacity-64">{convertToKandMandB(Number(maxValue))}</p>
+  </div>
+</div>
+
+<style>
+  input[type='range'] {
+    --thumb-color: white;
+    --thumb-border-color: #ccc;
+    --slider-bg-gradient: linear-gradient(to right, #8a2be2, #4b0082);
+    --slider-lines: repeating-linear-gradient(
+      to right,
+      #353535,
+      #353535 1px,
+      transparent 1px,
+      transparent 5%
+    );
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 4px solid var(--thumb-border-color);
+    background-color: var(--thumb-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    margin-right: 0px;
+    margin-bottom: -6px;
+  }
+  input[type='range']::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border: 4px solid var(--thumb-border-color);
+    background-color: var(--thumb-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -6px;
+    margin-right: 0px;
+    margin-bottom: -6px;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    background: var(--slider-lines), var(--slider-bg-gradient);
+    border-radius: 0.9rem;
+  }
+
+  input[type='range']::-moz-range-track {
+    background: var(--slider-lines), var(--slider-bg-gradient);
+    border-radius: 0.9rem;
+  }
+</style>

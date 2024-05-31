@@ -45,3 +45,32 @@ export const isNumber = (inputString: string): boolean => {
   // Use a regular expression to check if the string contains a number
   return /\d/.test(inputString);
 };
+
+// i have string for mau that can be a 500, 5000, 10000, 50000, 100000. now write a function that can convert it to 500, 5k, 10k, 50k, 100k
+export const convertToKandM = (value: number): string => {
+  if (value >= 1000) {
+    return `${value / 1000}K`;
+  } else if (value >= 1000000) {
+    return `${value / 1000000}M`;
+  }
+
+  return value.toString();
+};
+
+// i have string for mau that can be a 500, 5000, 10000, 50000, 100000. now write a function that can convert it to 500, 5k, 10k, 50k, 100k , 1M , 10M , 100M , 1B
+export const convertToKandMandB = (value: number): string => {
+  if (value >= 1000000000) {
+    return `${value / 1000000000}B`;
+  } else if (value >= 1000000) {
+    return `${value / 1000000}M`;
+  } else if (value >= 1000) {
+    return `${value / 1000}K`;
+  }
+
+  return value.toString();
+};
+
+// i have string we need to validate whether the string contains only numbers or not
+export const isStringContainOnlyNumbers = (inputString: string): boolean => {
+  return /^\d+$/.test(inputString);
+};

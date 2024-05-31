@@ -40,8 +40,11 @@
   import Page from './page.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingHero from './pricing-hero.svelte';
+  import PricingHeroEnhancements from './pricing-hero-enhancements.svelte';
   import PricingBetaHero from './pricing-beta-hero.svelte';
   import PricingTable from './pricing-table.svelte';
+  import PricingTableEnhanced from './pricing-table-enhanced.svelte';
+  import PricingTableSection from './pricing-table-section.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
   import RelatedStoriesSection from './related-stories-section.svelte';
@@ -60,6 +63,8 @@
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksHero from './webhooks-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
+  import PricingHeroRevamp from './pricing-hero-revamp.svelte';
+  import PricingTableRevamp from './pricing-table-revamp.svelte';
 
   export let block: SbBlokData;
 
@@ -104,7 +109,12 @@
     'pre-footer': PreFooter,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
+    'pricing-hero-enhancements': PricingHeroEnhancements,
+    'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-table': PricingTable,
+    'pricing-table-enhanced': PricingTableEnhanced,
+    'pricing-table-section': PricingTableSection,
+    'pricing-table-revamp': PricingTableRevamp,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,

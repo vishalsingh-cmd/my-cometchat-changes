@@ -7,7 +7,14 @@
     'paragraph-heading': ParagraphHeading,
     'paragraph-list': ParagraphList,
     'testimonial-block': TestimonialBlock,
-    'youtube-video': YoutubeVideo
+    'youtube-video': YoutubeVideo,
+    'center-static-banner-v01': CenterStaticBannerV01,
+    'center-static-banner-v02': CenterStaticBannerV02,
+    'toolkit-links-banner': ToolkitLinksBanner,
+    'blog-text-table': BlogTextTable,
+    'blog-checklist-table': BlogChecklistTable,
+    'blog-comparison-table': BlogComparisonTable,
+    'message-box-with-link': MessageBoxWithLink
   };
 
   export type RichTextBlocks = keyof typeof map;
@@ -29,6 +36,13 @@
   import ParagraphHeading from '$components/blocks/rich-text/paragraph-heading.svelte';
   import TestimonialBlock from '$components/blocks/rich-text/testimonial-block.svelte';
   import HighlightsParagraph from '$components/blocks/rich-text/highlights-paragraph.svelte';
+  import CenterStaticBannerV01 from '$components/center-static-banner-v01.svelte';
+  import CenterStaticBannerV02 from '$components/center-static-banner-v02.svelte';
+  import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
+  import BlogTextTable from '$components/blog-text-table.svelte';
+  import BlogChecklistTable from '$components/blog-checklist-table.svelte';
+  import BlogComparisonTable from '$components/blog-comparison-table.svelte';
+  import MessageBoxWithLink from '$components/message-box-with-link.svelte';
 
   type ComponentRestProps =
     | Omit<ComponentProps<Disclaimer>, 'class' | 'block'>
@@ -38,7 +52,14 @@
     | Omit<ComponentProps<ParagraphHeading>, 'class' | 'block'>
     | Omit<ComponentProps<ParagraphList>, 'class' | 'block'>
     | Omit<ComponentProps<TestimonialBlock>, 'class' | 'block'>
-    | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>;
+    | Omit<ComponentProps<YoutubeVideo>, 'class' | 'block'>
+    | Omit<ComponentProps<CenterStaticBannerV01>, 'class' | 'block'>
+    | Omit<ComponentProps<CenterStaticBannerV02>, 'class' | 'block'>
+    | Omit<ComponentProps<ToolkitLinksBanner>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogTextTable>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogChecklistTable>, 'class' | 'block'>
+    | Omit<ComponentProps<BlogComparisonTable>, 'class' | 'block'>
+    | Omit<ComponentProps<MessageBoxWithLink>, 'class' | 'block'>;
 
   export let block: { component: string };
   export let richTextBlockProps: ComponentRestProps | undefined = undefined;

@@ -47,6 +47,9 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -98,13 +101,115 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "blog-announcement-sidebar-card",
+      "display_name": "Blog Announcement Sidebar Card",
+      "created_at": "2024-02-09T05:07:12.273Z",
+      "updated_at": "2024-02-16T14:01:50.541Z",
+      "id": 5314916,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "description": {
+          "type": "text"
+        },
+        "link": {
+          "type": "multilink",
+          "display_name": "link"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Blog Announcement Sidebar Card",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "blog-checklist-table",
+      "display_name": null,
+      "created_at": "2024-02-18T02:59:04.042Z",
+      "updated_at": "2024-02-18T02:59:20.645Z",
+      "id": 5358090,
+      "schema": {
+        "table": {
+          "type": "table"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-checklist-table",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "blog-comparison-table",
+      "display_name": null,
+      "created_at": "2024-02-23T03:00:08.416Z",
+      "updated_at": "2024-02-23T03:06:23.426Z",
+      "id": 5384215,
+      "schema": {
+        "column_slot": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["blog-table-column"],
+          "key": "slot",
+          "pos": 0
+        },
+        "rows_slot": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["blog-table-row"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-comparison-table",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "blog-post",
       "display_name": null,
       "created_at": "2023-07-11T13:41:01.368Z",
-      "updated_at": "2023-10-18T15:13:03.462Z",
+      "updated_at": "2024-03-19T04:14:15.673Z",
       "id": 4258189,
       "schema": {
         "cover": {
@@ -112,6 +217,12 @@
           "required": false,
           "key": "cover",
           "pos": 0
+        },
+        "sidebar_right_slot": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["side-static-banner", "related-blogs"]
         },
         "author": {
           "type": "option",
@@ -222,7 +333,20 @@
             "highlights-paragraph",
             "metrics",
             "gist",
-            "youtube-video"
+            "youtube-video",
+            "toolkit-links-banner",
+            "blog-text-table",
+            "blog-checklist-table",
+            "side-static-banner",
+            "center-static-banner-v01",
+            "center-static-banner-v02",
+            "blog-text-table",
+            "experimental-table",
+            "blog-table-cell",
+            "blog-table-column",
+            "blog-table-row",
+            "blog-comparison-table",
+            "message-box-with-link"
           ],
           "key": "body",
           "pos": 5
@@ -290,7 +414,180 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
+    },
+    {
+      "name": "blog-table-cell-image",
+      "display_name": null,
+      "created_at": "2024-02-23T02:57:23.678Z",
+      "updated_at": "2024-02-23T02:57:34.563Z",
+      "id": 5384213,
+      "schema": {
+        "image": {
+          "type": "image"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-table-cell-image",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "blog-table-cell-text",
+      "display_name": null,
+      "created_at": "2024-02-23T02:58:02.125Z",
+      "updated_at": "2024-02-23T02:58:08.638Z",
+      "id": 5384214,
+      "schema": {
+        "text": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-table-cell-text",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "blog-table-column",
+      "display_name": null,
+      "created_at": "2024-02-21T03:03:25.328Z",
+      "updated_at": "2024-02-21T03:03:33.094Z",
+      "id": 5372029,
+      "schema": {
+        "title": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-table-column",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "blog-table-row",
+      "display_name": "Blog Table Row",
+      "created_at": "2024-02-09T08:58:26.804Z",
+      "updated_at": "2024-02-23T02:59:12.592Z",
+      "id": 5315944,
+      "schema": {
+        "cells": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["blog-table-cell-text", "blog-table-cell-image"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Blog Table Row",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "blog-text-table",
+      "display_name": null,
+      "created_at": "2024-02-16T17:54:47.768Z",
+      "updated_at": "2024-02-20T19:15:44.218Z",
+      "id": 5355085,
+      "schema": {
+        "table": {
+          "type": "table"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "blog-text-table",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "breadcumbs",
+      "display_name": "Breadcrumbs",
+      "created_at": "2024-02-18T15:26:11.308Z",
+      "updated_at": "2024-02-18T15:27:18.301Z",
+      "id": 5358958,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Breadcrumbs",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "bullet-point",
@@ -319,6 +616,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -347,6 +647,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -404,7 +707,94 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "center-static-banner-v01",
+      "display_name": "Center Static banner V01",
+      "created_at": "2024-02-15T14:19:40.974Z",
+      "updated_at": "2024-03-19T03:54:48.794Z",
+      "id": 5347410,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "pos": 1,
+          "required": true
+        },
+        "image": {
+          "type": "image",
+          "pos": 2,
+          "required": false
+        },
+        "cta_slot": {
+          "type": "bloks",
+          "required": true,
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Center Static banner V01",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "center-static-banner-v02",
+      "display_name": "Center Static Banner V02",
+      "created_at": "2024-02-16T15:51:21.496Z",
+      "updated_at": "2024-02-29T10:44:33.707Z",
+      "id": 5354572,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "cta_slot": {
+          "type": "bloks",
+          "pos": 2,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Center Static Banner V02",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "chat-and-messaging-hero",
@@ -439,6 +829,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -470,6 +863,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -555,6 +951,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -605,6 +1004,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -644,6 +1046,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -680,6 +1085,9 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -714,6 +1122,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -755,6 +1166,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -922,6 +1336,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -962,6 +1379,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1015,6 +1435,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1046,6 +1469,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -1104,13 +1530,39 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "experimental-table",
+      "display_name": null,
+      "created_at": "2024-02-21T03:01:28.934Z",
+      "updated_at": "2024-02-21T03:02:27.819Z",
+      "id": 5372028,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "experimental-table",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "faq",
       "display_name": "FAQ",
       "created_at": "2023-08-24T15:11:06.621Z",
-      "updated_at": "2023-08-24T15:22:39.896Z",
+      "updated_at": "2024-02-27T11:19:14.812Z",
       "id": 4472691,
       "schema": {
         "title": {
@@ -1118,8 +1570,10 @@
           "required": true
         },
         "text": {
-          "type": "textarea",
-          "required": true
+          "type": "richtext",
+          "required": true,
+          "customize_toolbar": true,
+          "toolbar": ["paragraph"]
         }
       },
       "image": null,
@@ -1133,6 +1587,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1172,6 +1629,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1204,6 +1664,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1255,6 +1718,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1299,6 +1765,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1331,6 +1800,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1367,6 +1839,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1404,6 +1879,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1439,6 +1917,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1488,6 +1969,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1564,6 +2048,9 @@
       "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Configuration"
     },
     {
@@ -1601,6 +2088,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1629,6 +2119,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1667,6 +2160,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1702,6 +2198,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1733,6 +2232,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1761,6 +2263,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -1856,6 +2361,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1898,6 +2406,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -1951,6 +2462,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -1991,6 +2505,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2020,6 +2537,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -2058,6 +2578,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -2104,6 +2627,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2137,6 +2663,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2179,6 +2708,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2205,6 +2737,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2250,6 +2785,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2291,6 +2829,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2330,13 +2871,16 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
       "name": "implementation-section-v2",
       "display_name": null,
       "created_at": "2023-08-21T13:08:49.292Z",
-      "updated_at": "2023-08-23T12:20:53.031Z",
+      "updated_at": "2024-01-08T13:53:26.493Z",
       "id": 4451608,
       "schema": {
         "accent_colour": {
@@ -2369,7 +2913,7 @@
         "items": {
           "type": "bloks",
           "required": true,
-          "maximum": 4,
+          "maximum": 5,
           "minimum": 3,
           "restrict_type": "",
           "restrict_components": true,
@@ -2393,6 +2937,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2475,6 +3022,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2505,6 +3055,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2586,6 +3139,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -2637,6 +3193,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2662,6 +3221,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2687,13 +3249,16 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
       "name": "link",
       "display_name": null,
       "created_at": "2023-06-01T09:26:56.968Z",
-      "updated_at": "2023-06-05T15:08:22.316Z",
+      "updated_at": "2024-01-08T14:22:08.515Z",
       "id": 4063229,
       "schema": {
         "label": {
@@ -2708,7 +3273,7 @@
           "force_link_scope": true,
           "link_scope": "pages/",
           "restrict_content_types": true,
-          "component_whitelist": ["page"]
+          "component_whitelist": ["page", "pricing"]
         },
         "icon": {
           "type": "option",
@@ -2731,6 +3296,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2776,6 +3344,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2823,6 +3394,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2891,6 +3465,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -2926,6 +3503,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -2968,6 +3548,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3009,6 +3592,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3100,6 +3686,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3175,7 +3764,46 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
+    },
+    {
+      "name": "message-box-with-link",
+      "display_name": null,
+      "created_at": "2024-03-19T03:52:34.815Z",
+      "updated_at": "2024-03-19T04:13:51.869Z",
+      "id": 5518688,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "message": {
+          "type": "text"
+        },
+        "cta": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "message-box-with-link",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "metrics",
@@ -3203,6 +3831,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3233,6 +3864,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3278,6 +3912,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3316,6 +3953,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3351,6 +3991,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3397,6 +4040,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -3472,6 +4118,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3502,6 +4151,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -3533,6 +4185,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -3565,6 +4220,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
@@ -3625,6 +4283,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3665,13 +4326,16 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
       "name": "pricing",
       "display_name": null,
       "created_at": "2023-10-16T09:47:53.632Z",
-      "updated_at": "2023-10-18T17:45:08.101Z",
+      "updated_at": "2024-03-22T05:32:37.503Z",
       "id": 4725812,
       "schema": {
         "body": {
@@ -3696,6 +4360,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -3750,6 +4417,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -3797,7 +4467,10 @@
       "real_name": "pricing-beta-hero-plans",
       "component_group_uuid": null,
       "color": null,
-      "icon": null
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null
     },
     {
       "name": "pricing-beta-plan",
@@ -3861,13 +4534,16 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
       "name": "pricing-hero",
       "display_name": "Pricing Hero",
       "created_at": "2023-10-16T09:53:46.965Z",
-      "updated_at": "2023-12-28T15:21:00.690Z",
+      "updated_at": "2024-03-18T03:01:09.100Z",
       "id": 4725866,
       "schema": {
         "title": {
@@ -3936,31 +4612,117 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-hero-enhancements",
+      "display_name": "Pricing Hero Enhancements",
+      "created_at": "2024-03-17T21:08:13.974Z",
+      "updated_at": "2024-04-03T09:26:11.085Z",
+      "id": 5509903,
+      "schema": {
+        "title": {
+          "type": "text",
+          "key": "title",
+          "pos": 0,
+          "required": true
+        },
+        "tab-4ee9fba0-4476-4f40-901e-d0d957776c62": {
+          "display_name": "plans",
+          "keys": ["chat_and_messaging", "voice_and_video_calling"],
+          "pos": 0,
+          "type": "tab"
+        },
+        "chat_and_messaging": {
+          "type": "text",
+          "required": true
+        },
+        "voice_and_video_calling": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "key": "description",
+          "pos": 2,
+          "required": true
+        },
+        "info_items": {
+          "type": "bloks",
+          "key": "info_items",
+          "pos": 3,
+          "maximum": 4,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-hero-info-item"]
+        },
+        "chat_and_messaging_plans": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-grow",
+            "pricing-plan-enhancement-scale"
+          ],
+          "pos": 4,
+          "required": true,
+          "key": "chat_and_messaging_plans"
+        },
+        "voice_and_video_plans": {
+          "type": "bloks",
+          "pos": 5,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "pricing-plan-enhancement-free",
+            "pricing-plan-enhancement-pay-as-you-go",
+            "pricing-plan-enhancement-contact-us"
+          ],
+          "key": "voice_and_video_plans"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Pricing Hero Enhancements",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
       "name": "pricing-hero-info-item",
       "display_name": null,
       "created_at": "2023-10-18T17:13:57.917Z",
-      "updated_at": "2023-10-18T17:15:37.181Z",
+      "updated_at": "2024-01-03T08:00:13.662Z",
       "id": 4749487,
       "schema": {
         "icon": {
           "type": "option",
-          "restrict_type": "",
-          "restrict_components": true,
-          "maximum": 1,
           "use_uuid": true,
+          "pos": 0,
           "source": "internal",
-          "datasource_slug": "icons",
-          "required": true
+          "datasource_slug": "icons"
         },
         "name": {
           "type": "text",
-          "required": true
+          "required": true,
+          "pos": 1
         },
         "description": {
-          "type": "text"
+          "type": "text",
+          "pos": 2
         }
       },
       "image": null,
@@ -3974,13 +4736,46 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-pay-as-you-go-highlights",
+      "display_name": null,
+      "created_at": "2024-03-22T07:28:40.289Z",
+      "updated_at": "2024-03-22T07:29:10.084Z",
+      "id": 5540331,
+      "schema": {
+        "price": {
+          "type": "text"
+        },
+        "services": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-pay-as-you-go-highlights",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "pricing-plan",
       "display_name": null,
       "created_at": "2023-10-16T09:38:16.579Z",
-      "updated_at": "2023-12-28T16:10:05.409Z",
+      "updated_at": "2024-03-17T21:18:47.971Z",
       "id": 4725758,
       "schema": {
         "name": {
@@ -4138,7 +4933,357 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-contact-us",
+      "display_name": null,
+      "created_at": "2024-03-19T12:43:51.730Z",
+      "updated_at": "2024-04-01T12:32:19.047Z",
+      "id": 5521841,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": false,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-contact-us",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-free",
+      "display_name": null,
+      "created_at": "2024-03-17T21:10:35.395Z",
+      "updated_at": "2024-03-27T11:50:54.941Z",
+      "id": 5509904,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "price": {
+          "type": "text",
+          "pos": 2
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": false,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-free",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-grow",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:25.428Z",
+      "updated_at": "2024-04-03T07:50:00.103Z",
+      "id": 5509913,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "tab-a7687307-2887-4cf3-b751-03f3192d49dd": {
+          "display_name": "plans",
+          "keys": ["month_plans", "plans"],
+          "pos": 0,
+          "type": "tab"
+        },
+        "plans": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-plan-grow-segment"]
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "mau": {
+          "type": "bloks",
+          "pos": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"]
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 4
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 5
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-grow",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-pay-as-you-go",
+      "display_name": null,
+      "created_at": "2024-03-19T12:45:41.326Z",
+      "updated_at": "2024-03-22T07:30:09.543Z",
+      "id": 5521971,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text", "pricing-pay-as-you-go-highlights"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-pay-as-you-go",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-enhancement-scale",
+      "display_name": null,
+      "created_at": "2024-03-17T21:59:44.594Z",
+      "updated_at": "2024-03-19T12:39:33.641Z",
+      "id": 5509914,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "pos": 0,
+          "key": "name"
+        },
+        "description": {
+          "type": "text",
+          "pos": 1
+        },
+        "price": {
+          "type": "text",
+          "pos": 2
+        },
+        "highlights": {
+          "type": "bloks",
+          "required": true,
+          "tooltip": false,
+          "description": "Each new line will be shown as a new entry.",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["text"],
+          "key": "highlights",
+          "pos": 3
+        },
+        "cta": {
+          "type": "bloks",
+          "required": true,
+          "minimum": 1,
+          "maximum": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link"],
+          "key": "cta",
+          "pos": 4
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-enhancement-scale",
+      "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Database"
+    },
+    {
+      "name": "pricing-plan-grow-segment",
+      "display_name": null,
+      "created_at": "2024-03-28T06:55:00.078Z",
+      "updated_at": "2024-03-28T09:17:41.239Z",
+      "id": 5569158,
+      "schema": {
+        "monthly": {
+          "type": "text",
+          "required": true,
+          "key": "monthly",
+          "pos": 0
+        },
+        "yearly": {
+          "type": "text",
+          "required": true,
+          "key": "annualy",
+          "pos": 1
+        },
+        "mau": {
+          "type": "text",
+          "pos": 2
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-plan-grow-segment",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "pricing-table",
@@ -4176,6 +5321,85 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-table-category-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-22T05:28:18.227Z",
+      "updated_at": "2024-03-22T06:37:12.626Z",
+      "id": 5540016,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0
+        },
+        "category": {
+          "type": "bloks",
+          "pos": 1,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-enhanced"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-category-enhanced",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-table-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:56:49.187Z",
+      "updated_at": "2024-03-19T08:39:58.648Z",
+      "id": 5519104,
+      "schema": {
+        "header": {
+          "type": "bloks",
+          "pos": 0,
+          "required": true,
+          "maximum": 3,
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-header-enhanced"]
+        },
+        "data": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "required": true,
+          "component_whitelist": ["pricing-table-group-enhanced"],
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-enhanced",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4208,6 +5432,43 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-group-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:54:30.301Z",
+      "updated_at": "2024-03-19T08:08:54.162Z",
+      "id": 5519096,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "subgroup": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-subgroup-enhanced"]
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-group-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4308,6 +5569,93 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-group-line-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:55:45.009Z",
+      "updated_at": "2024-03-22T06:57:39.891Z",
+      "id": 5519102,
+      "schema": {
+        "name": {
+          "type": "text",
+          "required": true,
+          "key": "name",
+          "pos": 0
+        },
+        "tooltip": {
+          "type": "text",
+          "pos": 1
+        },
+        "grow": {
+          "type": "text",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "f6a7962f-db6f-44e1-9ac7-fd859fb43a33",
+              "name": "none",
+              "value": "none"
+            },
+            {
+              "_uid": "46ae7607-8e95-4590-a661-a1462c1fb619",
+              "value": "included",
+              "name": "included"
+            },
+            {
+              "_uid": "bc475188-6f75-4896-9a77-1cf6e0fe452e",
+              "value": "paid-add-on",
+              "name": "paid-add-on"
+            }
+          ],
+          "default_value": "none",
+          "required": false,
+          "key": "grow",
+          "pos": 2,
+          "exclude_empty_option": false
+        },
+        "scale": {
+          "type": "text",
+          "use_uuid": true,
+          "options": [
+            {
+              "_uid": "dfbe88a8-b7cb-447c-ae71-eeb351636cd6",
+              "name": "none",
+              "value": "none"
+            },
+            {
+              "_uid": "49eb5e02-9d2f-44a2-9d4c-cd104109eeca",
+              "value": "included",
+              "name": "included"
+            },
+            {
+              "_uid": "f0c002cc-9a65-4055-b050-55d25ed864c1",
+              "value": "paid-add-on",
+              "name": "paid-add-on"
+            }
+          ],
+          "key": "pro",
+          "pos": 3,
+          "default_value": "none"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-group-line-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4328,6 +5676,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4358,6 +5709,107 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-header-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:53:44.019Z",
+      "updated_at": "2024-03-19T08:00:22.863Z",
+      "id": 5519094,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-header-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "pricing-table-section",
+      "display_name": "Pricing Table Nested",
+      "created_at": "2024-03-22T05:42:24.570Z",
+      "updated_at": "2024-03-22T08:23:43.023Z",
+      "id": 5540050,
+      "schema": {
+        "pricing_table": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-category-enhanced"],
+          "display_name": "Pricing Table Nested"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Pricing Table Nested",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "pricing-table-subgroup-enhanced",
+      "display_name": null,
+      "created_at": "2024-03-19T07:55:01.556Z",
+      "updated_at": "2024-03-19T08:09:22.546Z",
+      "id": 5519101,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "lines": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["pricing-table-group-line-enhanced"],
+          "required": true,
+          "display_name": "subgroup"
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "pricing-table-subgroup-enhanced",
+      "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4401,7 +5853,77 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "related-blogs",
+      "display_name": null,
+      "created_at": "2024-02-20T19:20:38.082Z",
+      "updated_at": "2024-02-29T12:30:47.090Z",
+      "id": 5370390,
+      "schema": {
+        "heading": {
+          "type": "text",
+          "pos": 0
+        },
+        "blogs": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["related-blogs-link-block"],
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "related-blogs",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "related-blogs-link-block",
+      "display_name": null,
+      "created_at": "2024-02-20T19:22:35.255Z",
+      "updated_at": "2024-02-20T19:22:55.973Z",
+      "id": 5370422,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "related-blogs-link-block",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "related-stories-section",
@@ -4459,6 +5981,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4490,6 +6015,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4527,6 +6055,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4556,6 +6087,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4614,13 +6148,90 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "sidebar-slot",
+      "display_name": "Sidebar Slot",
+      "created_at": "2024-02-20T16:49:17.041Z",
+      "updated_at": "2024-02-20T16:49:31.511Z",
+      "id": 5369850,
+      "schema": {},
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Sidebar Slot",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
+    },
+    {
+      "name": "side-static-banner",
+      "display_name": "Side Static Banner",
+      "created_at": "2024-02-09T06:21:26.613Z",
+      "updated_at": "2024-02-26T16:07:10.111Z",
+      "id": 5315058,
+      "schema": {
+        "title": {
+          "type": "text",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": true
+        },
+        "image": {
+          "type": "image",
+          "display_name": "image",
+          "asset_folder_id": 266057,
+          "tooltip": false,
+          "add_https": true,
+          "required": false
+        },
+        "cta_slot": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["button-link", "link"],
+          "required": true
+        },
+        "link": {
+          "type": "multilink",
+          "force_link_scope": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Side Static Banner",
+      "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Blocks"
     },
     {
       "name": "single-post-resources-panel",
       "display_name": null,
       "created_at": "2023-08-02T09:36:02.885Z",
-      "updated_at": "2023-09-28T10:03:47.490Z",
+      "updated_at": "2024-02-21T11:24:03.265Z",
       "id": 4366783,
       "schema": {
         "title": {
@@ -4639,7 +6250,7 @@
         },
         "date": {
           "type": "datetime",
-          "required": true,
+          "required": false,
           "disable_time": true
         },
         "author": {
@@ -4658,6 +6269,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4697,6 +6311,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4745,6 +6362,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4789,6 +6409,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4854,6 +6477,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4882,6 +6508,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -4910,6 +6539,9 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -4936,6 +6568,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -4974,6 +6609,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5011,6 +6649,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5118,6 +6759,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -5158,6 +6802,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5191,6 +6838,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5246,6 +6896,9 @@
       "component_group_uuid": "6efdcbf3-bce1-4f96-8ef5-51399b9f47e9",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Database"
     },
     {
@@ -5294,18 +6947,21 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     },
     {
       "name": "text",
       "display_name": null,
       "created_at": "2023-08-23T12:56:09.289Z",
-      "updated_at": "2023-08-23T12:56:28.145Z",
+      "updated_at": "2024-04-01T12:32:31.927Z",
       "id": 4465701,
       "schema": {
         "value": {
           "type": "text",
-          "required": true
+          "required": false
         }
       },
       "image": null,
@@ -5319,6 +6975,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5383,6 +7042,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5437,6 +7099,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5539,6 +7204,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5623,6 +7291,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -5681,19 +7352,91 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
+    },
+    {
+      "name": "toolkit-link-block",
+      "display_name": null,
+      "created_at": "2024-02-16T17:06:07.657Z",
+      "updated_at": "2024-02-16T17:07:12.177Z",
+      "id": 5354947,
+      "schema": {
+        "name": {
+          "type": "text",
+          "pos": 0
+        },
+        "link": {
+          "type": "multilink",
+          "pos": 1
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "toolkit-link-block",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
+    },
+    {
+      "name": "toolkit-links-banner",
+      "display_name": "Toolkit Links Banner",
+      "created_at": "2024-02-16T16:43:10.973Z",
+      "updated_at": "2024-02-28T18:24:55.376Z",
+      "id": 5354793,
+      "schema": {
+        "title": {
+          "type": "text",
+          "pos": 0,
+          "required": true
+        },
+        "links": {
+          "type": "bloks",
+          "restrict_type": "",
+          "restrict_components": true,
+          "component_whitelist": ["toolkit-link-block"],
+          "pos": 1,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Toolkit Links Banner",
+      "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+      "color": null,
+      "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
+      "component_group_name": "Richtext"
     },
     {
       "name": "topnav-features-panel",
       "display_name": null,
       "created_at": "2023-06-05T14:43:36.427Z",
-      "updated_at": "2023-06-05T15:44:40.152Z",
+      "updated_at": "2024-01-08T12:40:15.514Z",
       "id": 4079155,
       "schema": {
         "featured_items": {
           "type": "bloks",
           "required": true,
-          "maximum": 2,
+          "maximum": 3,
           "minimum": 1,
           "restrict_type": "",
           "restrict_components": true,
@@ -5720,6 +7463,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5759,6 +7505,9 @@
       "component_group_uuid": "ef83ae9c-e949-447e-991f-cde292e6ee74",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Configuration"
     },
     {
@@ -5819,6 +7568,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5851,6 +7603,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5891,6 +7646,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -5973,6 +7731,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6057,6 +7818,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6103,6 +7867,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6148,6 +7915,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6594,6 +8364,9 @@
       "component_group_uuid": "fa8d0d8d-3773-43b8-8fe4-5fc409885efe",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Pages"
     },
     {
@@ -6623,6 +8396,9 @@
       "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Internal Blocks"
     },
     {
@@ -6670,6 +8446,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6705,6 +8484,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6735,6 +8517,9 @@
       "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Blocks"
     },
     {
@@ -6760,6 +8545,9 @@
       "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
       "color": null,
       "icon": null,
+      "internal_tags_list": [],
+      "internal_tag_ids": [],
+      "content_type_asset_preview": null,
       "component_group_name": "Richtext"
     }
   ]

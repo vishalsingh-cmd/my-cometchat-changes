@@ -31,8 +31,8 @@ export const load = async ({ cookies, fetch, params }) => {
     'solutions-hero.solution_type',
     'media-tabs-section.highlighted_story',
     'media-tab.customer',
-    'pricing-hero.pricing_plans',
-    'pricing-beta-hero-plans.plans'
+    'pricing-hero.pricing_plans'
+    // 'pricing-beta-hero-plans.plans',
   ];
 
   const getEntriesBasedOnDatasource = async (datasource: string) => {

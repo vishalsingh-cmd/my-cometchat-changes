@@ -114,7 +114,9 @@ export default {
           'linear-gradient(0deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)'
       },
       boxShadow: (theme) => ({
-        focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`
+        focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,
+        // box-shadow: 0px 4px 20px 0px #14131D0F;
+        'inner-soft': 'inset 0px 4px 20px 0px hsl(var(--color-gray-12) / 0.06)'
       }),
       borderRadius: {
         '1/2': '50%'
@@ -211,6 +213,14 @@ export default {
           position: 'absolute',
           width: '1px',
           'white-space': 'nowrap'
+        },
+        '.multiline-ellipsis': {
+          position: 'relative',
+          maxHeight: '1.4em',
+          overflow: 'hidden',
+          display: '-webkit-box',
+          '-webkit-line-clamp': '3',
+          '-webkit-box-orient': 'vertical'
         }
       });
     })

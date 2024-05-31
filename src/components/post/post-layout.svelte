@@ -1,7 +1,6 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
   import type { StoryblokStory } from 'storyblok-generate-ts';
-
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import type {
@@ -11,12 +10,17 @@
     TutorialStoryblok
   } from '$types/bloks';
 
-  import Share from './share.svelte';
+  // import Share from './share.svelte';
   import Media from '$components/media.svelte';
   import Sidebar from '$components/post/sidebar.svelte';
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
+  import SideStaticBanner from '$components/side-static-banner.svelte';
+  import Toc from '$components/toc.svelte';
+  import Breadcumbs from '$components/breadcumbs.svelte';
+  import { page } from '$app/stores';
+  import RelatedBlogs from '$components/related-blogs.svelte';
 
   export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
 
@@ -103,8 +107,12 @@
   <section use:storyblokEditable={block} data-theme="light" class="mx-auto bg-gray-1 text-gray-12">
     {#if block.content.body && block.content.body.content}
       <div
-        class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-16"
+        class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-6"
       >
+        <Breadcumbs slug={$page.url.pathname} current_page_title={block.name} />
+
+        <Toc {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
+
         <Sidebar
           {headings}
           {activeHeadingIndex}
@@ -157,8 +165,20 @@
             </div>
           {/if}
 
-          <Share class="pb-8 md:hidden" />
+          <!-- <Share class="pb-8 md:hidden" /> -->
         </div>
+
+        {#if block.content.sidebar_right_slot && block.content.sidebar_right_slot.length > 0}
+          <div class="flex flex-col gap-6">
+            {#each block.content.sidebar_right_slot as slot}
+              {#if slot.component === 'side-static-banner'}
+                <SideStaticBanner block={slot} />
+              {:else if slot.component === 'related-blogs'}
+                <RelatedBlogs block={slot} />
+              {/if}
+            {/each}
+          </div>
+        {/if}
       </div>
     {/if}
   </section>

@@ -2,11 +2,11 @@
   import type { FaqSectionStoryblok } from '$types/bloks';
   import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-
   import Title from '$components/title.svelte';
   import Icon from '$components/icon/icon.svelte';
   import Accordion from '$components/accordion.svelte';
   import AccordionGroup from '$components/accordion-group.svelte';
+  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: FaqSectionStoryblok;
 </script>
@@ -31,7 +31,7 @@
             title={title.title}
             description={title.description}
             buttons={block.title?.[0].links}
-            class="max-w-[528px] pb-0 pl-0 pr-0 pt-0 md:items-center lg:pb-0 lg:pt-0"
+            class="w-full items-center p-0 text-start md:text-center"
           />
         {/if}
       {/if}
@@ -39,7 +39,7 @@
       {#if block.faqs && block.faqs.length > 0}
         <div class="mt-10 flex w-full max-w-[751px] flex-col flex-wrap gap-4 text-gray-12 md:mt-16">
           <AccordionGroup>
-            {#each block.faqs as faq}
+            {#each block.faqs as faq, i}
               {@const { title, text, _uid } = faq}
               <Accordion
                 id={_uid}
@@ -63,15 +63,20 @@
                       icon="chevron-up"
                       class={cn(
                         'shrink-0 opacity-74 transition-transform duration-300',
-                        expanded && 'rotate-180 opacity-100'
+                        expanded ? 'rotate-0 opacity-100' : 'rotate-180 opacity-74'
                       )}
                       size="sm"
                     />
                   </button>
                 </div>
-                <div class="pt-3 font-medium leading-snug tracking-wide opacity-74">
+
+                {#if text.content}
+                  {#each text.content as b}
+                    <RichTextRenderer doc={b} class="text-xl first:mt-0" />
+                  {/each}
+                {:else}
                   {text}
-                </div>
+                {/if}
               </Accordion>
             {/each}
           </AccordionGroup>
