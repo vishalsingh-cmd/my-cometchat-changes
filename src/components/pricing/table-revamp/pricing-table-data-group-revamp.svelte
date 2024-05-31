@@ -37,9 +37,9 @@
           {#each lines as item, i}
             {@const { name, tooltip, basic, advanced, premium } = item}
 
-            {#if i === 0}
+            <!-- {#if i === 0}
               <div id="line" class="ml-0 border-b border-gray-12/[.08]" />
-            {/if}
+            {/if} -->
 
             <div
               id="line-container"

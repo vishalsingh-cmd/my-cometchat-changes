@@ -1,58 +1,18 @@
 <script lang="ts">
-  import PricingRangeSlider from '$components/pricing-range-slider.svelte';
   import Button from '$components/buttons/button.svelte';
   import Icon from '$components/icon/icon.svelte';
-  import ToggleButton from '$components/toggle-button.svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
   import type { PricingPlanEnhancementGrowStoryblok } from '$types/bloks';
   import { isStringContainOnlyNumbers } from '$lib/strings/utils';
 
-  let isAnnual = true;
-  let currentGrowPrice = '';
-  let currentRangeValue = ''; // initialize this with your default range value
-  let currentRangeIndex = 0;
+  let isAnnual = false;
   export let block: PricingPlanEnhancementGrowStoryblok;
-
-  function updatePricingFromBlock(rangeValue: string) {
-    for (let i = 0; i < (block.plans ?? []).length; i++) {
-      if (rangeValue === (block.plans ?? [])[i]?.mau) {
-        currentGrowPrice = isAnnual ? block.plans[i].yearly : block.plans[i].monthly;
-        break;
-      }
-    }
-  }
-
-  // get toggle event
-  function handleToggle(event: CustomEvent<boolean>) {
-    isAnnual = event.detail;
-    updatePricingFromBlock(currentRangeValue);
-  }
-
-  // get range event
-  function handleRange(event: CustomEvent<string>) {
-    currentRangeValue = event.detail;
-    currentRangeIndex = block.plans.findIndex((plan) => plan.mau === currentRangeValue);
-    updatePricingFromBlock(currentRangeValue);
-  }
-
-  // update the price when the block is loaded using the default range index
-  // onMount(() => {
-  //   if (block?.plans?.length > 0) {
-  //     currentGrowPrice = isAnnual
-  //       ? block.plans[currentRangeIndex].yearly
-  //       : block.plans[currentRangeIndex].monthly;
-  //   }
-  // });
-
-  $: isAnnual
-    ? (currentGrowPrice = block.plans[currentRangeIndex].yearly)
-    : (currentGrowPrice = block.plans[currentRangeIndex].monthly);
 </script>
 
 {#if block}
-  {@const { name, description, highlights, cta } = block}
+  {@const { name, price: currentGrowPrice, description, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -69,16 +29,15 @@
           <p class={cn('text-xl/tighter font-semibold opacity-74')}>
             {name}
           </p>
-
-          <ToggleButton on:toggle={handleToggle} />
         </div>
 
         <div class={cn('text-2xl/tighter font-semibold')}>
           <div class="flex flex-row gap-2">
             {#if isStringContainOnlyNumbers(currentGrowPrice)}
               <p class="tracking-wid text-2xl/snug font-semibold">
-                ${currentGrowPrice}
-                <span class="text-sm opacity-64">/month{isAnnual ? ', billed annually' : ''}</span>
+                ${currentGrowPrice}<span class="text-sm opacity-64"
+                  >/month{isAnnual ? ', billed annually' : ''}</span
+                >
               </p>
             {:else}
               <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
@@ -87,20 +46,25 @@
             {/if}
           </div>
         </div>
-
         <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
-
-        <PricingRangeSlider maus={block.plans} on:value={handleRange} />
       </div>
 
       {#if highlights?.length > 0}
         <div class="flex flex-col gap-3">
           <p class="text-lg/tight font-semibold">Highlights</p>
           <div class="flex flex-col gap-2">
-            {#each highlights as highlight}
+            {#each highlights as highlight, index}
               <div class="flex items-start gap-2">
-                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-                <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+                {#if index !== 0}
+                  <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+                {/if}
+                <p
+                  class="text-lg/snug font-medium tracking-wide {index == 0
+                    ? 'text-brand-9'
+                    : 'opacity-64'}"
+                >
+                  {highlight.value}
+                </p>
               </div>
             {/each}
           </div>
