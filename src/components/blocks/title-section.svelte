@@ -4,11 +4,12 @@
   import { getLabelInfo } from '$lib/utils';
 
   import Title from '$components/title.svelte';
+  import { activateTable } from '$lib/stores/pricing-stores';
 
   export let block: TitleSectionStoryblok;
 </script>
 
-{#if block}
+{#if block && $activateTable}
   <section
     use:storyblokEditable={block}
     class=" mx-auto bg-gray-1 text-gray-12"

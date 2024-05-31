@@ -6,12 +6,13 @@
 
   import PricingTableHeader from '$components/pricing/table/pricing-table-header.svelte';
   import PricingTableDataRevamp from '$components/pricing/table-revamp/pricing-table-data-revamp.svelte';
+  import { activateTable } from '$lib/stores/pricing-stores';
 
   let activePlanIndex = 0;
   export let block: PricingTableStoryblok;
 </script>
 
-{#if block}
+{#if block && $activateTable}
   {@const { header, data } = block}
   <section data-theme="dark" use:storyblokEditable={block}>
     <div class="container relative z-10 mx-auto px-container">

@@ -6,7 +6,7 @@
   import Icon from '$components/icon/icon.svelte';
   import PricingBackground from '$components/pricing/hero/pricing-background.svelte';
   import Sticky from '$components/sticky.svelte';
-  import { activePricingTab } from '$lib/stores/pricing-stores';
+  import { activateTable, activePricingTab } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import PricingCardImplementationServices from '$components/pricing-card-implementation-services.svelte';
   import PricingCardSupportServices from '$components/pricing-card-support-services.svelte';
@@ -17,8 +17,10 @@
   // on ischatActive change, reset isActive
   $: if (ischatActive === 'chat') {
     $activePricingTab = 1;
+    $activateTable = true;
   } else {
     $activePricingTab = 0;
+    $activateTable = false;
   }
 
   export let block: PricingHeroEnhancementsStoryblok;
@@ -38,7 +40,7 @@
         <div
           class="container mx-auto mb-8 flex flex-col items-start justify-center gap-8 px-container md:items-center"
         >
-          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-5">
+          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:gap-5 md:text-center">
             <h1 class="text-4xl">{block.title}</h1>
             <p class="text-xl font-medium tracking-wide opacity-74 md:text-center">
               {block.description}
