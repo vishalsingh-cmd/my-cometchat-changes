@@ -6,10 +6,10 @@
   import Icon from '$components/icon/icon.svelte';
   import PricingBackground from '$components/pricing/hero/pricing-background.svelte';
   import Sticky from '$components/sticky.svelte';
-  import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import { activePricingTab } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import PricingCardImplementationServices from '$components/pricing-card-implementation-services.svelte';
+  import PricingCardSupportServices from '$components/pricing-card-support-services.svelte';
 
   let isActive = false;
   $: ischatActive = isActive ? 'chat' : 'voice';
@@ -117,7 +117,7 @@
       >
         {#if isActive}
           {#each block.support_services_plans ?? [] as plan}
-            <PricingCardVideoAndVoiceEnhanced block={plan} />
+            <PricingCardSupportServices block={plan} />
           {/each}
         {:else}
           {#each block.implementation_services_plans as plan}

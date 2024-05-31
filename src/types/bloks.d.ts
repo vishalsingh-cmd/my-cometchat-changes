@@ -1362,7 +1362,16 @@ export interface PricingTableGroupLineEnhancedStoryblok {
   component: 'pricing-table-group-line-enhanced';
   [k: string]: any;
 }
-
+export interface PricingTableGroupLineRevampStoryblok {
+  name: string;
+  tooltip?: string;
+  basic?: string;
+  advanced?: string;
+  premium?: string;
+  _uid: string;
+  component: 'pricing-table-group-line-revamp';
+  [k: string]: any;
+}
 export interface PricingTableHeaderStoryblok {
   _uid: string;
   component: 'pricing-table-header';
@@ -1376,7 +1385,13 @@ export interface PricingTableHeaderColumnStoryblok {
   component: 'pricing-table-header-column';
   [k: string]: any;
 }
-
+export interface PricingTableHeaderColumnRevampStoryblok {
+  title: string;
+  description?: string;
+  _uid: string;
+  component: 'pricing-table-header-column-revamp';
+  [k: string]: any;
+}
 export interface PricingTableHeaderEnhancedStoryblok {
   title: string;
   description?: string;
@@ -1399,7 +1414,13 @@ export interface PricingTableSubgroupEnhancedStoryblok {
   component: 'pricing-table-subgroup-enhanced';
   [k: string]: any;
 }
-
+export interface PricingTableGroupRevampStoryblok {
+  title: string;
+  lines: PricingTableGroupLineRevampStoryblok[];
+  _uid: string;
+  component: 'pricing-table-group-revamp';
+  [k: string]: any;
+}
 export interface ProductDisplayItemStoryblok {
   image: AssetStoryblok;
   title: string;

@@ -2,8 +2,6 @@
   import Tabs from '$components/tabs/tabs.svelte';
   import type { PricingTableHeaderColumnStoryblok } from '$types/bloks';
 
-  import pricingTiersCurrentPrice from '$lib/stores/pricing-tiers-current-price';
-
   import PricingTableHeaderColumn from '$components/pricing/table//pricing-table-header-column.svelte';
   import PricingTableHeaderCaptions from '$components/pricing/table/pricing-table-header-captions.svelte';
 
@@ -21,7 +19,7 @@
     <PricingTableHeaderCaptions />
     {#if header.length > 0}
       {#each header as column, i}
-        <PricingTableHeaderColumn price={$pricingTiersCurrentPrice[i + 1]} {column} />
+        <PricingTableHeaderColumn {column} />
       {/each}
     {/if}
   </div>
