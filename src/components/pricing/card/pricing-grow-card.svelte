@@ -4,13 +4,15 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { cn } from '$lib/utils';
-  import type { PricingPlanEnhancementFreeStoryblok } from '$types/bloks';
+  import type { PricingPlanEnhancementGrowStoryblok } from '$types/bloks';
+  import { isStringContainOnlyNumbers } from '$lib/strings/utils';
 
-  export let block: PricingPlanEnhancementFreeStoryblok;
+  let isAnnual = false;
+  export let block: PricingPlanEnhancementGrowStoryblok;
 </script>
 
 {#if block}
-  {@const { name, price, description, highlights, cta } = block}
+  {@const { name, price: currentGrowPrice, description, highlights, cta } = block}
   <div
     use:storyblokEditable={block}
     class={cn(
@@ -29,7 +31,21 @@
           </p>
         </div>
 
-        <div class={cn('text-2xl/tighter font-semibold')}>{price}</div>
+        <div class={cn('text-2xl/tighter font-semibold')}>
+          <div class="flex flex-row gap-2">
+            {#if isStringContainOnlyNumbers(currentGrowPrice)}
+              <p class="tracking-wid text-2xl/snug font-semibold">
+                ${currentGrowPrice}<span class="text-sm opacity-64"
+                  >/month{isAnnual ? ', billed annually' : ''}</span
+                >
+              </p>
+            {:else}
+              <p class="tracking-wid text-2xl/snug font-semibold text-brand-9">
+                {currentGrowPrice}
+              </p>
+            {/if}
+          </div>
+        </div>
         <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
       </div>
 
@@ -37,10 +53,18 @@
         <div class="flex flex-col gap-3">
           <p class="text-lg/tight font-semibold">Highlights</p>
           <div class="flex flex-col gap-2">
-            {#each highlights as highlight}
+            {#each highlights as highlight, index}
               <div class="flex items-start gap-2">
-                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-                <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+                {#if index !== 0}
+                  <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
+                {/if}
+                <p
+                  class="text-lg/snug font-medium tracking-wide {index == 0
+                    ? 'text-brand-9'
+                    : 'opacity-64'}"
+                >
+                  {highlight.value}
+                </p>
               </div>
             {/each}
           </div>
@@ -48,7 +72,7 @@
       {/if}
     </div>
 
-    {#if cta[0]?.link}
+    {#if cta[0].link}
       {@const { href, target, rel } = getAnchorFromCmsLink(cta[0].link)}
       <Button
         as="a"

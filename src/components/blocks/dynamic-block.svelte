@@ -63,6 +63,8 @@
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksHero from './webhooks-hero.svelte';
   import WebhooksSection from './webhooks-section.svelte';
+  import PricingHeroRevamp from './pricing-hero-revamp.svelte';
+  import PricingTableRevamp from './pricing-table-revamp.svelte';
 
   export let block: SbBlokData;
 
@@ -108,9 +110,11 @@
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
     'pricing-hero-enhancements': PricingHeroEnhancements,
+    'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
+    'pricing-table-revamp': PricingTableRevamp,
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
