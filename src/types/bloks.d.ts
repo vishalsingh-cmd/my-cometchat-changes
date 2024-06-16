@@ -468,6 +468,14 @@ export interface FeaturesListSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FeaturesSectionScrollableStoryblok {
+  header: TitleSectionStoryblok;
+  items: TitleImageSectionStoryblok[];
+  _uid: string;
+  component: 'features-section-scrollable';
+  [k: string]: any;
+}
+
 export interface FeaturesListSubItemStoryblok {
   title: string;
   content: (BulletPointsStoryblok | ImageStoryblok)[];
