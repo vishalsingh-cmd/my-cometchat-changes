@@ -66,6 +66,7 @@
   import PricingHeroRevamp from './pricing-hero-revamp.svelte';
   import PricingTableRevamp from './pricing-table-revamp.svelte';
   import FeaturesSectionScrollable from './features-section-scrollable.svelte';
+  import TitleMediaSection from './title-media-section.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -129,6 +130,7 @@
     'technology-hero': TechnologyHero,
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
+    'title-media-section': TitleMediaSection,
     'title-section': TitleSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-hero': WebhooksHero,

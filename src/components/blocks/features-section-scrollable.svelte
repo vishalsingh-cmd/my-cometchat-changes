@@ -7,11 +7,10 @@
   import Tabs from '$components/tabs/tabs.svelte';
   import Title from '$components/title.svelte';
   import Sticky from '$components/sticky.svelte';
-  import TitleImageSection from './title-image-section.svelte';
-  import { onDestroy, onMount } from 'svelte';
+  import { onMount } from 'svelte';
+  import TitleMediaSection from './title-media-section.svelte';
 
   export let block: FeaturesSectionScrollableStoryblok;
-
   let selectedItemIndex = 0;
 
   function handleScroll() {
@@ -26,8 +25,7 @@
     });
   }
   const onOptionSelect = (e: CustomEvent) => {
-    selectedItemIndex = e.detail.i;
-    const query = `#tabContainer-${selectedItemIndex}`;
+    const query = `#tabContainer-${e.detail.i}`;
     const element: HTMLDivElement | null = document.querySelector(query);
     let elementTop = element?.offsetTop ?? 0;
     let offset = window.scrollY > elementTop ? -100 : -50;
@@ -41,10 +39,9 @@
 
   onMount(() => {
     window.addEventListener('scroll', handleScroll);
-  });
-
-  onDestroy(() => {
-    window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   });
 </script>
 
@@ -84,20 +81,23 @@
           id: i,
           label: item.title[0].label
         }))}
-        <Sticky translateOnDesktop class="data-[sticky]:border-b data-[sticky]:border-gray-12/8">
+
+        <Sticky
+          translateOnDesktop
+          class="hidden data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:block"
+        >
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}
             on:optionSelect={onOptionSelect}
+            class="justify-center"
           />
         </Sticky>
-        <!-- <div class="h-[100vh] overflow-scroll border border-red-5"> -->
         {#each block.items as item, i}
           <div id="tabContainer-{i}" class="tabContainer">
-            <TitleImageSection block={item} />
+            <TitleMediaSection block={item} />
           </div>
         {/each}
-        <!-- </div> -->
       {/if}
     </div>
   </section>
