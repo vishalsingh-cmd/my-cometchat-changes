@@ -468,6 +468,14 @@ export interface FeaturesListSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FeaturesSectionScrollableStoryblok {
+  header: TitleSectionStoryblok;
+  items: TitleMediaSectionStoryblok[];
+  _uid: string;
+  component: 'features-section-scrollable';
+  [k: string]: any;
+}
+
 export interface FeaturesListSubItemStoryblok {
   title: string;
   content: (BulletPointsStoryblok | ImageStoryblok)[];
@@ -1829,6 +1837,18 @@ export interface TitleImageSectionStoryblok {
   accent_colour?: '' | 'brand' | 'orange';
   _uid: string;
   component: 'title-image-section';
+  [k: string]: any;
+}
+
+export interface TitleMediaSectionStoryblok {
+  title: TitleStoryblok[];
+  list_items?: BulletPointStoryblok[];
+  image: AssetStoryblok;
+  media_side: '' | 'left' | 'right' | 'center';
+  theme: '' | 'light' | 'dark';
+  accent_colour?: '' | 'brand' | 'orange';
+  _uid: string;
+  component: 'title-media-section';
   [k: string]: any;
 }
 
