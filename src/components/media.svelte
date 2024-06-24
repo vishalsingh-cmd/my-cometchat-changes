@@ -2,6 +2,7 @@
   import { getImageAttributes, type ImageAttributesOptions } from '$lib/storyblok';
 
   import type { AssetStoryblok } from '$types/bloks';
+  import { fade } from 'svelte/transition';
 
   let className = '';
 
@@ -14,6 +15,8 @@
   {@const mediaFile = media.filename.toLowerCase()}
   {#if mediaFile.includes('mp4') || mediaFile.includes('mov')}
     <video
+      height="100%"
+      width="100%"
       class={className}
       loop
       muted
@@ -26,6 +29,8 @@
     </video>
   {:else if mediaFile.includes('webm')}
     <video
+      height="100%"
+      width="100%"
       class={className}
       loop
       muted
@@ -38,6 +43,6 @@
     </video>
   {:else if mediaFile.includes('jpg') || mediaFile.includes('jpeg') || mediaFile.includes('png') || mediaFile.includes('webp') || mediaFile.includes('gif')}
     {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
-    <img class={className} {src} {alt} {width} {height} />
+    <img transition:fade={{ duration: 500 }} class={className} {src} {alt} {width} {height} />
   {/if}
 {/if}
