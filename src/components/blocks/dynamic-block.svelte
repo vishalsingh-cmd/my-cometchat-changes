@@ -68,6 +68,7 @@
   import FeaturesSectionScrollable from './features-section-scrollable.svelte';
   import TitleMediaSection from './title-media-section.svelte';
   import CommandCenterSection from './command-center-section.svelte';
+  import CardsSection from './cards-section.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -76,6 +77,7 @@
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
     'core-features-pricing-section': CoreFeaturesPricingSection,
+    'cards-section': CardsSection,
     'command-center-section': CommandCenterSection,
     'customers-hero': CustomersHero,
     'customer-story': CustomerStory,
