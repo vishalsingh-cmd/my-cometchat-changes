@@ -24,7 +24,7 @@
     intervalId = setInterval(() => {
       activeIndex = (activeIndex + 1) % block.length;
       dispatch('switch', activeIndex);
-    }, 5000);
+    }, 10000);
   }
   onMount(() => {
     resetInterval();
@@ -61,6 +61,7 @@
                 neverCollapse={expandedAtLg ? false : true}
                 on:click={() => {
                   activeIndex = i;
+                  dispatch('switch', activeIndex);
                   resetInterval();
                 }}
                 expanded={expandedAtLg == undefined ? true : false}

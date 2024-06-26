@@ -1852,6 +1852,36 @@ export interface TitleMediaSectionStoryblok {
   [k: string]: any;
 }
 
+export interface AccordianItemStoryblok {
+  icon: string;
+  title: string;
+  brief: string;
+  detail: string;
+  text: RichtextStoryblok;
+  media: AssetStoryblok;
+  _uid: string;
+}
+export interface CardStoryblok {
+  content: string;
+  name: string;
+  designation: string;
+  image: AssetStoryblok;
+  logo: AssetStoryblok;
+  _uid: string;
+}
+
+export interface CardsSectionStoryblok {
+  title: TitleSectionStoryblok;
+  cards: CardStoryblok[];
+}
+export interface CommandCenterSectionStoryblok {
+  title: TitleSectionStoryblok;
+  items: AccordianItemStoryblok[];
+  _uid: string;
+  component: 'command-center-section';
+  [k: string]: any;
+}
+
 export interface TitleSectionStoryblok {
   theme?: '' | 'dark' | 'light';
   accent_colour?: '' | 'brand' | 'orange';
