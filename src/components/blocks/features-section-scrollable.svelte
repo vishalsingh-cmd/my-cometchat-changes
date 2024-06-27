@@ -17,8 +17,8 @@
     const windowTop = window.scrollY;
     const tabContainers = document.querySelectorAll('.tabContainer');
     tabContainers.forEach((tabContainer) => {
-      const scrollTop = tabContainer.offsetTop - 100;
-      const contianerHeight = scrollTop + tabContainer.offsetHeight;
+      const scrollTop = tabContainer?.offsetTop - 100;
+      const contianerHeight = scrollTop + tabContainer?.offsetHeight;
       if (windowTop >= scrollTop && windowTop < contianerHeight) {
         selectedItemIndex = Number(tabContainer.id.split('-')[1]);
       }
@@ -28,7 +28,7 @@
     const query = `#tabContainer-${e.detail.i}`;
     const element: HTMLDivElement | null = document.querySelector(query);
     let elementTop = element?.offsetTop ?? 0;
-    let offset = window.scrollY > elementTop ? -100 : -50;
+    let offset = e.detail.i != 0 ? (window.scrollY > elementTop ? -100 : -50) : -50;
     let top = elementTop + offset;
     window?.scrollTo({
       top: top,
