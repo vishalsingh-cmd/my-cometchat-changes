@@ -7,6 +7,7 @@
   import AccordionGroup from '$components/accordion-group.svelte';
   import { createEventDispatcher, onDestroy, onMount } from 'svelte';
   import Media from '$components/media.svelte';
+  import { typeIcon } from '$lib/storyblok';
 
   export let block: AccordianItemStoryblok[];
   const dispatch = createEventDispatcher();
@@ -79,25 +80,30 @@
                     class="grid w-full grid-cols-12 items-center gap-4"
                     on:click={onClick}
                   >
-                    <Icon
-                      {icon}
-                      class={cn('shrink-0 opacity-50 ', expanded ? 'text-brand-9 opacity-100' : '')}
-                      size="sm"
-                    />
+                    {#if icon}
+                      {@const typedIcon = typeIcon(icon)}
+                      <div
+                        class={cn(
+                          'flex h-[38px] w-[38px] items-center justify-center rounded-full bg-brand-9/10 text-brand-9'
+                        )}
+                      >
+                        <Icon size="xs" icon={typedIcon} />
+                      </div>
+                    {/if}
                     <p
                       class={cn(
-                        'col-start-2 font-semibold leading-tighter opacity-50',
-                        expanded && 'opacity-100'
+                        'col-start-2 font-semibold leading-snug opacity-50',
+                        expanded ? 'text-brand-9 opacity-100' : 'opacity-50'
                       )}
                     >
                       {title}
                     </p>
                   </button>
                 </div>
-                <div class="grid grid-cols-12 gap-4">
+                <div class="grid grid-cols-12 gap-5">
                   <div class="col-span-10 col-start-2">
                     <p class="py-2 leading-none">{brief}</p>
-                    <p class="font-normal leading-tighter">{detail}</p>
+                    <p class="font-medium leading-snug tracking-wide opacity-74">{detail}</p>
                   </div>
                 </div>
                 <div class="grid grid-cols-12 gap-4 lg:hidden">
