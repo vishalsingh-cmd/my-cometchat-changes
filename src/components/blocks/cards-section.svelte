@@ -80,7 +80,7 @@
     <div class="container relative mx-auto pl-container">
       <div
         bind:this={horizontalContainer}
-        class="hidden flex-grow-0 gap-10 overflow-scroll md:flex"
+        class="hidden flex-grow-0 gap-10 overflow-hidden md:flex"
       >
         {#each block.cards as card, i}
           <div
@@ -107,10 +107,7 @@
         {/each}
         <div class="w-10" />
       </div>
-      <div
-        bind:this={verticalContainer}
-        class="flex flex-grow-0 gap-10 overflow-x-scroll md:hidden"
-      >
+      <div bind:this={verticalContainer} class="flex flex-grow-0 gap-10 overflow-hidden md:hidden">
         {#each block.cards as card, i}
           <div
             id={`testimonial-m-card-${i}`}
