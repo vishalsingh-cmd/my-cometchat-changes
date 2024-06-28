@@ -46,7 +46,7 @@
 
 {#if block}
   <section use:storyblokEditable={block} data-theme="light" class="overflow-hidden bg-gray-1">
-    <div class="relative flex w-full flex-col items-center py-12">
+    <div class="relative flex w-full flex-col items-center pb-6 pt-4 lg:py-12">
       <!-- Gradient -->
       <div
         class="absolute -bottom-[200px] -left-[100px] h-[400px] w-[600px] -rotate-45 opacity-30 blur-[230px] lg:opacity-100"
@@ -54,7 +54,7 @@
       />
 
       {#if block.length >= 2}
-        <div class="flex w-full flex-col flex-wrap gap-4 text-gray-12 lg:gap-0 lg:pl-1">
+        <div class="flex w-full flex-col flex-wrap gap-4 text-gray-12 lg:gap-0 lg:pl-8">
           <AccordionGroup expanded={expandedAtLg}>
             {#each block as accordion, i}
               {@const { icon, title, brief, detail, _uid, media } = accordion}
@@ -68,7 +68,7 @@
                 expanded={expandedAtLg == undefined ? true : false}
                 id={_uid}
                 class={cn(
-                  'relative block text-xl backdrop-blur-[20px] transition-[height] duration-[1s] ease-smooth lg:border-l-[1.5px] lg:px-2 lg:py-5',
+                  'relative block text-lg backdrop-blur-[20px] transition-[height] duration-[1s] ease-smooth lg:border-l-[1.5px] lg:px-2 lg:py-5 lg:text-xl',
                   activeIndex === i
                     ? 'lg:border-brand-9 lg:after:absolute lg:after:-left-[2px] lg:after:top-0 lg:after:h-1 lg:after:w-1 lg:after:-translate-x-[0.5px] lg:after:rounded-full lg:after:bg-brand-9 lg:after:shadow-[0_0_8px_8px_hsl(var(--color-brand-9)/0.05)]'
                     : 'lg:border-gray-7 '
@@ -77,14 +77,14 @@
                 <div slot="header" let:expanded let:attributes let:onClick>
                   <button
                     {...attributes}
-                    class="grid w-full grid-cols-12 items-center gap-4"
+                    class="-mb-2 grid w-full grid-cols-12 items-center gap-4 lg:mb-0"
                     on:click={onClick}
                   >
                     {#if icon}
                       {@const typedIcon = typeIcon(icon)}
                       <div
                         class={cn(
-                          'flex h-[38px] w-[38px] items-center justify-center rounded-full bg-brand-9/10 text-brand-9'
+                          'relative top-2 flex h-[38px] w-[38px] items-center justify-center rounded-full bg-brand-9/10 text-brand-9 lg:static'
                         )}
                       >
                         <Icon size="xs" icon={typedIcon} />
@@ -92,7 +92,7 @@
                     {/if}
                     <p
                       class={cn(
-                        'col-start-2 font-semibold leading-snug opacity-50',
+                        'col-start-2 ml-4 text-xl font-semibold opacity-50 lg:ml-0 lg:leading-snug',
                         expanded ? 'text-brand-9 opacity-100' : 'opacity-50'
                       )}
                     >
@@ -100,10 +100,12 @@
                     </p>
                   </button>
                 </div>
-                <div class="grid grid-cols-12 gap-5">
+                <div class="ml-4 grid grid-cols-12 gap-5 lg:ml-0">
                   <div class="col-span-10 col-start-2">
                     <p class="py-2 leading-none">{brief}</p>
-                    <p class="font-medium leading-snug tracking-wide opacity-74">{detail}</p>
+                    <p class="font-medium leading-tight tracking-wide opacity-74 lg:leading-snug">
+                      {detail}
+                    </p>
                   </div>
                 </div>
                 <div class="grid grid-cols-12 gap-4 lg:hidden">

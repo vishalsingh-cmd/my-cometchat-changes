@@ -23,7 +23,7 @@
       class={cn(
         'container relative mx-auto flex flex-col items-start gap-8 px-container lg:gap-20',
         block.media_side === 'left' && 'lg:flex-row-reverse lg:gap-[128px]',
-        block.media_side === 'right' && 'lg:flex-row lg:gap-[88px]'
+        block.media_side === 'right' && 'lg:flex-row lg:gap-[36px]'
       )}
     >
       <div class="flex-1">
