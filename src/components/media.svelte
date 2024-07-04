@@ -2,19 +2,49 @@
   import { getImageAttributes, type ImageAttributesOptions } from '$lib/storyblok';
 
   import type { AssetStoryblok } from '$types/bloks';
+  import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
 
   let className = '';
-
+  let videoElement: HTMLVideoElement;
   export { className as class };
   export let media: AssetStoryblok;
   export let imageTransformOptions: Partial<ImageAttributesOptions> | undefined = undefined;
+
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.5
+      }
+    );
+
+    if (videoElement) {
+      observer.observe(videoElement);
+    }
+
+    return () => {
+      if (videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  });
 </script>
 
 {#if media.filename}
   {@const mediaFile = media.filename.toLowerCase()}
   {#if mediaFile.includes('mp4') || mediaFile.includes('mov')}
     <video
+      bind:this={videoElement}
       height="100%"
       width="100%"
       class={className}
@@ -29,6 +59,7 @@
     </video>
   {:else if mediaFile.includes('webm')}
     <video
+      bind:this={videoElement}
       height="100%"
       width="100%"
       class={className}

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { FeaturesSectionScrollableStoryblok } from '$types/bloks';
+  import type { FeaturesWithNavbarSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { getLabelInfo } from '$lib/utils';
@@ -10,7 +10,7 @@
   import { onMount } from 'svelte';
   import TitleMediaSection from './title-media-section.svelte';
 
-  export let block: FeaturesSectionScrollableStoryblok;
+  export let block: FeaturesWithNavbarSectionStoryblok;
   let selectedItemIndex = 0;
 
   function handleScroll() {
@@ -82,10 +82,7 @@
           label: item.title[0].label
         }))}
 
-        <Sticky
-          translateOnDesktop
-          class="hidden data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:block"
-        >
+        <Sticky translateOnDesktop class="hidden border-b border-gray-12/8 lg:block">
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { CommandCenterSectionStoryblok } from '$types/bloks';
+  import type { FeaturesAutoScrollSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
   import Media from '$components/media.svelte';
   import AnimatedAccordionGroup from './animated-accordion-group.svelte';
   import TitleSection from './title-section.svelte';
 
-  export let block: CommandCenterSectionStoryblok;
+  export let block: FeaturesAutoScrollSectionStoryblok;
 
   let activeIndex = 0;
   function handleItemSwitch(e: CustomEvent<number>) {
@@ -15,7 +15,7 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 pb-6 text-gray-12">
     <div class="container mx-auto">
       <TitleSection block={block.title[0]} />
     </div>
