@@ -1,12 +1,12 @@
 <script lang="ts">
-  import type { CommandCenterSectionStoryblok } from '$types/bloks';
+  import type { FeaturesAutoScrollSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
   import Media from '$components/media.svelte';
   import AnimatedAccordionGroup from './animated-accordion-group.svelte';
   import TitleSection from './title-section.svelte';
 
-  export let block: CommandCenterSectionStoryblok;
+  export let block: FeaturesAutoScrollSectionStoryblok;
 
   let activeIndex = 0;
   function handleItemSwitch(e: CustomEvent<number>) {

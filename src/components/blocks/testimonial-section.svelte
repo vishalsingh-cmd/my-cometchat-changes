@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { CardsSectionStoryblok } from '$types/bloks';
+  import type { TestimonialSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import Media from '$components/media.svelte';
   import Icon from '$components/icon/icon.svelte';
@@ -7,7 +7,7 @@
   import { getLabelInfo } from '$lib/utils';
   import { cn } from '$lib/utils';
   import Button from '$components/buttons/button.svelte';
-  export let block: CardsSectionStoryblok;
+  export let block: TestimonialSectionStoryblok;
   let horizontalContainer: HTMLDivElement;
   let verticalContainer: HTMLDivElement;
   let noOfCards = block.cards.length;

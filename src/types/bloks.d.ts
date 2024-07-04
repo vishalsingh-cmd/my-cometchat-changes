@@ -468,7 +468,7 @@ export interface FeaturesListSectionStoryblok {
   [k: string]: any;
 }
 
-export interface FeaturesSectionScrollableStoryblok {
+export interface FeaturesWithNavbarSectionStoryblok {
   header: TitleSectionStoryblok;
   items: TitleMediaSectionStoryblok[];
   _uid: string;
@@ -1870,11 +1870,11 @@ export interface CardStoryblok {
   _uid: string;
 }
 
-export interface CardsSectionStoryblok {
+export interface TestimonialSectionStoryblok {
   title: TitleSectionStoryblok;
   cards: CardStoryblok[];
 }
-export interface CommandCenterSectionStoryblok {
+export interface FeaturesAutoScrollSectionStoryblok {
   title: TitleSectionStoryblok;
   items: AccordianItemStoryblok[];
   _uid: string;

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { FeaturesSectionScrollableStoryblok } from '$types/bloks';
+  import type { FeaturesWithNavbarSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { getLabelInfo } from '$lib/utils';
@@ -10,7 +10,7 @@
   import { onMount } from 'svelte';
   import TitleMediaSection from './title-media-section.svelte';
 
-  export let block: FeaturesSectionScrollableStoryblok;
+  export let block: FeaturesWithNavbarSectionStoryblok;
   let selectedItemIndex = 0;
 
   function handleScroll() {
