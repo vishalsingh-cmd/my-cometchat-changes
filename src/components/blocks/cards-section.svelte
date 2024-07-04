@@ -37,7 +37,7 @@
   <section
     use:storyblokEditable={block}
     data-theme="light"
-    class="bg-brand-3 py-6 text-gray-12 lg:py-12"
+    class="bg-brand-3 py-6 text-gray-12 lg:pb-12 lg:pt-0"
   >
     <div class="container relative mx-auto">
       {#if block.title && block.title[0]}
@@ -53,7 +53,7 @@
           size={size || 'small'}
         />
       {/if}
-      <div class="absolute bottom-10 right-20 hidden gap-1 px-container md:inline-flex">
+      <div class="absolute right-20 top-48 hidden gap-1 px-container md:inline-flex">
         <Button
           variant="secondary"
           class={cn(

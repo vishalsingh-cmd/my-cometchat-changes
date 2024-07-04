@@ -15,6 +15,7 @@
   let activeIndex = 0;
   let expandedAtLg = null;
   let isLg: boolean;
+  let observedElement: HTMLElement;
   $: expandedAtLg = isLg ? block[activeIndex]._uid : null;
   function updateExpanded() {
     isLg = window?.innerWidth >= 1024;
@@ -28,12 +29,35 @@
     }, 10000);
   }
   onMount(() => {
-    resetInterval();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            resetInterval();
+          } else {
+            clearInterval(intervalId);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      }
+    );
+
+    if (observedElement) {
+      observer.observe(observedElement);
+    }
     if (typeof window !== 'undefined') {
       window.addEventListener('resize', updateExpanded);
-
       updateExpanded();
     }
+    return () => {
+      if (observedElement) {
+        observer.unobserve(observedElement);
+      }
+    };
   });
 
   onDestroy(() => {
@@ -45,8 +69,13 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="overflow-hidden bg-gray-1">
-    <div class="relative flex w-full flex-col items-center pb-6 pt-4 lg:py-12">
+  <section
+    bind:this={observedElement}
+    use:storyblokEditable={block}
+    data-theme="light"
+    class="overflow-hidden bg-gray-1"
+  >
+    <div class="relative flex w-full flex-col items-center lg:py-12">
       <!-- Gradient -->
       <div
         class="absolute -bottom-[200px] -left-[100px] h-[400px] w-[600px] -rotate-45 opacity-30 blur-[230px] lg:opacity-100"
@@ -54,7 +83,7 @@
       />
 
       {#if block.length >= 2}
-        <div class="flex w-full flex-col flex-wrap gap-4 text-gray-12 lg:gap-0 lg:pl-8">
+        <div class="flex w-full flex-col flex-wrap gap-10 text-gray-12 lg:gap-0 lg:pl-8">
           <AccordionGroup expanded={expandedAtLg}>
             {#each block as accordion, i}
               {@const { icon, title, brief, detail, _uid, media } = accordion}
@@ -84,7 +113,7 @@
                       {@const typedIcon = typeIcon(icon)}
                       <div
                         class={cn(
-                          'relative top-2 flex h-[38px] w-[38px] items-center justify-center rounded-full bg-brand-9/10 text-brand-9 lg:static'
+                          'relative top-2 flex h-[38px] w-[38px] items-center justify-center rounded-full bg-brand-9/10 text-brand-9 lg:static lg:ml-3'
                         )}
                       >
                         <Icon size="xs" icon={typedIcon} />
@@ -92,7 +121,7 @@
                     {/if}
                     <p
                       class={cn(
-                        'col-start-2 ml-4 text-xl font-semibold opacity-50 lg:ml-0 lg:leading-snug',
+                        'col-start-2 col-end-12 ml-4 text-left text-xl font-semibold lg:ml-3 lg:leading-snug',
                         expanded ? 'text-brand-9 opacity-100' : 'opacity-50'
                       )}
                     >
@@ -100,7 +129,7 @@
                     </p>
                   </button>
                 </div>
-                <div class="ml-4 grid grid-cols-12 gap-5 lg:ml-0">
+                <div class="ml-4 grid grid-cols-12 gap-5 lg:ml-3">
                   <div class="col-span-10 col-start-2">
                     <p class="py-2 leading-none">{brief}</p>
                     <p class="font-medium leading-tight tracking-wide opacity-74 lg:leading-snug">

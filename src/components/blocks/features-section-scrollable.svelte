@@ -82,10 +82,7 @@
           label: item.title[0].label
         }))}
 
-        <Sticky
-          translateOnDesktop
-          class="hidden data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:block"
-        >
+        <Sticky translateOnDesktop class="hidden border-b border-gray-12/8 lg:block">
           <Tabs
             options={parsedItems}
             activeTab={selectedItemIndex}

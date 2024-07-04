@@ -15,7 +15,7 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 pb-6 text-gray-12">
     <div class="container mx-auto">
       <TitleSection block={block.title[0]} />
     </div>
