@@ -65,15 +65,20 @@
   import WebhooksSection from './webhooks-section.svelte';
   import PricingHeroRevamp from './pricing-hero-revamp.svelte';
   import PricingTableRevamp from './pricing-table-revamp.svelte';
+  import FeaturesWithNavbarSection from './features-with-navbar-section.svelte';
+  import TitleMediaSection from './title-media-section.svelte';
+  import FeaturesAutoScrollSection from './features-auto-scroll-section.svelte';
+  import TestimonialSection from './testimonial-section.svelte';
 
   export let block: SbBlokData;
-
   const map: Record<string, ComponentType> = {
     'awards-section': AwardsSection,
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
     'core-features-pricing-section': CoreFeaturesPricingSection,
+    'testimonial-section': TestimonialSection,
+    'features-auto-scroll-section': FeaturesAutoScrollSection,
     'customers-hero': CustomersHero,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
@@ -84,6 +89,7 @@
     'featured-story-section': FeaturedStorySection,
     'features-at-glance-section': FeaturesAtGlanceSection,
     'features-section': FeaturesSection,
+    'features-with-navbar-section': FeaturesWithNavbarSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
     'hero-form': HeroForm,
@@ -128,6 +134,7 @@
     'technology-hero': TechnologyHero,
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
+    'title-media-section': TitleMediaSection,
     'title-section': TitleSection,
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-hero': WebhooksHero,
