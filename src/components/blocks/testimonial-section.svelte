@@ -96,11 +96,13 @@
                   <h2 class="font-bold text-xl">{card.name}</h2>
                   <p class="text-lg opacity-74">{card.designation}</p>
                 </div>
-                <Media
-                  media={card.logo}
-                  imageTransformOptions={{ size: [150, 0] }}
-                  class="object-contain"
-                />
+                {#if card?.logo}
+                  <Media
+                    media={card.logo}
+                    imageTransformOptions={{ size: [150, 0] }}
+                    class="object-contain"
+                  />
+                {/if}
               </div>
             </div>
           </div>
@@ -115,14 +117,20 @@
               (i == 0 ? '' : ' grayscale')}
           >
             <Media media={card.image} class="h-[35%] w-full rounded-t-2xl object-cover" />
-            <div class="flex flex-col justify-between gap-10 p-5">
-              <p class="text-lg font-medium">{card.content}</p>
-              <div class="flex h-[50px] flex-grow-0 justify-between">
+            <div class="relative flex h-full flex-grow-0 flex-col px-2 py-3">
+              <p class="max-h-[65%] overflow-auto text-lg font-medium">
+                {card.content}
+              </p>
+              <div
+                class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-2"
+              >
                 <div class="w-[170px] flex-none">
                   <h2 class="font-bold text-xl">{card.name}</h2>
                   <p class="text-lg opacity-74">{card.designation}</p>
                 </div>
-                <Media media={card.logo} class="w-24 object-contain" />
+                {#if card?.logo}
+                  <Media media={card.logo} class="w-24 object-contain" />
+                {/if}
               </div>
             </div>
           </div>
