@@ -1,9 +1,9 @@
 <script lang="ts">
   import { getImageAttributes, type ImageAttributesOptions } from '$lib/storyblok';
+  import { cn } from '$lib/utils';
 
   import type { AssetStoryblok } from '$types/bloks';
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
 
   let className = '';
   let videoElement: HTMLVideoElement;
@@ -74,6 +74,6 @@
     </video>
   {:else if mediaFile.includes('jpg') || mediaFile.includes('jpeg') || mediaFile.includes('png') || mediaFile.includes('webp') || mediaFile.includes('gif')}
     {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
-    <img transition:fade={{ duration: 500 }} class={className} {src} {alt} {width} {height} />
+    <img class={cn('animate-fadeIn', className)} {src} {alt} {width} {height} />
   {/if}
 {/if}
