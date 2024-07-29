@@ -143,7 +143,8 @@ export default {
       animation: {
         'slide-back-and-foward-smothly':
           'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running',
-        'grow-comet-smothly': 'growCometSmothly 0.2s linear'
+        'grow-comet-smothly': 'growCometSmothly 0.2s linear',
+        fadeIn: 'fadeIn 0.5s ease-in-out'
       },
       keyframes: {
         slideBackAndFoward: {
@@ -174,6 +175,10 @@ export default {
             width: '40px',
             height: '40px'
           }
+        },
+        fadeIn: {
+          '0%': { opacity: '0%' },
+          '100%': { opacity: '100%' }
         }
       },
       spacing: {
