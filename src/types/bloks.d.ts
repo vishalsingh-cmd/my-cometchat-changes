@@ -945,6 +945,7 @@ export interface ModerationFeaturesSectionStoryblok {
   rows: ModerationFeaturesRowStoryblok[];
   _uid: string;
   component: 'moderation-features-section';
+  [k: string]: any;
 }
 
 export interface NewsletterSectionStoryblok {
