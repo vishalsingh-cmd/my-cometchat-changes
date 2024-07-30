@@ -927,6 +927,27 @@ export interface ModerationFeaturesStoryblok {
   [k: string]: any;
 }
 
+export interface ModerationFeatureCardStoryblok {
+  title: string;
+  description: string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: 'moderation-feature-card';
+}
+export interface ModerationFeatureRowStoryblok {
+  cards: ModerationFeatureCardStoryblok[3];
+  _uid: string;
+  component: 'moderation-feature-cards-row';
+}
+
+export interface ModerationFeaturesSectionStoryblok {
+  title: TitleSectionStoryblok[1];
+  rows: ModerationFeaturesRowStoryblok[];
+  _uid: string;
+  component: 'moderation-features-section';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
