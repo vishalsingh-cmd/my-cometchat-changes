@@ -53,7 +53,7 @@
           size={size || 'small'}
         />
       {/if}
-      <div class="absolute right-20 top-48 hidden gap-1 px-container md:inline-flex">
+      <div class="absolute right-20 top-48 hidden gap-2 px-container md:inline-flex">
         <Button
           variant="secondary"
           class={cn(
@@ -137,7 +137,7 @@
         {/each}
         <div class="w-10" />
       </div>
-      <div class="bottom-0 inline-flex w-full justify-center gap-1 py-1 md:hidden">
+      <div class="bottom-0 -ml-3 inline-flex w-full justify-center gap-2 pt-3 md:hidden">
         <Button
           variant="secondary"
           class={cn(
