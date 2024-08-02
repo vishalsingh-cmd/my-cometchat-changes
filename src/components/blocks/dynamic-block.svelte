@@ -69,6 +69,7 @@
   import TitleMediaSection from './title-media-section.svelte';
   import FeaturesAutoScrollSection from './features-auto-scroll-section.svelte';
   import TestimonialSection from './testimonial-section.svelte';
+  import CenterStaticBannerV03 from '$components/center-static-banner-v03.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -82,6 +83,7 @@
     'customers-hero': CustomersHero,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
+    'center-static-banner-v03': CenterStaticBannerV03,
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,

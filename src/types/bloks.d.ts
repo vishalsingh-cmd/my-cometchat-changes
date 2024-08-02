@@ -262,6 +262,15 @@ export interface CenterStaticBannerV02Storyblok {
   [k: string]: any;
 }
 
+export interface CenterStaticBannerV03Storyblok {
+  title: string;
+  description: string;
+  cta: ButtonLinkStoryblok[];
+  bg: AssetStoryblok;
+  _uid: string;
+  component: 'center-static-banner-v03';
+  [k: string]: any;
+}
 export interface ChatAndMessagingHeroStoryblok {
   header: HeroHeaderStoryblok[];
   illustration: AssetStoryblok;
