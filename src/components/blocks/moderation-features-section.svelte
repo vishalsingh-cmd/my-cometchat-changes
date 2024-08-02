@@ -9,17 +9,13 @@
 </script>
 
 {#if block}
-  <section
-    use:storyblokEditable={block}
-    data-theme="light"
-    class="border-b border-gray-12 border-opacity-8 bg-gray-1 text-gray-12"
-  >
+  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
     {#if block.title && block.title[0]}
       <TitleSection block={block.title[0]} />
     {/if}
 
-    <div class={cn('container mx-auto flex flex-col px-container lg:grid')}>
-      <div class={cn('grid gap-8', 'lg:grid-cols-3')}>
+    <div class={cn('container mx-auto flex flex-col px-container pb-10 lg:grid')}>
+      <div class={cn('grid gap-x-[54px] gap-y-[52px] lg:grid-cols-3')}>
         {#if block.rows}
           {#each block.rows as row}
             {#each row.cards as card}
