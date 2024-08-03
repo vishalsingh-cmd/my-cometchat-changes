@@ -15,10 +15,12 @@
         style="background-image: url({block.bg
           .filename}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
       >
-        <h3 class="w-[280px] text-[26px] font-medium sm:w-[320px] md:w-[540px] md:text-[30px]">
+        <h3 class="w-[280px] text-[26px] font-semibold sm:w-[320px] md:w-[540px] md:text-[30px]">
           {block.title}
         </h3>
-        <p class="w-[300px] py-2 text-lg opacity-74 sm:w-[480px] md:w-[665px] md:text-lg-richtext">
+        <p
+          class="w-[300px] text-lg opacity-74 sm:w-[480px] md:w-[665px] md:py-3 md:text-lg-richtext"
+        >
           {block.description}
         </p>
         {#if block.cta[0]}
