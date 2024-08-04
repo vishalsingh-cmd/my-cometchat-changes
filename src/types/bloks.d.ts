@@ -176,6 +176,32 @@ export interface BlogPostStoryblok {
   [k: string]: any;
 }
 
+export interface GuideStoryblok {
+  cover?: AssetStoryblok;
+  sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  category:
+    | ''
+    | 'explorer'
+    | 'video'
+    | 'webinar'
+    | 'how-to-guide'
+    | 'chat'
+    | 'calling'
+    | 'insights'
+    | 'industry'
+    | 'best-practices';
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related?: RelatedStoriesSectionStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
+  _uid: string;
+  component: 'guide';
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -377,7 +403,7 @@ export interface DevelopersSectionStoryblok {
 export interface DirectorySectionStoryblok {
   label: string;
   title: string;
-  content_type: '' | 'blog-post' | 'customer-story' | 'tutorial';
+  content_type: 'guide' | 'blog-post' | 'customer-story' | 'tutorial';
   _uid: string;
   component: 'directory-section';
   [k: string]: any;

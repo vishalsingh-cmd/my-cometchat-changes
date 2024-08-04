@@ -17,6 +17,7 @@ export const load = async ({ cookies, fetch, params }) => {
   const relations = [
     'blog-post.author',
     'tutorial.author',
+    'guide.author',
     'customer-story.customer',
     'customer-story.author',
     'customer-story.related_items',
@@ -81,9 +82,11 @@ export const load = async ({ cookies, fetch, params }) => {
 
     if (
       directorySection &&
-      ['blog-post', 'customer-story', 'tutorial'].includes(directorySection.content_type)
+      ['blog-post', 'customer-story', 'tutorial', 'guide'].includes(directorySection.content_type)
     ) {
       if (directorySection.content_type === 'blog-post') {
+        datasourceCategories = await getEntriesBasedOnDatasource('categories');
+      } else if (directorySection.content_type === 'guide') {
         datasourceCategories = await getEntriesBasedOnDatasource('categories');
       } else if (directorySection.content_type === 'customer-story') {
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');

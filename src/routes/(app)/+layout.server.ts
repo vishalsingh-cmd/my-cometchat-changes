@@ -23,7 +23,8 @@ export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
           'topnav-resources-panel.customer_stories',
           'topnav-resources-panel.blog_posts',
           'blog-post.customer',
-          'customer-story.customer'
+          'customer-story.customer',
+          'guide.customer'
         ]
       }),
       getFooter(storyblok, { version })
