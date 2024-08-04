@@ -7,6 +7,7 @@
     AuthorStoryblok,
     BlogPostStoryblok,
     CustomerStoryStoryblok,
+    GuideStoryblok,
     TutorialStoryblok
   } from '$types/bloks';
 
@@ -22,7 +23,7 @@
   import { page } from '$app/stores';
   import RelatedBlogs from '$components/related-blogs.svelte';
 
-  export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok;
+  export let block: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok | GuideStoryblok;
 
   let headings: HTMLHeadingElement[] = [];
   let activeHeadingIndex = 0;
@@ -76,8 +77,10 @@
     });
   };
 
-  const isBlockTutorialOrBlogPost =
-    block.content.component === 'blog-post' || block.content.component === 'tutorial';
+  const isBlockTutorialOrBlogPostOrGuide =
+    block.content.component === 'blog-post' ||
+    block.content.component === 'tutorial' ||
+    block.content.component === 'guide';
 
   const typedAuthor = (author: string | StoryblokStory<AuthorStoryblok>) => {
     return author as StoryblokStory<AuthorStoryblok>;
@@ -126,7 +129,7 @@
           {/each}
 
           <!-- Author -->
-          {#if block.content.author && isBlockTutorialOrBlogPost}
+          {#if block.content.author && isBlockTutorialOrBlogPostOrGuide}
             {@const author = typedAuthor(block.content.author)}
             <div class="py-8 md:py-6">
               <div

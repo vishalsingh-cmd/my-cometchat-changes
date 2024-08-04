@@ -5,6 +5,7 @@
   import BlogPostDirectory from '$components/directory/blog-post-directory.svelte';
   import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
   import TutorialDirectory from '$components/directory/tutorial-directory.svelte';
+  import GuideDirectory from '$components/directory/guide-directory.svelte';
 
   export let block: DirectorySectionStoryblok;
 </script>
@@ -26,6 +27,8 @@
         <BlogPostDirectory {block} />
       {:else if block.content_type === 'customer-story'}
         <CustomerStoryDirectory {block} />
+      {:else if block.content_type === 'guide'}
+        <GuideDirectory {block} />
       {/if}
     </div>
   </section>

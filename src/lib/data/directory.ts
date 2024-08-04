@@ -1,4 +1,9 @@
-import type { BlogPostStoryblok, CustomerStoryStoryblok, TutorialStoryblok } from '$types/bloks';
+import type {
+  BlogPostStoryblok,
+  CustomerStoryStoryblok,
+  GuideStoryblok,
+  TutorialStoryblok
+} from '$types/bloks';
 
 import { formatDate } from '$lib/utils/dates';
 
@@ -22,14 +27,16 @@ export type Panel = {
 };
 
 export const parseItem = (
-  item: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok,
-  content_type: 'customer-story' | 'blog-post' | 'tutorial'
+  item: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok | GuideStoryblok,
+  content_type: 'customer-story' | 'blog-post' | 'tutorial' | 'guide'
 ) => {
   const getTags = () => {
     switch (content_type) {
       case 'customer-story':
         return [item.content.industry];
       case 'blog-post':
+        return [item.content.category];
+      case 'guide':
         return [item.content.category];
       case 'tutorial': {
         const tags = [];
