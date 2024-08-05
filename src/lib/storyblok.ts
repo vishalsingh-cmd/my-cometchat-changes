@@ -67,7 +67,8 @@ export const getStories = async (params: ISbStoriesParams = {}) => {
       'customer-story.author',
       'customer-story.customer',
       'blog-post.author',
-      'tutorial.author'
+      'tutorial.author',
+      'guide.author'
     ],
     ...params
   });

@@ -176,6 +176,32 @@ export interface BlogPostStoryblok {
   [k: string]: any;
 }
 
+export interface GuideStoryblok {
+  cover?: AssetStoryblok;
+  sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
+  author?: StoryblokStory<AuthorStoryblok> | string;
+  category:
+    | ''
+    | 'explorer'
+    | 'video'
+    | 'webinar'
+    | 'how-to-guide'
+    | 'chat'
+    | 'calling'
+    | 'insights'
+    | 'industry'
+    | 'best-practices';
+  imported_from_old_site?: boolean;
+  created_at?: string;
+  body: RichtextStoryblok;
+  related?: RelatedStoriesSectionStoryblok[];
+  pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
+  seo?: SeoFieldsStoryblok[];
+  _uid: string;
+  component: 'guide';
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -262,6 +288,15 @@ export interface CenterStaticBannerV02Storyblok {
   [k: string]: any;
 }
 
+export interface CenterStaticBannerV03Storyblok {
+  title: string;
+  description: string;
+  cta: ButtonLinkStoryblok[];
+  bg: AssetStoryblok;
+  _uid: string;
+  component: 'center-static-banner-v03';
+  [k: string]: any;
+}
 export interface ChatAndMessagingHeroStoryblok {
   header: HeroHeaderStoryblok[];
   illustration: AssetStoryblok;
@@ -368,7 +403,7 @@ export interface DevelopersSectionStoryblok {
 export interface DirectorySectionStoryblok {
   label: string;
   title: string;
-  content_type: '' | 'blog-post' | 'customer-story' | 'tutorial';
+  content_type: 'guide' | 'blog-post' | 'customer-story' | 'tutorial';
   _uid: string;
   component: 'directory-section';
   [k: string]: any;
@@ -924,6 +959,27 @@ export interface ModerationFeaturesStoryblok {
   features: ModerationFeatureStoryblok[];
   _uid: string;
   component: 'moderation-features';
+  [k: string]: any;
+}
+
+export interface ModerationFeatureCardStoryblok {
+  title: string;
+  description: string;
+  image: AssetStoryblok;
+  _uid: string;
+  component: 'moderation-feature-card';
+}
+export interface ModerationFeatureRowStoryblok {
+  cards: ModerationFeatureCardStoryblok[3];
+  _uid: string;
+  component: 'moderation-feature-cards-row';
+}
+
+export interface ModerationFeaturesSectionStoryblok {
+  title: TitleSectionStoryblok[1];
+  rows: ModerationFeaturesRowStoryblok[];
+  _uid: string;
+  component: 'moderation-features-section';
   [k: string]: any;
 }
 
