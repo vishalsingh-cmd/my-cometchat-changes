@@ -7,6 +7,7 @@
   import { getLabelInfo } from '$lib/utils';
   import { cn } from '$lib/utils';
   import Button from '$components/buttons/button.svelte';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   export let block: TestimonialSectionStoryblok;
   let horizontalContainer: HTMLDivElement;
   let verticalContainer: HTMLDivElement;
@@ -26,7 +27,6 @@
     card?.classList.remove('grayscale');
     card?.classList.remove('opacity-50');
     const scrollLeft = card?.offsetLeft;
-    console.log({ scrollLeft });
     horizontalContainer.scrollTo({ left: scrollLeft - 80, behavior: 'smooth' });
     verticalContainer.scrollTo({ left: scrollLeft - 30, behavior: 'smooth' });
     // card?.scrollIntoView({ behavior: 'smooth', inline: 'start' });
@@ -91,17 +91,21 @@
             <Media media={card.image} class="w-[35%] rounded-l-2xl object-cover" />
             <div class="flex flex-col justify-between p-10">
               <p class="text-xl font-medium">{card.content}</p>
-              <div class="flex h-[57px] flex-grow-0 justify-between">
+              <div class="relative flex h-[57px] flex-grow-0 justify-between">
                 <div class="w-[250px] flex-none">
                   <h2 class="font-bold text-xl">{card.name}</h2>
                   <p class="text-lg opacity-74">{card.designation}</p>
                 </div>
-                {#if card?.logo}
-                  <Media
-                    media={card.logo}
-                    imageTransformOptions={{ size: [150, 0] }}
-                    class="object-contain"
-                  />
+                {#if card.cta_slot && card.cta_slot[0]}
+                  {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}
+                  <Button
+                    class="absolute bottom-1 right-0 opacity-90"
+                    variant={card.cta_slot[0].variant}
+                    as="a"
+                    {href}
+                    {target}
+                    {rel}>{card.cta_slot[0].label}</Button
+                  >
                 {/if}
               </div>
             </div>
@@ -128,8 +132,16 @@
                   <h2 class="font-bold text-xl">{card.name}</h2>
                   <p class="text-lg opacity-74">{card.designation}</p>
                 </div>
-                {#if card?.logo}
-                  <Media media={card.logo} class="w-24 object-contain" />
+                {#if card.cta_slot && card.cta_slot[0]}
+                  {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}
+                  <Button
+                    class="-bottom-3 right-2 opacity-90"
+                    variant={card.cta_slot[0].variant}
+                    as="a"
+                    {href}
+                    {target}
+                    {rel}>{card.cta_slot[0].label}</Button
+                  >
                 {/if}
               </div>
             </div>

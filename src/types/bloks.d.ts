@@ -1923,6 +1923,7 @@ export interface CardStoryblok {
   designation: string;
   image: AssetStoryblok;
   logo: AssetStoryblok;
+  cta_slot: ButtonLinkStoryblok[];
   _uid: string;
 }
 
