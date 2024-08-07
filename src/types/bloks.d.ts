@@ -1914,8 +1914,10 @@ export interface AccordianItemStoryblok {
   brief: string;
   detail: string;
   text: RichtextStoryblok;
+  cta_slot: ButtonLinkStoryblok[];
   media: AssetStoryblok;
   _uid: string;
+  [k: string]: any;
 }
 export interface CardStoryblok {
   content: string;
