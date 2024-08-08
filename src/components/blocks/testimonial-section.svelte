@@ -89,12 +89,16 @@
               (i == 0 ? '' : ' opacity-50 grayscale')}
           >
             <Media media={card.image} class="w-[35%] rounded-l-2xl object-cover" />
-            <div class="flex flex-col justify-between p-10">
-              <p class="text-xl font-medium">{card.content}</p>
+            <div
+              class="flex flex-col justify-between px-10 pb-10 pt-20"
+              style="background-image: url({card?.bg
+                ?.filename}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
+            >
+              <p class="text-[20px] font-medium leading-[24px]">{card.content}</p>
               <div class="relative flex h-[57px] flex-grow-0 justify-between">
                 <div class="w-[250px] flex-none">
-                  <h2 class="font-bold text-xl">{card.name}</h2>
-                  <p class="text-lg opacity-74">{card.designation}</p>
+                  <h2 class="font-bold text-xl text-brand-9">{card.name}</h2>
+                  <p class="text-lg font-medium opacity-60">{card.designation}</p>
                 </div>
                 {#if card.cta_slot && card.cta_slot[0]}
                   {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}
@@ -121,16 +125,16 @@
               (i == 0 ? '' : ' grayscale')}
           >
             <Media media={card.image} class="h-[35%] w-full rounded-t-2xl object-cover" />
-            <div class="relative flex h-full flex-grow-0 flex-col px-2 py-3">
+            <div class="relative flex h-full flex-grow-0 flex-col p-3">
               <p class="max-h-[65%] overflow-auto text-lg font-medium">
                 {card.content}
               </p>
               <div
-                class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-2"
+                class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-3"
               >
                 <div class="w-[170px] flex-none">
-                  <h2 class="font-bold text-xl">{card.name}</h2>
-                  <p class="text-lg opacity-74">{card.designation}</p>
+                  <h2 class="font-bold text-xl text-brand-9">{card.name}</h2>
+                  <p class="text-lg font-medium opacity-60">{card.designation}</p>
                 </div>
                 {#if card.cta_slot && card.cta_slot[0]}
                   {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}

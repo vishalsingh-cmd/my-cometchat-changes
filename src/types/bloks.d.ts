@@ -1924,7 +1924,7 @@ export interface CardStoryblok {
   name: string;
   designation: string;
   image: AssetStoryblok;
-  logo: AssetStoryblok;
+  bg: AssetStoryblok;
   cta_slot: ButtonLinkStoryblok[];
   _uid: string;
 }
@@ -1932,6 +1932,9 @@ export interface CardStoryblok {
 export interface TestimonialSectionStoryblok {
   title: TitleSectionStoryblok;
   cards: CardStoryblok[];
+  _uid: string;
+  component: 'testimonial-section';
+  [k: string]: any;
 }
 export interface FeaturesAutoScrollSectionStoryblok {
   title: TitleSectionStoryblok;
