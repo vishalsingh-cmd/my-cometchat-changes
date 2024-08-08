@@ -7,6 +7,7 @@
   import { getLabelInfo } from '$lib/utils';
   import { cn } from '$lib/utils';
   import Button from '$components/buttons/button.svelte';
+  import { getAnchorFromCmsLink } from '$lib/storyblok';
   export let block: TestimonialSectionStoryblok;
   let horizontalContainer: HTMLDivElement;
   let verticalContainer: HTMLDivElement;
@@ -26,7 +27,6 @@
     card?.classList.remove('grayscale');
     card?.classList.remove('opacity-50');
     const scrollLeft = card?.offsetLeft;
-    console.log({ scrollLeft });
     horizontalContainer.scrollTo({ left: scrollLeft - 80, behavior: 'smooth' });
     verticalContainer.scrollTo({ left: scrollLeft - 30, behavior: 'smooth' });
     // card?.scrollIntoView({ behavior: 'smooth', inline: 'start' });
@@ -89,19 +89,27 @@
               (i == 0 ? '' : ' opacity-50 grayscale')}
           >
             <Media media={card.image} class="w-[35%] rounded-l-2xl object-cover" />
-            <div class="flex flex-col justify-between p-10">
-              <p class="text-xl font-medium">{card.content}</p>
-              <div class="flex h-[57px] flex-grow-0 justify-between">
+            <div
+              class="flex flex-col justify-between px-10 pb-10 pt-20"
+              style="background-image: url({card?.bg
+                ?.filename}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
+            >
+              <p class="text-[20px] font-medium leading-[24px]">{card.content}</p>
+              <div class="relative flex h-[57px] flex-grow-0 justify-between">
                 <div class="w-[250px] flex-none">
-                  <h2 class="font-bold text-xl">{card.name}</h2>
-                  <p class="text-lg opacity-74">{card.designation}</p>
+                  <h2 class="font-bold text-xl text-brand-9">{card.name}</h2>
+                  <p class="text-lg font-medium opacity-60">{card.designation}</p>
                 </div>
-                {#if card?.logo}
-                  <Media
-                    media={card.logo}
-                    imageTransformOptions={{ size: [150, 0] }}
-                    class="object-contain"
-                  />
+                {#if card.cta_slot && card.cta_slot[0]}
+                  {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}
+                  <Button
+                    class="absolute bottom-1 right-0 opacity-90"
+                    variant={card.cta_slot[0].variant}
+                    as="a"
+                    {href}
+                    {target}
+                    {rel}>{card.cta_slot[0].label}</Button
+                  >
                 {/if}
               </div>
             </div>
@@ -117,19 +125,27 @@
               (i == 0 ? '' : ' grayscale')}
           >
             <Media media={card.image} class="h-[35%] w-full rounded-t-2xl object-cover" />
-            <div class="relative flex h-full flex-grow-0 flex-col px-2 py-3">
+            <div class="relative flex h-full flex-grow-0 flex-col p-3">
               <p class="max-h-[65%] overflow-auto text-lg font-medium">
                 {card.content}
               </p>
               <div
-                class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-2"
+                class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-3"
               >
                 <div class="w-[170px] flex-none">
-                  <h2 class="font-bold text-xl">{card.name}</h2>
-                  <p class="text-lg opacity-74">{card.designation}</p>
+                  <h2 class="font-bold text-xl text-brand-9">{card.name}</h2>
+                  <p class="text-lg font-medium opacity-60">{card.designation}</p>
                 </div>
-                {#if card?.logo}
-                  <Media media={card.logo} class="w-24 object-contain" />
+                {#if card.cta_slot && card.cta_slot[0]}
+                  {@const { href, target, rel } = getAnchorFromCmsLink(card.cta_slot[0].link)}
+                  <Button
+                    class="-bottom-3 right-2 opacity-90"
+                    variant={card.cta_slot[0].variant}
+                    as="a"
+                    {href}
+                    {target}
+                    {rel}>{card.cta_slot[0].label}</Button
+                  >
                 {/if}
               </div>
             </div>

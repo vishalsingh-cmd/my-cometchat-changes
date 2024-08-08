@@ -7,7 +7,8 @@
   import AccordionGroup from '$components/accordion-group.svelte';
   import { createEventDispatcher, onDestroy, onMount } from 'svelte';
   import Media from '$components/media.svelte';
-  import { typeIcon } from '$lib/storyblok';
+  import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
+  import Button from '$components/buttons/button.svelte';
 
   export let block: AccordianItemStoryblok[];
   const dispatch = createEventDispatcher();
@@ -86,7 +87,7 @@
         <div class="flex w-full flex-col flex-wrap gap-10 text-gray-12 lg:gap-0 lg:pl-8">
           <AccordionGroup expanded={expandedAtLg}>
             {#each block as accordion, i}
-              {@const { icon, title, brief, detail, _uid, media } = accordion}
+              {@const { icon, title, brief, detail, _uid, media, cta_slot } = accordion}
               <Accordion
                 neverCollapse={expandedAtLg ? false : true}
                 on:click={() => {
@@ -135,6 +136,17 @@
                     <p class="font-medium leading-tight tracking-wide opacity-74 lg:leading-snug">
                       {detail}
                     </p>
+                    {#if cta_slot && cta_slot[0]}
+                      {@const { href, target, rel } = getAnchorFromCmsLink(cta_slot[0].link)}
+                      <Button
+                        class="mt-4 opacity-90"
+                        variant={cta_slot[0].variant}
+                        as="a"
+                        {href}
+                        {target}
+                        {rel}>{cta_slot[0].label}</Button
+                      >
+                    {/if}
                   </div>
                 </div>
                 <div class="grid grid-cols-12 gap-4 lg:hidden">

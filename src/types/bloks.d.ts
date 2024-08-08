@@ -1914,21 +1914,27 @@ export interface AccordianItemStoryblok {
   brief: string;
   detail: string;
   text: RichtextStoryblok;
+  cta_slot: ButtonLinkStoryblok[];
   media: AssetStoryblok;
   _uid: string;
+  [k: string]: any;
 }
 export interface CardStoryblok {
   content: string;
   name: string;
   designation: string;
   image: AssetStoryblok;
-  logo: AssetStoryblok;
+  bg: AssetStoryblok;
+  cta_slot: ButtonLinkStoryblok[];
   _uid: string;
 }
 
 export interface TestimonialSectionStoryblok {
   title: TitleSectionStoryblok;
   cards: CardStoryblok[];
+  _uid: string;
+  component: 'testimonial-section';
+  [k: string]: any;
 }
 export interface FeaturesAutoScrollSectionStoryblok {
   title: TitleSectionStoryblok;

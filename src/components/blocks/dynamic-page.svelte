@@ -32,7 +32,6 @@
   const pageData = page as unknown as PageStoryblok;
   const tutorialData = page as unknown as TutorialStoryblok;
   const guideData = page as unknown as GuideStoryblok;
-  console.log('in dynamic page', page.content?.component);
 </script>
 
 {#if page.content && page.content?.component && page.content?.component === 'blog-post'}
