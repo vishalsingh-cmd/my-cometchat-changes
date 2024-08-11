@@ -5,6 +5,8 @@
   import 'tippy.js/animations/scale.css';
   import { cn, getPricingIcon } from '$lib/utils';
   import Icon from '$components/icon/icon.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   export let activeTabIndex = 0;
   export let lines: PricingTableGroupLineEnhancedStoryblok[];
@@ -29,9 +31,19 @@
             id="line-title-container"
             class="col-span-2 ml-14 flex w-full flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide"
           >
-            <span id="line-title" class="flex w-auto text-start">
-              {name}
-            </span>
+            {#if name}
+              {#if typeof name != 'string' && name.content}
+                {#each name.content as content}
+                  <p id="line-title" class={cn(paragraph, 'w-auto text-start')}>
+                    {@html resolver.render(content)}
+                  </p>
+                {/each}
+              {:else}
+                <span id="line-title" class="flex w-auto text-start">
+                  {name}
+                </span>
+              {/if}
+            {/if}
 
             {#if tooltip}
               <div class="min-w-fit">
@@ -119,9 +131,19 @@
             id="line-title-container"
             class="col-span-4 ml-0 flex w-full flex-shrink-0 flex-row items-start justify-start gap-3 py-5 text-start text-lg/snug font-medium tracking-wide md:ml-14"
           >
-            <span id="line-title" class="flex w-auto min-w-0 text-start">
-              {name}
-            </span>
+            {#if name}
+              {#if typeof name != 'string' && name.content}
+                {#each name.content as content}
+                  <p id="line-title" class={cn(paragraph, 'w-auto min-w-0 text-start')}>
+                    {@html resolver.render(content)}
+                  </p>
+                {/each}
+              {:else}
+                <span id="line-title" class="flex w-auto min-w-0 text-start">
+                  {name}
+                </span>
+              {/if}
+            {/if}
 
             {#if tooltip}
               <div class="min-w-fit">

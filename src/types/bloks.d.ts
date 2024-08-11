@@ -246,7 +246,7 @@ export interface BreadcumbsStoryblok {
 }
 
 export interface BulletPointStoryblok {
-  item: string;
+  item: string | RichtextStoryblok;
   coming_soon?: boolean;
   _uid: string;
   component: 'bullet-point';
@@ -622,7 +622,7 @@ export interface HeroFormStoryblok {
 
 export interface HeroHeaderStoryblok {
   title: RichtextStoryblok;
-  description?: string;
+  description?: string | RichtextStoryblok;
   links: ButtonLinkStoryblok[];
   _uid: string;
   component: 'hero-header';
@@ -683,7 +683,7 @@ export interface ImageStoryblok {
 export interface ImageTitleDescriptionTagsItemStoryblok {
   image: AssetStoryblok;
   title: string;
-  description: string;
+  description: string | RichtextStoryblok;
   tags: (TextStoryblok | TagStoryblok)[];
   _uid: string;
   component: 'image-title-description-tags-item';
@@ -1316,7 +1316,7 @@ export interface PricingPlanEnhancementContactUsStoryblok {
 
 export interface PricingPlanEnhancementFreeStoryblok {
   name: string;
-  description?: string;
+  description?: string | RichTextStoryblok;
   price?: string;
   highlights?: TextStoryblok[];
   cta: ButtonLinkStoryblok[];
@@ -1418,7 +1418,7 @@ export interface PricingTableGroupLineStoryblok {
 }
 
 export interface PricingTableGroupLineEnhancedStoryblok {
-  name: string;
+  name: string | RichtextStoryblok;
   tooltip?: string;
   grow?: string;
   scale?: string;
@@ -1858,7 +1858,7 @@ export interface TestimonialBlockStoryblok {
 }
 
 export interface TextStoryblok {
-  value?: string;
+  value?: string | RichtextStoryblok;
   _uid: string;
   component: 'text';
   [k: string]: any;
@@ -1912,7 +1912,7 @@ export interface AccordianItemStoryblok {
   icon: string;
   title: string;
   brief: string;
-  detail: string;
+  detail: string | RichtextStoryblok;
   text: RichtextStoryblok;
   cta_slot: ButtonLinkStoryblok[];
   media: AssetStoryblok;
@@ -1920,7 +1920,7 @@ export interface AccordianItemStoryblok {
   [k: string]: any;
 }
 export interface CardStoryblok {
-  content: string;
+  content: string | RichtextStoryblok;
   name: string;
   designation: string;
   image: AssetStoryblok;
