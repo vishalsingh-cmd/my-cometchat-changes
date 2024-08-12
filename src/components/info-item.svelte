@@ -32,7 +32,15 @@
   <div class="flex flex-col gap-1 text-xl text-gray-12 md:gap-2">
     <h3 class="font-semibold leading-tight">{item.title}</h3>
     {#if item.description}
-      <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+      {#if typeof item.description != 'string' && item.description.content}
+        {#each item.description.content as content}
+          <p class={cn(paragraph, 'font-medium leading-snug tracking-wide opacity-74')}>
+            {@html resolver.render(content)}
+          </p>
+        {/each}
+      {:else}
+        <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+      {/if}
     {/if}
   </div>
   {#if item.list && item.list.length > 0}

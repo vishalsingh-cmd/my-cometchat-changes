@@ -1073,7 +1073,7 @@ export interface PanelItemStoryblok {
   icon?: number | string;
   accent_colour?: '' | 'brand' | 'orange';
   title: string;
-  description?: string;
+  description?: string | RichtextStoryblok;
   list?: BulletPointStoryblok[];
   link?: LinkStoryblok[];
   _uid: string;
