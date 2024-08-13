@@ -7,6 +7,8 @@
 
   import type { ListItemStoryblok } from '$types/bloks';
   import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
 
   let className: undefined | string = undefined;
   export { className as class };
@@ -33,7 +35,17 @@
     {/if}
     <div class="flex flex-col gap-1 text-lg text-gray-12">
       <h3 class="font-semibold leading-tight">{block.title}</h3>
-      <p class="font-medium leading-snug tracking-wide opacity-74">{block.description}</p>
+      {#if block.description}
+        {#if typeof block.description != 'string' && block.description.content}
+          {#each block.description.content as content}
+            <p class={cn(paragraph, 'font-medium leading-snug tracking-wide opacity-74')}>
+              {@html resolver.render(content)}
+            </p>
+          {/each}
+        {:else}
+          <p class="font-medium leading-snug tracking-wide opacity-74">{block.description}</p>
+        {/if}
+      {/if}
     </div>
     {#if block.link && block.link[0]}
       {@const { href, target, rel } = getAnchorFromCmsLink(block.link[0].link)}

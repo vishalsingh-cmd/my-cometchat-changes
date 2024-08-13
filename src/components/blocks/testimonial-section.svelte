@@ -8,6 +8,8 @@
   import { cn } from '$lib/utils';
   import Button from '$components/buttons/button.svelte';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
   export let block: TestimonialSectionStoryblok;
   let horizontalContainer: HTMLDivElement;
   let verticalContainer: HTMLDivElement;
@@ -94,7 +96,19 @@
               style="background-image: url({card?.bg
                 ?.filename}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
             >
-              <p class="text-[20px] font-medium leading-[24px]">{card.content}</p>
+              {#if card.content}
+                {#if typeof card.content != 'string' && card?.content?.content}
+                  {#each card.content.content as content}
+                    <p class={cn(paragraph, 'text-[20px] font-medium leading-[24px]')}>
+                      {@html resolver.render(content)}
+                    </p>
+                  {/each}
+                {:else}
+                  <p class="text-[20px] font-medium leading-[24px]">
+                    {card.content}
+                  </p>
+                {/if}
+              {/if}
               <div class="relative flex h-[57px] flex-grow-0 justify-between">
                 <div class="w-[250px] flex-none">
                   <h2 class="font-bold text-xl text-brand-9">{card.name}</h2>
@@ -126,9 +140,20 @@
           >
             <Media media={card.image} class="h-[35%] w-full rounded-t-2xl object-cover" />
             <div class="relative flex h-full flex-grow-0 flex-col p-3">
-              <p class="max-h-[65%] overflow-auto text-lg font-medium">
-                {card.content}
-              </p>
+              {#if card.content}
+                {#if typeof card.content != 'string' && card?.content?.content}
+                  {#each card.content.content as content}
+                    <p class={cn(paragraph, 'max-h-[65%] overflow-auto text-lg font-medium')}>
+                      {@html resolver.render(content)}
+                    </p>
+                  {/each}
+                {:else}
+                  <p class="max-h-[65%] overflow-auto text-lg font-medium">
+                    {card.content}
+                  </p>
+                {/if}
+              {/if}
+
               <div
                 class="absolute bottom-2 left-0 flex h-[30%] w-full flex-grow-0 justify-between px-3"
               >

@@ -6,7 +6,9 @@
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
 
-  import type { ButtonLinkStoryblok } from '$types/bloks';
+  import type { ButtonLinkStoryblok, RichtextStoryblok } from '$types/bloks';
+  import { resolver } from './rich-text/rich-text-renderer.svelte';
+  import { paragraph } from './rich-text/rich-text-store';
 
   const titleStyle = cva(['w-full', 'flex', 'flex-col', 'px-container'], {
     variants: {
@@ -32,7 +34,7 @@
     | undefined = undefined;
   export let title = '';
   export let titleClass: undefined | string = undefined;
-  export let description: string | undefined = undefined;
+  export let description: string | RichtextStoryblok | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
   export let size: 'small' | 'large' = 'large';
@@ -62,11 +64,24 @@
     </svelte:element>
   {/if}
   {#if description}
-    <p
-      class="mt-4 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
-    >
-      {description}
-    </p>
+    {#if typeof description != 'string' && description.content}
+      {#each description.content as content}
+        <p
+          class={cn(
+            paragraph,
+            'mt-4 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]'
+          )}
+        >
+          {@html resolver.render(content)}
+        </p>
+      {/each}
+    {:else}
+      <p
+        class="mt-4 max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
+      >
+        {description}
+      </p>
+    {/if}
   {/if}
   {#if buttons && buttons.length > 0}
     <div class="mt-5 flex gap-2 md:mt-6">

@@ -8,6 +8,8 @@
   import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
   import { string } from '$lib/strings';
   import { cn } from '$lib/utils';
+  import { resolver } from './rich-text/rich-text-renderer.svelte';
+  import { paragraph } from './rich-text/rich-text-store';
 
   let className: undefined | string = undefined;
   export { className as class };
@@ -30,7 +32,15 @@
   <div class="flex flex-col gap-1 text-xl text-gray-12 md:gap-2">
     <h3 class="font-semibold leading-tight">{item.title}</h3>
     {#if item.description}
-      <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+      {#if typeof item.description != 'string' && item.description.content}
+        {#each item.description.content as content}
+          <p class={cn(paragraph, 'font-medium leading-snug tracking-wide opacity-74')}>
+            {@html resolver.render(content)}
+          </p>
+        {/each}
+      {:else}
+        <p class="font-medium leading-snug tracking-wide opacity-74">{item.description}</p>
+      {/if}
     {/if}
   </div>
   {#if item.list && item.list.length > 0}
@@ -46,9 +56,21 @@
               item.accent_colour === 'brand' && 'text-brand-9'
             )}
           />
-          <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
-            {listItem.item}
-          </p>
+          {#if listItem.item}
+            {#if typeof listItem.item != 'string' && listItem.item.content}
+              {#each listItem.item.content as content}
+                <p
+                  class={cn(paragraph, 'text-xl font-medium leading-snug tracking-wide opacity-74')}
+                >
+                  {@html resolver.render(content)}
+                </p>
+              {/each}
+            {:else}
+              <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
+                {listItem.item}
+              </p>
+            {/if}
+          {/if}
           {#if listItem.coming_soon}
             <Badge size="medium" label={string('coming_soon')} />
           {/if}

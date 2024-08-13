@@ -7,6 +7,8 @@
 
   import Badge from '$components/badge.svelte';
   import Media from '$components/media.svelte';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
 
   let className: string | undefined = undefined;
   export { className as class };
@@ -48,7 +50,15 @@
       <p class="font-semibold leading-tight">{block.title}</p>
     {/if}
     {#if block.description}
-      <p class="mt-2 font-medium leading-snug tracking-wide opacity-64">{block.description}</p>
+      {#if typeof block.description != 'string' && block.description.content}
+        {#each block.description.content as content}
+          <p class={cn(paragraph, 'mt-2 font-medium leading-snug tracking-wide opacity-64')}>
+            {@html resolver.render(content)}
+          </p>
+        {/each}
+      {:else}
+        <p class="mt-2 font-medium leading-snug tracking-wide opacity-64">{block.description}</p>
+      {/if}
     {/if}
     {#if block.tags}
       <div class="mt-5 flex flex-row flex-wrap gap-2">

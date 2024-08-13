@@ -8,6 +8,8 @@
   import Icon from '$components/icon/icon.svelte';
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: TitleMediaSectionStoryblok;
 </script>
@@ -58,9 +60,24 @@
                     block.accent_colour === 'brand' && 'text-brand-9'
                   )}
                 />
-                <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
-                  {listItem.item}
-                </p>
+                {#if listItem.item}
+                  {#if typeof listItem.item != 'string' && listItem.item.content}
+                    {#each listItem.item.content as content}
+                      <p
+                        class={cn(
+                          paragraph,
+                          'text-xl font-medium leading-snug tracking-wide opacity-74'
+                        )}
+                      >
+                        {@html resolver.render(content)}
+                      </p>
+                    {/each}
+                  {:else}
+                    <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
+                      {listItem.item}
+                    </p>
+                  {/if}
+                {/if}
                 {#if listItem.coming_soon}
                   <Badge size="medium" label={string('coming_soon')} />
                 {/if}

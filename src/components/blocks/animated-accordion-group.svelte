@@ -9,6 +9,8 @@
   import Media from '$components/media.svelte';
   import { getAnchorFromCmsLink, typeIcon } from '$lib/storyblok';
   import Button from '$components/buttons/button.svelte';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
 
   export let block: AccordianItemStoryblok[];
   const dispatch = createEventDispatcher();
@@ -133,9 +135,26 @@
                 <div class="ml-4 grid grid-cols-12 gap-5 lg:ml-3">
                   <div class="col-span-10 col-start-2">
                     <p class="py-2 leading-none">{brief}</p>
-                    <p class="font-medium leading-tight tracking-wide opacity-74 lg:leading-snug">
-                      {detail}
-                    </p>
+                    {#if detail}
+                      {#if typeof detail != 'string' && detail.content}
+                        {#each detail.content as content}
+                          <p
+                            class={cn(
+                              paragraph,
+                              'font-medium leading-tight tracking-wide opacity-74 lg:leading-snug'
+                            )}
+                          >
+                            {@html resolver.render(content)}
+                          </p>
+                        {/each}
+                      {:else}
+                        <p
+                          class="font-medium leading-tight tracking-wide opacity-74 lg:leading-snug"
+                        >
+                          {detail}
+                        </p>
+                      {/if}
+                    {/if}
                     {#if cta_slot && cta_slot[0]}
                       {@const { href, target, rel } = getAnchorFromCmsLink(cta_slot[0].link)}
                       <Button
@@ -166,17 +185,3 @@
     </div>
   </section>
 {/if}
-
-<style>
-  /* CSS for Highlighter Dot */
-  .highlighter-dot::before {
-    content: '';
-    top: 0px; /* Adjust based on the desired position */
-    left: 0;
-    height: 100px; /* Dot size */
-    width: 100px; /* Dot size */
-    background-color: red; /* Dot color */
-    /* border-radius: 50%;  */
-    /* box-shadow: 0 0 8px var(--color-brand-9);  */
-  }
-</style>
