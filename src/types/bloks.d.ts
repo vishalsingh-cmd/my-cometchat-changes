@@ -851,7 +851,7 @@ export interface LinkStoryblok {
 export interface ListItemStoryblok {
   icon: number | string;
   title: string;
-  description: string;
+  description: string | RichtextStoryblok;
   link?: LinkStoryblok[];
   _uid: string;
   component: 'list-item';

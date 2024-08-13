@@ -7,6 +7,8 @@
   import Icon from './icon/icon.svelte';
   import Badge from './badge.svelte';
   import Media from './media.svelte';
+  import { resolver } from './rich-text/rich-text-renderer.svelte';
+  import { paragraph } from './rich-text/rich-text-store';
 
   export let i: number;
   export let item: FeaturesListSubItemStoryblok;
@@ -28,9 +30,19 @@
           {#each item.content[0].items as contentItem}
             <div class="flex items-center gap-2">
               <Icon icon="star-04" size="xs" class="flex-shrink-0 text-brand-9" />
-              <p class="text-lg font-medium leading-snug tracking-wide">
-                {contentItem.item}
-              </p>
+              {#if contentItem.item}
+                {#if typeof contentItem.item != 'string' && contentItem.item.content}
+                  {#each contentItem.item.content as content}
+                    <p class={cn(paragraph, 'text-lg font-medium leading-snug tracking-wide')}>
+                      {@html resolver.render(content)}
+                    </p>
+                  {/each}
+                {:else}
+                  <p class="text-lg font-medium leading-snug tracking-wide">
+                    {contentItem.item}
+                  </p>
+                {/if}
+              {/if}
               {#if contentItem.coming_soon}
                 <Badge size="medium" label={string('coming_soon')} />
               {/if}
