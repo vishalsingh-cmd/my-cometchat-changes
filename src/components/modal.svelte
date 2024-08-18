@@ -32,18 +32,19 @@
 <div
   on:click={onClose}
   on:keydown
-  class="fixed left-0 top-0 z-[110] flex h-screen w-screen items-center justify-center bg-black/90 backdrop-blur-xl"
+  class="fixed left-0 top-0 z-[110] flex h-screen w-screen items-center justify-center backdrop-blur-xl"
+  style="background: rgba(20, 19, 29, 0.75);"
 >
   <div
     on:keydown
     on:scroll|stopPropagation
     on:wheel|stopPropagation
-    class="mx-4 flex h-[85%] w-full flex-grow-0 items-center justify-center overflow-scroll rounded-xl border border-gray-12/30 bg-gray-12/5 sm:mx-32"
+    class="mx-4 flex max-h-[85%] max-w-full flex-grow-0 items-center justify-center overflow-scroll rounded-2xl sm:mx-32"
   >
     <img
       on:scroll|stopPropagation
       on:wheel|stopPropagation
-      class="m-auto object-contain"
+      class="m-auto rounded-2xl object-contain"
       style="height: {actHeight}px"
       {src}
       {alt}
@@ -58,7 +59,8 @@
     class="fixed bottom-12 z-[110] flex items-center justify-center"
   >
     <div
-      class="flex gap-0 rounded-xl border border-[rgba(250,250,255,0.10)] bg-[rgba(20,19,29,0.25)] shadow-[0px_0px_32px_0px_rgba(0,0,0,0.16)] backdrop-blur-[6px]"
+      class="flex gap-0"
+      style="border-radius: 12px;border: 1px rgba(250, 250, 255, 0.10);background: rgba(20, 19, 29, 0.25);box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);backdrop-filter: blur(6px);"
     >
       <Button
         on:click={onZoomOut}
