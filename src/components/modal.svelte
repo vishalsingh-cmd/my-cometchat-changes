@@ -6,9 +6,19 @@
   import Icon from './icon/icon.svelte';
   export let onClose: () => void;
   export let image: AssetStoryblok;
-  const { src, alt, height } = getImageAttributes(image);
-  let offset = Number(height) / 27;
-  let actHeight = Number(height) - offset;
+
+  const { src, alt, width } = getImageAttributes(image);
+  let nWidth = Number(width);
+  let actWidth: number;
+
+  onMount(() => {
+    let modalImageContainerWidth = Number(
+      document?.getElementById('modalImageContainer')?.offsetWidth
+    );
+    if (!modalImageContainerWidth) return;
+    nWidth = modalImageContainerWidth > nWidth ? nWidth : modalImageContainerWidth;
+    actWidth = nWidth;
+  });
   function onKeyDown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
       onClose();
@@ -16,10 +26,10 @@
     }
   }
   function onZoomIn() {
-    actHeight = actHeight + 100;
+    actWidth = actWidth + 100;
   }
   function onZoomOut() {
-    actHeight = actHeight - 100;
+    actWidth = actWidth - 100;
   }
   onMount(() => {
     document.body.style.overflow = 'hidden';
@@ -36,16 +46,17 @@
   style="background: rgba(20, 19, 29, 0.75);"
 >
   <div
+    id="modalImageContainer"
     on:keydown
     on:scroll|stopPropagation
     on:wheel|stopPropagation
-    class="mx-4 flex max-h-[85%] max-w-full flex-grow-0 items-center justify-center overflow-scroll rounded-2xl sm:mx-32"
+    class="mx-4 flex max-h-[85vh] max-w-full flex-grow-0 items-center justify-center overflow-scroll rounded-3xl sm:mx-32"
   >
     <img
       on:scroll|stopPropagation
       on:wheel|stopPropagation
-      class="m-auto rounded-2xl object-contain"
-      style="height: {actHeight}px"
+      class="mb-auto object-contain"
+      style="width: {actWidth}px;"
       {src}
       {alt}
     />
@@ -61,7 +72,7 @@
   >
     <Button
       on:click={onZoomOut}
-      disabled={actHeight <= 100}
+      disabled={actWidth <= 400}
       variant="secondary"
       class="border-none"
       size="sm"
@@ -70,7 +81,7 @@
     >
     <Button
       on:click={onZoomIn}
-      disabled={actHeight >= Number(height) - offset}
+      disabled={actWidth >= Number(nWidth)}
       variant="secondary"
       class="border-none"
       size="sm"
