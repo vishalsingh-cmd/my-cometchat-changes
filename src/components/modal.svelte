@@ -9,7 +9,7 @@
 
   const { src, alt, width } = getImageAttributes(image);
   let nWidth = Number(width);
-  let actWidth: number;
+  let actWidth: number = nWidth;
 
   onMount(() => {
     let modalImageContainerWidth = Number(
