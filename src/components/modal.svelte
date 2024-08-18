@@ -56,31 +56,27 @@
   <div
     on:click|stopPropagation
     on:keydown
-    class="fixed bottom-12 z-[110] flex items-center justify-center"
+    class="fixed bottom-12 z-[110] flex gap-0"
+    style="border-radius: 12px;border: 1px rgba(250, 250, 255, 0.10);background: rgba(20, 19, 29, 0.25);box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);backdrop-filter: blur(6px);"
   >
-    <div
-      class="flex gap-0"
-      style="border-radius: 12px;border: 1px rgba(250, 250, 255, 0.10);background: rgba(20, 19, 29, 0.25);box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.16);backdrop-filter: blur(6px);"
+    <Button
+      on:click={onZoomOut}
+      disabled={actHeight <= 100}
+      variant="secondary"
+      class="border-none"
+      size="sm"
     >
-      <Button
-        on:click={onZoomOut}
-        disabled={actHeight <= 100}
-        variant="secondary"
-        class="border-none"
-        size="sm"
-      >
-        <Icon icon="zoom-out-v2" size="sm" /></Button
-      >
-      <Button
-        on:click={onZoomIn}
-        disabled={actHeight >= Number(height) - offset}
-        variant="secondary"
-        class="border-none"
-        size="sm"
-      >
-        <Icon icon="zoom-in-v2" size="sm" /></Button
-      >
-    </div>
+      <Icon icon="zoom-out-v2" size="xs" /></Button
+    >
+    <Button
+      on:click={onZoomIn}
+      disabled={actHeight >= Number(height) - offset}
+      variant="secondary"
+      class="border-none"
+      size="sm"
+    >
+      <Icon icon="zoom-in-v2" size="xs" /></Button
+    >
   </div>
 </div>
 
