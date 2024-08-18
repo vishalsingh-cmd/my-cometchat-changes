@@ -49,6 +49,7 @@
   import UnorderedList from '$components/rich-text/unordered-list.svelte';
   import OrderedList from '$components/rich-text/ordered-list.svelte';
   import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
+  import Media from '$components/media.svelte';
 
   type $$Props = HTMLAttributes<HTMLDivElement> & {
     doc: ISbRichtext;
@@ -66,9 +67,14 @@
 
   const isBlok = doc.type === 'blok';
   const component = doc.type && doc.type in map ? map[doc.type as keyof typeof map] : null;
+  if (doc.content && doc.content[0].type == 'image') {
+    doc.content[0].attrs.filename = doc.content[0].attrs.src;
+  }
 </script>
 
-{#if component}
+{#if doc.content && doc.content[0].type == 'image'}
+  <Media media={doc.content[0].attrs} />
+{:else if component}
   <svelte:component this={component} content={doc} {...$$restProps} />
 {/if}
 
