@@ -29,7 +29,7 @@
       {#if block.header && block.header[0]}
         {@const header = block.header[0]}
         {@const label = getLabelInfo(header.label, 'brand')}
-        <Title {label} title={header.title} />
+        <Title {label} title={header.title} description={header.description} />
       {/if}
       {#if block.items.length > 0}
         {@const parsedItems = block.items.map((item, i) => ({

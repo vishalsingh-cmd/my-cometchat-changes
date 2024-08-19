@@ -7,6 +7,8 @@
   import { cn } from '$lib/utils';
 
   import Button from '$components/buttons/button.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   const heroHeader = cva([''], {
     variants: {
@@ -57,9 +59,22 @@
       </h1>
     {/if}
     {#if block.description}
-      <p class="mt-3 text-xl font-medium leading-snug tracking-wide text-gray-12/74 md:mt-5">
-        {block.description}
-      </p>
+      {#if typeof block.description != 'string' && block.description.content}
+        {#each block.description.content as content}
+          <p
+            class={cn(
+              paragraph,
+              'mt-3 text-xl font-medium leading-snug tracking-wide text-gray-12/74 md:mt-5'
+            )}
+          >
+            {@html resolver.render(content)}
+          </p>
+        {/each}
+      {:else}
+        <p class="mt-3 text-xl font-medium leading-snug tracking-wide text-gray-12/74 md:mt-5">
+          {block.description}
+        </p>
+      {/if}
     {/if}
     {#if block.links.length > 0}
       <div class={cn(buttons({ variant }))}>

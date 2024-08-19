@@ -18,7 +18,7 @@
   >
     <div class="container mx-auto px-container">
       {#if block.header && block.header[0]}
-        {@const { title } = block.header[0]}
+        {@const { title, description } = block.header[0]}
         {@const label = getLabelInfo(
           block.header[0].label,
           block.accent_colour === '' || !block.accent_colour ? 'orange' : block.accent_colour
@@ -28,6 +28,7 @@
             alignment={block.title_alignment !== '' ? block.title_alignment : 'center'}
             {label}
             {title}
+            {description}
             class="pl-0 lg:px-0"
           />
         {/if}
