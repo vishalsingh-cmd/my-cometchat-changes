@@ -11,8 +11,9 @@
   export { className as class };
   export let media: AssetStoryblok;
   export let imageTransformOptions: Partial<ImageAttributesOptions> | undefined = undefined;
-
+  export let enableZoom = false;
   function createModal() {
+    if (!enableZoom) return;
     const modal = new Modal({
       target: document.body,
       props: {
@@ -89,7 +90,7 @@
     <img
       on:click={createModal}
       on:keydown
-      class={cn('animate-fadeIn', className, 'hover:cursor-zoom-in')}
+      class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
       {src}
       {alt}
       {width}

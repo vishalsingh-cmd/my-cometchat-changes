@@ -73,7 +73,7 @@
 </script>
 
 {#if doc.content && doc.content[0].type == 'image'}
-  <Media media={doc.content[0].attrs} />
+  <Media media={doc.content[0].attrs} enableZoom={true} />
 {:else if component}
   <svelte:component this={component} content={doc} {...$$restProps} />
 {/if}
