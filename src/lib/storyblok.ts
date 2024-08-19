@@ -128,9 +128,8 @@ export function getAnchorFromCmsStory(story: ISbStoryData) {
 /** Utils */
 
 const getStoryblokImageSize = (src: string) => {
-  const width = src.split('/')[5].split('x')[0];
-  const height = src.split('/')[5].split('x')[1];
-
+  const width = src?.split('/')[5]?.split('x')[0] ?? 0;
+  const height = src?.split('/')[5]?.split('x')[1] ?? 0;
   return { width, height };
 };
 
@@ -229,6 +228,9 @@ export function getImageAttributes(
   image: AssetStoryblok,
   options?: Partial<ImageAttributesOptions>
 ): ImageAttributes {
+  if (!image.filename.includes('a.storyblok.com'))
+    return { src: image.filename, alt: image.src, height: '0', width: '0' };
+
   let src = image.filename + '/m/';
 
   const imgSizeAttr = getStoryblokImageSize(image.filename);
