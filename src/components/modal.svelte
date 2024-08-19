@@ -12,12 +12,16 @@
   let actWidth: number = nWidth;
 
   onMount(() => {
+    document.body.style.overflow = 'hidden';
     let modalImageContainerWidth = Number(
       document?.getElementById('modalImageContainer')?.offsetWidth
     );
     if (!modalImageContainerWidth) return;
     nWidth = modalImageContainerWidth > nWidth ? nWidth : modalImageContainerWidth;
     actWidth = nWidth;
+  });
+  onDestroy(() => {
+    document.body.style.overflow = 'auto';
   });
   function onKeyDown(e: KeyboardEvent) {
     if (e.key === 'Escape') {
@@ -31,12 +35,6 @@
   function onZoomOut() {
     actWidth = actWidth - 100;
   }
-  onMount(() => {
-    document.body.style.overflow = 'hidden';
-  });
-  onDestroy(() => {
-    document.body.style.overflow = 'auto';
-  });
 </script>
 
 <div
