@@ -4,13 +4,26 @@
 
   import type { AssetStoryblok } from '$types/bloks';
   import { onMount } from 'svelte';
+  import Modal from './modal.svelte';
 
   let className = '';
   let videoElement: HTMLVideoElement;
   export { className as class };
   export let media: AssetStoryblok;
   export let imageTransformOptions: Partial<ImageAttributesOptions> | undefined = undefined;
-
+  export let enableZoom = false;
+  function createModal() {
+    if (!enableZoom) return;
+    const modal = new Modal({
+      target: document.body,
+      props: {
+        image: media,
+        onClose: () => {
+          modal.$destroy();
+        }
+      }
+    });
+  }
   onMount(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -74,6 +87,14 @@
     </video>
   {:else if mediaFile.includes('jpg') || mediaFile.includes('jpeg') || mediaFile.includes('png') || mediaFile.includes('webp') || mediaFile.includes('gif')}
     {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
-    <img class={cn('animate-fadeIn', className)} {src} {alt} {width} {height} />
+    <img
+      on:click={createModal}
+      on:keydown
+      class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
+      {src}
+      {alt}
+      {width}
+      {height}
+    />
   {/if}
 {/if}
