@@ -50,7 +50,7 @@
     on:keydown
     on:scroll|stopPropagation
     on:wheel|stopPropagation
-    class="mx-4 flex max-h-[85vh] max-w-full flex-grow-0 items-center justify-center overflow-scroll rounded-3xl sm:mx-32"
+    class="mx-4 flex max-h-[85vh] max-w-full flex-grow-0 items-center justify-center overflow-x-hidden overflow-y-scroll rounded-3xl sm:mx-32"
   >
     <img
       on:scroll|stopPropagation
