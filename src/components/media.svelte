@@ -87,14 +87,23 @@
     </video>
   {:else if mediaFile.includes('jpg') || mediaFile.includes('jpeg') || mediaFile.includes('png') || mediaFile.includes('webp') || mediaFile.includes('gif')}
     {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
-    <img
-      on:click={createModal}
-      on:keydown
-      class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
-      {src}
-      {alt}
-      {width}
-      {height}
-    />
+    {#if src.includes('a.storyblok.com')}
+      <img
+        on:click={createModal}
+        on:keydown
+        class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
+        {src}
+        {alt}
+        {width}
+        {height}
+      />{:else}
+      <img
+        on:click={createModal}
+        on:keydown
+        class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
+        {src}
+        {alt}
+      />
+    {/if}
   {/if}
 {/if}

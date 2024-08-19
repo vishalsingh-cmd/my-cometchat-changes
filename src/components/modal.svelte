@@ -8,7 +8,9 @@
   export let image: AssetStoryblok;
 
   const { src, alt, width } = getImageAttributes(image);
-  let nWidth = Number(width);
+  let nWidth: number;
+  if (src.includes('a.storyblok.com')) nWidth = Number(width);
+  else nWidth = 1440;
   let actWidth: number = nWidth;
 
   onMount(() => {
