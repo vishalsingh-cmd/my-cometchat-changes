@@ -53,7 +53,17 @@
     })[0];
   };
 
+  $: if ($page.url.search) {
+    const tag = $page.url.search.split('=')[1].replaceAll('%20', ' ');
+    const type = 'category';
+    const panel = getPanel(type);
+    panel.selectedTags = [tag];
+  }
   const toggleTag = (tag: string, type: 'category') => {
+    // $page.url.search = '?category=' + tag;
+
+    // goto(`?category=${tag}`);
+
     const panel = getPanel(type);
 
     if (panel.selectedTags.includes(tag)) {

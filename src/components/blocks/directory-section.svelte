@@ -6,8 +6,16 @@
   import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
   import TutorialDirectory from '$components/directory/tutorial-directory.svelte';
   import GuideDirectory from '$components/directory/guide-directory.svelte';
+  import { onMount } from 'svelte';
+  import { page } from '$app/stores';
 
   export let block: DirectorySectionStoryblok;
+  onMount(() => {
+    const tag = $page.url.search?.split('=')[1]?.replaceAll('%20', ' ');
+    if (!tag) return;
+    let element = document.getElementById('articles');
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 </script>
 
 {#if block}
@@ -17,7 +25,7 @@
     class="bg-gray-1 pt-12 text-gray-12 md:pt-20"
   >
     <div class="container mx-auto px-container">
-      <div class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
+      <div id="articles" class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
         <p class="mb-2 text-xl text-brand-9 md:mb-3">{block.label}</p>
         <p class="text-3xl">{block.title}</p>
       </div>
