@@ -6,16 +6,8 @@
   import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
   import TutorialDirectory from '$components/directory/tutorial-directory.svelte';
   import GuideDirectory from '$components/directory/guide-directory.svelte';
-  import { onMount } from 'svelte';
-  import { page } from '$app/stores';
 
   export let block: DirectorySectionStoryblok;
-  onMount(() => {
-    const tag = $page.url.search?.split('=')[1]?.replaceAll('%20', ' ');
-    if (!tag) return;
-    let element = document.getElementById('articles');
-    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
 </script>
 
 {#if block}
