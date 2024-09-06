@@ -10,7 +10,7 @@
 
   import { getStories } from '$lib/storyblok';
   import { cn, scrollLock } from '$lib/utils';
-  import { cleanFilters, parseItem, type Panel, RESULTS_PER_PAGE } from '$lib/data/directory';
+  import { parseItem, type Panel, RESULTS_PER_PAGE } from '$lib/data/directory';
 
   import ContentCard from '$components/content-card.svelte';
   import FilterPanel from '$components/directory/filter-panel.svelte';
@@ -19,6 +19,7 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
+  import { afterNavigate, goto } from '$app/navigation';
 
   export let block: DirectorySectionStoryblok;
 
@@ -35,7 +36,8 @@
   };
 
   const clearFilters = () => {
-    panels = cleanFilters(panels);
+    goto('/blog');
+    // panels = cleanFilters(panels);
   };
 
   $: panels = [
@@ -53,42 +55,83 @@
     })[0];
   };
 
+  $: if ($page.url.search) {
+    let [type, filters] = $page.url.search.split('=');
+    type = type.split('?')[1];
+    filters = filters.replaceAll('%20', ' ');
+    let tags = filters.split('&');
+    if (type == 'category' && tags.length > 0) {
+      const expectedType = 'category';
+      const panel = getPanel(expectedType);
+      panel.selectedTags = tags;
+    }
+  }
+
+  function createQP(type: string, tags: string[], currentTag: string) {
+    let qp = `?${type}=${tags.join('&')}`;
+    if (!currentTag) return qp;
+    qp += tags.length == 0 ? `${currentTag}` : `&${currentTag}`;
+    return qp;
+  }
+  function scrollToElement() {
+    const tag = $page.url.search?.split('=')[1]?.replaceAll('%20', ' ');
+    if (!tag) return;
+    const element = document.getElementById('articles');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  afterNavigate(() => scrollToElement());
   const toggleTag = (tag: string, type: 'category') => {
     const panel = getPanel(type);
-
+    let qp;
     if (panel.selectedTags.includes(tag)) {
       panel.selectedTags = panel.selectedTags.filter((selectedTag) => {
         return selectedTag !== tag;
       });
-
-      const newPanel = {
-        ...panel,
-        selectedTags: panel.selectedTags
-      };
-
-      panels = panels.map((panel) => {
-        if (panel.type === type) {
-          return newPanel;
-        } else {
-          return panel;
-        }
-      });
+      if (panel.selectedTags.length > 0) qp = createQP(type, panel.selectedTags, '');
+      else {
+        goto('/blog');
+        return;
+      }
     } else {
-      panel.selectedTags = [...panel.selectedTags, tag];
-
-      const newPanel = {
-        ...panel,
-        selectedTags: panel.selectedTags
-      };
-
-      panels = panels.map((panel) => {
-        if (panel.type === type) {
-          return newPanel;
-        } else {
-          return panel;
-        }
-      });
+      qp = createQP(type, panel.selectedTags, tag);
     }
+    goto(qp);
+    // if (!tag) return;
+    // let element = document.getElementById('blog-post-directory');
+    // element?.scrollIntoView();
+    // window.scrollTo(0, 400);
+    // element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    //   const newPanel = {
+    //     ...panel,
+    //     selectedTags: panel.selectedTags
+    //   };
+
+    //   panels = panels.map((panel) => {
+    //     if (panel.type === type) {
+    //       return newPanel;
+    //     } else {
+    //       return panel;
+    //     }
+    //   });
+    // }
+    //  else {
+    //   panel.selectedTags = [...panel.selectedTags, tag];
+
+    //   const newPanel = {
+    //     ...panel,
+    //     selectedTags: panel.selectedTags
+    //   };
+
+    //   panels = panels.map((panel) => {
+    //     if (panel.type === type) {
+    //       return newPanel;
+    //     } else {
+    //       return panel;
+    //     }
+    //   });
+    // }
   };
 
   $: getNumberOfSelectedTags = () => {
@@ -146,7 +189,10 @@
     bind:value={$search}
     {areFiltersOpen}
   />
-  <div class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}>
+  <div
+    id="blog-post-directory"
+    class={cn('flex flex-col lg:grid', areFiltersOpen && 'gap-x-20 lg:grid-cols-[30%_1fr]')}
+  >
     {#if areFiltersOpen}
       <div
         class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
