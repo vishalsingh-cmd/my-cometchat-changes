@@ -92,7 +92,11 @@ export default {
         {
           fontWeight: 'var(--font-weight-semibold)'
         }
-      ]
+      ],
+      h1: ['48px', { lineheight: '1.06' }],
+      h2: ['32px', { lineheight: '1.15' }],
+      h3: ['24px', { lineheight: '1.15' }],
+      h4: ['20px', { lineheight: '1.15' }]
     }),
     lineHeight: {
       none: '1',

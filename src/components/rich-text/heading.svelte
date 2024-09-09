@@ -11,7 +11,10 @@
   this={`h${content.attrs.level}`}
   class={cn(
     'font-semibold leading-tighter text-gray-12',
-    content?.attrs?.level == 2 ? 'text-2xl' : 'text-xl',
+    content?.attrs?.level == 2 && 'text-h1',
+    content?.attrs?.level == 2 && 'text-h2',
+    content?.attrs?.level == 3 && 'text-h3',
+    content?.attrs?.level == 4 && 'text-h4',
     content?.attrs?.level == 2 ? 'mb-2.5 mt-5 md:mb-3 md:mt-10' : 'my-3 md:mb-3 md:mt-5'
   )}
 >
