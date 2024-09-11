@@ -13,7 +13,6 @@
 
     'font-medium',
     'text-gray-12',
-    'leading-snug',
     'tracking-wide',
 
     '[&_a]:text-brand-9',
@@ -33,7 +32,7 @@
 </script>
 
 {#if content.content}
-  <p class={cn(paragraph(), 'text-lg-richtext')}>
+  <p class={cn(paragraph(), 'text-lg-richtext leading-[130%]')}>
     <!-- eslint-disable-next-line svelte/no-at-html-tags -->
     {@html resolver.render(content)}
   </p>
