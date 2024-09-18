@@ -42,27 +42,3 @@
     <Stars amount={40} backgroundColours={['bg-gray-8', 'bg-brand-7']} />
   </div> -->
 <!-- </div> -->
-<!-- /* Developer */
-
-box-sizing: border-box;
-
-/* Auto layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 24px;
-gap: 60px;
-isolation: isolate;
-
-width: 304px;
-height: 660px;
-
-background: linear-gradient(180deg, rgba(104, 83, 214, 0.06) 0%, rgba(104, 83, 214, 0.006) 100%), rgba(250, 250, 255, 0.09);
-box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);
-border-radius: 0px 0px 24px 24px;
-
-/* Inside auto layout */
-flex: none;
-order: 2;
-align-self: stretch;
-flex-grow: 1; -->

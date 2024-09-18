@@ -16,6 +16,7 @@
   import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
 
   let isActive = true;
+  let isBilledAnnualy = true;
   $: ischatActive = isActive ? 'chat' : 'voice';
 
   $: if (ischatActive === 'chat') {
@@ -147,9 +148,14 @@
           </PricingTabSwitch>
         </div>
       </Sticky>
-      <div class="container mx-auto mb-12 mt-4 flex flex-col border">
+      <div class="container mx-auto mb-12 mt-4 flex flex-col">
         <div class="mb-[61px] mt-8 flex h-[110px] w-full justify-around border">
-          <PricingRangeSliderV2 {maus} />
+          <PricingRangeSliderV2
+            {maus}
+            on:index={(e) => {
+              updatePricingValues(e.detail, isBilledAnnualy);
+            }}
+          />
         </div>
         <div
           class={cn(
