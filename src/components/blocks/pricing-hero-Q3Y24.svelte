@@ -5,7 +5,7 @@
   import { typeIcon } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
-  // import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
+  import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import { activePricingTab } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
@@ -14,7 +14,7 @@
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
   import { onMount } from 'svelte';
   import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
-
+  import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   let isActive = true;
   let isBilledAnnualy = true;
   $: ischatActive = isActive ? 'chat' : 'voice';
@@ -35,19 +35,32 @@
     Enterprise: { price: '$499', isBilledAnnually: true }
   };
 
-  function updatePricingValues(index: number, isBilledAnnually: boolean) {
-    console.log('updatePricingValues', index);
-    block.mau[0].mau.tbody[index].body.forEach((col: any, index: number) => {
-      if (index === 0) {
-        pricingValues['Build'].isBilledAnnually = isBilledAnnually;
+  const updatePricingValues = (() => {
+    let lastIndex: number | null = null;
+    return (isBilledAnnually: boolean, index: number | null = null) => {
+      console.log('updatePricingValues', index);
+      if (index !== null) {
+        lastIndex = index;
+      } else if (lastIndex !== null) {
+        index = lastIndex;
+      } else {
+        console.error('No index provided and no previous index remembered.');
         return;
       }
-      pricingValues[block.cards[0].category1[index].name] = {
-        price: col.value,
-        isBilledAnnually: isBilledAnnually
-      };
-    });
-  }
+      let i;
+      i = isBilledAnnually ? 1 : 0;
+      block.mau[i].mau.tbody[index].body.forEach((col: any, index: number) => {
+        if (index === 0) {
+          pricingValues['Build'].isBilledAnnually = isBilledAnnually;
+          return;
+        }
+        pricingValues[block.cards[0].category1[index].name] = {
+          price: col.value,
+          isBilledAnnually: isBilledAnnually
+        };
+      });
+    };
+  })();
 
   onMount(() => {
     block.mau[0].mau.tbody.forEach((row: any) => {
@@ -55,7 +68,7 @@
     });
     maus = maus;
     // console.log('maus', maus);
-    updatePricingValues(1, true);
+    updatePricingValues(isBilledAnnualy, 1);
     // console.log('maus', pricingValues);
   });
 </script>
@@ -149,30 +162,36 @@
         </div>
       </Sticky>
       <div class="container mx-auto mb-12 mt-4 flex flex-col">
-        <div class="mb-[61px] mt-8 flex h-[110px] w-full justify-around border">
-          <PricingRangeSliderV2
-            {maus}
-            on:index={(e) => {
-              updatePricingValues(e.detail, isBilledAnnualy);
-            }}
-          />
-        </div>
+        {#if isActive}
+          <div class="mb-[61px] mt-8 flex h-[110px] w-full items-center justify-around">
+            <PricingPeriodToggle
+              bind:isBilledAnnually={isBilledAnnualy}
+              on:change={() => updatePricingValues(isBilledAnnualy)}
+            />
+            <PricingRangeSliderV2
+              {maus}
+              on:index={(e) => {
+                updatePricingValues(isBilledAnnualy, e.detail);
+              }}
+            />
+          </div>
+        {/if}
         <div
           class={cn(
-            'grid h-[700px] w-full grid-cols-1 items-end gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-            isActive && 'xl:grid-cols-4',
+            'grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
+            isActive && 'h-[700px] items-end xl:grid-cols-4',
             !isActive && 'xl:grid-cols-3'
           )}
         >
-          {#if isActive && pricingValues}
+          {#if isActive}
             {#each block.cards[0].category1 ?? [] as plan}
               <PricingHeroQ3Y24CardV1 block={plan} value={pricingValues[plan.name]} />
               <!-- <PricingCardVideoAndVoiceEnhanced block={plan} /> -->
             {/each}
           {:else}
-            <!-- {#each block.chat_and_messaging_plans as plan}
-            <PricingChatAndMessageCardEnhanced block={plan} />
-          {/each} -->
+            {#each block.cards[0].category2 ?? [] as plan}
+              <PricingCardVideoAndVoiceEnhanced block={plan} />
+            {/each}
           {/if}
         </div>
       </div>
