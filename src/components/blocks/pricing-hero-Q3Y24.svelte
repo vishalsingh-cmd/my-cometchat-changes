@@ -4,7 +4,6 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
-  import PricingBackground from '$components/pricing/hero/pricing-background.svelte';
   import Sticky from '$components/sticky.svelte';
   // import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import { activePricingTab } from '$lib/stores/pricing-stores';
@@ -12,11 +11,13 @@
   import { paragraph } from '$components/rich-text/rich-text-store';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
+  import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
+  import { onMount } from 'svelte';
+  import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
 
   let isActive = true;
   $: ischatActive = isActive ? 'chat' : 'voice';
 
-  // on ischatActive change, reset isActive
   $: if (ischatActive === 'chat') {
     $activePricingTab = 1;
   } else {
@@ -24,7 +25,38 @@
   }
 
   export let block: PricingHeroQ3Y24Storyblok;
-  // console.log(block);
+
+  let maus: string[] = [];
+  let pricingValues: any = {
+    Build: { price: '$0', isBilledAnnually: true },
+    Basic: { price: '$124', isBilledAnnually: true },
+    Advanced: { price: '$249', isBilledAnnually: true },
+    Enterprise: { price: '$499', isBilledAnnually: true }
+  };
+
+  function updatePricingValues(index: number, isBilledAnnually: boolean) {
+    console.log('updatePricingValues', index);
+    block.mau[0].mau.tbody[index].body.forEach((col: any, index: number) => {
+      if (index === 0) {
+        pricingValues['Build'].isBilledAnnually = isBilledAnnually;
+        return;
+      }
+      pricingValues[block.cards[0].category1[index].name] = {
+        price: col.value,
+        isBilledAnnually: isBilledAnnually
+      };
+    });
+  }
+
+  onMount(() => {
+    block.mau[0].mau.tbody.forEach((row: any) => {
+      maus.push(row.body[0].value);
+    });
+    maus = maus;
+    // console.log('maus', maus);
+    updatePricingValues(1, true);
+    // console.log('maus', pricingValues);
+  });
 </script>
 
 {#if block}
@@ -32,9 +64,10 @@
     data-theme="dark"
     use:storyblokEditable={block}
     class="relative pt-[100px] md:pt-[148px]"
+    style="background-image: url();"
   >
     <div class="absolute left-0 top-0 h-full w-full overflow-hidden">
-      <PricingBackground />
+      <PricingBackgroundV2 />
     </div>
     <div class="relative z-50 w-full">
       <div class="container z-50 mx-auto">
@@ -114,24 +147,28 @@
           </PricingTabSwitch>
         </div>
       </Sticky>
-
-      <div
-        class={cn(
-          'container mx-auto mb-12 mt-4 grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-          isActive && 'xl:grid-cols-4',
-          !isActive && 'xl:grid-cols-3'
-        )}
-      >
-        {#if isActive}
-          {#each block.cards[0].category1 ?? [] as plan}
-            <PricingHeroQ3Y24CardV1 block={plan} />
-            <!-- <PricingCardVideoAndVoiceEnhanced block={plan} /> -->
-          {/each}
-        {:else}
-          <!-- {#each block.chat_and_messaging_plans as plan}
+      <div class="container mx-auto mb-12 mt-4 flex flex-col border">
+        <div class="mb-[61px] mt-8 flex h-[110px] w-full justify-around border">
+          <PricingRangeSliderV2 {maus} />
+        </div>
+        <div
+          class={cn(
+            'grid h-[700px] w-full grid-cols-1 items-end gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
+            isActive && 'xl:grid-cols-4',
+            !isActive && 'xl:grid-cols-3'
+          )}
+        >
+          {#if isActive && pricingValues}
+            {#each block.cards[0].category1 ?? [] as plan}
+              <PricingHeroQ3Y24CardV1 block={plan} value={pricingValues[plan.name]} />
+              <!-- <PricingCardVideoAndVoiceEnhanced block={plan} /> -->
+            {/each}
+          {:else}
+            <!-- {#each block.chat_and_messaging_plans as plan}
             <PricingChatAndMessageCardEnhanced block={plan} />
           {/each} -->
-        {/if}
+          {/if}
+        </div>
       </div>
       <div class="container mx-auto flex justify-center">
         {#if block.info_items && block.info_items.length > 0}
