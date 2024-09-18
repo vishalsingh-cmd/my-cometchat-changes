@@ -71,6 +71,7 @@
   import TestimonialSection from './testimonial-section.svelte';
   import CenterStaticBannerV03 from '$components/center-static-banner-v03.svelte';
   import ModerationFeaturesSection from './moderation-features-section.svelte';
+  import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -121,6 +122,7 @@
     'pricing-beta-hero': PricingBetaHero,
     'pricing-hero-enhancements': PricingHeroEnhancements,
     'pricing-hero-revamp': PricingHeroRevamp,
+    'pricing-hero-Q3Y24': PricingHeroQ3Y24,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
