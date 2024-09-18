@@ -16,15 +16,15 @@
 >
   <div
     class={cn(
-      'absolute -z-10 h-full rounded-2xl bg-brand-9 transition-transform duration-300',
-      isBilledAnnually && 'w-[196px] translate-x-[72px]',
-      !isBilledAnnually && 'w-[170px] -translate-x-[84px]'
+      'absolute -z-10 h-[85%] rounded-2xl bg-brand-9 transition-transform duration-300',
+      isBilledAnnually && 'w-[186px] translate-x-[72px]',
+      !isBilledAnnually && 'w-[150px] -translate-x-[90px]'
     )}
   />
   <button
     on:click={() => (isBilledAnnually = !isBilledAnnually)}
     class={cn(
-      'h-full w-full text-lg font-semibold leading-[20px]',
+      'h-full w-[250px] text-lg font-semibold leading-[20px]',
       isBilledAnnually && 'opacity-75'
     )}
     >{options[0]}

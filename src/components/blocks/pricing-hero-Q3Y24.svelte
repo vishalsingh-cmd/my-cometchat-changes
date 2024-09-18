@@ -38,7 +38,6 @@
   const updatePricingValues = (() => {
     let lastIndex: number | null = null;
     return (isBilledAnnually: boolean, index: number | null = null) => {
-      console.log('updatePricingValues', index);
       if (index !== null) {
         lastIndex = index;
       } else if (lastIndex !== null) {
@@ -67,9 +66,7 @@
       maus.push(row.body[0].value);
     });
     maus = maus;
-    // console.log('maus', maus);
     updatePricingValues(isBilledAnnualy, 1);
-    // console.log('maus', pricingValues);
   });
 </script>
 
