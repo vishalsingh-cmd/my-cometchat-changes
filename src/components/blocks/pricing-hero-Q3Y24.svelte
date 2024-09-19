@@ -101,7 +101,10 @@
     </div>
 
     <div class="relative z-50 w-full">
-      <Sticky class="md:static">
+      <Sticky
+        translateOnDesktop
+        class="mx-auto w-[1312px] data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
+      >
         <div
           class="flex w-full flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6"
         >

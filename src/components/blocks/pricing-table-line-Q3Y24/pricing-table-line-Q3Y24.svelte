@@ -4,7 +4,8 @@
   import SimpleText from './simple-text.svelte';
   import Label from './label.svelte';
   export let block;
-  let className = 'relative py-5 border-gray-6 text-[16px] leading-[21.2px] font-medium opacity-64';
+  let className =
+    'pl-4 relative py-5 border-gray-6 text-[16px] leading-[21.2px] font-medium opacity-64';
   function separateText(text: string) {
     let simpleText = '';
     let label = '';
@@ -64,7 +65,7 @@
   {/if}
   {#if block.advanced}
     {@const { simpleText, label, tooltip } = separateText(block.advanced)}
-    <td class={cn(className, 'w-[288px]  border-r')}>
+    <td class={cn(className, 'w-[288px] border-r bg-brand-5')}>
       <SimpleText {simpleText} />{#if label}
         <Label {label} />
       {/if}{#if tooltip}

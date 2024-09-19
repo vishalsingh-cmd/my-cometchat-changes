@@ -62,16 +62,26 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
             {/if}
           {/if}
-          <div class={cn('mb-8 mt-14 flex flex-col gap-2 text-2xl/tighter font-semibold')}>
-            <p class="text-2xl/snug font-semibold tracking-wide">
+          <div
+            class={cn('mb-8 mt-14 flex h-[68px] flex-col gap-2  text-2xl/tighter font-semibold')}
+          >
+            <p
+              class={cn(
+                'font-semibold tracking-wide',
+                price.startsWith('$') && 'text-2xl/snug',
+                !price.startsWith('$') && 'text-xl/normal'
+              )}
+            >
               {#if custom_price}
                 {custom_price}
               {:else if price}
                 {price}
               {/if}
-              <span class="-ml-1.5 text-md/snug font-medium opacity-64">/month</span>
+              {#if price.startsWith('$')}
+                <span class="-ml-1.5 text-md/snug font-medium opacity-64">/month</span>
+              {/if}
             </p>
-            {#if isBilledAnnually}
+            {#if isBilledAnnually && price.startsWith('$')}
               <p class="text-md/snug font-medium opacity-64">
                 {custom_price ? 'Free Forever' : 'Billed annually'}
               </p>
