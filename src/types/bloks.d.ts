@@ -1255,8 +1255,8 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   name: string;
   custom_price: string;
   description: string | RichtextStoryblok;
-  highlights: TextStoryblok[];
-  advantages: TextStoryblok[];
+  highlights1: TextStoryblok[];
+  highlights2: TextStoryblok[];
 }
 export interface PricingCardsStoryblok {
   category1: PricingHeroQ3Y24CardV1Storyblok[];

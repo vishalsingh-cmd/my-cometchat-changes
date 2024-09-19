@@ -5,29 +5,22 @@
   //   console.log('pricing table Q3y24', block);
 </script>
 
-<div class="flex w-full flex-col gap-3">
-  {#each block.data as item, index}
-    <p>{item.title}</p>
-    {@const lines = item?.subgroup}
-    <!-- {#if row.lines}
-      {@const lines = row.lines}
-      <p>{row.title}</p>
+<div class="container px-container">
+  <table class="w-[1312px] table-auto">
+    {#each block.data as item, index}
+      <tr class="border-b border-gray-6">{item.title}</tr>
+      {@const lines = item?.subgroup}
       {#each lines as line}
-        <PricingTableLineQ3Y24 block={line} />
-      {/each}
-    {:else} -->
-    <!-- {@const lines = row} -->
-    {#each lines as line}
-      {#if line.lines}
-        {@const lines = line.lines}
-        <p>{line.title}</p>
-        {#each lines as line}
+        {#if line?.lines}
+          {@const lines = line.lines}
+          <tr class="border-b border-gray-6">{line.title}</tr>
+          {#each lines as line}
+            <PricingTableLineQ3Y24 block={line} />
+          {/each}
+        {:else}
           <PricingTableLineQ3Y24 block={line} />
-        {/each}
-      {:else}
-        <PricingTableLineQ3Y24 block={line} />
-      {/if}
+        {/if}
+      {/each}
     {/each}
-    <!-- {/if} -->
-  {/each}
+  </table>
 </div>

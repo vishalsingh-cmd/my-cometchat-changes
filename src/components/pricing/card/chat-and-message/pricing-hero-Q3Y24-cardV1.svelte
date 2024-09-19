@@ -19,7 +19,7 @@
 </script>
 
 {#if block}
-  {@const { name, description, highlights, cta, advantages, custom_price, tag } = block}
+  {@const { name, description, highlights1, highlights2, cta, custom_price, tag } = block}
   <div
     class={cn(
       'h-[660px] w-full',
@@ -58,8 +58,8 @@ box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);"
                   {@html resolver.render(content)}
                 </p>
               {/each}
-              <!-- {:else}
-            <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p> -->
+            {:else}
+              <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
             {/if}
           {/if}
           <div class={cn('mb-8 mt-14 flex flex-col gap-2 text-2xl/tighter font-semibold')}>
@@ -92,9 +92,9 @@ box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);"
           <!-- <PricingRangeSlider maus={block.plans} on:value={handleRange} /> -->
         </div>
 
-        {#if highlights?.length > 0}
+        {#if highlights1?.length > 0}
           <div class="mt-10 flex flex-col gap-2">
-            {#each highlights as highlight, index}
+            {#each highlights1 as highlight, index}
               <div class="flex items-start gap-2">
                 {#if index !== 0}
                   <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
@@ -117,15 +117,15 @@ box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);"
             {/each}
           </div>
         {/if}
-        {#if advantages?.length > 0}
+        {#if highlights2?.length > 0}
           <Divider class="my-4" />
           <div class="flex flex-col gap-3">
             <div class="flex flex-col gap-2">
-              {#each advantages as advantage}
+              {#each highlights2 as highlight}
                 <div class="flex items-start gap-2">
                   <Icon icon="check" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-orange-9" />
-                  {#if typeof advantage.value != 'string' && advantage?.value?.content}
-                    {#each advantage.value.content as content}
+                  {#if typeof highlight.value != 'string' && highlight?.value?.content}
+                    {#each highlight.value.content as content}
                       <p class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-80')}>
                         {@html resolver.render(content)}
                       </p>
