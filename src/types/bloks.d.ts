@@ -1246,13 +1246,23 @@ export interface PricingHeroStoryblok {
   component: 'pricing-hero';
   [k: string]: any;
 }
+export interface PricingValue {
+  price: string;
+  isBilledAnnually: boolean;
+}
 
+export interface PricingValues {
+  Build: PricingValue;
+  Basic: PricingValue;
+  Advanced: PricingValue;
+  Enterprise: PricingValue;
+}
 export interface PricingHeroQ3Y24CardV1Storyblok {
   component: 'pricing-hero-Q3Y24-cardV1';
   cta: ButtonLinkStoryblok[1];
   tag: string;
   _uid: string;
-  name: string;
+  name: 'Build' | 'Basic' | 'Advanced' | 'Enterprise';
   custom_price: string;
   description: string | RichtextStoryblok;
   highlights1: TextStoryblok[];

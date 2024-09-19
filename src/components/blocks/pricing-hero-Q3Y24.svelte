@@ -1,12 +1,17 @@
 <script lang="ts">
   import PricingTabSwitch from './../pricing-tab-switch.svelte';
-  import type { PricingHeroQ3Y24Storyblok } from '$types/bloks';
+  import type { PricingHeroQ3Y24Storyblok, PricingValues } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
-  import { activateTable } from '$lib/stores/pricing-stores';
+  import {
+    activateTable,
+    lastSelectedMAUIndex,
+    maus,
+    pricingValues
+  } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
@@ -20,21 +25,12 @@
 
   export let block: PricingHeroQ3Y24Storyblok;
 
-  let maus: string[] = [];
-  let pricingValues: any = {
-    Build: { price: '$0', isBilledAnnually: true },
-    Basic: { price: '$124', isBilledAnnually: true },
-    Advanced: { price: '$249', isBilledAnnually: true },
-    Enterprise: { price: '$499', isBilledAnnually: true }
-  };
-
   const updatePricingValues = (() => {
-    let lastIndex: number | null = null;
     return (isBilledAnnually: boolean, index: number | null = null) => {
       if (index !== null) {
-        lastIndex = index;
-      } else if (lastIndex !== null) {
-        index = lastIndex;
+        $lastSelectedMAUIndex = index;
+      } else if ($lastSelectedMAUIndex !== null) {
+        index = $lastSelectedMAUIndex;
       } else {
         console.error('No index provided and no previous index remembered.');
         return;
@@ -43,10 +39,11 @@
       i = isBilledAnnually ? 1 : 0;
       block.mau[i].mau.tbody[index].body.forEach((col: any, index: number) => {
         if (index === 0) {
-          pricingValues['Build'].isBilledAnnually = isBilledAnnually;
+          $pricingValues['Build'].isBilledAnnually = isBilledAnnually;
           return;
         }
-        pricingValues[block.cards[0].category1[index].name] = {
+        const categoryName: keyof PricingValues = block.cards[0].category1[index].name;
+        $pricingValues[categoryName] = {
           price: col.value,
           isBilledAnnually: isBilledAnnually
         };
@@ -56,9 +53,9 @@
 
   onMount(() => {
     block.mau[0].mau.tbody.forEach((row: any) => {
-      maus.push(row.body[0].value);
+      $maus.push(row.body[0].value);
     });
-    maus = maus;
+    $maus = $maus;
     updatePricingValues(isBilledAnnualy, 1);
   });
 </script>
@@ -159,7 +156,6 @@
               on:change={() => updatePricingValues(isBilledAnnualy)}
             />
             <PricingRangeSliderV2
-              {maus}
               on:index={(e) => {
                 updatePricingValues(isBilledAnnualy, e.detail);
               }}
@@ -175,8 +171,7 @@
         >
           {#if $activateTable}
             {#each block.cards[0].category1 ?? [] as plan}
-              <PricingHeroQ3Y24CardV1 block={plan} value={pricingValues[plan.name]} />
-              <!-- <PricingCardVideoAndVoiceEnhanced block={plan} /> -->
+              <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} />
             {/each}
           {:else}
             {#each block.cards[0].category2 ?? [] as plan}

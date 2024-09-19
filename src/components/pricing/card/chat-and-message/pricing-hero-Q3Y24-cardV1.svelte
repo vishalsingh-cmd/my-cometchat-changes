@@ -30,7 +30,7 @@
     style="background: {!tag
       ? 'rgba(250, 250, 255, 0.09)'
       : 'linear-gradient(180deg, rgba(104, 83, 214, 0.06) 0%, rgba(104, 83, 214, 0.006) 100%), rgba(250, 250, 255, 0.09)'};
-box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);"
+box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
   >
     {#if tag}
       <p
