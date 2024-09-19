@@ -19,7 +19,7 @@
 </script>
 
 {#if block}
-  {@const { name, description, highlights1, highlights2, cta, custom_price, tag } = block}
+  {@const { name, description, highlights, cta, custom_price, tag } = block}
   <div
     class={cn(
       'h-[660px] w-full',
@@ -99,26 +99,20 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               class="w-full self-start md:w-fit">{cta[0].label}</Button
             >
           {/if}
-          <!-- <PricingRangeSlider maus={block.plans} on:value={handleRange} /> -->
         </div>
 
-        {#if highlights1?.length > 0}
+        {#if highlights[0]?.highlights1?.length > 0}
           <div class="mt-10 flex flex-col gap-2">
-            {#each highlights1 as highlight, index}
+            {#if highlights[0]?.title}
+              <p class="font-semibold' mb-1 text-lg/tight">{highlights[0]?.title}</p>
+            {/if}
+            {#each highlights[0]?.highlights1 as highlight, index}
               <div class="flex items-start gap-2">
-                {#if index !== 0}
-                  <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-                {/if}
+                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
                 {#if typeof highlight.value != 'string' && highlight?.value?.content}
                   {#each highlight.value.content as content}
                     <!-- <p class="text-lg/tight font-semibold">Highlights</p> -->
-                    <p
-                      class={cn(
-                        paragraph,
-                        index == 0 && 'mb-1 text-lg/tight font-semibold',
-                        index !== 0 && 'text-md/snug font-medium tracking-wide opacity-80 '
-                      )}
-                    >
+                    <p class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-80 ')}>
                       {@html resolver.render(content)}
                     </p>
                   {/each}
@@ -127,11 +121,11 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             {/each}
           </div>
         {/if}
-        {#if highlights2?.length > 0}
+        {#if highlights[0]?.highlights2?.length > 0}
           <Divider class="my-4" />
           <div class="flex flex-col gap-3">
             <div class="flex flex-col gap-2">
-              {#each highlights2 as highlight}
+              {#each highlights[0]?.highlights2 as highlight}
                 <div class="flex items-start gap-2">
                   <Icon icon="check" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-orange-9" />
                   {#if typeof highlight.value != 'string' && highlight?.value?.content}

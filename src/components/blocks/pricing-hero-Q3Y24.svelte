@@ -21,10 +21,12 @@
   import { onMount } from 'svelte';
   import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
   import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
+  import Button from '$components/buttons/button.svelte';
   $activateTable = true;
 
   export let block: PricingHeroQ3Y24Storyblok;
 
+  let localMaus: string[] = [];
   const updatePricingValues = (() => {
     return (isBilledAnnually: boolean, index: number | null = null) => {
       if (index !== null) {
@@ -55,7 +57,7 @@
     block.mau[0].mau.tbody.forEach((row: any) => {
       $maus.push(row.body[0].value);
     });
-    $maus = $maus;
+    localMaus = $maus;
     updatePricingValues($isBilledAnnualy, 1);
   });
 </script>
@@ -103,7 +105,7 @@
     <div class="relative z-50 w-full">
       <Sticky
         translateOnDesktop
-        class="mx-auto w-[1312px] data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
+        class="mx-auto data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
       >
         <div
           class="flex w-full flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6"
@@ -151,11 +153,12 @@
           </PricingTabSwitch>
         </div>
       </Sticky>
-      <div class="container mx-auto mb-12 mt-4 flex flex-col">
+      <div class="container mx-auto mb-12 mt-4 flex flex-col items-center">
         {#if $activateTable}
           <div class="mb-[61px] mt-8 flex h-[110px] w-full items-center justify-around">
             <PricingPeriodToggle on:change={() => updatePricingValues($isBilledAnnualy)} />
             <PricingRangeSliderV2
+              maus={localMaus}
               on:index={(e) => {
                 updatePricingValues($isBilledAnnualy, e.detail);
               }}
@@ -179,6 +182,15 @@
             {/each}
           {/if}
         </div>
+        <Button
+          variant="secondary"
+          size="sm"
+          class="mt-10 h-10 w-32"
+          on:click={() => {
+            let table = document.getElementById('pricing-table-Q3Y24');
+            table?.scrollIntoView({ behavior: 'smooth' });
+          }}>See all features</Button
+        >
       </div>
       <div class="container mx-auto flex justify-center">
         {#if block.info_items && block.info_items.length > 0}

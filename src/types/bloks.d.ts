@@ -1257,6 +1257,13 @@ export interface PricingValues {
   Advanced: PricingValue;
   Enterprise: PricingValue;
 }
+export interface PricingHighlightsQ3Y24Storyblok {
+  component: 'pricing-highlights-Q3Y24';
+  _uid: string;
+  title: string;
+  highlights1: TextStoryblok[];
+  highlights2: TextStoryblok[];
+}
 export interface PricingHeroQ3Y24CardV1Storyblok {
   component: 'pricing-hero-Q3Y24-cardV1';
   cta: ButtonLinkStoryblok[1];
@@ -1265,8 +1272,7 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   name: 'Build' | 'Basic' | 'Advanced' | 'Enterprise';
   custom_price: string;
   description: string | RichtextStoryblok;
-  highlights1: TextStoryblok[];
-  highlights2: TextStoryblok[];
+  highlights: PricingHighlightsQ3Y24Storyblok[1];
 }
 export interface PricingCardsStoryblok {
   category1: PricingHeroQ3Y24CardV1Storyblok[];

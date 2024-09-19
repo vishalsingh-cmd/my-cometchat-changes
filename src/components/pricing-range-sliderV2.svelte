@@ -1,16 +1,15 @@
 <script lang="ts">
   import { createEventDispatcher, onMount } from 'svelte';
-  import { maus } from '$lib/stores/pricing-stores';
   let selectedIndex = 0;
 
+  export let maus: string[] = [];
   onMount(() => {
     setTimeout(() => {
       selectedIndex = 1;
     }, 100);
   });
-
   // Calculate the percentage of progress
-  $: progress = (selectedIndex / ($maus.length - 1)) * 100;
+  $: progress = (selectedIndex / (maus.length - 1)) * 100;
   // Dynamically update the gradient based on the progress
   $: gradient = `linear-gradient(to right, #6853D6 0%, #9384E1 ${progress}%, #353535 ${progress}%)`;
 
@@ -18,7 +17,7 @@
   $: dispatch('index', selectedIndex);
 
   // Calculate the number of steps
-  $: steps = $maus.length - 1;
+  $: steps = maus.length - 1;
 
   // Create the vertical line indicators
   $: lines = `repeating-linear-gradient(to right, #ffffff30, #ffffff30 1px, transparent 1px, transparent ${
@@ -40,8 +39,8 @@
     bind:value={selectedIndex}
   />
   <div class="mt-[14px] flex items-center justify-between">
-    {#each $maus as mau, index}
-      {#if index !== $maus.length - 1}
+    {#each maus as mau, index}
+      {#if index !== maus.length - 1}
         <p class="ml-2 text-md/tight font-medium opacity-64">
           {mau}
         </p>
@@ -55,7 +54,7 @@
 </div>
 
 <style>
-  input[type='range'] {
+  /* input[type='range'] {
     --thumb-color: white;
     --thumb-border-color: #ccc;
     --slider-bg-gradient: linear-gradient(to right, #8a2be2, #4b0082);
@@ -66,7 +65,7 @@
       transparent 1px,
       transparent 5%
     );
-  }
+  } */
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;
