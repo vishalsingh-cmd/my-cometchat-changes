@@ -9,6 +9,8 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
   import Button from '$components/buttons/button.svelte';
+  import { paragraph } from '$components/rich-text/rich-text-store';
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   export const getPricingPlanName = (
     story:
@@ -69,7 +71,21 @@
               {#each highlights as highlight}
                 <div class="flex items-start gap-2">
                   <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
-                  <p class="text-lg/snug font-medium tracking-wide opacity-64">{highlight.value}</p>
+                  {#if highlight.value}
+                    {#if typeof highlight.value != 'string' && highlight.value.content}
+                      {#each highlight.value.content as content}
+                        <p
+                          class={cn(paragraph, 'text-lg/snug font-medium tracking-wide opacity-64')}
+                        >
+                          {@html resolver.render(content)}
+                        </p>
+                      {/each}
+                    {:else}
+                      <p class="text-lg/snug font-medium tracking-wide opacity-64">
+                        {highlight.value}
+                      </p>
+                    {/if}
+                  {/if}
                 </div>
               {/each}
             {/if}
