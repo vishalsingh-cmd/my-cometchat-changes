@@ -6,7 +6,7 @@
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
-  import { activePricingTab } from '$lib/stores/pricing-stores';
+  import { activateTable } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
@@ -15,15 +15,8 @@
   import { onMount } from 'svelte';
   import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
   import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
-  let isActive = true;
+  $activateTable = true;
   let isBilledAnnualy = true;
-  $: ischatActive = isActive ? 'chat' : 'voice';
-
-  $: if (ischatActive === 'chat') {
-    $activePricingTab = 1;
-  } else {
-    $activePricingTab = 0;
-  }
 
   export let block: PricingHeroQ3Y24Storyblok;
 
@@ -117,9 +110,9 @@
         >
           <PricingTabSwitch
             id={0}
-            isActive={ischatActive === 'chat'}
+            isActive={$activateTable}
             on:click={() => {
-              isActive = true;
+              $activateTable = true;
             }}
           >
             <div class="group flex flex-row items-center justify-center gap-4 text-lg">
@@ -128,7 +121,7 @@
                 size="xs"
                 class={cn(
                   'flex-shrink-0 text-brand-9',
-                  ischatActive === 'chat' ? 'opacity-100' : 'opacity-50',
+                  $activateTable ? 'opacity-100' : 'opacity-50',
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
@@ -138,9 +131,9 @@
 
           <PricingTabSwitch
             id={1}
-            isActive={ischatActive === 'voice'}
+            isActive={!$activateTable}
             on:click={() => {
-              isActive = false;
+              $activateTable = false;
             }}
           >
             <div class="group flex flex-row items-center justify-center gap-4 text-lg">
@@ -149,7 +142,7 @@
                 size="xs"
                 class={cn(
                   'flex-shrink-0 text-brand-9',
-                  ischatActive === 'voice' ? 'opacity-100' : 'opacity-50',
+                  !$activateTable ? 'opacity-100' : 'opacity-50',
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
               />
@@ -159,7 +152,7 @@
         </div>
       </Sticky>
       <div class="container mx-auto mb-12 mt-4 flex flex-col">
-        {#if isActive}
+        {#if $activateTable}
           <div class="mb-[61px] mt-8 flex h-[110px] w-full items-center justify-around">
             <PricingPeriodToggle
               bind:isBilledAnnually={isBilledAnnualy}
@@ -176,11 +169,11 @@
         <div
           class={cn(
             'grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-            isActive && 'h-[700px] items-end xl:grid-cols-4',
-            !isActive && 'xl:grid-cols-3'
+            $activateTable && 'h-[700px] items-end xl:grid-cols-4',
+            !$activateTable && 'xl:grid-cols-3'
           )}
         >
-          {#if isActive}
+          {#if $activateTable}
             {#each block.cards[0].category1 ?? [] as plan}
               <PricingHeroQ3Y24CardV1 block={plan} value={pricingValues[plan.name]} />
               <!-- <PricingCardVideoAndVoiceEnhanced block={plan} /> -->
