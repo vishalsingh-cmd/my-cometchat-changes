@@ -10,7 +10,8 @@
     activateTable,
     lastSelectedMAUIndex,
     maus,
-    pricingValues
+    pricingValues,
+    isBilledAnnualy
   } from '$lib/stores/pricing-stores';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
@@ -21,7 +22,6 @@
   import PricingBackgroundV2 from '$components/pricing/hero/pricing-backgroundV2.svelte';
   import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   $activateTable = true;
-  let isBilledAnnualy = true;
 
   export let block: PricingHeroQ3Y24Storyblok;
 
@@ -56,7 +56,7 @@
       $maus.push(row.body[0].value);
     });
     $maus = $maus;
-    updatePricingValues(isBilledAnnualy, 1);
+    updatePricingValues($isBilledAnnualy, 1);
   });
 </script>
 
@@ -151,13 +151,10 @@
       <div class="container mx-auto mb-12 mt-4 flex flex-col">
         {#if $activateTable}
           <div class="mb-[61px] mt-8 flex h-[110px] w-full items-center justify-around">
-            <PricingPeriodToggle
-              bind:isBilledAnnually={isBilledAnnualy}
-              on:change={() => updatePricingValues(isBilledAnnualy)}
-            />
+            <PricingPeriodToggle on:change={() => updatePricingValues($isBilledAnnualy)} />
             <PricingRangeSliderV2
               on:index={(e) => {
-                updatePricingValues(isBilledAnnualy, e.detail);
+                updatePricingValues($isBilledAnnualy, e.detail);
               }}
             />
           </div>

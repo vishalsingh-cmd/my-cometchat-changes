@@ -14,3 +14,5 @@ export const pricingValues = writable<PricingValues>({
 export const maus = writable<string[]>([]);
 
 export const lastSelectedMAUIndex = writable<number>(1);
+
+export const isBilledAnnualy = writable<boolean>(true);
