@@ -22,7 +22,7 @@
   {@const { name, description, highlights, cta, custom_price, tag } = block}
   <div
     class={cn(
-      'h-[660px] w-full',
+      'w-full md:h-[660px]',
       tag && 'rounded-b-3xl border border-brand-9',
       !tag && 'rounded-3xl border border-gray-9',
       'bg-brand-12/[0.03] backdrop-blur-[30px]'

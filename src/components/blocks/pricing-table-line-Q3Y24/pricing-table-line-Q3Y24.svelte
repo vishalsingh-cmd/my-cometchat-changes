@@ -11,13 +11,13 @@
     let label = '';
     let tooltip = '';
     for (let i = 0; i < text.length; i++) {
-      if (text[i] === '[') {
-        for (i++; text[i] !== ']'; i++) {
+      if (text[i] === '{') {
+        for (i++; text[i] !== '}'; i++) {
           tooltip += text[i];
         }
         i++;
-      } else if (text[i] === '(') {
-        for (i++; text[i] !== ')'; i++) {
+      } else if (text[i] === '[') {
+        for (i++; text[i] !== ']'; i++) {
           label += text[i];
         }
         i++;

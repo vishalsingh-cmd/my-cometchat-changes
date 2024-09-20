@@ -54,10 +54,11 @@
   })();
 
   onMount(() => {
+    localMaus = [];
     block.mau[0].mau.tbody.forEach((row: any) => {
-      $maus.push(row.body[0].value);
+      localMaus.push(row.body[0].value);
     });
-    localMaus = $maus;
+    $maus = localMaus;
     updatePricingValues($isBilledAnnualy, 1);
   });
 </script>
@@ -66,8 +67,7 @@
   <section
     data-theme="dark"
     use:storyblokEditable={block}
-    class="relative pt-[100px] md:pt-[148px]"
-    style="background-image: url();"
+    class="container relative mx-auto w-full px-container pt-[100px] md:pt-[148px]"
   >
     <div class="absolute left-0 top-0 h-full w-full overflow-hidden">
       <PricingBackgroundV2 />
@@ -155,10 +155,12 @@
       </Sticky>
       <div class="container mx-auto mb-12 mt-4 flex flex-col items-center">
         {#if $activateTable}
-          <div class="mb-[61px] mt-8 flex h-[110px] w-full items-center justify-around">
+          <div
+            class="mb-[61px] mt-8 flex w-full flex-col items-center justify-around lg:h-[110px] lg:flex-row"
+          >
             <PricingPeriodToggle on:change={() => updatePricingValues($isBilledAnnualy)} />
             <PricingRangeSliderV2
-              maus={localMaus}
+              maus={$maus}
               on:index={(e) => {
                 updatePricingValues($isBilledAnnualy, e.detail);
               }}
@@ -167,8 +169,8 @@
         {/if}
         <div
           class={cn(
-            'grid w-full grid-cols-1 gap-5 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-            $activateTable && 'h-[700px] items-end xl:grid-cols-4',
+            'grid w-full grid-cols-1 gap-16 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
+            $activateTable && 'items-end xl:grid-cols-4',
             !$activateTable && 'xl:grid-cols-3'
           )}
         >
@@ -182,15 +184,19 @@
             {/each}
           {/if}
         </div>
-        <Button
-          variant="secondary"
-          size="sm"
-          class="mt-10 h-10 w-32"
-          on:click={() => {
-            let table = document.getElementById('pricing-table-Q3Y24');
-            table?.scrollIntoView({ behavior: 'smooth' });
-          }}>See all features</Button
-        >
+        {#if $activateTable}
+          <Button
+            variant="secondary"
+            size="sm"
+            class="mt-10 h-10 w-32"
+            on:click={() => {
+              let table = document.getElementById('pricing-table-Q3Y24');
+              table?.scrollIntoView({ behavior: 'smooth' });
+              let miniTable = document.getElementById('mini-pricing-table-Q3Y24');
+              miniTable?.scrollIntoView({ behavior: 'smooth' });
+            }}>See all features</Button
+          >
+        {/if}
       </div>
       <div class="container mx-auto flex justify-center">
         {#if block.info_items && block.info_items.length > 0}

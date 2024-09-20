@@ -25,8 +25,8 @@
   }%)`;
 </script>
 
-<div class="flex h-full w-[640px] flex-col">
-  <p class="mb-6 text-center text-xl font-medium leading-[27px]">
+<div class="mt-10 flex h-full flex-col lg:mt-0 lg:w-[640px]">
+  <p class="mb-6 text-center font-medium leading-[27px] md:text-xl">
     How many monthly users do you need?
   </p>
   <input
@@ -41,12 +41,12 @@
   <div class="mt-[14px] flex items-center justify-between">
     {#each maus as mau, index}
       {#if index !== maus.length - 1}
-        <p class="ml-2 text-md/tight font-medium opacity-64">
+        <p class="ml-2 text-sm opacity-64 md:text-md/tight md:font-medium">
           {mau}
         </p>
       {:else}
-        <p class="text-md/tight font-medium opacity-64">
-          {mau}+
+        <p class="relaitve text-sm opacity-64 md:text-md/tight md:font-medium">
+          {mau} <span class="absolute text-xs">+</span>
         </p>
       {/if}
     {/each}
@@ -54,7 +54,7 @@
 </div>
 
 <style>
-  /* input[type='range'] {
+  input[type='range'] {
     --thumb-color: white;
     --thumb-border-color: #ccc;
     --slider-bg-gradient: linear-gradient(to right, #8a2be2, #4b0082);
@@ -65,7 +65,7 @@
       transparent 1px,
       transparent 5%
     );
-  } */
+  }
 
   input[type='range']::-webkit-slider-thumb {
     -webkit-appearance: none;

@@ -68,7 +68,7 @@
     {disabled}
     {...$$restProps}
   >
-    {#if options[selectedOption].cometIllustration}
+    {#if options[selectedOption]?.cometIllustration}
       <CometIllustration
         class="inline-block scale-[1.4]"
         illustration={options[selectedOption].cometIllustration ?? 'community'}
@@ -76,7 +76,7 @@
       />
     {/if}
     <span class="text-md font-semibold leading-tight tracking-wide">
-      {options[selectedOption].label}
+      {options[selectedOption]?.label}
     </span>
     <Icon
       class={cn(
