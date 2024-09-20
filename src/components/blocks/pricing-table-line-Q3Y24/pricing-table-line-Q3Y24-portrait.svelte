@@ -39,7 +39,7 @@
         <Label {label} />
       {/if}
       {#if tooltip}
-        <Tooltip {tooltip} icon="info-circle" class="right-2" />
+        <Tooltip {tooltip} icon="info-circle" class="absolute -top-2 right-2" />
       {/if}
     </td>
   {/if}

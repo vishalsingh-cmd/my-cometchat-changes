@@ -88,7 +88,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             {/if}
           </div>
 
-          {#if cta[0].link}
+          {#if cta[0].link && price.startsWith('$')}
             {@const { href, target, rel } = getAnchorFromCmsLink(cta[0].link)}
             <Button
               as="a"
@@ -97,6 +97,16 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               {target}
               {rel}
               class="w-full self-start md:w-fit">{cta[0].label}</Button
+            >
+          {:else}
+            {@const { href, target, rel } = getAnchorFromCmsLink(cta[1].link)}
+            <Button
+              as="a"
+              variant={cta[0].variant}
+              {href}
+              {target}
+              {rel}
+              class="w-full self-start md:w-fit">{cta[1].label}</Button
             >
           {/if}
         </div>
