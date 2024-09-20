@@ -5,13 +5,13 @@
   import tippy from 'tippy.js';
   export let tooltip;
   export let icon;
-  let className = '';
+  let className = 'relative top-0.5 ml-0.5';
   export { className as class };
 </script>
 
 <div
   class={cn(
-    'absolute top-0 ml-2 inline-flex h-full w-5 cursor-help items-center self-center hover:text-brand-9',
+    'inline-flex h-full w-5 cursor-help items-center self-center hover:text-brand-9',
     className
   )}
   use:tippy={{

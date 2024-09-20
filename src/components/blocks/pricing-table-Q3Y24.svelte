@@ -39,7 +39,6 @@
   });
   let selectedOption = 2;
   onMount(() => {
-    console.log(plans);
     convertedMaus = convertMAUSToNumber($maus);
   });
 </script>
@@ -50,14 +49,12 @@
     <div class="hidden px-container md:block" id="pricing-table-Q3Y24">
       <Sticky
         translateOnDesktop
-        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:w-[1312px] xl:data-[sticky]:border-b-0"
+        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:w-[1382px] xl:data-[sticky]:border-b-0"
       >
         <div class={cn('grid h-[131px] grid-flow-col border-b border-gray-6 bg-brand-4')}>
           <div
             class={cn(
-              'flex min-w-[215px] items-center border-b border-r border-gray-6 pl-4 text-2xl leading-[33.92px]',
-              $pricingValues['Basic'].price.startsWith('$') && 'lg:w-[345px]',
-              !$pricingValues['Basic'].price.startsWith('$') && 'w-[342px]'
+              'flex min-w-[401px] items-center border-b border-r border-gray-6 pl-4 text-2xl leading-[33.92px]'
             )}
           >
             Usage
@@ -65,14 +62,14 @@
           {#each Object.keys($pricingValues) as plan, index}
             <div
               class={cn(
-                'relative flex min-w-[150px] flex-col items-center justify-center border-b border-gray-6 lg:w-[242px]',
+                'relative flex min-w-[246px] flex-col items-center justify-center border-b border-gray-6 lg:w-[246px]',
                 index != Object.keys($pricingValues).length - 1 && 'border-r',
                 index == 2 && 'bg-brand-5'
               )}
             >
               {#if index == 2}
                 <p
-                  class="absolute -top-10 flex h-10 w-full items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 lg:w-[241px]"
+                  class="absolute -top-10 flex h-10 w-full items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 lg:w-[246px]"
                 >
                   Most popular
                 </p>
@@ -103,7 +100,7 @@
                 'sticky top-6 z-20 border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px]',
                 $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[88px]',
                 $scrollDirection !== 'up' || ($page.route.id?.startsWith('/lp/') && 'top-6')
-              )}><td class="py-[26px] pl-4">{item.title}</td></tr
+              )}><td class="border-r border-gray-6 py-[26px] pl-4">{item.title}</td></tr
             >
           {/if}
           {#if index == 0}
@@ -130,7 +127,7 @@
                       'top-[144px]'
                   )}
                 >
-                  <td class="py-3 pl-4">{line.title}</td></tr
+                  <td class="border-r border-gray-6 py-3 pl-4">{line.title}</td></tr
                 >
               {/if}
               {#each lines as line}
@@ -143,6 +140,7 @@
         {/each}
       </table>
     </div>
+
     <!-- mobile layout -->
     <div class="px-container md:hidden" id="mini-pricing-table-Q3Y24">
       <Sticky

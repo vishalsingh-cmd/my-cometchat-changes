@@ -5,7 +5,7 @@
   import Label from './label.svelte';
   export let block;
   let className =
-    'pl-4 relative py-5 border-gray-6 text-[16px] leading-[21.2px] font-medium opacity-64';
+    'pl-4 relative min-w-[246px] py-5 px-2 border-gray-6 text-[16px] leading-[21.2px] font-medium opacity-64';
   function separateText(text: string) {
     let simpleText = '';
     let label = '';
@@ -32,12 +32,12 @@
 <tr class="border-b border-gray-6 text-center">
   {#if block.name_and_description}
     {@const { simpleText, label, tooltip } = separateText(block.name_and_description)}
-    <td class={cn(className, 'w-[400px] border-r text-left')}>
+    <td class={cn(className, 'min-w-[400px] border-r text-left')}>
       {simpleText}{#if label}
         <Label {label} />
       {/if}
       {#if tooltip}
-        <Tooltip {tooltip} icon="info-circle" class="right-2" />
+        <Tooltip {tooltip} icon="info-circle" class="absolute right-2 top-0" />
       {/if}
     </td>
   {/if}
