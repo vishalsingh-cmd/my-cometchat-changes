@@ -101,7 +101,7 @@
             <tr
               class={cn(
                 'sticky top-6 z-20 border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px]',
-                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-top-nav',
+                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[88px]',
                 $scrollDirection !== 'up' || ($page.route.id?.startsWith('/lp/') && 'top-6')
               )}><td class="py-[26px] pl-4">{item.title}</td></tr
             >
@@ -124,7 +124,10 @@
               {#if line.title}
                 <tr
                   class={cn(
-                    'sticky top-20 z-20 border-b border-gray-6 bg-brand-4 p-5 text-lg leading-[21.6px]'
+                    'sticky top-20 z-20 border-b border-gray-6 bg-brand-4 p-5 text-lg leading-[21.6px]',
+                    $scrollDirection === 'up' &&
+                      !$page.route.id?.startsWith('/lp/') &&
+                      'top-[144px]'
                   )}
                 >
                   <td class="py-3 pl-4">{line.title}</td></tr
@@ -180,9 +183,10 @@
           {#if item.title}
             <tr
               class={cn(
-                'sticky top-[103px] z-20 w-[232px] border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px] md:top-6',
-                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-top-nav',
-                $scrollDirection !== 'up' || ($page.route.id?.startsWith('/lp/') && 'top-6')
+                'sticky top-[37px] z-20 w-[232px] border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px] md:top-6',
+                $scrollDirection === 'up' &&
+                  !$page.route.id?.startsWith('/lp/') &&
+                  'top-[103px] lg:top-top-nav'
               )}><td class="py-[26px] pl-4">{item.title}</td></tr
             >
           {/if}
@@ -206,7 +210,10 @@
               {#if line.title}
                 <div
                   class={cn(
-                    'sticky top-[156px] z-20 w-full border-b border-gray-6 leading-[21.6px] md:top-20 md:text-lg'
+                    'sticky top-[92px] z-20 w-full border-b border-gray-6 leading-[21.6px] md:top-20 md:text-lg',
+                    $scrollDirection === 'up' &&
+                      !$page.route.id?.startsWith('/lp/') &&
+                      'top-[156px] lg:top-top-nav'
                   )}
                 >
                   <td class="w-[232px] bg-brand-4 py-3 pl-4">{line.title}</td>
