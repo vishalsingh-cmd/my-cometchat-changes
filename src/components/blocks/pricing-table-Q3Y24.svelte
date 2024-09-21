@@ -69,7 +69,7 @@
             >
               {#if index == 2}
                 <p
-                  class="absolute -top-10 flex h-10 w-full items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 lg:w-[246px]"
+                  class="absolute -left-[1px] -top-10 flex h-10 w-[101%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640] lg:w-[247px]"
                 >
                   Most popular
                 </p>

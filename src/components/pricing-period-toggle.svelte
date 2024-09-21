@@ -23,18 +23,19 @@
   <button
     on:click={() => ($isBilledAnnualy = !$isBilledAnnualy)}
     class={cn(
-      'h-full w-[250px] text-lg font-semibold leading-[20px]',
+      'h-full w-[250px] text-lg font-[640] leading-[20px]',
       $isBilledAnnualy && 'opacity-75'
     )}
     >{options[0]}
   </button>
   <button
     on:click={() => ($isBilledAnnualy = !$isBilledAnnualy)}
-    class={cn(
-      'h-full w-full text-lg font-semibold leading-[20px]',
-      !$isBilledAnnualy && 'opacity-75'
-    )}
+    class={cn('h-full w-full text-lg font-[640] leading-[20px]', !$isBilledAnnualy && 'opacity-75')}
     >{options[1]}
-    <p class="inline rounded-lg border p-1 text-xs font-semibold leading-[16.8px]">Save 20%</p>
+    <p
+      class="inline rounded-lg border-[2px] border-[#FAFAFF33] p-1 text-xs font-semibold leading-[16.8px]"
+    >
+      Save 20%
+    </p>
   </button>
 </div>

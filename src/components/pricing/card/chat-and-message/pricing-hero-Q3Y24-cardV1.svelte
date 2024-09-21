@@ -1,6 +1,5 @@
 <script lang="ts">
   import Button from '$components/buttons/button.svelte';
-  import Divider from '$components/divider.svelte';
   import Icon from '$components/icon/icon.svelte';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   import { paragraph } from '$components/rich-text/rich-text-store';
@@ -22,9 +21,9 @@
   {@const { name, description, highlights, cta, custom_price, tag } = block}
   <div
     class={cn(
-      'w-full md:h-[660px]',
-      tag && 'rounded-b-3xl border border-brand-9',
-      !tag && 'rounded-3xl border border-gray-9',
+      'w-full md:h-full',
+      tag && 'rounded-b-3xl border border-brand-9/64',
+      !tag && 'rounded-3xl border border-gray-9/64',
       'bg-brand-12/[0.03] backdrop-blur-[30px]'
     )}
     style="background: {!tag
@@ -34,7 +33,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
   >
     {#if tag}
       <p
-        class="absolute -top-10 flex h-10 w-full items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9"
+        class="absolute -left-[1px] -top-10 flex h-10 w-[100.5%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
       >
         {tag}
       </p>{/if}
@@ -63,7 +62,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             {/if}
           {/if}
           <div
-            class={cn('mb-8 mt-14 flex h-[68px] flex-col gap-2  text-2xl/tighter font-semibold')}
+            class={cn('mb-8 mt-10 flex h-[68px] flex-col gap-2  text-2xl/tighter font-semibold')}
           >
             <p
               class={cn(
@@ -114,7 +113,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
         {#if highlights[0]?.highlights1?.length > 0}
           <div class="mt-10 flex flex-col gap-2">
             {#if highlights[0]?.title}
-              <p class="font-semibold' mb-1 text-lg/tight">{highlights[0]?.title}</p>
+              <p class="mb-1 text-lg/tight font-semibold">{highlights[0]?.title}</p>
             {/if}
             {#each highlights[0]?.highlights1 as highlight, index}
               <div class="flex items-start gap-2">
@@ -132,8 +131,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
           </div>
         {/if}
         {#if highlights[0]?.highlights2?.length > 0}
-          <Divider class="my-4" />
-          <div class="flex flex-col gap-3">
+          <div class="mt-4 flex flex-col gap-3 border-t border-gray-6 pt-4">
             <div class="flex flex-col gap-2">
               {#each highlights[0]?.highlights2 as highlight}
                 <div class="flex items-start gap-2">
