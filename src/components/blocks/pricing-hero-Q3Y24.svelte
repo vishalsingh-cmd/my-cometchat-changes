@@ -64,20 +64,14 @@
 </script>
 
 {#if block}
-  <section
-    data-theme="dark"
-    use:storyblokEditable={block}
-    class="container relative mx-auto w-full px-container pt-[100px] md:pt-[148px]"
-  >
+  <section data-theme="dark" use:storyblokEditable={block} class="w-full pt-[100px]">
     <div class="absolute left-0 top-0 h-full w-full overflow-hidden">
       <PricingBackgroundV2 />
     </div>
     <div class="relative z-50 w-full">
       <div class="container z-50 mx-auto">
-        <div
-          class="container mx-auto mb-8 flex flex-col items-start justify-center gap-8 px-container md:items-center"
-        >
-          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-5">
+        <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
+          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-2">
             <h1 class="text-4xl">{block.title}</h1>
             {#if block.description}
               {#if typeof block.description != 'string' && block.description.content}
@@ -103,12 +97,9 @@
     </div>
 
     <div class="relative z-50 w-full">
-      <Sticky
-        translateOnDesktop
-        class="mx-auto data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
-      >
+      <Sticky class="md:static">
         <div
-          class="flex w-full flex-row items-center justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6"
+          class="flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
         >
           <PricingTabSwitch
             id={0}
@@ -117,12 +108,14 @@
               $activateTable = true;
             }}
           >
-            <div class="group flex flex-row items-center justify-center gap-4 text-lg">
+            <div
+              class="group flex flex-row items-center justify-center gap-4 text-lg lg:text-xl lg:font-[640]"
+            >
               <Icon
                 icon="chat-and-message"
                 size="xs"
                 class={cn(
-                  'flex-shrink-0 text-brand-9',
+                  'mb-2 flex-shrink-0 text-brand-9',
                   $activateTable ? 'opacity-100' : 'opacity-50',
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
@@ -138,12 +131,14 @@
               $activateTable = false;
             }}
           >
-            <div class="group flex flex-row items-center justify-center gap-4 text-lg">
+            <div
+              class="group flex flex-row items-center justify-center gap-4 text-lg lg:text-xl lg:font-[640]"
+            >
               <Icon
                 icon="voice-and-calls"
                 size="xs"
                 class={cn(
-                  'flex-shrink-0 text-brand-9',
+                  'mb-2 flex-shrink-0 text-brand-9',
                   !$activateTable ? 'opacity-100' : 'opacity-50',
                   'transition-all duration-0 ease-in-out group-hover:opacity-100'
                 )}
