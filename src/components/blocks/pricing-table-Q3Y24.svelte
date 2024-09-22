@@ -46,15 +46,15 @@
 {#if $activateTable}
   <div class="container mx-auto">
     <TitleSection block={block.title[0]} />
-    <div class="hidden px-container md:block" id="pricing-table-Q3Y24">
+    <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
       <Sticky
         translateOnDesktop
-        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:w-[1382px] xl:data-[sticky]:border-b-0"
+        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:w-[1392px] xl:data-[sticky]:border-b-0"
       >
-        <div class={cn('grid h-[131px] grid-flow-col border-b border-gray-6 bg-brand-4')}>
+        <div class={cn('flex h-[131px] border-b border-gray-4 bg-[#0F0B1E]')}>
           <div
             class={cn(
-              'flex min-w-[401px] items-center border-b border-r border-gray-6 pl-4 text-2xl leading-[33.92px]'
+              'flex min-w-[440px] max-w-[440px] items-center border-b border-r border-gray-4 pl-4 text-2xl leading-[33.92px]'
             )}
           >
             Usage
@@ -62,45 +62,47 @@
           {#each Object.keys($pricingValues) as plan, index}
             <div
               class={cn(
-                'relative flex min-w-[246px] flex-col items-center justify-center border-b border-gray-6 lg:w-[246px]',
+                'relative flex h-full min-w-[238px] max-w-[238px] flex-col items-center justify-start gap-0  border-b border-gray-4 pt-8',
                 index != Object.keys($pricingValues).length - 1 && 'border-r',
-                index == 2 && 'bg-brand-5'
+                index == 2 && 'bg-[#6852D61A]'
               )}
             >
               {#if index == 2}
                 <p
-                  class="absolute -left-[1px] -top-10 flex h-10 w-[101%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640] lg:w-[247px]"
+                  class="absolute -top-10 flex h-10 w-[100%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
                 >
                   Most popular
                 </p>
               {/if}
               <p class="text-xl/normal font-semibold tracking-wide">{plan}</p>
               <p class="px-4 text-center text-lg/normal font-medium tracking-wide opacity-74">
-                {$pricingValues[plan].price}
-                {#if $pricingValues[plan].price.startsWith('$')}
-                  <span class="-ml-1.5">/month</span>
+                {#if plan !== 'Build'}
+                  {$pricingValues[plan].price}
+                {:else}
+                  Free Forever
+                {/if}
+                {#if $pricingValues[plan].price.startsWith('$') && plan !== 'Build'}
+                  <span class="-ml-[4px]">/month</span>
                 {/if}
               </p>
-              <p class="text-lg/tight font-medium tracking-wide opacity-74">
-                {$isBilledAnnualy && $pricingValues[plan].price.startsWith('$')
-                  ? index == 0
-                    ? 'Free Forever'
-                    : 'Billed annualy'
+              <p class="text-md font-medium tracking-wide opacity-74">
+                {$isBilledAnnualy && $pricingValues[plan].price.startsWith('$') && plan !== 'Build'
+                  ? 'Billed annually'
                   : ''}
               </p>
             </div>
           {/each}
         </div>
       </Sticky>
-      <table class="table-auto lg:w-[1312px]">
+      <table class="lg:maxw-[1392px] table-auto">
         {#each block.data as item, index}
           {#if item.title}
             <tr
               class={cn(
-                'sticky top-6 z-20 border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px]',
+                'sticky top-6 z-20 border-b border-gray-4 bg-[#0F0B1E] text-2xl leading-[33.92px]',
                 $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[88px]',
                 $scrollDirection !== 'up' || ($page.route.id?.startsWith('/lp/') && 'top-6')
-              )}><td class="border-r border-gray-6 py-[26px] pl-4">{item.title}</td></tr
+              )}><td class="py-[26px] pl-4">{item.title}</td></tr
             >
           {/if}
           {#if index == 0}
@@ -119,15 +121,8 @@
             {#if line?.lines}
               {@const lines = line.lines}
               {#if line.title}
-                <tr
-                  class={cn(
-                    'sticky top-20 z-20 border-b border-gray-6 bg-brand-4 p-5 text-lg leading-[21.6px]',
-                    $scrollDirection === 'up' &&
-                      !$page.route.id?.startsWith('/lp/') &&
-                      'top-[144px]'
-                  )}
-                >
-                  <td class="border-r border-gray-6 py-3 pl-4">{line.title}</td></tr
+                <tr class={cn('border-b border-gray-4 text-lg leading-[21.6px]')}>
+                  <td class="py-5 pl-4">{line.title}</td></tr
                 >
               {/if}
               {#each lines as line}
@@ -142,7 +137,7 @@
     </div>
 
     <!-- mobile layout -->
-    <div class="px-container md:hidden" id="mini-pricing-table-Q3Y24">
+    <div class="px-container lg:hidden" id="mini-pricing-table-Q3Y24">
       <Sticky
         translateOnDesktop
         class=" data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
@@ -155,14 +150,14 @@
             selectedOption = e.detail.i;
           }}
         />
-        <div class={cn('flex h-[100px] border-b border-gray-6 bg-brand-4')}>
+        <div class={cn('flex h-[100px] border-b border-gray-4 bg-brand-4')}>
           <div
-            class="flex w-[232px] items-center border-b border-r border-gray-6 pl-4 text-2xl leading-[33.92px]"
+            class="flex w-[232px] items-center border-b border-r border-gray-4 pl-4 text-2xl leading-[33.92px]"
           >
             Usage
           </div>
           <!-- {#each Object.keys($pricingValues) as plan, index} -->
-          <div class={cn('relative flex items-center justify-center border-b border-gray-6 p-2 ')}>
+          <div class={cn('relative flex items-center justify-center border-b border-gray-4 p-2 ')}>
             <!-- {#if selectedOption == 2}
               <p
                 class="absolute -top-10 flex h-10  items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9"
@@ -181,7 +176,7 @@
           {#if item.title}
             <tr
               class={cn(
-                'sticky top-[37px] z-20 w-[232px] border-b border-gray-6 bg-brand-4 text-2xl leading-[33.92px] md:top-6',
+                'sticky top-[37px] z-20 w-[232px] border-b border-gray-4 bg-brand-4 text-2xl leading-[33.92px] md:top-6',
                 $scrollDirection === 'up' &&
                   !$page.route.id?.startsWith('/lp/') &&
                   'top-[103px] lg:top-top-nav'
@@ -208,7 +203,7 @@
               {#if line.title}
                 <div
                   class={cn(
-                    'sticky top-[92px] z-20 w-full border-b border-gray-6 leading-[21.6px] md:top-20 md:text-lg',
+                    'sticky top-[92px] z-20 w-full border-b border-gray-4 leading-[21.6px] md:top-20 md:text-lg',
                     $scrollDirection === 'up' &&
                       !$page.route.id?.startsWith('/lp/') &&
                       'top-[156px] lg:top-top-nav'

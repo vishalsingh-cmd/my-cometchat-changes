@@ -7,7 +7,7 @@
   export let plans;
   export let selectedOption;
   let className =
-    'pl-4 relative py-5 border-gray-6 text-[14px] md:text-[16px] leading-[21.2px] font-medium opacity-64';
+    'pl-4 relative py-5 border-gray-6 text-[14px] md:text-[16px] leading-[21.2px] font-medium text-[#FAFAFFA6]';
   function separateText(text: string) {
     let simpleText = '';
     let label = '';
@@ -39,7 +39,7 @@
         <Label {label} />
       {/if}
       {#if tooltip}
-        <Tooltip {tooltip} icon="info-circle" class="absolute -top-2 right-2" />
+        <Tooltip {tooltip} icon="info-circle-outlined" class="absolute -top-2 right-2" />
       {/if}
     </td>
   {/if}
