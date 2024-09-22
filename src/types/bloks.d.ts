@@ -1246,6 +1246,55 @@ export interface PricingHeroStoryblok {
   component: 'pricing-hero';
   [k: string]: any;
 }
+export interface PricingValue {
+  price: string;
+  isBilledAnnually: boolean;
+}
+
+export interface PricingValues {
+  Build: PricingValue;
+  Basic: PricingValue;
+  Advanced: PricingValue;
+  Enterprise: PricingValue;
+}
+export interface PricingHighlightsQ3Y24Storyblok {
+  component: 'pricing-highlights-Q3Y24';
+  _uid: string;
+  title: string;
+  highlights1: TextStoryblok[];
+  highlights2: TextStoryblok[];
+}
+export interface PricingHeroQ3Y24CardV1Storyblok {
+  component: 'pricing-hero-Q3Y24-cardV1';
+  cta: ButtonLinkStoryblok[1];
+  tag: string;
+  _uid: string;
+  name: 'Build' | 'Basic' | 'Advanced' | 'Enterprise';
+  custom_price: string;
+  description: string | RichtextStoryblok;
+  highlights: PricingHighlightsQ3Y24Storyblok[1];
+}
+export interface PricingCardsStoryblok {
+  category1: PricingHeroQ3Y24CardV1Storyblok[];
+  categery2: PricingHeroQ3Y24CardV1Storyblok[];
+}
+export interface MAU {
+  component: 'pricing-mau';
+  mau: { tbody: any[]; thead: any[]; fieldtype: 'table'; _uid: string };
+  _uid: string;
+}
+export interface PricingHeroQ3Y24Storyblok {
+  title: string;
+  description: string | RichtextStoryblok;
+  mau: MAU[1];
+  category1: string;
+  category2: string;
+  info_items?: PricingHeroInfoItemStoryblok[];
+  cards: PricingCardsStoryblok[1];
+  _uid: string;
+  component: 'pricing-hero-enhancements';
+  [k: string]: any;
+}
 
 export interface PricingHeroEnhancementsStoryblok {
   title: string;

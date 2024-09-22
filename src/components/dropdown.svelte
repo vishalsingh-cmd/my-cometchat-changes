@@ -68,7 +68,7 @@
     {disabled}
     {...$$restProps}
   >
-    {#if options[selectedOption].cometIllustration}
+    {#if options[selectedOption]?.cometIllustration}
       <CometIllustration
         class="inline-block scale-[1.4]"
         illustration={options[selectedOption].cometIllustration ?? 'community'}
@@ -76,11 +76,11 @@
       />
     {/if}
     <span class="text-md font-semibold leading-tight tracking-wide">
-      {options[selectedOption].label}
+      {options[selectedOption]?.label}
     </span>
     <Icon
       class={cn(
-        'shrink-0 opacity-74 transition-transform duration-300',
+        'ml-auto shrink-0 opacity-74 transition-transform duration-300',
         isOpen && 'rotate-180 opacity-100'
       )}
       size="xs"
@@ -91,7 +91,7 @@
     <div
       class={cn(
         'border-px absolute left-1/2 top-[46px] flex max-h-[290px] -translate-x-1/2 flex-col overflow-y-scroll rounded-2xl border border-gray-12/[0.04] bg-gray-3/80 p-1.5 backdrop-blur-[15px]',
-        flyOutClass ? flyOutClass : 'w-[300px]'
+        flyOutClass ? flyOutClass : 'w-full'
       )}
       use:clickOutside={() => {
         toggle();

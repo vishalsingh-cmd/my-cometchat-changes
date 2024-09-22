@@ -11,6 +11,7 @@ export const twMergeCustom = extendTailwindMerge({
   }
 });
 
+const icons = ['yes', 'no', 'addon'];
 export function cn(...inputs: ClassValue[]) {
   return twMergeCustom(clsx(inputs));
 }
@@ -60,6 +61,22 @@ export const getPricingIcon = (pricingType: 'included' | 'paid-add-on' | 'none')
   }
 };
 
+export const getPricingIconV2 = (pricingType: 'yes' | 'addon' | 'no') => {
+  switch (pricingType) {
+    case 'yes':
+      return { icon: typeIcon('check-verified-01'), color: 'text-brand-9' };
+    case 'addon':
+      return { icon: typeIcon('add-on-V2'), color: 'text-brand-9' };
+    case 'no':
+      return { icon: typeIcon('x-circle-V2'), color: 'text-gray-5' };
+    default:
+      return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
+  }
+};
+
+export function isValidIconType(text: string): text is 'yes' | 'addon' | 'no' {
+  return icons.includes(text);
+}
 // truncate a string to a certain length
 export const truncateString = (str: string, length: number) => {
   return str.length > length ? str.substring(0, length) + '...' : str;
