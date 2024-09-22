@@ -5,7 +5,7 @@
   import Label from './label.svelte';
   export let block;
   let className =
-    'pl-4 relative min-w-[246px] py-5 px-2 border-gray-6 text-[16px] leading-[21.2px] font-medium opacity-64';
+    'relative min-w-[238px] text-[#FAFAFFA6] py-5 pl-0 border-gray-4 text-[16px] leading-[21.2px] font-medium';
   function separateText(text: string) {
     let simpleText = '';
     let label = '';
@@ -29,21 +29,23 @@
   }
 </script>
 
-<tr class="border-b border-gray-6 text-center">
+<tr class="border-b border-gray-4 text-center">
   {#if block.name_and_description}
     {@const { simpleText, label, tooltip } = separateText(block.name_and_description)}
-    <td class={cn(className, 'min-w-[400px] border-r text-left')}>
+    <td
+      class={cn(className, 'max-w-[440px] border-r pl-4 text-left lg:w-[440px] lg:min-w-[440px]')}
+    >
       {simpleText}{#if label}
         <Label {label} />
       {/if}
       {#if tooltip}
-        <Tooltip {tooltip} icon="info-circle" class="absolute right-2 top-0" />
+        <Tooltip {tooltip} icon="info-circle-outlined" class="absolute right-2 top-0" />
       {/if}
     </td>
   {/if}
   {#if block.build}
     {@const { simpleText, label, tooltip } = separateText(block.build)}
-    <td class={cn(className, 'w-[288px] border-r')}>
+    <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} />
       {#if label}
         <Label {label} />
@@ -55,7 +57,7 @@
   {/if}
   {#if block.basic}
     {@const { simpleText, label, tooltip } = separateText(block.basic)}
-    <td class={cn(className, 'w-[288px] border-r')}>
+    <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} />{#if label}
         <Label {label} />
       {/if}{#if tooltip}
@@ -65,7 +67,7 @@
   {/if}
   {#if block.advanced}
     {@const { simpleText, label, tooltip } = separateText(block.advanced)}
-    <td class={cn(className, 'w-[288px] border-r bg-brand-5')}>
+    <td class={cn(className, 'max-w-[238px] border-r bg-[#6852D61A]')}>
       <SimpleText {simpleText} />{#if label}
         <Label {label} />
       {/if}{#if tooltip}
@@ -75,7 +77,7 @@
   {/if}
   {#if block.enterprise}
     {@const { simpleText, label, tooltip } = separateText(block.enterprise)}
-    <td class={cn(className, 'w-[288px]')}>
+    <td class={cn(className, 'max-w-[238px]')}>
       <SimpleText {simpleText} />{#if label}
         <Label {label} />
       {/if}{#if tooltip}

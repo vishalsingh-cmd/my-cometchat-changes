@@ -165,7 +165,7 @@
         <div
           class={cn(
             'grid w-full grid-cols-1 gap-16 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-            $activateTable && 'items-end xl:grid-cols-4',
+            $activateTable && 'items-end md:gap-y-16 xl:grid-cols-4',
             !$activateTable && 'xl:grid-cols-3'
           )}
         >
@@ -193,7 +193,7 @@
           >
         {/if}
       </div>
-      <div class="container mx-auto flex justify-center">
+      <div class="container mx-auto flex justify-center px-container">
         {#if block.info_items && block.info_items.length > 0}
           <div class="flex flex-wrap gap-8 gap-y-3">
             {#each block.info_items as { icon, name, description }}

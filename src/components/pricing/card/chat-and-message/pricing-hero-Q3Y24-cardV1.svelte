@@ -33,7 +33,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
   >
     {#if tag}
       <p
-        class="absolute -left-[1px] -top-10 flex h-10 w-[100.5%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
+        class="absolute -left-[1.5px] -top-10 flex h-10 w-[101%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
       >
         {tag}
       </p>{/if}
@@ -121,7 +121,9 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                 {#if typeof highlight.value != 'string' && highlight?.value?.content}
                   {#each highlight.value.content as content}
                     <!-- <p class="text-lg/tight font-semibold">Highlights</p> -->
-                    <p class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-80 ')}>
+                    <p
+                      class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-[85%]')}
+                    >
                       {@html resolver.render(content)}
                     </p>
                   {/each}
@@ -138,7 +140,12 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                   <Icon icon="check" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-orange-9" />
                   {#if typeof highlight.value != 'string' && highlight?.value?.content}
                     {#each highlight.value.content as content}
-                      <p class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-80')}>
+                      <p
+                        class={cn(
+                          paragraph,
+                          'text-md/snug font-medium tracking-wide opacity-[85%]'
+                        )}
+                      >
                         {@html resolver.render(content)}
                       </p>
                     {/each}

@@ -68,7 +68,7 @@ export const getPricingIconV2 = (pricingType: 'yes' | 'addon' | 'no') => {
     case 'addon':
       return { icon: typeIcon('add-on-V2'), color: 'text-brand-9' };
     case 'no':
-      return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
+      return { icon: typeIcon('x-circle-V2'), color: 'text-gray-5' };
     default:
       return { icon: typeIcon('x-circle'), color: 'text-gray-5' };
   }

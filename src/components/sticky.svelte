@@ -10,7 +10,7 @@
   let containerRef: HTMLDivElement;
   export let translateOnDesktop = false;
 
-  let className: undefined | string = undefined;
+  let className = '';
   export { className as class };
 
   function updateStickyState() {
@@ -23,6 +23,9 @@
   }
 
   onMount(() => {
+    if (!className?.includes('top-')) {
+      className += ' top-0';
+    }
     updateStickyState();
   });
 </script>
@@ -31,7 +34,7 @@
 <div
   data-sticky={isSticky ? '' : null}
   bind:this={containerRef}
-  class={cn('sticky left-0 top-0 z-20', className)}
+  class={cn('sticky left-0 z-20', className)}
 >
   <!-- Element that is going to translate -->
   <div
