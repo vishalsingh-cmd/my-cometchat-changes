@@ -5,7 +5,7 @@
   import Label from './label.svelte';
   export let block;
   let className =
-    'relative min-w-[238px] text-[#FAFAFFA6] py-5 pl-0 border-gray-4 text-[16px] leading-[21.2px] font-medium';
+    'relative min-w-[238px] text-[#FAFAFFA6] py-5 px-5 border-gray-4 text-[16px] leading-[21.2px] font-medium';
   function separateText(text: string) {
     let simpleText = '';
     let label = '';
