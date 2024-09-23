@@ -34,12 +34,12 @@
 <tr class="border-b border-gray-6 text-center">
   {#if block.name_and_description}
     {@const { simpleText, label, tooltip } = separateText(block.name_and_description)}
-    <td class={cn(className, 'w-[232px] border-r text-left')}>
+    <td class={cn(className, 'w-[232px] border-r pr-9 text-left')}>
       {simpleText}{#if label}
         <Label {label} />
       {/if}
       {#if tooltip}
-        <Tooltip {tooltip} icon="info-circle-outlined" class="absolute -top-2 right-2" />
+        <Tooltip {tooltip} icon="info-circle-outlined" class="absolute right-2 top-0" />
       {/if}
     </td>
   {/if}
