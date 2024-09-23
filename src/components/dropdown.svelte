@@ -21,8 +21,10 @@
   }[];
   export let selectedOption = 0;
   export let disabled = false;
+  export let chevronUp = true;
+  let icon = chevronUp ? 'chevron-up' : 'chevron-down';
 
-  let isOpen = false;
+  export let isOpen = false;
   const toggle = () => (isOpen = !isOpen);
 </script>
 
@@ -84,7 +86,7 @@
         isOpen && 'rotate-180 opacity-100'
       )}
       size="xs"
-      icon="chevron-up"
+      {icon}
     />
   </button>
   {#if isOpen}

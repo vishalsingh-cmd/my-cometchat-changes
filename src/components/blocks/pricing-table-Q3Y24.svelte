@@ -17,6 +17,9 @@
   import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24-portrait.svelte';
 
   export let block;
+  let isOpen = false;
+  let mauContent =
+    'Monthly active users (MAU) {Monthly active users represent the total number of unique users who log in to CometChat during your billing period.}';
   function convertMAUSToNumber(maus: string[] | []) {
     maus = maus.map((mau) => {
       if (mau.includes('k')) {
@@ -108,7 +111,7 @@
           {#if index == 0}
             <PricingTableLineQ3Y24
               block={{
-                name_and_description: 'Monthly active users (MAU)',
+                name_and_description: mauContent,
                 build: '100/mo',
                 basic: `${convertedMaus[$lastSelectedMAUIndex]}/mo`,
                 advanced: `${convertedMaus[$lastSelectedMAUIndex]}/mo`,
@@ -137,50 +140,41 @@
     </div>
 
     <!-- mobile layout -->
-    <div class="px-container lg:hidden" id="mini-pricing-table-Q3Y24">
-      <Sticky
-        translateOnDesktop
-        class=" data-[sticky]:border-b data-[sticky]:border-gray-12/8 xl:data-[sticky]:border-b-0"
+    <div class="lg:hidden" id="mini-pricing-table-Q3Y24">
+      <div
+        class={cn(
+          'sticky top-0 flex h-[123px] w-full flex-col items-center bg-[#0F0B1E] px-0 pt-4',
+          $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-top-nav',
+          isOpen && 'z-30',
+          !isOpen && 'z-20'
+        )}
       >
-        <Dropdown
-          class="z-30 w-full"
-          options={plans}
-          bind:selectedOption
-          on:optionSelect={(e) => {
-            selectedOption = e.detail.i;
-          }}
-        />
-        <div class={cn('flex h-[100px] border-b border-gray-4 bg-brand-4')}>
+        <div class="w-full px-container">
+          <Dropdown
+            bind:isOpen
+            class="mx-2 w-[95%]"
+            chevronUp={false}
+            options={plans}
+            bind:selectedOption
+            on:optionSelect={(e) => {
+              selectedOption = e.detail.i;
+            }}
+          />
           <div
-            class="flex w-[232px] items-center border-b border-r border-gray-4 pl-4 text-2xl leading-[33.92px]"
+            class="mt-auto flex items-center border-b border-gray-4 bg-[#0F0B1E] py-[20px] pl-4 text-xl leading-[23.92px]"
           >
             Usage
           </div>
-          <!-- {#each Object.keys($pricingValues) as plan, index} -->
-          <div class={cn('relative flex items-center justify-center border-b border-gray-4 p-2 ')}>
-            <!-- {#if selectedOption == 2}
-              <p
-                class="absolute -top-10 flex h-10  items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9"
-              >
-                Most popular
-              </p>
-            {/if} -->
-            <p class="w-full text-xl/normal font-semibold tracking-wide">
-              {plans[selectedOption].label}
-            </p>
-          </div>
         </div>
-      </Sticky>
-      <div class="flex flex-col">
+      </div>
+      <div class="flex flex-col px-container">
         {#each block.data as item, index}
           {#if item.title}
             <tr
               class={cn(
-                'sticky top-[37px] z-20 w-[232px] border-b border-gray-4 bg-brand-4 text-2xl leading-[33.92px] md:top-6',
-                $scrollDirection === 'up' &&
-                  !$page.route.id?.startsWith('/lp/') &&
-                  'top-[103px] lg:top-top-nav'
-              )}><td class="py-[26px] pl-4">{item.title}</td></tr
+                'sticky top-[64px] isolate z-20 border-b border-gray-4 bg-[#0F0B1E] text-xl leading-[23.92px] ',
+                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[130px]'
+              )}><td class="py-[20px] pl-4">{item.title}</td></tr
             >
           {/if}
           {#if index == 0}
@@ -188,7 +182,7 @@
               {plans}
               {selectedOption}
               block={{
-                name_and_description: 'Monthly active users (MAU)',
+                name_and_description: mauContent,
                 build: '100/mo',
                 basic: `${convertedMaus[$lastSelectedMAUIndex]}/mo`,
                 advanced: `${convertedMaus[$lastSelectedMAUIndex]}/mo`,
@@ -201,15 +195,8 @@
             {#if line?.lines}
               {@const lines = line.lines}
               {#if line.title}
-                <div
-                  class={cn(
-                    'sticky top-[92px] z-20 w-full border-b border-gray-4 leading-[21.6px] md:top-20 md:text-lg',
-                    $scrollDirection === 'up' &&
-                      !$page.route.id?.startsWith('/lp/') &&
-                      'top-[156px] lg:top-top-nav'
-                  )}
-                >
-                  <td class="w-[232px] bg-brand-4 py-3 pl-4">{line.title}</td>
+                <div class={cn('w-full border-b border-gray-4 text-lg leading-[21.6px]')}>
+                  <td class="w-[232px] py-3 pl-4">{line.title}</td>
                 </div>
               {/if}
               {#each lines as line}
@@ -221,13 +208,6 @@
           {/each}
         {/each}
       </div>
-      <!-- <p class="text-lg/normal font-medium tracking-wide opacity-74">
-              {$pricingValues[plan].price}/month
-            </p>
-            <p class="text-lg/tight font-medium tracking-wide opacity-74">
-              {$isBilledAnnualy ? (index == 0 ? 'Free Forever' : 'Billed annualy') : ''}
-            </p> -->
     </div>
-    <!-- {/each} -->
   </div>
 {/if}
