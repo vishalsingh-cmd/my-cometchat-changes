@@ -16,7 +16,7 @@
   )}
   use:tippy={{
     content: `${tooltip}`,
-    placement: 'right',
+    placement: 'top',
     animation: 'scale'
   }}
 >
