@@ -25,7 +25,7 @@
   }%)`;
 </script>
 
-<div class="mt-10 flex h-full flex-col lg:mt-0 lg:w-[640px]">
+<div class="mt-10 flex h-full w-full flex-col px-container lg:mt-0 lg:w-[640px] lg:px-0">
   <p class="mb-6 text-center font-medium leading-[27px] md:text-xl">
     How many monthly users do you need?
   </p>

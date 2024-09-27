@@ -22,7 +22,7 @@
   <div
     class={cn(
       'w-full md:h-full',
-      tag && 'rounded-b-3xl border border-brand-9/64',
+      tag && 'mt-8 rounded-b-3xl border border-brand-9/64 lg:mt-0',
       !tag && 'rounded-3xl border border-gray-9/64',
       'bg-brand-12/[0.03] backdrop-blur-[30px]'
     )}
@@ -62,7 +62,9 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             {/if}
           {/if}
           <div
-            class={cn('mb-8 mt-10 flex h-[68px] flex-col gap-2  text-2xl/tighter font-semibold')}
+            class={cn(
+              'mb-8 mt-8 flex h-[68px] flex-col gap-2 text-2xl/tighter font-semibold lg:mt-10'
+            )}
           >
             <p
               class={cn(
@@ -80,11 +82,14 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                 <span class="-ml-1.5 text-md/snug font-medium opacity-64">/month</span>
               {/if}
             </p>
-            {#if isBilledAnnually && price.startsWith('$')}
-              <p class="text-md/snug font-medium opacity-64">
-                {custom_price ? 'Free Forever' : 'Billed annually'}
-              </p>
-            {/if}
+
+            <p class="text-md/snug font-medium opacity-64">
+              {#if custom_price}
+                {'Free Forever'}
+              {:else if isBilledAnnually && price.startsWith('$')}
+                {'Billed annually'}
+              {/if}
+            </p>
           </div>
 
           {#if cta[0].link && price.startsWith('$')}
@@ -119,14 +124,18 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               <div class="flex items-start gap-2">
                 <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
                 {#if typeof highlight.value != 'string' && highlight?.value?.content}
-                  {#each highlight.value.content as content}
-                    <!-- <p class="text-lg/tight font-semibold">Highlights</p> -->
-                    <p
-                      class={cn(paragraph, 'text-md/snug font-medium tracking-wide opacity-[85%]')}
-                    >
-                      {@html resolver.render(content)}
-                    </p>
-                  {/each}
+                  <div>
+                    {#each highlight.value.content as content}
+                      <p
+                        class={cn(
+                          paragraph,
+                          'text-md/snug font-medium tracking-wide opacity-[85%]'
+                        )}
+                      >
+                        {@html resolver.render(content)}
+                      </p>
+                    {/each}
+                  </div>
                 {/if}
               </div>
             {/each}
@@ -139,16 +148,18 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                 <div class="flex items-start gap-2">
                   <Icon icon="check" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-orange-9" />
                   {#if typeof highlight.value != 'string' && highlight?.value?.content}
-                    {#each highlight.value.content as content}
-                      <p
-                        class={cn(
-                          paragraph,
-                          'text-md/snug font-medium tracking-wide opacity-[85%]'
-                        )}
-                      >
-                        {@html resolver.render(content)}
-                      </p>
-                    {/each}
+                    <div>
+                      {#each highlight.value.content as content}
+                        <p
+                          class={cn(
+                            paragraph,
+                            'text-md/snug font-medium tracking-wide opacity-[85%]'
+                          )}
+                        >
+                          {@html resolver.render(content)}
+                        </p>
+                      {/each}
+                    </div>
                   {/if}
                 </div>
               {/each}

@@ -17,7 +17,7 @@
     class={cn(
       'absolute -z-10 h-[85%] rounded-2xl bg-brand-9 transition-transform duration-300',
       $isBilledAnnualy && 'w-[186px] translate-x-[72px]',
-      !$isBilledAnnualy && 'w-[150px] -translate-x-[90px]'
+      !$isBilledAnnualy && 'w-[140px] -translate-x-[94px]'
     )}
   />
   <button
