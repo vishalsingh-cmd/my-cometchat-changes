@@ -41,8 +41,32 @@
     };
   });
   let selectedOption = 2;
+
+  let currentRowIndex = 1;
+  function analyseCurrentRowIndex() {
+    let lg = 1024;
+    let offset = 100;
+    let elements;
+    if (window.innerWidth < lg) {
+      elements = document.querySelectorAll('[data-row-portrait-index]');
+      offset = 140;
+    } else elements = document.querySelectorAll('[data-row-index]');
+    for (let i = 0; i < elements.length; i++) {
+      const top = elements[i].getBoundingClientRect().top;
+      if (
+        elements[currentRowIndex - 1].getBoundingClientRect().top > offset &&
+        currentRowIndex != 1
+      ) {
+        currentRowIndex -= 1;
+      }
+      if (top > 0 && top < offset) {
+        currentRowIndex = i + 1;
+      }
+    }
+  }
   onMount(() => {
     convertedMaus = convertMAUSToNumber($maus);
+    analyseCurrentRowIndex();
   });
 </script>
 
@@ -60,7 +84,9 @@
               'flex min-w-[440px] max-w-[440px] items-center border-b border-r border-gray-4 pl-4 text-2xl leading-[33.92px]'
             )}
           >
-            Usage
+            {#if currentRowIndex === 1}
+              Usage
+            {/if}
           </div>
           {#each Object.keys($pricingValues) as plan, index}
             <div
@@ -101,10 +127,16 @@
         {#each block.data as item, index}
           {#if item.title}
             <tr
+              data-row-index={index}
               class={cn(
-                'sticky top-6 z-20 border-b border-gray-4 bg-[#0F0B1E] text-2xl leading-[33.92px]',
-                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[88px]',
-                $scrollDirection !== 'up' || ($page.route.id?.startsWith('/lp/') && 'top-6')
+                'tableQ3Y24Line border-b border-gray-4 bg-[#0F0B1E] text-2xl leading-[33.92px]',
+                index === currentRowIndex && 'sticky top-6 z-20',
+                index === currentRowIndex &&
+                  $scrollDirection === 'up' &&
+                  !$page.route.id?.startsWith('/lp/') &&
+                  'top-[88px]',
+                (index === currentRowIndex && $scrollDirection !== 'up') ||
+                  ($page.route.id?.startsWith('/lp/') && 'top-6')
               )}><td class="py-[26px] pl-4">{item.title}</td></tr
             >
           {/if}
@@ -163,7 +195,9 @@
           <div
             class="mt-auto flex items-center border-b border-gray-4 bg-[#0F0B1E] py-[20px] pl-4 text-xl leading-[23.92px]"
           >
-            Usage
+            {#if currentRowIndex === 1}
+              Usage
+            {/if}
           </div>
         </div>
       </div>
@@ -171,9 +205,14 @@
         {#each block.data as item, index}
           {#if item.title}
             <tr
+              data-row-portrait-index={index}
               class={cn(
-                'sticky top-[64px] isolate z-20 border-b border-gray-4 bg-[#0F0B1E] text-xl leading-[23.92px] ',
-                $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[130px]'
+                'isolate border-b border-gray-4 bg-[#0F0B1E] text-xl leading-[23.92px] ',
+                index === currentRowIndex && 'sticky top-[64px] z-20',
+                index === currentRowIndex &&
+                  $scrollDirection === 'up' &&
+                  !$page.route.id?.startsWith('/lp/') &&
+                  'top-[130px]'
               )}><td class="py-[20px] pl-4">{item.title}</td></tr
             >
           {/if}
@@ -211,3 +250,5 @@
     </div>
   </div>
 {/if}
+
+<svelte:document on:scroll={analyseCurrentRowIndex} />
