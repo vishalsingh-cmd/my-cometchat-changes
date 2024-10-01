@@ -81,3 +81,43 @@ export function isValidIconType(text: string): text is 'yes' | 'addon' | 'no' {
 export const truncateString = (str: string, length: number) => {
   return str.length > length ? str.substring(0, length) + '...' : str;
 };
+
+export function separateText(text: string) {
+  let simpleText = '';
+  let label = '';
+  let tooltip = '';
+  const link = {
+    href: '',
+    label: '',
+    labelInitialized: false
+  };
+  for (let i = 0; i < text.length; i++) {
+    if (text[i] === '<') {
+      for (i++; text[i] !== '>'; i++) {
+        if (!link.labelInitialized) {
+          for (; text[i] !== '|'; i++) {
+            link.label += text[i];
+          }
+          link.labelInitialized = true;
+        } else {
+          link.href += text[i];
+        }
+      }
+      simpleText += '<a> ';
+      i++;
+    } else if (text[i] === '{') {
+      for (i++; text[i] !== '}'; i++) {
+        tooltip += text[i];
+      }
+      i++;
+    } else if (text[i] === '[') {
+      for (i++; text[i] !== ']'; i++) {
+        label += text[i];
+      }
+      i++;
+    } else {
+      simpleText += text[i];
+    }
+  }
+  return { simpleText, label, tooltip, link };
+}
