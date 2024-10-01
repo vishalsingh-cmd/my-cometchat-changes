@@ -1,12 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import {
-    activateTable,
-    isBilledAnnualy,
-    lastSelectedMAUIndex,
-    maus,
-    pricingValues
-  } from '$lib/stores/pricing-stores';
+  import { activateTable, isBilledAnnualy, maus, pricingValues } from '$lib/stores/pricing-stores';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24.svelte';
@@ -18,8 +12,8 @@
 
   export let block;
   let isOpen = false;
-  let mauContent =
-    'Monthly active users (MAU) {Monthly active users represent the total number of unique users who log in to CometChat during your billing period.}';
+  // let mauContent =
+  //   'Monthly active users (MAU) {Monthly active users represent the total number of unique users who log in to CometChat during your billing period.}';
   function convertMAUSToNumber(maus: string[] | []) {
     maus = maus.map((mau) => {
       if (mau.includes('k')) {
@@ -140,7 +134,7 @@
               )}><td class="py-[26px] pl-4">{item.title}</td></tr
             >
           {/if}
-          {#if index == 0}
+          <!-- {#if index == 0}
             <PricingTableLineQ3Y24
               block={{
                 name_and_description: mauContent,
@@ -150,7 +144,7 @@
                 enterprise: `${convertedMaus[$lastSelectedMAUIndex]}/mo`
               }}
             />
-          {/if}
+          {/if} -->
           {@const lines = item?.subgroup}
           {#each lines as line}
             {#if line?.lines}
@@ -216,7 +210,7 @@
               )}><td class="py-[20px] pl-4">{item.title}</td></tr
             >
           {/if}
-          {#if index == 0}
+          <!-- {#if index == 0}
             <PricingTableLineQ3Y24Portrait
               {plans}
               {selectedOption}
@@ -228,7 +222,7 @@
                 enterprise: `${convertedMaus[$lastSelectedMAUIndex]}/mo`
               }}
             />
-          {/if}
+          {/if} -->
           {@const lines = item?.subgroup}
           {#each lines as line}
             {#if line?.lines}
