@@ -9,9 +9,11 @@
 {#each words as item}
   {#if isValidIconType(item)}
     {@const { icon, color } = getPricingIconV2(item)}
-    <div class="flex w-full items-center justify-center">
-      <Icon {icon} class={cn('min-w-fit', color)} size="sm" />
+    <!-- <div class="flex w-full items-center justify-center"> -->
+    <div class="relative top-[3px] inline-block h-5 w-5">
+      <Icon {icon} class={cn(color)} size="sm" />
     </div>
+    {''}
   {:else if item === '<a>'}
     <a class="underline" href={link?.href}>{link?.label}</a>{' '}
   {:else}
