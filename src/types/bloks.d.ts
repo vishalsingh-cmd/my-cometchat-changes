@@ -1416,6 +1416,14 @@ export interface PricingPlanGrowSegmentStoryblok {
   [k: string]: any;
 }
 
+export interface PricingTableRevampStoryblok {
+  header: PricingTableHeaderColumnStoryblok[];
+  data: PricingTableGroupRevampStoryblok[];
+  _uid: string;
+  component: 'pricing-table-revamp';
+  [k: string]: any;
+}
+
 export interface PricingTableStoryblok {
   header: PricingTableHeaderColumnStoryblok[];
   data: PricingTableGroupStoryblok[];
@@ -1514,7 +1522,7 @@ export interface PricingTableHeaderEnhancedStoryblok {
 }
 
 export interface PricingTableSectionStoryblok {
-  pricing_table?: PricingTableCategoryEnhancedStoryblok[];
+  pricing_table?: (PricingTableCategoryEnhancedStoryblok | PricingTableRevampStoryblok)[];
   _uid: string;
   component: 'pricing-table-section';
   [k: string]: any;
