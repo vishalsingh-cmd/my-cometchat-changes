@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PricingTableStoryblok } from '$types/bloks';
+  import type { PricingTableRevampStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import Sticky from '$components/sticky.svelte';
@@ -9,7 +9,7 @@
   import { activateTable } from '$lib/stores/pricing-stores';
 
   let activePlanIndex = 0;
-  export let block: PricingTableStoryblok;
+  export let block: PricingTableRevampStoryblok;
 </script>
 
 {#if block && $activateTable}
