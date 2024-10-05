@@ -59,7 +59,7 @@
       localMaus.push(row.body[0].value);
     });
     $maus = localMaus;
-    updatePricingValues($isBilledAnnualy, 1);
+    updatePricingValues($isBilledAnnualy, 0);
   });
 </script>
 
