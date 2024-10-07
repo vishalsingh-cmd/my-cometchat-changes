@@ -5,7 +5,6 @@
   import { page } from '$app/stores';
   import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
-  import Sticky from '$components/sticky.svelte';
   import TitleSection from './title-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
   import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24-portrait.svelte';
@@ -68,31 +67,33 @@
   <div class="container mx-auto">
     <TitleSection block={block.title[0]} />
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
-      <Sticky
-        translateOnDesktop
-        class="data-[sticky]:border-b data-[sticky]:border-gray-12/8 lg:w-[1392px] xl:data-[sticky]:border-b-0"
-      >
-        <div class={cn('flex h-[131px] border-b border-gray-4 bg-[#0F0B1E]')}>
-          <div
+      <table class="table-auto">
+        <tr
+          class={cn(
+            'sticky top-0 z-20 w-full border-b border-gray-4 bg-[#0F0B1E]',
+            $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/') && 'top-[64px]'
+          )}
+        >
+          <td
             class={cn(
-              'flex min-w-[440px] max-w-[440px] items-center border-b border-r border-gray-4 pl-4 text-2xl leading-[33.92px]'
+              'max-w-[440px] items-center border-b border-r border-gray-4 py-12 pl-4 text-2xl leading-[33.92px] xl:min-w-[390px] 2xl:min-w-[440px]'
             )}
           >
             {#if currentRowIndex === 1}
               Usage
             {/if}
-          </div>
+          </td>
           {#each Object.keys($pricingValues) as plan, index}
-            <div
+            <th
               class={cn(
-                'relative flex h-full min-w-[238px] max-w-[238px] flex-col items-center justify-start gap-0  border-b border-gray-4 pt-8',
+                'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 xl:min-w-[205px] 2xl:min-w-[238px]',
                 index != Object.keys($pricingValues).length - 1 && 'border-r',
                 index == 2 && 'bg-[#6852D61A]'
               )}
             >
               {#if index == 2}
                 <p
-                  class="absolute -top-10 flex h-10 w-[100%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
+                  class="absolute -top-10 left-0 flex h-10 w-[100%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
                 >
                   Most popular
                 </p>
@@ -113,17 +114,16 @@
                   ? 'Billed annually'
                   : ''}
               </p>
-            </div>
+            </th>
           {/each}
-        </div>
-      </Sticky>
-      <table class="lg:maxw-[1392px] table-auto">
+        </tr>
+        <!-- </Sticky> -->
         {#each block.data as item, index}
           {#if item.title}
             <tr
               data-row-index={index}
               class={cn(
-                'tableQ3Y24Line border-b border-gray-4 bg-[#0F0B1E] text-2xl leading-[33.92px]',
+                'border-b border-gray-4 bg-[#0F0B1E] text-2xl leading-[33.92px]',
                 index === currentRowIndex && 'sticky top-6 z-20',
                 index === currentRowIndex &&
                   $scrollDirection === 'up' &&

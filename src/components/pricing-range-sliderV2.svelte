@@ -5,7 +5,7 @@
   export let maus: string[] = [];
   onMount(() => {
     setTimeout(() => {
-      selectedIndex = 1;
+      selectedIndex = 0;
     }, 100);
   });
   // Calculate the percentage of progress
