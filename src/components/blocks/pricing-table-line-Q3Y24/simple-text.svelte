@@ -9,9 +9,9 @@
 {#each words as item}
   {#if isValidIconType(item)}
     {@const { icon, color } = getPricingIconV2(item)}
-    <!-- <div class="flex w-full items-center justify-center"> -->
-    <div class="relative top-[3px] inline-block h-5 w-5">
-      <Icon {icon} class={cn(color)} size="sm" />
+    <div class="relative top-[3px] inline-flex">
+      <!-- <div class="relative top-[3px] inline-block"> -->
+      <Icon {icon} class={cn(color)} size={icon === 'add-on-V2' ? 'free' : 'sm'} />
     </div>
     {''}
   {:else if item === '<a>'}
