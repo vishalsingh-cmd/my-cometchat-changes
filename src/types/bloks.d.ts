@@ -1283,9 +1283,12 @@ export interface MAU {
   mau: { tbody: any[]; thead: any[]; fieldtype: 'table'; _uid: string };
   _uid: string;
 }
-export interface PricingHeroQ3Y24Storyblok {
+export interface PricingTitleQ3Y24 {
   title: string;
   description: string | RichtextStoryblok;
+}
+export interface PricingHeroQ3Y24Storyblok {
+  header: PricingTitleQ3Y24[2];
   mau: MAU[1];
   category1: string;
   category2: string;
