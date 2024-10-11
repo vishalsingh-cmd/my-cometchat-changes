@@ -3,6 +3,7 @@
   import { cn } from '$lib/utils';
 
   import Comet from '../comet.svelte';
+  import Icon from '$components/icon/icon.svelte';
 
   let position = { x: 0, y: 0 };
 
@@ -80,13 +81,14 @@
   );
 
   let className: undefined | string = undefined;
+  export let id = '';
   export { className as class };
   export let disabled: undefined | boolean = undefined;
   export let as: undefined | 'button' | 'a' = 'button';
   export let variant: undefined | VariantProps<typeof button>['variant'] = 'primary';
   export let size: undefined | VariantProps<typeof button>['size'] = 'md';
   export let loading: undefined | VariantProps<typeof button>['loading'] = false;
-
+  export let icon: string | null = null;
   let el: HTMLButtonElement | HTMLAnchorElement;
   function mouseMoveEvent(e: MouseEvent) {
     const rect = el.getBoundingClientRect();
@@ -99,6 +101,7 @@
 
 <svelte:element
   this={as}
+  {id}
   bind:this={el}
   on:click
   on:mouseenter
@@ -131,4 +134,7 @@
       ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'
       : 'hsl(var(--color-brand-7) / 0.3), hsl(var(--color-brand-7) / 0)'});"
   />
+  {#if icon}
+    <Icon {icon} size="xs" class="ml-[12px]" />
+  {/if}
 </svelte:element>
