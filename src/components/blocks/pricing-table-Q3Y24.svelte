@@ -11,7 +11,7 @@
   import Button from '$components/buttons/button.svelte';
 
   export let block;
-
+  let limit = block.collapsed_items_count;
   let selectedOption = 2;
   let currentRowIndex = 1;
 
@@ -19,7 +19,7 @@
   let icon = 'chevron-down';
   let data = [];
   let ranOnce = false;
-  async function toggleTable(limit = 15) {
+  async function toggleTable() {
     if (isExpanded) {
       data = [];
       let limitReached = false;
@@ -57,7 +57,11 @@
 
       if (ranOnce) {
         currentRowIndex = 1;
-        const element = document.getElementById('pricing-table-Q3Y24');
+        let lg = 1024;
+        let element;
+        if (window.innerWidth < lg) element = document.getElementById('mini-pricing-table-Q3Y24');
+        else element = document.getElementById('pricing-table-Q3Y24');
+
         await tick();
         const top = element?.offsetTop + element?.offsetHeight / 2;
         if (top) {
@@ -134,7 +138,7 @@
           class={cn(
             'absolute z-20 flex h-56 w-full items-end justify-center',
             isExpanded && '-bottom-10',
-            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/100'
+            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/90'
           )}
         >
           <Button
@@ -271,7 +275,16 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col px-container">
+      <div class="relative flex flex-col px-container">
+        <div
+          class={cn(
+            'absolute z-20 flex h-56 w-full items-end justify-center',
+            isExpanded && '-bottom-11',
+            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/100'
+          )}
+        >
+          <Button size="sm" {icon} class="w-[320px]" on:click={() => toggleTable()}>{label}</Button>
+        </div>
         {#each data as item, index}
           {#if item.title}
             <tr
