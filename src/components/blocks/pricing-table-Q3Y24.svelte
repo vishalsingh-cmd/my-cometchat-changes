@@ -10,7 +10,47 @@
   import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24-portrait.svelte';
 
   export let block;
+  let data = [];
+  let limitReached = false;
+  let lineItemsLength = 0;
+
+  function toggleTable(isExpanded: boolean, limit = 15) {
+    if (isExpanded) {
+      for (let i = 0; i < block?.data.length; i++) {
+        limitReached = lineItemsLength > limit;
+        if (limitReached) break;
+        if (block?.data[i]?.title) lineItemsLength++;
+        let tempGroup = { ...block.data[i], subgroup: [] };
+        for (let j = 0; j < block?.data[i]?.subgroup?.length; j++) {
+          limitReached = lineItemsLength >= limit;
+          if (limitReached) break;
+          if (block?.data[i]?.subgroup[j]?.lines) {
+            lineItemsLength++;
+            let tempSubgroup = { ...block?.data[i]?.subgroup[j], lines: [] };
+            for (let k = 0; k < block?.data[i]?.subgroup[j]?.lines?.length; k++) {
+              limitReached = lineItemsLength > limit;
+              if (limitReached) break;
+              lineItemsLength++;
+              tempSubgroup.lines.push(block.data[i].subgroup[j].lines[k]);
+              limitReached = lineItemsLength >= limit;
+            }
+            if (tempSubgroup.lines.length > 0)
+              tempGroup.subgroup = [...tempGroup.subgroup, { ...tempSubgroup }];
+          } else {
+            lineItemsLength++;
+            let tempLine = block?.data[i]?.subgroup[j];
+            if (tempLine) tempGroup.subgroup.push(tempLine);
+          }
+        }
+        if (tempGroup.subgroup.length > 0) data.push(tempGroup);
+      }
+    } else {
+      data = block.data;
+    }
+  }
   let isOpen = false;
+  let isExpanded = false;
+  toggleTable(isExpanded);
   // let mauContent =
   //   'Monthly active users (MAU) {Monthly active users represent the total number of unique users who log in to CometChat during your billing period.}';
   function convertMAUSToNumber(maus: string[] | []) {
@@ -26,7 +66,7 @@
     return maus;
   }
   let convertedMaus: string[] = [];
-  let plans: any = Object.keys($pricingValues);
+  let plans = Object.keys($pricingValues);
   plans = plans.map((plan) => {
     return {
       label: plan,
@@ -118,7 +158,7 @@
           {/each}
         </tr>
         <!-- </Sticky> -->
-        {#each block.data as item, index}
+        {#each data as item, index}
           {#if item.title}
             <tr
               data-row-index={index}
@@ -196,7 +236,7 @@
         </div>
       </div>
       <div class="flex flex-col px-container">
-        {#each block.data as item, index}
+        {#each data as item, index}
           {#if item.title}
             <tr
               data-row-portrait-index={index}
