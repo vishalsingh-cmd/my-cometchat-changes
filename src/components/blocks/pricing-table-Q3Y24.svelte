@@ -1,21 +1,29 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import { activateTable, isBilledAnnualy, maus, pricingValues } from '$lib/stores/pricing-stores';
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
   import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
   import TitleSection from './title-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
   import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24-portrait.svelte';
+  import Button from '$components/buttons/button.svelte';
 
   export let block;
-  let data = [];
-  let limitReached = false;
-  let lineItemsLength = 0;
 
-  function toggleTable(isExpanded: boolean, limit = 15) {
+  let selectedOption = 2;
+  let currentRowIndex = 1;
+
+  let label = 'Expand all Features';
+  let icon = 'chevron-down';
+  let data = [];
+  let ranOnce = false;
+  async function toggleTable(limit = 15) {
     if (isExpanded) {
+      data = [];
+      let limitReached = false;
+      let lineItemsLength = 0;
       for (let i = 0; i < block?.data.length; i++) {
         limitReached = lineItemsLength > limit;
         if (limitReached) break;
@@ -43,14 +51,31 @@
           }
         }
         if (tempGroup.subgroup.length > 0) data.push(tempGroup);
+        label = 'Expand all Features';
+        icon = 'chevron-down';
+      }
+
+      if (ranOnce) {
+        currentRowIndex = 1;
+        const element = document.getElementById('pricing-table-Q3Y24');
+        await tick();
+        const top = element?.offsetTop + element?.offsetHeight / 2;
+        if (top) {
+          window.scrollTo(0, top);
+        }
       }
     } else {
       data = block.data;
+      label = 'Collapse all Features';
+      icon = 'chevron-up';
     }
+    isExpanded = !isExpanded;
+    if (!ranOnce) ranOnce = true;
   }
+
   let isOpen = false;
-  let isExpanded = false;
-  toggleTable(isExpanded);
+  let isExpanded = true;
+  toggleTable();
   // let mauContent =
   //   'Monthly active users (MAU) {Monthly active users represent the total number of unique users who log in to CometChat during your billing period.}';
   function convertMAUSToNumber(maus: string[] | []) {
@@ -73,9 +98,6 @@
       value: plan
     };
   });
-  let selectedOption = 2;
-
-  let currentRowIndex = 1;
   function analyseCurrentRowIndex() {
     let lg = 1024;
     let offset = 100;
@@ -104,10 +126,24 @@
 </script>
 
 {#if $activateTable}
-  <div class="container mx-auto">
+  <div class="container mx-auto pb-[80px]">
     <TitleSection block={block.title[0]} />
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
-      <table class="table-auto">
+      <table class="relative table-auto">
+        <div
+          class={cn(
+            'absolute z-20 flex h-56 w-full items-end justify-center',
+            isExpanded && '-bottom-10',
+            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/100'
+          )}
+        >
+          <Button
+            size="sm"
+            {icon}
+            class="w-[127px] md:w-[250px] lg:w-[320px]"
+            on:click={() => toggleTable()}>{label}</Button
+          >
+        </div>
         <tr
           class={cn(
             'sticky top-0 z-20 w-full border-b border-gray-4 bg-[#0F0B1E]',
