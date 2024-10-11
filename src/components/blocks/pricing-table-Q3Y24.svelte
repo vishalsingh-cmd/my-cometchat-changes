@@ -135,19 +135,25 @@
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
       <table class="relative table-auto">
         <div
-          class={cn(
-            'absolute z-20 flex h-56 w-full items-end justify-center',
-            isExpanded && '-bottom-10',
-            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/90'
-          )}
+          class="pointer-events-none absolute top-0 z-30 mt-14 flex h-full w-full items-end justify-center"
         >
           <Button
-            size="sm"
             {icon}
-            class="w-[127px] md:w-[250px] lg:w-[320px]"
+            class={cn(
+              'pointer-events-auto  sticky mt-[40%] w-[320px]',
+              isExpanded && 'bottom-2',
+              !isExpanded && 'bottom-36'
+            )}
             on:click={() => toggleTable()}>{label}</Button
           >
         </div>
+        <div
+          class={cn(
+            'pointer-events-none absolute z-20 flex h-56 w-full items-end justify-center',
+            isExpanded && '-bottom-10',
+            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/90'
+          )}
+        />
         <tr
           class={cn(
             'sticky top-0 z-20 w-full border-b border-gray-4 bg-[#0F0B1E]',
@@ -246,7 +252,27 @@
     </div>
 
     <!-- mobile layout -->
-    <div class="lg:hidden" id="mini-pricing-table-Q3Y24">
+    <div class="relative lg:hidden" id="mini-pricing-table-Q3Y24">
+      <div
+        class="pointer-events-none absolute top-0 z-30 mt-14 flex h-full w-full items-end justify-center"
+      >
+        <Button
+          {icon}
+          class={cn(
+            'pointer-events-auto sticky mt-[80%] w-[320px]',
+            isExpanded && 'bottom-2',
+            !isExpanded && 'bottom-20'
+          )}
+          on:click={() => toggleTable()}>{label}</Button
+        >
+      </div>
+      <div
+        class={cn(
+          'pointer-events-none absolute z-20 flex h-56 w-full items-end justify-center',
+          isExpanded && '-bottom-11',
+          !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/100'
+        )}
+      />
       <div
         class={cn(
           'sticky top-0 flex h-[123px] w-full flex-col items-center bg-[#0F0B1E] px-0 pt-4',
@@ -276,15 +302,6 @@
         </div>
       </div>
       <div class="relative flex flex-col px-container">
-        <div
-          class={cn(
-            'absolute z-20 flex h-56 w-full items-end justify-center',
-            isExpanded && '-bottom-11',
-            !isExpanded && '-bottom-2 bg-gradient-to-b from-[#0F0B1E]/2 to-[#0F0B1E]/100'
-          )}
-        >
-          <Button size="sm" {icon} class="w-[320px]" on:click={() => toggleTable()}>{label}</Button>
-        </div>
         {#each data as item, index}
           {#if item.title}
             <tr
