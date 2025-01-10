@@ -12,7 +12,7 @@
   export let link: MultilinkStoryblok;
 </script>
 
-<div class="flex flex-col w-full max-w-[640px] ">
+<div class={"flex flex-col w-full max-w-[640px]"}>
   <div class="mb-6 h-full w-full md:mb-12">
     <Media imageTransformOptions={{ size: [1200, 0] }} media={illustration} />
   </div>
