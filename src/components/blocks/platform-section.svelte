@@ -7,7 +7,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import type { PlatformSectionStoryblok } from '$types/bloks';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
-  import { getLabelInfo } from '$lib/utils';
+  import { cn, getLabelInfo } from '$lib/utils';
 
   export let block: PlatformSectionStoryblok;
 </script>
@@ -36,7 +36,13 @@
         {/if}
 
         {#if block.products}
-          <div class="flex flex-col justify-center gap-10 px-container lg:flex-row lg:items-end">
+          <div
+            class={cn(
+              ['grid-cols grid justify-center gap-10 px-container'],
+              ['sm:grid-cols-2'],
+              ['lg:grid-cols-[repeat(auto-fill,_minmax(400px,1fr))]']
+            )}
+          >
             {#each block.products as product}
               {@const link =
                 product.link && product.link[0]
