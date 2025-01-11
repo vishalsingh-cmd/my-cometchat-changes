@@ -3,7 +3,6 @@
   import DynamicBlock from '$components/blocks/dynamic-block.svelte';
   import Breadcumbs from '$components/breadcumbs.svelte';
   export let block;
-  console.log(block);
 </script>
 
 <div class={'h-20'} />
