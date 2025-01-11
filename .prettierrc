@@ -16,6 +16,5 @@
         "parser": "svelte"
       }
     }
-  ],
-  "tailwindConfig": false
+  ]
 }

@@ -40,7 +40,7 @@
             class={cn(
               ['grid-cols grid justify-center gap-10 px-container'],
               ['sm:grid-cols-2'],
-              ['lg:grid-cols-[repeat(auto-fill,_minmax(400px,1fr))]']
+              ['lg:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]']
             )}
           >
             {#each block.products as product}
