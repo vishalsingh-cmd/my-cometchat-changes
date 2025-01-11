@@ -202,6 +202,12 @@ export interface GuideStoryblok {
   [k: string]: any;
 }
 
+export interface MarketplacesStoryblok {
+  component: 'marketplaces';
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
