@@ -3,12 +3,13 @@
   import { type EmblaCarouselType } from 'embla-carousel';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
   import type { ImageCarousalStoryblok } from '$types/bloks';
+  import Media from '$components/media.svelte';
   export let block: ImageCarousalStoryblok;
 
   let emblaApi: EmblaCarouselType;
   let emblaThumbApi: EmblaCarouselType;
   let prevIndex = 0;
-  const options = { loop: true };
+  const options = { loop: true, watchDrag: false };
 
   const onInit = (event: CustomEvent<EmblaCarouselType>) => {
     emblaApi = event.detail;
@@ -42,14 +43,15 @@
 
 <div class={cn(['embla'])}>
   <div
-    class="embla__viewport pointer-events-none overflow-hidden"
+    class="embla__viewport overflow-hidden"
     use:emblaCarouselSvelte={{ options, plugins: [] }}
     on:emblaInit={onInit}
   >
     <div class={cn(['embla__container'], [' flex'])}>
       {#each block.images as image}
         <div class={cn(['embla__slide'], ['min-w-0 flex-[0_0_100%]'])}>
-          <img class="h-full w-full object-cover" src={image.filename} alt={image.alt} />
+          <!-- <img class="h-full w-full object-cover" src={image.filename} alt={image.alt} /> -->
+          <Media imageTransformOptions={{ size: [1200, 0] }} media={image} enableZoom />
         </div>
       {/each}
     </div>
