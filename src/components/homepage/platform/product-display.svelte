@@ -12,7 +12,7 @@
   export let link: MultilinkStoryblok;
 </script>
 
-<div class={'grid max-w-[640px] grid-rows-2 gap-8'}>
+<div class={cn(['grid max-w-[640px] grid-rows-[1fr_auto] gap-8'], ['sm:grid-rows-2'])}>
   <div class="relative h-full w-full">
     <Media
       class="h-full w-full object-cover"
