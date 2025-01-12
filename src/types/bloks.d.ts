@@ -202,6 +202,12 @@ export interface GuideStoryblok {
   [k: string]: any;
 }
 
+export interface MarketplacesStoryblok {
+  component: 'marketplaces';
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -2222,5 +2228,57 @@ export interface YoutubeVideoStoryblok {
   video_url: string;
   _uid: string;
   component: 'youtube-video';
+  [k: string]: any;
+}
+
+export interface ConnectedStepStoryblok {
+  title: string;
+  description: string;
+  icon: AssetStoryblok;
+  _uid: string;
+  component: 'connected-step';
+  [k: string]: any;
+}
+
+export interface ConnectedStepsStoryblok {
+  theme?: '' | 'light' | 'dark';
+  title: TitleStoryblok[];
+  steps: ConnectedStepStoryblok[];
+  description: RichtextStoryblok;
+  _uid: string;
+  component: 'connected-steps';
+  [k: string]: any;
+}
+
+export interface TitleWithCTAStoryblok {
+  title: string;
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'title-with-cta';
+  [k: string]: any;
+}
+
+export interface TitleAndDescriptiontoryblok {
+  title: string;
+  titleSize: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  description: RichTextSectionStoryblok;
+  _uid: string;
+  component: 'title-and-description';
+  [k: string]: any;
+}
+
+export interface TitleAndIconsStoryblok {
+  title: string;
+  icons: AssetStoryblok[];
+  _uid: string;
+  component: 'title-and-icons';
+  [k: string]: any;
+}
+
+export interface ImageCarousalStoryblok {
+  title: string;
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'image-carousal';
   [k: string]: any;
 }
