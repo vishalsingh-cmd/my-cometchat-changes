@@ -12,9 +12,13 @@
   export let link: MultilinkStoryblok;
 </script>
 
-<div class={'flex w-full max-w-[640px] flex-col'}>
-  <div class="relative mb-6 h-full w-full object-cover md:mb-12">
-    <Media imageTransformOptions={{ size: [1200, 0] }} media={illustration} />
+<div class={'grid max-w-[640px] grid-rows-2 gap-8'}>
+  <div class="relative h-full w-full">
+    <Media
+      class="h-full w-full object-cover"
+      imageTransformOptions={{ size: [1200, 0] }}
+      media={illustration}
+    />
   </div>
   <div class="max-w-[416px] font-sans text-xl text-gray-12">
     <h3 class="mb-1 font-semibold leading-tighter md:mb-2">{title}</h3>
