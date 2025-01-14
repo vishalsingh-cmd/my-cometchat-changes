@@ -12,10 +12,10 @@
   export let link: MultilinkStoryblok;
 </script>
 
-<div class={cn(['grid max-w-[640px] grid-rows-[1fr_auto] gap-8'], ['sm:grid-rows-2'])}>
-  <div class="relative h-full w-full">
+<div class={cn(['grid max-w-[640px] grid-rows-[auto_1fr] gap-8'])}>
+  <div class="relative h-auto w-full">
     <Media
-      class="h-full w-full object-cover"
+      class="h-auto w-full object-cover"
       imageTransformOptions={{ size: [1200, 0] }}
       media={illustration}
     />
@@ -33,8 +33,17 @@
         <p class="mb-3 font-medium leading-snug tracking-wide opacity-74">{description}</p>
       {/if}
     {/if}
-    <GhostButton as="a" href={link.href} target={link.target} rel={link.rel} variant="highlighted">
-      {link.label}
-    </GhostButton>
+
+    {#if link.href}
+      <GhostButton
+        as="a"
+        href={link.href}
+        target={link.target}
+        rel={link.rel}
+        variant="highlighted"
+      >
+        {link.label}
+      </GhostButton>
+    {/if}
   </div>
 </div>
