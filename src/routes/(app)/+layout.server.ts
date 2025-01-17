@@ -3,6 +3,7 @@ import { env } from '$env/dynamic/private';
 import { getStoryblok } from '$lib/storyblok.js';
 import { getStoryVersion } from '$lib/utils';
 import { getNavigation } from '$api/header/getNavigation';
+import { getTemplatesFooter } from '$api/header/getTemplatesFooter';
 
 const isMarketplace = (path: string) => {
   const isMarketplace = path.split('/').find((slug) => slug === 'marketplace');
@@ -15,8 +16,11 @@ export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const { path } = params;
 
   if (isMarketplace(path || '')) {
+    const templatesFooter = await getTemplatesFooter(storyblok, { version });
+
     return {
-      templatesHeaderData: [{}]
+      templatesHeaderData: [{}],
+      templatesFooterData: templatesFooter
     };
   } else {
     const navigation = await getNavigation({ storyblok, version });

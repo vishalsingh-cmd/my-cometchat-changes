@@ -1,0 +1,108 @@
+import { isStatusError } from '$lib/error';
+import {
+  getAnchorFromCmsLink,
+  getAnchorFromCmsStory,
+  sanitizeSlug,
+  type Storyblok
+} from '$lib/storyblok';
+import type { FooterStoryblok, TechnologyStoryblok } from '$types/bloks';
+import type { StoryblokLinks } from '$types/cms';
+import type { ISbStoryData } from '@storyblok/js';
+import { error } from '@sveltejs/kit';
+
+export const getTemplatesFooter = async (
+  storyblok: Storyblok,
+  { version }: { version: 'published' | 'draft' }
+) => {
+  try {
+    const res = await storyblok.get('cdn/stories/configuration/templates-footer', {
+      version,
+      resolve_relations: ['footer.subfooter', 'footer-technology-documentation-link-group.links'],
+      resolve_links: 'story'
+    });
+    const footer = res.data.story as ISbStoryData<FooterStoryblok>;
+
+    const columns = await Promise.all(
+      footer.content.column_groups.map(async (columnGroup) => {
+        return await Promise.all(
+          columnGroup.columns.map(async (column) => {
+            return {
+              title: column.title,
+              groups: await Promise.all(
+                column.groups.map(async (group) => {
+                  // technologies documentation links (multi-option select)
+                  if (group.component === 'footer-technology-documentation-link-group') {
+                    const links = group.links as ISbStoryData<TechnologyStoryblok>[];
+                    return {
+                      title: group.title,
+                      links: links.map((link) => {
+                        const documentationLink = link.content.documentation_link[0];
+                        return {
+                          label: documentationLink.label,
+                          ...getAnchorFromCmsLink(documentationLink.link)
+                        };
+                      })
+                    };
+                  }
+
+                  // automatic folder links
+                  if (group.component === 'footer-folder-link-group') {
+                    const res = await storyblok.get('cdn/links', {
+                      version,
+                      starts_with: group.folder?.folder ? `${group.folder.folder}/` : ''
+                    });
+                    const links = res.data.links as StoryblokLinks;
+
+                    return {
+                      title: group.title,
+                      links: Object.values(links).map((link) => ({
+                        label: link.name,
+                        href: sanitizeSlug(link.slug),
+                        target: undefined,
+                        rel: undefined
+                      }))
+                    };
+                  }
+
+                  // manual links
+                  return {
+                    title: group.title,
+                    links: group.links.map((link) => {
+                      return {
+                        label: link.label || link.link.story?.name,
+                        ...getAnchorFromCmsLink(link.link)
+                      };
+                    })
+                  };
+                })
+              )
+            };
+          })
+        );
+      })
+    );
+
+    return {
+      prefooter: {
+        title: footer?.content?.prefooter_title,
+        description: footer?.content?.prefooter_description,
+        buttons: footer?.content?.prefooter_cta
+      },
+      socials: footer?.content.socials.map((social) => ({
+        label: social.label,
+        icon: social.icon,
+        ...getAnchorFromCmsLink(social.link)
+      })),
+      subfooter: footer?.content?.subfooter?.map((subfooter) => ({
+        label: subfooter.name,
+        ...getAnchorFromCmsStory(subfooter)
+      })),
+      columns
+    };
+  } catch (err) {
+    if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
+    throw new Error('Failed to get templates footer', { cause: err });
+  }
+};
+
+export type TemplatesFooter = Awaited<ReturnType<typeof getTemplatesFooter>>;
