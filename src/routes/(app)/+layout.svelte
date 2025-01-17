@@ -6,6 +6,7 @@
   import Footer from '$components/footer.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
   import { Toaster } from 'svelte-french-toast';
+  import TemplatesHeader from '$bricks/TemplatesHeader.svelte';
 
   export let data;
 
@@ -34,8 +35,16 @@
 <Toaster />
 
 <QueryClientProvider client={queryClient}>
-  <Topnav data={data.topnav.content} />
+  {#if data.topnav}
+    <Topnav data={data.topnav.content} />
+  {/if}
+
+  {#if data.templatesHeaderData}
+    <TemplatesHeader />
+  {/if}
+
   <slot />
+
   {#if data.footer}
     <Footer data={data.footer} />
   {/if}
