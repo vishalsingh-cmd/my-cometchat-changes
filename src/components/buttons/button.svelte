@@ -89,6 +89,7 @@
   export let size: undefined | VariantProps<typeof button>['size'] = 'md';
   export let loading: undefined | VariantProps<typeof button>['loading'] = false;
   export let icon: string | null = null;
+  export let canHaveGlow = true;
   let el: HTMLButtonElement | HTMLAnchorElement;
   function mouseMoveEvent(e: MouseEvent) {
     const rect = el.getBoundingClientRect();
@@ -127,13 +128,17 @@
       <Comet {variant} />
     </div>
   {/if}
-  <div
-    class="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
-    style="background: radial-gradient(100px circle at {position.x}px {position.y}px, {variant ===
-    'primary'
-      ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'
-      : 'hsl(var(--color-brand-7) / 0.3), hsl(var(--color-brand-7) / 0)'});"
-  />
+
+  {#if canHaveGlow}
+    <div
+      class="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
+      style="background: radial-gradient(100px circle at {position.x}px {position.y}px, {variant ===
+      'primary'
+        ? 'rgba(255,255,255,.16), rgba(255,255,255,0)'
+        : 'hsl(var(--color-brand-7) / 0.3), hsl(var(--color-brand-7) / 0)'});"
+    />
+  {/if}
+
   {#if icon}
     <Icon {icon} size="xs" class="ml-[12px]" />
   {/if}

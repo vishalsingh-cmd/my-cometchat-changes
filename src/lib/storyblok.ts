@@ -17,6 +17,7 @@ import { STORYBLOK_PAGES_PREFIX } from '$lib/constants';
 import { removeLeadingSlash, removeMultipleSlashes, removeTrailingSlash } from '$lib/utils/url';
 
 const PUBLIC_STORYBLOK_TOKEN = env.PUBLIC_STORYBLOK_TOKEN;
+export type Storyblok = NonNullable<ReturnType<typeof storyblokInit>['storyblokApi']>;
 
 if (!PUBLIC_STORYBLOK_TOKEN) {
   throw new Error('Missing required env var: PUBLIC_STORYBLOK_TOKEN');

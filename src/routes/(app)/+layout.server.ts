@@ -1,44 +1,30 @@
 import type { LayoutServerLoad } from './$types';
 import { env } from '$env/dynamic/private';
-import { getFooter } from '$lib/data/footer.js';
-import { isStatusError } from '$lib/error.js';
 import { getStoryblok } from '$lib/storyblok.js';
-import type { TopNavigationStoryblok } from '$types/bloks.js';
-import type { ISbStoryData } from '@storyblok/js';
-import { error } from '@sveltejs/kit';
 import { getStoryVersion } from '$lib/utils';
+import { getNavigation } from '$api/header/getNavigation';
+import { getTemplatesFooter } from '$api/header/getTemplatesFooter';
 
-export const load: LayoutServerLoad = async ({ cookies, fetch }) => {
+const isMarketplace = (path: string) => {
+  const isMarketplace = path.split('/').find((slug) => slug === 'marketplace');
+  return isMarketplace;
+};
+
+export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const version = getStoryVersion(cookies);
   const storyblok = getStoryblok({ fetch });
+  const { path } = params;
 
-  try {
-    const [topnav, footer] = await Promise.all([
-      storyblok.get('cdn/stories/configuration/top-navigation', {
-        version,
-        excluding_fields: 'body',
-        resolve_relations: [
-          'topnav-technologies-panel.technologies_links',
-          'topnav-solutions-panel.industries',
-          'topnav-resources-panel.customer_stories',
-          'topnav-resources-panel.blog_posts',
-          'blog-post.customer',
-          'customer-story.customer',
-          'guide.customer'
-        ]
-      }),
-      getFooter(storyblok, { version })
-    ]);
+  if (isMarketplace(path || '')) {
+    const templatesFooter = await getTemplatesFooter(storyblok, { version });
 
     return {
-      version,
-      topnav: topnav.data.story as ISbStoryData<TopNavigationStoryblok>,
-      footer
+      templatesHeaderData: [{}],
+      templatesFooterData: templatesFooter
     };
-  } catch (err) {
-    if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
-
-    throw new Error('Failed to load layout data', { cause: err });
+  } else {
+    const navigation = await getNavigation({ storyblok, version });
+    return navigation;
   }
 };
 

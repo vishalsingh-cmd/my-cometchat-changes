@@ -15,7 +15,7 @@
     {block.title}
   </h1>
 
-  <Button variant={'primary'} as="a" href={block.cta[0].link?.url}>
+  <Button variant={'primary'} as="a" href={block.cta[0].link?.url} canHaveGlow={false}>
     {block.cta[0].label}
   </Button>
 </div>

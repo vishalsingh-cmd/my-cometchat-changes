@@ -7,7 +7,6 @@
   export let block;
 </script>
 
-<div class={'h-20'} />
 <div class={cn(['grid-col-1 grid', 'relative w-full bg-white'], ['lg:grid-cols-[0.2fr_0.8fr]'])}>
   <TemplatesSidebar />
   <div class="relative flex w-full flex-col">
