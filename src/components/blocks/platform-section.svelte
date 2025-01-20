@@ -11,12 +11,11 @@
 
   export let block: PlatformSectionStoryblok;
 
-  let gridCols =
-    block.maxColumns !== undefined
-      ? `grid-template-columns: ${Array(Number(block.maxColumns))
-          .fill('1fr')
-          .reduce((p, s) => s + ' ' + p)}`
-      : '';
+  let gridCols = block.maxColumns
+    ? `grid-template-columns: ${Array(Number(block.maxColumns))
+        .fill('1fr')
+        .reduce((p, s) => s + ' ' + p)}`
+    : '';
 </script>
 
 {#if block}
