@@ -5,7 +5,7 @@
 
 <div
   class={cn(
-    ['sticky top-0 z-[999] flex items-center gap-3 p-5'],
+    ['sticky top-0 z-[100] flex items-center gap-3 p-5'],
     ['border-b border-b-[#E8E8E8] bg-white']
   )}
 >
