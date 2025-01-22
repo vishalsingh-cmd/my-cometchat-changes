@@ -5,8 +5,8 @@ import { getStoryVersion } from '$lib/utils';
 import { getNavigation } from '$api/header/getNavigation';
 import { getTemplatesFooter } from '$api/header/getTemplatesFooter';
 
-const isMarketplace = (path: string) => {
-  const isMarketplace = path.split('/').find((slug) => slug === 'marketplace');
+const isTemplatesPage = (path: string) => {
+  const isMarketplace = path.split('/').find((slug) => slug === 'templates');
   return isMarketplace;
 };
 
@@ -15,7 +15,7 @@ export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const storyblok = getStoryblok({ fetch });
   const { path } = params;
 
-  if (isMarketplace(path || '')) {
+  if (isTemplatesPage(path || '')) {
     const templatesFooter = await getTemplatesFooter(storyblok, { version });
 
     return {
