@@ -5,6 +5,7 @@
   import { bannerData } from './_data/banner.data';
   import RotatingTextBox from './_comps/RotatingTextBox.svelte';
   import planats_bg from './_assets/planats_bg.svg';
+  import Button from '$src/components/buttons/button.svelte';
 </script>
 
 <Section className="relative isolate">
@@ -30,6 +31,11 @@
         The first platform that lets developers ship enterprise chat in minutes - in any framework,
         at any scale.
       </p>
+
+      <div class={cn(['flex items-center justify-center gap-3', 'mt-16'], ['lg:gap-6'])}>
+        <Button>Start visual chat builder</Button>
+        <Button variant="secondary">Contact us</Button>
+      </div>
     </div>
   </Container>
   <img
