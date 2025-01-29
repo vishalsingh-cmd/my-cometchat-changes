@@ -115,7 +115,8 @@ export default {
         'divider-gradient':
           'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
         'divider-gradient-vertical':
-          'linear-gradient(0deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)'
+          'linear-gradient(0deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
+        'gradient-purple': 'linear-gradient(180deg, #FFFFFF 0%, #6A55D7 126.95%)'
       },
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,
