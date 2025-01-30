@@ -49,6 +49,7 @@
   bind:this={listElement}
   role="tablist"
   tabindex="0"
+  data-scrollbar="hide"
   aria-orientation={$orientation}
   on:keydown={handleKeyDown}
   class={tabsList({ class: className })}
