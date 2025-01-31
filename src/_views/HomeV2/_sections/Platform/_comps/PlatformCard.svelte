@@ -1,0 +1,75 @@
+<script lang="ts">
+  import { cn } from '$src/lib/utils';
+  import { tv } from '$src/_utils/tailwind.utils';
+  import GhostButton from '$src/components/buttons/ghost-button.svelte';
+
+  export let icon;
+  export let title;
+  export let description;
+  export let ctaLabel;
+  export let ctaLink;
+  export let imageSrc;
+  export let imageAlt;
+
+  export let baseClassName = '';
+  export let containerClassName = '';
+  export let infoClassName = '';
+  export let titleClassName = '';
+  export let desClassName = '';
+  export let imageWrapClassName = '';
+  export let imageClassName = '';
+
+  const platformCard = tv({
+    slots: {
+      platformCard__base: ['relative isolate h-full', 'p-[1px]'],
+      platformCard__container: [
+        'flex flex-col h-full',
+        'bg-[#0A0914] rounded-2xl',
+        'lg:rounded-3xl'
+      ],
+      platformCard__info: ['flex flex-col gap-4 px-4 pt-4 pb-6', 'lg:p-8'],
+      platformCard__title: ['font-sans text-xl font-semibold text-[#FAFAFF]', 'lg:text-[24px]'],
+      platformCard__des: ['font-sans text-xl font-semibold text-[#FAFAFF] opacity-74'],
+      platformCard__imageWrap: ['flex h-full w-full'],
+      platformCard__image: ['w-full object-contain']
+    }
+  });
+  const {
+    platformCard__base,
+    platformCard__container,
+    platformCard__info,
+    platformCard__title,
+    platformCard__des,
+    platformCard__imageWrap,
+    platformCard__image
+  } = platformCard();
+</script>
+
+<div class={platformCard__base({ class: baseClassName })}>
+  <div class={platformCard__container({ class: containerClassName })}>
+    <div class={platformCard__info({ class: infoClassName })}>
+      <svelte:component this={icon} />
+      <h3 class={platformCard__title({ class: titleClassName })}>{title}</h3>
+      <p class={platformCard__des({ class: desClassName })}>
+        {description}
+      </p>
+      <GhostButton variant="highlighted" href={ctaLink} as="a" taget="_blank">
+        {ctaLabel}
+      </GhostButton>
+    </div>
+
+    <div class={platformCard__imageWrap({ class: imageWrapClassName })}>
+      <img class={platformCard__image({ class: imageClassName })} src={imageSrc} alt={imageAlt} />
+    </div>
+  </div>
+
+  <div
+    class={cn(
+      [
+        'absolute inset-0 -z-[1] h-full w-full rounded-2xl',
+        'bg-[radial-gradient(53.51%_100%_at_53.51%_0%,_rgba(250,_250,_255,_0.3)_0%,_rgba(250,_250,_255,_0.1)_100%)]'
+      ],
+      ['lg:rounded-3xl']
+    )}
+  />
+</div>

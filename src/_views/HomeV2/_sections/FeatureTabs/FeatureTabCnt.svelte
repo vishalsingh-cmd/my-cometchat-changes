@@ -4,6 +4,5 @@
 </script>
 
 <div class={cn(['flex flex-col'])}>
-  <!-- svelte-ignore a11y-media-has-caption -->
-  <video src={videoSrc} autoplay playsinline loop />
+  <video src={videoSrc} autoplay playsinline loop muted />
 </div>

@@ -12,15 +12,15 @@
 <Section>
   <Container>
     <div class="flex flex-col">
-      <HeadingLatest as="h2" varient="h6" class="text-center text-[#FF7F3E]"
-        >Lorem ipsum dolor</HeadingLatest
-      >
-      <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}
-        >Integrate today, live tomorrow</HeadingLatest
-      >
-      <ParahLates class={cn(['mt-3 text-center'], ['lg:mt-4'])}
-        >Why spend months with SDKs when you can ship in minutes?</ParahLates
-      >
+      <HeadingLatest as="h2" varient="h6" class="text-center text-[#FF7F3E]">
+        Lorem ipsum dolor
+      </HeadingLatest>
+      <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
+        Integrate today, live tomorrow
+      </HeadingLatest>
+      <ParahLates class={cn(['mt-3 text-center'], ['lg:mt-4'])}>
+        Why spend months with SDKs when you can ship in minutes?
+      </ParahLates>
     </div>
 
     <div class={cn(['mx-auto mt-10 flex max-w-[1086px] flex-col'], ['lg:mt-[88px]'])}>
