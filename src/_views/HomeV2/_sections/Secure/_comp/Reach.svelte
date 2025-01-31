@@ -4,9 +4,11 @@
 
   export let title;
   export let des;
+
+  export let className = '';
 </script>
 
-<div class="flex-[50] border border-[#FAFAFF1A] p-4">
+<div class={cn(['flex-[50] border border-[#FAFAFF1A] p-4'], [className])}>
   <PhoneIcon />
   <h4 class={cn(['mt-4 text-[16px] font-medium text-[#FAFAFF]'])}>
     {title}
