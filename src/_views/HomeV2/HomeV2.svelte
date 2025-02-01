@@ -7,6 +7,7 @@
   import Clients from './_sections/Clients/Clients.svelte';
   import Technologies from './_sections/Technologies/Technologies.svelte';
   import Platform from './_sections/Platform/Platform.svelte';
+  import Industry from './_sections/Industry/Industry.svelte';
 </script>
 
 <Page>
@@ -15,6 +16,7 @@
   <Clients />
   <Step />
   <Technologies />
+  <Industry />
   <Platform />
   <Secure />
 </Page>
