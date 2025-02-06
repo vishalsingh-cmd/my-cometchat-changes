@@ -53,7 +53,7 @@
       <p class={platformCard__des({ class: desClassName })}>
         {description}
       </p>
-      <GhostButton variant="highlighted" href={ctaLink} as="a" taget="_blank">
+      <GhostButton variant="highlighted" class="w-max" href={ctaLink} as="a" taget="_blank">
         {ctaLabel}
       </GhostButton>
     </div>

@@ -41,7 +41,7 @@
           <StepAnimatedBeam />
           <StepBorderBeam />
           <StepCircle position="topLeft" />
-          <StepCircle position="topMiddle" />
+          <StepCircle position="topMiddle" className="hidden lg:block" />
           <StepCircle position="topRight" />
 
           <StepContentImg
@@ -52,7 +52,7 @@
           {#if i === stepDatas.length - 1}
             <StepBorderBeam position="bottom" />
             <StepCircle position="bottomLeft" />
-            <StepCircle position="bottomMiddle" />
+            <StepCircle position="bottomMiddle" className="hidden lg:block" />
             <StepCircle position="bottomRight" />
           {/if}
         </div>
