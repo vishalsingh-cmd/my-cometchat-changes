@@ -32,7 +32,7 @@
         at any scale.
       </p>
 
-      <div class={cn(['flex items-center justify-center gap-3', 'mt-16'], ['lg:gap-6'])}>
+      <div class={cn(['flex items-center justify-center gap-3', 'mt-24'], ['lg:gap-6'])}>
         <Button>Start visual chat builder</Button>
         <Button variant="secondary">Contact us</Button>
       </div>

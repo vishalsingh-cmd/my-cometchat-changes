@@ -1,9 +1,12 @@
 <script>
+  import { cn } from '$src/_utils/tailwind.utils';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
+  import StepAnimatedBeam from './_comp/StepAnimatedBeam.svelte';
+  import StepBorderBeam from './_comp/StepBorderBeam.svelte';
+  import StepCircle from './_comp/StepCircle.svelte';
   import StepContentImg from './_comp/StepContentImg.svelte';
   import StepContentWrap from './_comp/StepContentWrap.svelte';
   import { stepDatas } from './_data/step.data';
@@ -13,7 +16,7 @@
   <Container>
     <div class="flex flex-col">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#FF7F3E]">
-        Lorem ipsum dolor
+        Implementation
       </HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
         Integrate today, live tomorrow
@@ -25,15 +28,33 @@
 
     <div class={cn(['mx-auto mt-10 flex max-w-[1086px] flex-col'], ['lg:mt-[88px]'])}>
       {#each stepDatas as stepData, i}
-        <div class={cn(['grid grid-cols-1'], ['lg:grid-cols-2'])}>
+        <div
+          class={cn(
+            [
+              'group/step',
+              'relative isolate grid grid-cols-1',
+              'border-x border-[#FAFAFF] border-opacity-10'
+            ],
+            ['lg:grid-cols-2']
+          )}
+        >
+          <StepAnimatedBeam />
+          <StepBorderBeam />
+          <StepCircle position="topLeft" />
+          <StepCircle position="topMiddle" />
+          <StepCircle position="topRight" />
+
           <StepContentImg
             img={stepData.img}
-            class={cn([i != 1 && 'lg:order-1'], ['border border-[#FAFAFF1A] lg:flex-[50]'])}
+            class={cn([i != 1 && 'lg:order-1'], ['lg:flex-[50]'])}
           />
-          <StepContentWrap
-            content={stepData.content}
-            class={cn(['border border-[#FAFAFF1A] lg:flex-[50] '])}
-          />
+          <StepContentWrap content={stepData.content} class={cn(['lg:flex-[50] '])} />
+          {#if i === stepDatas.length - 1}
+            <StepBorderBeam position="bottom" />
+            <StepCircle position="bottomLeft" />
+            <StepCircle position="bottomMiddle" />
+            <StepCircle position="bottomRight" />
+          {/if}
         </div>
       {/each}
     </div>

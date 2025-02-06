@@ -5,6 +5,8 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import FeatureTabCnt from './FeatureTabCnt.svelte';
   import video0 from './_assets/vid0.mp4';
+  import video1 from './_assets/vid1.mp4';
+  import video2 from './_assets/vid2.mp4';
 
   const tabHeaders = ['Visualize & Build', 'Live in Minutes', 'Moderate & Scale'];
 </script>
@@ -64,12 +66,19 @@
         </TabsContent>
 
         <TabsContent value="tab1">
-          <FeatureTabCnt videoSrc={video0} />
+          <FeatureTabCnt videoSrc={video1} />
         </TabsContent>
 
         <TabsContent value="tab2">
-          <FeatureTabCnt videoSrc={video0} />
+          <FeatureTabCnt videoSrc={video2} />
         </TabsContent>
+
+        <div
+          class={cn([
+            'absolute bottom-0 left-0 right-0 h-28',
+            'bg-[linear-gradient(180deg,_rgba(10,_9,_20,_0)_0%,_rgba(10,_9,_20,_0.8)_44%,_#0A0914_100%)]'
+          ])}
+        />
       </Tabs>
     </div>
   </Container>

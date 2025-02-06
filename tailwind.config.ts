@@ -116,7 +116,9 @@ export default {
           'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
         'divider-gradient-vertical':
           'linear-gradient(0deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
-        'gradient-purple': 'linear-gradient(180deg, #FFFFFF 0%, #6A55D7 126.95%)'
+        'gradient-purple': 'linear-gradient(180deg, #FFFFFF 0%, #6A55D7 126.95%)',
+        'border-beam-white':
+          'linear-gradient(90deg, rgba(250, 250, 255, 0) 0%, rgba(250, 250, 255, 0.1) 5%, rgba(250, 250, 255, 0.1) 95%, rgba(250, 250, 255, 0) 100%)'
       },
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,
