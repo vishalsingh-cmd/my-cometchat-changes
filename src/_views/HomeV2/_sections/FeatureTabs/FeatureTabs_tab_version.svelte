@@ -1,7 +1,7 @@
 <script lang="ts">
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-
+  import { Tabs, TabsList, TabsTrigger, TabsContent } from '$src/_comps/layouts/Tabs';
   import { cn } from '$src/_utils/tailwind.utils';
   import FeatureTabCnt from './FeatureTabCnt.svelte';
   import video0 from './_assets/vid0.mp4';
@@ -14,9 +14,9 @@
 <Section className="relative isolate">
   <Container pyEnabled={false}>
     <div class="flex flex-col text-center">
-      <div>
-        <div
-          class={cn(
+      <Tabs defaultValue="tab0">
+        <TabsList
+          className={cn(
             [
               'relative isolate',
               'flex items-center justify-start gap-5',
@@ -27,18 +27,19 @@
           )}
         >
           {#each tabHeaders as tabHeader, index}
-            <div
-              class={cn(
+            <TabsTrigger
+              className={cn(
                 [
                   'relative isolate py-6',
-                  'whitespace-nowrap font-sans text-md font-semibold text-[#FAFAFF] opacity-54',
+                  'font-sans font-semibold text-md text-[#FAFAFF] opacity-54 whitespace-nowrap',
                   'border-b border-b-[#6958BE] border-opacity-0',
                   'hover:opacity-100',
-                  'data-[state="active"]:border-opacity-100 data-[state="active"]:opacity-100',
+                  'data-[state="active"]:opacity-100 data-[state="active"]:border-opacity-100',
                   'transition-[border-bottom-color,opacity] duration-300'
                 ],
                 ['lg:text-[22px]']
               )}
+              value={`tab${index}`}
             >
               {tabHeader}
               <div
@@ -49,7 +50,7 @@
                   'bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(104,_82,_214,_0.12)_0%,_rgba(104,_82,_214,_0)_100%)]'
                 ])}
               />
-            </div>
+            </TabsTrigger>
           {/each}
 
           <div
@@ -58,19 +59,19 @@
               'bg-[linear-gradient(90deg,_rgba(250,_250,_255,_0)_0%,_rgba(250,_250,_255,_0.1)_5%,_rgba(250,_250,_255,_0.1)_95%,_rgba(250,_250,_255,_0)_100%)]'
             ])}
           />
-        </div>
+        </TabsList>
 
-        <div>
+        <TabsContent value="tab0">
           <FeatureTabCnt videoSrc={video0} />
-        </div>
+        </TabsContent>
 
-        <div>
+        <TabsContent value="tab1">
           <FeatureTabCnt videoSrc={video1} />
-        </div>
+        </TabsContent>
 
-        <div>
+        <TabsContent value="tab2">
           <FeatureTabCnt videoSrc={video2} />
-        </div>
+        </TabsContent>
 
         <div
           class={cn([
@@ -78,7 +79,7 @@
             'bg-[linear-gradient(180deg,_rgba(10,_9,_20,_0)_0%,_rgba(10,_9,_20,_0.8)_44%,_#0A0914_100%)]'
           ])}
         />
-      </div>
+      </Tabs>
     </div>
   </Container>
 </Section>
