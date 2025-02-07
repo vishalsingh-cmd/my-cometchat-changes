@@ -1,19 +1,34 @@
 <script lang="ts">
+  // import { gsap } from 'gsap';
+  import { cn } from '$src/_utils/tailwind.utils';
+  // import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-
-  import { cn } from '$src/_utils/tailwind.utils';
   import FeatureTabCnt from './FeatureTabCnt.svelte';
   import video0 from './_assets/vid0.mp4';
   import video1 from './_assets/vid1.mp4';
   import video2 from './_assets/vid2.mp4';
 
   const tabHeaders = ['Visualize & Build', 'Live in Minutes', 'Moderate & Scale'];
+
+  // gsap.registerPlugin(ScrollTrigger);
+
+  let container;
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: container,
+  //     pin: true,
+  //     start: 'top top',
+  //     end: '+=500',
+  //     scrub: 1,
+  //     markers: true
+  //   }
+  // });
 </script>
 
 <Section className="relative isolate">
   <Container pyEnabled={false}>
-    <div class="flex flex-col text-center">
+    <div class="flex flex-col text-center" bind:this={container}>
       <div>
         <div
           class={cn(
