@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { cn } from '$src/lib/utils';
-  import { tv } from '$src/_utils/tailwind.utils';
+  import { tv, cn } from '$src/_utils/tailwind.utils';
+  import { onMount } from 'svelte';
   import GhostButton from '$src/components/buttons/ghost-button.svelte';
 
   export let icon;
@@ -21,9 +21,9 @@
 
   const platformCard = tv({
     slots: {
-      platformCard__base: ['relative isolate h-full', 'p-[1px]'],
+      platformCard__base: ['relative isolate h-full', 'p-[1px] grid grid-cols-1 overflow-hidden'],
       platformCard__container: [
-        'flex flex-col h-full',
+        'flex flex-col h-full min-h-0',
         'bg-[#0A0914] rounded-2xl',
         'lg:rounded-3xl'
       ],
@@ -43,9 +43,50 @@
     platformCard__imageWrap,
     platformCard__image
   } = platformCard();
+
+  /* -------------------------------- animation ------------------------------- */
+  let card: HTMLDivElement;
+  let gradient: HTMLDivElement;
+  let bounds: DOMRect;
+
+  onMount(() => {
+    updateBounds();
+    window.addEventListener('scroll', updateBounds);
+    window.addEventListener('resize', updateBounds);
+
+    return () => {
+      window.removeEventListener('scroll', updateBounds);
+      window.removeEventListener('resize', updateBounds);
+    };
+  });
+
+  function updateBounds() {
+    bounds = card.getBoundingClientRect();
+  }
+
+  function handlePointerMove(event: PointerEvent) {
+    if (!bounds) updateBounds();
+
+    const rect = bounds;
+    const x = event.pageX - (rect.left + window.scrollX);
+    const y = event.pageY - (rect.top + window.scrollY);
+
+    gradient.style.opacity = '1';
+    gradient.style.background = `
+      radial-gradient(
+        600px circle at ${x}px ${y}px,
+        rgba(250, 250, 255, 0.08),
+        rgba(250, 250, 255, 0) 40%
+      )
+    `;
+  }
 </script>
 
-<div class={platformCard__base({ class: baseClassName })}>
+<div
+  class={platformCard__base({ class: baseClassName })}
+  bind:this={card}
+  on:pointermove={handlePointerMove}
+>
   <div class={platformCard__container({ class: containerClassName })}>
     <div class={platformCard__info({ class: infoClassName })}>
       <svelte:component this={icon} />
@@ -71,5 +112,10 @@
       ],
       ['lg:rounded-3xl']
     )}
+  />
+
+  <div
+    bind:this={gradient}
+    class="pointer-events-none absolute inset-0 h-full w-full rounded-2xl transition-[background] duration-300 lg:rounded-3xl"
   />
 </div>

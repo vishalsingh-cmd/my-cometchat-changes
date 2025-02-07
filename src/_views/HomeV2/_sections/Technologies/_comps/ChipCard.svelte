@@ -16,6 +16,7 @@
       'hover:border-[#3F337A]',
       'transition-colors duration-300'
     ],
+    ['2xl:h-[88px] 2xl:w-[230px]'],
     [className]
   )}
   {href}

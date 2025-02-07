@@ -44,7 +44,7 @@
     />
 
     <PlatformCard
-      baseClassName="xl:row-span-2 xl:h-[90%] xl:self-end"
+      baseClassName="xl:row-span-2 xl:h-[84%] xl:self-end"
       icon={Icon02}
       title="Voice and video"
       description="Power lag-free 1:1 and group video calls at any scale. Built-in screen sharing, recording, and automatic quality optimization ensure perfect calls. Ultra-low latency infrastructure that handles high concurrency."

@@ -35,7 +35,7 @@
   }
 </script>
 
-<div class={cn(['flex flex-col gap-5'], ['lg:gap-8'])}>
+<div class={cn(['flex flex-col gap-10'], ['lg:gap-8'])}>
   {#each industriesData as industry, index}
     <IndustryRollerItem
       {index}

@@ -46,7 +46,7 @@
 
           <StepContentImg
             img={stepData.img}
-            class={cn([i != 1 && 'lg:order-1'], ['lg:flex-[50]'])}
+            class={cn([i != 1 && 'lg:order-1', 'pb-4 pt-6'], ['lg:flex-[50]'])}
           />
           <StepContentWrap content={stepData.content} class={cn(['lg:flex-[50] '])} />
           {#if i === stepDatas.length - 1}
