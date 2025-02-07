@@ -18,7 +18,9 @@
     stroke="url(#paint1_linear_58_151602)"
     stroke-linecap="round"
     stroke-dasharray="0.1 1.5"
+    style="cursor: pointer;"
   />
+
   <rect
     opacity="0.75"
     x="560.171"

@@ -8,9 +8,10 @@
   import Technologies from './_sections/Technologies/Technologies.svelte';
   import Platform from './_sections/Platform/Platform.svelte';
   import Industry from './_sections/Industry/Industry.svelte';
+  import Testimonial from './_sections/Testimonial/Testimonial.svelte';
 </script>
 
-<Page>
+<Page className="bg-[#0A0915]">
   <Banner />
   <FeatureTabs />
   <Clients />
@@ -19,4 +20,5 @@
   <Industry />
   <Platform />
   <Secure />
+  <Testimonial />
 </Page>

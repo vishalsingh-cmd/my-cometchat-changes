@@ -18,7 +18,7 @@
   function startAnimation() {
     interval = setInterval(() => {
       activeIndex = (activeIndex + 1) % industriesData.length;
-    }, 5000);
+    }, 8000);
   }
 
   function stopAnimation() {
@@ -35,7 +35,7 @@
   }
 </script>
 
-<div class={cn(['flex flex-col gap-5'], ['lg:gap-8'])}>
+<div class={cn(['flex flex-col gap-10'], ['lg:gap-8'])}>
   {#each industriesData as industry, index}
     <IndustryRollerItem
       {index}

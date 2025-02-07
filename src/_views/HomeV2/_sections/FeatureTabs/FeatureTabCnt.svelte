@@ -4,5 +4,5 @@
 </script>
 
 <div class={cn(['flex flex-col'])}>
-  <video src={videoSrc} autoplay playsinline loop muted />
+  <video src={videoSrc} muted />
 </div>

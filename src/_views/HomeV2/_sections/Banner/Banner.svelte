@@ -9,8 +9,8 @@
 </script>
 
 <Section className="relative isolate">
-  <Container isHero={true}>
-    <div class="flex flex-col text-center">
+  <Container>
+    <div class="mt-10 flex flex-col text-center">
       <h1
         class={cn(
           ['font-sans text-[40px] font-semibold', 'mx-auto flex max-w-3xl flex-col gap-x-2'],
@@ -32,7 +32,7 @@
         at any scale.
       </p>
 
-      <div class={cn(['flex items-center justify-center gap-3', 'mt-16'], ['lg:gap-6'])}>
+      <div class={cn(['flex items-center justify-center gap-3', 'mt-10'], ['lg:mt-16 lg:gap-6'])}>
         <Button>Start visual chat builder</Button>
         <Button variant="secondary">Contact us</Button>
       </div>
@@ -41,6 +41,9 @@
   <img
     src={planats_bg}
     alt="background"
-    class="absolute inset-0 -z-[1] h-full w-full object-cover object-top"
+    class={cn(
+      ['absolute inset-0 -z-[1]', 'h-full w-full object-cover object-top', '-translate-y-4'],
+      ['lg:-translate-y-[4.5rem]']
+    )}
   />
 </Section>

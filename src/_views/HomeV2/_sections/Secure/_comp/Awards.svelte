@@ -5,6 +5,7 @@
   import award02 from '../_assets/award02.png';
   import award03 from '../_assets/award03.png';
   import award04 from '../_assets/award04.png';
+  import SecureDecCircle from './SecureDecCircle.svelte';
 
   const awards = [
     {
@@ -28,8 +29,15 @@
   export let className = '';
 </script>
 
-<div class={cn(['border border-[#FAFAFF1A]'], [className])}>
-  <div class={cn(['flex flex-col gap-4 p-4'])}>
+<div
+  class={cn(
+    ['relative', 'border-l border-r border-[#FAFAFF1A]'],
+    ['sm:border-b'],
+    ['lg:border-b-0'],
+    [className]
+  )}
+>
+  <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
     <HeadingLatest as="h3" varient="h6">Enterprise security</HeadingLatest>
     <div class={cn(['grid grid-cols-[150px_150px] gap-4'])}>
       {#each awards as award}
@@ -48,4 +56,9 @@
       {/each}
     </div>
   </div>
+
+  <SecureDecCircle position="topLeft" />
+  <SecureDecCircle position="topRight" />
+  <SecureDecCircle position="bottomLeft" className="md:hidden" />
+  <SecureDecCircle position="bottomRight" />
 </div>

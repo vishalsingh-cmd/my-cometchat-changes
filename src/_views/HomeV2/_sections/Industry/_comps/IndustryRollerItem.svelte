@@ -77,7 +77,7 @@
       'h-[1px] w-full -translate-x-full bg-[#FF7F3E]',
       'group-data-[state="active"]:translate-x-0',
       'transition-transform duration-200',
-      'group-data-[state="active"]:duration-[5000ms]'
+      'group-data-[state="active"]:duration-[8000ms]'
     ])}
   />
 </button>

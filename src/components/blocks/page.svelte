@@ -7,7 +7,7 @@
 </script>
 
 {#if block?.slug === 'home-v2'}
-  <HomeV2 />
+  <HomeV2 {block} />
 {/if}
 
 {#if block.content.body}
