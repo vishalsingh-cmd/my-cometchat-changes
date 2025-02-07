@@ -31,7 +31,7 @@
         pin: true,
         start: 'top 10%',
         scrub: 1,
-        markers: true,
+
         onUpdate: (self) => {
           const progress = self.progress;
           const newIndex = Math.floor(progress * 3);

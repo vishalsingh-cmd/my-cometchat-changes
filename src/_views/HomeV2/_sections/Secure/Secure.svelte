@@ -1,9 +1,9 @@
 <script>
+  import { cn } from '$src/_utils/tailwind.utils';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
   import Awards from './_comp/Awards.svelte';
   import LockVector from './_comp/LockVector.svelte';
   import Network from './_comp/Network.svelte';
