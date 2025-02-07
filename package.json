@@ -75,6 +75,7 @@
     "clone-deep": "^4.0.1",
     "date-fns": "^2.30.0",
     "embla-carousel": "^8.5.2",
+    "embla-carousel-auto-scroll": "^8.5.2",
     "embla-carousel-autoplay": "^8.5.2",
     "embla-carousel-svelte": "^8.5.2",
     "svelte-french-toast": "^1.2.0",
