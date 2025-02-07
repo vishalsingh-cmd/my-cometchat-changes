@@ -110,13 +110,13 @@
       </HeadingLatest>
     </div>
 
-    <div class="mt-10" bind:this={emblaNode}>
+    <div class="mt-10 lg:mt-[88px]" bind:this={emblaNode}>
       <div class="embla__viewport lg:overflow-visible" bind:this={viewportNode}>
         <div
-          class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-6"
+          class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-8"
           bind:this={embalaContainer}
         >
-          {#each tmolDatas as data}
+          {#each tmolDatas as data, i}
             <div
               class={cn(
                 ['embla__slide min-w-0 max-w-[340px]'],
@@ -124,7 +124,13 @@
                 ['lg:max-w-none lg:basis-auto']
               )}
             >
-              <TmolsCard content={data} />
+              {#if i == 3}
+                <TmolsCard content={data} class="lg:-translate-y-16" />
+              {:else if i == 5}
+                <TmolsCard content={data} class="lg:-translate-y-24" />
+              {:else}
+                <TmolsCard content={data} />
+              {/if}
             </div>
           {/each}
         </div>
