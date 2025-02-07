@@ -16,6 +16,7 @@
       'hover:border-[#3F337A]',
       'transition-colors duration-300'
     ],
+    ['xl:h-[70px] xl:w-[196px]'],
     ['2xl:h-[88px] 2xl:w-[230px]'],
     [className]
   )}

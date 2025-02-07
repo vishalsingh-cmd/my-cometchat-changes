@@ -1,4 +1,6 @@
 import ChatIcon from '../_icons/ChatIcon.svelte';
+import PhoneIcon from '../_icons/PhoneIcon.svelte';
+import VideoIcon from '../_icons/VideoIcon.svelte';
 
 export const bannerData = [
   {
@@ -9,11 +11,11 @@ export const bannerData = [
   {
     id: 'phone',
     title: 'Voice',
-    icon: ChatIcon
+    icon: PhoneIcon
   },
   {
     id: 'chat',
     title: 'Video',
-    icon: ChatIcon
+    icon: VideoIcon
   }
 ];

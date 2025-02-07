@@ -6,7 +6,7 @@
 
   const secureBorderBeam = tv({
     base: [
-      'absolute left-0 right-0 -z-[1] ',
+      'absolute left-0 right-0',
       'h-[1px] bg-border-beam-white opacity-70',
       'w-[114%] -translate-x-[7%]'
     ],

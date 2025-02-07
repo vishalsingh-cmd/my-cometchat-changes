@@ -11,7 +11,7 @@
   import Testimonial from './_sections/Testimonial/Testimonial.svelte';
 </script>
 
-<Page>
+<Page className="bg-[#0A0915]">
   <Banner />
   <FeatureTabs />
   <Clients />

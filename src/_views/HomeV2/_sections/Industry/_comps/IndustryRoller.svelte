@@ -18,7 +18,7 @@
   function startAnimation() {
     interval = setInterval(() => {
       activeIndex = (activeIndex + 1) % industriesData.length;
-    }, 5000);
+    }, 8000);
   }
 
   function stopAnimation() {
