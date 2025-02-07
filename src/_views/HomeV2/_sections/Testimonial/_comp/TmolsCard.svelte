@@ -22,9 +22,11 @@
 </script>
 
 <div class={tmolsCard({ class: className })}>
-  <div class="grid max-h-[120px] grid-cols-[_6fr_3fr]">
-    <div class="flex flex-col justify-between">
-      <img src={content.brand_img} alt="Brand logo" />
+  <div class="grid max-h-[120px] grid-cols-[_7fr_3fr] gap-3">
+    <div class="flex flex-col justify-between gap-3">
+      <div class="max-h-40">
+        <img src={content.brand_img} alt="Brand logo" class="object-cover" />
+      </div>
       <QuoteIcon />
     </div>
     <div

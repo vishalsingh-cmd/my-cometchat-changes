@@ -8,12 +8,14 @@
   import EmblaCarousel from 'embla-carousel';
   import { onMount } from 'svelte';
   import type { EmblaCarouselType } from 'embla-carousel';
+  // import Masonry from 'masonry-layout';
 
   let emblaNode: HTMLElement;
   let viewportNode: HTMLElement;
   let dotsNode: HTMLElement;
   let emblaApi: EmblaCarouselType;
-
+  let embalaContainer: HTMLElement;
+  // let masonryInstance: Masonry | null = null;
   const addDotBtnsAndClickHandlers = (
     emblaApi: EmblaCarouselType,
     dotsNode: HTMLElement
@@ -74,9 +76,21 @@
     };
   };
 
+  // const initializeMasonry = () => {
+  //   if (!embalaContainer) return;
+
+  //   masonryInstance = new Masonry(embalaContainer, {
+  //     itemSelector: '.embla__slide',
+  //     columnWidth: '.embla__slide',
+  //     percentPosition: true,
+  //     gutter: 24 // This matches your lg:gap-6 class (6 * 4 = 24px)
+  //   });
+  // };
+
   const handleResize = () => {
     if (window.innerWidth >= 1024) {
       // lg breakpoint
+      // initializeMasonry();
       if (cleanup) {
         cleanup();
         cleanup = null;
@@ -112,7 +126,10 @@
 
     <div class="mt-10" bind:this={emblaNode}>
       <div class="embla__viewport lg:overflow-visible" bind:this={viewportNode}>
-        <div class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-6">
+        <div
+          class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-6"
+          bind:this={embalaContainer}
+        >
           {#each tmolDatas as data}
             <div
               class={cn(
