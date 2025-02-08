@@ -1,6 +1,7 @@
 <script lang="ts">
   import { gsap } from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
   import { cn } from '$src/_utils/tailwind.utils';
   import { onMount } from 'svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -8,137 +9,156 @@
   import video0 from './_assets/vid0.mp4';
   import video1 from './_assets/vid1.mp4';
   import video2 from './_assets/vid2.mp4';
+  import Sticky from '$src/components/sticky.svelte';
+  import FeatureTabTrigger from './FeatureTabTrigger.svelte';
+  import FeatureTabsUnderline from './FeatureTabsUnderline.svelte';
 
   const tabHeaders = ['Visualize & Build', 'Live in Minutes', 'Moderate & Scale'];
   let container: HTMLDivElement;
   let videoElem0: HTMLVideoElement;
   let videoElem1: HTMLVideoElement;
   let videoElem2: HTMLVideoElement;
+
   let activeTabIndex = 0;
   let tabProgress = 0;
+  let scrollTriggerInstance: ScrollTrigger;
 
   onMount(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    if (!container || !videoElem0 || !videoElem1 || !videoElem2) return;
 
-    [videoElem0, videoElem1, videoElem2].forEach((video) => {
-      video.currentTime = 0;
-      video.pause();
-    });
+    gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
+    const videoElems = [videoElem0, videoElem1, videoElem2];
+    const numPanels = videoElems.length;
 
-    const timeline = gsap.timeline({
+    const tween = gsap.to(videoElems, {
+      x: () => -1 * (container.scrollWidth - innerWidth),
+      ease: 'none',
       scrollTrigger: {
         trigger: container,
         pin: true,
-        start: 'top 10%',
+        start: 'top 20%',
         scrub: 1,
-
+        markers: true,
+        end: () => '+=' + (container.scrollWidth - innerWidth),
         onUpdate: (self) => {
           const progress = self.progress;
-          const newIndex = Math.floor(progress * 3);
-          if (newIndex !== activeTabIndex) {
-            activeTabIndex = newIndex;
-          }
+          const newPanelIndex = Math.floor(progress * numPanels);
+          activeTabIndex = Math.min(newPanelIndex, numPanels - 1);
 
-          tabProgress = (progress * 3) % 1;
+          const panelProgress = (progress * numPanels) % 1;
+          tabProgress = panelProgress;
 
-          const activeVideo = [videoElem0, videoElem1, videoElem2][activeTabIndex];
-          if (activeVideo) {
-            const targetTime = activeVideo.duration * tabProgress;
-            if (Math.abs(activeVideo.currentTime - targetTime) > 0.01) {
-              activeVideo.currentTime = targetTime;
+          videoElems.forEach((video, index) => {
+            if (index === activeTabIndex) {
+              video.play();
+            } else {
+              video.pause();
+              video.currentTime = 0;
             }
-          }
+          });
         }
       }
     });
 
-    timeline
-      .fromTo(videoElem0, { opacity: 1 }, { opacity: 0, duration: 1 })
-      .fromTo(videoElem1, { opacity: 0 }, { opacity: 1, duration: 1 }, '-=1')
-      .fromTo(videoElem1, { opacity: 1 }, { opacity: 0, duration: 1 })
-      .fromTo(videoElem2, { opacity: 0 }, { opacity: 1, duration: 1 }, '-=1');
+    if (!tween.scrollTrigger) return;
+    scrollTriggerInstance = tween.scrollTrigger;
+
+    const handleTabClick = (index: number) => {
+      const targetElem = document.querySelector(`#video${index}`) as HTMLDivElement;
+      if (!targetElem || !scrollTriggerInstance) return;
+
+      const totalScroll = scrollTriggerInstance.end - scrollTriggerInstance.start;
+      const totalMovement = container.scrollWidth - innerWidth;
+
+      const y = Math.round(
+        scrollTriggerInstance.start + (targetElem.offsetLeft / totalMovement) * totalScroll
+      );
+
+      gsap.to(window, {
+        scrollTo: {
+          y: y,
+          autoKill: false
+        },
+        duration: 1
+      });
+    };
+
+    const anchorElems = [
+      ...document.querySelectorAll('[data-name="home-banner-tab-anchor"]')
+    ] as HTMLAnchorElement[];
+
+    anchorElems.forEach((anchorElem, index) => {
+      anchorElem.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleTabClick(index);
+      });
+    });
 
     return () => {
-      timeline.scrollTrigger?.kill();
+      ScrollTrigger.refresh();
     };
   });
 </script>
 
 <Section class="relative isolate">
-  <Container pyEnabled={false}>
-    <div class="flex flex-col text-center" bind:this={container}>
-      <div>
-        <div
-          class={cn(
-            [
-              'relative isolate',
-              'flex items-center justify-start gap-5',
-              'overflow-x-auto overflow-y-clip'
-            ],
-            ['sm:justify-center'],
-            ['lg:gap-8']
-          )}
-        >
-          {#each tabHeaders as tabHeader, index}
-            <div
-              class={cn(
-                [
-                  'relative isolate py-6',
-                  'whitespace-nowrap font-sans text-md font-semibold text-[#FAFAFF]',
-                  'transition-opacity duration-300 hover:opacity-100'
-                ],
-                ['lg:text-[22px]']
-              )}
-              data-state={index === activeTabIndex ? 'active' : ''}
-              style:opacity={index === activeTabIndex ? '1' : '0.54'}
-            >
-              {tabHeader}
-              <div
-                class="absolute bottom-0 left-0 h-[1px] bg-[#6958BE]"
-                style:width={index === activeTabIndex ? `${tabProgress * 100}%` : '0%'}
-                style:opacity={index === activeTabIndex ? '1' : '0'}
-                style:transition="width 0.1s linear"
-              />
-              <div
-                class={cn([
-                  'pointer-events-none absolute bottom-0 left-1/2 -z-[1]',
-                  'h-[135px] w-[203px] -translate-x-1/2 translate-y-3/4',
-                  'bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(104,_82,_214,_0.12)_0%,_rgba(104,_82,_214,_0)_100%)]'
-                ])}
-                style:opacity={index === activeTabIndex ? '1' : '0'}
-              />
-            </div>
-          {/each}
-
-          <div
-            class={cn([
-              'absolute bottom-0 left-0 right-0 h-[1px]',
-              'bg-[linear-gradient(90deg,_rgba(250,_250,_255,_0)_0%,_rgba(250,_250,_255,_0.1)_5%,_rgba(250,_250,_255,_0.1)_95%,_rgba(250,_250,_255,_0)_100%)]'
-            ])}
+  <Container pyEnabled={false} pxEnabled={false} expand="full">
+    <Sticky translateOnDesktop>
+      <div
+        data-scrollbar="hide"
+        class={cn(
+          ['flex items-center justify-start gap-5 px-4', 'overflow-x-auto overflow-y-clip'],
+          ['sm:justify-center'],
+          ['lg:gap-8']
+        )}
+      >
+        {#each tabHeaders as tabHeader, index}
+          <FeatureTabTrigger
+            targetId={`video${index}`}
+            isActive={index === activeTabIndex}
+            {tabHeader}
+            {tabProgress}
+          />
+        {/each}
+      </div>
+      <FeatureTabsUnderline />
+    </Sticky>
+    <div class="flex flex-col overflow-hidden" bind:this={container}>
+      <div class={cn(['flex h-[80vh] w-[300%] flex-nowrap items-center'])}>
+        <div class={cn(['flex w-screen flex-col'])} id="video0">
+          <video
+            class="mx-auto h-full w-4/5 object-contain"
+            src={video0}
+            muted
+            bind:this={videoElem0}
           />
         </div>
 
-        <div class="relative">
-          <div class={cn(['flex flex-col'])}>
-            <video src={video0} muted bind:this={videoElem0} />
-          </div>
-
-          <div class={cn(['absolute left-0 top-0 flex w-full flex-col'])}>
-            <video src={video1} muted bind:this={videoElem1} />
-          </div>
-
-          <div class={cn(['absolute left-0 top-0 flex w-full flex-col'])}>
-            <video src={video2} muted bind:this={videoElem2} />
-          </div>
+        <div class={cn(['flex w-screen flex-col'])} id="video1">
+          <video
+            class="mx-auto h-full w-4/5 object-contain"
+            src={video1}
+            muted
+            bind:this={videoElem1}
+          />
         </div>
 
-        <div
-          class={cn([
-            'absolute bottom-0 left-0 right-0 h-28',
-            'bg-[linear-gradient(180deg,_rgba(10,_9,_20,_0)_0%,_rgba(10,_9,_20,_0.8)_44%,_#0A0914_100%)]'
-          ])}
-        />
+        <div class={cn(['flex w-screen flex-col'])} id="video2">
+          <video
+            class="mx-auto h-full w-4/5 object-contain"
+            src={video2}
+            muted
+            bind:this={videoElem2}
+          />
+        </div>
       </div>
+
+      <div
+        data-name="black-mask-overlay"
+        class={cn([
+          'absolute bottom-0 left-0 right-0 h-28',
+          'bg-[linear-gradient(180deg,_rgba(10,_9,_20,_0)_0%,_rgba(10,_9,_20,_0.8)_44%,_#0A0914_100%)]'
+        ])}
+      />
     </div>
   </Container>
 </Section>
