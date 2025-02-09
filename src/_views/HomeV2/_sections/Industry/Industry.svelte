@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import Icon from '$src/components/icon/icon.svelte';
-  import indurstryShow from '../_assets/indurstryShow.png';
 </script>
 
 <div class="flex flex-col">
@@ -27,5 +26,5 @@
       </p>
     </li>
   </ul>
-  <img src={indurstryShow} alt="indurstry features" />
+  <!-- <img src={indurstryShow} alt="indurstry features" /> -->
 </div>
