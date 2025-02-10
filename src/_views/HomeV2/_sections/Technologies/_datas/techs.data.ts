@@ -18,49 +18,49 @@ export const techLeftData = [
   },
   {
     icon: Angular,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/angular'
   },
   {
     icon: Ios,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/ios-swift'
   },
   {
     icon: Android,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/android-java'
   },
   {
     icon: Flutter,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/flutter'
   },
   {
     icon: Wordpress,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/wordpress'
   }
 ];
 
 export const techRightData = [
   {
     icon: Vue,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/vue'
   },
   {
     icon: ReactNative,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/react-native'
   },
   {
     icon: Koltin,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/kotlin'
   },
   {
     icon: Capacitor,
-    href: '/chat-sdks/react'
+    href: '/docs/sdk/ionic/overview'
   },
   {
     icon: Php,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/php'
   },
   {
     icon: Laravel,
-    href: '/chat-sdks/react'
+    href: '/chat-sdks/laravel'
   }
 ];
