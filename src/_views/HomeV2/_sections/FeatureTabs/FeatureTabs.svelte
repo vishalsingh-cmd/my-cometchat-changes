@@ -32,6 +32,29 @@
     const videoElems = [videoElem0, videoElem1, videoElem2];
     const numPanels = videoElems.length;
 
+    videoElems.forEach((video, index) => {
+      video.addEventListener('ended', () => {
+        if (index < numPanels - 1) {
+          handleTabClick(index + 1);
+        } else {
+          const currentSection = container.closest('section');
+          const nextSection = currentSection?.nextElementSibling as HTMLElement;
+
+          if (nextSection) {
+            const offset = nextSection.offsetTop;
+            gsap.to(window, {
+              scrollTo: {
+                y: offset,
+                autoKill: false
+              },
+              duration: 1,
+              ease: 'power2.inOut'
+            });
+          }
+        }
+      });
+    });
+
     const tween = gsap.to(videoElems, {
       x: () => -1 * (container.scrollWidth - innerWidth),
       ease: 'none',
@@ -136,7 +159,7 @@
 
         <div class={cn(['flex w-screen flex-col'])} id="video1">
           <video
-            class="mx-auto h-full w-4/5 object-contain"
+            class="mx-auto h-full w-4/5 scale-125 object-contain"
             src={video1}
             muted
             bind:this={videoElem1}
@@ -145,7 +168,7 @@
 
         <div class={cn(['flex w-screen flex-col'])} id="video2">
           <video
-            class="mx-auto h-full w-4/5 object-contain"
+            class="mx-auto h-full w-4/5 scale-125 object-contain"
             src={video2}
             muted
             bind:this={videoElem2}
