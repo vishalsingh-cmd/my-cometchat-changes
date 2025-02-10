@@ -103,6 +103,8 @@
       'group-hover/clients:scale-100 group-hover/clients:opacity-100'
     ])}
   >
-    <Button variant="secondary">Checkout our amazing customer stories</Button>
+    <Button variant="secondary" as="a" href="/customer-stories" target="_blank">
+      Checkout our amazing customer stories
+    </Button>
   </div>
 </Section>

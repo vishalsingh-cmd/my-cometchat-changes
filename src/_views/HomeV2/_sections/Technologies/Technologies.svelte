@@ -20,7 +20,15 @@
       <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
         Framework-agnostic. <br /> Developer-approved
       </HeadingLatest>
-      <Button class={cn(['mt-5 w-max'], ['lg:mt-8'])} variant="secondary">See documentation</Button>
+      <Button
+        class={cn(['mt-5 w-max'], ['lg:mt-8'])}
+        variant="secondary"
+        href="/docs"
+        target="_blank"
+        as="a"
+      >
+        See documentation
+      </Button>
     </div>
 
     <div
