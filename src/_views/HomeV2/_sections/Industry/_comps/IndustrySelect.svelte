@@ -8,8 +8,12 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import { type SelectContext } from '$src/_comps/form/Select/SelectContext';
   import { type IndustriesProps } from '../_datas/Industries.data';
+  import type { RollerPointStoryblok } from '$types/bloks';
+
+  export let industryPointBlocks: RollerPointStoryblok[];
   export let selectOptions: IndustriesProps[];
   export let selectContext: SelectContext;
+
   const { activeIndex, setActiveIndex, isOpen, setIsOpen } = selectContext;
 </script>
 
@@ -23,11 +27,11 @@
       'border border-[#FAFAFF] border-opacity-20 rounded-[10px]'
     ])}
   >
-    {#if selectOptions[$activeIndex]}
+    {#if selectOptions[$activeIndex] && industryPointBlocks[$activeIndex]}
       <IndustrySelectOption
         isSelected={true}
         icon={selectOptions[$activeIndex].icon}
-        title={selectOptions[$activeIndex].title}
+        title={industryPointBlocks[$activeIndex].title}
       />
       <ChevronDownIcon
         className={cn([
@@ -47,26 +51,26 @@
       'border border-[#FAFAFF] border-opacity-20 rounded-[10px]'
     ])}
   >
-    {#each selectOptions as option, index}
+    {#each industryPointBlocks as industryPointBlock, index}
       <SelectOption {index} activeIndex={$activeIndex} {setActiveIndex} {setIsOpen}>
         <IndustrySelectOption
           className={cn(['py-4 px-4'])}
           isSelected={$activeIndex === index}
-          icon={option.icon}
-          title={option.title}
+          icon={selectOptions[index].icon}
+          title={industryPointBlock.title}
         />
       </SelectOption>
     {/each}
   </SelectContent>
 
-  {#if selectOptions[$activeIndex]}
+  {#if industryPointBlocks[$activeIndex]}
     <p
       class={cn(
         ['mt-8 opacity-74', 'text-left font-sans text-md font-semibold text-[#FAFAFF]'],
         ['lg:text-[22px]']
       )}
     >
-      {selectOptions[$activeIndex].description}
+      {industryPointBlocks[$activeIndex].description}
     </p>
   {/if}
 </Select>

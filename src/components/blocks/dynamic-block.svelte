@@ -83,6 +83,7 @@
   import TitleAndIcons from './titles/title-and-icons.svelte';
   import MarketplaceBannerInfo from './pages/marketplace/marketplace-banner-info.svelte';
   import Emptyspace from './pages/emptyspace.svelte';
+  import Industry from '$src/_views/HomeV2/_sections/Industry/Industry.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -91,6 +92,7 @@
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
+    complex_roller: Industry,
     'core-features-pricing-section': CoreFeaturesPricingSection,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,

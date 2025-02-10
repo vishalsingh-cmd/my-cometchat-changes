@@ -6,6 +6,7 @@
   import IndustrySelect from './_comps/IndustrySelect.svelte';
   import { industriesData } from './_datas/Industries.data';
   import { createIndustryContext } from './_context/IndustryContext';
+  import type { RollerPointStoryblok } from '$types/bloks';
 
   const { setActiveIndex } = createIndustryContext(0);
   const selectContext = createSelectContext('INDUSTRY_SELECT', 0);
@@ -14,17 +15,19 @@
   selectContext.onChange((index) => {
     setActiveIndex(index);
   });
+
+  export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
 <svelte:window bind:innerWidth />
 <div class={cn(['mt-10 grid grid-cols-1 gap-6'], ['lg:mt-14 lg:grid-cols-2 lg:gap-20'])}>
   {#if innerWidth < 1024}
-    <IndustrySelect selectOptions={industriesData} {selectContext} />
+    <IndustrySelect {industryPointBlocks} selectOptions={industriesData} {selectContext} />
   {/if}
 
   {#if innerWidth >= 1024}
     <IndustryRoller />
   {/if}
 
-  <IndustryPoints />
+  <IndustryPoints {industryPointBlocks} />
 </div>
