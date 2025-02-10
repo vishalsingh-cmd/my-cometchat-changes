@@ -4,7 +4,7 @@
   viewBox="0 0 1005 263"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
-  class="mx-auto hidden h-max w-full sm:block"
+  class="mx-auto hidden h-max w-full sm:block sm:w-max"
 >
   <g opacity="0.1">
     <path

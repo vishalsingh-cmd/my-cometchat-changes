@@ -33,8 +33,12 @@
       </p>
 
       <div class={cn(['flex items-center justify-center gap-3', 'mt-10'], ['lg:mt-16 lg:gap-6'])}>
-        <Button>Start visual chat builder</Button>
-        <Button variant="secondary">Contact us</Button>
+        <Button as="a" href="https://app.cometchat.com/signup" target="_blank">
+          Start visual chat builder
+        </Button>
+        <Button as="a" href="/contact-sales?ref=homepage-hero" variant="secondary" target="_blank">
+          Contact us
+        </Button>
       </div>
     </div>
   </Container>
