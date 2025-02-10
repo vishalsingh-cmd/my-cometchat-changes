@@ -17,11 +17,11 @@
   export let pxEnabled = true;
 
   const container = tv({
-    base: ['mx-auto max-w-[1440px]'],
+    base: [''],
     variants: {
       expand: {
         full: '',
-        boxed: ['container']
+        boxed: ['container mx-auto max-w-[1440px]']
       },
       pyEnabled: {
         true: 'py-10 md:py-14 lg:py-20'
