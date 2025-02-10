@@ -99,7 +99,7 @@
   });
 </script>
 
-<Section>
+<Section className="tmols">
   <Container className="overflow-hidden">
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
@@ -144,21 +144,21 @@
 </Section>
 
 <style>
-  :global(.embla__dots) {
+  :global(.tmols .embla__dots) {
     @apply flex items-center justify-center gap-2;
   }
 
-  :global(.embla__dot) {
+  :global(.tmols .embla__dot) {
     @apply h-1.5 w-1.5 cursor-pointer rounded-full bg-[#FAFAFF]/40 transition-colors;
     @apply transition-all duration-700;
   }
 
-  :global(.embla__dot--selected) {
+  :global(.tmols .embla__dot--selected) {
     @apply w-4 bg-[#FAFAFF];
   }
 
   @media (min-width: 1024px) {
-    :global(.embla__container) {
+    :global(.tmols .embla__container) {
       display: grid;
       transform: none !important;
     }

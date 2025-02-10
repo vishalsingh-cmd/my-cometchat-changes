@@ -1,5 +1,14 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
+  import type { HTMLAttributes } from 'svelte/elements';
+
+  interface $$Props extends HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    expand?: 'full' | 'boxed';
+    isHero?: boolean;
+    pyEnabled?: boolean;
+    pxEnabled?: boolean;
+  }
 
   export let className = '';
   export let expand: 'full' | 'boxed' = 'boxed';
@@ -25,14 +34,14 @@
       }
     },
     defaultVariants: {
-      expand: expand,
-      pyEnabled: pyEnabled,
-      pxEnabled: pxEnabled,
-      isHero: isHero
+      expand,
+      pyEnabled,
+      pxEnabled,
+      isHero
     }
   });
 </script>
 
-<div class={container({ class: className })} {...$$restProps}>
+<div class={container({ class: className })} {...$$props}>
   <slot />
 </div>

@@ -16,7 +16,7 @@
     [className]
   )}
 >
-  <img src={glob_img} alt="" />
+  <img class="mx-auto" src={glob_img} alt="" />
   <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
     <HeadingLatest as="h3" varient="h6">Edge network</HeadingLatest>
     <ParahLates class="lg:text-[18px]">

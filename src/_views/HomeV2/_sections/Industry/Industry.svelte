@@ -1,11 +1,10 @@
-<script>
+<script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
-  import IndustryPoints from './_comps/IndustryPoints.svelte';
-  import IndustryRoller from './_comps/IndustryRoller.svelte';
+  import IndustriesAnimated from './IndustriesAnimated.svelte';
 </script>
 
 <Section>
@@ -20,10 +19,6 @@
         engineered for your specific needs.
       </ParahLates>
     </div>
-
-    <div class={cn(['mt-10 grid grid-cols-1 gap-10'], ['lg:mt-14 lg:grid-cols-2 lg:gap-20'])}>
-      <IndustryRoller />
-      <IndustryPoints />
-    </div>
+    <IndustriesAnimated />
   </Container>
 </Section>
