@@ -38,7 +38,6 @@
         pin: true,
         start: 'top 20%',
         scrub: 1,
-        markers: true,
         end: () => '+=' + (container.scrollWidth - innerWidth),
         onUpdate: (self) => {
           const progress = self.progress;
