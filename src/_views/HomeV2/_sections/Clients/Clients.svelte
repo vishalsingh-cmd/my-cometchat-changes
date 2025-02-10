@@ -106,16 +106,3 @@
     <Button variant="secondary">Checkout our amazing customer stories</Button>
   </div>
 </Section>
-
-<style>
-  /* :global(.embla__container) {
-    backface-visibility: hidden;
-  }
-
-  @media (min-width: 640px) {
-    :global(.embla__container) {
-      display: flex !important;
-      transform: none !important;
-    }
-  } */
-</style>

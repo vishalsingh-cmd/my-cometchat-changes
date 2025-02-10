@@ -1,22 +1,17 @@
 <script lang="ts">
-  import { SelectValue } from './select.types';
-  import { getSelectContext } from './SelectContext';
+  import { tv } from '$src/_utils/tailwind.utils';
   import { slide } from 'svelte/transition';
 
-  type T = $$Generic<SelectValue>;
-
+  export let isOpen: boolean;
   export let className = '';
 
-  const { isOpen } = getSelectContext<T>();
+  const selectContent = tv({
+    base: ['']
+  });
 </script>
 
-{#if $isOpen}
-  <div
-    class="border-zinc-800 rounded-b-lg border-t bg-[#14151A] {className}"
-    transition:slide={{ duration: 200 }}
-  >
-    <div class="p-4">
-      <slot />
-    </div>
+{#if isOpen}
+  <div class={selectContent({ class: className })} transition:slide={{ duration: 300 }}>
+    <slot />
   </div>
 {/if}

@@ -1,34 +1,43 @@
 <script lang="ts">
-  import { SelectValue } from './select.types';
-  import { getSelectContext } from './SelectContext';
+  import { tv } from '$src/_utils/tailwind.utils';
 
-  type T = $$Generic<SelectValue>;
-
-  export let value: T;
+  export let index: number;
+  export let activeIndex: number;
+  export let setActiveIndex: (changedIndex: number) => void;
+  export let setIsOpen: (changedValue: boolean) => void;
   export let disabled = false;
   export let className = '';
 
-  const { selectedValue, select } = getSelectContext<T>();
-
-  $: isSelected = $selectedValue === value;
+  const isSelected = activeIndex === index;
 
   function handleSelect(): void {
     if (!disabled) {
-      select(value);
+      setActiveIndex(index);
+      setIsOpen(false);
     }
   }
+
+  function handleKeyDown(event: KeyboardEvent): void {
+    if (disabled) return;
+    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Space') {
+      event.preventDefault(); // Prevent page scroll on space
+      handleSelect();
+    }
+  }
+
+  const selectOption = tv({
+    base: ['cursor-pointer']
+  });
 </script>
 
 <div
-  class="text-zinc-200 hover:bg-zinc-800 cursor-pointer rounded-md px-3 py-2 {className}"
-  class:bg-zinc-800={isSelected}
-  class:opacity-50={disabled}
-  class:cursor-not-allowed={disabled}
+  class={selectOption({ class: className })}
   role="option"
   aria-selected={isSelected}
   aria-disabled={disabled}
-  on:click={handleSelect}
   tabindex={disabled ? -1 : 0}
+  on:click={handleSelect}
+  on:keydown={handleKeyDown}
 >
   <slot {isSelected} />
 </div>

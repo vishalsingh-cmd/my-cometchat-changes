@@ -11,6 +11,13 @@ import saas from '../_assets/saas.png';
 import dating from '../_assets/dating.png';
 import social_communities from '../_assets/social_communities.png';
 
+export interface IndustriesProps {
+  icon: any;
+  title: string;
+  description: string;
+  imgSrc: string;
+}
+
 export const industriesData = [
   {
     icon: Icon1,

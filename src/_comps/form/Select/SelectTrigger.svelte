@@ -1,27 +1,25 @@
 <script lang="ts">
-  import { SelectValue } from './select.types';
-  import { getSelectContext } from './SelectContext';
-
-  type T = $$Generic<SelectValue>;
-
+  import { tv } from '$src/_utils/tailwind.utils';
   export let className = '';
 
-  const { isOpen, selectedValue, disabled } = getSelectContext<T>();
+  export let isOpen: boolean;
+  export let setIsOpen: (changedValue: boolean) => void;
 
   function handleClick(): void {
-    if (!$disabled) {
-      $isOpen = !$isOpen;
-    }
+    setIsOpen(!isOpen);
   }
+
+  const selectTrigger = tv({
+    base: ['group/selectTrigger']
+  });
 </script>
 
 <button
   type="button"
-  class="hover:bg-zinc-800 w-full rounded-lg bg-[#14151A] px-4 py-3 transition-colors duration-200 {className}"
-  class:rounded-b-none={$isOpen}
+  class={selectTrigger({ class: className })}
   on:click={handleClick}
-  disabled={$disabled}
-  aria-expanded={$isOpen}
+  aria-expanded={isOpen}
+  data-state={isOpen ? 'opened' : 'closed'}
 >
-  <slot selected={$selectedValue} />
+  <slot />
 </button>

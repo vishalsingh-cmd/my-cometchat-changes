@@ -1,42 +1,33 @@
 <script lang="ts">
-  import { SelectEvents, SelectProps, SelectValue } from './select.types';
-  import { createSelectContext } from './SelectContext';
-  import { onMount, createEventDispatcher } from 'svelte';
+  import { tv } from '$src/_utils/tailwind.utils';
+  import { onMount } from 'svelte';
 
-  type T = $$Generic<SelectValue>;
-  type $$Props = SelectProps<T>;
-
-  export let value: T | null = null;
-  export let disabled = false;
+  export let isOpen: boolean;
+  export let setIsOpen: (changedValue: boolean) => void;
   export let className = '';
-
-  const dispatch = createEventDispatcher<SelectEvents<T>>();
-  const { isOpen, selectedValue, disabled: disabledStore } = createSelectContext<T>();
-
-  $: {
-    $selectedValue = value;
-    dispatch('change', { value: $selectedValue });
-  }
-  $: $disabledStore = disabled;
 
   let selectEl: HTMLDivElement;
 
   onMount(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (selectEl && !selectEl.contains(event.target as Node)) {
-        $isOpen = false;
+        setIsOpen(false);
       }
     };
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   });
+
+  const select = tv({
+    base: ['relative w-full']
+  });
 </script>
 
 <div
-  class="relative w-full {className}"
+  class={select({ class: className })}
   bind:this={selectEl}
-  data-state={$isOpen ? 'open' : 'closed'}
+  data-state={isOpen ? 'open' : 'closed'}
 >
   <slot />
 </div>
