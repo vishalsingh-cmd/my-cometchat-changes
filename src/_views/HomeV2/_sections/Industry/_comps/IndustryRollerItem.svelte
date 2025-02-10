@@ -1,16 +1,25 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import GhostButton from '$src/components/buttons/ghost-button.svelte';
+  import { onMount } from 'svelte';
 
   export let index: number;
   export let icon;
   export let title;
   export let description;
+  export let link: string;
   export let status: 'active' | 'inactive';
   export let onClick: (index: number) => void;
+
+  let contentElem: HTMLParagraphElement;
 
   const handleOnClick = () => {
     onClick(index);
   };
+
+  onMount(() => {
+    contentElem.setAttribute('style', `--scroll-height: ${contentElem.scrollHeight}px`);
+  });
 </script>
 
 <button
@@ -43,7 +52,7 @@
       />
     </div>
 
-    <div class="flex flex-col justify-center">
+    <div class="flex flex-col justify-center gap-2">
       <h3
         class={cn(
           [
@@ -57,18 +66,30 @@
       >
         {title}
       </h3>
-      <p
-        class={cn(
-          [
-            'h-0 overflow-hidden opacity-74',
-            'text-left font-sans text-md font-semibold text-[#FAFAFF]',
-            'group-data-[state="active"]:h-auto'
-          ],
-          ['lg:text-[22px]']
-        )}
+
+      <div
+        class={cn([
+          'flex flex-col gap-2',
+          'pointer-events-none h-0 overflow-hidden',
+          'group-data-[state="active"]:h-[var(--scroll-height)]',
+          'group-data-[state="active"]:pointer-events-auto',
+          'transition-[height] duration-300'
+        ])}
+        bind:this={contentElem}
       >
-        {description}
-      </p>
+        <p
+          class={cn(
+            ['opacity-74', 'text-left font-sans text-md font-semibold text-[#FAFAFF]'],
+            ['lg:text-[22px]']
+          )}
+        >
+          {description}
+        </p>
+
+        <GhostButton variant="highlighted" class="w-max" href={link} as="a" taget="_blank">
+          Read more
+        </GhostButton>
+      </div>
     </div>
   </div>
 

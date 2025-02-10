@@ -26,7 +26,7 @@
   {/if}
 
   {#if innerWidth >= 1024}
-    <IndustryRoller />
+    <IndustryRoller {industryPointBlocks} />
   {/if}
 
   <IndustryPoints {industryPointBlocks} />
