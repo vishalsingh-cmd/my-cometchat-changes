@@ -38,7 +38,7 @@
       title="Chat and messaging"
       description="Build chat that users love - from instant 1:1 messaging to vibrant group conversations. Threads, reactions, @mentions, polls, and file sharing work right out of the box. Lightning-fast infrastructure that just works."
       ctaLabel="Learn more"
-      ctaLink="#"
+      ctaLink="/chat-and-messaging"
       imageSrc={img01}
       imageAlt="Chat and messaging"
     />
@@ -49,7 +49,7 @@
       title="Voice and video"
       description="Power lag-free 1:1 and group video calls at any scale. Built-in screen sharing, recording, and automatic quality optimization ensure perfect calls. Ultra-low latency infrastructure that handles high concurrency."
       ctaLabel="Learn more"
-      ctaLink="#"
+      ctaLink="/voice-and-video-calls"
       imageSrc={img02}
       imageAlt="Voice and video"
     />
@@ -64,7 +64,7 @@
       title="Chat moderation"
       description="The industry's most sophisticated moderation engine, period. Our dual-engine approach combines AI precision with an enterprise-grade rules system for total control. Build sophisticated workflows that catch every threat, take automated actions in milliseconds, and scale to millions of messages. The only solution that never misses a beat."
       ctaLabel="Learn more"
-      ctaLink="#"
+      ctaLink="/features/moderation"
       imageSrc={img03}
       imageAlt="Chat moderation"
     />
@@ -74,7 +74,7 @@
       title="Notifications"
       description="Drive engagement without the integration headache. Built-in support for web, mobile, and email notifications with smart delivery rules and preference management. "
       ctaLabel="Learn more"
-      ctaLink="#"
+      ctaLink="/features/notifications"
       imageSrc={img04}
       imageAlt="Chat moderation"
     />
@@ -84,7 +84,7 @@
       title="Analytics"
       description="Understand your chat's performance with precision. Track message metrics, analyze user patterns, and optimize engagement with actionable insights."
       ctaLabel="Learn more"
-      ctaLink="#"
+      ctaLink="/features/analytics-insights"
       imageSrc={img05}
       imageAlt="Analytics"
     />

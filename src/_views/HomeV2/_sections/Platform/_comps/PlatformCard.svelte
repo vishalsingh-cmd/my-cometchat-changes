@@ -28,8 +28,8 @@
         'lg:rounded-3xl'
       ],
       platformCard__info: ['flex flex-col gap-4 px-4 pt-4 pb-6', 'lg:p-8'],
-      platformCard__title: ['font-sans text-xl font-semibold text-[#FAFAFF]', 'lg:text-[24px]'],
-      platformCard__des: ['font-sans text-xl font-semibold text-[#FAFAFF] opacity-74'],
+      platformCard__title: ['font-sans text-[18px] font-semibold text-[#FAFAFF]', 'lg:text-[24px]'],
+      platformCard__des: ['font-sans text-[18px] font-semibold text-[#FAFAFF] opacity-74'],
       platformCard__imageWrap: ['flex h-full w-full'],
       platformCard__image: ['w-full object-contain']
     }

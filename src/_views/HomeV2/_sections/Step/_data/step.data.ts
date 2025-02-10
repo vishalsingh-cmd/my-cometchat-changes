@@ -12,7 +12,7 @@ export const stepDatas = [
       step: 'Step 1',
       title: 'Start with Chat Builder',
       des: 'Build your perfect chat experience in minutes. Get production-ready code in your framework.',
-      link: '#',
+      link: '/signup',
       id: 'chat-builder',
       label: 'Try Builder'
     }
@@ -26,7 +26,7 @@ export const stepDatas = [
       step: 'Step 2',
       title: 'Fine-tune with UI Kits',
       des: 'Want pixel-perfect control? Our modular components let you customize every visual detail.',
-      link: '#',
+      link: '/ui-kits',
       id: 'ui-kit',
       label: 'Explore UI Kits'
     }
@@ -40,7 +40,7 @@ export const stepDatas = [
       step: 'Step 3',
       title: 'Extend with SDKs',
       des: 'Going deep? Access our comprehensive SDKs for ultimate flexibility.',
-      link: '#',
+      link: '/chat-sdks-api',
       id: 'sdk',
       label: 'View SDKs'
     }

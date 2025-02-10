@@ -2295,7 +2295,7 @@ export interface RollerPointStoryblok {
   description: string;
   image: AssetStoryblok;
   points: SimpleTextStoryblok[];
-
+  link: LinkStoryblok;
   _uid: string;
   component: 'roller_point';
   [k: string]: any;
