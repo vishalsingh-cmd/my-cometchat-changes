@@ -84,6 +84,14 @@
   import MarketplaceBannerInfo from './pages/marketplace/marketplace-banner-info.svelte';
   import Emptyspace from './pages/emptyspace.svelte';
   import Industry from '$src/_views/HomeV2/_sections/Industry/Industry.svelte';
+  import Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
+  import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
+  import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
+  import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
+  import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
+  import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
+  import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
+  import Testimonial from '$src/_views/HomeV2/_sections/Testimonial/Testimonial.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -179,7 +187,16 @@
 
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-hero': WebhooksHero,
-    'webhooks-section': WebhooksSection
+    'webhooks-section': WebhooksSection,
+
+    home__banner: Banner,
+    home__video_tabs: FeatureTabs,
+    home_clients: Clients,
+    'home_ implementation': Step,
+    'home_ technologies': Technologies,
+    home__our_platform: Platform,
+    home__secure: Secure,
+    home__testimonials: Testimonial
   };
 </script>
 

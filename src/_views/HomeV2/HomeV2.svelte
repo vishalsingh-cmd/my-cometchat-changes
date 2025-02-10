@@ -9,22 +9,20 @@
   import Platform from './_sections/Platform/Platform.svelte';
   import Testimonial from './_sections/Testimonial/Testimonial.svelte';
   import type { PageStoryblok } from '$types/bloks';
-  import DynamicBlock from '$src/components/blocks/dynamic-block.svelte';
+  import Industry from './_sections/Industry/Industry.svelte';
+  import type { ComplexRollerStoryblok } from '$types/bloks';
 
   export let block: PageStoryblok;
+  $: industryBlok = block?.body?.[0] as ComplexRollerStoryblok | undefined;
 </script>
 
 <Page className="bg-[#0A0915]">
+  <Industry block={industryBlok} />
   <Banner />
   <FeatureTabs />
   <Clients />
   <Step />
   <Technologies />
-
-  {#if block.body && block.body[0]}
-    <DynamicBlock block={block.body[0]} />
-  {/if}
-
   <Platform />
   <Secure />
   <Testimonial />
