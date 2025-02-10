@@ -7,8 +7,11 @@
   import Clients from './_sections/Clients/Clients.svelte';
   import Technologies from './_sections/Technologies/Technologies.svelte';
   import Platform from './_sections/Platform/Platform.svelte';
-  import Industry from './_sections/Industry/Industry.svelte';
   import Testimonial from './_sections/Testimonial/Testimonial.svelte';
+  import type { PageStoryblok } from '$types/bloks';
+  import DynamicBlock from '$src/components/blocks/dynamic-block.svelte';
+
+  export let block: PageStoryblok;
 </script>
 
 <Page className="bg-[#0A0915]">
@@ -17,7 +20,11 @@
   <Clients />
   <Step />
   <Technologies />
-  <Industry />
+
+  {#if block.body && block.body[0]}
+    <DynamicBlock block={block.body[0]} />
+  {/if}
+
   <Platform />
   <Secure />
   <Testimonial />

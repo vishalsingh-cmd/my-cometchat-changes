@@ -2282,3 +2282,32 @@ export interface ImageCarousalStoryblok {
   component: 'image-carousal';
   [k: string]: any;
 }
+
+export interface SimpleTextStoryblok {
+  text: string;
+  _uid: string;
+  component: 'simple_text';
+  [k: string]: any;
+}
+
+export interface RollerPointStoryblok {
+  title: string;
+  description: string;
+  image: AssetStoryblok;
+  points: SimpleTextStoryblok[];
+
+  _uid: string;
+  component: 'roller_point';
+  [k: string]: any;
+}
+
+export interface ComplexRollerStoryblok {
+  title: string;
+  description: string;
+  roller_points: RollerPointStoryblok[];
+  tagline: string;
+
+  _uid: string;
+  component: 'complex_roller';
+  [k: string]: any;
+}

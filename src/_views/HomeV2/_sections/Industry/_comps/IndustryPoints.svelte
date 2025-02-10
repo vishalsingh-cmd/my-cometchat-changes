@@ -1,32 +1,45 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import { getIndustryContect } from '../_context/IndustryContext';
   import Icon from '$src/components/icon/icon.svelte';
-  import IndustryImgCarousal from './IndustryImgCarousal.svelte';
+  import EmblaCarousal from '$src/_comps/layouts/EmblaCarousal/EmblaCarousal.svelte';
+  import EmblaContainer from '$src/_comps/layouts/EmblaCarousal/EmblaContainer.svelte';
+  import EmblaSlide from '$src/_comps/layouts/EmblaCarousal/EmblaSlide.svelte';
+  import { type EmblaCarouselType } from 'embla-carousel';
+  import type { RollerPointStoryblok } from '$types/bloks';
+  import Media from '$src/components/media.svelte';
+
+  const industryContext = getIndustryContect();
+  const onEmblaInit = (event: CustomEvent<EmblaCarouselType>) => {
+    const emblaApi = event.detail;
+    industryContext.onChange((index) => {
+      emblaApi.scrollTo(index);
+    });
+  };
+
+  export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
-<div class="flex flex-col gap-5">
-  <ul class={cn('flex flex-col gap-3')}>
-    <li class="flex-start flex gap-2">
-      <Icon icon="star-04" size="xs" class={cn('mt-1 flex-shrink-0', 'text-brand-9')} />
-      <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
-        Prevent platform disintermediation with monitored conversations.
-      </p>
-    </li>
-
-    <li class="flex-start flex gap-2">
-      <Icon icon="star-04" size="xs" class={cn('mt-1 flex-shrink-0', 'text-brand-9')} />
-      <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
-        Drive faster deal closure with file sharing, interactive messages and payments.
-      </p>
-    </li>
-
-    <li class="flex-start flex gap-2">
-      <Icon icon="star-04" size="xs" class={cn('mt-1 flex-shrink-0', 'text-brand-9')} />
-      <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
-        Keep conversations organized with order-context messaging.
-      </p>
-    </li>
-  </ul>
-
-  <IndustryImgCarousal />
-</div>
+<EmblaCarousal onInit={onEmblaInit} emblaOptions={{ watchDrag: false }}>
+  <EmblaContainer>
+    {#each industryPointBlocks as industryPointBlock}
+      <EmblaSlide className="flex-[0_0_100%] flex flex-col gap-5">
+        <ul class={cn('flex flex-col gap-3')}>
+          {#each industryPointBlock.points as point}
+            <li class="flex-start flex gap-2">
+              <Icon icon="star-04" size="xs" class={cn('mt-1 flex-shrink-0', 'text-brand-9')} />
+              <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
+                {point.text}
+              </p>
+            </li>
+          {/each}
+        </ul>
+        <Media
+          class="h-auto w-full object-cover"
+          imageTransformOptions={{ size: [1200, 0] }}
+          media={industryPointBlock.image}
+        />
+      </EmblaSlide>
+    {/each}
+  </EmblaContainer>
+</EmblaCarousal>

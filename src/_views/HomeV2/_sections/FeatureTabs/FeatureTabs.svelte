@@ -6,9 +6,11 @@
   import { onMount } from 'svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
+
   import video0 from './_assets/vid0.mp4';
   import video1 from './_assets/vid1.mp4';
   import video2 from './_assets/vid2.mp4';
+
   import Sticky from '$src/components/sticky.svelte';
   import FeatureTabTrigger from './FeatureTabTrigger.svelte';
   import FeatureTabsUnderline from './FeatureTabsUnderline.svelte';
