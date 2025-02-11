@@ -202,6 +202,12 @@ export interface GuideStoryblok {
   [k: string]: any;
 }
 
+export interface MarketplacesStoryblok {
+  component: 'marketplaces';
+  _uid: string;
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -1283,9 +1289,12 @@ export interface MAU {
   mau: { tbody: any[]; thead: any[]; fieldtype: 'table'; _uid: string };
   _uid: string;
 }
-export interface PricingHeroQ3Y24Storyblok {
+export interface PricingTitleQ3Y24 {
   title: string;
   description: string | RichtextStoryblok;
+}
+export interface PricingHeroQ3Y24Storyblok {
+  header: PricingTitleQ3Y24[2];
   mau: MAU[1];
   category1: string;
   category2: string;
@@ -1926,7 +1935,7 @@ export interface TitleStoryblok {
   title: string;
   description?: string;
   links?: ButtonLinkStoryblok[];
-  size?: '' | 'large' | 'small';
+  size?: 'none' | 'verySmall' | 'large' | 'small';
   _uid: string;
   component: 'title';
   [k: string]: any;
@@ -2219,5 +2228,86 @@ export interface YoutubeVideoStoryblok {
   video_url: string;
   _uid: string;
   component: 'youtube-video';
+  [k: string]: any;
+}
+
+export interface ConnectedStepStoryblok {
+  title: string;
+  description: string;
+  icon: AssetStoryblok;
+  _uid: string;
+  component: 'connected-step';
+  [k: string]: any;
+}
+
+export interface ConnectedStepsStoryblok {
+  theme?: '' | 'light' | 'dark';
+  title: TitleStoryblok[];
+  steps: ConnectedStepStoryblok[];
+  description: RichtextStoryblok;
+  _uid: string;
+  component: 'connected-steps';
+  [k: string]: any;
+}
+
+export interface TitleWithCTAStoryblok {
+  title: string;
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'title-with-cta';
+  [k: string]: any;
+}
+
+export interface TitleAndDescriptiontoryblok {
+  title: string;
+  titleSize: 'h1' | 'h2' | 'h3' | 'h4' | 'h5';
+  description: RichTextSectionStoryblok;
+  _uid: string;
+  component: 'title-and-description';
+  [k: string]: any;
+}
+
+export interface TitleAndIconsStoryblok {
+  title: string;
+  icons: AssetStoryblok[];
+  _uid: string;
+  component: 'title-and-icons';
+  [k: string]: any;
+}
+
+export interface ImageCarousalStoryblok {
+  title: string;
+  cta: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'image-carousal';
+  [k: string]: any;
+}
+
+export interface SimpleTextStoryblok {
+  text: string;
+  _uid: string;
+  component: 'simple_text';
+  [k: string]: any;
+}
+
+export interface RollerPointStoryblok {
+  title: string;
+  description: string;
+  image: AssetStoryblok;
+  points: SimpleTextStoryblok[];
+  link: LinkStoryblok;
+  _uid: string;
+  component: 'roller_point';
+  [k: string]: any;
+}
+
+export interface ComplexRollerStoryblok {
+  title: string;
+  description: string;
+  roller_points: RollerPointStoryblok[];
+  tagline: string;
+
+  _uid: string;
+  component: 'complex_roller';
   [k: string]: any;
 }

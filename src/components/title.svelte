@@ -18,7 +18,9 @@
       },
       size: {
         small: ['lg:py-12', 'py-12'],
-        large: ['pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16']
+        large: ['pt-12', 'lg:pt-[100px]', 'pb-10', 'lg:pb-16'],
+        verySmall: ['pt-4 pb-4', 'lg:pb-8 lg:pt-6'],
+        none: ['pt-0 pb-b']
       }
     }
   });
@@ -37,7 +39,7 @@
   export let description: string | RichtextStoryblok | undefined = undefined;
   export let titleHeadingType: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' = 'h2';
   export let buttons: undefined | ButtonLinkStoryblok[] = undefined;
-  export let size: 'small' | 'large' = 'large';
+  export let size: 'none' | 'verySmall' | 'small' | 'large' = 'large';
 
   const labelColours = {
     orange: 'text-orange-9',

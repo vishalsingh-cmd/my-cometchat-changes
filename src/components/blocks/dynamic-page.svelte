@@ -3,6 +3,7 @@
     BlogPostStoryblok,
     CustomerStoryStoryblok,
     GuideStoryblok,
+    MarketplacesStoryblok,
     PageStoryblok,
     TechnologyStoryblok,
     TutorialStoryblok
@@ -14,6 +15,7 @@
   import CustomerStory from './customer-story.svelte';
   import Tutorial from './tutorial.svelte';
   import Guide from './guide.svelte';
+  import MarketplacesLayout from './layouts/marketplaces/marketplaces-layout.svelte';
 
   /**
    * The dynamic page will render the correct page based on the content type (page, blog-post, etc.)
@@ -25,6 +27,7 @@
     | TechnologyStoryblok
     | TutorialStoryblok
     | GuideStoryblok
+    | MarketplacesStoryblok
   >;
 
   const blogPostData = page as unknown as BlogPostStoryblok;
@@ -32,6 +35,7 @@
   const pageData = page as unknown as PageStoryblok;
   const tutorialData = page as unknown as TutorialStoryblok;
   const guideData = page as unknown as GuideStoryblok;
+  const marketplaceData = page as unknown as MarketplacesStoryblok;
 </script>
 
 {#if page.content && page.content?.component && page.content?.component === 'blog-post'}
@@ -42,6 +46,8 @@
   <CustomerStory block={customerStoryData} />
 {:else if page.content && page.content?.component && page.content?.component === 'guide'}
   <Guide block={guideData} />
+{:else if page.content && page.content?.component && page.content?.component === 'marketplaces'}
+  <MarketplacesLayout block={marketplaceData} />
 {:else}
   <Page block={pageData} />
 {/if}

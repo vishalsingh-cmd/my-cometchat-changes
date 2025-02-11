@@ -68,34 +68,38 @@
     <div class="absolute left-0 top-0 h-full w-full overflow-hidden">
       <PricingBackgroundV2 />
     </div>
-    <div class="relative z-50 w-full">
-      <div class="container z-50 mx-auto">
-        <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
-          <div class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-2">
-            <h1 class="text-4xl">{block.title}</h1>
-            {#if block.description}
-              {#if typeof block.description != 'string' && block.description.content}
-                {#each block.description.content as content}
-                  <p
-                    class={cn(
-                      paragraph,
-                      'text-xl font-medium tracking-wide opacity-74 md:text-center'
-                    )}
-                  >
-                    {@html resolver.render(content)}
+    {#if block.header}
+      {@const { title, description } = block.header[$activateTable ? 0 : 1]}
+      <div class="relative z-50 w-full">
+        <div class="container z-50 mx-auto">
+          <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
+            <div
+              class="z-20 flex max-w-[528px] flex-col items-start gap-3 md:items-center md:gap-2"
+            >
+              <h1 class="text-4xl">{title}</h1>
+              {#if description}
+                {#if typeof description != 'string' && description.content}
+                  {#each description.content as content}
+                    <p
+                      class={cn(
+                        paragraph,
+                        'text-xl font-medium tracking-wide opacity-74 md:text-center'
+                      )}
+                    >
+                      {@html resolver.render(content)}
+                    </p>
+                  {/each}
+                {:else}
+                  <p class="text-xl font-medium tracking-wide opacity-74 md:text-center">
+                    {description}
                   </p>
-                {/each}
-              {:else}
-                <p class="text-xl font-medium tracking-wide opacity-74 md:text-center">
-                  {block.description}
-                </p>
+                {/if}
               {/if}
-            {/if}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
+    {/if}
     <div class="relative z-50 w-full">
       <Sticky class="md:static">
         <div

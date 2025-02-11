@@ -12,9 +12,13 @@
   export let link: MultilinkStoryblok;
 </script>
 
-<div class="w-full max-w-[640px]">
-  <div class="mb-6 h-full w-full md:mb-12">
-    <Media imageTransformOptions={{ size: [1200, 0] }} media={illustration} />
+<div class={cn(['grid max-w-[640px] grid-rows-[auto_1fr] gap-8'])}>
+  <div class="relative h-auto w-full">
+    <Media
+      class="h-auto w-full object-cover"
+      imageTransformOptions={{ size: [1200, 0] }}
+      media={illustration}
+    />
   </div>
   <div class="max-w-[416px] font-sans text-xl text-gray-12">
     <h3 class="mb-1 font-semibold leading-tighter md:mb-2">{title}</h3>
@@ -29,8 +33,17 @@
         <p class="mb-3 font-medium leading-snug tracking-wide opacity-74">{description}</p>
       {/if}
     {/if}
-    <GhostButton as="a" href={link.href} target={link.target} rel={link.rel} variant="highlighted">
-      {link.label}
-    </GhostButton>
+
+    {#if link.href}
+      <GhostButton
+        as="a"
+        href={link.href}
+        target={link.target}
+        rel={link.rel}
+        variant="highlighted"
+      >
+        {link.label}
+      </GhostButton>
+    {/if}
   </div>
 </div>

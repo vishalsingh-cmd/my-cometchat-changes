@@ -74,13 +74,33 @@
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-V2.svelte';
+  import ConnectedSteps from './connected-steps/connected-steps.svelte';
+  import ConnectedStep from './connected-steps/connected-step.svelte';
+  import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
+  import ImageCarousal from './carousals/image-carousal.svelte';
+  import TitleWithCta from './titles/title-with-cta.svelte';
+  import TitleAndDescription from './titles/title-and-description.svelte';
+  import TitleAndIcons from './titles/title-and-icons.svelte';
+  import MarketplaceBannerInfo from './pages/marketplace/marketplace-banner-info.svelte';
+  import Emptyspace from './pages/emptyspace.svelte';
+  import Industry from '$src/_views/HomeV2/_sections/Industry/Industry.svelte';
+  import Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
+  import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
+  import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
+  import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
+  import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
+  import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
+  import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
+  import Testimonial from '$src/_views/HomeV2/_sections/Testimonial/Testimonial.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'awards-section': AwardsSection,
+
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
+    complex_roller: Industry,
     'core-features-pricing-section': CoreFeaturesPricingSection,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
@@ -88,9 +108,16 @@
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
     'center-static-banner-v03': CenterStaticBannerV03,
+
+    'connected-step': ConnectedStep,
+    'connected-steps': ConnectedSteps,
+
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
+
+    emptyspace: Emptyspace,
+
     'faq-section': FaqSection,
     'featured-story-section': FeaturedStorySection,
     'features-at-glance-section': FeaturesAtGlanceSection,
@@ -100,6 +127,7 @@
     'header-and-list-section': HeaderAndListSection,
     'hero-form': HeroForm,
     'homepage-hero': HomepageHero,
+
     'implementation-section': ImplementationSection,
     'implementation-section-v2': ImplementationSectionV2,
     'implementation-section-v3': ImplementationSectionV3,
@@ -107,6 +135,8 @@
     'in-depth-analytics-section': InDepthAnalyticsSection,
     'infrastructure-section': InfrastructureSection,
     'ipad-iframe': IpadIframe,
+    'image-carousal': ImageCarousal,
+
     'media-tabs-section': MediaTabsSection,
     'media-with-list-section': MediaWithListSection,
     'legal-hero': LegalHero,
@@ -114,9 +144,13 @@
     'lists-section': ListsSection,
     'logo-showcase': LogoShowcase,
     metrics: Metrics,
+
+    'marketplace-banner-info': MarketplaceBannerInfo,
+    'marketplace-banner': MarketplaceBanner,
     'moderation-features': ModerationFeatures,
     'moderation-features-section': ModerationFeaturesSection,
     'newsletter-section': NewsletterSection,
+
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
@@ -142,13 +176,27 @@
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
+
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
     'title-media-section': TitleMediaSection,
     'title-section': TitleSection,
+    'title-with-cta': TitleWithCta,
+    'title-and-description': TitleAndDescription,
+    'title-and-icons': TitleAndIcons,
+
     'voice-and-video-calls-hero': VoiceAndVideoCallsHero,
     'webhooks-hero': WebhooksHero,
-    'webhooks-section': WebhooksSection
+    'webhooks-section': WebhooksSection,
+
+    home__banner: Banner,
+    home__video_tabs: FeatureTabs,
+    home_clients: Clients,
+    'home_ implementation': Step,
+    'home_ technologies': Technologies,
+    home__our_platform: Platform,
+    home__secure: Secure,
+    home__testimonials: Testimonial
   };
 </script>
 

@@ -20,9 +20,12 @@ const config = {
       handleHttpError: 'warn' //TODO: Put this as 'error' as soon as the website is published
     },
     alias: {
+      $src: './src',
       $components: './src/components',
       $lib: './src/lib',
-      $types: './src/types'
+      $types: './src/types',
+      $api: './src/api',
+      $bricks: './src/bricks'
     }
   }
 };

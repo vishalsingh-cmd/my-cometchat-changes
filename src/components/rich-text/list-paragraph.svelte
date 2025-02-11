@@ -1,12 +1,45 @@
+<script lang="ts" context="module">
+  export const schema = cloneDeep(RichTextSchema);
+
+  // Fix links href to sanitize url
+  schema.marks.link = (node) => {
+    /* eslint-disable @typescript-eslint/no-unused-vars */
+    const { story, uuid, linktype = 'url', ...attrs } = node.attrs;
+    attrs.class = 'link';
+
+    if (linktype === 'email') {
+      attrs.href = `mailto:${attrs.href}`;
+    }
+
+    if (attrs.href && linktype === 'story') {
+      if (attrs.href.startsWith('/pages/')) attrs.href = '/' + attrs.href.replace('/pages/', '');
+      if (attrs.href.startsWith('pages/')) attrs.href = '/' + attrs.href.replace('pages/', '');
+    }
+
+    if (attrs.custom) {
+      for (const key in attrs.custom) {
+        attrs[key] = attrs.custom[key];
+      }
+      delete attrs.custom;
+    }
+
+    return {
+      tag: [{ tag: 'a', attrs: attrs }]
+    };
+  };
+
+  export const resolver = new RichTextResolver(schema);
+</script>
+
 <script lang="ts">
   import { cva } from 'class-variance-authority';
-  import { RichTextResolver, type ISbRichtext } from '@storyblok/js';
+  import { RichTextResolver, RichTextSchema, type ISbRichtext } from '@storyblok/js';
 
   import { cn } from '$lib/utils';
+  import { STORYBLOK_PAGES_PREFIX } from '$lib/constants';
+  import cloneDeep from 'clone-deep';
 
   export let content: ISbRichtext;
-
-  const resolver = new RichTextResolver();
 
   const paragraph = cva([
     'font-medium',

@@ -116,14 +116,15 @@
   $: currentPage = 1;
 
   $: getDirectoryDataWithFilters = createQuery({
-    queryKey: [`directory-${Math.random()}`, { id: block._uid }],
+    queryKey: [`directory-${Math.random()}`, { id: block._uid, sort: 'created_at', order: 'asc' }],
     queryFn: async () => {
       const res = await getStories({
         content_type: 'customer-story',
         filter_query: filter_query,
         per_page: RESULTS_PER_PAGE,
         page: currentPage,
-        search_term: $debouncedSearch
+        search_term: $debouncedSearch,
+        sort_by: 'created_at:desc'
       });
 
       return { stories: res.data.stories, total: res.total };
