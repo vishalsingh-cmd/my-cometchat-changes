@@ -8,7 +8,6 @@
   import PlatformCard from './_comps/PlatformCard.svelte';
 
   export let block: PlatformStoryblok;
-  console.log(block);
 </script>
 
 <Section>

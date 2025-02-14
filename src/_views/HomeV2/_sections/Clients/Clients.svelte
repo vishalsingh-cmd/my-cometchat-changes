@@ -8,6 +8,7 @@
   import AutoScroll from 'embla-carousel-auto-scroll';
   import { onMount, onDestroy } from 'svelte';
   import { browser } from '$app/environment';
+  import type { ClientsStoryblok } from '$src/types/bloks';
 
   let emblaApi: any;
   let cleanup: (() => void) | null = null;
@@ -64,6 +65,9 @@
       }
     }
   });
+
+  export let block: ClientsStoryblok;
+  console.log(block.clients);
 </script>
 
 <Section className="relative isolate group/clients overflow-hidden">
@@ -74,7 +78,7 @@
         ['lg:text-[18px]']
       )}
     >
-      Trusted by
+      {block.tagname}
     </h2>
     <div class="embla">
       <div

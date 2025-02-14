@@ -2356,3 +2356,22 @@ export interface PlatformStoryblok {
   cards: Platform_cardStoryblok[]
 
 }
+
+
+export interface ClientStoryblok {
+  _uid: string;
+  component: 'home_client';
+  [k: string]: any;
+  client_img: AssetStoryblok
+
+}
+
+
+export interface ClientsStoryblok {
+  _uid: string;
+  component: 'home_clients';
+  [k: string]: any;
+  tagname: string;
+  link: LinkStoryblok;
+  clients: ClientStoryblok[]
+}
