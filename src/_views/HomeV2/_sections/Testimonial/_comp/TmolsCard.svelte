@@ -6,16 +6,6 @@
   import type { SpecialTestimonialStoryblok } from '$src/types/bloks';
   import Media from '$src/components/media.svelte';
 
-  interface props {
-    profile_img: string;
-    brand_img: string;
-    name: string;
-    designation: string;
-    description: string;
-  }
-
-  export let content: props;
-
   let className: undefined | string = undefined;
   export { className as class };
   const tmolsCard = tv({
