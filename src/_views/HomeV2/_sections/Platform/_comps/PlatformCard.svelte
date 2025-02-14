@@ -85,7 +85,8 @@
 >
   <div class={platformCard__container({ class: containerClassName })}>
     <div class={platformCard__info({ class: infoClassName })}>
-      <Media media={block.icon} class="shrink-0" />
+      <Media media={block.icon} />
+      <img src={block.icon.filename} alt={block.icon.alt} class="w-12 lg:w-16" />
       <h3 class={platformCard__title({ class: titleClassName })}>{block.title}</h3>
       <p class={platformCard__des({ class: desClassName })}>
         {block.description}
