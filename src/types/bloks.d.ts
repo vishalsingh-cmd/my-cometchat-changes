@@ -2311,3 +2311,22 @@ export interface ComplexRollerStoryblok {
   component: 'complex_roller';
   [k: string]: any;
 }
+
+export interface SpecialTestimonialStoryblok {
+  profile_img: AssetStoryblok;
+  brand_img: AssetStoryblok;
+  name: string;
+  designation: string;
+  description: string;
+
+  _uid: string;
+  component: 'special_testimonial';
+  [k: string]: any;
+}
+
+export interface SpecialTestimonialsStoryblok {
+  testimonials: SpecialTestimonialStoryblok[];
+  _uid: string;
+  component: 'special_testimonials';
+  [k: string]: any;
+}

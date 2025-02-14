@@ -1,13 +1,14 @@
 <script lang="ts">
+  import { cn } from '$src/_utils/tailwind.utils';
+  import { onMount } from 'svelte';
+  import { tmolDatas } from './_data/tmols.data';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
   import TmolsCard from './_comp/TmolsCard.svelte';
-  import { tmolDatas } from './_data/tmols.data';
   import EmblaCarousel from 'embla-carousel';
-  import { onMount } from 'svelte';
   import type { EmblaCarouselType } from 'embla-carousel';
+  import type { SpecialTestimonialsStoryblok } from '$src/types/bloks';
 
   let emblaNode: HTMLElement;
   let viewportNode: HTMLElement;
@@ -97,6 +98,9 @@
       }
     };
   });
+
+  export let block: SpecialTestimonialsStoryblok;
+  console.log(block);
 </script>
 
 <Section className="tmols">
@@ -125,11 +129,19 @@
               )}
             >
               {#if i == 3}
-                <TmolsCard content={data} class="lg:-translate-y-16" />
+                <TmolsCard
+                  block={block.testimonials[0]}
+                  content={data}
+                  class="lg:-translate-y-16"
+                />
               {:else if i == 5}
-                <TmolsCard content={data} class="lg:-translate-y-24" />
+                <TmolsCard
+                  block={block.testimonials[1]}
+                  content={data}
+                  class="lg:-translate-y-24"
+                />
               {:else}
-                <TmolsCard content={data} />
+                <TmolsCard block={block.testimonials[0]} content={data} />
               {/if}
             </div>
           {/each}

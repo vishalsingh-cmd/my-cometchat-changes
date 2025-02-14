@@ -192,11 +192,11 @@
     home__banner: Banner,
     home__video_tabs: FeatureTabs,
     home_clients: Clients,
-    'home_ implementation': Step,
-    'home_ technologies': Technologies,
+    home_implementation: Step,
+    home_technologies: Technologies,
     home__our_platform: Platform,
     home__secure: Secure,
-    home__testimonials: Testimonial
+    special_testimonials: Testimonial
   };
 </script>
 

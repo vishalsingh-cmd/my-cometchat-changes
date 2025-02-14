@@ -19,6 +19,7 @@ interface props {
   designation: string;
   description: string;
 }
+
 export const tmolDatas: props[] = [
   {
     profile_img: profile01,
