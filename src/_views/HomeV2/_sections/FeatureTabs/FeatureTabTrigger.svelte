@@ -12,7 +12,7 @@
   class={cn(
     [
       'relative isolate py-6',
-      'whitespace-nowrap font-sans text-md font-semibold text-[#FAFAFF]',
+      'whitespace-nowrap font-sans text-[16px] font-semibold text-[#FAFAFF]',
       'transition-opacity duration-300 hover:opacity-100',
       'opacity-54 data-[state="active"]:opacity-100'
     ],

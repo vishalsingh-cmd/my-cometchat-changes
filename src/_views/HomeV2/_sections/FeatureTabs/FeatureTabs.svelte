@@ -1,7 +1,6 @@
 <script lang="ts">
   import { gsap } from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
+
   import { cn } from '$src/_utils/tailwind.utils';
   import { onMount } from 'svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -14,6 +13,8 @@
   import Sticky from '$src/components/sticky.svelte';
   import FeatureTabTrigger from './FeatureTabTrigger.svelte';
   import FeatureTabsUnderline from './FeatureTabsUnderline.svelte';
+  import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
+  import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
   const tabHeaders = ['Visualize & Build', 'Live in Minutes', 'Moderate & Scale'];
   let container: HTMLDivElement;

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import { onMount } from 'svelte';
-  import { tmolDatas } from './_data/tmols.data';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
@@ -99,18 +98,17 @@
     };
   });
 
-  export let block: SpecialTestimonialsStoryblok;
-  console.log(block);
+  export let block: SpecialTestimonialsStoryblok | undefined;
 </script>
 
 <Section className="tmols">
   <Container className="overflow-hidden">
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
-        Testimonial
+        {block?.tagline}
       </HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mx-auto mt-2 max-w-[710px] text-center'], ['lg:mt-3'])}>
-        Meet the teams building big with CometChat
+        {block?.title}
       </HeadingLatest>
     </div>
 
@@ -120,31 +118,19 @@
           class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-8"
           bind:this={embalaContainer}
         >
-          {#each tmolDatas as data, i}
-            <div
-              class={cn(
-                ['embla__slide min-w-0 max-w-[340px]'],
-                ['flex-shrink-0 flex-grow-0 basis-full'],
-                ['lg:max-w-none lg:basis-auto']
-              )}
-            >
-              {#if i == 3}
-                <TmolsCard
-                  block={block.testimonials[0]}
-                  content={data}
-                  class="lg:-translate-y-16"
-                />
-              {:else if i == 5}
-                <TmolsCard
-                  block={block.testimonials[1]}
-                  content={data}
-                  class="lg:-translate-y-24"
-                />
-              {:else}
-                <TmolsCard block={block.testimonials[0]} content={data} />
-              {/if}
-            </div>
-          {/each}
+          {#if block}
+            {#each block.testimonials as data, i}
+              <div
+                class={cn(
+                  ['embla__slide min-w-0 max-w-[340px]'],
+                  ['flex-shrink-0 flex-grow-0 basis-full'],
+                  ['lg:max-w-none lg:basis-auto']
+                )}
+              >
+                <TmolsCard block={data} />
+              </div>
+            {/each}
+          {/if}
         </div>
       </div>
 
