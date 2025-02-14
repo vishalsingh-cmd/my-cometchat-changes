@@ -98,7 +98,7 @@
     };
   });
 
-  export let block: SpecialTestimonialsStoryblok | undefined;
+  export let block: SpecialTestimonialsStoryblok | undefined = undefined;
 </script>
 
 <Section className="tmols">

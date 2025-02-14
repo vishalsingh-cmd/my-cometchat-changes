@@ -1,4 +1,5 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
+import { StoryblokLink } from './cms';
 
 export interface AssetStoryblok {
   alt?: string;
@@ -2331,4 +2332,27 @@ export interface SpecialTestimonialsStoryblok {
   _uid: string;
   component: 'special_testimonials';
   [k: string]: any;
+}
+
+
+export interface Platform_cardStoryblok {
+  _uid: string;
+  component: 'home_our_platform_card';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+  link: LinkStoryblok[]
+  image: AssetStoryblok;
+}
+
+export interface PlatformStoryblok {
+  _uid: string;
+  component: 'home__our_platform';
+  [k: string]: any;
+  tagline: string;
+  title: string;
+  description: string;
+  cards: Platform_cardStoryblok[]
+
 }
