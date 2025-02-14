@@ -91,7 +91,7 @@
   import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
   import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
-  import Testimonial from '$src/_views/HomeV2/_sections/Testimonial/Testimonial.svelte';
+  import Testimonial from '$src/_comps/specials/SpecialTestimonial/SpecialTestimonial.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
