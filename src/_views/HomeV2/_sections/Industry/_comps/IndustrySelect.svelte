@@ -66,7 +66,7 @@
   {#if industryPointBlocks[$activeIndex]}
     <p
       class={cn(
-        ['mt-8 opacity-74', 'text-left font-sans text-md font-semibold text-[#FAFAFF]'],
+        ['mt-8 opacity-74', 'text-left font-sans text-[16px] font-semibold text-[#FAFAFF]'],
         ['lg:text-[22px]']
       )}
     >

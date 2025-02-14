@@ -70,7 +70,7 @@
   <Container>
     <h2
       class={cn(
-        ['text-center font-sans text-md font-semibold text-[#FAFAFF] text-opacity-54'],
+        ['text-center font-sans text-[16px] font-semibold text-[#FAFAFF] text-opacity-54'],
         ['lg:text-[18px]']
       )}
     >

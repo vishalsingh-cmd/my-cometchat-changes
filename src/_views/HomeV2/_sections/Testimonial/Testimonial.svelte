@@ -98,17 +98,17 @@
     };
   });
 
-  export let block: SpecialTestimonialsStoryblok;
+  export let block: SpecialTestimonialsStoryblok | undefined;
 </script>
 
 <Section className="tmols">
   <Container className="overflow-hidden">
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
-        {block.tagline}
+        {block?.tagline}
       </HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mx-auto mt-2 max-w-[710px] text-center'], ['lg:mt-3'])}>
-        {block.title}
+        {block?.title}
       </HeadingLatest>
     </div>
 
@@ -118,17 +118,19 @@
           class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-8"
           bind:this={embalaContainer}
         >
-          {#each block.testimonials as data, i}
-            <div
-              class={cn(
-                ['embla__slide min-w-0 max-w-[340px]'],
-                ['flex-shrink-0 flex-grow-0 basis-full'],
-                ['lg:max-w-none lg:basis-auto']
-              )}
-            >
-              <TmolsCard block={data} />
-            </div>
-          {/each}
+          {#if block}
+            {#each block.testimonials as data, i}
+              <div
+                class={cn(
+                  ['embla__slide min-w-0 max-w-[340px]'],
+                  ['flex-shrink-0 flex-grow-0 basis-full'],
+                  ['lg:max-w-none lg:basis-auto']
+                )}
+              >
+                <TmolsCard block={data} />
+              </div>
+            {/each}
+          {/if}
         </div>
       </div>
 
