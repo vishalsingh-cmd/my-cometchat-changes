@@ -115,7 +115,7 @@
     <div class="mt-10 lg:mt-[88px]" bind:this={emblaNode}>
       <div class="embla__viewport lg:overflow-visible" bind:this={viewportNode}>
         <div
-          class="embla__container flex gap-5 lg:grid lg:grid-cols-3 lg:gap-8"
+          class={cn(['embla__container flex gap-5'], ['lg:grid lg:grid-cols-3 lg:gap-8'])}
           bind:this={embalaContainer}
         >
           {#if block}
