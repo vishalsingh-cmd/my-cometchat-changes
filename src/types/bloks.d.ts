@@ -2371,3 +2371,21 @@ export interface home__bannerStoryblok {
   component: 'home__banner';
   [k: string]: any;
 }
+
+/* -------------------------------- templates ------------------------------- */
+
+export interface simple_assetStoryblok {
+  asset: AssetStoryblok;
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}
+
+export interface templates_bannerStoryblok {
+  title: string;
+  description: string;
+  brands: simple_assetStoryblok[];
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}

@@ -83,8 +83,8 @@
   import TitleAndIcons from './titles/title-and-icons.svelte';
   import MarketplaceBannerInfo from './pages/marketplace/marketplace-banner-info.svelte';
   import Emptyspace from './pages/emptyspace.svelte';
-  import Industry from '$src/_views/HomeV2/_sections/Industry/Industry.svelte';
-  import Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
+  import ComplexRoller from '$src/_views/HomeV2/_sections/Industry/ComplexRoller.svelte';
+  import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
@@ -93,6 +93,9 @@
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
   import Testimonial from '$src/_comps/specials/SpecialTestimonial/SpecialTestimonial.svelte';
 
+  // templates
+  import TemplatesBanner from '$src/_views/Templates/Banner/Banner.svelte';
+
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'awards-section': AwardsSection,
@@ -100,7 +103,7 @@
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
-    complex_roller: Industry,
+    complex_roller: ComplexRoller,
     'core-features-pricing-section': CoreFeaturesPricingSection,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
@@ -189,14 +192,18 @@
     'webhooks-hero': WebhooksHero,
     'webhooks-section': WebhooksSection,
 
-    home__banner: Banner,
+    /* --------------------------------- homev2 --------------------------------- */
+    home__banner: Homev2Banner,
     home__video_tabs: FeatureTabs,
     home_clients: Clients,
     home_implementation: Step,
     home_technologies: Technologies,
     home__our_platform: Platform,
     home__secure: Secure,
-    special_testimonials: Testimonial
+    special_testimonials: Testimonial,
+
+    /* -------------------------------- templates ------------------------------- */
+    templates_banner: TemplatesBanner
   };
 </script>
 

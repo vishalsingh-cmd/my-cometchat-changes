@@ -5,7 +5,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
-  import IndustriesAnimated from './IndustriesAnimated.svelte';
+  import IndustriesAnimated from './ComplexRollerPoints.svelte';
 
   export let block: ComplexRollerStoryblok | undefined;
 </script>
