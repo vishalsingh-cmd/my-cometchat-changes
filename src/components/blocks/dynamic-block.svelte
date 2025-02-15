@@ -95,6 +95,7 @@
 
   // templates
   import TemplatesBanner from '$src/_views/Templates/Banner/Banner.svelte';
+  import TemplatesListing from '$src/_views/Templates/Listing/Listing.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -203,7 +204,8 @@
     special_testimonials: Testimonial,
 
     /* -------------------------------- templates ------------------------------- */
-    templates_banner: TemplatesBanner
+    templates_banner: TemplatesBanner,
+    templates_listing: TemplatesListing
   };
 </script>
 

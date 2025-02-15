@@ -2389,3 +2389,9 @@ export interface templates_bannerStoryblok {
   component: 'templates_banner';
   [k: string]: any;
 }
+
+export interface templates_listingStoryblok {
+  _uid: string;
+  component: 'templates_listing';
+  [k: string]: any;
+}
