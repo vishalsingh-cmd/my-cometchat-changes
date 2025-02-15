@@ -2333,6 +2333,7 @@ export interface SpecialTestimonialsStoryblok {
   [k: string]: any;
 }
 
+/* ------------------------------- FeatureTab ------------------------------- */
 export interface FeatureTabStoryblok {
   titleName: string;
   video: AssetStoryblok;
@@ -2345,5 +2346,28 @@ export interface home__video_tabsStoryblok {
   featureTabs: FeatureTabStoryblok[];
   _uid: string;
   component: 'home__video_tabs';
+  [k: string]: any;
+}
+
+/* ------------------------------ home__banner ------------------------------ */
+
+export interface AnimatedBannerBoxStoryblok {
+  label: string;
+  icon: AssetStoryblok;
+  _uid: string;
+  component: 'animated_banner_box';
+  [k: string]: any;
+}
+
+export interface home__bannerStoryblok {
+  beforeTitle: string;
+  animatedBoxes: AnimatedBannerBoxStoryblok[];
+  afterTitle: string;
+  description: string;
+  primaryCta: ButtonLinkStoryblok[];
+  secondaryCta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'home__banner';
   [k: string]: any;
 }
