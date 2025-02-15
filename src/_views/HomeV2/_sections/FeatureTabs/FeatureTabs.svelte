@@ -4,7 +4,6 @@
   import type { home__video_tabsStoryblok } from '$src/types/bloks';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  import Sticky from '$src/components/sticky.svelte';
   import FeatureTabTrigger from './FeatureTabTrigger.svelte';
   import FeatureTabsUnderline from './FeatureTabsUnderline.svelte';
   import FeatureTabsNav from './_comps/FeatureTabsNav.svelte';
@@ -27,14 +26,15 @@
 <Section class="relative isolate">
   <Container pyEnabled={false} pxEnabled={false} expand="full">
     <div data-name="tabs" bind:this={tabsElem}>
-      <Sticky translateOnDesktop>
+      <div class="relative">
         <FeatureTabsNav>
           {#each block.featureTabs as featureTab}
             <FeatureTabTrigger tabHeader={featureTab.triggerName} />
           {/each}
         </FeatureTabsNav>
         <FeatureTabsUnderline />
-      </Sticky>
+      </div>
+
       <div class="flex flex-col overflow-hidden" data-name="feature-tabs-container">
         <div
           class={cn(['flex h-[80vh] w-full flex-nowrap items-center'])}

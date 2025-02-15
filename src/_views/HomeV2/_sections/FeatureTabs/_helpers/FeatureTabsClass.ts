@@ -143,9 +143,8 @@ export default class FeatureTabsClass {
 
   private initializeScrollTrigger(): void {
     this.scrollTrigger = ScrollTrigger.create({
-      trigger: this.containerElem,
-      start: 'top 10%',
-      markers: true,
+      trigger: this.tabsElem,
+      start: 'top top',
       pin: true,
       anticipatePin: 1,
       onEnter: () => {
@@ -169,7 +168,6 @@ export default class FeatureTabsClass {
     ScrollTrigger.create({
       trigger: this.containerElem,
       start: 'top center',
-      markers: true,
       anticipatePin: 1,
       onEnter: () => this.videoElems[this.currentIndex].play(),
       onEnterBack: () => this.videoElems[this.currentIndex].play(),
