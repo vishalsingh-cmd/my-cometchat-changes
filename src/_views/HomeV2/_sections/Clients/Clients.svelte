@@ -3,12 +3,12 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Button from '$src/components/buttons/button.svelte';
   import { cn } from '$src/lib/utils';
-  import { clientsData } from './_datas/clients.data';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
   import AutoScroll from 'embla-carousel-auto-scroll';
   import { onMount, onDestroy } from 'svelte';
   import { browser } from '$app/environment';
   import type { ClientsStoryblok } from '$src/types/bloks';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   let emblaApi: any;
   let cleanup: (() => void) | null = null;
@@ -67,7 +67,7 @@
   });
 
   export let block: ClientsStoryblok;
-  console.log(block.clients);
+  console.log(block);
 </script>
 
 <Section className="relative isolate group/clients overflow-hidden">
@@ -89,11 +89,13 @@
         )}
         data-scrollbar="hidden"
       >
-        {#each clientsData as data}
-          <div class={cn('embla__slide mx-4 min-w-0 max-w-full flex-[0_0_auto]', '')}>
-            <img class="w-max" src={data.src} alt={data.alt} />
-          </div>
-        {/each}
+        {#if block}
+          {#each block.clients as data}
+            <div class={cn('embla__slide mx-4 min-w-0 max-w-full flex-[0_0_auto]', '')}>
+              <img class="w-max" src={data.client_img.filename} alt={data.client_img.alt} />
+            </div>
+          {/each}
+        {/if}
       </div>
     </div>
   </Container>
@@ -107,8 +109,12 @@
       'group-hover/clients:scale-100 group-hover/clients:opacity-100'
     ])}
   >
-    <Button variant="secondary" as="a" href="/customer-stories" target="_blank">
-      Checkout our amazing customer stories
-    </Button>
+    {#if block.link}
+      {@const link = block.link[0]}
+      {@const { href } = getAnchorFromCmsLink(link.link)}
+      <Button variant="secondary" as="a" {href} target="_blank">
+        {link.label}
+      </Button>
+    {/if}
   </div>
 </Section>
