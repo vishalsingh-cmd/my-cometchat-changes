@@ -1,32 +1,14 @@
 <script lang="ts">
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import { cn } from '$src/_utils/tailwind.utils';
-  import award01 from '../_assets/award01.png';
-  import award02 from '../_assets/award02.png';
-  import award03 from '../_assets/award03.png';
-  import award04 from '../_assets/award04.png';
+  import type { SecureAwardStoryblok } from '$src/types/bloks';
+
   import SecureDecCircle from './SecureDecCircle.svelte';
 
-  const awards = [
-    {
-      src: award01,
-      alt: 'award01'
-    },
-    {
-      src: award02,
-      alt: 'award02'
-    },
-    {
-      src: award03,
-      alt: 'award03'
-    },
-    {
-      src: award04,
-      alt: 'award04'
-    }
-  ];
-
   export let className = '';
+
+  export let block: SecureAwardStoryblok;
+  console.log(block);
 </script>
 
 <div
@@ -38,9 +20,9 @@
   )}
 >
   <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
-    <HeadingLatest as="h3" varient="h6">Enterprise security</HeadingLatest>
+    <HeadingLatest as="h3" varient="h6">{block.title}</HeadingLatest>
     <div class={cn(['grid grid-cols-[150px_150px] gap-4'])}>
-      {#each awards as award}
+      {#each block.imgs as award}
         <div
           class={cn(
             [
@@ -51,7 +33,7 @@
             ['lg:rounded-full']
           )}
         >
-          <img src={award.src} alt={award.alt} />
+          <img src={award.img.filename} alt={award.img.name} />
         </div>
       {/each}
     </div>

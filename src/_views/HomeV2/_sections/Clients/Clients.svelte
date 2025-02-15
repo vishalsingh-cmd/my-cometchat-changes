@@ -67,7 +67,6 @@
   });
 
   export let block: ClientsStoryblok;
-  console.log(block);
 </script>
 
 <Section className="relative isolate group/clients overflow-hidden">

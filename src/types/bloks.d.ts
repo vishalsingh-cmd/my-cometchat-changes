@@ -2375,3 +2375,49 @@ export interface ClientsStoryblok {
   link: LinkStoryblok;
   clients: ClientStoryblok[]
 }
+
+export interface SecureStoryblok {
+  _uid: string;
+  component: "home__secure"
+  [k: string]: any;
+  tag_name: string;
+  title: string;
+  description: string;
+  secure_network: SecureNetworkStoryblok
+  uptime: SecureReachkStoryblok
+  scalable: SecureReachkStoryblok
+  award: SecureAwardStoryblok
+}
+
+export interface SecureNetworkStoryblok {
+  _uid: string;
+  component: "secure_network"
+  [k: string]: any;
+  title: string;
+  description: string;
+}
+
+export interface SecureReachkStoryblok {
+  _uid: string;
+  component: "secure_reach"
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+}
+
+export interface SecureAwardStoryblok {
+  _uid: string;
+  component: "secure_award"
+  [k: string]: any;
+  title: string;
+  imgs: SecureAwardImgStoryblok[]
+}
+
+export interface SecureAwardImgStoryblok {
+  _uid: string;
+  component: 'secure_award_img';
+  [k: string]: any;
+  img: AssetStoryblok
+
+}
