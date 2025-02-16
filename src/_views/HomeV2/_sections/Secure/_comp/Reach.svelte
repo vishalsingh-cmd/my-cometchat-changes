@@ -1,12 +1,10 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import type { SecureReachkStoryblok } from '$src/types/bloks';
   import SecureDecCircle from './SecureDecCircle.svelte';
-
-  export let title;
-  export let des;
-  export let icon;
-
   export let className = '';
+
+  export let block: SecureReachkStoryblok;
 </script>
 
 <div
@@ -24,11 +22,14 @@
     [className]
   )}
 >
-  <svelte:component this={icon} />
+  <img src={block?.icon.filename} alt={block?.icon.alt} class="h-10 w-10" />
+
   <h4 class={cn(['mt-4 text-[16px] font-medium text-[#FAFAFF]'])}>
-    {title}
+    {block?.title}
   </h4>
-  <p class={cn(['mt-2 text-[32px] font-semibold text-[#FAFAFF]'], ['xl:text-[54px]'])}>{des}</p>
+  <p class={cn(['mt-2 text-[32px] font-semibold text-[#FAFAFF]'], ['xl:text-[54px]'])}>
+    {block?.description}
+  </p>
 
   <SecureDecCircle
     position="topLeft"

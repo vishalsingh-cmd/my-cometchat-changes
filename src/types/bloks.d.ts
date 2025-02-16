@@ -1,4 +1,5 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
+import { StoryblokLink } from './cms';
 
 export interface AssetStoryblok {
   alt?: string;
@@ -43,58 +44,58 @@ export interface AwardsSectionStoryblok {
 
 export type MultilinkStoryblok =
   | {
-      cached_url?: string;
-      linktype?: string;
-      [k: string]: any;
-    }
+    cached_url?: string;
+    linktype?: string;
+    [k: string]: any;
+  }
   | {
-      id?: string;
-      cached_url?: string;
-      anchor?: string;
-      linktype?: 'story';
-      story?: {
-        name: string;
-        created_at?: string;
-        published_at?: string;
-        id: number;
-        uuid: string;
-        content?: {
-          [k: string]: any;
-        };
-        slug: string;
-        full_slug: string;
-        sort_by_date?: null | string;
-        position?: number;
-        tag_list?: string[];
-        is_startpage?: boolean;
-        parent_id?: null | number;
-        meta_data?: null | {
-          [k: string]: any;
-        };
-        group_id?: string;
-        first_published_at?: string;
-        release_id?: null | number;
-        lang?: string;
-        path?: null | string;
-        alternates?: any[];
-        default_full_slug?: null | string;
-        translated_slugs?: null | any[];
+    id?: string;
+    cached_url?: string;
+    anchor?: string;
+    linktype?: 'story';
+    story?: {
+      name: string;
+      created_at?: string;
+      published_at?: string;
+      id: number;
+      uuid: string;
+      content?: {
         [k: string]: any;
       };
-      [k: string]: any;
-    }
-  | {
-      url?: string;
-      cached_url?: string;
-      anchor?: string;
-      linktype?: 'asset' | 'url';
-      [k: string]: any;
-    }
-  | {
-      email?: string;
-      linktype?: 'email';
+      slug: string;
+      full_slug: string;
+      sort_by_date?: null | string;
+      position?: number;
+      tag_list?: string[];
+      is_startpage?: boolean;
+      parent_id?: null | number;
+      meta_data?: null | {
+        [k: string]: any;
+      };
+      group_id?: string;
+      first_published_at?: string;
+      release_id?: null | number;
+      lang?: string;
+      path?: null | string;
+      alternates?: any[];
+      default_full_slug?: null | string;
+      translated_slugs?: null | any[];
       [k: string]: any;
     };
+    [k: string]: any;
+  }
+  | {
+    url?: string;
+    cached_url?: string;
+    anchor?: string;
+    linktype?: 'asset' | 'url';
+    [k: string]: any;
+  }
+  | {
+    email?: string;
+    linktype?: 'email';
+    [k: string]: any;
+  };
 
 export interface BlogAnnouncementSidebarCardStoryblok {
   title?: string;
@@ -155,16 +156,16 @@ export interface BlogPostStoryblok {
   sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
+  | ''
+  | 'explorer'
+  | 'video'
+  | 'webinar'
+  | 'how-to-guide'
+  | 'chat'
+  | 'calling'
+  | 'insights'
+  | 'industry'
+  | 'best-practices';
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
@@ -181,16 +182,16 @@ export interface GuideStoryblok {
   sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
+  | ''
+  | 'explorer'
+  | 'video'
+  | 'webinar'
+  | 'how-to-guide'
+  | 'chat'
+  | 'calling'
+  | 'insights'
+  | 'industry'
+  | 'best-practices';
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
@@ -316,14 +317,14 @@ export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
   code_snippet_language:
-    | ''
-    | 'bash'
-    | 'elixir'
-    | 'javascript'
-    | 'swift'
-    | 'typescript'
-    | 'yaml'
-    | 'go';
+  | ''
+  | 'bash'
+  | 'elixir'
+  | 'javascript'
+  | 'swift'
+  | 'typescript'
+  | 'yaml'
+  | 'go';
   code_snippet_to_show: string;
   code_snippet_to_copy: string;
   _uid: string;
@@ -459,10 +460,10 @@ export interface FeatureStoryblok {
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
-    | StoryblokStory<CustomerStoryStoryblok>
-    | StoryblokStory<BlogPostStoryblok>
-    | StoryblokStory<TutorialStoryblok>
-    | string;
+  | StoryblokStory<CustomerStoryStoryblok>
+  | StoryblokStory<BlogPostStoryblok>
+  | StoryblokStory<TutorialStoryblok>
+  | string;
   button_label: string;
   _uid: string;
   component: 'featured-story-section';
@@ -2322,6 +2323,7 @@ export interface SpecialTestimonialsStoryblok {
   testimonials: SpecialTestimonialStoryblok[];
   tagline: string;
   title: string;
+  viewmore: ButtonLinkStoryblok[]
   _uid: string;
   component: 'special_testimonials';
   [k: string]: any;
@@ -2448,4 +2450,92 @@ export interface TemplatesSidebarItem {
   _uid: string;
   component: 'templates-sidebar-link';
   [k: string]: any;
+}
+
+
+export interface Platform_cardStoryblok {
+  _uid: string;
+  component: 'home_our_platform_card';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+  link: LinkStoryblok[]
+  image: AssetStoryblok;
+}
+
+export interface PlatformStoryblok {
+  _uid: string;
+  component: 'home__our_platform';
+  [k: string]: any;
+  tagline: string;
+  title: string;
+  description: string;
+  cards: Platform_cardStoryblok[]
+
+}
+
+
+export interface ClientStoryblok {
+  _uid: string;
+  component: 'home_client';
+  [k: string]: any;
+  client_img: AssetStoryblok
+
+}
+
+
+export interface ClientsStoryblok {
+  _uid: string;
+  component: 'home_clients';
+  [k: string]: any;
+  tagname: string;
+  link: LinkStoryblok;
+  clients: ClientStoryblok[]
+}
+
+export interface SecureStoryblok {
+  _uid: string;
+  component: "home__secure"
+  [k: string]: any;
+  tag_name: string;
+  title: string;
+  description: string;
+  secure_network: SecureNetworkStoryblok
+  uptime: SecureReachkStoryblok
+  scalable: SecureReachkStoryblok
+  award: SecureAwardStoryblok
+}
+
+export interface SecureNetworkStoryblok {
+  _uid: string;
+  component: "secure_network"
+  [k: string]: any;
+  title: string;
+  description: string;
+}
+
+export interface SecureReachkStoryblok {
+  _uid: string;
+  component: "secure_reach"
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+}
+
+export interface SecureAwardStoryblok {
+  _uid: string;
+  component: "secure_award"
+  [k: string]: any;
+  title: string;
+  imgs: SecureAwardImgStoryblok[]
+}
+
+export interface SecureAwardImgStoryblok {
+  _uid: string;
+  component: 'secure_award_img';
+  [k: string]: any;
+  img: AssetStoryblok
+
 }
