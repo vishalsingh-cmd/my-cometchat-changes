@@ -8,9 +8,11 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import ListingInputSearch from './_comps/ListingInputSearch.svelte';
   import ListingToggleBtn from './_comps/ListingToggleBtn.svelte';
+  import { cn } from '$src/_utils/tailwind.utils';
+  import TemplatesSidebar from '$src/components/blocks/layouts/marketplaces/templates-sidebar.svelte';
 
   export let block: templates_listingStoryblok;
-  const { templates, actions } = createTemplatesContext();
+  const { templates, actions, areFiltersOpen } = createTemplatesContext();
 
   onMount(() => {
     actions.fetchTemplates();
@@ -22,25 +24,37 @@
 </script>
 
 <Section className="bg-white">
-  <Container>
-    <div class="flex items-center justify-between">
+  <Container
+    pyEnabled={false}
+    pxEnabled={false}
+    expand="full"
+    className={cn(['flex flex-col gap-5 px-5 py-10'], ['lg:px-10'])}
+  >
+    <div class={cn(['flex items-center justify-between'])}>
       <ListingToggleBtn />
       <ListingInputSearch />
     </div>
-
-    {#if $templates.data}
-      <div class="grid grid-cols-2">
-        {#each $templates.data.stories as story}
-          {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
-            {@const storyLink = sanitizeSlug(story.full_slug)}
-            <ListingCard
-              image={story.content.seo[0].og_image}
-              title={story.name}
-              href={storyLink}
-            />
-          {/if}
-        {/each}
-      </div>
-    {/if}
+    <div
+      class={cn(
+        ['grid grid-cols-1'],
+        [!$areFiltersOpen ? 'grid-cols-1' : 'lg:grid-cols-[0.2fr_0.8fr]']
+      )}
+    >
+      <TemplatesSidebar className={cn([!$areFiltersOpen ? 'hidden' : '', 'pt-0'])} />
+      {#if $templates.data}
+        <div class="grid grid-cols-2">
+          {#each $templates.data.stories as story}
+            {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
+              {@const storyLink = sanitizeSlug(story.full_slug)}
+              <ListingCard
+                image={story.content.seo[0].og_image}
+                title={story.name}
+                href={storyLink}
+              />
+            {/if}
+          {/each}
+        </div>
+      {/if}
+    </div>
   </Container>
 </Section>

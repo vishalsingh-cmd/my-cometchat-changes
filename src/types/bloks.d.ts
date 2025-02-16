@@ -202,12 +202,6 @@ export interface GuideStoryblok {
   [k: string]: any;
 }
 
-export interface MarketplacesStoryblok {
-  component: 'marketplaces';
-  _uid: string;
-  [k: string]: any;
-}
-
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -2393,5 +2387,15 @@ export interface templates_bannerStoryblok {
 export interface templates_listingStoryblok {
   _uid: string;
   component: 'templates_listing';
+  [k: string]: any;
+}
+
+export interface TemplatesSidebarItem {
+  icon: AssetStoryblok;
+  slug: LinkStoryblok;
+  title: string;
+
+  _uid: string;
+  component: 'templates-sidebar-link';
   [k: string]: any;
 }

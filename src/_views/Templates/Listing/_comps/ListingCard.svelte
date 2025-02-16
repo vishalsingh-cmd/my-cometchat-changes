@@ -10,13 +10,13 @@
 
 <a {href} target="_self" class={cn(['group/listingCard'])}>
   <div class={cn(['flex flex-col gap-2'], ['lg:gap-5'])}>
-    <div class="relative rounded-2xl">
+    <div class="relative">
       <Media media={image} class="rounded-[inherit]" />
       <div
         class={cn([
           'absolute inset-0',
           'flex items-center justify-center',
-          'rounded-[inherit] bg-[#141414] bg-opacity-20 backdrop-blur-[10px]',
+          'rounded-[14px] bg-[#141414] bg-opacity-20 backdrop-blur-[10px]',
           'transition-all duration-300',
           'opacity-0 group-hover/listingCard:opacity-100'
         ])}

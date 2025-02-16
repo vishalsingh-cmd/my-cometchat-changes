@@ -10,6 +10,8 @@
   export let closeClassName = '';
 
   const { searchTerm, actions } = getTemplatesContext();
+  $: $searchTerm, actions.fetchTemplates();
+
   const listingInputSearch = tv({
     slots: {
       base: ['relative isolate w-full', 'lg:max-w-[304px]'],
