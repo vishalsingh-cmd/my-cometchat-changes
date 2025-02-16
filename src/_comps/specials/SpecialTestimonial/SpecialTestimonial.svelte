@@ -8,6 +8,8 @@
   import EmblaCarousel from 'embla-carousel';
   import type { EmblaCarouselType } from 'embla-carousel';
   import type { SpecialTestimonialsStoryblok } from '$src/types/bloks';
+  import Button from '$src/components/buttons/button.svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   let emblaNode: HTMLElement;
   let viewportNode: HTMLElement;
@@ -99,10 +101,11 @@
   });
 
   export let block: SpecialTestimonialsStoryblok | undefined = undefined;
+  console.log(block);
 </script>
 
 <Section className="tmols">
-  <Container className="overflow-hidden">
+  <Container className="overflow-hidden relative">
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
         {block?.tagline}
@@ -137,6 +140,23 @@
       <div class="mt-4 flex justify-center lg:hidden">
         <div class="embla__dots" bind:this={dotsNode} />
       </div>
+    </div>
+
+    <div
+      class={cn(
+        [
+          'hidden bg-[linear-gradient(180deg,_rgba(11,9,20,0)_0%,rgba(11,9,20,0.4)_25%,rgba(11,9,20,0.9)_50%,#0B0914_93%)] pb-10 pt-20',
+          'absolute inset-x-0 bottom-20'
+        ],
+        ['items-center justify-center lg:flex']
+      )}
+    >
+      {#if block?.viewmore}
+        {@const { href, target, rel } = getAnchorFromCmsLink(block.viewmore[0].link)}
+        <Button as="a" variant={block.viewmore[0].variant} {href} {target} {rel}>
+          {block.viewmore[0].label}
+        </Button>
+      {/if}
     </div>
   </Container>
 </Section>

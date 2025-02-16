@@ -12,7 +12,6 @@
   import type { SecureStoryblok } from '$src/types/bloks';
 
   export let block: SecureStoryblok;
-  // console.log(block);
 </script>
 
 <Section>

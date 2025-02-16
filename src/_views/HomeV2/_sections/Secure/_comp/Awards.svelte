@@ -8,7 +8,6 @@
   export let className = '';
 
   export let block: SecureAwardStoryblok;
-  console.log(block);
 </script>
 
 <div

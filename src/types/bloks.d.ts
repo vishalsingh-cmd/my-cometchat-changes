@@ -2323,6 +2323,7 @@ export interface SpecialTestimonialsStoryblok {
   testimonials: SpecialTestimonialStoryblok[];
   tagline: string;
   title: string;
+  viewmore: ButtonLinkStoryblok[]
   _uid: string;
   component: 'special_testimonials';
   [k: string]: any;
