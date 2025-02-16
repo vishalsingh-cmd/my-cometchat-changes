@@ -32,22 +32,23 @@
     pyEnabled={false}
     pxEnabled={false}
     expand="full"
-    className={cn(['flex flex-col gap-5 px-5 py-10'], ['lg:px-10'])}
+    className={cn(['flex flex-col gap-6 px-5 py-10'], ['lg:px-10'])}
   >
     <div class={cn(['flex flex-col items-center justify-between gap-3'], ['lg:flex-row'])}>
-      <TemplatesSidebar className={cn(['lg:hidden'])} />
+      <TemplatesSidebar className={cn(['w-full lg:hidden'])} />
       <ListingToggleBtn className="hidden lg:flex" />
       <ListingInputSearch />
     </div>
     <div
       class={cn(
         ['grid grid-cols-1 gap-6'],
-        [!$areFiltersOpen ? 'grid-cols-1' : 'lg:grid-cols-[0.2fr_0.8fr]']
+        [$areFiltersOpen ? 'lg:grid-cols-[0.2fr_0.8fr]' : 'grid-cols-1']
       )}
     >
       <TemplatesSidebar
-        className={cn([!$areFiltersOpen ? 'hidden' : '', 'pt-0 hidden'], ['lg:block'])}
+        className={cn([!$areFiltersOpen ? 'hidden lg:hidden' : 'hidden lg:block', 'pt-0'])}
       />
+
       {#if $templates.data}
         <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
           <!-- loader -->

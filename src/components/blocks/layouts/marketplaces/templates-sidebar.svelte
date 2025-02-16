@@ -57,8 +57,8 @@
         href={`templates/${link.slug.url}`}
         class={cn(
           [
-            'flex items-center gap-4',
-            'rounded  px-2 py-3 ',
+            'grid grid-cols-[auto_1fr] items-center gap-4',
+            'rounded px-2 py-3 ',
             'text-md font-medium text-[#141414]',
             'transition-[opacity,background-color]',
             'bg-white hover:bg-[#F5F5F5]',
