@@ -11,6 +11,7 @@
   import ListingInputSearch from './_comps/ListingInputSearch.svelte';
   import ListingToggleBtn from './_comps/ListingToggleBtn.svelte';
   import TemplatesSidebar from '$src/components/blocks/layouts/marketplaces/templates-sidebar.svelte';
+  import ListingCardSkeleton from './_comps/ListingCardSkeleton.svelte';
 
   export let block: templates_filterableListingStoryblok;
   const { templates, actions, areFiltersOpen } = createTemplatesContext({
@@ -48,10 +49,13 @@
       <TemplatesSidebar
         className={cn([!$areFiltersOpen ? 'hidden' : '', 'pt-0 hidden'], ['lg:block'])}
       />
-      {#if $templates.data}
-        <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
-          <!-- loader -->
-
+      <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
+        <!-- loader -->
+        {#if $templates.isLoading}
+          <ListingCardSkeleton />
+          <ListingCardSkeleton />
+          <ListingCardSkeleton />
+        {:else if $templates.data}
           {#each $templates.data.stories as story}
             {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
               {@const storyLink = sanitizeSlug(story.full_slug)}
@@ -62,8 +66,8 @@
               />
             {/if}
           {/each}
-        </div>
-      {/if}
+        {/if}
+      </div>
     </div>
   </Container>
 </Section>
