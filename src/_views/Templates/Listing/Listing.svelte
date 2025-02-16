@@ -42,7 +42,9 @@
     >
       <TemplatesSidebar className={cn([!$areFiltersOpen ? 'hidden' : '', 'pt-0'])} />
       {#if $templates.data}
-        <div class="grid grid-cols-2">
+        <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
+          <!-- loader -->
+
           {#each $templates.data.stories as story}
             {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
               {@const storyLink = sanitizeSlug(story.full_slug)}

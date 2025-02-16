@@ -14,6 +14,8 @@
   import CustomerStory from './customer-story.svelte';
   import Tutorial from './tutorial.svelte';
   import Guide from './guide.svelte';
+  import { isTemplatesInnerPage } from '$src/_helpers/withSlugs';
+  import TemplatesInnerLayout from '$src/_views/Templates/_layouts/TemplatesInnerLayout.svelte';
 
   /**
    * The dynamic page will render the correct page based on the content type (page, blog-post, etc.)
@@ -42,6 +44,8 @@
   <CustomerStory block={customerStoryData} />
 {:else if page.content && page.content?.component && page.content?.component === 'guide'}
   <Guide block={guideData} />
+{:else if isTemplatesInnerPage(page.full_slug)}
+  <TemplatesInnerLayout block={pageData} />
 {:else}
   <Page block={pageData} />
 {/if}

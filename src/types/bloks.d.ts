@@ -2244,7 +2244,7 @@ export interface ConnectedStepsStoryblok {
   [k: string]: any;
 }
 
-export interface TitleWithCTAStoryblok {
+export interface SectionInfoStoryblok {
   title: string;
   cta: ButtonLinkStoryblok[];
   _uid: string;
@@ -2368,10 +2368,54 @@ export interface home__bannerStoryblok {
 
 /* -------------------------------- templates ------------------------------- */
 
+// heading
+export type TemplatesHeadingName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
+export type TemplatesHeadingSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TemplatesHeadingWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesHeadingStoryblok {
+  tag: TemplatesHeadingName;
+  size: TemplatesHeadingSize;
+  weight: TemplatesHeadingWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_heading';
+  [k: string]: any;
+}
+
+// parah
+export type TemplatesParahTag = 'p' | 'span';
+export type TemplatesParahSize = 'large' | 'medium' | 'base' | 'small';
+export type TemplatesParahWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesParahStoryblok {
+  tag: TemplatesParahTag;
+  size: TemplatesParahSize;
+  weight: TemplatesParahWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_parah';
+  [k: string]: any;
+}
+
+// simples
 export interface simple_assetStoryblok {
   asset: AssetStoryblok;
   _uid: string;
   component: 'templates_banner';
+  [k: string]: any;
+}
+
+// comps
+export interface TemplatesSectionInfoStoryblok {
+  heading: TemplatesHeadingStoryblok[];
+  description: TemplatesParahStoryblok[];
+  cta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'templates_section_info';
   [k: string]: any;
 }
 
