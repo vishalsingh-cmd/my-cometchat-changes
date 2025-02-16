@@ -29,7 +29,7 @@
     pyEnabled={false}
     pxEnabled={false}
     expand="full"
-    className={cn(['flex flex-col gap-5 px-5 py-10'], ['lg:px-10'])}
+    className={cn(['flex flex-col gap-5 py-10'])}
   >
     {#if $templates.data}
       <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>

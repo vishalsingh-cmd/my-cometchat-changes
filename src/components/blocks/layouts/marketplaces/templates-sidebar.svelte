@@ -15,7 +15,7 @@
   }
 </script>
 
-<div class={cn(['self-start pb-1'], ['lg:sticky lg:top-20'], [className])}>
+<div class={cn(['self-start pb-1'], ['lg:sticky lg:top-[100px]'], [className])}>
   <div class="relative mx-auto h-max lg:hidden">
     <select
       on:change={handleChange}
