@@ -19,10 +19,6 @@
   onMount(() => {
     actions.fetchTemplates();
   });
-
-  $: {
-    console.log($templates);
-  }
 </script>
 
 <Section className="bg-white">
