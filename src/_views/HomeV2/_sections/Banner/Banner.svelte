@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { cn } from '$src/_utils/tailwind.utils';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
-  import { bannerData } from './_data/banner.data';
   import RotatingTextBox from './_comps/RotatingTextBox.svelte';
   import planats_bg from './_assets/planats_bg.svg';
   import Button from '$src/components/buttons/button.svelte';
+  import type { home__bannerStoryblok } from '$src/types/bloks';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+
+  export let block: home__bannerStoryblok;
 </script>
 
 <Section className="relative isolate">
@@ -17,9 +20,9 @@
           ['flex-wrap lg:flex-row lg:justify-center  lg:gap-x-5 lg:text-[58px]']
         )}
       >
-        <span class="bg-gradient-purple bg-clip-text text-transparent"> Production-ready </span>
-        <RotatingTextBox {bannerData} />
-        <span class="bg-gradient-purple bg-clip-text text-transparent"> Built in minutes. </span>
+        <span class="bg-gradient-purple bg-clip-text text-transparent"> {block.beforeTitle} </span>
+        <RotatingTextBox animatedBoxes={block.animatedBoxes} />
+        <span class="bg-gradient-purple bg-clip-text text-transparent"> {block.afterTitle} </span>
       </h1>
       <p
         class={cn(
@@ -27,18 +30,23 @@
           ['lg:text-[22px]']
         )}
       >
-        Stop wrestling with chat SDKs. Design visually, generate production code, deploy instantly.
-        The first platform that lets developers ship enterprise chat in minutes - in any framework,
-        at any scale.
+        {block.description}
       </p>
 
       <div class={cn(['flex items-center justify-center gap-3', 'mt-10'], ['lg:mt-16 lg:gap-6'])}>
-        <Button as="a" href="https://app.cometchat.com/signup" target="_blank">
-          Start visual chat builder
-        </Button>
-        <Button as="a" href="/contact-sales?ref=homepage-hero" variant="secondary" target="_blank">
-          Contact us
-        </Button>
+        {#if block.primaryCta[0]}
+          {@const { href, target, rel } = getAnchorFromCmsLink(block.primaryCta[0].link)}
+          <Button as="a" variant={block.primaryCta[0].variant} {href} {target} {rel}>
+            {block.primaryCta[0].label}
+          </Button>
+        {/if}
+
+        {#if block.secondaryCta[0]}
+          {@const { href, target, rel } = getAnchorFromCmsLink(block.secondaryCta[0].link)}
+          <Button as="a" variant={block.secondaryCta[0].variant} {href} {target} {rel}>
+            {block.secondaryCta[0].label}
+          </Button>
+        {/if}
       </div>
     </div>
   </Container>

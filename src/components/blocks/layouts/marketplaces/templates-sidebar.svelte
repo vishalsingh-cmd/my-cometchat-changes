@@ -1,25 +1,10 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { getStoryblok } from '$lib/storyblok';
   import { cn } from '$lib/utils';
-  import { onMount } from 'svelte';
+  import type { TemplatesSidebarItem } from '$src/types/bloks';
+  export let className = '';
 
-  interface LinkProps {
-    title: string;
-    slug: any;
-    icon: any;
-  }
-
-  let links: LinkProps[] = [];
-  onMount(async () => {
-    try {
-      const storyblok = getStoryblok({ fetch });
-      const sidebarLinks = await storyblok.get('cdn/stories/configuration/templates-sidebar-links');
-      links = sidebarLinks.data.story?.content?.links || [];
-    } catch (err) {
-      console.error('Error fetching templates-sidebar-links: ', err);
-    }
-  });
+  const links: TemplatesSidebarItem[] = $page.data.templatesMenu;
   const urls = $page.url.pathname.split('/');
 
   function handleChange(event: any) {
@@ -30,7 +15,7 @@
   }
 </script>
 
-<div class={cn(['self-start px-5 pb-1 pt-4'], ['lg:sticky lg:top-20'])}>
+<div class={cn(['self-start pb-1'], ['lg:sticky lg:top-20'], [className])}>
   <div class="relative mx-auto h-max lg:hidden">
     <select
       on:change={handleChange}
@@ -73,9 +58,11 @@
         class={cn(
           [
             'flex items-center gap-4',
-            'rounded px-2 py-3',
-            'text-md font-medium text-[#141414] opacity-70',
-            'transition-opacity hover:opacity-100'
+            'rounded  px-2 py-3 ',
+            'text-md font-medium text-[#141414]',
+            'transition-[opacity,background-color]',
+            'bg-white hover:bg-[#F5F5F5]',
+            'opacity-70 hover:opacity-100'
           ],
           [
             'data-[iscurrentpage="active"]:bg-[#F5F5F5]',

@@ -69,7 +69,8 @@
     {
       'translate-y-0': $scrollDirection === 'up',
       '-translate-y-16': $scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
-    }
+    },
+    'group-data-[header-status="inactive"]/body:-translate-y-16'
   )}
 >
   <header

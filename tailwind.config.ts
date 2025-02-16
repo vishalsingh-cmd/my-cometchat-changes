@@ -39,7 +39,8 @@ export default {
     },
     fontFamily: {
       sans: ['Satoshi', ...defaultTheme.fontFamily.sans],
-      mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono]
+      mono: ['IBM Plex Mono', ...defaultTheme.fontFamily.mono],
+      inter: ['Inter', 'serif']
     },
     fontWeight: {
       normal: 'var(--font-weight-normal)',

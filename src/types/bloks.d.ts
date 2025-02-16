@@ -203,12 +203,6 @@ export interface GuideStoryblok {
   [k: string]: any;
 }
 
-export interface MarketplacesStoryblok {
-  component: 'marketplaces';
-  _uid: string;
-  [k: string]: any;
-}
-
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -2251,7 +2245,7 @@ export interface ConnectedStepsStoryblok {
   [k: string]: any;
 }
 
-export interface TitleWithCTAStoryblok {
+export interface SectionInfoStoryblok {
   title: string;
   cta: ButtonLinkStoryblok[];
   _uid: string;
@@ -2331,6 +2325,123 @@ export interface SpecialTestimonialsStoryblok {
   title: string;
   _uid: string;
   component: 'special_testimonials';
+  [k: string]: any;
+}
+
+/* ------------------------------- FeatureTab ------------------------------- */
+export interface FeatureTabStoryblok {
+  titleName: string;
+  video: AssetStoryblok;
+  _uid: string;
+  component: 'feature_tab';
+  [k: string]: any;
+}
+
+export interface home__video_tabsStoryblok {
+  featureTabs: FeatureTabStoryblok[];
+  _uid: string;
+  component: 'home__video_tabs';
+  [k: string]: any;
+}
+
+/* ------------------------------ home__banner ------------------------------ */
+
+export interface AnimatedBannerBoxStoryblok {
+  label: string;
+  icon: AssetStoryblok;
+  _uid: string;
+  component: 'animated_banner_box';
+  [k: string]: any;
+}
+
+export interface home__bannerStoryblok {
+  beforeTitle: string;
+  animatedBoxes: AnimatedBannerBoxStoryblok[];
+  afterTitle: string;
+  description: string;
+  primaryCta: ButtonLinkStoryblok[];
+  secondaryCta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'home__banner';
+  [k: string]: any;
+}
+
+/* -------------------------------- templates ------------------------------- */
+
+// heading
+export type TemplatesHeadingName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
+export type TemplatesHeadingSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TemplatesHeadingWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesHeadingStoryblok {
+  tag: TemplatesHeadingName;
+  size: TemplatesHeadingSize;
+  weight: TemplatesHeadingWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_heading';
+  [k: string]: any;
+}
+
+// parah
+export type TemplatesParahTag = 'p' | 'span';
+export type TemplatesParahSize = 'large' | 'medium' | 'base' | 'small';
+export type TemplatesParahWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesParahStoryblok {
+  tag: TemplatesParahTag;
+  size: TemplatesParahSize;
+  weight: TemplatesParahWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_parah';
+  [k: string]: any;
+}
+
+// simples
+export interface simple_assetStoryblok {
+  asset: AssetStoryblok;
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}
+
+// comps
+export interface TemplatesSectionInfoStoryblok {
+  heading: TemplatesHeadingStoryblok[];
+  description: TemplatesParahStoryblok[];
+  cta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'templates_section_info';
+  [k: string]: any;
+}
+
+export interface templates_bannerStoryblok {
+  title: string;
+  description: string;
+  brands: simple_assetStoryblok[];
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}
+
+export interface templates_listingStoryblok {
+  _uid: string;
+  component: 'templates_listing';
+  [k: string]: any;
+}
+
+export interface TemplatesSidebarItem {
+  icon: AssetStoryblok;
+  slug: LinkStoryblok;
+  title: string;
+
+  _uid: string;
+  component: 'templates-sidebar-link';
   [k: string]: any;
 }
 

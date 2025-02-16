@@ -7,8 +7,10 @@ import type {
   CustomerStoryStoryblok,
   IndustryStoryblok,
   PageStoryblok,
-  TechnologyStoryblok
+  TechnologyStoryblok,
+  TemplatesSidebarItem
 } from '$types/bloks.js';
+import { isTemplatesPage } from '$src/_helpers/withSlugs.js';
 
 export const load = async ({ cookies, fetch, params }) => {
   const version = getStoryVersion(cookies);
@@ -103,6 +105,14 @@ export const load = async ({ cookies, fetch, params }) => {
       }
     }
 
+    /* -------------------- templatepage sidebar menus starts ------------------- */
+    let templatesMenu: TemplatesSidebarItem[] = [];
+    if (isTemplatesPage(page.data?.story?.full_slug || '')) {
+      const sidebarLinks = await storyblok.get('cdn/stories/configuration/templates-sidebar-links');
+      templatesMenu = sidebarLinks.data.story?.content?.links || [];
+    }
+    /* -------------------- templatepage sidebar menus ends ------------------- */
+
     return {
       page: page.data.story as ISbStoryData<
         PageStoryblok | CustomerStoryStoryblok | TechnologyStoryblok
@@ -116,7 +126,8 @@ export const load = async ({ cookies, fetch, params }) => {
       datasourcePlatforms,
       datasourceFeatures,
       datasourceLanguages,
-      datasourceFrameworks
+      datasourceFrameworks,
+      templatesMenu
     };
   } catch (err) {
     if (isStatusError(err) && err.status === 404) throw error(404, 'Not found');
