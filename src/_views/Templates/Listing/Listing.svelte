@@ -8,7 +8,7 @@
   import ListingCard from './_comps/ListingCard.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
+
 
 
   export let block: templates_listingStoryblok;
