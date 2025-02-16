@@ -2428,6 +2428,12 @@ export interface templates_bannerStoryblok {
   [k: string]: any;
 }
 
+export interface templates_filterableListingStoryblok {
+  _uid: string;
+  component: 'templates_filterable_listing';
+  [k: string]: any;
+}
+
 export interface templates_listingStoryblok {
   _uid: string;
   component: 'templates_listing';

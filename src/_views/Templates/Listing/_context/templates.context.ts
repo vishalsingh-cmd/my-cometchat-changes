@@ -22,6 +22,11 @@ interface TemplatesData {
   stories: PageStoryblok[];
   total: number;
 }
+interface TemplatesConfig {
+  startsWithPath: string;
+  excludingPath: string;
+  contentType?: string;
+}
 
 interface TemplatesState {
   isLoading: boolean;
@@ -40,15 +45,22 @@ interface TemplatesContext {
     toggleFilters: () => void;
     setPage: (page: number) => void;
     fetchTemplates: () => Promise<void>;
+    updateConfig: (newConfig: Partial<TemplatesConfig>) => void;
   };
 }
 
 const TEMPLATES_CONTEXT_KEY = 'templates';
 
-export function createTemplatesContext(): TemplatesContext {
+export function createTemplatesContext(initialConfig: TemplatesConfig): TemplatesContext {
   const currentPage = writable<number>(1);
   const areFiltersOpen = writable<boolean>(false);
   const searchTerm = writable<string>('');
+  const config = writable<TemplatesConfig>({
+    contentType: 'page',
+    ...initialConfig
+    // starts_with: 'pages/templates/',
+    // excluding_slugs: 'pages/templates/',
+  });
 
   const templates = writable<TemplatesState>({
     isLoading: true,
@@ -67,11 +79,12 @@ export function createTemplatesContext(): TemplatesContext {
 
       const currentPageValue = get(currentPage);
       const searchValue = get(searchTerm);
+      const currentConfig = get(config);
 
       const res = await getStories({
-        content_type: 'page',
-        starts_with: 'pages/templates/',
-        excluding_slugs: 'pages/templates/',
+        content_type: currentConfig.contentType,
+        starts_with: currentConfig.startsWithPath,
+        excluding_slugs: currentConfig.excludingPath,
         per_page: RESULTS_PER_PAGE,
         page: currentPageValue,
         search_term: searchValue || ''
@@ -109,7 +122,15 @@ export function createTemplatesContext(): TemplatesContext {
       debouncedFetch();
     },
 
-    fetchTemplates: () => debouncedFetch()
+    fetchTemplates: () => debouncedFetch(),
+
+    updateConfig: (newConfig: Partial<TemplatesConfig>) => {
+      config.update((currentConfig) => ({
+        ...currentConfig,
+        ...newConfig
+      }));
+      debouncedFetch();
+    }
   };
 
   const context: TemplatesContext = {
