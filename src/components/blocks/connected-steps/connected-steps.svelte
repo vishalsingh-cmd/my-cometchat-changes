@@ -14,7 +14,7 @@
     pxEnabled={false}
     pyEnabled={false}
     expand="full"
-    className={cn(['flex flex-col gap-8'])}
+    className={cn(['flex flex-col gap-8 py-10'])}
   >
     <SectionInfo block={block.info[0]} />
 

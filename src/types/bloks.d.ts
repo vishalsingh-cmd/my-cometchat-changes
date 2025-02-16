@@ -2377,6 +2377,88 @@ export interface home__bannerStoryblok {
   [k: string]: any;
 }
 
+export interface Platform_cardStoryblok {
+  _uid: string;
+  component: 'home_our_platform_card';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+  image: AssetStoryblok;
+}
+
+export interface PlatformStoryblok {
+  _uid: string;
+  component: 'home__our_platform';
+  [k: string]: any;
+  tagline: string;
+  title: string;
+  description: string;
+  cards: Platform_cardStoryblok[];
+}
+
+export interface ClientStoryblok {
+  _uid: string;
+  component: 'home_client';
+  [k: string]: any;
+  client_img: AssetStoryblok;
+}
+
+export interface ClientsStoryblok {
+  _uid: string;
+  component: 'home_clients';
+  [k: string]: any;
+  tagname: string;
+  link: LinkStoryblok;
+  clients: ClientStoryblok[];
+}
+
+export interface SecureStoryblok {
+  _uid: string;
+  component: 'home__secure';
+  [k: string]: any;
+  tag_name: string;
+  title: string;
+  description: string;
+  secure_network: SecureNetworkStoryblok;
+  uptime: SecureReachkStoryblok;
+  scalable: SecureReachkStoryblok;
+  award: SecureAwardStoryblok;
+}
+
+export interface SecureNetworkStoryblok {
+  _uid: string;
+  component: 'secure_network';
+  [k: string]: any;
+  title: string;
+  description: string;
+}
+
+export interface SecureReachkStoryblok {
+  _uid: string;
+  component: 'secure_reach';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+}
+
+export interface SecureAwardStoryblok {
+  _uid: string;
+  component: 'secure_award';
+  [k: string]: any;
+  title: string;
+  imgs: SecureAwardImgStoryblok[];
+}
+
+export interface SecureAwardImgStoryblok {
+  _uid: string;
+  component: 'secure_award_img';
+  [k: string]: any;
+  img: AssetStoryblok;
+}
+
 /* -------------------------------- templates ------------------------------- */
 
 // heading
@@ -2470,7 +2552,7 @@ export interface templates_listingStoryblok {
   [k: string]: any;
 }
 
-export interface TemplatesSidebarItem {
+export interface TemplatesSidebarItemStoryblok {
   icon: AssetStoryblok;
   slug: LinkStoryblok;
   title: string;
@@ -2480,84 +2562,11 @@ export interface TemplatesSidebarItem {
   [k: string]: any;
 }
 
-export interface Platform_cardStoryblok {
-  _uid: string;
-  component: 'home_our_platform_card';
-  [k: string]: any;
-  icon: AssetStoryblok;
-  title: string;
-  description: string;
-  link: LinkStoryblok[];
-  image: AssetStoryblok;
-}
+export interface RelatedTemplatesStoryblok {
+  info: TemplatesSectionInfoStoryblok[];
+  templates: string[];
 
-export interface PlatformStoryblok {
   _uid: string;
-  component: 'home__our_platform';
+  component: 'related_templates';
   [k: string]: any;
-  tagline: string;
-  title: string;
-  description: string;
-  cards: Platform_cardStoryblok[];
-}
-
-export interface ClientStoryblok {
-  _uid: string;
-  component: 'home_client';
-  [k: string]: any;
-  client_img: AssetStoryblok;
-}
-
-export interface ClientsStoryblok {
-  _uid: string;
-  component: 'home_clients';
-  [k: string]: any;
-  tagname: string;
-  link: LinkStoryblok;
-  clients: ClientStoryblok[];
-}
-
-export interface SecureStoryblok {
-  _uid: string;
-  component: 'home__secure';
-  [k: string]: any;
-  tag_name: string;
-  title: string;
-  description: string;
-  secure_network: SecureNetworkStoryblok;
-  uptime: SecureReachkStoryblok;
-  scalable: SecureReachkStoryblok;
-  award: SecureAwardStoryblok;
-}
-
-export interface SecureNetworkStoryblok {
-  _uid: string;
-  component: 'secure_network';
-  [k: string]: any;
-  title: string;
-  description: string;
-}
-
-export interface SecureReachkStoryblok {
-  _uid: string;
-  component: 'secure_reach';
-  [k: string]: any;
-  icon: AssetStoryblok;
-  title: string;
-  description: string;
-}
-
-export interface SecureAwardStoryblok {
-  _uid: string;
-  component: 'secure_award';
-  [k: string]: any;
-  title: string;
-  imgs: SecureAwardImgStoryblok[];
-}
-
-export interface SecureAwardImgStoryblok {
-  _uid: string;
-  component: 'secure_award_img';
-  [k: string]: any;
-  img: AssetStoryblok;
 }

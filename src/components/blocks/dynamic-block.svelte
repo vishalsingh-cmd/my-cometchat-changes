@@ -98,6 +98,7 @@
   import TemplatesFilterableListing from '$src/_views/Templates/Listing/FilterableListing.svelte';
   import TemplatesSectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
+  import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -209,7 +210,8 @@
     templates_listing: TemplatesListing,
     templates_filterable_listing: TemplatesFilterableListing,
     templates_section_info: TemplatesSectionInfo,
-    templates_platform_section: TemplatesPlatformSection
+    templates_platform_section: TemplatesPlatformSection,
+    related_templates: RelatedTemplates
   };
 </script>
 
