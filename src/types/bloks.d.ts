@@ -2236,10 +2236,10 @@ export interface ConnectedStepStoryblok {
 }
 
 export interface ConnectedStepsStoryblok {
-  theme?: '' | 'light' | 'dark';
-  title: TitleStoryblok[];
+  info: TemplatesSectionInfoStoryblok[];
   steps: ConnectedStepStoryblok[];
   description: RichtextStoryblok;
+
   _uid: string;
   component: 'connected-steps';
   [k: string]: any;
@@ -2267,6 +2267,23 @@ export interface ImageCarousalStoryblok {
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'image-carousal';
+  [k: string]: any;
+}
+
+export interface MarketplaceBannerInfoStoryblok {
+  info: Array<TitleAndDescriptiontoryblok | TitleAndIconsStoryblok>;
+
+  _uid: string;
+  component: 'marketplace-banner-info';
+  [k: string]: any;
+}
+
+export interface MarketplaceBannerStoryblok {
+  carousal: ImageCarousalStoryblok[];
+  info: MarketplaceBannerInfoStoryblok[];
+
+  _uid: string;
+  component: 'marketplace-banner';
   [k: string]: any;
 }
 
@@ -2425,6 +2442,7 @@ export interface TemplatesProductDisplayItemStoryblok {
 
 export interface TemplatesPlatformSectionStoryblok {
   info: TemplatesSectionInfoStoryblok[];
+  productsColumns: '1' | '2' | '3' | '4' | '5' | 'auto';
   products: TemplatesProductDisplayItemStoryblok[];
   _uid: string;
   component: 'templates_platform_section';
