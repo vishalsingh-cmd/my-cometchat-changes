@@ -2482,6 +2482,26 @@ export interface home_implementationStoryblok {
   [k: string]: any;
 }
 
+export interface home_technologyStoryblok {
+  icon: AssetStoryblok;
+  link: LinkStoryblok;
+
+  _uid: string;
+  component: 'home_technology';
+  [k: string]: any;
+}
+
+export interface home_technologiesStoryblok {
+  tagline: string;
+  title: string;
+  techs: HomeStepStoryblok[];
+  link: LinkStoryblok[];
+
+  _uid: string;
+  component: 'home_technologies';
+  [k: string]: any;
+}
+
 /* -------------------------------- templates ------------------------------- */
 
 // heading
