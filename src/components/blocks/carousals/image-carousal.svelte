@@ -60,10 +60,9 @@
     use:emblaCarouselSvelte={{ options, plugins: [] }}
     on:emblaInit={onInit}
   >
-    <div class={cn(['embla__container'], [' flex'])}>
+    <div class={cn(['embla__container'], ['flex'])}>
       {#each block.images as image}
         <div class={cn(['embla__slide'], ['min-w-0 flex-[0_0_100%]'])}>
-          <!-- <img class="h-full w-full object-cover" src={image.filename} alt={image.alt} /> -->
           <Media imageTransformOptions={{ size: [1200, 0] }} media={image} enableZoom />
         </div>
       {/each}

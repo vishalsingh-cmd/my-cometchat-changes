@@ -8,7 +8,7 @@ import type {
   IndustryStoryblok,
   PageStoryblok,
   TechnologyStoryblok,
-  TemplatesSidebarItem
+  TemplatesSidebarItemStoryblok
 } from '$types/bloks.js';
 import { isTemplatesPage } from '$src/_helpers/withSlugs.js';
 
@@ -106,7 +106,7 @@ export const load = async ({ cookies, fetch, params }) => {
     }
 
     /* -------------------- templatepage sidebar menus starts ------------------- */
-    let templatesMenu: TemplatesSidebarItem[] = [];
+    let templatesMenu: TemplatesSidebarItemStoryblok[] = [];
     if (isTemplatesPage(page.data?.story?.full_slug || '')) {
       const sidebarLinks = await storyblok.get('cdn/stories/configuration/templates-sidebar-links');
       templatesMenu = sidebarLinks.data.story?.content?.links || [];

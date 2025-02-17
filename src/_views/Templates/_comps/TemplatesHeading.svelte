@@ -11,15 +11,15 @@
   export let weight: TemplatesHeadingWeight = '500';
   export let className = '';
 
-  const templateHeading = tv({
+  const templatesHeading = tv({
     base: ['font-inter text-[#141414]'],
     variants: {
       size: {
         h1: ['text-[24px] lg:text-[40px]'],
         h2: ['text-[24px] lg:text-[32px]'],
-        h3: [],
-        h4: [],
-        h5: [],
+        h3: ['text-[20px] lg:text-[24px]'],
+        h4: ['text-[18px]'],
+        h5: ['text-[16px]'],
         h6: []
       },
       weight: {
@@ -36,6 +36,6 @@
   });
 </script>
 
-<svelte:element this={tag} class={templateHeading({ class: className })} {...$$restProps}>
+<svelte:element this={tag} class={templatesHeading({ class: className })} {...$$restProps}>
   <slot />
 </svelte:element>

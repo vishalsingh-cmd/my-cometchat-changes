@@ -101,7 +101,6 @@
   });
 
   export let block: SpecialTestimonialsStoryblok | undefined = undefined;
-  console.log(block);
 </script>
 
 <Section className="tmols">

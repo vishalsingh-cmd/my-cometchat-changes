@@ -78,7 +78,6 @@
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
   import ImageCarousal from './carousals/image-carousal.svelte';
-  import TitleWithCta from './titles/title-with-cta.svelte';
   import TitleAndDescription from './titles/title-and-description.svelte';
   import TitleAndIcons from './titles/title-and-icons.svelte';
   import MarketplaceBannerInfo from './pages/marketplace/marketplace-banner-info.svelte';
@@ -86,8 +85,10 @@
   import ComplexRoller from '$src/_views/HomeV2/_sections/Industry/ComplexRoller.svelte';
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
+
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
+
   import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
   import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
@@ -98,6 +99,8 @@
   import TemplatesListing from '$src/_views/Templates/Listing/Listing.svelte';
   import TemplatesFilterableListing from '$src/_views/Templates/Listing/FilterableListing.svelte';
   import TemplatesSectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
+  import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
+  import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
 
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
@@ -187,7 +190,6 @@
     'title-image-section': TitleImageSection,
     'title-media-section': TitleMediaSection,
     'title-section': TitleSection,
-    'title-with-cta': TitleWithCta,
     'title-and-description': TitleAndDescription,
     'title-and-icons': TitleAndIcons,
 
@@ -209,7 +211,9 @@
     templates_banner: TemplatesBanner,
     templates_listing: TemplatesListing,
     templates_filterable_listing: TemplatesFilterableListing,
-    templates_section_info: TemplatesSectionInfo
+    templates_section_info: TemplatesSectionInfo,
+    templates_platform_section: TemplatesPlatformSection,
+    related_templates: RelatedTemplates
   };
 </script>
 

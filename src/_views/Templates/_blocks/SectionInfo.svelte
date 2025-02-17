@@ -3,22 +3,22 @@
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { TemplatesSectionInfoStoryblok } from '$src/types/bloks';
   import Button from '$components/buttons/button.svelte';
-  import TemplateHeading from '../_comps/TemplateHeading.svelte';
-  import TemplateParah from '../_comps/TemplateParah.svelte';
+  import TemplatesHeading from '../_comps/TemplatesHeading.svelte';
+  import TemplatesParah from '../_comps/TemplatesParah.svelte';
 
   export let block: TemplatesSectionInfoStoryblok;
 </script>
 
-<div class={cn(['flex flex-col justify-between gap-2'])}>
+<div class={cn(['flex flex-wrap justify-between gap-2'])}>
   <div class="flex flex-col gap-1">
-    <TemplateHeading {...block.title[0]}>
+    <TemplatesHeading {...block.title[0]}>
       {block.title[0].value}
-    </TemplateHeading>
+    </TemplatesHeading>
 
     {#if block.description.length && block.description[0]}
-      <TemplateParah {...block.description[0]}>
+      <TemplatesParah {...block.description[0]}>
         {block.description[0].value}
-      </TemplateParah>
+      </TemplatesParah>
     {/if}
   </div>
 

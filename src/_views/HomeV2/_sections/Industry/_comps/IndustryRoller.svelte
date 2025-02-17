@@ -1,5 +1,7 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import { gsap } from 'gsap';
+  import ScrollTrigger from 'gsap/dist/ScrollTrigger';
   import { onMount, onDestroy } from 'svelte';
   import { industriesData } from '../_datas/Industries.data';
   import { getIndustryContect } from '../_context/IndustryContext';
@@ -7,10 +9,20 @@
   import type { RollerPointStoryblok } from '$types/bloks';
 
   let interval: any;
+  let containerElem: HTMLDivElement;
   const { activeIndex, setActiveIndex } = getIndustryContect();
 
   onMount(() => {
-    startAnimation();
+    if (!containerElem) return;
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: containerElem,
+      start: 'top center',
+      onEnter: () => {
+        setActiveIndex(0);
+        startAnimation();
+      }
+    });
   });
 
   onDestroy(() => {
@@ -39,7 +51,7 @@
   export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
-<div class={cn(['flex flex-col gap-10'], ['lg:gap-8'])}>
+<div class={cn(['flex flex-col gap-10'], ['lg:gap-8'])} bind:this={containerElem}>
   {#each industryPointBlocks as industryPointBlock, index}
     <IndustryRollerItem
       {index}

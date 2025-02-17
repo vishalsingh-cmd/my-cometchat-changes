@@ -1,5 +1,5 @@
-<script lang="ts">
-  import { cn, scrollLock } from '$lib/utils';
+<script>
+  import { cn } from '$lib/utils';
   import Logo from '$components/topnav/logo.svelte';
   import { createMediaStore } from '$src/lib/stores/media';
   import { beforeNavigate } from '$app/navigation';
@@ -41,12 +41,8 @@
 </script>
 
 <div
-  use:clickOutside={() => {
-    activeIndex = -1;
-  }}
-  data-theme="light"
   class={cn(
-    ['fixed left-0 top-0 z-[100]  w-full transition-transform duration-300 ease-motion'],
+    ['sticky top-0 z-[100] flex items-center gap-3 p-5'],
     ['border-b border-b-[#E8E8E8] bg-white']
   )}
 >

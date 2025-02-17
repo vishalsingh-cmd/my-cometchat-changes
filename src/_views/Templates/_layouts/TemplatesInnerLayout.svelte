@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { cn } from '$src/_utils/tailwind.utils';
+  import { page } from '$app/stores';
+  import type { PageStoryblok } from '$src/types/bloks';
   import Page from '$src/_comps/layouts/Page.svelte';
   import DynamicBlokLoop from '$src/_comps/specials/DynamicBlokLoop/DynamicBlokLoop.svelte';
   import TemplatesSidebar from '$src/components/blocks/layouts/marketplaces/templates-sidebar.svelte';
-  import { cn } from '$src/_utils/tailwind.utils';
-  import type { PageStoryblok } from '$src/types/bloks';
+  import TemplatesBreadcums from '../_comps/TemplatesBreadcums.svelte';
   export let block: PageStoryblok;
 </script>
 
@@ -15,7 +17,9 @@
     )}
   >
     <TemplatesSidebar />
-    <div class="relative flex w-full flex-col">
+    <div class="relative flex w-full min-w-0 flex-col">
+      <TemplatesBreadcums slug={$page.url.pathname} current_page_title={block.name} />
+
       <DynamicBlokLoop {block} />
     </div>
   </div>

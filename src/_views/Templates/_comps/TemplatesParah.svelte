@@ -11,7 +11,7 @@
   export let weight: TemplatesParahWeight = '400';
   export let className = '';
 
-  const templateHeading = tv({
+  const templatesParah = tv({
     base: ['font-inter text-[#727272]'],
     variants: {
       weight: {
@@ -34,6 +34,6 @@
   });
 </script>
 
-<svelte:element this={tag} class={templateHeading({ class: className })} {...$$restProps}>
+<svelte:element this={tag} class={templatesParah({ class: className })} {...$$restProps}>
   <slot />
 </svelte:element>

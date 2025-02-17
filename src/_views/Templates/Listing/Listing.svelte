@@ -19,10 +19,6 @@
   onMount(() => {
     actions.fetchTemplates();
   });
-
-  $: {
-    console.log($templates);
-  }
 </script>
 
 <Section className="bg-white">
@@ -30,11 +26,11 @@
     pyEnabled={false}
     pxEnabled={false}
     expand="full"
-    className={cn(['flex flex-col gap-5 px-5 py-10'], ['lg:px-10'])}
+    className={cn(['flex flex-col gap-5 py-10'])}
   >
     <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
-      <!-- loader -->
       {#if $templates.isLoading}
+        <ListingCardSkeleton />
         <ListingCardSkeleton />
         <ListingCardSkeleton />
         <ListingCardSkeleton />
