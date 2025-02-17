@@ -9,6 +9,7 @@
   import scrollDirection from '$src/lib/stores/scroll-direction';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '$src/components/icon/icon.svelte';
+  import TemplateButtons from '$src/_views/Templates/_comps/TemplateButtons.svelte';
 
   let expanded = false; // mobile
   let activeIndex = -1;
@@ -52,9 +53,9 @@
   <div class="container mx-auto flex h-16 items-center justify-between px-container">
     <div class={cn(['flex items-center gap-3'])}>
       <a href="/">
-        <Logo class="w-32 text-black" />
+        <Logo class="w-[77px] text-black lg:w-32" />
       </a>
-      <span class="text-[20px] font-medium text-[#14131D] lg:text-[24px]">Templates</span>
+      <span class="text-[14px] font-medium text-[#14131D] lg:text-[24px]">Templates</span>
     </div>
 
     <div class="flex items-center gap-3">
@@ -62,28 +63,7 @@
         class="font-inter text-[12px] font-normal tracking-widest text-[#141414] transition-colors hover:text-brand-9"
         href="/">Login</a
       >
-      <Button
-        variant="secondary"
-        class="hidden border-[#DCDCDC] bg-transparent font-inter text-[12px] font-normal sm:inline-flex"
-        as="a"
-        href="test">Schedule a demo</Button
-      >
+      <TemplateButtons variant="secondary" as="a" href="test">Schedule a demo</TemplateButtons>
     </div>
-    <!-- Mobile button -->
-    <div class="block lg:hidden">
-      <Button aria-label="Menu button" variant="secondary" on:click={() => (expanded = !expanded)}>
-        <Icon size="xs" icon={expanded ? 'x' : 'menu-01'} class="opacity-80" />
-      </Button>
-    </div>
-
-    <!-- Mobile nav -->
-
-    {#if expanded}
-      <nav
-        in:slide={{ duration: 300, delay: 100 }}
-        out:slide={{ duration: 100 }}
-        class="fixed left-0 right-0 top-16 z-10 flex h-[calc(100dvh-4rem)] flex-col justify-between overflow-auto bg-gray-3/98 bg-white backdrop-blur-xl lg:hidden"
-      />
-    {/if}
   </div>
 </div>
