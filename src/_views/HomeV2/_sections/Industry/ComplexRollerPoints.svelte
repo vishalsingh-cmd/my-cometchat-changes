@@ -9,7 +9,7 @@
   import type { RollerPointStoryblok } from '$types/bloks';
 
   const { setActiveIndex } = createIndustryContext(0);
-  const selectContext = createSelectContext('INDUSTRY_SELECT', 0);
+  const selectContext = createSelectContext('INDUSTRY_SELECT', -1);
   $: innerWidth = 0;
 
   selectContext.onChange((index) => {

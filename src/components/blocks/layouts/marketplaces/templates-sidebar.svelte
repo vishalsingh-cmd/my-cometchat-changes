@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { cn } from '$lib/utils';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
   export let className = '';
 
@@ -10,7 +11,7 @@
   function handleChange(event: any) {
     const selectedOption = links.find((link) => link.slug.url === event.target.value);
     if (selectedOption && selectedOption.slug.url) {
-      window.location.href = $page.url.origin + '/templates/' + selectedOption.slug.url;
+      window.location.href = $page.url + '/templates/' + selectedOption.slug.url;
     }
   }
 </script>
@@ -53,8 +54,9 @@
 
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
+      {@const { href } = getAnchorFromCmsLink(link.slug)}
       <a
-        href={`templates/${link.slug.url}`}
+        {href}
         class={cn(
           [
             'grid grid-cols-[auto_1fr] items-center gap-4',
