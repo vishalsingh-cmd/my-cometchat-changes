@@ -8,13 +8,33 @@
   import linkedin from '../_assets/linkedin.svg';
   import airbnb from '../_assets/airbnb.svg';
   import etsy from '../_assets/etsy.svg';
+  import { onMount } from 'svelte';
+  import gsap from 'gsap';
+  import Flip from 'gsap/dist/Flip';
+
+  let container: HTMLDivElement;
+  gsap.registerPlugin(Flip);
 
   const brand = tv({
-    base: ['absolute -z-1 w-10 h-10 object-contain', 'lg:w-16 lg:h-16']
+    base: ['absolute -z-1 w-10 h-10 object-contain brand-img', 'lg:w-16 lg:h-16']
+  });
+
+  function flip() {
+    const images = [...container.querySelectorAll('.brand-img')];
+    const state = Flip.getState(images);
+    gsap.set(images, { left: '50%', top: '50%' });
+    Flip.to(state, { duration: 1, ease: 'power1.inOut', stagger: { from: 'random' } });
+  }
+
+  onMount(() => {
+    flip();
   });
 </script>
 
-<div class="relative flex flex-col items-center justify-center py-10 text-center lg:py-20">
+<div
+  bind:this={container}
+  class="relative flex flex-col items-center justify-center py-10 text-center lg:py-20"
+>
   <h2 class={cn(['font-inter text-[24px] font-medium text-[#141414]'])}>No Template chat found</h2>
   <p class={cn(['font-inter text-[16px] font-normal text-[#727272]'])}>
     Try these popular searches instead
