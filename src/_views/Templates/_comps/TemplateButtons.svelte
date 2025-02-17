@@ -62,7 +62,14 @@
           chip: `gap-1 text-[#141414]
                hover:bg-[#FFFFFF]
                 active:bg-[#F5F5F5]
-                rounded-[1000px]
+                !rounded-[1000px]
+                border
+                border-[#E8E8E8]
+                hover:border-brand-9/30
+                active:border-brand-9/60
+                active:shadow-focus
+                focus-visible:border-brand-9/30
+                focus-visible:ring-brand-9/30
               `
         },
         size: {

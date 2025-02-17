@@ -13,6 +13,7 @@
   import TemplatesSidebar from '$src/components/blocks/layouts/marketplaces/templates-sidebar.svelte';
   import ListingCardSkeleton from './_comps/ListingCardSkeleton.svelte';
   import TemplateErrorPage from './_comps/TemplateErrorPage.svelte';
+  import TemplateNoData from './_comps/TemplateNoData.svelte';
 
   export let block: templates_filterableListingStoryblok;
   const { templates, actions, areFiltersOpen } = createTemplatesContext({
@@ -46,20 +47,21 @@
       <TemplatesSidebar
         className={cn([!$areFiltersOpen ? 'hidden lg:hidden' : 'hidden lg:block', 'pt-0'])}
       />
-      <TemplateErrorPage />
-      <!-- {#if $templates.isLoading}
+
+      {#if $templates.isLoading}
         <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
           <ListingCardSkeleton />
           <ListingCardSkeleton />
           <ListingCardSkeleton />
           <ListingCardSkeleton />
         </div>
-      {:else if $templates.data}
+      {:else if $templates.error}
+        <TemplateErrorPage />
+      {:else if $templates.data && $templates.data.stories && $templates.data.stories.length > 0}
         <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
           {#each $templates.data.stories as story}
             {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
               {@const storyLink = sanitizeSlug(story.full_slug)}
-
               <ListingCard
                 image={story.content.seo[0].og_image}
                 title={story.name}
@@ -68,7 +70,10 @@
             {/if}
           {/each}
         </div>
-      {/if} -->
+      {:else}
+        <!-- If data is defined but there are no stories -->
+        <TemplateNoData />
+      {/if}
     </div>
   </Container>
 </Section>
