@@ -85,8 +85,10 @@
   import ComplexRoller from '$src/_views/HomeV2/_sections/Industry/ComplexRoller.svelte';
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
+
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
+
   import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
   import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';

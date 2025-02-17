@@ -1,10 +1,11 @@
 <script lang="ts">
-  let Content;
-  export { Content as img };
-  let className: undefined | string = undefined;
-  export { className as class };
+  import Media from '$src/components/media.svelte';
+  import type { AssetStoryblok } from '$src/types/bloks';
+
+  export let image: AssetStoryblok;
+  export let className = '';
 </script>
 
 <div class={className}>
-  <img src={Content.src} alt={Content.alt} />
+  <Media media={image} />
 </div>

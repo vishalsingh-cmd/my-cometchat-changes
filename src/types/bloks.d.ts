@@ -2459,6 +2459,29 @@ export interface SecureAwardImgStoryblok {
   img: AssetStoryblok;
 }
 
+export interface HomeStepStoryblok {
+  image: AssetStoryblok;
+  label: string;
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+
+  _uid: string;
+  component: 'home__step';
+  [k: string]: any;
+}
+
+export interface home_implementationStoryblok {
+  tagline: string;
+  title: string;
+  description: string;
+  steps: HomeStepStoryblok[];
+
+  _uid: string;
+  component: 'home_implementation';
+  [k: string]: any;
+}
+
 /* -------------------------------- templates ------------------------------- */
 
 // heading
