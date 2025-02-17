@@ -28,7 +28,7 @@
           {#each industryPointBlock.points as point}
             <li class="flex-start flex gap-2">
               <Icon icon="star-04" size="xs" class={cn('mt-1 flex-shrink-0', 'text-brand-9')} />
-              <p class="text-xl font-medium leading-snug tracking-wide opacity-74">
+              <p class="text-[18px] font-medium leading-snug tracking-wide opacity-74">
                 {point.text}
               </p>
             </li>

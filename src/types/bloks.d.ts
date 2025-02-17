@@ -1,4 +1,5 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
+import { StoryblokLink } from './cms';
 
 export interface AssetStoryblok {
   alt?: string;
@@ -199,12 +200,6 @@ export interface GuideStoryblok {
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'guide';
-  [k: string]: any;
-}
-
-export interface MarketplacesStoryblok {
-  component: 'marketplaces';
-  _uid: string;
   [k: string]: any;
 }
 
@@ -2241,20 +2236,12 @@ export interface ConnectedStepStoryblok {
 }
 
 export interface ConnectedStepsStoryblok {
-  theme?: '' | 'light' | 'dark';
-  title: TitleStoryblok[];
+  info: TemplatesSectionInfoStoryblok[];
   steps: ConnectedStepStoryblok[];
   description: RichtextStoryblok;
+
   _uid: string;
   component: 'connected-steps';
-  [k: string]: any;
-}
-
-export interface TitleWithCTAStoryblok {
-  title: string;
-  cta: ButtonLinkStoryblok[];
-  _uid: string;
-  component: 'title-with-cta';
   [k: string]: any;
 }
 
@@ -2280,6 +2267,23 @@ export interface ImageCarousalStoryblok {
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'image-carousal';
+  [k: string]: any;
+}
+
+export interface MarketplaceBannerInfoStoryblok {
+  info: Array<TitleAndDescriptiontoryblok | TitleAndIconsStoryblok>;
+
+  _uid: string;
+  component: 'marketplace-banner-info';
+  [k: string]: any;
+}
+
+export interface MarketplaceBannerStoryblok {
+  carousal: ImageCarousalStoryblok[];
+  info: MarketplaceBannerInfoStoryblok[];
+
+  _uid: string;
+  component: 'marketplace-banner';
   [k: string]: any;
 }
 
@@ -2309,5 +2313,303 @@ export interface ComplexRollerStoryblok {
 
   _uid: string;
   component: 'complex_roller';
+  [k: string]: any;
+}
+
+export interface SpecialTestimonialStoryblok {
+  profile_img: AssetStoryblok;
+  brand_img: AssetStoryblok;
+  name: string;
+  designation: string;
+  description: string;
+
+  _uid: string;
+  component: 'special_testimonial';
+  [k: string]: any;
+}
+
+export interface SpecialTestimonialsStoryblok {
+  testimonials: SpecialTestimonialStoryblok[];
+  tagline: string;
+  title: string;
+  viewmore: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'special_testimonials';
+  [k: string]: any;
+}
+
+/* ------------------------------- FeatureTab ------------------------------- */
+export interface FeatureTabStoryblok {
+  titleName: string;
+  video: AssetStoryblok;
+  _uid: string;
+  component: 'feature_tab';
+  [k: string]: any;
+}
+
+export interface home__video_tabsStoryblok {
+  featureTabs: FeatureTabStoryblok[];
+  _uid: string;
+  component: 'home__video_tabs';
+  [k: string]: any;
+}
+
+/* ------------------------------ home__banner ------------------------------ */
+
+export interface AnimatedBannerBoxStoryblok {
+  label: string;
+  icon: AssetStoryblok;
+  _uid: string;
+  component: 'animated_banner_box';
+  [k: string]: any;
+}
+
+export interface home__bannerStoryblok {
+  beforeTitle: string;
+  animatedBoxes: AnimatedBannerBoxStoryblok[];
+  afterTitle: string;
+  description: string;
+  primaryCta: ButtonLinkStoryblok[];
+  secondaryCta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'home__banner';
+  [k: string]: any;
+}
+
+export interface Platform_cardStoryblok {
+  _uid: string;
+  component: 'home_our_platform_card';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+  image: AssetStoryblok;
+}
+
+export interface PlatformStoryblok {
+  _uid: string;
+  component: 'home__our_platform';
+  [k: string]: any;
+  tagline: string;
+  title: string;
+  description: string;
+  cards: Platform_cardStoryblok[];
+}
+
+export interface ClientStoryblok {
+  _uid: string;
+  component: 'home_client';
+  [k: string]: any;
+  client_img: AssetStoryblok;
+}
+
+export interface ClientsStoryblok {
+  _uid: string;
+  component: 'home_clients';
+  [k: string]: any;
+  tagname: string;
+  link: LinkStoryblok;
+  clients: ClientStoryblok[];
+}
+
+export interface SecureStoryblok {
+  _uid: string;
+  component: 'home__secure';
+  [k: string]: any;
+  tag_name: string;
+  title: string;
+  description: string;
+  secure_network: SecureNetworkStoryblok;
+  uptime: SecureReachkStoryblok;
+  scalable: SecureReachkStoryblok;
+  award: SecureAwardStoryblok;
+}
+
+export interface SecureNetworkStoryblok {
+  _uid: string;
+  component: 'secure_network';
+  [k: string]: any;
+  title: string;
+  description: string;
+}
+
+export interface SecureReachkStoryblok {
+  _uid: string;
+  component: 'secure_reach';
+  [k: string]: any;
+  icon: AssetStoryblok;
+  title: string;
+  description: string;
+}
+
+export interface SecureAwardStoryblok {
+  _uid: string;
+  component: 'secure_award';
+  [k: string]: any;
+  title: string;
+  imgs: SecureAwardImgStoryblok[];
+}
+
+export interface SecureAwardImgStoryblok {
+  _uid: string;
+  component: 'secure_award_img';
+  [k: string]: any;
+  img: AssetStoryblok;
+}
+
+export interface HomeStepStoryblok {
+  image: AssetStoryblok;
+  label: string;
+  title: string;
+  description: string;
+  link: LinkStoryblok[];
+
+  _uid: string;
+  component: 'home__step';
+  [k: string]: any;
+}
+
+export interface home_implementationStoryblok {
+  tagline: string;
+  title: string;
+  description: string;
+  steps: HomeStepStoryblok[];
+
+  _uid: string;
+  component: 'home_implementation';
+  [k: string]: any;
+}
+
+export interface home_technologyStoryblok {
+  icon: AssetStoryblok;
+  link: LinkStoryblok;
+
+  _uid: string;
+  component: 'home_technology';
+  [k: string]: any;
+}
+
+export interface home_technologiesStoryblok {
+  tagline: string;
+  title: string;
+  techs: HomeStepStoryblok[];
+  link: LinkStoryblok[];
+
+  _uid: string;
+  component: 'home_technologies';
+  [k: string]: any;
+}
+
+/* -------------------------------- templates ------------------------------- */
+
+// heading
+export type TemplatesHeadingName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span' | 'p';
+export type TemplatesHeadingSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type TemplatesHeadingWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesHeadingStoryblok {
+  tag: TemplatesHeadingName;
+  size: TemplatesHeadingSize;
+  weight: TemplatesHeadingWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_heading';
+  [k: string]: any;
+}
+
+// parah
+export type TemplatesParahTag = 'p' | 'span';
+export type TemplatesParahSize = 'large' | 'medium' | 'base' | 'small';
+export type TemplatesParahWeight = '400' | '500' | '600' | '700';
+
+export interface TemplatesParahStoryblok {
+  tag: TemplatesParahTag;
+  size: TemplatesParahSize;
+  weight: TemplatesParahWeight;
+  value: string;
+
+  _uid: string;
+  component: 'templates_parah';
+  [k: string]: any;
+}
+
+// simples
+export interface simple_assetStoryblok {
+  asset: AssetStoryblok;
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}
+
+// comps
+export interface TemplatesSectionInfoStoryblok {
+  heading: TemplatesHeadingStoryblok[];
+  description: TemplatesParahStoryblok[];
+  cta: ButtonLinkStoryblok[];
+
+  _uid: string;
+  component: 'templates_section_info';
+  [k: string]: any;
+}
+
+export interface TemplatesProductDisplayItemStoryblok {
+  media: AssetStoryblok;
+  title: TemplatesHeadingStoryblok[];
+  description: TemplatesParahStoryblok;
+
+  _uid: string;
+  component: 'templates_product_display_item';
+  [k: string]: any;
+}
+
+export interface TemplatesPlatformSectionStoryblok {
+  info: TemplatesSectionInfoStoryblok[];
+  productsColumns: '1' | '2' | '3' | '4' | '5' | 'auto';
+  products: TemplatesProductDisplayItemStoryblok[];
+  _uid: string;
+  component: 'templates_platform_section';
+  [k: string]: any;
+}
+
+export interface templates_bannerStoryblok {
+  title: string;
+  description: string;
+  brands: simple_assetStoryblok[];
+  _uid: string;
+  component: 'templates_banner';
+  [k: string]: any;
+}
+
+export interface templates_filterableListingStoryblok {
+  _uid: string;
+  component: 'templates_filterable_listing';
+  [k: string]: any;
+}
+
+export interface templates_listingStoryblok {
+  _uid: string;
+  component: 'templates_listing';
+  [k: string]: any;
+}
+
+export interface TemplatesSidebarItemStoryblok {
+  icon: AssetStoryblok;
+  slug: LinkStoryblok;
+  title: string;
+
+  _uid: string;
+  component: 'templates-sidebar-link';
+  [k: string]: any;
+}
+
+export interface RelatedTemplatesStoryblok {
+  info: TemplatesSectionInfoStoryblok[];
+  templates: string[];
+
+  _uid: string;
+  component: 'related_templates';
   [k: string]: any;
 }

@@ -1,34 +1,42 @@
-<script>
+<script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import { techLeftData, techRightData } from './_datas/techs.data';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import type { home_technologiesStoryblok } from '$src/types/bloks';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import Button from '$src/components/buttons/button.svelte';
   import ChipCard from './_comps/ChipCard.svelte';
-  import { techLeftData, techRightData } from './_datas/techs.data';
   import ChipCircle from './_comps/ChipCircle.svelte';
   import ChipBorder from './_comps/ChipBorder.svelte';
   import MotherChipVector from './_comps/MotherChipVector.svelte';
+
+  export let block: home_technologiesStoryblok;
 </script>
 
 <Section>
   <Container>
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
-        Technologies
+        {block.tagline}
       </HeadingLatest>
-      <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
-        Framework-agnostic. <br /> Developer-approved
+      <HeadingLatest as="h3" class={cn(['mt-2 max-w-[528px] text-center'], ['lg:mt-3'])}>
+        {block.title}
       </HeadingLatest>
-      <Button
-        class={cn(['mt-5 w-max'], ['lg:mt-8'])}
-        variant="secondary"
-        href="/docs"
-        target="_blank"
-        as="a"
-      >
-        See documentation
-      </Button>
+
+      {#if block.link[0]}
+        {@const { href } = getAnchorFromCmsLink(block.link[0].link)}
+        <Button
+          class={cn(['mt-5 w-max'], ['lg:mt-8'])}
+          variant="secondary"
+          {href}
+          target="_blank"
+          as="a"
+        >
+          {block.link[0].label}
+        </Button>
+      {/if}
     </div>
 
     <div

@@ -1,14 +1,34 @@
 <script lang="ts">
-  import DynamicBlock from '$components/blocks/dynamic-block.svelte';
-  import { cn } from '$lib/utils';
-  export let block;
+  import Container from '$src/_comps/layouts/Container.svelte';
+  import Section from '$src/_comps/layouts/Section.svelte';
+  import { cn } from '$src/_utils/tailwind.utils';
+  import type { MarketplaceBannerStoryblok } from '$src/types/bloks';
+  import ImageCarousal from '../../carousals/image-carousal.svelte';
+  import MarketplaceBannerInfo from './marketplace-banner-info.svelte';
+
+  export let block: MarketplaceBannerStoryblok;
 </script>
 
-<section data-theme="light" class="bg-white">
-  <div class="px-container pb-10 pt-10">
-    <div class={cn(['grid grid-cols-1 gap-5'], ['md:grid-cols-[0.6fr_0.4fr]'])}>
-      <DynamicBlock block={block.carousal[0]} />
-      <DynamicBlock block={block.info[0]} />
+<Section>
+  <Container
+    pxEnabled={false}
+    pyEnabled={false}
+    expand="full"
+    className={cn(
+      [
+        'relative overflow-hidden',
+        'py-4 max-w-full w-full',
+        'grid grid-cols-1 md:grid-cols-2 gap-4'
+      ],
+      ['md:py-8'],
+      ['lg:gap-5']
+    )}
+  >
+    <div class="w-full min-w-0">
+      <ImageCarousal block={block.carousal[0]} />
     </div>
-  </div>
-</section>
+    <div class="w-full min-w-0">
+      <MarketplaceBannerInfo block={block.info[0]} />
+    </div>
+  </Container>
+</Section>

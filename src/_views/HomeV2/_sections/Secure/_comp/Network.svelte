@@ -2,10 +2,12 @@
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
   import { cn } from '$src/_utils/tailwind.utils';
+  import type { SecureNetworkStoryblok } from '$src/types/bloks';
 
   import glob_img from '../_assets/globe.png';
   import SecureDecCircle from './SecureDecCircle.svelte';
   export let className = '';
+  export let block: SecureNetworkStoryblok;
 </script>
 
 <div
@@ -18,10 +20,9 @@
 >
   <img class="mx-auto" src={glob_img} alt="" />
   <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
-    <HeadingLatest as="h3" varient="h6">Edge network</HeadingLatest>
+    <HeadingLatest as="h3" varient="h6">{block?.title}</HeadingLatest>
     <ParahLates class="lg:text-[18px]">
-      Lightning-fast chat delivery through 35+ edge locations worldwide, ensuring minimal latency
-      for all users.
+      {block?.description}
     </ParahLates>
   </div>
 

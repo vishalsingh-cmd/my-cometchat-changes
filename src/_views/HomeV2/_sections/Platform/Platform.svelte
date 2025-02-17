@@ -1,38 +1,47 @@
-<script>
+<script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import type { PlatformStoryblok } from '$src/types/bloks';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
   import PlatformCard from './_comps/PlatformCard.svelte';
 
-  import img01 from './_assets/img0.png';
-  import img02 from './_assets/img1.png';
-  import img03 from './_assets/img2.png';
-  import img04 from './_assets/img3.png';
-  import img05 from './_assets/img4.png';
-
-  import Icon01 from './_icons/icon01.svelte';
-  import Icon02 from './_icons/icon02.svelte';
-  import Icon03 from './_icons/icon03.svelte';
-  import Icon04 from './_icons/icon04.svelte';
-  import Icon05 from './_icons/icon05.svelte';
+  export let block: PlatformStoryblok;
 </script>
 
 <Section>
   <Container className={cn(['grid grid-cols-1 gap-6'], ['lg:grid-cols-2 lg:gap-8'])}>
     <div class={cn(['flex flex-col'])}>
-      <HeadingLatest as="h2" varient="h6" class="text-[#6852D6]">Our Platform</HeadingLatest>
+      <HeadingLatest as="h2" varient="h6" class="text-[#6852D6]">{block.tagline}</HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mt-2'], ['lg:mt-3'])}>
-        Every tool you need to build world-class chat
+        {block.title}
       </HeadingLatest>
       <ParahLates class={cn(['mt-3'], ['lg:mt-4'])}>
-        One platform, five powerful modules. Everything you need to build, scale, and perfect your
-        chat experience.
+        {block.description}
       </ParahLates>
     </div>
 
-    <PlatformCard
+    {#each block.cards as card, i}
+      {#if i == 0}
+        <PlatformCard block={card} baseClassName="xl:row-start-2" />
+      {:else if i == 1}
+        <PlatformCard block={card} baseClassName="xl:row-span-2 xl:h-[84%] xl:self-end" />
+      {:else if i == 2}
+        <PlatformCard
+          block={card}
+          baseClassName="xl:col-span-2"
+          containerClassName="xl:flex-row"
+          infoClassName="xl:flex-[0.5]"
+          imageWrapClassName="xl:flex-[0.5]"
+          imageClassName="xl:object-contain"
+        />
+      {:else}
+        <PlatformCard block={card} />
+      {/if}
+    {/each}
+
+    <!-- <PlatformCard
       baseClassName="xl:row-start-2"
       icon={Icon01}
       title="Chat and messaging"
@@ -87,6 +96,6 @@
       ctaLink="/features/analytics-insights"
       imageSrc={img05}
       imageAlt="Analytics"
-    />
+    /> -->
   </Container>
 </Section>

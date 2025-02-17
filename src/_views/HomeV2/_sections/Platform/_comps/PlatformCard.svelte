@@ -2,15 +2,9 @@
   import { tv, cn } from '$src/_utils/tailwind.utils';
   import { onMount } from 'svelte';
   import GhostButton from '$src/components/buttons/ghost-button.svelte';
-
-  export let icon;
-  export let title;
-  export let description;
-  export let ctaLabel;
-  export let ctaLink;
-  export let imageSrc;
-  export let imageAlt;
-
+  import Media from '$src/components/media.svelte';
+  import type { Platform_cardStoryblok } from '$src/types/bloks';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   export let baseClassName = '';
   export let containerClassName = '';
   export let infoClassName = '';
@@ -80,6 +74,8 @@
       )
     `;
   }
+
+  export let block: Platform_cardStoryblok;
 </script>
 
 <div
@@ -89,18 +85,23 @@
 >
   <div class={platformCard__container({ class: containerClassName })}>
     <div class={platformCard__info({ class: infoClassName })}>
-      <svelte:component this={icon} />
-      <h3 class={platformCard__title({ class: titleClassName })}>{title}</h3>
+      <Media media={block.icon} />
+      <img src={block.icon.filename} alt={block.icon.alt} class="w-12 lg:w-16" />
+      <h3 class={platformCard__title({ class: titleClassName })}>{block.title}</h3>
       <p class={platformCard__des({ class: desClassName })}>
-        {description}
+        {block.description}
       </p>
-      <GhostButton variant="highlighted" class="w-max" href={ctaLink} as="a" taget="_blank">
-        {ctaLabel}
-      </GhostButton>
+      {#if block.link}
+        {@const link = block.link[0]}
+        {@const { href, target, rel } = getAnchorFromCmsLink(link.link)}
+        <GhostButton variant="highlighted" class="w-max" {href} as="a" {target} {rel}>
+          {link.label}
+        </GhostButton>
+      {/if}
     </div>
 
     <div class={platformCard__imageWrap({ class: imageWrapClassName })}>
-      <img class={platformCard__image({ class: imageClassName })} src={imageSrc} alt={imageAlt} />
+      <Media media={block.image} class={platformCard__image({ class: imageClassName })} />
     </div>
   </div>
 
