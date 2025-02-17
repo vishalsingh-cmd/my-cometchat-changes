@@ -3,12 +3,7 @@
   import Logo from '$components/topnav/logo.svelte';
   import { createMediaStore } from '$src/lib/stores/media';
   import { beforeNavigate } from '$app/navigation';
-  import { fly, slide } from 'svelte/transition';
-  import { circInOut } from 'svelte/easing';
-  import { clickOutside } from '$src/lib/actions/click-outside';
-  import scrollDirection from '$src/lib/stores/scroll-direction';
-  import Button from '$src/components/buttons/button.svelte';
-  import Icon from '$src/components/icon/icon.svelte';
+
   import TemplateButtons from '$src/_views/Templates/_comps/TemplateButtons.svelte';
 
   let expanded = false; // mobile
@@ -17,32 +12,16 @@
   const isMobile = createMediaStore('(max-width: 1023px)');
 
   let scrollY = 0;
-  $: scrollLock(expanded || !isMobile);
 
   beforeNavigate(() => {
     expanded = false;
     activeIndex = -1;
   });
-
-  const panelTransition = (
-    node: HTMLElement,
-    options: { duration: number; direction: 'in' | 'out' }
-  ) => {
-    if ($isMobile) {
-      return fly(node, { duration: options.duration, x: '100vw', easing: circInOut });
-    }
-
-    return slide(node, {
-      duration: options.duration,
-      delay: options.direction === 'in' ? 100 : 0,
-      easing: circInOut
-    });
-  };
 </script>
 
 <div
   class={cn(
-    ['sticky top-0 z-[100] flex items-center gap-3 p-5'],
+    ['sticky top-0 z-[100] flex items-center gap-3 '],
     ['border-b border-b-[#E8E8E8] bg-white']
   )}
 >
