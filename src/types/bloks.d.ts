@@ -44,58 +44,58 @@ export interface AwardsSectionStoryblok {
 
 export type MultilinkStoryblok =
   | {
-      cached_url?: string;
-      linktype?: string;
-      [k: string]: any;
-    }
+    cached_url?: string;
+    linktype?: string;
+    [k: string]: any;
+  }
   | {
-      id?: string;
-      cached_url?: string;
-      anchor?: string;
-      linktype?: 'story';
-      story?: {
-        name: string;
-        created_at?: string;
-        published_at?: string;
-        id: number;
-        uuid: string;
-        content?: {
-          [k: string]: any;
-        };
-        slug: string;
-        full_slug: string;
-        sort_by_date?: null | string;
-        position?: number;
-        tag_list?: string[];
-        is_startpage?: boolean;
-        parent_id?: null | number;
-        meta_data?: null | {
-          [k: string]: any;
-        };
-        group_id?: string;
-        first_published_at?: string;
-        release_id?: null | number;
-        lang?: string;
-        path?: null | string;
-        alternates?: any[];
-        default_full_slug?: null | string;
-        translated_slugs?: null | any[];
+    id?: string;
+    cached_url?: string;
+    anchor?: string;
+    linktype?: 'story';
+    story?: {
+      name: string;
+      created_at?: string;
+      published_at?: string;
+      id: number;
+      uuid: string;
+      content?: {
         [k: string]: any;
       };
-      [k: string]: any;
-    }
-  | {
-      url?: string;
-      cached_url?: string;
-      anchor?: string;
-      linktype?: 'asset' | 'url';
-      [k: string]: any;
-    }
-  | {
-      email?: string;
-      linktype?: 'email';
+      slug: string;
+      full_slug: string;
+      sort_by_date?: null | string;
+      position?: number;
+      tag_list?: string[];
+      is_startpage?: boolean;
+      parent_id?: null | number;
+      meta_data?: null | {
+        [k: string]: any;
+      };
+      group_id?: string;
+      first_published_at?: string;
+      release_id?: null | number;
+      lang?: string;
+      path?: null | string;
+      alternates?: any[];
+      default_full_slug?: null | string;
+      translated_slugs?: null | any[];
       [k: string]: any;
     };
+    [k: string]: any;
+  }
+  | {
+    url?: string;
+    cached_url?: string;
+    anchor?: string;
+    linktype?: 'asset' | 'url';
+    [k: string]: any;
+  }
+  | {
+    email?: string;
+    linktype?: 'email';
+    [k: string]: any;
+  };
 
 export interface BlogAnnouncementSidebarCardStoryblok {
   title?: string;
@@ -156,16 +156,16 @@ export interface BlogPostStoryblok {
   sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
+  | ''
+  | 'explorer'
+  | 'video'
+  | 'webinar'
+  | 'how-to-guide'
+  | 'chat'
+  | 'calling'
+  | 'insights'
+  | 'industry'
+  | 'best-practices';
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
@@ -182,16 +182,16 @@ export interface GuideStoryblok {
   sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
-    | ''
-    | 'explorer'
-    | 'video'
-    | 'webinar'
-    | 'how-to-guide'
-    | 'chat'
-    | 'calling'
-    | 'insights'
-    | 'industry'
-    | 'best-practices';
+  | ''
+  | 'explorer'
+  | 'video'
+  | 'webinar'
+  | 'how-to-guide'
+  | 'chat'
+  | 'calling'
+  | 'insights'
+  | 'industry'
+  | 'best-practices';
   imported_from_old_site?: boolean;
   created_at?: string;
   body: RichtextStoryblok;
@@ -317,14 +317,14 @@ export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
   code_snippet_language:
-    | ''
-    | 'bash'
-    | 'elixir'
-    | 'javascript'
-    | 'swift'
-    | 'typescript'
-    | 'yaml'
-    | 'go';
+  | ''
+  | 'bash'
+  | 'elixir'
+  | 'javascript'
+  | 'swift'
+  | 'typescript'
+  | 'yaml'
+  | 'go';
   code_snippet_to_show: string;
   code_snippet_to_copy: string;
   _uid: string;
@@ -460,10 +460,10 @@ export interface FeatureStoryblok {
 export interface FeaturedStorySectionStoryblok {
   theme: '' | 'light' | 'dark';
   featured_story:
-    | StoryblokStory<CustomerStoryStoryblok>
-    | StoryblokStory<BlogPostStoryblok>
-    | StoryblokStory<TutorialStoryblok>
-    | string;
+  | StoryblokStory<CustomerStoryStoryblok>
+  | StoryblokStory<BlogPostStoryblok>
+  | StoryblokStory<TutorialStoryblok>
+  | string;
   button_label: string;
   _uid: string;
   component: 'featured-story-section';
@@ -2510,9 +2510,6 @@ export type TemplatesHeadingSize = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export type TemplatesHeadingWeight = '400' | '500' | '600' | '700';
 
 export interface TemplatesHeadingStoryblok {
-  tag: TemplatesHeadingName;
-  size: TemplatesHeadingSize;
-  weight: TemplatesHeadingWeight;
   value: string;
 
   _uid: string;
@@ -2526,9 +2523,6 @@ export type TemplatesParahSize = 'large' | 'medium' | 'base' | 'small';
 export type TemplatesParahWeight = '400' | '500' | '600' | '700';
 
 export interface TemplatesParahStoryblok {
-  tag: TemplatesParahTag;
-  size: TemplatesParahSize;
-  weight: TemplatesParahWeight;
   value: string;
 
   _uid: string;

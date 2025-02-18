@@ -17,10 +17,10 @@
     />
   </div>
   <div class="flex flex-col gap-1">
-    <TemplatesHeading {...block.title[0]}>
+    <TemplatesHeading tag="h2" size="h4" weight="500">
       {block.title[0].value}
     </TemplatesHeading>
-    <TemplatesParah {...block.description[0]}>
+    <TemplatesParah tag="p">
       {block.description[0].value}
     </TemplatesParah>
   </div>
