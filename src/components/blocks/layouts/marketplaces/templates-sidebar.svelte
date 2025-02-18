@@ -6,6 +6,7 @@
   export let className = '';
 
   const links: TemplatesSidebarItemStoryblok[] = $page.data.templatesMenu;
+
   const urls = $page.url.pathname.split('/');
 
   function handleChange(event: any) {
@@ -55,6 +56,7 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
+      {@const currentLink = href?.split('/').pop()}
       <a
         {href}
         class={cn(
@@ -73,7 +75,7 @@
             'data-[iscurrentpage="active"]:opacity-100'
           ]
         )}
-        data-iscurrentpage={urls.findIndex((url) => url === link.slug.url) !== -1
+        data-iscurrentpage={urls.findIndex((url) => url === currentLink) !== -1
           ? 'active'
           : 'inactive'}
       >
