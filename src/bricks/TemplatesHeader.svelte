@@ -26,8 +26,8 @@
   )}
 >
   <div class="container mx-auto flex h-16 items-center justify-between px-container">
-    <div class={cn(['flex items-center gap-3'])}>
-      <a href="/">
+    <div class={cn(['flex items-center gap-1.5'], ['sm:gap-3'])}>
+      <a href="/templates">
         <Logo class="w-[77px] text-black lg:w-32" />
       </a>
       <span class="text-[14px] font-medium text-[#14131D] lg:text-[24px]">Templates</span>
@@ -36,8 +36,10 @@
     <div class="flex items-center gap-3">
       <a
         class="font-inter text-[12px] font-normal tracking-widest text-[#141414] transition-colors hover:text-brand-9"
-        href="/">Login</a
+        href="/"
       >
+        Login
+      </a>
       <TemplateButtons variant="secondary" as="a" href="test">Schedule a demo</TemplateButtons>
     </div>
   </div>

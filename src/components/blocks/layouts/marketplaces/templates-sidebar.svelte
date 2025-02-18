@@ -6,15 +6,14 @@
   export let className = '';
 
   const links: TemplatesSidebarItemStoryblok[] = $page.data.templatesMenu;
-
-  const urls = $page.url.pathname.split('/');
-
   function handleChange(event: any) {
     const selectedOption = links.find((link) => link.slug.url === event.target.value);
     if (selectedOption && selectedOption.slug.url) {
       window.location.href = $page.url + '/templates/' + selectedOption.slug.url;
     }
   }
+
+  const pageSlug = $page.data.page.full_slug;
 </script>
 
 <div class={cn(['self-start pb-1'], ['lg:sticky lg:top-[100px]'], [className])}>
@@ -56,7 +55,7 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
-      {@const currentLink = href?.split('/').pop()}
+      {@const isActive = pageSlug === link.slug || pageSlug.startsWith(`${link.slug}/`)}
       <a
         {href}
         class={cn(
@@ -75,9 +74,7 @@
             'data-[iscurrentpage="active"]:opacity-100'
           ]
         )}
-        data-iscurrentpage={urls.findIndex((url) => url === currentLink) !== -1
-          ? 'active'
-          : 'inactive'}
+        data-iscurrentpage={isActive ? 'active' : 'inactive'}
       >
         <img src={link.icon.filename} alt={link.title} />
         <span>{link.title}</span>

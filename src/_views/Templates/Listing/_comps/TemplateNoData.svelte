@@ -40,7 +40,7 @@
     Try these popular searches instead
   </p>
   <div class=" mx-auto mt-8 flex max-w-[375px] flex-wrap items-center justify-center gap-2">
-    <TemplateButtons as="a" href="/" variant="chip" iconSide="left" icon="search-sm">
+    <!-- <TemplateButtons as="a" href="/" variant="chip" iconSide="left" icon="search-sm">
       WhatsApp
     </TemplateButtons>
     <TemplateButtons as="a" href="/" variant="chip" iconSide="left" icon="search-sm">
@@ -54,7 +54,7 @@
     </TemplateButtons>
     <TemplateButtons as="a" href="/" variant="chip" iconSide="left" icon="search-sm">
       Practo
-    </TemplateButtons>
+    </TemplateButtons> -->
   </div>
 
   <img
