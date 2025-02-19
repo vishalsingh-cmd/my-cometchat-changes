@@ -15,12 +15,12 @@
 </script>
 
 <Section>
-  <Container>
+  <Container className="flex flex-col gap-5 lg:gap-14">
     <LockVector />
     <div class="mx-auto mt-8 flex max-w-3xl flex-col sm:mt-0">
-      <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]"
-        >{block.tag_name}</HeadingLatest
-      >
+      <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
+        {block.tagline}
+      </HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
         {block.title}
       </HeadingLatest>

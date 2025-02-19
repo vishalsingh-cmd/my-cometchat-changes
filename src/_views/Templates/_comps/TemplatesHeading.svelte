@@ -36,6 +36,10 @@
   });
 </script>
 
-<svelte:element this={tag} class={templatesHeading({ class: className })} {...$$restProps}>
+<svelte:element
+  this={tag}
+  class={templatesHeading({ class: className, size, weight })}
+  {...$$restProps}
+>
   <slot />
 </svelte:element>

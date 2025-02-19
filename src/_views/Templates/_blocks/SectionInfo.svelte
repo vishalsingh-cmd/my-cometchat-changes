@@ -9,15 +9,15 @@
   export let block: TemplatesSectionInfoStoryblok;
 </script>
 
-<div class={cn(['flex flex-wrap justify-between gap-2'])}>
+<div class={cn(['flex flex-col justify-between gap-2'], ['sm:flex-row sm:flex-wrap'])}>
   <div class="flex flex-col gap-1">
-    <TemplatesHeading {...block.title[0]}>
-      {block.title[0].value}
+    <TemplatesHeading tag="h1" size="h1" weight="700">
+      {block.title}
     </TemplatesHeading>
 
     {#if block.description.length && block.description[0]}
-      <TemplatesParah {...block.description[0]}>
-        {block.description[0].value}
+      <TemplatesParah tag="p" size="large" weight="400">
+        {block.description}
       </TemplatesParah>
     {/if}
   </div>

@@ -37,7 +37,7 @@
 
       <div class="flex flex-col overflow-hidden" data-name="feature-tabs-container">
         <div
-          class={cn(['flex h-[80vh] w-full flex-nowrap items-center'])}
+          class={cn(['flex w-full flex-nowrap items-center'])}
           data-name="feature-tabs-container-scroll"
         >
           {#each block.featureTabs as featureTab}
