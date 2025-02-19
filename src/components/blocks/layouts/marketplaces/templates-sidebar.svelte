@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { cn } from '$lib/utils';
-  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { getAnchorFromCmsLink, sanitizeSlug } from '$src/lib/storyblok';
   import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
   export let className = '';
 
@@ -55,15 +55,16 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
+      {@const sanitizedSlug = sanitizeSlug(href || '')}
       {@const currentSection = pageSlug
         .replace(/^\/|\/$/g, '')
         .replace(/^pages\//, '')
         .split('/')[1]}
-      {@const linkSection = (href || '').replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const linkSection = sanitizedSlug.replace(/^\/|\/$/g, '').split('/')[1]}
       {@const isActive = currentSection === linkSection}
 
       <a
-        {href}
+        href={sanitizedSlug}
         class={cn(
           [
             'grid grid-cols-[auto_1fr] items-center gap-4',
