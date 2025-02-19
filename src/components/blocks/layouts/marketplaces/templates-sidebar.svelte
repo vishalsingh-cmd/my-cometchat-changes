@@ -1,41 +1,27 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import { getStoryblok } from '$lib/storyblok';
   import { cn } from '$lib/utils';
-  import { onMount } from 'svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
+  export let className = '';
 
-  interface LinkProps {
-    title: string;
-    slug: any;
-    icon: any;
-  }
-
-  let links: LinkProps[] = [];
-  onMount(async () => {
-    try {
-      const storyblok = getStoryblok({ fetch });
-      const sidebarLinks = await storyblok.get('cdn/stories/configuration/templates-sidebar-links');
-      links = sidebarLinks.data.story?.content?.links || [];
-    } catch (err) {
-      console.error('Error fetching templates-sidebar-links: ', err);
-    }
-  });
-  const urls = $page.url.pathname.split('/');
-
+  const links: TemplatesSidebarItemStoryblok[] = $page.data.templatesMenu;
   function handleChange(event: any) {
     const selectedOption = links.find((link) => link.slug.url === event.target.value);
     if (selectedOption && selectedOption.slug.url) {
-      window.location.href = $page.url.origin + '/templates/' + selectedOption.slug.url;
+      window.location.href = $page.url + '/templates/' + selectedOption.slug.url;
     }
   }
+
+  const pageSlug = $page.data.page.full_slug;
 </script>
 
-<div class={cn(['self-start px-5 pb-1 pt-4'], ['lg:sticky lg:top-20'])}>
+<div class={cn(['self-start pb-1'], ['lg:sticky lg:top-[100px]'], [className])}>
   <div class="relative mx-auto h-max lg:hidden">
     <select
       on:change={handleChange}
       class={cn([
-        'text-[#141414]',
+        'font-inter text-[14px] font-[400] text-[#141414]',
         'focus:ring-blue-500 w-full cursor-pointer appearance-none',
         'rounded-lg border border-[#E8E8E8] bg-white px-4 py-2.5',
         'focus:border-transparent focus:outline-none focus:ring-2'
@@ -52,7 +38,7 @@
     <!-- Custom dropdown icon -->
     <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
       <svg
-        class="h-5 w-5 text-[#141414]"
+        class="h-5 w-5 text-[#A1A1A1]"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 20 20"
         fill="currentColor"
@@ -68,24 +54,33 @@
 
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
+      {@const { href } = getAnchorFromCmsLink(link.slug)}
+      {@const currentSection = pageSlug
+        .replace(/^\/|\/$/g, '')
+        .replace(/^pages\//, '')
+        .split('/')[1]}
+      {@const linkSection = (href || '').replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const isActive = currentSection === linkSection}
+
       <a
-        href={`templates/${link.slug.url}`}
+        {href}
         class={cn(
           [
-            'flex items-center gap-4',
-            'rounded px-2 py-3',
-            'text-md font-medium text-[#141414] opacity-70',
-            'transition-opacity hover:opacity-100'
+            'grid grid-cols-[auto_1fr] items-center gap-4',
+            'rounded px-2 py-3 ',
+            'font-inter text-[16px] font-[400] text-[#727272]',
+            'transition-[opacity,background-color]',
+            'bg-white hover:bg-[#F5F5F5]',
+            'opacity-70 hover:opacity-80'
           ],
           [
             'data-[iscurrentpage="active"]:bg-[#F5F5F5]',
-            'data-[iscurrentpage="active"]:font-semibold',
+            'data-[iscurrentpage="active"]:text-[#141414]',
+            'data-[iscurrentpage="active"]:font-[500]',
             'data-[iscurrentpage="active"]:opacity-100'
           ]
         )}
-        data-iscurrentpage={urls.findIndex((url) => url === link.slug.url) !== -1
-          ? 'active'
-          : 'inactive'}
+        data-iscurrentpage={isActive ? 'active' : 'inactive'}
       >
         <img src={link.icon.filename} alt={link.title} />
         <span>{link.title}</span>

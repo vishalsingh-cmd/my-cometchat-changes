@@ -1,11 +1,12 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import type { AnimatedBannerBoxStoryblok } from '$src/types/bloks';
 
-  export let bannerData;
+  export let animatedBoxes: AnimatedBannerBoxStoryblok[];
   let currentIndex = 0;
 
   const rotate = () => {
-    currentIndex = (currentIndex + 1) % bannerData.length;
+    currentIndex = (currentIndex + 1) % animatedBoxes.length;
   };
 
   setInterval(rotate, 3000);
@@ -13,7 +14,7 @@
 
 <div class="flex items-center justify-center">
   <div class={cn(['relative overflow-hidden [perspective:1000px]'])}>
-    {#each bannerData as item, index}
+    {#each animatedBoxes as item, index}
       <div
         class={cn([
           'group/box',
@@ -45,9 +46,9 @@
               'rounded-2xl'
             ])}
           >
-            <svelte:component this={item.icon} />
+            <img src={item.icon.filename} alt={item.label} />
             <span class="bg-gradient-purple bg-clip-text leading-none text-transparent">
-              {item.title}
+              {item.label}
             </span>
           </div>
         </div>

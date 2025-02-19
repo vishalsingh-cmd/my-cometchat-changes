@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import Icon from './icon/icon.svelte';
+  import { cn } from '$src/_utils/tailwind.utils';
 
   type BreadcrumbItem = {
     label: string;
@@ -9,6 +10,7 @@
 
   export let current_page_title: string;
   export let slug: string;
+  export let className = '';
   let breadcrumbs: BreadcrumbItem[] = [];
 
   function slugToBreadcrumbs(slug: string): BreadcrumbItem[] {
@@ -42,7 +44,10 @@
   });
 </script>
 
-<nav aria-label="Breadcrumb" class="absolute hidden py-5 md:left-8 md:block lg:left-16">
+<nav
+  aria-label="Breadcrumb"
+  class={cn(['absolute hidden py-5 md:left-8 md:block lg:left-16'], [className])}
+>
   <ul class="flex cursor-pointer flex-row gap-2 font-medium">
     <div class="w-5 hover:cursor-pointer">
       <Icon icon="home-02" size="md" class="text-brand-9" />

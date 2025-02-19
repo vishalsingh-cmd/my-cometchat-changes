@@ -21,7 +21,7 @@
   <h3
     class={cn(
       [
-        'text-left font-sans text-md font-semibold text-[#FAFAFF]',
+        'text-left font-sans text-[16px] font-semibold text-[#FAFAFF]',
         'text-opacity-40 group-hover:text-opacity-100',
         'transition-colors duration-300',
         'group-data-[state="active"]:text-[#FF7129]'

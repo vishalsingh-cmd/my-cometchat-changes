@@ -4,11 +4,7 @@ import { getStoryblok } from '$lib/storyblok.js';
 import { getStoryVersion } from '$lib/utils';
 import { getNavigation } from '$api/header/getNavigation';
 import { getTemplatesFooter } from '$api/header/getTemplatesFooter';
-
-const isTemplatesPage = (path: string) => {
-  const isMarketplace = path.split('/').find((slug) => slug === 'templates');
-  return isMarketplace;
-};
+import { isTemplatesPage } from '$src/_helpers/withSlugs';
 
 export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const version = getStoryVersion(cookies);
