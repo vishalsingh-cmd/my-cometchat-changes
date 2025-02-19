@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { cn } from '$lib/utils';
-  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { getAnchorFromCmsLink, sanitizeSlug } from '$src/lib/storyblok';
   import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
   export let className = '';
 
@@ -63,7 +63,7 @@
       {@const isActive = currentSection === linkSection}
 
       <a
-        {href}
+        href={sanitizeSlug(href || '')}
         class={cn(
           [
             'grid grid-cols-[auto_1fr] items-center gap-4',
