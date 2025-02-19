@@ -144,10 +144,10 @@
     <div
       class={cn(
         [
-          'hidden bg-[linear-gradient(180deg,_rgba(11,9,20,0)_0%,rgba(11,9,20,0.4)_25%,rgba(11,9,20,0.9)_50%,#0B0914_93%)] pb-10 pt-20',
-          'absolute inset-x-0 bottom-0'
+          'hidden py-10',
+          'bg-[linear-gradient(180deg,_rgba(11,9,20,0)_0%,rgba(11,9,20,0.4)_25%,rgba(11,9,20,0.9)_50%,#0B0914_93%)]'
         ],
-        ['items-center justify-center lg:flex']
+        ['lg:flex lg:items-center lg:justify-center']
       )}
     >
       {#if block?.viewmore}

@@ -1,22 +1,7 @@
 <script>
   import { cn } from '$lib/utils';
   import Logo from '$components/topnav/logo.svelte';
-  import { createMediaStore } from '$src/lib/stores/media';
-  import { beforeNavigate } from '$app/navigation';
-
-  import TemplateButtons from '$src/_views/Templates/_comps/TemplateButtons.svelte';
-
-  let expanded = false; // mobile
-  let activeIndex = -1;
-  $: isSolid = activeIndex > -1 || scrollY > 0 || expanded;
-  const isMobile = createMediaStore('(max-width: 1023px)');
-
-  let scrollY = 0;
-
-  beforeNavigate(() => {
-    expanded = false;
-    activeIndex = -1;
-  });
+  import TemplatesButton from '$src/_views/Templates/_comps/TemplatesButton.svelte';
 </script>
 
 <div
@@ -28,19 +13,31 @@
   <div class="container mx-auto flex h-16 items-center justify-between px-container">
     <div class={cn(['flex items-center gap-1.5'], ['sm:gap-3'])}>
       <a href="/templates">
-        <Logo class="w-[77px] text-black lg:w-32" />
+        <Logo class="w-32 text-black max-sm:w-[77px]" />
       </a>
-      <span class="text-[14px] font-medium text-[#14131D] lg:text-[24px]">Templates</span>
+      <span class="text-[24px] font-medium text-[#14131D] max-sm:text-[14px]">Templates</span>
     </div>
 
-    <div class="flex items-center gap-3">
-      <a
-        class="font-inter text-[12px] font-normal tracking-widest text-[#141414] transition-colors hover:text-brand-9"
-        href="/"
+    <div class={cn(['flex items-center gap-3'], ['sm:gap-8'])}>
+      <TemplatesButton
+        className="max-sm:text-[12px]"
+        variant="text"
+        color="white"
+        as="a"
+        target="_blank"
+        href={'https://app.cometchat.com/login'}
       >
         Login
-      </a>
-      <TemplateButtons variant="secondary" as="a" href="test">Schedule a demo</TemplateButtons>
+      </TemplatesButton>
+      <TemplatesButton
+        className="max-sm:text-[12px] max-sm:px-3 max-sm:py-2.5 max-sm:min-w-0"
+        variant="outlined"
+        color="white"
+        as="a"
+        href={'/contact-sales'}
+      >
+        Schedule a demo
+      </TemplatesButton>
     </div>
   </div>
 </div>

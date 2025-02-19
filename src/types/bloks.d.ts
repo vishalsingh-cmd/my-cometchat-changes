@@ -2419,7 +2419,8 @@ export interface SecureStoryblok {
   _uid: string;
   component: 'home__secure';
   [k: string]: any;
-  tag_name: string;
+
+  tagline: string;
   title: string;
   description: string;
   secure_network: SecureNetworkStoryblok;
@@ -2552,8 +2553,8 @@ export interface TemplatesSectionInfoStoryblok {
 
 export interface TemplatesProductDisplayItemStoryblok {
   media: AssetStoryblok;
-  title: TemplatesHeadingStoryblok[];
-  description: TemplatesParahStoryblok;
+  title: string;
+  description: string;
 
   _uid: string;
   component: 'templates_product_display_item';

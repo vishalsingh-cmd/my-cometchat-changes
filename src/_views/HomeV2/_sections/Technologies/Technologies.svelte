@@ -15,7 +15,7 @@
   export let block: home_technologiesStoryblok;
 </script>
 
-<Section>
+<Section className="relative overflow-x-clip">
   <Container>
     <div class="flex flex-col items-center">
       <HeadingLatest as="h2" varient="h6" class="text-center text-[#6852D6]">
@@ -46,18 +46,14 @@
         ['xl:gap-12']
       )}
     >
+      <!-- ------------------------------- left chips -------------------------------  -->
       <div class={cn(['relative isolate', 'grid grid-cols-1'])}>
         <ChipBorder direction="vertical" className="-z-[1] translate-y-3 lg:translate-y-0" />
         {#each techLeftData as _, i}
           {#if i % 2 === 0}
             <div
               class={cn(
-                [
-                  'group/chipRow',
-                  'relative isolate',
-                  'grid grid-cols-2 gap-4 py-2',
-                  'mx-auto w-max'
-                ],
+                ['group/chipRow', 'relative isolate', 'grid grid-cols-2 gap-4 py-2', 'w-full'],
                 ['lg:py-3']
               )}
             >
@@ -78,7 +74,7 @@
               <ChipBorder
                 direction="vertical"
                 className={cn(
-                  ['hidden group-[:nth-of-type(3)]/chipRow:block'],
+                  ['hidden group-[:nth-of-type(3)]/chipRow:lg:block'],
                   ['lg:w-[1px] lg:h-full right-[unset] left-[calc(100%+16px)] -translate-x-1/2']
                 )}
               />
@@ -89,18 +85,14 @@
 
       <MotherChipVector className={cn(['w-full relative z-[2]'], ['lg:my-auto'])} />
 
+      <!-- ------------------------------- right chips -------------------------------  -->
       <div class={cn(['relative isolate', 'grid grid-cols-1'])}>
         <ChipBorder direction="vertical" className="-z-[1] -translate-y-10 lg:translate-y-0" />
         {#each techRightData as _, i}
           {#if i % 2 === 0}
             <div
               class={cn(
-                [
-                  'group/chipRow',
-                  'relative isolate',
-                  'grid grid-cols-2 gap-4 py-2',
-                  'mx-auto w-max'
-                ],
+                ['group/chipRow', 'relative isolate w-full min-w-0', 'grid grid-cols-2 gap-4 py-2'],
                 ['lg:py-3']
               )}
             >
@@ -124,7 +116,7 @@
               <ChipBorder
                 direction="vertical"
                 className={cn(
-                  ['hidden group-[:nth-of-type(3)]/chipRow:block'],
+                  ['hidden group-[:nth-of-type(3)]/chipRow:lg:block'],
                   ['lg:w-[1px] lg:h-full right-[unset] left-[calc(0%-16px)] -translate-x-1/2']
                 )}
               />
@@ -133,6 +125,7 @@
         {/each}
       </div>
 
+      <!-- bottom line -->
       <ChipBorder
         direction="horizontal"
         className={cn(

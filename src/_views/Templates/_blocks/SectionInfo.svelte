@@ -9,7 +9,7 @@
   export let block: TemplatesSectionInfoStoryblok;
 </script>
 
-<div class={cn(['flex flex-wrap justify-between gap-2'])}>
+<div class={cn(['flex flex-col justify-between gap-2'], ['sm:flex-row sm:flex-wrap'])}>
   <div class="flex flex-col gap-1">
     <TemplatesHeading tag="h1" size="h1" weight="700">
       {block.title}

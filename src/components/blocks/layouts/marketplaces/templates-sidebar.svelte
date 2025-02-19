@@ -55,9 +55,12 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
-      {@const normalizedPage = pageSlug.replace(/^\/|\/$/g, '').replace(/^pages\//, '')}
-      {@const normalizedHref = (href || '').replace(/^\/|\/$/g, '')}
-      {@const isActive = normalizedPage === normalizedHref}
+      {@const currentSection = pageSlug
+        .replace(/^\/|\/$/g, '')
+        .replace(/^pages\//, '')
+        .split('/')[1]}
+      {@const linkSection = (href || '').replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const isActive = currentSection === linkSection}
 
       <a
         {href}
