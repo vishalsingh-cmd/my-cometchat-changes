@@ -17,6 +17,7 @@ export default {
   future: {
     hoverOnlyWhenSupported: true
   },
+
   theme: {
     container: {
       screens: {

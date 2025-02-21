@@ -12,8 +12,6 @@
       window.location.href = $page.url + '/templates/' + selectedOption.slug.url;
     }
   }
-
-  const pageSlug = $page.data.page.full_slug;
 </script>
 
 <div class={cn(['self-start pb-1'], ['lg:sticky lg:top-[100px]'], [className])}>
@@ -55,16 +53,14 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
-      {@const sanitizedSlug = sanitizeSlug(href || '')}
-      {@const currentSection = pageSlug
-        .replace(/^\/|\/$/g, '')
-        .replace(/^pages\//, '')
-        .split('/')[1]}
-      {@const linkSection = sanitizedSlug.replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const sanitizedLink = sanitizeSlug(href || '')}
+      {@const sanitizedSlug = sanitizeSlug($page.data.page.full_slug)}
+      {@const currentSection = sanitizedSlug.replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const linkSection = sanitizedLink.replace(/^\/|\/$/g, '').split('/')[1]}
       {@const isActive = currentSection === linkSection}
 
       <a
-        href={sanitizedSlug}
+        href={sanitizedLink}
         class={cn(
           [
             'grid grid-cols-[auto_1fr] items-center gap-4',
