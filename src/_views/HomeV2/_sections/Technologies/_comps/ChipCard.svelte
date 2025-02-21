@@ -21,6 +21,7 @@
     [className]
   )}
   {href}
+  target="_blank"
 >
   <svelte:component this={icon} className="w-[80%]" />
 

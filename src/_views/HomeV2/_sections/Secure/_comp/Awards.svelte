@@ -20,19 +20,20 @@
 >
   <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
     <HeadingLatest as="h3" varient="h6">{block.title}</HeadingLatest>
-    <div class={cn(['grid grid-cols-[150px_150px] gap-4'])}>
+    <div class={cn(['grid grid-cols-[1fr_1fr] gap-4'])}>
       {#each block.imgs as award}
         <div
           class={cn(
             [
+              'min-w-0 p-6',
               'rounded-[20px] border border-[#FAFAFF0F] border-opacity-8',
-              'h-[150px] w-[150px] bg-[#FAFAFF0F]',
+              'bg-[#FAFAFF0F]',
               'flex items-center justify-center'
             ],
             ['lg:rounded-full']
           )}
         >
-          <img src={award.img.filename} alt={award.img.name} />
+          <img class="w-full object-contain" src={award.img.filename} alt={award.img.name} />
         </div>
       {/each}
     </div>
