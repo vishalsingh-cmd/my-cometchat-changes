@@ -38,7 +38,7 @@
 <QueryClientProvider client={queryClient}>
   <!-- ------------------------------- header -------------------------------- -->
   {#if data.topnav}
-    <Topnav data={data.topnav.content} />
+    <!-- <Topnav data={data.topnav.content} /> -->
   {/if}
 
   {#if data.templatesHeaderData}
