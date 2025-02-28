@@ -6,8 +6,8 @@
   import Footer from '$components/footer.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
   import { Toaster } from 'svelte-french-toast';
-  import TemplatesHeader from '$bricks/TemplatesHeader.svelte';
-  import TemplatesFooter from '$bricks/TemplatesFooter.svelte';
+  import TemplatesHeader from '$src/_bricks/TemplatesHeader.svelte';
+  import TemplatesFooter from '$src/_bricks/TemplatesFooter.svelte';
 
   export let data;
 
