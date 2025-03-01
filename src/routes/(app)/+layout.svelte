@@ -8,6 +8,7 @@
   import { Toaster } from 'svelte-french-toast';
   import TemplatesHeader from '$src/_bricks/TemplatesHeader.svelte';
   import TemplatesFooter from '$src/_bricks/TemplatesFooter.svelte';
+  import NewHeader from '$src/_bricks/NewHeader/NewHeader.svelte';
 
   export let data;
 
@@ -39,6 +40,7 @@
   <!-- ------------------------------- header -------------------------------- -->
   {#if data.topnav}
     <!-- <Topnav data={data.topnav.content} /> -->
+    <NewHeader />
   {/if}
 
   {#if data.templatesHeaderData}

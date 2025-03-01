@@ -5,9 +5,8 @@
     base: [
       'font-sans font-semibold relative',
       'text-[#FFFFFF] text-[14px] leading-[2px]',
-      // 'hover:text-[#8C7CE0] cursor-pointer',
-      'transition-colors duration-200',
-      'group-hover/navitem:text-[#8C7CE0]'
+      'group-hover/navitem:text-[#8C7CE0]',
+      'transition-colors duration-200'
     ]
   });
 

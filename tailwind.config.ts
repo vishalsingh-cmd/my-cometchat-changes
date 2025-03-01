@@ -124,7 +124,9 @@ export default {
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,
         // box-shadow: 0px 4px 20px 0px #14131D0F;
-        'inner-soft': 'inset 0px 4px 20px 0px hsl(var(--color-gray-12) / 0.06)'
+        'inner-soft': 'inset 0px 4px 20px 0px hsl(var(--color-gray-12) / 0.06)',
+        'new-header-viewport':
+          '0 10px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3)'
       }),
       borderRadius: {
         '1/2': '50%'
