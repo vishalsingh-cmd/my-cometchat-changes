@@ -102,16 +102,17 @@ export interface NavFeatureSideMenuProps {
 }
 
 /* ------------------------------- basic navs ------------------------------- */
+export type NavPanelProps =
+  | NavFeatureBigCardsProps
+  | NavFeatureCardsProps
+  | NavFeatureIconsProps
+  | NavFeaturesProps
+  | NavFeatureSideMenuProps;
+
 export interface NavItemProps {
   title: string;
   isNew: boolean;
-  panel: Array<
-    | NavFeatureBigCardsProps
-    | NavFeatureCardsProps
-    | NavFeatureIconsProps
-    | NavFeaturesProps
-    | NavFeatureSideMenuProps
-  >;
+  panel: Array<NavPanelProps>;
 
   component: 'nav-item';
   _uid: string;
