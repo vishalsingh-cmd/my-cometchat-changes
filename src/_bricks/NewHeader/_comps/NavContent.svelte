@@ -7,6 +7,6 @@
   });
 </script>
 
-<div class={navContent({ class: className })}>
+<div class={navContent({ class: className })} {...$$restProps}>
   <slot />
 </div>

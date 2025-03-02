@@ -2,9 +2,10 @@ import type { LayoutServerLoad } from './$types';
 import { env } from '$env/dynamic/private';
 import { getStoryblok } from '$lib/storyblok.js';
 import { getStoryVersion } from '$lib/utils';
-import { getNavigation } from '$api/header/getNavigation';
-import { getTemplatesFooter } from '$api/header/getTemplatesFooter';
+import { getTemplatesFooter } from '$src/_api/header/getTemplatesFooter';
 import { isTemplatesPage } from '$src/_helpers/withSlugs';
+import { getNewHeader } from '$src/_api/header/getNewHeader';
+import { getFooter } from '$src/lib/data/footer';
 
 export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const version = getStoryVersion(cookies);
@@ -19,8 +20,16 @@ export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
       templatesFooterData: templatesFooter
     };
   } else {
-    const navigation = await getNavigation({ storyblok, version });
-    return navigation;
+    const [newHeader, footer] = await Promise.all([
+      getNewHeader({ storyblok, version }),
+      getFooter(storyblok, { version })
+    ]);
+
+    return {
+      version,
+      newHeader,
+      footer
+    };
   }
 };
 
