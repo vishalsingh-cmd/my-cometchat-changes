@@ -9,7 +9,7 @@
   export let navItems: Array<NavItemProps | NavLinkProps>;
 </script>
 
-<div class={cn(['relative isolate py-4'])}>
+<div class={cn(['relative isolate py-4', 'flex w-full flex-[0.9] flex-col items-center'])}>
   <ul class={cn(['flex items-center gap-10'])}>
     {#each navItems as navItem, index}
       <NavItem>

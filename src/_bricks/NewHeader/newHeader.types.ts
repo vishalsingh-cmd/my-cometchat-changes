@@ -37,7 +37,7 @@ export interface NavFeatureCardProps {
 
 export interface NavFeatureCardsProps {
   title: string;
-  columns: 'auto' | 1 | 2 | 3;
+  columns: 'auto' | '1' | '2' | '3';
   cards: NavFeatureCardProps[];
 
   component: 'nav-feature-cards';

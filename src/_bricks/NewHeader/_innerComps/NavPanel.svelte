@@ -20,7 +20,7 @@
   export let className = '';
 
   const navPanel = tv({
-    base: ['relative w-full h-full']
+    base: ['relative w-full h-full', 'flex flex-col py-6 gap-6']
   });
 </script>
 

@@ -22,9 +22,14 @@
       iconWrap: [
         'h-10 w-10 border border-[#FAFAFF] border-opacity-5 rounded-md',
         'flex items-center justify-center',
-        'group-hover/navFeature:border-[#6852D6]'
+        'transition-colors duration-300',
+        'group-hover/navFeature:border-[#6852D6]',
+        'group-hover/navFeature:bg-[linear-gradient(180deg,_rgba(104,_82,_214,_0.03)_0%,_rgba(104,_82,_214,_0.15)_100%)]'
       ],
-      icon: [],
+      iconTV: [
+        'text-[#646465] group-hover/navFeature:text-[#6852D6]',
+        'transition-colors duration-300'
+      ],
       info: ['flex flex-col gap-1.5'],
       title: [
         'font-sans text-[16px] font-semibold leading-[17px] text-[#FAFAFF]',
@@ -34,12 +39,13 @@
       description: ['text-[14px] font-medium leading-[17px] text-[#FAFAFF] text-opacity-60']
     }
   });
-  const { base, iconWrap, icon, info, title, description } = navFeature();
+
+  const { base, iconWrap, iconTV, info, title, description } = navFeature();
 </script>
 
 <div class={base({ class: className })} {...$$restProps}>
   <div class={iconWrap({ class: iconWrapClassName })}>
-    <Icon icon={block.icon} class={icon({ class: iconClassName })} />
+    <Icon icon={block.icon} class={iconTV({ class: iconClassName })} />
   </div>
   <div class={info({ class: infoClassName })}>
     <h4 class={title({ class: titleClassName })}>

@@ -10,8 +10,8 @@
     base: [
       'absolute top-full left-0 [perspective:_2000px]',
       'w-full flex shadow-new-header-viewport overflow-hidden',
-      'bg-[#14131D] border border-[#FAFAFF] border-opacity-5 rounded-2xl',
-      'border-opacity-0 bg-opacity-0'
+      'bg-[#14131D] border border-[#FAFAFF] border-opacity-5 rounded-2xl'
+      // 'border-opacity-0 bg-opacity-0'
     ]
   });
 </script>
