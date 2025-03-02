@@ -1,6 +1,12 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
 import { StoryblokLink } from './cms';
 
+export interface standardLinkStoryblok {
+  cached_url?: string;
+  linktype?: string;
+  [k: string]: any;
+}
+
 export interface AssetStoryblok {
   alt?: string;
   copyright?: string;

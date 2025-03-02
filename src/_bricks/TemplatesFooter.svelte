@@ -5,7 +5,7 @@
   import Icon from '$components/icon/icon.svelte';
   import Link from '$components/buttons/link.svelte';
   import Divider from '$components/divider.svelte';
-  import { type TemplatesFooter } from '$api/header/getTemplatesFooter';
+  import { type TemplatesFooter } from '$src/_api/header/getTemplatesFooter';
 
   export let data: TemplatesFooter;
 </script>
