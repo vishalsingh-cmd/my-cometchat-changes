@@ -1,11 +1,14 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
+  import { getNewHeaderContext } from '../_context/newHader.context';
   import NavFeatureBigCards from '../_sectionbloks/NavFeatureBigCards.svelte';
   import NavFeatureCards from '../_sectionbloks/NavFeatureCards.svelte';
   import NavFeatureIcons from '../_sectionbloks/NavFeatureIcons.svelte';
   import NavFeatures from '../_sectionbloks/NavFeatures.svelte';
   import NavFeatureSideMenu from '../_sectionbloks/NavFeatureSideMenu.svelte';
   import type { NavPanelProps } from '../newHeader.types';
+
+  const { panelElems } = getNewHeaderContext();
 
   const blockMap: Record<string, any> = {
     'nav-feature-big-cards': NavFeatureBigCards,
@@ -20,11 +23,16 @@
   export let className = '';
 
   const navPanel = tv({
-    base: ['relative w-full h-full', 'flex flex-col py-6 gap-6']
+    base: ['relative w-max h-max', 'flex flex-col gap-6 pt-6 pb-8']
   });
 </script>
 
-<div class={navPanel({ class: className })} data-name="nav-panel" data-index={index}>
+<div
+  class={navPanel({ class: className })}
+  bind:this={$panelElems[`panel-${index}`]}
+  data-name="nav-panel"
+  data-index={index}
+>
   {#each sections as section}
     {#if blockMap[section.component]}
       <svelte:component this={blockMap[section.component]} block={section} {...$$restProps} />

@@ -124,7 +124,6 @@ export default {
       },
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,
-        // box-shadow: 0px 4px 20px 0px #14131D0F;
         'inner-soft': 'inset 0px 4px 20px 0px hsl(var(--color-gray-12) / 0.06)',
         'new-header-viewport':
           '0 10px 100px -20px rgba(50, 50, 93, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.3)'
@@ -155,7 +154,11 @@ export default {
         'slide-back-and-foward-smothly':
           'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running',
         'grow-comet-smothly': 'growCometSmothly 0.2s linear',
-        fadeIn: 'fadeIn 0.5s ease-in-out'
+        fadeIn: 'fadeIn 0.5s ease-in-out',
+        'navigationMenu-fadeIn': 'navigationMenu-fadeIn 300ms ease',
+        'navigationMenu-fadeOut': 'navigationMenu-fadeOut 300ms ease',
+        'navigationMenu-scaleIn': 'navigationMenu-scaleIn 300ms ease',
+        'navigationMenu-scaleOut': 'navigationMenu-scaleOut 300ms ease'
       },
       keyframes: {
         slideBackAndFoward: {
@@ -190,6 +193,24 @@ export default {
         fadeIn: {
           '0%': { opacity: '0%' },
           '100%': { opacity: '100%' }
+        },
+
+        // navigation
+        'navigationMenu-fadeIn': {
+          from: { opacity: 0 },
+          to: { opacity: 1 }
+        },
+        'navigationMenu-fadeOut': {
+          from: { opacity: 1 },
+          to: { opacity: 0 }
+        },
+        'navigationMenu-scaleIn': {
+          from: { transform: 'scale(0.9)', opacity: 0 },
+          to: { transform: 'scale(1)', opacity: 1 }
+        },
+        'navigationMenu-scaleOut': {
+          from: { transform: 'scale(1)', opacity: 1 },
+          to: { transform: 'scale(0.9)', opacity: 0 }
         }
       },
       spacing: {
@@ -208,13 +229,13 @@ export default {
 
           'a[href]': {
             position: 'static',
-            zIndex: 1
+            zIndex: '1'
           },
           'a.elevated-link:before': {
             content: '""',
             position: 'absolute',
-            top: 0,
-            left: 0,
+            top: '0',
+            left: '0',
             width: '100%',
             height: '100%'
           }

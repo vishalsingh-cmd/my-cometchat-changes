@@ -6,11 +6,14 @@
   import NavItems from './_comps/NavItems.svelte';
   import type { ISbStoryData } from '@storyblok/js';
   import type { NewHeaderStoryblok } from './newHeader.types';
+  import { createNewHeaderContext } from './_context/newHader.context';
 
   export let block: ISbStoryData<NewHeaderStoryblok>;
+  const { headerElem, navElem } = createNewHeaderContext();
 </script>
 
 <header
+  bind:this={$headerElem}
   class={cn([
     'relative z-50 box-border',
     'border-b border-b-[#22212C] border-opacity-0 bg-[#0A0914] bg-opacity-0',
@@ -19,7 +22,7 @@
   ])}
 >
   <Container pyEnabled={false}>
-    <nav class={cn(['flex items-center justify-between'])}>
+    <nav class={cn(['flex items-center justify-between'])} bind:this={$navElem}>
       <Logo />
       <NavItems navItems={block.content.items} />
       <NavCtas />
