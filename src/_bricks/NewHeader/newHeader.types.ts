@@ -28,7 +28,7 @@ export interface NavFeatureBigCardsProps {
 export interface NavFeatureCardProps {
   title: string;
   description: string;
-  icon: AssetStoryblok;
+  icon: string;
   link: standardLinkStoryblok;
 
   component: 'nav-feature-card';
@@ -47,7 +47,7 @@ export interface NavFeatureCardsProps {
 /* ---------------------------- nav-feature-icons --------------------------- */
 export interface NavFeatureIconProps {
   title: string;
-  icon: AssetStoryblok;
+  icon: string;
   link: standardLinkStoryblok;
 
   component: 'nav-feature-icon';
@@ -67,7 +67,7 @@ export interface NavFeatureIconsProps {
 export interface NavFeatureProps {
   title: string;
   description: string;
-  icon: AssetStoryblok;
+  icon: string;
   link: standardLinkStoryblok;
 
   component: 'nav-feature';
@@ -76,7 +76,7 @@ export interface NavFeatureProps {
 
 export interface NavFeaturesProps {
   title: string;
-  columns: 'auto' | 1 | 2 | 3;
+  columns: 'auto' | '1' | '2' | '3';
   features: NavFeatureProps[];
 
   component: 'nav-features';
