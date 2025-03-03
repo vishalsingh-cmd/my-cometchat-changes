@@ -2,12 +2,12 @@
   import { browser } from '$app/environment';
   import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
   import '../../app.css';
-  import Topnav from '$components/topnav/topnav.svelte';
   import Footer from '$components/footer.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
   import { Toaster } from 'svelte-french-toast';
-  import TemplatesHeader from '$bricks/TemplatesHeader.svelte';
-  import TemplatesFooter from '$bricks/TemplatesFooter.svelte';
+  import TemplatesHeader from '$src/_bricks/TemplatesHeader.svelte';
+  import TemplatesFooter from '$src/_bricks/TemplatesFooter.svelte';
+  import NewHeader from '$src/_bricks/NewHeader/NewHeader.svelte';
 
   export let data;
 
@@ -37,8 +37,8 @@
 
 <QueryClientProvider client={queryClient}>
   <!-- ------------------------------- header -------------------------------- -->
-  {#if data.topnav}
-    <Topnav data={data.topnav.content} />
+  {#if data.newHeader}
+    <NewHeader block={data.newHeader} />
   {/if}
 
   {#if data.templatesHeaderData}
