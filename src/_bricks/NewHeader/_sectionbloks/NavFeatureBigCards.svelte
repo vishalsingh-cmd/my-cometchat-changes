@@ -38,7 +38,7 @@
     href={href || '#'}
     target="_blank"
     variant="highlighted"
-    class={'block px-5 xl:hidden'}
+    class={'mx-5 block w-max xl:hidden'}
   >
     See All
   </GhostButton>

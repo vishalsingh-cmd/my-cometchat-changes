@@ -1,14 +1,18 @@
 <script lang="ts">
-  import { tv } from '$src/_utils/tailwind.utils';
+  import { cn, tv } from '$src/_utils/tailwind.utils';
+  import Icon from '$src/components/icon/icon.svelte';
   import NavFeatureBigCards from '../_sectionbloks/NavFeatureBigCards.svelte';
   import NavFeatureCards from '../_sectionbloks/NavFeatureCards.svelte';
   import NavFeatureIcons from '../_sectionbloks/NavFeatureIcons.svelte';
   import NavFeatures from '../_sectionbloks/NavFeatures.svelte';
   import type { NavFeatureSideMenuItemProps } from '../newHeader.types';
+  import NavFeatureSideMenuTrigger from './NavFeatureSideMenuTrigger.svelte';
 
   export let index: number;
+  export let isActive: boolean;
   export let block: NavFeatureSideMenuItemProps;
   export let className = '';
+  export let toggleItem: (index: number) => void;
 
   const blockMap: Record<string, any> = {
     'nav-feature-big-cards': NavFeatureBigCards,
@@ -18,23 +22,49 @@
   };
 
   const navFeatureSideMenuCnt = tv({
-    base: ['flex', 'data-[state="inactive"]:hidden data-[state="active"]:grid']
+    slots: {
+      base: ['group/navFeatureSideMenuCnt', 'flex flex-col'],
+      cnt: [
+        'hidden flex-col gap-8 py-6 bg-[#14131D]',
+        'group-data-[state="active"]/navFeatureSideMenuCnt:flex',
+        'group-data-[state="active"]/navFeatureSideMenuCnt:animate-navigationMenu-fadeIn'
+      ]
+    }
   });
+
+  const { base, cnt } = navFeatureSideMenuCnt();
 </script>
 
 <div
-  class={navFeatureSideMenuCnt({ class: className })}
-  data-index={index}
-  data-state={index === 0 ? 'active' : 'inactive'}
+  class={base({ class: className })}
+  data-name="navFeatureSideMenuCnt"
+  data-state={isActive ? 'active' : 'inactive'}
 >
-  {#each block.content as content}
-    {#if blockMap[content.component]}
-      <svelte:component
-        this={blockMap[content.component]}
-        className="last-of-type:border-l last-of-type:border-l-[#FAFAFF0F] flex-[0.5]"
-        block={content}
-        {...$$restProps}
-      />
-    {/if}
-  {/each}
+  <NavFeatureSideMenuTrigger {isActive} on:click={() => toggleItem(index)}>
+    {block.title}
+    <Icon
+      icon="chevron-down"
+      class={cn([
+        '-rotate-90 transition-transform duration-300',
+        'group-data-[state="active"]/navFeatureSideMenuCnt:rotate-0'
+      ])}
+      size="xs"
+    />
+  </NavFeatureSideMenuTrigger>
+
+  <div class={cnt()}>
+    {#each block.content as content}
+      {#if blockMap[content.component]}
+        <svelte:component
+          this={blockMap[content.component]}
+          className="last-of-type:border-l last-of-type:border-l-[#FAFAFF0F] flex-[0.5]"
+          block={content}
+          {...$$restProps}
+        />
+      {/if}
+    {/each}
+  </div>
+  <div
+    class="mx-auto h-[1px] w-[calc(100%_-_48px)] bg-[#14131D] group-last-of-type/navFeatureSideMenuCnt:bg-transparent"
+  />
 </div>

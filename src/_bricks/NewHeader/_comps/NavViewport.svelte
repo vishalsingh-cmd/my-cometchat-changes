@@ -3,6 +3,7 @@
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
   import { getNewHeaderContext } from '../_context/newHader.context';
   import NavPanel from '../_innerComps/NavPanel.svelte';
+  import { WINDOW_BREEAKPOINTS } from '$src/_consts/breakpoints.const';
 
   export let navItems: Array<NavItemProps | NavLinkProps>;
   export const className = '';
@@ -30,11 +31,15 @@
   });
 
   const handleMouseEnter = () => {
-    actions.cancelHidePanel();
+    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
+      actions.cancelHidePanel();
+    }
   };
 
   const handleMouseLeave = () => {
-    actions.scheduleHidePanel();
+    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
+      actions.scheduleHidePanel();
+    }
   };
 </script>
 

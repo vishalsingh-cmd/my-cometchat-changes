@@ -31,7 +31,7 @@
   </div>
 
   {@const { href } = getAnchorFromCmsLink(block.ctas[0].link)}
-  <GhostButton as="a" href={href || '#'} target="_blank" class="mt-6">
+  <GhostButton as="a" href={href || '#'} target="_blank" variant="highlighted" class="w-max">
     {block.ctas[0].label}
   </GhostButton>
 </NavSection>

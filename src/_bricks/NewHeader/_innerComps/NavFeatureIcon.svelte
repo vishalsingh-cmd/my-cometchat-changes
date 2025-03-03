@@ -8,7 +8,7 @@
   export let block: NavFeatureIconProps;
 
   const navFeatureIcon = tv({
-    base: ['group/navFeatureIcon']
+    base: ['group/navFeatureIcon', 'flex items-center justify-center']
   });
 
   const { href } = getAnchorFromCmsLink(block.link);

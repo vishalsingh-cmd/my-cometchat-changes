@@ -13,26 +13,34 @@
 
   const navFeatureSideMenu = tv({
     slots: {
-      base: ['grid grid-cols-[auto_1fr]'],
-      sidebar: ['flex flex-col bg-[#14131D] pl-2'],
+      base: ['grid grid-cols-1fr'],
+      sidebar: ['flex flex-col bg-[#14131D]', 'hidden'],
       contents: ['flex flex-col']
     }
   });
 
   const { base, sidebar, contents } = navFeatureSideMenu();
+
+  let activeIndex: number | null = 0;
+  const toggleItem = (index: number) => {
+    activeIndex = activeIndex === index ? null : index;
+  };
 </script>
 
 <NavSection className={base({ class: className })}>
   <div class={sidebar({ class: sidebarClassName })}>
     {#each block.items as item, index}
-      <NavFeatureSideMenuTrigger {index}>
+      <NavFeatureSideMenuTrigger
+        isActive={activeIndex === index}
+        on:click={() => toggleItem(index)}
+      >
         {item.title}
       </NavFeatureSideMenuTrigger>
     {/each}
   </div>
   <div class={contents({ class: contentsClassName })}>
     {#each block.items as item, index}
-      <NavFeatureSideMenuCnt block={item} {index} />
+      <NavFeatureSideMenuCnt block={item} {index} isActive={activeIndex === index} {toggleItem} />
     {/each}
   </div>
 </NavSection>

@@ -14,13 +14,16 @@
   });
 
   const features = tv({
-    base: ['grid grid-cols gap-x-6 gap-y-8'],
+    base: [
+      'grid grid-cols-1 gap-x-6 gap-y-8',
+      'sm:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]'
+    ],
     variants: {
       columns: {
-        auto: ['lg:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]'],
-        '1': ['lg:grid-cols-1'],
-        '2': ['lg:grid-cols-2'],
-        '3': ['lg:grid-cols-3']
+        auto: ['xl:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]'],
+        '1': ['xl:grid-cols-1'],
+        '2': ['xl:grid-cols-2'],
+        '3': ['xl:grid-cols-3']
       }
     },
     defaultVariants: {
