@@ -7,6 +7,7 @@
   import NavFeatures from '../_sectionbloks/NavFeatures.svelte';
   import NavFeatureSideMenu from '../_sectionbloks/NavFeatureSideMenu.svelte';
   import type { NavPanelProps } from '../newHeader.types';
+  import NavPanelBackBtn from './NavPanelBackBtn.svelte';
 
   const { panelElems } = getNewHeaderContext();
 
@@ -23,7 +24,10 @@
   export let className = '';
 
   const navPanel = tv({
-    base: ['relative w-max h-max', 'flex flex-col gap-6 pt-6 pb-8']
+    base: [
+      'flex flex-col gap-6 pb-8'
+      // 'relative w-full h-full', 'pt-6 pb-8'
+    ]
   });
 </script>
 
@@ -33,6 +37,7 @@
   data-name="nav-panel"
   data-index={index}
 >
+  <NavPanelBackBtn {index} />
   {#each sections as section}
     {#if blockMap[section.component]}
       <svelte:component this={blockMap[section.component]} block={section} {...$$restProps} />

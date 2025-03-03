@@ -4,7 +4,7 @@
   export let className = '';
 
   const logo = tv({
-    base: []
+    base: ['z-[1]']
   });
 </script>
 

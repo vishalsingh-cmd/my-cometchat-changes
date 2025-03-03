@@ -1,5 +1,6 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
+  import Icon from '$src/components/icon/icon.svelte';
   import { getNewHeaderContext } from '../_context/newHader.context';
 
   const { triggerElems, actions } = getNewHeaderContext();
@@ -9,10 +10,11 @@
 
   const navTrigger = tv({
     base: [
-      'relative',
-      'font-sans font-semibold text-[#FFFFFF] text-[14px] leading-[2px] whitespace-nowrap',
-      'flex items-center gap-1 py-6',
-      'transition-colors duration-200',
+      'relative w-full py-6',
+      'flex items-center justify-between gap-1',
+      'font-sans font-semibold text-[#FFFFFF] text-[14px] whitespace-nowrap',
+      'border-b border-b-[#FAFAFF] border-opacity-5',
+      'transition-colors duration-300',
       'group-hover/navitem:text-[#8C7CE0]'
     ]
   });
@@ -35,4 +37,6 @@
   on:mouseleave={handleMouseLeave}
 >
   <slot />
+
+  <Icon icon="chevron-right" size="xs" />
 </button>

@@ -11,6 +11,7 @@ export type PenelElemsObject = {
 };
 
 interface NewHeaderContext {
+  isNavExpanded: Writable<boolean>;
   headerElem: Writable<HTMLElement | null>;
   viewportElem: Writable<HTMLDivElement | null>;
   navElem: Writable<HTMLElement | null>;
@@ -28,6 +29,7 @@ interface NewHeaderContext {
 const NEW_HEADER_CONTEXT_KEY = 'new-header';
 
 export function createNewHeaderContext(): NewHeaderContext {
+  const isNavExpanded = writable<boolean>(false);
   const headerElem = writable<HTMLElement | null>(null);
   const viewportElem = writable<HTMLDivElement | null>(null);
   const navElem = writable<HTMLElement | null>(null);
@@ -101,6 +103,7 @@ export function createNewHeaderContext(): NewHeaderContext {
   };
 
   const context: NewHeaderContext = {
+    isNavExpanded,
     headerElem,
     viewportElem,
     navElem,

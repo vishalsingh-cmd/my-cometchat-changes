@@ -12,13 +12,15 @@
 
   const navViewport = tv({
     base: [
-      'absolute top-full left-0 [perspective:_2000px]',
-      'w-full flex shadow-new-header-viewport overflow-hidden',
-      'bg-[#14131D] border border-[#FAFAFF] border-opacity-5 rounded-2xl',
-      'h-[var(--viewport-height,0px)] w-max origin-[top_center]',
-      'scale-95 opacity-0',
-      'data-[state="active"]:scale-100 data-[state="active"]:opacity-100',
-      'transition-[width,height,opacity,transform] duration-300'
+      'absolute inset-0 z-[1] [perspective:_2000px] overflow-y-auto',
+      'pt-[60px] bg-[#0A0914]',
+      'transition-[width,height,opacity,transform] duration-300',
+      'translate-x-full scale-95 opacity-0',
+      'data-[state="active"]:scale-100 data-[state="active"]:opacity-100 data-[state="active"]:translate-x-0'
+
+      // 'w-full flex shadow-new-header-viewport overflow-hidden',
+      // 'border border-[#FAFAFF] border-opacity-5 rounded-2xl',
+      // 'h-[var(--viewport-height,0px)] w-max origin-[top_center]',
     ]
   });
 
