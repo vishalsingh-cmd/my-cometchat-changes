@@ -35,7 +35,7 @@
   bind:this={$navElem}
 >
   <div class={cn(['flex flex-col'], ['xl:relative xl:isolate xl:w-full'])}>
-    <ul class={cn(['flex flex-col'], ['xl:w-full xl:flex-row xl:justify-center xl:gap-8 xl:px-5'])}>
+    <ul class={cn(['flex flex-col'], ['xl:w-full xl:flex-row xl:justify-center xl:gap-5 xl:px-5'])}>
       {#each navItems as navItem, index}
         <NavItem>
           {#if navItem.component === 'nav-item'}
