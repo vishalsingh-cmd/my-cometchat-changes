@@ -15,7 +15,7 @@
 <header
   bind:this={$headerElem}
   class={cn([
-    'fixed left-0 right-0 top-0 z-50',
+    'fixed left-0 right-0 top-0 z-[99999]',
     'border-b border-b-[#22212C] border-opacity-0 bg-[#0A0914] bg-opacity-0',
     'transition-colors duration-300',
     'hover:border-opacity-100 hover:bg-opacity-100'

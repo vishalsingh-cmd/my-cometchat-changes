@@ -25,7 +25,7 @@
 
   const navPanel = tv({
     base: [
-      'flex flex-col gap-6',
+      'flex flex-col gap-8',
       'flex-none w-max max-w-full overflow-x-clip',
       'hidden data-[state="active"]:flex',
 

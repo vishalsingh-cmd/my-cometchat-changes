@@ -4,7 +4,12 @@
 
   export let className = '';
   const navCtas = tv({
-    base: ['flex items-center justify-center gap-4', 'mt-auto py-6', 'xl:py-[unset] xl:mt-[unset]']
+    base: [
+      '-z-[1]',
+      'flex items-center justify-center gap-4',
+      'mt-auto py-6',
+      'xl:py-[unset] xl:mt-[unset]'
+    ]
   });
 </script>
 
