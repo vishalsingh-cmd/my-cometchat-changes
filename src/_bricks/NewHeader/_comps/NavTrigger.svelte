@@ -45,5 +45,5 @@
 >
   <slot />
 
-  <Icon class="xl:rotate-90" icon="chevron-right" size="xs" />
+  <Icon class="xl:hidden xl:rotate-90" icon="chevron-right" size="xs" />
 </button>

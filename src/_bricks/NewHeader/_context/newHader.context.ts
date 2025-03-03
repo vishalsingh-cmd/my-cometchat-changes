@@ -15,6 +15,8 @@ interface NewHeaderContext {
   isNavExpanded: Writable<boolean>;
   headerElem: Writable<HTMLElement | null>;
   viewportElem: Writable<HTMLDivElement | null>;
+  navActiveShadowElem: Writable<HTMLDivElement | null>;
+
   navElem: Writable<HTMLElement | null>;
   triggerElems: Writable<TriggerElemsObject>;
   panelElems: Writable<PenelElemsObject>;
@@ -35,6 +37,8 @@ export function createNewHeaderContext(): NewHeaderContext {
   const isNavExpanded = writable<boolean>(false);
   const headerElem = writable<HTMLElement | null>(null);
   const viewportElem = writable<HTMLDivElement | null>(null);
+  const navActiveShadowElem = writable<HTMLDivElement | null>(null);
+
   const navElem = writable<HTMLElement | null>(null);
   const triggerElems = writable<TriggerElemsObject>({});
   const panelElems = writable<PenelElemsObject>({});
@@ -47,10 +51,17 @@ export function createNewHeaderContext(): NewHeaderContext {
   /* --------------------------------- helpers -------------------------------- */
   const getElements = (index: number) => {
     const viewport = get(viewportElem);
+    const navActiveShadow = get(navActiveShadowElem);
     const trigger = get(triggerElems)[`trigger-${index}`];
     const panel = get(panelElems)[`panel-${index}`];
 
-    return { viewport, trigger, panel };
+    return { viewport, trigger, panel, navActiveShadow };
+  };
+
+  const setTriggerPos = (trigger: HTMLButtonElement) => {
+    const header = get(headerElem);
+    if (!header) return;
+    header.setAttribute('style', `--active-trigger-left: ${trigger.offsetLeft}px`);
   };
 
   /* --------------------------------- actions -------------------------------- */
@@ -60,12 +71,15 @@ export function createNewHeaderContext(): NewHeaderContext {
         clearTimeout(hideTimeout);
         hideTimeout = null;
       }
-      const { viewport, panel } = getElements(index);
-      if (!viewport || !panel) return;
+      const { viewport, panel, trigger, navActiveShadow } = getElements(index);
+      if (!viewport || !panel || !navActiveShadow) return;
+      setTriggerPos(trigger);
 
       if (prevPanel) {
         prevPanel.setAttribute('data-state', 'inactive');
       }
+
+      navActiveShadow.setAttribute('data-state', 'active');
       panel.setAttribute('data-state', 'active');
       viewport.setAttribute('data-state', 'active');
       prevPanel = panel;
@@ -73,8 +87,10 @@ export function createNewHeaderContext(): NewHeaderContext {
 
     hidePanel: () => {
       const viewport = get(viewportElem);
-      if (!viewport) return;
+      const navActiveShadow = get(navActiveShadowElem);
+      if (!viewport || !navActiveShadow) return;
 
+      navActiveShadow.setAttribute('data-state', 'inactive');
       viewport.setAttribute('data-state', 'inactive');
     },
 
@@ -116,6 +132,8 @@ export function createNewHeaderContext(): NewHeaderContext {
     isNavExpanded,
     headerElem,
     viewportElem,
+    navActiveShadowElem,
+
     navElem,
     triggerElems,
     panelElems,

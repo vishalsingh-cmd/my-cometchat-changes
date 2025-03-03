@@ -9,6 +9,7 @@
   import NavLink from './NavLink.svelte';
   import NavCtas from './NavCtas.svelte';
   import { getNewHeaderContext } from '../_context/newHader.context';
+  import NavActiveShadow from './NavActiveShadow.svelte';
 
   const { navElem, isNavExpanded } = getNewHeaderContext();
   export let navItems: Array<NavItemProps | NavLinkProps>;
@@ -28,14 +29,19 @@
     ],
     [
       'xl:relative xl:z-[1] xl:h-auto xl:flex-row xl:px-[unset] xl:pt-[unset]',
-      'xl:translate-y-0 xl:scale-100 xl:opacity-100 xl:[overflow:_unset]'
+      'xl:translate-y-0 xl:scale-100 xl:bg-transparent xl:opacity-100 xl:[overflow:_unset]'
     ]
   )}
   data-state={$isNavExpanded ? 'active' : 'inactive'}
   bind:this={$navElem}
 >
   <div class={cn(['flex flex-col'], ['xl:relative xl:isolate xl:w-full'])}>
-    <ul class={cn(['flex flex-col'], ['xl:w-full xl:flex-row xl:justify-center xl:gap-5 xl:px-5'])}>
+    <ul
+      class={cn(
+        ['flex flex-col'],
+        ['xl:relative xl:w-full xl:px-5', 'xl:flex-row xl:justify-center xl:gap-6']
+      )}
+    >
       {#each navItems as navItem, index}
         <NavItem>
           {#if navItem.component === 'nav-item'}
@@ -56,6 +62,7 @@
           {/if}
         </NavItem>
       {/each}
+      <NavActiveShadow />
     </ul>
 
     <NavViewport {navItems} />
