@@ -10,7 +10,7 @@
   class={cn(
     [
       'group/chipCard',
-      'relative isolate h-[60px] w-[168px]',
+      'relative isolate h-[60px]',
       'flex items-center justify-center',
       'rounded-xl border border-[#2B2B34] bg-[#14131D]',
       'hover:border-[#3F337A]',
@@ -21,6 +21,7 @@
     [className]
   )}
   {href}
+  target="_blank"
 >
   <svelte:component this={icon} className="w-[80%]" />
 

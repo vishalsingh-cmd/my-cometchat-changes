@@ -1,10 +1,11 @@
 <script lang="ts">
-  import { tv } from '$src/_utils/tailwind.utils';
+  import { cn, tv } from '$src/_utils/tailwind.utils';
   import type { TemplatesPlatformSectionStoryblok } from '$types/bloks';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  import SectionInfo from './SectionInfo.svelte';
   import TemplatesProductDisplayItem from './TemplatesProductDisplayItem.svelte';
+  import TemplatesHeading from '../_comps/TemplatesHeading.svelte';
+  import TemplatesParah from '../_comps/TemplatesParah.svelte';
 
   export let block: TemplatesPlatformSectionStoryblok;
 
@@ -35,7 +36,20 @@
       expand="full"
       className="flex flex-col gap-8 py-10"
     >
-      <SectionInfo block={block.info[0]} />
+      <div class={cn(['flex flex-wrap justify-between gap-2'])}>
+        <div class="flex flex-col gap-1">
+          <TemplatesHeading tag="h2" size="h2" weight="700">
+            {block.title}
+          </TemplatesHeading>
+
+          {#if block.description}
+            <TemplatesParah tag="p" size="medium" weight="400">
+              {block.description}
+            </TemplatesParah>
+          {/if}
+        </div>
+      </div>
+
       <div class={productsColumns()}>
         {#each block.products as productBlock}
           <TemplatesProductDisplayItem block={productBlock} />

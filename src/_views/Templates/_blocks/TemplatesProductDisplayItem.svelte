@@ -18,10 +18,10 @@
   </div>
   <div class="flex flex-col gap-1">
     <TemplatesHeading tag="h2" size="h4" weight="500">
-      {block.title[0].value}
+      {block.title}
     </TemplatesHeading>
     <TemplatesParah tag="p">
-      {block.description[0].value}
+      {block.description}
     </TemplatesParah>
   </div>
 </div>

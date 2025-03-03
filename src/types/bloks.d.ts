@@ -2242,9 +2242,10 @@ export interface ConnectedStepStoryblok {
 }
 
 export interface ConnectedStepsStoryblok {
-  info: TemplatesSectionInfoStoryblok[];
+  title: string;
+  description: string;
   steps: ConnectedStepStoryblok[];
-  description: RichtextStoryblok;
+  richDescription: RichtextStoryblok;
 
   _uid: string;
   component: 'connected-steps';
@@ -2424,7 +2425,8 @@ export interface SecureStoryblok {
   _uid: string;
   component: 'home__secure';
   [k: string]: any;
-  tag_name: string;
+
+  tagline: string;
   title: string;
   description: string;
   secure_network: SecureNetworkStoryblok;
@@ -2546,8 +2548,8 @@ export interface simple_assetStoryblok {
 
 // comps
 export interface TemplatesSectionInfoStoryblok {
-  heading: TemplatesHeadingStoryblok[];
-  description: TemplatesParahStoryblok[];
+  title: string;
+  description: string;
   cta: ButtonLinkStoryblok[];
 
   _uid: string;
@@ -2557,8 +2559,8 @@ export interface TemplatesSectionInfoStoryblok {
 
 export interface TemplatesProductDisplayItemStoryblok {
   media: AssetStoryblok;
-  title: TemplatesHeadingStoryblok[];
-  description: TemplatesParahStoryblok;
+  title: string;
+  description: string;
 
   _uid: string;
   component: 'templates_product_display_item';
@@ -2566,7 +2568,8 @@ export interface TemplatesProductDisplayItemStoryblok {
 }
 
 export interface TemplatesPlatformSectionStoryblok {
-  info: TemplatesSectionInfoStoryblok[];
+  title: string;
+  description: string;
   productsColumns: '1' | '2' | '3' | '4' | '5' | 'auto';
   products: TemplatesProductDisplayItemStoryblok[];
   _uid: string;
@@ -2606,7 +2609,8 @@ export interface TemplatesSidebarItemStoryblok {
 }
 
 export interface RelatedTemplatesStoryblok {
-  info: TemplatesSectionInfoStoryblok[];
+  title: string;
+  description: string;
   templates: string[];
 
   _uid: string;

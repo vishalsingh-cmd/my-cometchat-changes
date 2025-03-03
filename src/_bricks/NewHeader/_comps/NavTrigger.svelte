@@ -1,21 +1,49 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
+  import Icon from '$src/components/icon/icon.svelte';
+  import { getNewHeaderContext } from '../_context/newHader.context';
+
+  const { triggerElems, actions } = getNewHeaderContext();
+
+  export let index: number;
+  export let className = '';
 
   const navTrigger = tv({
     base: [
-      'relative',
-      'font-sans font-semibold text-[#FFFFFF] text-[14px] leading-[2px] whitespace-nowrap',
-      'flex items-center gap-1 py-2',
-      'transition-colors duration-200',
-      'group-hover/navitem:text-[#8C7CE0]'
+      'relative w-full py-6 px-2',
+      'flex items-center justify-between gap-1',
+      'font-sans font-semibold text-[#FFFFFF] text-[14px] whitespace-nowrap',
+      'border-b border-b-[#FAFAFF] border-opacity-5',
+      'transition-colors duration-300',
+      'group-hover/navitem:text-[#8C7CE0]',
+
+      'xl:border-none'
     ]
   });
 
-  export let className = '';
-  export let id = '';
-  export let as: 'button' | 'a' = 'a';
+  const handleOnClick = () => {
+    actions.showPanel(index);
+  };
+
+  const handleMouseEnter = () => {
+    actions.showPanel(index);
+  };
+
+  const handleMouseLeave = () => {
+    actions.scheduleHidePanel();
+  };
 </script>
 
-<svelte:element this={as} {id} class={navTrigger({ class: className })} {...$$restProps}>
+<button
+  class={navTrigger({ class: className })}
+  data-name="nav-trigger"
+  data-index={index}
+  bind:this={$triggerElems[`trigger-${index}`]}
+  on:mouseenter={handleMouseEnter}
+  on:mouseleave={handleMouseLeave}
+  on:click={handleOnClick}
+>
   <slot />
-</svelte:element>
+
+  <Icon class="xl:hidden xl:rotate-90" icon="chevron-right" size="xs" />
+</button>

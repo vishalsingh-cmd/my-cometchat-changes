@@ -19,6 +19,7 @@
       trigger: containerElem,
       start: 'top center',
       onEnter: () => {
+        containerElem.setAttribute('data-anim', 'active');
         setActiveIndex(0);
         startAnimation();
       }
@@ -51,7 +52,10 @@
   export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
-<div class={cn(['flex flex-col gap-10'], ['lg:gap-8'])} bind:this={containerElem}>
+<div
+  class={cn(['group/containerElem', 'flex flex-col gap-10'], ['lg:gap-8'])}
+  bind:this={containerElem}
+>
   {#each industryPointBlocks as industryPointBlock, index}
     <IndustryRollerItem
       {index}

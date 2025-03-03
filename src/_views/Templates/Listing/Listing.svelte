@@ -9,6 +9,8 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import ListingCardSkeleton from './_comps/ListingCardSkeleton.svelte';
+  import TemplateErrorPage from './_comps/TemplateErrorPage.svelte';
+  import TemplateNoData from './_comps/TemplateNoData.svelte';
 
   export let block: templates_listingStoryblok;
   const { templates, actions } = createTemplatesContext({
@@ -26,15 +28,19 @@
     pyEnabled={false}
     pxEnabled={false}
     expand="full"
-    className={cn(['flex flex-col gap-5 py-10'])}
+    className={cn(['flex flex-col gap-5 py-10 overflow-x-clip'])}
   >
-    <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
-      {#if $templates.isLoading}
+    {#if $templates.isLoading}
+      <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
         <ListingCardSkeleton />
         <ListingCardSkeleton />
         <ListingCardSkeleton />
         <ListingCardSkeleton />
-      {:else if $templates.data}
+      </div>
+    {:else if $templates.error}
+      <TemplateErrorPage />
+    {:else if $templates.data && $templates.data.stories && $templates.data.stories.length > 0}
+      <div class={cn(['grid grid-cols-1 gap-5'], ['lg:grid-cols-2 lg:gap-8'])}>
         {#each $templates.data.stories as story}
           {#if story && story.content.seo[0] && story.content.seo[0].og_image && story.name}
             {@const storyLink = sanitizeSlug(story.full_slug)}
@@ -45,7 +51,10 @@
             />
           {/if}
         {/each}
-      {/if}
-    </div>
+      </div>
+    {:else}
+      <!-- If data is defined but there are no stories -->
+      <TemplateNoData />
+    {/if}
   </Container>
 </Section>

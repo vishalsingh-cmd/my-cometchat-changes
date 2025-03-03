@@ -9,12 +9,12 @@
   export let featuresClassName = '';
   export let block: NavFeaturesProps;
 
-  const navFeature = tv({
-    base: ['px-6 py-6 flex flex-col gap-6']
+  const navFeatures = tv({
+    base: ['flex flex-col gap-6', 'px-6']
   });
 
   const features = tv({
-    base: ['grid grid-cols'],
+    base: ['grid grid-cols gap-x-6 gap-y-8'],
     variants: {
       columns: {
         auto: ['lg:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]'],
@@ -29,7 +29,7 @@
   });
 </script>
 
-<NavSection className={navFeature({ class: className })}>
+<NavSection className={navFeatures({ class: className })}>
   {#if block.title}
     <NavTitle>{block.title}</NavTitle>
   {/if}

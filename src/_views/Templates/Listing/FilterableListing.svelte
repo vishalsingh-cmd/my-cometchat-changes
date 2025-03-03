@@ -38,6 +38,7 @@
       <ListingToggleBtn className="hidden lg:flex z-10" />
       <ListingInputSearch className="z-10" />
     </div>
+
     <div
       class={cn(
         ['grid grid-cols-1 gap-6'],

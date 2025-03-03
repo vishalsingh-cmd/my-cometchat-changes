@@ -1,14 +1,11 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { cn } from '$lib/utils';
-  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { getAnchorFromCmsLink, sanitizeSlug } from '$src/lib/storyblok';
   import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
   export let className = '';
 
   const links: TemplatesSidebarItemStoryblok[] = $page.data.templatesMenu;
-
-  const urls = $page.url.pathname.split('/');
-
   function handleChange(event: any) {
     const selectedOption = links.find((link) => link.slug.url === event.target.value);
     if (selectedOption && selectedOption.slug.url) {
@@ -56,9 +53,14 @@
   <div class={cn(['flex flex-col'], ['hidden lg:flex'])}>
     {#each links as link}
       {@const { href } = getAnchorFromCmsLink(link.slug)}
-      {@const currentLink = href?.split('/').pop()}
+      {@const sanitizedLink = sanitizeSlug(href || '')}
+      {@const sanitizedSlug = sanitizeSlug($page.data.page.full_slug)}
+      {@const currentSection = sanitizedSlug.replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const linkSection = sanitizedLink.replace(/^\/|\/$/g, '').split('/')[1]}
+      {@const isActive = currentSection === linkSection}
+
       <a
-        {href}
+        href={sanitizedLink}
         class={cn(
           [
             'grid grid-cols-[auto_1fr] items-center gap-4',
@@ -75,9 +77,7 @@
             'data-[iscurrentpage="active"]:opacity-100'
           ]
         )}
-        data-iscurrentpage={urls.findIndex((url) => url === currentLink) !== -1
-          ? 'active'
-          : 'inactive'}
+        data-iscurrentpage={isActive ? 'active' : 'inactive'}
       >
         <img src={link.icon.filename} alt={link.title} />
         <span>{link.title}</span>
