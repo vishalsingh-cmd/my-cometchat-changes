@@ -1,9 +1,9 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
-  import NavPanel from '../_innerComps/NavPanel.svelte';
   import { getNewHeaderContext } from '../_context/newHader.context';
   import { get } from 'svelte/store';
+  import NavPanel from '../_innerComps/NavPanel.svelte';
 
   export let navItems: Array<NavItemProps | NavLinkProps>;
   export const className = '';
