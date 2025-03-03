@@ -24,7 +24,7 @@
   <NavTitle className="px-5">{block.title}</NavTitle>
 
   <div class={cards({ class: cardsClassName })} data-scrollbar="hide">
-    <div class="w-5" />
+    <div class="w-1" />
     {#each block.cards as card}
       <NavFeatureBigCard block={card} />
     {/each}

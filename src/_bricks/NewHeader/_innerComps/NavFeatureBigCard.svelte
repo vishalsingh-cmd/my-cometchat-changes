@@ -13,7 +13,7 @@
     slots: {
       base: [
         'grid grid-rows-[auto_1fr]',
-        'group/navFeatureBigCard min-w-[210px] w-full',
+        'group/navFeatureBigCard w-[210px] flex-shrink-0',
         'border border-[#FAFAFF] border-opacity-5 rounded-md',
         'hover:border-[#6852D666]',
         'transition-colors duration-300'

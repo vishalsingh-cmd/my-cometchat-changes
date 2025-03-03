@@ -28,21 +28,18 @@
       '-translate-y-full data-[state="active"]:translate-y-0',
       'scale-95 data-[state="active"]:scale-100',
       'opacity-0 data-[state="active"]:opacity-100'
+    ],
+    [
+      'xl:relative xl:z-[1] xl:h-auto xl:flex-row xl:px-[unset] xl:pt-[unset]',
+      'xl:translate-y-0 xl:scale-100 xl:bg-transparent xl:opacity-100 xl:[overflow:_unset]'
     ]
-    // [
-    //   'xl:relative xl:z-[1] xl:h-auto xl:flex-row xl:px-[unset] xl:pt-[unset]',
-    //   'xl:translate-y-0 xl:scale-100 xl:bg-transparent xl:opacity-100 xl:[overflow:_unset]'
-    // ]
   )}
   data-state={$isNavExpanded ? 'active' : 'inactive'}
   bind:this={$navElem}
 >
-  <div class={cn(['flex flex-col'], ['xl:relative xl:isolate xl:w-full'])}>
+  <div class={cn(['flex flex-col'], ['xl:relative xl:mx-auto xl:w-max'])}>
     <ul
-      class={cn(
-        ['flex flex-col'],
-        ['xl:relative xl:w-full xl:px-5', 'xl:flex-row xl:justify-center xl:gap-6']
-      )}
+      class={cn(['flex flex-col'], ['xl:w-full xl:px-5', 'xl:flex-row xl:justify-center xl:gap-6'])}
     >
       {#each navItems as navItem, index}
         <NavItem>
