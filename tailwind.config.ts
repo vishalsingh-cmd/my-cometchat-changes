@@ -113,6 +113,7 @@ export default {
       widest: '0.02em'
     },
     extend: {
+      overflow: ['unset'],
       backgroundImage: {
         'divider-gradient':
           'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',

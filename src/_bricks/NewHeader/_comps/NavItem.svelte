@@ -2,7 +2,7 @@
   import { tv } from '$src/_utils/tailwind.utils';
 
   const navItem = tv({
-    base: ['group/navitem', 'flex items-center w-full']
+    base: ['group/navitem', 'flex items-center w-full', ['xl:w-max']]
   });
 
   export let className = '';

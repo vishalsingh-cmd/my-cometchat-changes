@@ -2,25 +2,28 @@
   import { tv } from '$src/_utils/tailwind.utils';
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
   import { getNewHeaderContext } from '../_context/newHader.context';
-  import { get } from 'svelte/store';
   import NavPanel from '../_innerComps/NavPanel.svelte';
 
   export let navItems: Array<NavItemProps | NavLinkProps>;
   export const className = '';
 
-  const { viewportElem, actions, activeIndex } = getNewHeaderContext();
+  const { viewportElem, actions } = getNewHeaderContext();
 
   const navViewport = tv({
     base: [
-      'absolute inset-0 z-[1] [perspective:_2000px] overflow-y-auto',
+      'absolute inset-0 z-[1] [perspective:_2000px]',
       'pt-[60px] bg-[#0A0914]',
+      'flex flex-row w-full h-full overflow-x-clip overflow-y-auto',
       'transition-[width,height,opacity,transform] duration-300',
-      'translate-x-full scale-95 opacity-0',
-      'data-[state="active"]:scale-100 data-[state="active"]:opacity-100 data-[state="active"]:translate-x-0'
+      'translate-x-full opacity-0',
+      'data-[state="active"]:translate-x-0 data-[state="active"]:opacity-100',
 
-      // 'w-full flex shadow-new-header-viewport overflow-hidden',
-      // 'border border-[#FAFAFF] border-opacity-5 rounded-2xl',
-      // 'h-[var(--viewport-height,0px)] w-max origin-[top_center]',
+      'xl:pt-0 xl:shadow-new-header-viewport xl:overflow-hidden',
+      'xl:inset-[unset] xl:top-full xl:left-0 xl:translate-x-0 xl:origin-[top_center]',
+      'xl:border xl:border-[#FAFAFF] xl:border-opacity-5 xl:rounded-2xl',
+      'xl:h-0 xl:scale-95 xl:opacity-0',
+      'xl:h-max xl:data-[state="active"]:scale-100 xl:data-[state="active"]:opacity-100',
+      'xl:transition-[width,height,opacity,transform] xl:duration-300'
     ]
   });
 
@@ -29,10 +32,7 @@
   };
 
   const handleMouseLeave = () => {
-    const currentIndex = get(activeIndex);
-    if (currentIndex !== null) {
-      actions.scheduleHidePanel(currentIndex);
-    }
+    actions.scheduleHidePanel();
   };
 </script>
 
@@ -41,6 +41,7 @@
   bind:this={$viewportElem}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
+  data-state="inactive"
 >
   {#each navItems as navItem, index}
     {#if 'panel' in navItem && navItem.panel}

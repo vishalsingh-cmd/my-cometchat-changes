@@ -25,8 +25,10 @@
 
   const navPanel = tv({
     base: [
-      'flex flex-col gap-6 pb-8'
-      // 'relative w-full h-full', 'pt-6 pb-8'
+      'flex flex-col gap-6',
+      'flex-none w-full max-w-full overflow-x-clip',
+      'hidden data-[state="active"]:flex',
+      'xl:py-6'
     ]
   });
 </script>
@@ -36,11 +38,13 @@
   bind:this={$panelElems[`panel-${index}`]}
   data-name="nav-panel"
   data-index={index}
+  data-state={index === 0 ? 'active' : 'inactive'}
 >
-  <NavPanelBackBtn {index} />
+  <NavPanelBackBtn />
   {#each sections as section}
     {#if blockMap[section.component]}
       <svelte:component this={blockMap[section.component]} block={section} {...$$restProps} />
     {/if}
   {/each}
+  <div class="h-8 w-full flex-shrink-0 xl:hidden" />
 </div>

@@ -14,7 +14,7 @@
     slots: {
       base: [
         'group/navFeatureCard',
-        'relative isolate pb-14 pt-4 px-4 max-w-sm',
+        'relative isolate pb-14 pt-4 px-4',
         'border border-[#FAFAFF] border-opacity-5 rounded-lg',
         'bg-[linear-gradient(180deg,_rgba(250,_250,_255,_0.04)_0%,_rgba(250,_250,_255,_0.02)_100%)]',
         'flex flex-col gap-2'

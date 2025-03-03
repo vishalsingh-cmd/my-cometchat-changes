@@ -24,7 +24,10 @@
   <Container
     pyEnabled={false}
     expand="full"
-    className={cn(['flex items-center justify-between py-2', $isNavExpanded && 'bg-[#0A0914]'])}
+    className={cn(
+      ['flex items-center justify-between py-2', $isNavExpanded && 'bg-[#0A0914]'],
+      ['xl:py-[unset]']
+    )}
   >
     <Logo />
     <Burger />

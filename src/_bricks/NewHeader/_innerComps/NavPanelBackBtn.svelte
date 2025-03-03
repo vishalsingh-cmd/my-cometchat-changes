@@ -4,8 +4,6 @@
   import { getNewHeaderContext } from '../_context/newHader.context';
 
   const { actions } = getNewHeaderContext();
-
-  export let index: number;
   export let className = '';
 
   const navPanelBackBtn = tv({
@@ -13,12 +11,14 @@
       'sticky top-0 bg-[#0A0914] z-[1]',
       'flex items-center gap-1 py-3 px-5',
       'font-sans font-semibold text-[14px] text-[#FAFAFF]',
-      'border-b border-[#22212C]'
+      'border-b border-[#22212C]',
+
+      'xl:hidden'
     ]
   });
 
   const onShowPanel = () => {
-    actions.hidePanel(index);
+    actions.hidePanel();
   };
 </script>
 

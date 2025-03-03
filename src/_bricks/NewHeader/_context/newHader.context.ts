@@ -1,3 +1,4 @@
+import { WINDOW_BREEAKPOINTS } from '$src/_consts/breakpoints.const';
 import { getContext, setContext } from 'svelte';
 import { get, writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
@@ -17,12 +18,14 @@ interface NewHeaderContext {
   navElem: Writable<HTMLElement | null>;
   triggerElems: Writable<TriggerElemsObject>;
   panelElems: Writable<PenelElemsObject>;
-  activeIndex: Writable<number | null>;
+
   actions: {
     showPanel: (index: number) => void;
-    hidePanel: (index: number) => void;
-    scheduleHidePanel: (index: number) => void;
+    hidePanel: () => void;
+    scheduleHidePanel: () => void;
     cancelHidePanel: () => void;
+    activateNav: () => void;
+    deactivateNav: () => void;
   };
 }
 
@@ -35,9 +38,9 @@ export function createNewHeaderContext(): NewHeaderContext {
   const navElem = writable<HTMLElement | null>(null);
   const triggerElems = writable<TriggerElemsObject>({});
   const panelElems = writable<PenelElemsObject>({});
-  const activeIndex = writable<number | null>(null);
 
   // Timeout for delayed hiding
+  let prevPanel: HTMLDivElement | null = null;
   let hideTimeout: ReturnType<typeof setTimeout> | null = null;
   const HOVER_DELAY = 300; // ms
 
@@ -50,16 +53,6 @@ export function createNewHeaderContext(): NewHeaderContext {
     return { viewport, trigger, panel };
   };
 
-  const setViewportAttributes = (
-    viewport: HTMLDivElement,
-    state: 'active' | 'inactive',
-    width: number,
-    height: number
-  ) => {
-    viewport.setAttribute('style', `--viewport-width: ${width}px; --viewport-height: ${height}px;`);
-    viewport.setAttribute('data-state', state);
-  };
-
   /* --------------------------------- actions -------------------------------- */
   const actions = {
     showPanel: (index: number) => {
@@ -67,29 +60,31 @@ export function createNewHeaderContext(): NewHeaderContext {
         clearTimeout(hideTimeout);
         hideTimeout = null;
       }
+      const { viewport, panel } = getElements(index);
+      if (!viewport || !panel) return;
 
-      const { viewport, trigger, panel } = getElements(index);
-      if (!viewport || !trigger || !panel) return;
-
-      activeIndex.set(index);
-      setViewportAttributes(viewport, 'active', panel.scrollWidth, panel.scrollHeight);
+      if (prevPanel) {
+        prevPanel.setAttribute('data-state', 'inactive');
+      }
+      panel.setAttribute('data-state', 'active');
+      viewport.setAttribute('data-state', 'active');
+      prevPanel = panel;
     },
 
-    hidePanel: (index: number) => {
-      const { viewport, trigger, panel } = getElements(index);
-      if (!viewport || !trigger || !panel) return;
+    hidePanel: () => {
+      const viewport = get(viewportElem);
+      if (!viewport) return;
 
-      activeIndex.set(null);
-      setViewportAttributes(viewport, 'inactive', 0, 0);
+      viewport.setAttribute('data-state', 'inactive');
     },
 
-    scheduleHidePanel: (index: number) => {
+    scheduleHidePanel: () => {
       if (hideTimeout) {
         clearTimeout(hideTimeout);
       }
 
       hideTimeout = setTimeout(() => {
-        actions.hidePanel(index);
+        actions.hidePanel();
         hideTimeout = null;
       }, HOVER_DELAY);
     },
@@ -98,6 +93,21 @@ export function createNewHeaderContext(): NewHeaderContext {
       if (hideTimeout) {
         clearTimeout(hideTimeout);
         hideTimeout = null;
+      }
+    },
+
+    activateNav: () => {
+      isNavExpanded.update(() => true);
+      if (window.innerWidth < WINDOW_BREEAKPOINTS.xl) {
+        document.body.style.overflow = 'hidden';
+      }
+    },
+    deactivateNav: () => {
+      isNavExpanded.update(() => false);
+      const viewport = get(viewportElem);
+      viewport?.setAttribute('data-state', 'inactive');
+      if (window.innerWidth < WINDOW_BREEAKPOINTS.xl) {
+        document.body.style.overflow = 'auto';
       }
     }
   };
@@ -109,7 +119,6 @@ export function createNewHeaderContext(): NewHeaderContext {
     navElem,
     triggerElems,
     panelElems,
-    activeIndex,
     actions
   };
 

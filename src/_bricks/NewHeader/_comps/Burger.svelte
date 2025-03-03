@@ -5,16 +5,16 @@
   import { get } from 'svelte/store';
   import { getNewHeaderContext } from '../_context/newHader.context';
 
-  const { isNavExpanded } = getNewHeaderContext();
+  const { isNavExpanded, actions } = getNewHeaderContext();
 
   export let className = '';
   const burger = tv({
-    base: ['block lg:hidden', 'z-[1]']
+    base: ['block xl:hidden', 'z-[1]']
   });
 
   const onClick = () => {
     const state = get(isNavExpanded);
-    isNavExpanded.update(() => !state);
+    !state ? actions.activateNav() : actions.deactivateNav();
   };
 </script>
 

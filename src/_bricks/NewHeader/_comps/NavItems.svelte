@@ -17,21 +17,25 @@
 <nav
   class={cn(
     [
-      'flex flex-col px-5 pt-16',
+      'flex flex-col px-[inherit] pt-16',
       'absolute inset-0 -z-[1] bg-[#0A0914]',
-      'h-screen w-full overflow-y-auto overflow-x-clip',
+      'w-full overflow-y-auto overflow-x-clip',
+      'h-[calc(100vh-env(safe-area-inset-top)-env(safe-area-inset-bottom))]',
       'transition-[transform,opacity] duration-300',
       '-translate-y-full data-[state="active"]:translate-y-0',
       'scale-95 data-[state="active"]:scale-100',
       'opacity-0 data-[state="active"]:opacity-100'
     ],
-    ['lg:items-center lg:justify-between']
+    [
+      'xl:relative xl:z-[1] xl:h-auto xl:flex-row xl:px-[unset] xl:pt-[unset]',
+      'xl:translate-y-0 xl:scale-100 xl:opacity-100 xl:[overflow:_unset]'
+    ]
   )}
   data-state={$isNavExpanded ? 'active' : 'inactive'}
   bind:this={$navElem}
 >
-  <div class={cn(['flex flex-col'])}>
-    <ul class={cn(['flex items-center gap-10'])}>
+  <div class={cn(['flex flex-col'], ['xl:relative xl:isolate xl:w-full'])}>
+    <ul class={cn(['flex flex-col'], ['xl:w-full xl:flex-row xl:justify-center xl:gap-8 xl:px-5'])}>
       {#each navItems as navItem, index}
         <NavItem>
           {#if navItem.component === 'nav-item'}

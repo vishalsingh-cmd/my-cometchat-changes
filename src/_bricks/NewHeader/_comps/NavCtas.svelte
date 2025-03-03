@@ -4,22 +4,26 @@
 
   export let className = '';
   const navCtas = tv({
-    base: ['flex items-center justify-center gap-4', 'mt-auto py-6']
+    base: ['flex items-center justify-center gap-4', 'mt-auto py-6', 'xl:py-[unset] xl:mt-[unset]']
   });
 </script>
 
 <div class={navCtas({ class: className })}>
-  <!-- <a
-    class={cn([
-      'text-sm font-semibold tracking-widest',
-      'transition-colors duration-300',
-      'text-white hover:text-brand-9'
-    ])}
+  <a
+    class={cn(
+      [
+        'hidden',
+        'whitespace-nowrap text-sm font-semibold tracking-widest',
+        'transition-colors duration-300',
+        'text-white hover:text-brand-9'
+      ],
+      ['xl:block']
+    )}
     href="#a"
   >
     Log in
-  </a> -->
+  </a>
 
-  <Button variant="secondary" class="w-full">Log in</Button>
-  <Button class="w-full">Schedule a demo</Button>
+  <Button variant="secondary" class="w-full max-w-[200px] xl:hidden">Log in</Button>
+  <Button class="w-full max-w-[200px]">Schedule a demo</Button>
 </div>
