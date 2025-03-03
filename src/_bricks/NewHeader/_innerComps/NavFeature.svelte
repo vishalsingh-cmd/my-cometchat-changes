@@ -28,7 +28,11 @@
       ],
       iconTV: [
         'text-[#646465] group-hover/navFeature:text-[#6852D6]',
-        'transition-colors duration-300'
+        'transition-colors duration-300',
+        '[&>svg>path]:fill-[url(#paint0_linear_1324_49788)]',
+        '[&>svg>path]:opacity-40',
+        'group-hover/navFeature:[&>svg>path]:fill-[#6852D6]',
+        'group-hover/navFeature:[&>svg>path]:opacity-100'
       ],
       info: ['flex flex-col gap-1.5'],
       title: [
