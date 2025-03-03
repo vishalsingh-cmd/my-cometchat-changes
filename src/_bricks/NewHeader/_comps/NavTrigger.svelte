@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WINDOW_BREEAKPOINTS } from '$src/_consts/breakpoints.const';
   import { tv } from '$src/_utils/tailwind.utils';
   import Icon from '$src/components/icon/icon.svelte';
   import { getNewHeaderContext } from '../_context/newHader.context';
@@ -16,7 +17,6 @@
       'border-b border-b-[#FAFAFF] border-opacity-5',
       'transition-colors duration-300',
       'group-hover/navitem:text-[#8C7CE0]',
-
       'xl:border-none'
     ]
   });
@@ -26,11 +26,15 @@
   };
 
   const handleMouseEnter = () => {
-    actions.showPanel(index);
+    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
+      actions.showPanel(index);
+    }
   };
 
   const handleMouseLeave = () => {
-    actions.scheduleHidePanel();
+    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
+      actions.scheduleHidePanel();
+    }
   };
 </script>
 
