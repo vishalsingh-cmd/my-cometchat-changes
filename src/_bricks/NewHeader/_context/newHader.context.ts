@@ -79,6 +79,18 @@ export function createNewHeaderContext(): NewHeaderContext {
         prevPanel.setAttribute('data-state', 'inactive');
       }
 
+      console.log(panel.scrollWidth, panel.scrollHeight);
+
+      viewport.setAttribute(
+        'style',
+        `--viewport-width: ${panel.scrollWidth}px;
+         --viewport-height: ${panel.scrollHeight}px;`
+      );
+      // viewport.scrollTo({
+      //   left: panel.offsetLeft - panel.clientWidth,
+      //   behavior: 'smooth'
+      // });
+
       navActiveShadow.setAttribute('data-state', 'active');
       panel.setAttribute('data-state', 'active');
       viewport.setAttribute('data-state', 'active');
