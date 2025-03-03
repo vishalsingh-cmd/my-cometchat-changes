@@ -6,9 +6,10 @@
 
   const navLink = tv({
     base: [
-      'relative',
+      'relative w-full',
       'font-sans font-semibold text-[#FFFFFF] text-[14px] whitespace-nowrap',
-      'flex items-center gap-1 py-8',
+      'flex items-center gap-1 py-6',
+      'border-b border-b-[#FAFAFF] border-opacity-5 last-of-type:border-none',
       'transition-colors duration-300',
       'group-hover/navitem:text-[#8C7CE0]'
     ]

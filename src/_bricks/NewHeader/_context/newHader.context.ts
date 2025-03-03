@@ -79,8 +79,6 @@ export function createNewHeaderContext(): NewHeaderContext {
         prevPanel.setAttribute('data-state', 'inactive');
       }
 
-      console.log(panel.scrollWidth, panel.scrollHeight);
-
       viewport.setAttribute(
         'style',
         `--viewport-width: ${panel.scrollWidth}px;

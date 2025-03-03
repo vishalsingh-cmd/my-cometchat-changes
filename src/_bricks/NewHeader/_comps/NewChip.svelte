@@ -5,7 +5,7 @@
 
   const newChip = tv({
     base: [
-      'px-1.5 py-2',
+      'px-1.5 py-0.5',
       'font-sans text-[11px] font-semibold text-[#7861EA]',
       'border border-[#7861EA66] rounded'
     ]
