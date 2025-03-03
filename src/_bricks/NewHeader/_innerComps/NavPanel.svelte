@@ -39,7 +39,7 @@
   bind:this={$panelElems[`panel-${index}`]}
   data-name="nav-panel"
   data-index={index}
-  data-state={index === 0 ? 'active' : 'inactive'}
+  data-state={'inactive'}
 >
   <NavPanelBackBtn />
   {#each sections as section}
