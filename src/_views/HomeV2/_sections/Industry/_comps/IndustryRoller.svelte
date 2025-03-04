@@ -19,7 +19,7 @@
       trigger: containerElem,
       start: 'top center',
       onEnter: () => {
-        containerElem.setAttribute('data-anim', 'active');
+        containerElem?.setAttribute('data-anim', 'active');
         setActiveIndex(0);
         startAnimation();
       }
