@@ -27,7 +27,9 @@
       cnt: [
         'hidden flex-col gap-8 py-6 bg-[#14131D]',
         'group-data-[state="active"]/navFeatureSideMenuCnt:flex',
-        'group-data-[state="active"]/navFeatureSideMenuCnt:animate-navigationMenu-fadeIn'
+        'group-data-[state="active"]/navFeatureSideMenuCnt:animate-navigationMenu-fadeIn',
+
+        'xl:flex-row xl:bg-transparent'
       ]
     }
   });
@@ -40,7 +42,7 @@
   data-name="navFeatureSideMenuCnt"
   data-state={isActive ? 'active' : 'inactive'}
 >
-  <NavFeatureSideMenuTrigger {isActive} on:click={() => toggleItem(index)}>
+  <NavFeatureSideMenuTrigger className="xl:hidden" {isActive} on:click={() => toggleItem(index)}>
     {block.title}
     <Icon
       icon="chevron-down"
@@ -57,7 +59,7 @@
       {#if blockMap[content.component]}
         <svelte:component
           this={blockMap[content.component]}
-          className="last-of-type:border-l last-of-type:border-l-[#FAFAFF0F] flex-[0.5]"
+          className="xl:[&:nth-of-type(2)]:border-l xl:[&:nth-of-type(2)]:border-l-[#FAFAFF0F] xl:w-max"
           block={content}
           {...$$restProps}
         />

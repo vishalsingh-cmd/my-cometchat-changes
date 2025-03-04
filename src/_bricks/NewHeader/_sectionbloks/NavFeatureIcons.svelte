@@ -14,7 +14,11 @@
   const navFeatureIcons = tv({
     slots: {
       base: ['flex flex-col gap-6', 'px-6'],
-      icons: ['flex flex-wrap gap-8', 'lg:gap-12']
+      icons: [
+        'grid grid-cols-[repeat(auto-fill,_minmax(32px,1fr))] gap-8',
+        'lg:gap-12',
+        'xl:grid-cols-[repeat(4,32px)]'
+      ]
     }
   });
 

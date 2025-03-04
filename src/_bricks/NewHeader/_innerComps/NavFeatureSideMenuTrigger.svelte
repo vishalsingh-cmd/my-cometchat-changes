@@ -8,7 +8,9 @@
       'px-5 py-6  w-full',
       'flex items-center justify-between',
       'font-sans font-semibold text-[14px] text-[#FAFAFF]',
-      'transition-colors duration-300'
+      'transition-colors duration-300',
+
+      'xl:data-[state="active"]:bg-[#0F0E19]'
     ]
   });
 </script>

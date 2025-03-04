@@ -13,17 +13,17 @@
 
   const navFeatureSideMenu = tv({
     slots: {
-      base: ['grid grid-cols-1fr'],
-      sidebar: ['flex flex-col bg-[#14131D]', 'hidden'],
-      contents: ['flex flex-col']
+      base: ['grid grid-cols-1fr', 'xl:grid-cols-[auto_1fr]'],
+      sidebar: ['flex flex-col bg-[#14131D]', 'hidden xl:flex xl:w-max'],
+      contents: ['flex flex-col', 'xl:bg-[#0F0E19]']
     }
   });
 
   const { base, sidebar, contents } = navFeatureSideMenu();
 
-  let activeIndex: number | null = 0;
+  let activeIndex = 0;
   const toggleItem = (index: number) => {
-    activeIndex = activeIndex === index ? null : index;
+    activeIndex = index;
   };
 </script>
 
