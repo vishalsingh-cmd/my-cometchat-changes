@@ -23,11 +23,12 @@
   class={cn([
     'fixed left-0 right-0 top-0 z-[99999]',
     'border-b border-b-[#22212C] border-opacity-0 bg-[#0A0914] bg-opacity-0',
-    'transition-colors duration-300',
+    'transition-[background-color,transform,border-bottom-color] duration-300',
     'hover:border-opacity-100 hover:bg-opacity-100',
+    scrollY > 100 && 'border-opacity-100 bg-opacity-100',
     {
       'translate-y-0': $scrollDirection === 'up',
-      '-translate-y-16': $scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
+      '-translate-y-full': $scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
     }
   ])}
 >
@@ -41,7 +42,7 @@
   >
     <Logo />
     <Burger />
-    <NavItems navItems={block.content.items} />
+    <NavItems navItems={block.content.items} ctas={block.content.ctas} />
 
     <!-- hidden icon for gradient id -->
     <Icon icon="shop-gradient" class="pointer-events-none visually-hidden" />
