@@ -22,13 +22,12 @@
       'translate-x-full data-[state="active"]:translate-x-0',
 
       'xl:pt-0 xl:shadow-new-header-viewport xl:overflow-hidden xl:bg-[#14131D]',
-      'xl:inset-[unset] xl:top-full xl:-left-4 xl:translate-x-0 xl:origin-[top_center]',
+      'xl:inset-[unset] xl:top-full xl:left-1/2 xl:-translate-x-1/2 xl:data-[state="active"]:-translate-x-1/2 xl:origin-[top_center]',
       'xl:border xl:border-[#FAFAFF] xl:border-opacity-5 xl:rounded-2xl',
 
-      'xl:h-max xl:w-auto xl:scale-95 xl:opacity-0 xl:pointer-events-none',
-      'xl:data-[state="active"]:scale-100 xl:data-[state="active"]:opacity-100 xl:data-[state="active"]:xl:pointer-events-auto',
-      'xl:transition-[width,height,opacity,transform] xl:duration-300'
-
+      'xl:h-max xl:w-full xl:min-w-[900px]',
+      'xl:scale-95 xl:opacity-0 xl:pointer-events-none',
+      'xl:data-[state="active"]:scale-100 xl:data-[state="active"]:opacity-100 xl:data-[state="active"]:xl:pointer-events-auto'
       // 'xl:opacity-100 xl:pointer-events-auto'
     ]
   });
