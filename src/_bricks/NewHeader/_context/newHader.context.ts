@@ -1,4 +1,5 @@
 import { WINDOW_BREEAKPOINTS } from '$src/_consts/breakpoints.const';
+// import gsap from 'gsap';
 import { getContext, setContext } from 'svelte';
 import { get, writable } from 'svelte/store';
 import type { Writable } from 'svelte/store';
@@ -72,12 +73,13 @@ export function createNewHeaderContext(): NewHeaderContext {
   //   viewport.setAttribute(
   //     'style',
   //     `--viewport-width: ${panel.scrollWidth}px;
-  //      --viewport-height: ${panel.scrollHeight}px;`
+  //      --viewport-height: ${panel.clientHeight}px;`
   //   );
 
-  //   viewport.scrollTo({
-  //     left: panel.offsetLeft,
-  //     behavior: 'smooth'
+  //   gsap.to(viewport, {
+  //     scrollLeft: panel.offsetLeft,
+  //     duration: 0.5,
+  //     ease: 'power3.out'
   //   });
   // };
 
