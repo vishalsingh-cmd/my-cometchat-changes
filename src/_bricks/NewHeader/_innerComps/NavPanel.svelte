@@ -30,7 +30,6 @@
       'flex-none w-full max-w-full overflow-x-clip',
       'hidden data-[state="active"]:flex',
 
-      'data-[state="active"]:animate-navigationMenu-scaleIn',
       'data-[issidemenu="yes"]:gap-4'
     ]
   });
