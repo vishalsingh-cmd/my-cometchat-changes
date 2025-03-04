@@ -1,6 +1,7 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
   import Icon from '$src/components/icon/icon.svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavFeatureCardProps } from '../newHeader.types';
 
   export let className = '';
@@ -36,9 +37,10 @@
   });
 
   const { base, title, description, iconWrap, iconTV } = navFeatureCard();
+  const { href } = getAnchorFromCmsLink(block.link);
 </script>
 
-<div class={base({ class: className })}>
+<a href={href || ''} target="_blank" class={base({ class: className })}>
   <h3 class={title({ class: titleClassName })}>
     {block.title}
   </h3>
@@ -48,4 +50,4 @@
   <div class={iconWrap({ class: iconWrapClassName })}>
     <Icon icon={block.icon} class={iconTV({ class: iconClassName })} />
   </div>
-</div>
+</a>

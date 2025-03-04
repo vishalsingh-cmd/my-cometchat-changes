@@ -1,6 +1,6 @@
 <script lang="ts">
   import Icon from '$src/components/icon/icon.svelte';
-  import { tv } from '$src/_utils/tailwind.utils';
+  import { cn, tv } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavFeatureIconProps } from '../newHeader.types';
 
@@ -15,5 +15,12 @@
 </script>
 
 <a href={href || '#'} target="_blank" class={navFeatureIcon({ class: className })}>
-  <Icon size="lg" icon={block.icon} />
+  <Icon
+    class={cn([
+      '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
+      'group-hover/navFeatureIcon:[&_path]:fill-[#6852D6]'
+    ])}
+    size="lg"
+    icon={block.icon}
+  />
 </a>

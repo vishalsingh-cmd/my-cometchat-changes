@@ -11,8 +11,8 @@
       'transition-colors duration-300',
 
       'lg:text-[16px]',
-      'xl:data-[state="active"]:text-[#6852D6]',
-      'xl:data-[state="active"]:bg-[#0F0E19]'
+      ' xl:data-[state="active"]:text-[#6852D6] ',
+      ' xl:data-[state="active"]:bg-[#0F0E19] '
     ]
   });
 </script>
