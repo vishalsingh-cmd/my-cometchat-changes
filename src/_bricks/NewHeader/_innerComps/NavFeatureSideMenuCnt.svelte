@@ -67,6 +67,12 @@
     {/each}
   </div>
   <div
-    class="mx-auto h-[1px] w-[calc(100%_-_48px)] bg-[#14131D] group-last-of-type/navFeatureSideMenuCnt:bg-transparent"
+    class={cn(
+      [
+        'mx-auto h-[1px] w-[calc(100%_-_48px)] bg-[#14131D]',
+        'group-last-of-type/navFeatureSideMenuCnt:bg-transparent'
+      ],
+      ['xl:hidden']
+    )}
   />
 </div>

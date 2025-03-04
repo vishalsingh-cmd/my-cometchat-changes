@@ -10,7 +10,8 @@
       'font-sans font-semibold text-[14px] text-[#FAFAFF]',
       'transition-colors duration-300',
 
-      'xl:data-[state="active"]:bg-[#0F0E19]'
+      'lg:text-[16px]',
+      'xl:data-[state="active"]:bg-[#0F0E19] xl:data-[state="active"]:text-[#6852D6]'
     ]
   });
 </script>
