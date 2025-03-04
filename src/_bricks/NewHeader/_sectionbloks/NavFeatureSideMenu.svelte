@@ -27,7 +27,7 @@
   };
 </script>
 
-<NavSection className={base({ class: className })}>
+<NavSection className={base({ class: className })} isSidemenu={true}>
   <div class={sidebar({ class: sidebarClassName })}>
     {#each block.items as item, index}
       <NavFeatureSideMenuTrigger
