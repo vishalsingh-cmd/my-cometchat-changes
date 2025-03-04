@@ -30,8 +30,7 @@
         'w-16 h-16 text-[#646465]',
         'transition-colors duration-300',
         'group-hover/navFeatureCard:text-[#6852D6]',
-        '[&>svg>path]:fill-[url(#paint0_linear_1324_49788)]',
-        '[&>svg>path]:opacity-40'
+        '[&_path]:fill-transparent group-hover/navFeatureCard:[&_path]:fill-[#6852D6]'
       ]
     }
   });
