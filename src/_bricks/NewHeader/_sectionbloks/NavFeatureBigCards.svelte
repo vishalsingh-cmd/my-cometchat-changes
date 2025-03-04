@@ -14,7 +14,7 @@
   const navFeatureBigCards = tv({
     slots: {
       base: ['flex flex-col gap-4'],
-      cards: ['flex gap-4 overflow-auto']
+      cards: ['flex gap-4 overflow-auto', 'xl:[overflow:unset]']
     }
   });
   const { base, cards } = navFeatureBigCards();

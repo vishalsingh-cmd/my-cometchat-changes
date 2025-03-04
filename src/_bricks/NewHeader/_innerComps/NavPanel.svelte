@@ -28,7 +28,9 @@
       'group/navPanel',
       'flex flex-col gap-8',
       'flex-none w-full max-w-full overflow-x-clip',
-      'hidden data-[state="active"]:flex'
+      'hidden data-[state="active"]:flex',
+
+      'data-[state="active"]:animate-navigationMenu-scaleIn'
     ]
   });
 </script>
