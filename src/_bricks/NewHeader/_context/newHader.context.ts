@@ -46,6 +46,7 @@ export function createNewHeaderContext(): NewHeaderContext {
 
   // Timeout for delayed hiding
   let prevPanel: HTMLDivElement | null = null;
+  let prevIndex: number | null = null;
   let hideTimeout: ReturnType<typeof setTimeout> | null = null;
   const HOVER_DELAY = 300; // ms
 
@@ -96,6 +97,7 @@ export function createNewHeaderContext(): NewHeaderContext {
 
       if (prevPanel) {
         prevPanel.setAttribute('data-state', 'inactive');
+        prevIndex = null;
       }
 
       // setupViewport(viewport, panel);
@@ -103,6 +105,7 @@ export function createNewHeaderContext(): NewHeaderContext {
       panel.setAttribute('data-state', 'active');
       viewport.setAttribute('data-state', 'active');
       prevPanel = panel;
+      prevIndex = index;
     },
 
     hidePanel: () => {
@@ -112,6 +115,9 @@ export function createNewHeaderContext(): NewHeaderContext {
 
       navActiveShadow.setAttribute('data-state', 'inactive');
       viewport.setAttribute('data-state', 'inactive');
+
+      // prevPanel?.setAttribute('data-state', 'inactive');
+      // prevIndex = null;
     },
 
     scheduleHidePanel: () => {

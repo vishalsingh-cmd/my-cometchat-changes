@@ -156,6 +156,8 @@ export default {
           'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running',
         'grow-comet-smothly': 'growCometSmothly 0.2s linear',
         fadeIn: 'fadeIn 0.5s ease-in-out',
+
+        'navigationMenu-slideIn': 'navigationMenu-slideIn 300ms ease',
         'navigationMenu-fadeIn': 'navigationMenu-fadeIn 300ms ease',
         'navigationMenu-fadeOut': 'navigationMenu-fadeOut 300ms ease',
         'navigationMenu-scaleIn': 'navigationMenu-scaleIn 300ms ease',
