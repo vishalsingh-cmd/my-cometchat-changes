@@ -11,10 +11,10 @@
     base: ['group/navFeatureIcon', 'flex items-center justify-center']
   });
 
-  const { href } = getAnchorFromCmsLink(block.link);
+  const { href, target } = getAnchorFromCmsLink(block.link);
 </script>
 
-<a href={href || '#'} target="_blank" class={navFeatureIcon({ class: className })}>
+<a href={href || '#'} {target} class={navFeatureIcon({ class: className })}>
   <Icon
     class={cn([
       '[&_path]:fill-[url(#paint0_linear_1324_49788)]',

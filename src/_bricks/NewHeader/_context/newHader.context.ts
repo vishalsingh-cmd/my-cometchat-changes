@@ -115,7 +115,7 @@ export function createNewHeaderContext(): NewHeaderContext {
 
       navActiveShadow.setAttribute('data-state', 'inactive');
       viewport.setAttribute('data-state', 'inactive');
-
+      isNavExpanded.update(() => false);
       // prevPanel?.setAttribute('data-state', 'inactive');
       // prevIndex = null;
     },

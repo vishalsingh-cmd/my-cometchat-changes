@@ -41,6 +41,13 @@
       actions.scheduleHidePanel();
     }
   };
+
+  const handleOnClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A' || target.closest('a')) {
+      actions.hidePanel();
+    }
+  };
 </script>
 
 <div
@@ -48,6 +55,7 @@
   bind:this={$viewportElem}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
+  on:click={handleOnClick}
   data-state="inactive"
 >
   {#each navItems as navItem, index}

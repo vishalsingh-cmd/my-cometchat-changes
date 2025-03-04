@@ -30,10 +30,10 @@
     }
   });
   const { base, image, info, title } = navFeatureBigCard();
-  const { href } = getAnchorFromCmsLink(block.link);
+  const { href, target } = getAnchorFromCmsLink(block.link);
 </script>
 
-<a href={href || '#'} target="_blank" class={base({ class: className })}>
+<a href={href || '#'} {target} class={base({ class: className })}>
   <img src={block.image.filename} alt={block.title} class={image({ class: imgClassName })} />
   <div class={info({ class: infoClassName })}>
     <h3 class={title({ class: titleClassName })}>

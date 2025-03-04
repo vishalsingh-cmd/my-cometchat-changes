@@ -37,10 +37,10 @@
   });
 
   const { base, title, description, iconWrap, iconTV } = navFeatureCard();
-  const { href } = getAnchorFromCmsLink(block.link);
+  const { href, target } = getAnchorFromCmsLink(block.link);
 </script>
 
-<a href={href || ''} target="_blank" class={base({ class: className })}>
+<a href={href || ''} {target} class={base({ class: className })}>
   <h3 class={title({ class: titleClassName })}>
     {block.title}
   </h3>
