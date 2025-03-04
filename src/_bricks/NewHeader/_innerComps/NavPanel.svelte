@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tv } from '$src/_utils/tailwind.utils';
+  import { cn, tv } from '$src/_utils/tailwind.utils';
   import { getNewHeaderContext } from '../_context/newHader.context';
   import NavFeatureBigCards from '../_sectionbloks/NavFeatureBigCards.svelte';
   import NavFeatureCards from '../_sectionbloks/NavFeatureCards.svelte';
@@ -25,11 +25,13 @@
 
   const navPanel = tv({
     base: [
-      'flex flex-col gap-6',
-      'flex-none w-max max-w-full overflow-x-clip',
+      'group/navPanel',
+      'flex flex-col gap-8',
+      'flex-none w-full max-w-full overflow-x-clip',
       'hidden data-[state="active"]:flex',
 
-      'xl:py-6'
+      'data-[state="active"]:animate-navigationMenu-scaleIn',
+      'data-[issidemenu="yes"]:gap-4'
     ]
   });
 </script>
@@ -41,11 +43,22 @@
   data-index={index}
   data-state={'inactive'}
 >
+  <div
+    class={cn(
+      ['hidden w-full flex-shrink-0'],
+      ['xl:block xl:h-[1px]', 'xl:group-data-[issidemenu="yes"]/navPanel:hidden']
+    )}
+  />
   <NavPanelBackBtn />
   {#each sections as section}
     {#if blockMap[section.component]}
       <svelte:component this={blockMap[section.component]} block={section} {...$$restProps} />
     {/if}
   {/each}
-  <div class="h-8 w-full flex-shrink-0 xl:hidden" />
+  <div
+    class={cn(
+      ['h-8 w-full flex-shrink-0'],
+      ['xl:h-[1px]', 'xl:group-data-[issidemenu="yes"]/navPanel:hidden']
+    )}
+  />
 </div>

@@ -18,11 +18,13 @@
 <nav
   class={cn(
     [
-      'flex flex-col px-[inherit] pt-16',
-      'absolute inset-0 -z-[1] bg-[#0A0914]',
-      'w-full overflow-y-auto overflow-x-clip',
+      'absolute inset-0 -z-[1]',
+      'w-full bg-[#0A0914] px-[inherit] pt-16',
       'h-[calc(100vh-env(safe-area-inset-top)-env(safe-area-inset-bottom))]',
+      'flex flex-col',
+      'overflow-y-auto overflow-x-clip',
       'transition-[transform,opacity] duration-300',
+
       '-translate-y-full data-[state="active"]:translate-y-0',
       'scale-95 data-[state="active"]:scale-100',
       'opacity-0 data-[state="active"]:opacity-100'
@@ -35,12 +37,9 @@
   data-state={$isNavExpanded ? 'active' : 'inactive'}
   bind:this={$navElem}
 >
-  <div class={cn(['flex flex-col'], ['xl:relative xl:isolate xl:w-full'])}>
+  <div class={cn(['flex flex-col'], ['xl:relative xl:mx-auto xl:w-max'])}>
     <ul
-      class={cn(
-        ['flex flex-col'],
-        ['xl:relative xl:w-full xl:px-5', 'xl:flex-row xl:justify-center xl:gap-6']
-      )}
+      class={cn(['flex flex-col'], ['xl:w-full xl:px-5', 'xl:flex-row xl:justify-center xl:gap-6'])}
     >
       {#each navItems as navItem, index}
         <NavItem>

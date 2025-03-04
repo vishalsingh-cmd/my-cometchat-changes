@@ -64,6 +64,23 @@ export function createNewHeaderContext(): NewHeaderContext {
     header.setAttribute('style', `--active-trigger-left: ${trigger.offsetLeft}px`);
   };
 
+  // const setupViewport = (viewport: HTMLDivElement, panel: HTMLDivElement) => {
+  //   if (window.innerWidth < WINDOW_BREEAKPOINTS.xl) {
+  //     return;
+  //   }
+
+  //   viewport.setAttribute(
+  //     'style',
+  //     `--viewport-width: ${panel.scrollWidth}px;
+  //      --viewport-height: ${panel.scrollHeight}px;`
+  //   );
+
+  //   viewport.scrollTo({
+  //     left: panel.offsetLeft,
+  //     behavior: 'smooth'
+  //   });
+  // };
+
   /* --------------------------------- actions -------------------------------- */
   const actions = {
     showPanel: (index: number) => {
@@ -79,16 +96,7 @@ export function createNewHeaderContext(): NewHeaderContext {
         prevPanel.setAttribute('data-state', 'inactive');
       }
 
-      viewport.setAttribute(
-        'style',
-        `--viewport-width: ${panel.scrollWidth}px;
-         --viewport-height: ${panel.scrollHeight}px;`
-      );
-      // viewport.scrollTo({
-      //   left: panel.offsetLeft - panel.clientWidth,
-      //   behavior: 'smooth'
-      // });
-
+      // setupViewport(viewport, panel);
       navActiveShadow.setAttribute('data-state', 'active');
       panel.setAttribute('data-state', 'active');
       viewport.setAttribute('data-state', 'active');

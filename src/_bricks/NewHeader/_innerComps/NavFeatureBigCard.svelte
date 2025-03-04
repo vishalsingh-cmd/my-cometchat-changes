@@ -13,10 +13,12 @@
     slots: {
       base: [
         'grid grid-rows-[auto_1fr]',
-        'group/navFeatureBigCard min-w-[210px] w-full',
+        'group/navFeatureBigCard w-[210px] flex-shrink-0',
         'border border-[#FAFAFF] border-opacity-5 rounded-md',
         'hover:border-[#6852D666]',
-        'transition-colors duration-300'
+        'transition-colors duration-300',
+
+        'xl:w-max'
       ],
       image: ['w-full h-full max-h-[120px] object-cover object-bottom'],
       info: ['px-4 py-4 flex flex-col'],

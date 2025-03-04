@@ -1,6 +1,7 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
   import Icon from '$src/components/icon/icon.svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavFeatureProps } from '../newHeader.types';
 
   export let className = '';
@@ -28,7 +29,12 @@
       ],
       iconTV: [
         'text-[#646465] group-hover/navFeature:text-[#6852D6]',
-        'transition-colors duration-300'
+        'transition-colors duration-300',
+
+        '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
+        '[&_path]:opacity-40',
+        'group-hover/navFeature:[&_path]:fill-[#6852D6]',
+        'group-hover/navFeature:[&_path]:opacity-100'
       ],
       info: ['flex flex-col gap-1.5'],
       title: [
@@ -41,9 +47,10 @@
   });
 
   const { base, iconWrap, iconTV, info, title, description } = navFeature();
+  const { href } = getAnchorFromCmsLink(block.link);
 </script>
 
-<div class={base({ class: className })} {...$$restProps}>
+<a href={href || ''} target="_blank" class={base({ class: className })} {...$$restProps}>
   <div class={iconWrap({ class: iconWrapClassName })}>
     <Icon icon={block.icon} class={iconTV({ class: iconClassName })} />
   </div>
@@ -55,4 +62,4 @@
       {block.description}
     </p>
   </div>
-</div>
+</a>

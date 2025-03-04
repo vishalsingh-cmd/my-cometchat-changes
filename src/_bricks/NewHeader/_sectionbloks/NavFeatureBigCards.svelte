@@ -14,7 +14,7 @@
   const navFeatureBigCards = tv({
     slots: {
       base: ['flex flex-col gap-4'],
-      cards: ['flex gap-4 overflow-auto']
+      cards: ['flex gap-4 overflow-auto', 'xl:[overflow:unset]']
     }
   });
   const { base, cards } = navFeatureBigCards();
@@ -24,7 +24,7 @@
   <NavTitle className="px-5">{block.title}</NavTitle>
 
   <div class={cards({ class: cardsClassName })} data-scrollbar="hide">
-    <div class="w-5" />
+    <div class="w-1" />
     {#each block.cards as card}
       <NavFeatureBigCard block={card} />
     {/each}
@@ -38,7 +38,7 @@
     href={href || '#'}
     target="_blank"
     variant="highlighted"
-    class={'block px-5 xl:hidden'}
+    class={'mx-5 block w-max xl:hidden'}
   >
     See All
   </GhostButton>

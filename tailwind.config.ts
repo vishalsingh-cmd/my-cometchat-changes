@@ -201,9 +201,13 @@ export default {
           from: { opacity: 0 },
           to: { opacity: 1 }
         },
-        'navigationMenu-fadeOut': {
-          from: { opacity: 1 },
-          to: { opacity: 0 }
+        'navigationMenu-slideIn': {
+          from: { opacity: 0, transform: 'translayeY(-40px)' },
+          to: { opacity: 1, transform: 'translayeY(0px)' }
+        },
+        'navigationMenu-slideOut': {
+          from: { opacity: 1, transform: 'translayeY(0px)' },
+          to: { opacity: 0, transform: 'translayeY(-40px)' }
         },
         'navigationMenu-scaleIn': {
           from: { transform: 'scale(0.9)', opacity: 0 },
