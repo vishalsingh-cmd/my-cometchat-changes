@@ -47,10 +47,10 @@
   });
 
   const { base, iconWrap, iconTV, info, title, description } = navFeature();
-  const { href } = getAnchorFromCmsLink(block.link);
+  const { href, target } = getAnchorFromCmsLink(block.link);
 </script>
 
-<a href={href || ''} target="_blank" class={base({ class: className })} {...$$restProps}>
+<a href={href || ''} {target} class={base({ class: className })} {...$$restProps}>
   <div class={iconWrap({ class: iconWrapClassName })}>
     <Icon icon={block.icon} class={iconTV({ class: iconClassName })} />
   </div>

@@ -17,18 +17,16 @@
       'flex flex-row',
       'overflow-x-clip overflow-y-auto',
       'transition-[width,height,opacity,transform] duration-300',
-
       'opacity-0 data-[state="active"]:opacity-100',
       'translate-x-full data-[state="active"]:translate-x-0',
 
-      'xl:pt-0 xl:shadow-new-header-viewport xl:overflow-hidden xl:bg-[#14131D]',
-      'xl:inset-[unset] xl:top-full xl:left-1/2 xl:-translate-x-1/2 xl:data-[state="active"]:-translate-x-1/2 xl:origin-[top_center]',
-      'xl:border xl:border-[#FAFAFF] xl:border-opacity-5 xl:rounded-2xl',
+      'xl:inset-[unset] xl:top-full xl:left-1/2 xl:-translate-x-1/2 xl:data-[state="active"]:-translate-x-1/2',
+      'xl:h-[unset] xl:overflow-hidden xl:w-full xl:min-w-[900px] xl:bg-[#14131D] xl:pt-0',
+      'xl:overflow-[unset]',
+      'xl:data-[state="active"]:-translate-x-1/2',
 
-      'xl:h-max xl:w-full xl:min-w-[900px]',
-      'xl:scale-95 xl:opacity-0 xl:pointer-events-none',
-      'xl:data-[state="active"]:scale-100 xl:data-[state="active"]:opacity-100 xl:data-[state="active"]:xl:pointer-events-auto'
-      // 'xl:opacity-100 xl:pointer-events-auto'
+      'xl:shadow-new-header-viewport xl:border-[#FAFAFF] xl:rounded-2xl',
+      'xl:border-none xl:data-[state="active"]:border'
     ]
   });
 
@@ -43,6 +41,13 @@
       actions.scheduleHidePanel();
     }
   };
+
+  const handleOnClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A' || target.closest('a')) {
+      actions.hidePanel();
+    }
+  };
 </script>
 
 <div
@@ -50,6 +55,7 @@
   bind:this={$viewportElem}
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
+  on:click={handleOnClick}
   data-state="inactive"
 >
   {#each navItems as navItem, index}

@@ -19,7 +19,7 @@
 <div class={navCtas({ class: className })}>
   {#each ctas as cta}
     {#if cta.component === 'link'}
-      {@const { href } = getAnchorFromCmsLink(cta.link)}
+      {@const { href, target } = getAnchorFromCmsLink(cta.link)}
       <a
         class={cn(
           [
@@ -31,7 +31,7 @@
           ['xl:block']
         )}
         {href}
-        target="_blank"
+        {target}
       >
         {cta.label}
       </a>
@@ -44,8 +44,8 @@
         class="w-full max-w-[200px] xl:hidden">Log in</Button
       >
     {:else}
-      {@const { href } = getAnchorFromCmsLink(cta.link)}
-      <Button as="a" {href} target="_blank" class="w-full max-w-[200px]">
+      {@const { href, target } = getAnchorFromCmsLink(cta.link)}
+      <Button as="a" {href} {target} class="w-full max-w-[200px]">
         {cta.label}
       </Button>
     {/if}

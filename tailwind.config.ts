@@ -156,10 +156,17 @@ export default {
           'slideBackAndFoward 4s ease-in-out 0s infinite alternate both running',
         'grow-comet-smothly': 'growCometSmothly 0.2s linear',
         fadeIn: 'fadeIn 0.5s ease-in-out',
+
+        'navigationMenu-slideIn': 'navigationMenu-slideIn 300ms ease',
         'navigationMenu-fadeIn': 'navigationMenu-fadeIn 300ms ease',
         'navigationMenu-fadeOut': 'navigationMenu-fadeOut 300ms ease',
         'navigationMenu-scaleIn': 'navigationMenu-scaleIn 300ms ease',
-        'navigationMenu-scaleOut': 'navigationMenu-scaleOut 300ms ease'
+        'navigationMenu-scaleOut': 'navigationMenu-scaleOut 300ms ease',
+
+        'navigationMenu-enterFromRight': 'navigationMenu-enterFromRight 300ms ease',
+        'navigationMenu-enterFromLeft': 'navigationMenu-enterFromLeft 300ms ease',
+        'navigationMenu-exitToRight': 'navigationMenu-exitToRight 300ms ease',
+        'navigationMenu-exitToLeft': 'navigationMenu-exitToLeft 300ms ease'
       },
       keyframes: {
         slideBackAndFoward: {
@@ -216,6 +223,22 @@ export default {
         'navigationMenu-scaleOut': {
           from: { transform: 'scale(1)', opacity: 1 },
           to: { transform: 'scale(0.9)', opacity: 0 }
+        },
+        'navigationMenu-enterFromRight': {
+          from: { transform: 'translate3d(200px, 0, 0)', opacity: 0 },
+          to: { transform: 'translate3d(0, 0, 0)', opacity: 1 }
+        },
+        'navigationMenu-enterFromLeft': {
+          from: { transform: 'translate3d(-200px, 0, 0)', opacity: 0 },
+          to: { transform: 'translate3d(0, 0, 0)', opacity: 1 }
+        },
+        'navigationMenu-exitToRight': {
+          from: { transform: 'translate3d(0, 0, 0)', opacity: 1 },
+          to: { transform: 'translate3d(200px, 0, 0)', opacity: 0 }
+        },
+        'navigationMenu-exitToLeft': {
+          from: { transform: 'translate3d(0, 0, 0', opacity: 1 },
+          to: { transform: 'translate3d(-200px, 0, 0)', opacity: 0 }
         }
       },
       spacing: {
