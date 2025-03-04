@@ -7,8 +7,8 @@
   import type { NewHeaderStoryblok } from './newHeader.types';
   import { createNewHeaderContext } from './_context/newHader.context';
   import Burger from './_comps/Burger.svelte';
-  import Icon from '$src/components/icon/icon.svelte';
   import scrollDirection from '$src/lib/stores/scroll-direction';
+  import DummyIconForGradient from '$src/_comps/specials/DummyIconForGradient.svelte';
 
   export let block: ISbStoryData<NewHeaderStoryblok>;
   const { headerElem, isNavExpanded } = createNewHeaderContext();
@@ -43,8 +43,6 @@
     <Logo />
     <Burger />
     <NavItems navItems={block.content.items} ctas={block.content.ctas} />
-
-    <!-- hidden icon for gradient id -->
-    <Icon icon="shop-gradient" class="pointer-events-none visually-hidden" />
+    <DummyIconForGradient />
   </Container>
 </header>
