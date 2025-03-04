@@ -2,6 +2,7 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
+  import type { ButtonLinkStoryblok, LinkStoryblok } from '$src/types/bloks';
   import NavItem from './NavItem.svelte';
   import NavTrigger from './NavTrigger.svelte';
   import NewChip from './NewChip.svelte';
@@ -13,6 +14,7 @@
 
   const { navElem, isNavExpanded } = getNewHeaderContext();
   export let navItems: Array<NavItemProps | NavLinkProps>;
+  export let ctas: Array<LinkStoryblok | ButtonLinkStoryblok>;
 </script>
 
 <nav
@@ -66,5 +68,5 @@
 
     <NavViewport {navItems} />
   </div>
-  <NavCtas />
+  <NavCtas {ctas} />
 </nav>
