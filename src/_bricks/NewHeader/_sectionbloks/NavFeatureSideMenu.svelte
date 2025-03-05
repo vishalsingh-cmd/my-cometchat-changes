@@ -15,7 +15,7 @@
     slots: {
       base: ['grid grid-cols-1fr', 'xl:grid-cols-[auto_1fr]'],
       sidebar: ['flex flex-col bg-[#14131D]', 'hidden xl:flex xl:w-max'],
-      contents: ['flex flex-col', 'xl:bg-[#0F0E19]']
+      contents: ['flex flex-col min-w-0', 'xl:bg-[#0F0E19]']
     }
   });
 

@@ -6,7 +6,7 @@
   export let className = '';
   const navActiveShadow = tv({
     base: [
-      'absolute bottom-0',
+      'absolute bottom-0 pointer-events-none',
       'w-20 hidden xl:block',
       'h-0 data-[state="active"]:h-4',
       'left-[var(--active-trigger-left)]',

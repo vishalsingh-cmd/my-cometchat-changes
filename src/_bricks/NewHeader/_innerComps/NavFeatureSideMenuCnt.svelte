@@ -59,7 +59,7 @@
       {#if blockMap[content.component]}
         <svelte:component
           this={blockMap[content.component]}
-          className="xl:[&:nth-of-type(2)]:border-l xl:[&:nth-of-type(2)]:border-l-[#FAFAFF0F] xl:w-max"
+          className="xl:[&:nth-of-type(2)]:border-l xl:[&:nth-of-type(2)]:border-l-[#FAFAFF0F]"
           block={content}
           {...$$restProps}
         />
