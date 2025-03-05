@@ -22,7 +22,8 @@
     [
       'absolute inset-0 -z-[1]',
       'w-full bg-[#0A0914] px-[inherit] pt-16',
-      'h-[calc(100vh-env(safe-area-inset-top)-env(safe-area-inset-bottom))]',
+      // 'h-[calc(100vh-env(safe-area-inset-top)-env(safe-area-inset-bottom))]',
+      'h-full',
       'flex flex-col',
       'overflow-y-auto overflow-x-clip',
       'transition-[transform,opacity] duration-300',
