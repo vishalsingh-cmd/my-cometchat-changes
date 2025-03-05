@@ -46,6 +46,7 @@
     const target = e.target as HTMLElement;
     if (target.tagName === 'A' || target.closest('a')) {
       actions.hidePanel();
+      actions.deactivateNav();
     }
   };
 </script>

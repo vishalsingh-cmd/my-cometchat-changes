@@ -26,6 +26,7 @@
     'transition-[background-color,transform,border-bottom-color] duration-300',
     'hover:border-opacity-100 hover:bg-opacity-100',
     scrollY > 100 && 'border-opacity-100 bg-opacity-100',
+    $isNavExpanded && 'min-h-full',
     {
       'translate-y-0': $scrollDirection === 'up',
       '-translate-y-full': $scrollDirection === 'down' && scrollY > 100 && activeIndex === -1
