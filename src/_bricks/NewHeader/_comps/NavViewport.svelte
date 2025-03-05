@@ -26,7 +26,8 @@
       'xl:data-[state="active"]:-translate-x-1/2',
 
       'xl:shadow-new-header-viewport xl:border-[#FAFAFF] xl:rounded-2xl',
-      'xl:border-none xl:data-[state="active"]:border'
+      'xl:border-none xl:data-[state="active"]:border',
+      'xl:pointer-events-none xl:data-[state="active"]:pointer-events-auto'
     ]
   });
 

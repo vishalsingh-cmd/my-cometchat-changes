@@ -20,7 +20,7 @@
 
         'xl:w-max'
       ],
-      image: ['w-full h-full max-h-[120px] object-cover object-bottom'],
+      image: ['w-full h-full max-h-[120px] rounded-[inherit] object-cover object-bottom'],
       info: ['px-4 py-4 flex flex-col'],
       title: [
         'font-sans text-[14px] font-semibold text-[#FAFAFF] text-opacity-60',
