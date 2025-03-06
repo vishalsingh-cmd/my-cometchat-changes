@@ -31,7 +31,7 @@
   data-state={status}
   on:click={handleOnClick}
 >
-  <div class="grid grid-cols-[auto_1fr] gap-4 pb-10">
+  <div class="grid grid-cols-[auto_1fr] gap-4 pb-8">
     <div
       class={cn([
         'h-8 w-8',
