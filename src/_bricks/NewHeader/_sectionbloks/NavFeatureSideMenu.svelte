@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { WINDOW_BREEAKPOINTS } from '$src/_consts/breakpoints.const';
   import { tv } from '$src/_utils/tailwind.utils';
   import NavFeatureSideMenuCnt from '../_innerComps/NavFeatureSideMenuCnt.svelte';
   import NavFeatureSideMenuTrigger from '../_innerComps/NavFeatureSideMenuTrigger.svelte';
@@ -33,6 +34,11 @@
       <NavFeatureSideMenuTrigger
         isActive={activeIndex === index}
         on:click={() => toggleItem(index)}
+        on:pointerenter={() => {
+          if (window.innerWidth > WINDOW_BREEAKPOINTS.xl) {
+            toggleItem(index);
+          }
+        }}
       >
         {item.title}
       </NavFeatureSideMenuTrigger>
