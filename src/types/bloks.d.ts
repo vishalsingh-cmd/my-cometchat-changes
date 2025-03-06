@@ -2376,8 +2376,7 @@ export interface home__bannerStoryblok {
   animatedBoxes: AnimatedBannerBoxStoryblok[];
   afterTitle: string;
   description: string;
-  primaryCta: ButtonLinkStoryblok[];
-  secondaryCta: ButtonLinkStoryblok[];
+  links: ButtonLinkStoryblok[];
 
   _uid: string;
   component: 'home__banner';

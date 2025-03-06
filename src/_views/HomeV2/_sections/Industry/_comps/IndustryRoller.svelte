@@ -53,10 +53,7 @@
   export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
-<div
-  class={cn(['group/containerElem', 'flex flex-col gap-10'], ['lg:gap-8'])}
-  bind:this={containerElem}
->
+<div class={cn(['group/containerElem', 'flex flex-col gap-10'])} bind:this={containerElem}>
   {#each industryPointBlocks as industryPointBlock, index}
     <IndustryRollerItem
       {index}
