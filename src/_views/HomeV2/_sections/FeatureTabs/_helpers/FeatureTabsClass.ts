@@ -6,6 +6,7 @@ import Observer from 'gsap/dist/Observer';
 interface RequiredElements {
   triggerElems: HTMLButtonElement[];
   containerElem: HTMLDivElement;
+  featureTabsNav: HTMLDivElement;
   containerScrollElem: HTMLDivElement;
   contentElems: HTMLDivElement[];
   videoElems: HTMLVideoElement[];
@@ -16,6 +17,7 @@ export default class FeatureTabsClass {
   private readonly tabsElem: HTMLDivElement;
   private triggerElems!: HTMLButtonElement[];
   private containerElem!: HTMLDivElement;
+  private featureTabsNav!: HTMLDivElement;
   private containerScrollElem!: HTMLDivElement;
   private contentElems!: HTMLDivElement[];
   private videoElems!: HTMLVideoElement[];
@@ -45,6 +47,7 @@ export default class FeatureTabsClass {
     const {
       triggerElems,
       containerElem,
+      featureTabsNav,
       containerScrollElem,
       contentElems,
       videoElems,
@@ -53,6 +56,7 @@ export default class FeatureTabsClass {
 
     this.triggerElems = triggerElems;
     this.containerElem = containerElem;
+    this.featureTabsNav = featureTabsNav;
     this.containerScrollElem = containerScrollElem;
     this.contentElems = contentElems;
     this.videoElems = videoElems;
@@ -199,7 +203,16 @@ export default class FeatureTabsClass {
     });
 
     this.updateActiveStates(index);
-    gsap.to(this.videoElems, {
+
+    const tabWidth = this.triggerElems[index].offsetWidth;
+    const containerWidth = this.featureTabsNav.clientWidth;
+    const scrollPosition = this.triggerElems[index].offsetLeft - containerWidth / 2 + tabWidth / 2;
+    this.featureTabsNav.scrollTo({
+      left: Math.max(0, scrollPosition),
+      behavior: 'smooth'
+    });
+
+    gsap.to(this.contentElems, {
       x: -1 * (window.innerWidth * index),
       duration: 0.6,
       onComplete: () => {
@@ -252,6 +265,10 @@ export default class FeatureTabsClass {
         '[data-name="feature-tabs-container-scroll"]'
       );
 
+      const featureTabsNav = tabsElem.querySelector<HTMLDivElement>(
+        '[data-name="feature-tabs-nav"]'
+      );
+
       const contentElems = Array.from(
         tabsElem.querySelectorAll<HTMLDivElement>('[data-name="feature-tabs-cnt"]')
       );
@@ -268,6 +285,7 @@ export default class FeatureTabsClass {
         !triggerElems.length ||
         !containerElem ||
         !containerScrollElem ||
+        !featureTabsNav ||
         !contentElems.length ||
         !videoElems.length ||
         !progressElems.length ||
@@ -282,6 +300,7 @@ export default class FeatureTabsClass {
         triggerElems,
         containerElem,
         containerScrollElem,
+        featureTabsNav,
         contentElems,
         videoElems,
         progressElems

@@ -2349,6 +2349,7 @@ export interface SpecialTestimonialsStoryblok {
 export interface FeatureTabStoryblok {
   titleName: string;
   video: AssetStoryblok;
+  mobileImg: AssetStoryblok;
   _uid: string;
   component: 'feature_tab';
   [k: string]: any;

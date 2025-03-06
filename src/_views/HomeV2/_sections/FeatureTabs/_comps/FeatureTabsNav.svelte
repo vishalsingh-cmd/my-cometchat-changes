@@ -13,6 +13,10 @@
   });
 </script>
 
-<div data-scrollbar="hide" class={featureTabsNav({ class: className })}>
+<div
+  data-scrollbar="hide"
+  class={featureTabsNav({ class: className })}
+  data-name="feature-tabs-nav"
+>
   <slot />
 </div>
