@@ -41,7 +41,7 @@
           data-name="feature-tabs-container-scroll"
         >
           {#each block.featureTabs as featureTab}
-            <FeatureTabsCnt videoSrc={featureTab.video} />
+            <FeatureTabsCnt videoSrc={featureTab.video} mobileImgSrc={featureTab.mobileImg} />
           {/each}
         </div>
 
