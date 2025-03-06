@@ -30,6 +30,7 @@
   ])}
   data-state={status}
   on:click={handleOnClick}
+  on:keypress
 >
   <div class="grid grid-cols-[auto_1fr] gap-4 pb-10">
     <div
@@ -98,7 +99,7 @@
       'h-[1px] w-full -translate-x-full bg-[#FF7F3E]',
       'transition-transform duration-200',
       'group-data-[state="active"]/industryRollerItem:duration-[8000ms]',
-      'group-data-[anim="active"]/containerElem:group-data-[state="active"]:translate-x-0'
+      'group-data-[state="active"]/industryRollerItem:translate-x-0'
     ])}
   />
 </div>
