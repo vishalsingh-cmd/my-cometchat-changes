@@ -33,21 +33,16 @@
         {block.description}
       </p>
 
-      <div class={cn(['flex items-center justify-center gap-3', 'mt-10'], ['lg:mt-16 lg:gap-6'])}>
-        {#if block.primaryCta[0]}
-          {@const { href, target, rel } = getAnchorFromCmsLink(block.primaryCta[0].link)}
-          <Button as="a" variant={block.primaryCta[0].variant} {href} {target} {rel}>
-            {block.primaryCta[0].label}
-          </Button>
-        {/if}
-
-        {#if block.secondaryCta[0]}
-          {@const { href, target, rel } = getAnchorFromCmsLink(block.secondaryCta[0].link)}
-          <Button as="a" variant={block.secondaryCta[0].variant} {href} {target} {rel}>
-            {block.secondaryCta[0].label}
-          </Button>
-        {/if}
-      </div>
+      {#if block.links.length}
+        <div class={cn(['flex items-center justify-center gap-3', 'mt-10'], ['lg:mt-16 lg:gap-6'])}>
+          {#each block.links as linkCta}
+            {@const { href, target, rel } = getAnchorFromCmsLink(linkCta.link)}
+            <Button as="a" variant={linkCta.variant} {href} {target} {rel}>
+              {linkCta.label}
+            </Button>
+          {/each}
+        </div>
+      {/if}
     </div>
   </Container>
   <img
