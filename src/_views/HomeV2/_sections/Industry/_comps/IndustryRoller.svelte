@@ -18,6 +18,7 @@
     ScrollTrigger.create({
       trigger: containerElem,
       start: 'top center',
+      once: true,
       onEnter: () => {
         containerElem?.setAttribute('data-anim', 'active');
         setActiveIndex(0);
