@@ -95,11 +95,18 @@
   </div>
 
   <div
+    data-name="underline"
     class={cn([
       'h-[1px] w-full -translate-x-full bg-[#FF7F3E]',
       'transition-transform duration-200',
       'group-data-[state="active"]/industryRollerItem:duration-[8000ms]',
-      'group-data-[state="active"]/industryRollerItem:translate-x-0'
+      ' group-data-[anim="active"]/containerElem:group-data-[state="active"]/industryRollerItem:translate-x-0 '
     ])}
   />
 </div>
+
+<style>
+  [data-anim='active'] [data-state='active'] [data-name='underline'] {
+    @apply translate-x-0;
+  }
+</style>
