@@ -22,6 +22,7 @@
   data-name="navFeatureSideMenuTrigger"
   data-state={isActive ? 'active' : 'inactive'}
   on:click
+  on:pointerenter
 >
   <slot />
 </button>
