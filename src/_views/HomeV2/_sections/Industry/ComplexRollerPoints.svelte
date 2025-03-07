@@ -1,7 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import { createSelectContext } from '$src/_comps/form/Select/SelectContext';
-  import { industriesData } from './_datas/Industries.data';
   import { createIndustryContext } from './_context/IndustryContext';
   import type { RollerPointStoryblok } from '$types/bloks';
   import IndustryPoints from './_comps/IndustryPoints.svelte';
@@ -22,7 +21,7 @@
 <svelte:window bind:innerWidth />
 <div class={cn(['mt-10 grid grid-cols-1 gap-6'], ['lg:mt-14 lg:grid-cols-2 lg:gap-20'])}>
   {#if innerWidth < 1024}
-    <IndustrySelect {industryPointBlocks} selectOptions={industriesData} {selectContext} />
+    <IndustrySelect {industryPointBlocks} {selectContext} />
   {/if}
 
   {#if innerWidth >= 1024}

@@ -110,8 +110,8 @@
   >
     {#if block.link}
       {@const link = block.link[0]}
-      {@const { href } = getAnchorFromCmsLink(link.link)}
-      <Button variant="secondary" as="a" {href} target="_blank">
+      {@const { href, target } = getAnchorFromCmsLink(link.link)}
+      <Button variant="secondary" as="a" {href} {target}>
         {link.label}
       </Button>
     {/if}
