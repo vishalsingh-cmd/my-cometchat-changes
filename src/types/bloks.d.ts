@@ -2304,9 +2304,10 @@ export interface SimpleTextStoryblok {
 export interface RollerPointStoryblok {
   title: string;
   description: string;
+  icon: string;
   image: AssetStoryblok;
   points: SimpleTextStoryblok[];
-  link: LinkStoryblok;
+  link: standardLinkStoryblok;
   _uid: string;
   component: 'roller_point';
   [k: string]: any;

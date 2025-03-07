@@ -7,11 +7,9 @@
   import ChevronDownIcon from '$src/_icons/ChevronDownIcon.svelte';
   import { cn } from '$src/_utils/tailwind.utils';
   import { type SelectContext } from '$src/_comps/form/Select/SelectContext';
-  import { type IndustriesProps } from '../_datas/Industries.data';
   import type { RollerPointStoryblok } from '$types/bloks';
 
   export let industryPointBlocks: RollerPointStoryblok[];
-  export let selectOptions: IndustriesProps[];
   export let selectContext: SelectContext;
 
   const { activeIndex, setActiveIndex, isOpen, setIsOpen } = selectContext;
@@ -27,10 +25,10 @@
       'border border-[#FAFAFF] border-opacity-20 rounded-[10px]'
     ])}
   >
-    {#if selectOptions[$activeIndex] && industryPointBlocks[$activeIndex]}
+    {#if industryPointBlocks[$activeIndex]}
       <IndustrySelectOption
         isSelected={true}
-        icon={selectOptions[$activeIndex].icon}
+        icon={industryPointBlocks[$activeIndex].icon}
         title={industryPointBlocks[$activeIndex].title}
       />
       <ChevronDownIcon
@@ -56,7 +54,7 @@
         <IndustrySelectOption
           className={cn(['py-4 px-4'])}
           isSelected={$activeIndex === index}
-          icon={selectOptions[index].icon}
+          icon={industryPointBlocks[index].icon}
           title={industryPointBlock.title}
         />
       </SelectOption>

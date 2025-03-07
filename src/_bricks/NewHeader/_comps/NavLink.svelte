@@ -1,8 +1,10 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import type { standardLinkStoryblok } from '$src/types/bloks';
 
   export let className = '';
-  export let link: string;
+  export let link: standardLinkStoryblok;
 
   const navLink = tv({
     base: [
@@ -14,8 +16,10 @@
       'group-hover/navitem:text-[#8C7CE0]'
     ]
   });
+
+  const { href, target } = getAnchorFromCmsLink(link);
 </script>
 
-<a class={navLink({ class: className })} href={link} target="_blank">
+<a class={navLink({ class: className })} {href} {target}>
   <slot />
 </a>

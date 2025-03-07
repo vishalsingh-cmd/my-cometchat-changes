@@ -3,7 +3,6 @@
   import { gsap } from 'gsap';
   import ScrollTrigger from 'gsap/dist/ScrollTrigger';
   import { onMount, onDestroy } from 'svelte';
-  import { industriesData } from '../_datas/Industries.data';
   import { getIndustryContect } from '../_context/IndustryContext';
   import IndustryRollerItem from './IndustryRollerItem.svelte';
   import type { RollerPointStoryblok } from '$types/bloks';
@@ -11,6 +10,7 @@
   let interval: any;
   let containerElem: HTMLDivElement;
   const { activeIndex, setActiveIndex } = getIndustryContect();
+  export let industryPointBlocks: RollerPointStoryblok[];
 
   onMount(() => {
     if (!containerElem) return;
@@ -33,7 +33,7 @@
 
   function startAnimation() {
     interval = setInterval(() => {
-      setActiveIndex(($activeIndex + 1) % industriesData.length);
+      setActiveIndex(($activeIndex + 1) % industryPointBlocks.length);
     }, 8000);
   }
 
@@ -49,8 +49,6 @@
     setActiveIndex(index);
     startAnimation();
   }
-
-  export let industryPointBlocks: RollerPointStoryblok[];
 </script>
 
 <div class={cn(['group/containerElem', 'flex flex-col gap-10'])} bind:this={containerElem}>
@@ -58,10 +56,10 @@
     <IndustryRollerItem
       {index}
       onClick={handleClick}
-      icon={industriesData[index].icon}
+      icon={industryPointBlock.icon}
       title={industryPointBlock.title}
       description={industryPointBlock.description}
-      link={industryPointBlock.link.url}
+      link={industryPointBlock.link}
       status={index === $activeIndex ? 'active' : 'inactive'}
     />
   {/each}
