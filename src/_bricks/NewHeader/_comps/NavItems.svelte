@@ -1,6 +1,5 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
-  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
   import type { ButtonLinkStoryblok, LinkStoryblok } from '$src/types/bloks';
   import NavItem from './NavItem.svelte';
@@ -54,8 +53,7 @@
               {/if}
             </NavTrigger>
           {:else if navItem.component === 'nav-link'}
-            {@const { href } = getAnchorFromCmsLink(navItem.link)}
-            <NavLink link={href || ''}>
+            <NavLink link={navItem.link}>
               {navItem.title}
               {#if navItem.isNew}
                 <NewChip />

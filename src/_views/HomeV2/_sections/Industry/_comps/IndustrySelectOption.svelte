@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
-  export let icon: any;
+  import Icon from '$src/components/icon/icon.svelte';
+  export let icon: string;
   export let title: string;
   export let isSelected: boolean;
   export let className = '';
@@ -10,9 +11,12 @@
   class={cn(['group', 'grid grid-cols-[auto_1fr] items-center gap-4'], [className])}
   data-state={isSelected ? 'active' : 'inactive'}
 >
-  <svelte:component
-    this={icon}
-    className={cn([
+  <Icon
+    size="xs"
+    {icon}
+    class={cn([
+      '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
+      '[&_path]:opacity-40 group-data-[state="active"]:[&_path]:opacity-100',
       'group-data-[state="active"]:[&_path]:fill-[#FF7129]',
       '[&_path]:transition-colors [&_path]:duration-300'
     ])}

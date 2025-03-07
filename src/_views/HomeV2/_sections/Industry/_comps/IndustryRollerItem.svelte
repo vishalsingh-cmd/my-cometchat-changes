@@ -1,13 +1,16 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
   import GhostButton from '$src/components/buttons/ghost-button.svelte';
+  import Icon from '$src/components/icon/icon.svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import type { standardLinkStoryblok } from '$src/types/bloks';
   import { onMount } from 'svelte';
 
   export let index: number;
-  export let icon;
+  export let icon: string;
   export let title;
   export let description;
-  export let link: string;
+  export let link: standardLinkStoryblok;
   export let status: 'active' | 'inactive';
   export let onClick: (index: number) => void;
 
@@ -20,6 +23,8 @@
   onMount(() => {
     contentElem.setAttribute('style', `--scroll-height: ${contentElem.scrollHeight}px`);
   });
+
+  const { href, target } = getAnchorFromCmsLink(link);
 </script>
 
 <div
@@ -35,7 +40,7 @@
   <div class="grid grid-cols-[auto_1fr] gap-4 pb-10">
     <div
       class={cn([
-        'mt-0.5 h-8 w-8',
+        'h-8 w-8',
         'flex items-center justify-center',
         'rounded-md border border-[#FAFAFF] border-opacity-10',
         'transition-[border-color] duration-300',
@@ -44,16 +49,19 @@
         'group-data-[state="active"]/industryRollerItem:border-[#FF7129]'
       ])}
     >
-      <svelte:component
-        this={icon}
-        className={cn([
+      <Icon
+        size="xs"
+        {icon}
+        class={cn([
+          '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
+          '[&_path]:opacity-40 group-data-[state="active"]/industryRollerItem:[&_path]:opacity-100',
           'group-data-[state="active"]/industryRollerItem:[&_path]:fill-[#FF7129]',
           '[&_path]:transition-colors [&_path]:duration-300'
         ])}
       />
     </div>
 
-    <div class="flex flex-col justify-center gap-2">
+    <div class="flex flex-col justify-center">
       <h3
         class={cn(
           [
@@ -70,7 +78,7 @@
 
       <div
         class={cn([
-          'flex flex-col gap-2',
+          'flex flex-col gap-2 group-data-[state="active"]/industryRollerItem:mt-4',
           'pointer-events-none h-0 overflow-hidden',
           'group-data-[state="active"]/industryRollerItem:h-[var(--scroll-height)]',
           'group-data-[state="active"]/industryRollerItem:pointer-events-auto',
@@ -87,7 +95,7 @@
           {description}
         </p>
 
-        <GhostButton variant="highlighted" class="w-max" href={link} as="a" taget="_blank">
+        <GhostButton variant="highlighted" class="w-max" {href} as="a" {target}>
           Read more
         </GhostButton>
       </div>

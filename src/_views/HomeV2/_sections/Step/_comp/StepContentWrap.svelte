@@ -24,8 +24,8 @@
     {/if}
 
     {#if block.link[0]}
-      {@const { href } = getAnchorFromCmsLink(block.link[0].link)}
-      <GhostButton as="a" variant="highlighted" {href} target="_blank" class="w-max">
+      {@const { href, target } = getAnchorFromCmsLink(block.link[0].link)}
+      <GhostButton as="a" variant="highlighted" {href} {target} class="w-max">
         {block.link[0].label}
       </GhostButton>
     {/if}
