@@ -6,8 +6,7 @@
   import type { SpecialTestimonialStoryblok } from '$src/types/bloks';
   import Media from '$src/components/media.svelte';
 
-  let className: undefined | string = undefined;
-  export { className as class };
+  export let className = '';
   const tmolsCard = tv({
     base: ['relative p-6 border border-[#FAFAFF1A] rounded-2xl', ' flex flex-col gap-6']
   });
@@ -19,7 +18,6 @@
   <div class="grid max-h-[120px] grid-cols-[_7fr_3fr] gap-3">
     <div class="flex flex-col justify-between gap-3">
       <div class="max-h-40">
-        <!-- <img src={content.brand_img} alt="Brand logo" class="object-cover" /> -->
         <Media media={block.brand_img} />
       </div>
       <QuoteIcon />
@@ -27,7 +25,6 @@
     <div
       class={cn(['relative h-[120px] w-[120px] overflow-hidden rounded-bl-[130px] bg-[#35353E]'])}
     >
-      <!-- <img src={content.profile_img} alt="profile" class="w-full" /> -->
       <Media media={block.profile_img} />
     </div>
   </div>
