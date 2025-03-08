@@ -117,7 +117,10 @@
     <div class="mt-10 lg:mt-[88px]" bind:this={emblaNode}>
       <div class="embla__viewport lg:overflow-visible" bind:this={viewportNode}>
         <div
-          class={cn(['embla__container flex gap-5'], ['lg:grid lg:grid-cols-3 lg:gap-8'])}
+          class={cn(
+            ['embla__container flex gap-5'],
+            ['lg:!block lg:[-webkit-column-count:_3;] lg:[column-count:_3;] lg:[column-gap:_32px;]']
+          )}
           bind:this={embalaContainer}
         >
           {#if block}
@@ -126,10 +129,13 @@
                 class={cn(
                   ['embla__slide min-w-0 max-w-[340px]'],
                   ['flex-shrink-0 flex-grow-0 basis-full'],
-                  ['lg:max-w-none lg:basis-auto']
+                  [
+                    'min-h-0 lg:max-w-none lg:basis-auto',
+                    'lg:mb-8 lg:[-webkit-column-break-inside:_auto;] lg:[break-inside:_avoid;]'
+                  ]
                 )}
               >
-                <TmolsCard block={data} />
+                <TmolsCard className="lg:[break-inside:_avoid;]" block={data} />
               </div>
             {/each}
           {/if}
