@@ -239,5 +239,16 @@
 
       color: #fcfcfe;
     }
+
+    & .hs-form-booleancheckbox-display {
+      display: grid !important;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+
+      & .hs-input {
+        width: 16px !important;
+        height: 16px;
+      }
+    }
   }
 </style>
