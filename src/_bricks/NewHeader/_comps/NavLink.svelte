@@ -2,9 +2,11 @@
   import { tv } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { standardLinkStoryblok } from '$src/types/bloks';
+  import { getNewHeaderContext } from '../_context/newHader.context';
 
   export let className = '';
   export let link: standardLinkStoryblok;
+  const { actions } = getNewHeaderContext();
 
   const navLink = tv({
     base: [
@@ -17,9 +19,17 @@
     ]
   });
 
+  const handleOnClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A' || target.closest('a')) {
+      actions.hidePanel();
+      actions.deactivateNav();
+    }
+  };
+
   const { href, target } = getAnchorFromCmsLink(link);
 </script>
 
-<a class={navLink({ class: className })} {href} {target}>
+<a class={navLink({ class: className })} {href} {target} on:click={handleOnClick}>
   <slot />
 </a>
