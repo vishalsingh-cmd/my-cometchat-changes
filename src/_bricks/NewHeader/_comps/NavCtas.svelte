@@ -3,9 +3,11 @@
   import Button from '$src/components/buttons/button.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { ButtonLinkStoryblok, LinkStoryblok } from '$src/types/bloks';
+  import { getNewHeaderContext } from '../_context/newHader.context';
 
   export let className = '';
   export let ctas: Array<LinkStoryblok | ButtonLinkStoryblok>;
+  const { actions } = getNewHeaderContext();
   const navCtas = tv({
     base: [
       '-z-[1]',
@@ -14,6 +16,14 @@
       'xl:py-[unset] xl:mt-[unset]'
     ]
   });
+
+  const handleOnClick = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === 'A' || target.closest('a')) {
+      actions.hidePanel();
+      actions.deactivateNav();
+    }
+  };
 </script>
 
 <div class={navCtas({ class: className })}>
@@ -30,6 +40,7 @@
           ],
           ['xl:block']
         )}
+        on:click={handleOnClick}
         {href}
         {target}
       >
@@ -41,11 +52,12 @@
         as="a"
         {href}
         target="_blank"
+        on:click={handleOnClick}
         class="w-full max-w-[200px] xl:hidden">Log in</Button
       >
     {:else}
       {@const { href, target } = getAnchorFromCmsLink(cta.link)}
-      <Button as="a" {href} {target} class="w-full max-w-[200px]">
+      <Button as="a" {href} {target} class="w-full max-w-[200px]" on:click={handleOnClick}>
         {cta.label}
       </Button>
     {/if}
