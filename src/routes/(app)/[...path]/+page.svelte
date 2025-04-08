@@ -1,30 +1,22 @@
 <script lang="ts">
   import { industries } from '$lib/stores/industries';
-
   import { page } from '$app/stores';
-
   import { string } from '$lib/strings/index.js';
-
   import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
-
   import DynamicPage from '$components/blocks/dynamic-page.svelte';
 
   export let data;
+  let title: string;
+  let description: string;
 
   startStoryblokBridge(data.page.id, (newStory) => {
     data.page = newStory;
   });
 
-  let title =
-    data.page?.content?.seo && data.page?.content?.seo[0] && data.page?.content?.seo?.[0].title
-      ? data.page?.content?.seo?.[0].title
-      : string('default_seo_title');
-  let description =
-    data.page?.content?.seo &&
-    data.page?.content?.seo[0] &&
-    data.page?.content?.seo?.[0].description
-      ? data.page?.content?.seo?.[0].description
-      : string('default_seo_description');
+  $: if ($page && data.page) {
+    title = data.page?.content?.seo?.[0]?.title || string('default_seo_title');
+    description = data.page?.content?.seo?.[0]?.description || string('default_seo_description');
+  }
 
   $industries = data.industries;
 </script>
