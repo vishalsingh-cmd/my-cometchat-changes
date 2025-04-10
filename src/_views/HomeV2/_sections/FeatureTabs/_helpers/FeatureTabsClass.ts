@@ -79,7 +79,7 @@ export default class FeatureTabsClass {
     this.scrollTrigger = ScrollTrigger.create({
       trigger: this.tabsElem,
       start: 'top top',
-      markers: true,
+      markers: false,
       pin: true,
       anticipatePin: 1,
       fastScrollEnd: true,
