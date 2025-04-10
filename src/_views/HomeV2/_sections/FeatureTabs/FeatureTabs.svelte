@@ -51,6 +51,7 @@
                   class={cn(['mx-auto h-full w-4/5 object-contain', 'max-sm:hidden'])}
                   src={featureTab.video.filename}
                   muted
+                  playsinline
                 />
                 <img
                   class={cn(['mx-auto h-auto w-4/5 object-contain', 'sm:hidden'])}
