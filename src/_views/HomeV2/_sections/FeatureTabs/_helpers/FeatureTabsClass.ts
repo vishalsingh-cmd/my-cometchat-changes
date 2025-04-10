@@ -129,37 +129,24 @@ export default class FeatureTabsClass {
       tolerance: 10,
       wheelSpeed: 1,
       preventDefault: true,
-      onDown: () => {
+
+      onDown: (event) => {
         const now = Date.now();
         if (now - this.lastScrollTime <= this.scrollThreshold) {
           return;
         }
 
-        if (this.currentIndex === this.elems.contentElems.length - 1) {
-          this.scrollToNextSection();
-          return;
-        }
-
-        if (this.currentIndex < this.elems.contentElems.length - 1) {
-          this.lastScrollTime = now;
-          this.animateToPanel(this.currentIndex + 1);
-        }
+        const isTouch = event.isDragging;
+        isTouch ? this.handleScrollUp(now) : this.handleScrollDown(now);
       },
-      onUp: () => {
+      onUp: (event) => {
         const now = Date.now();
         if (now - this.lastScrollTime <= this.scrollThreshold) {
           return;
         }
 
-        if (this.currentIndex === 0) {
-          this.scrollToPrevSection();
-          return;
-        }
-
-        if (this.currentIndex > 0) {
-          this.lastScrollTime = now;
-          this.animateToPanel(this.currentIndex - 1);
-        }
+        const isTouch = event.isDragging;
+        isTouch ? this.handleScrollDown(now) : this.handleScrollUp(now);
       }
     });
     this.observer.disable();
@@ -234,6 +221,30 @@ export default class FeatureTabsClass {
         duration: 1,
         ease: 'power2.inOut'
       });
+    }
+  }
+
+  private handleScrollDown(now: number) {
+    if (this.currentIndex === this.elems.contentElems.length - 1) {
+      this.observer?.disable();
+      return;
+    }
+
+    if (this.currentIndex < this.elems.contentElems.length - 1) {
+      this.lastScrollTime = now;
+      this.animateToPanel(this.currentIndex + 1);
+    }
+  }
+
+  private handleScrollUp(now: number) {
+    if (this.currentIndex === 0) {
+      this.observer?.disable();
+      return;
+    }
+
+    if (this.currentIndex > 0) {
+      this.lastScrollTime = now;
+      this.animateToPanel(this.currentIndex - 1);
     }
   }
 
