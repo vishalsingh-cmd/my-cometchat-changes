@@ -16,6 +16,7 @@ export default class FeatureTabsClass {
     videoElems: HTMLVideoElement[];
     progressElems: HTMLDivElement[];
   };
+  private isInFrame = false;
   private scrollTrigger?: ScrollTrigger;
   private observer?: Observer;
   private currentIndex = 0;
@@ -66,10 +67,12 @@ export default class FeatureTabsClass {
       });
 
       video.addEventListener('ended', () => {
-        if (index === this.currentIndex && index < this.elems.contentElems.length - 1) {
-          this.animateToPanel(this.currentIndex + 1);
-        } else {
-          this.scrollToNextSection();
+        if (index === this.currentIndex) {
+          if (index < this.elems.contentElems.length - 1) {
+            this.animateToPanel(this.currentIndex + 1);
+          } else {
+            this.scrollToNextSection();
+          }
         }
       });
     });
@@ -90,6 +93,7 @@ export default class FeatureTabsClass {
         this.lastScrollTime = now;
       },
       onEnter: () => {
+        this.isInFrame = true;
         this.lastScrollTime = Date.now();
 
         if (this.currentIndex === 0) {
@@ -101,6 +105,7 @@ export default class FeatureTabsClass {
         document.body.setAttribute('data-header-status', 'inactive');
       },
       onEnterBack: () => {
+        this.isInFrame = true;
         this.lastScrollTime = Date.now();
 
         if (this.currentIndex === this.elems.contentElems.length - 1) {
@@ -112,10 +117,12 @@ export default class FeatureTabsClass {
         document.body.setAttribute('data-header-status', 'inactive');
       },
       onLeave: () => {
+        this.isInFrame = false;
         this.observer?.disable();
         document.body.setAttribute('data-header-status', 'active');
       },
       onLeaveBack: () => {
+        this.isInFrame = false;
         this.observer?.disable();
         document.body.setAttribute('data-header-status', 'active');
       }
@@ -193,6 +200,8 @@ export default class FeatureTabsClass {
   }
 
   private scrollToNextSection() {
+    if (!this.isInFrame) return;
+
     const currentSection = this.elems.containerElem.closest('section');
     const nextSection = currentSection?.nextElementSibling as HTMLElement;
     if (nextSection) {
