@@ -235,6 +235,8 @@ export default class FeatureTabsClass {
 
   private handleScrollDown(now: number) {
     if (this.currentIndex === this.elems.contentElems.length - 1) {
+      this.lastScrollTime = now;
+      this.scrollToNextSection();
       this.observer?.disable();
       return;
     }
