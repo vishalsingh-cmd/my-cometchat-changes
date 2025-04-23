@@ -10,20 +10,35 @@
   import emblaCarouselSvelte from 'embla-carousel-svelte';
   import FeatureTabOverlay from './_comps/FeatureTabOverlay.svelte';
   import FeatureTabsClass from './_helpers/FeatureTabsClass';
+  import DynamicCallout from './_comps/DynamicCallout.svelte';
 
   export let block: home__video_tabsStoryblok;
-  let emblaApi;
+  let emblaApi: EmblaCarouselType | null = null;
   let tabsElem: HTMLDivElement;
+  let selectedIndex = 0;
 
-  function onInit(event: CustomEvent<EmblaCarouselType>) {
-    emblaApi = event.detail;
-    new FeatureTabsClass(tabsElem, emblaApi);
+  function updateSelectedIndex() {
+    if (emblaApi) {
+      selectedIndex = emblaApi.selectedScrollSnap();
+    }
+  }
+  interface EmblaInitEvent extends Event {
+    detail: EmblaCarouselType;
+  }
+  function onInit(event: EmblaInitEvent) {
+    if (typeof window !== 'undefined') {
+      emblaApi = event.detail;
+      new FeatureTabsClass(tabsElem, emblaApi);
+
+      updateSelectedIndex();
+      emblaApi.on('select', updateSelectedIndex);
+    }
   }
 </script>
 
 <Section class="relative isolate">
   <Container pyEnabled={false} pxEnabled={false} expand="full">
-    <div data-name="tabs" bind:this={tabsElem}>
+    <div class="relative" data-name="tabs" bind:this={tabsElem}>
       <div class="relative">
         <FeatureTabsNav>
           {#each block.featureTabs as featureTab}
@@ -40,7 +55,7 @@
         on:emblaInit={onInit}
       >
         <div class={cn(['flex'])}>
-          {#each block.featureTabs as featureTab}
+          {#each block.featureTabs as featureTab, index}
             <div class={cn(['min-w-0 flex-[0_0_100%]'])}>
               <div
                 class={cn(['flex flex-col', 'h-[90svh] justify-center'])}
@@ -58,6 +73,13 @@
                   src={featureTab.mobileImg.filename}
                   alt="mobile feature"
                 />
+                {#if featureTab.callout && featureTab.callout.length > 0}
+                  <DynamicCallout
+                    text={featureTab.callout[0].CalloutText}
+                    icon={featureTab.callout[0].Icon}
+                    visible={selectedIndex === index}
+                  />
+                {/if}
               </div>
             </div>
           {/each}

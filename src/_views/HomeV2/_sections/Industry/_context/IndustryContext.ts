@@ -15,8 +15,10 @@ export function createIndustryContext(initialIndex: number): IndustryContext {
 
   const setActiveIndex = (index: number) => {
     activeIndex.set(index);
-    const event = new CustomEvent('change', { detail: index });
-    eventTarget.dispatchEvent(event);
+    if (typeof window !== 'undefined') {
+      const event = new CustomEvent('change', { detail: index });
+      eventTarget.dispatchEvent(event);
+    }
   };
 
   const onChange = (callback: (index: number) => void) => {
