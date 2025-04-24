@@ -30,7 +30,7 @@
   const DynamicCallout = tv({
     slots: {
       base: [
-        'animate-show-callout absolute bottom-0 md:bottom-[100px] left-0 right-0 m-auto flex items-center justify-center transition-all duration-500 ease-out '
+        'animate-show-callout absolute bottom-[100px] left-0 right-0 m-auto flex items-center justify-center transition-all duration-500 ease-out '
       ],
       wrapper: [
         'border-brand-8/40 z-10 flex items-center rounded-xl border p-2 shadow transition-all duration-500 ease-out backdrop-blur-sm',
@@ -38,7 +38,7 @@
         'max-w-[52px] max-h-[52px]'
       ],
       title: [
-        'font-sans text-[16px] font-semibold leading-[17px] text-[#FAFAFF] w-0 md:whitespace-nowrap',
+        'font-sans text-[14px] md:text-[16px] font-semibold leading-[17px] text-[#FAFAFF] w-0 md:whitespace-nowrap',
         'animate-text transform-gpu transition-all duration-500 ease-out'
       ],
       iconWrap: [
@@ -65,7 +65,7 @@
         </div>
         <!-- {/if} -->
         <div
-          class="absolute bottom-0 left-0 right-0 top-1/2 m-auto h-full w-full -translate-x-1/2 -translate-y-1/2 animate-ping rounded-xl md:bottom-[100px]"
+          class="absolute bottom-[100px] left-0 right-0 top-1/2 m-auto h-full w-full -translate-x-1/2 -translate-y-1/2 animate-ping rounded-xl"
         />
       </div>
     </div>
