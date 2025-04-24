@@ -128,20 +128,4 @@
       opacity: 0;
     }
   }
-
-  .expanded {
-    max-width: 100%;
-  }
-
-  .fade-in-up {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s;
-  }
-
-  .fade-out {
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity 0.3s ease-in, transform 0.3s ease-in;
-  }
 </style>
