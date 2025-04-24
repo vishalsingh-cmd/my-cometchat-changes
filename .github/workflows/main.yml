@@ -1,0 +1,25 @@
+name: Sync Inkeep Source
+ 
+on:
+  push:
+    branches:
+      - main
+ 
+jobs:
+  syncSourceJob:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+ 
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+ 
+    - name: Sync Source
+      uses: inkeep/pr-commenter-action@v10
+      env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      with:
+        apiKey: ${{secrets.INKEEP_API_KEY}}
+        sourceId: "cm9d2ha8s0043s6015q835gof"
