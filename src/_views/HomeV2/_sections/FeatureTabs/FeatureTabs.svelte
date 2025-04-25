@@ -58,7 +58,7 @@
           {#each block.featureTabs as featureTab, index}
             <div class={cn(['min-w-0 flex-[0_0_100%]'])}>
               <div
-                class={cn(['flex flex-col', 'h-[90svh] justify-center'])}
+                class={cn(['flex flex-col', 'h-full justify-center md:h-[90svh]'])}
                 data-name="feature-tabs-cnt"
               >
                 <video
@@ -69,7 +69,7 @@
                   playsinline
                 />
                 <img
-                  class={cn(['mx-auto h-auto w-4/5 object-contain', 'sm:hidden'])}
+                  class={cn(['mx-auto h-full w-4/5 object-contain object-top', 'sm:hidden'])}
                   src={featureTab.mobileImg.filename}
                   alt="mobile feature"
                 />

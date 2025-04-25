@@ -34,7 +34,7 @@
       ],
       wrapper: [
         'border-brand-8/40 z-10 flex items-center rounded-xl border p-2 shadow transition-all duration-500 ease-out backdrop-blur-sm',
-        'bg-gradient-to-b from-[#13141D19] to-[#FAFAFF1F]',
+        'bg-gradient-to-b from-[#13141D] to-[#0b0a15]',
         'max-w-[52px] max-h-[52px]'
       ],
       title: [
