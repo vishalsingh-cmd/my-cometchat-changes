@@ -52,6 +52,7 @@
                       ? product.link[0].label
                       : ''
                 }}
+                mobile_text={product.mobile_text}
               />
             {/each}
           </div>
