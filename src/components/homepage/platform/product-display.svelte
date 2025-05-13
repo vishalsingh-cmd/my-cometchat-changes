@@ -10,6 +10,7 @@
   export let title = '';
   export let description: string | RichtextStoryblok = '';
   export let link: MultilinkStoryblok;
+  export let mobile_text: string | '';
 </script>
 
 <div class="w-full max-w-[640px]">
@@ -29,8 +30,20 @@
         <p class="mb-3 font-medium leading-snug tracking-wide opacity-74">{description}</p>
       {/if}
     {/if}
-    <GhostButton as="a" href={link.href} target={link.target} rel={link.rel} variant="highlighted">
+    <GhostButton
+      as="a"
+      href={link.href}
+      target={link.target}
+      rel={link.rel}
+      variant="highlighted"
+      class={mobile_text ? 'max-sm:hidden' : ''}
+    >
       {link.label}
     </GhostButton>
+    {#if mobile_text}
+      <GhostButton variant="default" class="sm:hidden">
+        {mobile_text}
+      </GhostButton>
+    {/if}
   </div>
 </div>
