@@ -21,7 +21,7 @@ export default class FeatureTabsClass {
   private observer?: Observer;
   private currentIndex = 0;
   private lastScrollTime = 0;
-  private readonly scrollThreshold = 800;
+  private readonly scrollThreshold = 1000;
 
   constructor(tabsElem: HTMLDivElement, emblaApi: EmblaCarouselType) {
     this.tabsElem = tabsElem;
@@ -79,11 +79,13 @@ export default class FeatureTabsClass {
   }
 
   private initializeScrollTrigger() {
+    const isMobile = window.innerWidth <= 768;
+
     this.scrollTrigger = ScrollTrigger.create({
       trigger: this.tabsElem,
       start: 'top top',
       markers: false,
-      pin: true,
+      pin: !isMobile,
       anticipatePin: 1,
       fastScrollEnd: true,
       preventOverlaps: true,
@@ -101,7 +103,7 @@ export default class FeatureTabsClass {
           this.updateActiveStates(0);
         }
 
-        this.observer?.enable();
+        !isMobile && this.observer?.enable();
         document.body.setAttribute('data-header-status', 'inactive');
       },
       onEnterBack: () => {
@@ -113,7 +115,7 @@ export default class FeatureTabsClass {
           this.updateActiveStates(this.elems.contentElems.length - 1);
         }
 
-        this.observer?.enable();
+        !isMobile && this.observer?.enable();
         document.body.setAttribute('data-header-status', 'inactive');
       },
       onLeave: () => {
@@ -235,6 +237,8 @@ export default class FeatureTabsClass {
 
   private handleScrollDown(now: number) {
     if (this.currentIndex === this.elems.contentElems.length - 1) {
+      this.lastScrollTime = now;
+      this.scrollToNextSection();
       this.observer?.disable();
       return;
     }
