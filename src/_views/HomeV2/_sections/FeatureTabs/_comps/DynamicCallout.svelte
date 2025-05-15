@@ -1,20 +1,20 @@
-<script>
+<script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
   export let text = '';
   export let icon = '';
   export let className = '';
   export let visible = false;
 
-  let show = false;
-  let el;
-  let wrapperEl;
-  let timeout;
+  let show: boolean = false;
+  let el: HTMLElement | null = null;
+  let wrapperEl: HTMLElement | null = null;
+  let timeout: ReturnType<typeof setTimeout>;
 
   $: if (visible) {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       if (wrapperEl) {
-        const fullWidth = 600;
+        const fullWidth = 620;
         wrapperEl.style.maxWidth = fullWidth + 'px';
       }
       show = true;
@@ -30,7 +30,7 @@
   const DynamicCallout = tv({
     slots: {
       base: [
-        'animate-show-callout absolute bottom-[100px] left-0 right-0 m-auto flex items-center justify-center transition-all duration-500 ease-out '
+        'animate-show-callout sm:absolute sm:bottom-[100px] left-0 right-0 m-auto flex items-center justify-center transition-all duration-500 ease-out '
       ],
       wrapper: [
         'border-brand-8/40 z-10 flex items-center rounded-xl border p-2 shadow transition-all duration-500 ease-out backdrop-blur-sm',
@@ -65,7 +65,7 @@
         </div>
         <!-- {/if} -->
         <div
-          class="absolute bottom-[100px] left-0 right-0 top-1/2 m-auto h-full w-full -translate-x-1/2 -translate-y-1/2 animate-ping rounded-xl"
+          class="absolute left-0 right-0 top-0 m-auto h-full w-full -translate-x-1/2 -translate-y-1/2 animate-ping rounded-xl sm:bottom-[100px] sm:top-1/2"
         />
       </div>
     </div>
