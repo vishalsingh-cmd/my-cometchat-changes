@@ -23,12 +23,17 @@ export const hubspotForm = (
     portalId = '8969037',
     formId
   }: { region?: string; portalId?: string; formId: string }
-): ActionReturn<unknown, { 'on:complete': (e: CustomEvent) => void }> => {
+): ActionReturn<unknown, { 'on:complete': (e: CustomEvent) => void; 'on:submitSuccess'?: (e: CustomEvent) => void }> => {
+
   const init = async () => {
     node.ariaBusy = 'true';
     loadHubSpotForm()
       .then(() => {
-        window?.hbspt?.forms?.create({ region, portalId, formId, target: `#hubspot-form` });
+        window?.hbspt?.forms?.create({
+          region, portalId, formId, target: `#hubspot-form`, onFormSubmitted: function (e: any) {
+            node.dispatchEvent(new CustomEvent('submitSuccess', e));
+          },
+        });
       })
       .finally(() => {
         node.ariaBusy = 'false';
