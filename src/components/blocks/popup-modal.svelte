@@ -119,7 +119,9 @@
                   isLoading = false;
                 }}
                 on:submitSuccess={(e) => {
-                  closeModal();
+                  setTimeout(() => {
+                    closeModal();
+                  }, 1800);
                 }}
               />
             </div>
@@ -306,6 +308,7 @@
     }
 
     & .hs-button {
+      cursor: pointer;
       padding: 12px 16px;
 
       background-color: hsl(var(--color-brand-9));
