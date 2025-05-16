@@ -118,6 +118,9 @@
                 on:complete={() => {
                   isLoading = false;
                 }}
+                on:submitSuccess={(e) => {
+                  closeModal();
+                }}
               />
             </div>
           {/if}
