@@ -49,7 +49,7 @@
     src={planats_bg}
     alt="background"
     class={cn(
-      ['absolute inset-0 -z-[1]', 'h-full w-full object-cover object-top', '-translate-y-4'],
+      ['absolute inset-0 -z-[1]', 'h-full w-full object-cover object-bottom', '-translate-y-4'],
       ['lg:-translate-y-[4.5rem]']
     )}
   />
