@@ -18,7 +18,11 @@
 </script>
 
 {#if block}
+<<<<<<< Updated upstream
   {@const { name, description, highlights, cta, custom_price, tag } = block}
+=======
+  {@const { name, description, highlights, cta, custom_price, tag, custom_label } = block}
+>>>>>>> Stashed changes
   <div
     class={cn(
       'w-full md:h-full',
@@ -84,10 +88,19 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             </p>
 
             <p class="text-md/snug font-medium opacity-64">
+<<<<<<< Updated upstream
               {#if custom_price}
                 {'Free Forever'}
               {:else if isBilledAnnually && price.startsWith('$')}
                 {'Billed annually'}
+=======
+              {#if custom_label}
+                {custom_label}
+              {:else if isBilledAnnually && price.startsWith('$')}
+                {'Billed annually'}
+              {:else if custom_price}
+                {'Free Forever'}
+>>>>>>> Stashed changes
               {/if}
             </p>
           </div>

@@ -1788,6 +1788,11 @@ export interface PricingHeroInfoItemStoryblok {
   [k: string]: any;
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 export interface PricingHeroQ3Y24Storyblok {
   header?: PricingTitleQ3Y24Storyblok[];
   title?: string;
@@ -1823,6 +1828,10 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   custom_price?: string;
   cta: ButtonLinkStoryblok[];
   highlights?: PricingHighligtsQ3Y24Storyblok[];
+<<<<<<< Updated upstream
+=======
+  custom_label : string;
+>>>>>>> Stashed changes
   _uid: string;
   component: 'pricing-hero-Q3Y24-cardV1';
   [k: string]: any;
@@ -1860,6 +1869,10 @@ export interface PricingMauStoryblok {
   [k: string]: any;
 }
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 export interface PricingPayAsYouGoHighlightsStoryblok {
   price?: string;
   services?: string;
