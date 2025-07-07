@@ -1788,7 +1788,6 @@ export interface PricingHeroInfoItemStoryblok {
   [k: string]: any;
 }
 
-
 export interface PricingHeroQ3Y24Storyblok {
   header?: PricingTitleQ3Y24Storyblok[];
   title?: string;
@@ -1824,7 +1823,7 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   custom_price?: string;
   cta: ButtonLinkStoryblok[];
   highlights?: PricingHighligtsQ3Y24Storyblok[];
-  custom_label : string;
+  custom_label: string;
   _uid: string;
   component: 'pricing-hero-Q3Y24-cardV1';
   [k: string]: any;
