@@ -3,15 +3,16 @@
   import Button from '../buttons/button.svelte';
   import { cn } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import Icon from '$components/icon/icon.svelte';
 
-  import { onMount } from 'svelte';
+  import { onMount, SvelteComponent } from 'svelte';
   import { hubspotForm } from '$lib/actions/hubspot-form';
   import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
 
   export let block: PageStoryblok;
   export let className = '';
-  export let as: string = 'div';
-  let showModal: boolean = false;
+  export let as = 'div';
+  let showModal = true;
 
   const MODAL_DISMISS_KEY = 'demo_modal_dismissed_at';
   const EXPIRY_IN_DAYS = 365;
@@ -77,6 +78,15 @@
             [className]
           )}
         >
+          <button
+            type="button"
+            aria-label="Close modal"
+            on:click={closeModal}
+            class="absolute right-4 top-4 h-[44px] w-[48px] items-center rounded-xl border border-[#FAFAFF] border-opacity-10 bg-[#FAFAFF] bg-opacity-2 px-[16px] py-[14px] text-center hover:bg-white/10"
+          >
+            <Icon icon="x-close" width="16" height="16" class="opacity-80" />
+          </button>
+
           {#if block.Image}
             <div
               class="mx-auto mb-6 flex h-20 items-center justify-center lg:h-[125px] lg:w-[200px]"
