@@ -15,7 +15,7 @@
   let showModal = true;
 
   const MODAL_DISMISS_KEY = 'demo_modal_dismissed_at';
-  const EXPIRY_IN_DAYS = 365;
+  const EXPIRY_IN_DAYS = 30;
 
   function hasModalExpired(): boolean {
     const dismissedAt = localStorage.getItem(MODAL_DISMISS_KEY);
