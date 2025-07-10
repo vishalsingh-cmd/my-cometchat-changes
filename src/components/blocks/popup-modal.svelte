@@ -28,10 +28,12 @@
   }
 
   onMount(() => {
-    if (!hasModalExpired()) {
-      showModal = true;
-      document.body.style.overflow = 'hidden';
-    }
+    requestAnimationFrame(() => {
+      if (!hasModalExpired()) {
+        showModal = true;
+        document.body.style.overflow = 'hidden';
+      }
+    });
   });
 
   function closeModal() {
@@ -113,7 +115,7 @@
 
           {#if block.form && block.form[0]}
             {@const { form_title, api_form_id, api_region, api_portal_id } = block.form[0]}
-            <div class="w-full">
+            <div class="min-h-[210px] w-full transition-all duration-300">
               {#if isLoading}
                 <FormSkeleton />
               {/if}

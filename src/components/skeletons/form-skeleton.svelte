@@ -1,4 +1,4 @@
-<div class="flex w-full animate-pulse flex-col space-y-[16px]">
+<div class="flex w-full space-y-[16px]">
   {#each Array(4) as _}
     <div class="space-y-[6px]">
       <div data-theme="dark" class="h-[18px] w-[20%] rounded-2xl bg-gray-12/8" />
