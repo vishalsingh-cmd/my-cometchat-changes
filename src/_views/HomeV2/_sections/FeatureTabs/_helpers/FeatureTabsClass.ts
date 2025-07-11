@@ -71,7 +71,7 @@ export default class FeatureTabsClass {
           if (index < this.elems.contentElems.length - 1) {
             this.animateToPanel(this.currentIndex + 1);
           } else {
-            this.scrollToNextSection();
+            this.animateToPanel(0);
           }
         }
       });
@@ -85,7 +85,7 @@ export default class FeatureTabsClass {
       trigger: this.tabsElem,
       start: 'top top',
       markers: false,
-      pin: !isMobile,
+      pin: false,
       anticipatePin: 1,
       fastScrollEnd: true,
       preventOverlaps: true,
@@ -137,7 +137,7 @@ export default class FeatureTabsClass {
       type: 'wheel,touch,pointer',
       tolerance: 10,
       wheelSpeed: 1,
-      preventDefault: true,
+      preventDefault: false,
 
       onDown: (event) => {
         const now = Date.now();
