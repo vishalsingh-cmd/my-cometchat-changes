@@ -131,9 +131,7 @@
                   isLoading = false;
                 }}
                 on:submitSuccess={(e) => {
-                  setTimeout(() => {
-                    closeModal();
-                  }, 1800);
+                  closeModal();
                 }}
               />
             </div>
