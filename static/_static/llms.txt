@@ -1,0 +1,51 @@
+- [iOS Swift Chat SDK](https://www.cometchat.com/chat-sdks/ios-swift): Provide a customizable iOS Swift SDK to quickly integrate scalable, feature-rich chat functionality into mobile apps.
+- [Contact CometChat Sales](https://www.cometchat.com/contact-sales?ref=topnav): Enable users to contact CometChat sales for personalized chat and messaging solutions.
+- [CometChat Documentation](https://www.cometchat.com/docs): Provide documentation and resources for integrating and using CometChat's chat, voice, and video APIs and SDKs.
+- [Marketplace Chat Implementation Guide](https://www.cometchat.com/guides/marketplace-chat-implementation): Guide for implementing and optimizing in-app chat features in marketplace applications using CometChat.
+- [CometChat Pricing Plans](https://www.cometchat.com/pricing): Showcase CometChat's pricing plans and features for chat, voice, and video communication services.
+- [CometChat Chat Platform](https://www.cometchat.com/chat-and-messaging): Provide a comprehensive chat and messaging platform with SDKs, APIs, AI features, and tools for seamless in-app communication.
+- [Ready-to-ship Chat UI Kits](https://www.cometchat.com/ui-kits): Provide ready-to-use, customizable chat UI kits for easy integration and fast deployment of chat features.
+- [Telehealth Chat Implementation](https://www.cometchat.com/guides/telehealth-chat-implementation): Guide to integrating CometChat's HIPAA-compliant chat and video features into telehealth applications.
+- [Community Chat Solutions](https://www.cometchat.com/solutions/community-social): Provide a scalable, AI-moderated in-app chat platform to build safe and engaging community messaging experiences.
+- [Multi-Tenant Chat Platform](https://www.cometchat.com/features/multi-tenant-chat): Provide scalable, customizable multi-tenant chat solutions for SaaS and B2B enterprises with centralized management.
+- [Vue Chat SDK](https://www.cometchat.com/chat-sdks/vue): Provide a Vue SDK for quickly integrating scalable, customizable chat features with enterprise security and rich user engagement.
+- [CometChat React Native UI Kit](https://www.cometchat.com/docs/ui-kit/react-native/overview): Provide documentation and resources to build customizable React Native chat apps using CometChat's UI Kit.
+- [Kotlin Chat SDK](https://www.cometchat.com/chat-sdks/kotlin): Offer a Kotlin SDK enabling developers to quickly integrate scalable, feature-rich chat into Android apps.
+- [CometChat Blog](https://www.cometchat.com/blog): Share insights, updates, and best practices on in-app messaging and real-time engagement.
+- [React Chat SDK](https://www.cometchat.com/chat-sdks/react): Provide a React SDK for integrating scalable, customizable real-time chat features into applications.
+- [CometChat Communication Platform](https://www.cometchat.com): Provide tools and platform to build, customize, and scale chat, voice, and video communication features quickly.
+- [CometChat On-Demand Services](https://www.cometchat.com/solutions/on-demand-services): Enable on-demand service platforms to enhance communication, order management, and customer engagement through integrated chat and calling features.
+- [CometChat Android UI Kit](https://www.cometchat.com/docs/ui-kit/android/overview): Provide documentation and resources to integrate and customize CometChat UI Kit for Android apps.
+- [Chat Templates](https://www.cometchat.com/templates): Showcase and provide customizable ready-to-use chat templates for various industries and use cases.
+- [CometChat Developer Guides](https://www.cometchat.com/guides): Provide comprehensive guides and resources to help developers build and integrate chat applications using CometChat.
+- [CometChat Flutter UI Kit](https://www.cometchat.com/docs/ui-kit/flutter/overview): Provide documentation and resources to integrate and customize CometChat UI Kit for Flutter apps.
+- [CometChat Widget Integration](https://www.cometchat.com/docs/widget/html-bootstrap-jquery): Guide to integrate and customize CometChat chat widgets using HTML, Bootstrap, and jQuery.
+- [CometChat Office Hours](https://www.cometchat.com/office-hours): Schedule 30-minute sessions for expert advice on integrating CometChat features and use-case guidance.
+- [Voice and Video Calls](https://www.cometchat.com/voice-and-video-calls): Provide developer tools and SDKs to integrate scalable voice, video calls, and messaging into applications.
+- [Flutter Chat SDK](https://www.cometchat.com/chat-sdks/flutter): Provide a scalable, customizable Flutter SDK for integrating real-time chat and messaging features into mobile apps.
+- [Angular Chat SDK](https://www.cometchat.com/chat-sdks/angular): Provide Angular developers with a scalable, customizable chat SDK and UI components for rapid integration of chat features.
+- [Customer Success Stories](https://www.cometchat.com/customer-stories): Showcase customer success stories and testimonials demonstrating CometChat's communication solutions.
+- [CometChat JavaScript SDK Overview](https://www.cometchat.com/docs/sdk/javascript/overview): Guide for integrating and using CometChat JavaScript SDK to add chat features into applications.
+- [CometChat for Marketplaces](https://www.cometchat.com/solutions/marketplace): Enable marketplaces to integrate secure, scalable chat to enhance buyer-seller communication and prevent platform leakage.
+- [CometChat Vue UI Kit](https://www.cometchat.com/docs/ui-kit/vue/overview): Guide developers to integrate and customize CometChat Vue UI Kit for building chat applications.
+- [CometChat Product Updates](https://www.cometchat.com/blog?category=Product%2520updates): Provide updates and insights on CometChat's messaging products and industry trends.
+- [CometChat iOS UI Kit](https://www.cometchat.com/docs/ui-kit/ios/overview): Provide documentation and resources for integrating and customizing the CometChat UI Kit in iOS apps.
+- [CometChat Widget Guide](https://www.cometchat.com/docs/widget/wordpress-buddypress): Guide to install, configure, and use CometChat widget with advanced features on WordPress BuddyPress sites.
+- [CometChat Ionic SDK Guide](https://www.cometchat.com/docs/sdk/ionic/overview): Guide for integrating CometChat real-time chat SDK into Ionic apps, covering setup, initialization, and user authentication.
+- [Telehealth Communication Solutions](https://www.cometchat.com/solutions/healthcare): Provide secure, HIPAA-compliant chat, voice, and video communication solutions for telehealth applications.
+- [CometChat WordPress Chat SDK](https://www.cometchat.com/chat-sdks/wordpress): Enable quick integration of real-time messaging and calling features into WordPress websites without coding.
+- [Chat Solutions for SaaS](https://www.cometchat.com/solutions/saas-businesses): Provide a real-time chat solution for SaaS businesses to enhance user engagement with customizable, scalable, and secure communication.
+- [CometChat Angular UI Kit](https://www.cometchat.com/docs/ui-kit/angular/overview): Guide to integrating and customizing CometChat's Angular UI Kit for building chat applications.
+- [CometChat React UI Kit](https://www.cometchat.com/docs/ui-kit/react/overview): Guide developers to integrate and customize CometChat's React UI Kit for building scalable chat applications.
+- [CometChat Migration Guide](https://www.cometchat.com/guides/migration-guide): Guide for migrating communication data to CometChat securely and efficiently with APIs and managed services.
+- [CometChat Notifications](https://www.cometchat.com/features/notifications): Provide scalable, multi-channel notification solutions with customizable delivery and user controls for chat applications.
+- [CometChat Tutorials](https://www.cometchat.com/tutorials): Provide step-by-step tutorials and examples to build chat, voice, and video apps using CometChat features.
+- [CometChat Interactive Demo](https://www.cometchat.com/interactive-demo): Allow users to interactively test CometChat's chat demo apps on web, iOS, and Android platforms.
+- [React Native Chat SDK](https://www.cometchat.com/chat-sdks/react-native): Provide a React Native chat SDK with customizable components and enterprise-grade features for seamless app integration.
+- [Dating Chat Solutions](https://www.cometchat.com/solutions/dating): Provide scalable, secure chat and moderation solutions for dating platforms to enhance user communication and safety.
+- [PHP Real-Time Chat](https://www.cometchat.com/chat-sdks/php): Enable easy integration of real-time chat and calling features into PHP web applications with no-code solutions.
+- [Android Chat SDK](https://www.cometchat.com/chat-sdks/android-java): Provide a comprehensive Android chat SDK with customizable UI, real-time messaging, and enterprise-grade features for app developers.
+- [AI Chat Moderation](https://www.cometchat.com/features/moderation): Provide AI-driven chat moderation solutions to detect and manage harmful content and ensure platform safety.
+- [CometChat Analytics Insights](https://www.cometchat.com/features/analytics-insights): Provide AI-powered chat analytics and insights to optimize user engagement and product strategy.
+- [Contact CometChat Sales](https://www.cometchat.com/contact-sales?ref=homepage-hero): Facilitate contacting CometChat sales to explore chat and messaging solutions for various business needs.
+- [Custom Chat SDKs](https://www.cometchat.com/chat-sdks-api): Provide customizable, feature-rich SDKs and APIs for integrating real-time chat and calling into applications.
