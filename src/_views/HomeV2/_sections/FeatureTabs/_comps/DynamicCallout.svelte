@@ -5,7 +5,7 @@
   export let className = '';
   export let visible = false;
 
-  let show: boolean = false;
+  let show = false;
   let el: HTMLElement | null = null;
   let wrapperEl: HTMLElement | null = null;
   let timeout: ReturnType<typeof setTimeout>;
