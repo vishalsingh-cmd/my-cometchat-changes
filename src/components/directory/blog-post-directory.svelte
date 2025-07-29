@@ -167,7 +167,7 @@
         per_page: 12,
         page: currentPage,
         search_term: $debouncedSearch,
-        sort_by: 'created_at:desc'
+        sort_by: 'content.created_at:desc'
       });
 
       return { stories: res.data.stories, total: res.total };
