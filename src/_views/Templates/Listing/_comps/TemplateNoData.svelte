@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn, tv } from '$src/_utils/tailwind.utils';
-  import TemplateButtons from '../../_comps/TemplateButtons.svelte';
+  // import TemplateButtons from '../../_comps/TemplateButtons.svelte';
   import zomoto from '../_assets/zomato.svg';
   import practo from '../_assets/practo.svg';
   import whatsapp from '../_assets/whatsapp.svg';

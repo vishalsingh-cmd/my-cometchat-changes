@@ -46,7 +46,7 @@ export function createNewHeaderContext(): NewHeaderContext {
 
   // Timeout for delayed hiding
   let prevPanel: HTMLDivElement | null = null;
-  let prevIndex: number | null = null;
+  // let prevIndex: number | null = null;
   let hideTimeout: ReturnType<typeof setTimeout> | null = null;
   const HOVER_DELAY = 300; // ms
 

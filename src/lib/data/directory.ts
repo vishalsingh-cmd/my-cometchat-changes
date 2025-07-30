@@ -88,7 +88,7 @@ export const parseItem = (
     link: item.full_slug as string,
     customer: content_type === 'customer-story' ? item.content.customer.content : undefined,
     author: item.content.author ? item.content.author.name : '',
-    date: formatDate(item.created_at ? new Date(item.created_at) : new Date())
+    date: formatDate(item.content.created_at ? new Date(item.content.created_at) : new Date())
   };
 };
 

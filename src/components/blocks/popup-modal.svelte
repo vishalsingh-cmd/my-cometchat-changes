@@ -5,7 +5,8 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import Icon from '$components/icon/icon.svelte';
 
-  import { onMount, SvelteComponent } from 'svelte';
+  import { onMount } from 'svelte';
+  // import { SvelteComponent } from 'svelte';
   import { hubspotForm } from '$lib/actions/hubspot-form';
   import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
 
@@ -114,7 +115,7 @@
           {/if}
 
           {#if block.form && block.form[0]}
-            {@const { form_title, api_form_id, api_region, api_portal_id } = block.form[0]}
+            {@const { api_form_id, api_region, api_portal_id } = block.form[0]}
             <div class="min-h-[210px] w-full transition-all duration-300">
               {#if isLoading}
                 <FormSkeleton />
@@ -130,7 +131,7 @@
                 on:complete={() => {
                   isLoading = false;
                 }}
-                on:submitSuccess={(e) => {
+                on:submitSuccess={() => {
                   closeModal();
                 }}
               />
@@ -140,7 +141,7 @@
           {#if block.cta}
             <div class="space-y-5">
               {#each block.cta as button}
-                {@const { href, target, rel } = getAnchorFromCmsLink(button.link)}
+                {@const { href, rel } = getAnchorFromCmsLink(button.link)}
                 <Button variant={button.variant} as="a" {href} {rel} on:click={closeModal}>
                   {button.label}
                 </Button>

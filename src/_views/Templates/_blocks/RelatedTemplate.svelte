@@ -3,7 +3,7 @@
   import Media from '$src/components/media.svelte';
   import { onMount } from 'svelte';
   import TemplatesHeading from '../_comps/TemplatesHeading.svelte';
-  import TemplatesParah from '../_comps/TemplatesParah.svelte';
+  // import TemplatesParah from '../_comps/TemplatesParah.svelte';
   import { createTemplateContext } from './templateContext';
   import RelatedTemplateSkeleton from './RelatedTemplateSkeleton.svelte';
   import { sanitizeSlug } from '$src/lib/storyblok';
