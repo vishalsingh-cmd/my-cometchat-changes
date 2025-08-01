@@ -9,7 +9,7 @@
   import type { NavPanelProps } from '../newHeader.types';
   import NavPanelBackBtn from './NavPanelBackBtn.svelte';
 
-  const { panelElems } = getNewHeaderContext();
+  const { panelElems, activePanelIndex } = getNewHeaderContext();
 
   const blockMap: Record<string, any> = {
     'nav-feature-big-cards': NavFeatureBigCards,
@@ -40,7 +40,7 @@
   bind:this={$panelElems[`panel-${index}`]}
   data-name="nav-panel"
   data-index={index}
-  data-state={'inactive'}
+  data-state={$activePanelIndex === index ? 'active' : 'inactive'}
 >
   <div
     class={cn(

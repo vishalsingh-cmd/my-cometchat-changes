@@ -58,7 +58,6 @@
   on:mouseenter={handleMouseEnter}
   on:mouseleave={handleMouseLeave}
   on:click={handleOnClick}
-  data-state="inactive"
 >
   {#each navItems as navItem, index}
     {#if 'panel' in navItem && navItem.panel}

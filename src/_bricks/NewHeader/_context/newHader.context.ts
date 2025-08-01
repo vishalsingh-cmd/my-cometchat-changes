@@ -12,11 +12,14 @@ export type PenelElemsObject = {
   [trigger: string]: HTMLDivElement;
 };
 
+const activePanelIndex = writable<number | null>(null);
+
 interface NewHeaderContext {
   isNavExpanded: Writable<boolean>;
   headerElem: Writable<HTMLElement | null>;
   viewportElem: Writable<HTMLDivElement | null>;
   navActiveShadowElem: Writable<HTMLDivElement | null>;
+  activePanelIndex: Writable<number | null>;
 
   navElem: Writable<HTMLElement | null>;
   triggerElems: Writable<TriggerElemsObject>;
@@ -46,7 +49,8 @@ export function createNewHeaderContext(): NewHeaderContext {
 
   // Timeout for delayed hiding
   let prevPanel: HTMLDivElement | null = null;
-  // let prevIndex: number | null = null;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let prevIndex: number | null = null;
   let hideTimeout: ReturnType<typeof setTimeout> | null = null;
   const HOVER_DELAY = 300; // ms
 
@@ -106,6 +110,8 @@ export function createNewHeaderContext(): NewHeaderContext {
       viewport.setAttribute('data-state', 'active');
       prevPanel = panel;
       prevIndex = index;
+
+      activePanelIndex.set(index);
     },
 
     hidePanel: () => {
@@ -115,8 +121,9 @@ export function createNewHeaderContext(): NewHeaderContext {
 
       navActiveShadow.setAttribute('data-state', 'inactive');
       viewport.setAttribute('data-state', 'inactive');
-      // prevPanel?.setAttribute('data-state', 'inactive');
-      // prevIndex = null;
+      prevPanel?.setAttribute('data-state', 'inactive');
+      prevIndex = null;
+      activePanelIndex.set(null);
     },
 
     scheduleHidePanel: () => {
@@ -162,6 +169,7 @@ export function createNewHeaderContext(): NewHeaderContext {
     navElem,
     triggerElems,
     panelElems,
+    activePanelIndex,
     actions
   };
 
