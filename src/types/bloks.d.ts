@@ -1,5 +1,16 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
 
+export interface AgentsHeroStoryblok {
+  solution_type: StoryblokStory<IndustryStoryblok> | string;
+  title: string;
+  description: string;
+  links: ButtonLinkStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'agents-hero';
+  [k: string]: any;
+}
+
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -1008,6 +1019,7 @@ export interface IndustryStoryblok {
   short_name: string;
   description: string;
   body?: (
+    | AgentsHeroStoryblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -1440,6 +1452,7 @@ export interface NewsletterSectionStoryblok {
 
 export interface PageStoryblok {
   body?: (
+    | AgentsHeroStoryblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -1600,6 +1613,7 @@ export interface PreFooterStoryblok {
 
 export interface PricingStoryblok {
   body?: (
+    | AgentsHeroStoryblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -2374,6 +2388,7 @@ export interface SyncedBlockStoryblok {
 
 export interface SyncedBlockContentStoryblok {
   body?: (
+    | AgentsHeroStoryblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -2506,6 +2521,7 @@ export interface TechnologyStoryblok {
   copy_code_snippet?: string;
   screenshot: AssetStoryblok;
   body: (
+    | AgentsHeroStoryblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok

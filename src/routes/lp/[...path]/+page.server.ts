@@ -29,6 +29,7 @@ export const load = async ({ cookies, fetch, params }) => {
     'technologies-section.technologies',
     'related-stories-section.items',
     'customer-story.author',
+    'agents-hero.solution_type',
     'solutions-hero.solution_type',
     'media-tabs-section.highlighted_story',
     'media-tab.customer',
@@ -54,7 +55,8 @@ export const load = async ({ cookies, fetch, params }) => {
     const [page, industries] = await Promise.all([
       storyblok.get(`cdn/stories/pages/lp/${params.path}`, {
         version,
-        resolve_relations: relations
+        resolve_relations: relations,
+        resolve_links: 'url'
       }),
 
       storyblok.get('cdn/stories', {

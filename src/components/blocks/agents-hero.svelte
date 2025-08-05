@@ -1,20 +1,19 @@
 <script lang="ts">
   import type { StoryblokStory } from 'storyblok-generate-ts';
+  // import Icon from '$components/icon/icon.svelte';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
 
-  import type { IndustryStoryblok, SolutionsHeroStoryblok } from '$types/bloks';
+  import type { IndustryStoryblok, AgentsHeroStoryblok } from '$types/bloks';
 
   import BackgroundBottom from '$components/solutions/hero/background-bottom.svelte';
   import Button from '$components/buttons/button.svelte';
-  import CometIllustration, {
-    type IllustrationOptions
-  } from '$components/comet-illustration/comet-illustration.svelte';
+  import { type IllustrationOptions } from '$components/comet-illustration/comet-illustration.svelte';
   import Stars from '$components/stars.svelte';
   import Media from '$components/media.svelte';
 
-  export let block: SolutionsHeroStoryblok;
+  export let block: AgentsHeroStoryblok;
 
   const parseItem = (item: string | StoryblokStory<IndustryStoryblok>) => {
     const typedItem = item as StoryblokStory<IndustryStoryblok>;
@@ -40,8 +39,12 @@
         <div class="flex items-center gap-[10px]">
           {#if block.solution_type}
             {@const parsedItem = parseItem(block.solution_type)}
-            <CometIllustration size="sm" illustration={parsedItem.illustration} />
-            <p class="text-xl font-semibold leading-tighter opacity-74">{parsedItem.name}</p>
+            <img src="/Profile.svg" />
+            <p
+              class="m-0 rounded-[50px] border px-4 py-2 text-xl font-semibold leading-tighter opacity-74"
+            >
+              {parsedItem.name}
+            </p>
           {/if}
         </div>
 

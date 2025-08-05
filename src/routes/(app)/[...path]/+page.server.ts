@@ -17,6 +17,7 @@ export const load = async ({ cookies, fetch, params }) => {
   const storyblok = getStoryblok({ fetch });
 
   const relations = [
+    'agents-hero.solution_type',
     'blog-post.author',
     'tutorial.author',
     'guide.author',
