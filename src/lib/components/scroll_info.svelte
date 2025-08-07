@@ -4,13 +4,16 @@
       heading: 'Production-ready chat UI',
       subheading:
         'The UX layer your agent deserves, Built for LLM native interactions, out of the box.',
+      subheading2:
+        'Forget cobbling together buttons and hoping users ‘get it’. Our chat layer is purpose-built for how agents think - and how humans expect them to respond.',
       items: [
-        'Multi-turn conversation memory',
-        'Quick replies (a.k.a. Smart Replies)',
-        'Follow-up actions + memory',
-        'Markdown & code rendering',
-        'Citations + references',
-        'Rich display for images, video, links, actions'
+        'Token streaming with dynamic “thinking…” states',
+        'Retry/stop buttons with full control logic)',
+        'Memory pills, prompt banners, and agent selectors',
+        'Structured tool replies with inline citations',
+        'Slash commands, modals, and frontend triggers',
+        'Low/No-code Chat Builder, or more control via UI Kits and SDKs',
+        'Fully AG-UI protocol compatible - including tool call rendering, memory markers, and fallback patterns'
       ],
       footer:
         'It’s not just a pretty shell. It’s UX that teaches trust, guides behavior, and makes your agent feel alive.'
@@ -18,15 +21,14 @@
     {
       heading: 'Multichannel out-of-the-box agent',
       subheading: 'Your agent is only helpful if people come back to talk to it.',
+      subheading2: 'Most agents get ghosted. Yours won’t.',
       items: [
-        'Webchat widget',
-        'React, Vue, and native SDKs',
-        'Messaging integrations: WhatsApp, Slack, Messenger, Telegram, and more',
-        'Custom themes, tone, and branding',
-        'Device-based handoff (e.g., start on web, continue on mobile)',
-        'Persistent history',
-        'Push notifications',
-        'Auth & user profiles'
+        'Native push, email, and SMS support',
+        'Retry logic, delivery throttling, and batching',
+        'Trigger-based delivery rules - unread X mins, fallback triggered, user went silent',
+        'Threaded email replies (yes, replies go back to chat!)',
+        'Integrates with SendGrid, Twilio, or your custom providers',
+        'User-level frequency + preference settings'
       ],
       footer:
         "Notifications aren't a growth hack. They're UX glue. And we built them so you wouldn’t have to."
@@ -35,28 +37,32 @@
       heading: 'Simple dashboard',
       subheading:
         'Ship the agent. Then make it better. Without reading Mixpanel, Segment, or BI setups.',
+      subheading2:
+        'From day one, you get built-in visibility into what your agent is doing - and how people are responding.',
       items: [
-        'Built-in analytics: usage, drop-off, flows',
-        'Conversation ratings',
-        'Daily/weekly product & ops email reports',
-        'Labels + tagging for conversation patterns'
+        'Resolution rates, fallback frequency, retry counts, latency',
+        'Tool usage breakdowns, prompt paths, knowledge base hits',
+        'Conversation-level analytics: drop-off points, re-engagement, success outcomes',
+        'Sentiment markers and feedback loops',
+        'Exportable, filterable, and privacy-respectful'
       ],
       footer: 'You can’t improve what you can’t see. With us, you never ship blind.'
     }
   ];
 </script>
 
-<div class="space-y-32 p-10 font-sans text-white">
+<div class="space-y-32 font-sans text-white">
   <!-- Top Section -->
   <section class="mx-auto flex justify-center">
     <div>
       <div class="flex">
         <div class="w-[588px]">
           <h2
-            class="sticky top-0 z-20 bg-gradient-purple bg-clip-text text-3xl font-semibold leading-tighter text-transparent shadow-inner-soft"
+            class="sticky top-0 z-20 mb-6 bg-background-vertical pb-3 text-3xl font-semibold leading-tighter text-white shadow-lg"
           >
             Everything you’d end up already done.
           </h2>
+
           <ul
             class="mb-28 grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-medium text-gray-11"
           >
@@ -81,7 +87,10 @@
             {#each features as feature}
               <section class="z-0 w-[588px] border-t border-gray-9 pb-24 pt-24">
                 <h3 class="z-0 mb-2 text-xl font-semibold text-brand-9">{feature.heading}</h3>
-                <p class="text-gray-400 mb-6 text-2xl">{feature.subheading}</p>
+                <p class="mb-6 text-2xl leading-snug">{feature.subheading}</p>
+                <p class="text-sans mb-6 text-xl leading-snug text-gray-11">
+                  {feature.subheading2}
+                </p>
                 <ul class="text-base grid list-inside grid-cols-1 gap-x-6 gap-y-2 text-gray-11">
                   {#each feature.items as item}
                     <li class="text-lg-richtext font-medium text-gray-11">

@@ -1,6 +1,7 @@
 <script>
   let byobIcon = 'agent_lp_images/AI_icon.png';
   let cometchatIcon = 'agent_lp_images/AI2_icon.png';
+  let cometchatImage = 'agent_lp_images/infra.png';
 
   let byobImage = '/agent_lp_images/Byob.png';
   let bulletIcon = '/agent_lp_images/bullet_icon.png';
@@ -75,7 +76,7 @@
 
       <!-- Image inside card -->
       <img
-        src={byobImage}
+        src={cometchatImage}
         alt="CometChat UI"
         class="absolute bottom-0 left-1/2 h-[300px] -translate-x-1/2"
       />

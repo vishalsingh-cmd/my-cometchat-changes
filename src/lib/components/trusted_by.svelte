@@ -1,57 +1,51 @@
 <script>
   const logos = [
     '/agent_lp_images/trusted-by-logos/logo1.png',
-    '/agent_lp_images/trusted-by-logos/logo2.png',
     '/agent_lp_images/trusted-by-logos/logo3.png',
     '/agent_lp_images/trusted-by-logos/logo4.png',
-    '/agent_lp_images/trusted-by-logos/logo5.png',
-    '/agent_lp_images/trusted-by-logos/logo6.png'
+    '/agent_lp_images/trusted-by-logos/logo5.png'
   ];
+  import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
 </script>
 
-<div class="relative mt-6 w-full overflow-hidden py-9">
-  <!-- Horizontal line -->
-  <img
-    src="/agent_lp_images/trusted-by-logos/horizontal_line.png"
-    alt="Line"
-    class="pointer-events-none absolute top-0 z-50 w-full -translate-y-1/2"
-  />
-
-  <!-- Vertical lines -->
-  <img
-    src="/agent_lp_images/trusted-by-logos/vertical_line.png"
-    alt="Vertical Left"
-    class="pointer-events-none absolute left-[144px] top-0"
-  />
-  <!-- Vertical lines -->
-  <img
-    src="/agent_lp_images/trusted-by-logos/vertical_line.png"
-    alt="Vertical Right"
-    class="pointer-events-none absolute right-[144px] top-0"
-  />
-
-  <!-- Horizontal line -->
-  <img
-    src="/agent_lp_images/trusted-by-logos/horizontal_line.png"
-    alt="Line"
-    class="pointer-events-none absolute bottom-0 left-0 w-full -translate-y-1/2"
-  />
-
-  <div class="relative z-10 flex flex-col items-center">
+<div class="mt-6 h-[136px] w-full">
+  <div class="relative z-10 flex h-full items-center justify-center">
     <!-- Title -->
-    <div class="flex max-w-6xl">
-      <p class="mb-6 font-inter text-sm text-white/60">
-        Trusted by fast-growing companies around the world.
-      </p>
+    <div
+      class="relative flex h-full w-max items-center justify-center border border-gray-5 px-6 text-lg text-white"
+    >
+      Trusted by fast-growing companies around the world.
+      <SecureDecCircle position="topLeft" className="z-30" />
+      <SecureDecCircle position="topRight" className="z-30" />
+      <SecureDecCircle position="bottomLeft" className="z-30" />
+      <SecureDecCircle position="bottomRight" className="z-30" />
+    </div>
 
-      <!-- Scrolling logo container -->
-      <div class="overflow-hidden">
-        <div class="animate-marquee flex gap-16 whitespace-nowrap">
-          {#each [...logos] as logo}
+    <!-- Scrolling logo container -->
+    <div class="group relative h-full w-full border border-gray-5">
+      <!-- Marquee row -->
+      <div class="h-full w-full overflow-hidden">
+        <div class="animate-marquee flex h-full items-center gap-16 whitespace-nowrap">
+          {#each [...logos, ...logos] as logo}
             <img src={logo} alt="Logo" class="h-10 object-contain grayscale" />
           {/each}
         </div>
       </div>
+
+      <!-- Hover text (appears in center on hover) -->
+      <div
+        class="absolute inset-0 flex items-center justify-center text-md text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:backdrop-blur-md"
+      >
+        <button
+          class="rounded-xl border border-gray-8 p-2 transition-colors duration-300 hover:border-brand-9"
+          >Checkout our amazing stories</button
+        >
+      </div>
+
+      <SecureDecCircle position="topLeft" className="z-30" />
+      <SecureDecCircle position="topRight" className="z-30" />
+      <SecureDecCircle position="bottomLeft" className="z-30" />
+      <SecureDecCircle position="bottomRight" className="z-30" />
     </div>
   </div>
 </div>

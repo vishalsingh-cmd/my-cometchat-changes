@@ -9,6 +9,9 @@
   import TitleBlock2 from '$src/lib/components/title_blok_2.svelte';
   import Cards from '$src/lib/components/card.svelte';
   import Prefooter from '$src/lib/components/prefooter.svelte';
+  import TitleBlock3 from '$src/lib/components/title_block3.svelte';
+  import LockVector from '$src/_views/HomeV2/_sections/Secure/_comp/LockVector.svelte';
+  import Card2 from '$src/lib/components/card2.svelte';
 </script>
 
 <svelte:head>
@@ -26,6 +29,8 @@
   <AgentRole />
   <TitleBlock2 />
   <Cards />
-  <img src="/agent_lp_images/lock.png" alt="" srcset="" class="mx-auto mt-6" />
+  <LockVector />
+  <TitleBlock3 />
+  <Card2 />
   <Prefooter />
 </div>

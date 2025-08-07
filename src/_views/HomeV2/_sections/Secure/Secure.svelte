@@ -44,7 +44,6 @@
         block={block.award[0]}
         className={cn(['min-w-0', 'sm:row-start-1 sm:col-start-2'], ['lg:col-start-3'])}
       />
-
       <StepBorderBeam position="top" />
       <StepBorderBeam position="bottom" />
     </div>

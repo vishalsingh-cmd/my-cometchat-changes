@@ -2,7 +2,7 @@
   class="bg-background flex flex-col items-center gap-12 px-6 py-20 md:px-16 lg:flex-row lg:px-32"
 >
   <!-- Phone image -->
-  <div class="relative max-w-xl flex-1">
+  <div class="flex-intial relative">
     <img
       src="/agent_lp_images/phone_map.png"
       alt="Phone with map"
