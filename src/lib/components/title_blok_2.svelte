@@ -1,11 +1,13 @@
-<section class="mx-auto w-[858px] px-6 py-16 text-center text-white">
+<script>
+</script>
+
+<section class="mx-autopx-6 py-16 text-center text-white">
   <!-- Small heading -->
-  <p class="mb-4 text-lg-richtext font-medium text-brand-9">Integrate the way that works for you</p>
+  <p class="mb-4 text-lg-richtext font-medium text-brand-9">Chat integration options</p>
 
   <!-- Main heading -->
   <p class="mx-auto mb-4 max-w-4xl text-2xl font-semibold leading-tight md:text-3xl">
-    Whether you want full control, fast launch, or frontend superpowers – CometChat gives you
-    flexible ways to get your agent talking to users.
+    Your launch, your way. Done right.
   </p>
 
   <!-- Sub text -->

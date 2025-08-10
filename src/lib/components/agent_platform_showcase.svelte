@@ -5,8 +5,8 @@
 <div class="w-full py-16 pl-[120px] md:px-16">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 md:flex-row">
     <!-- Left: Text Content -->
-    <div class="space-y-6 md:w-1/2">
-      <h2 class="md:text-5xl font-satoshi text-4xl font-semibold leading-tight text-white">
+    <div class="w-[528px] space-y-6">
+      <h2 class="text-sans text-3xl font-semibold leading-tighter tracking-none text-white">
         Everything your agent<br />
         needs to go from<br />
         prototype to product –<br />

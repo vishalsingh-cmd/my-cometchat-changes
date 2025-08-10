@@ -1,26 +1,27 @@
 <script>
+  // import StepAnimatedBeam from '$src/_views/HomeV2/_sections/Step/_comp/StepAnimatedBeam.svelte';
+
   const features = [
     {
       heading: 'Production-ready chat UI',
-      subheading:
-        'The UX layer your agent deserves, Built for LLM native interactions, out of the box.',
+      subheading: 'Built for LLM-native UX',
       subheading2:
         'Forget cobbling together buttons and hoping users ‘get it’. Our chat layer is purpose-built for how agents think - and how humans expect them to respond.',
       items: [
         'Token streaming with dynamic “thinking…” states',
-        'Retry/stop buttons with full control logic)',
+        'Retry/stop buttons with full control logic',
         'Memory pills, prompt banners, and agent selectors',
         'Structured tool replies with inline citations',
         'Slash commands, modals, and frontend triggers',
         'Low/No-code Chat Builder, or more control via UI Kits and SDKs',
-        'Fully AG-UI protocol compatible - including tool call rendering, memory markers, and fallback patterns'
+        'Supports structured agent output - including tool call rendering, memory markers, and fallback patterns'
       ],
       footer:
         'It’s not just a pretty shell. It’s UX that teaches trust, guides behavior, and makes your agent feel alive.'
     },
     {
-      heading: 'Multichannel out-of-the-box agent',
-      subheading: 'Your agent is only helpful if people come back to talk to it.',
+      heading: 'Multichannel notifications engine',
+      subheading: 'Reach users where they are',
       subheading2: 'Most agents get ghosted. Yours won’t.',
       items: [
         'Native push, email, and SMS support',
@@ -34,9 +35,8 @@
         "Notifications aren't a growth hack. They're UX glue. And we built them so you wouldn’t have to."
     },
     {
-      heading: 'Simple dashboard',
-      subheading:
-        'Ship the agent. Then make it better. Without reading Mixpanel, Segment, or BI setups.',
+      heading: 'Insights dashboard',
+      subheading: 'Ship it. Then sharpen it.',
       subheading2:
         'From day one, you get built-in visibility into what your agent is doing - and how people are responding.',
       items: [
@@ -60,26 +60,28 @@
           <h2
             class="sticky top-0 z-20 mb-6 bg-background-vertical pb-3 text-3xl font-semibold leading-tighter text-white shadow-lg"
           >
-            Everything you’d end up already done.
+            All that you’d end up building – <span
+              class="bg-gradient-purple bg-clip-text text-transparent">in already done.</span
+            >
           </h2>
 
           <ul
-            class="mb-28 grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-medium text-gray-11"
+            class="mb-28 grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-normal text-gray-11"
           >
             <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" /> A
-              complete frontend and system layer for AI agents. Plug in your LLM backend or build the
-              brain with ours.
+              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" />
+              <span class="font-semibold"> Skip months of plumbing </span> with a stack that’s already
+              solved the hardest frontend and infra problems for AI agents.
             </li>
             <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" /> CometChat
-              is the only full stack agent platform that combines logic, UI, moderation, notifications,
-              and insights - without glue code.
+              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" />
+              <span class="font-semibold">Ship with confidence </span> on battle-tested tech that powers
+              millions of users across industries — from healthcare to high-growth SaaS.
             </li>
             <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" /> Each
-              of these is battle-tested, used and trusted in production by real companies, across real
-              user scenarios.
+              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" /> Focus
+              on your edge while we handle the scaffolding — scale, security, compliance, and everything
+              in between.
             </li>
           </ul>
           <!-- Feature Sections -->
@@ -104,7 +106,7 @@
                     </li>
                   {/each}
                 </ul>
-                <p class="mt-6 text-md leading-snug text-gray-11">{feature.footer}</p>
+                <p class="mt-6 text-md italic leading-snug text-gray-11">{feature.footer}</p>
               </section>
             {/each}
           </div>

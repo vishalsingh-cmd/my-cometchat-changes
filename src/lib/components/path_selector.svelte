@@ -10,7 +10,7 @@
 <section class="px-6 py-24 text-white">
   <div class="mx-auto mb-16 max-w-6xl text-center">
     <h2 class="md:text-5xl mb-4 text-3xl font-semibold">
-      Plug In your logic.<br />Or build it here.
+      Plug in your logic.<br />Or build it here.
     </h2>
     <p class="text-gray-400 text-lg">Two paths. Same full-stack experience.</p>
   </div>
@@ -35,12 +35,6 @@
             <span>Modular, protocol-compatible, and fast to implement</span>
           </li>
         </ul>
-        <a
-          href="https://www.cometchat.com"
-          class="mt-4 inline-block text-md text-[#6852D6] hover:underline"
-        >
-          Learn more
-        </a>
       </div>
       <!-- Image inside card -->
       <div>
@@ -70,9 +64,6 @@
           <span>Simulate and ship – all from a single canvas</span>
         </li>
       </ul>
-      <a href="www.cometchat.com" class="mt-4 inline-block text-md text-[#6852D6] hover:underline"
-        >Learn more</a
-      >
 
       <!-- Image inside card -->
       <img

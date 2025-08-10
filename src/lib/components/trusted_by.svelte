@@ -8,13 +8,15 @@
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
 </script>
 
-<div class="mt-6 h-[136px] w-full">
+<div class="h-[136px]">
   <div class="relative z-10 flex h-full items-center justify-center">
+    <div class="h-full w-[100px] border-b border-t border-gray-5" />
+
     <!-- Title -->
     <div
       class="relative flex h-full w-max items-center justify-center border border-gray-5 px-6 text-lg text-white"
     >
-      Trusted by fast-growing companies around the world.
+      Global trust, proven at scale
       <SecureDecCircle position="topLeft" className="z-30" />
       <SecureDecCircle position="topRight" className="z-30" />
       <SecureDecCircle position="bottomLeft" className="z-30" />
@@ -47,6 +49,8 @@
       <SecureDecCircle position="bottomLeft" className="z-30" />
       <SecureDecCircle position="bottomRight" className="z-30" />
     </div>
+
+    <div class="h-full w-[120px] border-b border-t border-gray-5" />
   </div>
 </div>
 

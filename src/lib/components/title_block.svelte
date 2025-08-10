@@ -1,4 +1,7 @@
-<section class="bg-background mx-auto px-[64px] pb-[48px] pt-[100px]">
+<script>
+</script>
+
+<section class="bg-background px-[64px] pb-[48px] pt-[100px]">
   <div class="w-[720px]">
     <p class="text-xl font-medium text-brand-9">What teams are building with CometChat</p>
 
