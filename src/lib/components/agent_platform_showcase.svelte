@@ -3,8 +3,10 @@
 </script>
 
 <div class="w-full py-[64px] pl-[120px] pr-[64px] md:px-16">
+  <div class="color-brand-9 text-center font-semibold">Core features</div>
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 md:flex-row">
     <!-- Left: Text Content -->
+
     <div class="flex max-w-[528px] shrink-0 flex-col items-start gap-4">
       <h2 class="text-sans text-3xl font-semibold leading-tighter tracking-none text-white">
         Everything your agent needs to go from prototype to product – fixed.

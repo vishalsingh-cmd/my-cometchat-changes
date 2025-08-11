@@ -61,7 +61,7 @@
             class="sticky top-0 z-20 mb-6 bg-background-vertical px-0 py-[64px] text-3xl font-semibold leading-tighter text-white shadow-lg"
           >
             All that you’d end up building – <span
-              class="bg-gradient-purple bg-clip-text text-transparent">in already done.</span
+              class="bg-gradient-purple bg-clip-text text-transparent">already done.</span
             >
           </div>
 

@@ -12,8 +12,7 @@
     {
       icon: 'ai-chatbot',
       title: 'AI Chatbot',
-      subHeading:
-        'Support agents that do more than talk. They escalate, route, and learn - without you rebuilding the same infra every time.',
+      subHeading: 'Support that solves - and scales.',
       description:
         'Whether it’s FAQs, help desk queries, refund requests, or onboarding prompts, these agents work with your knowledge base or tool stack - and know how to respond safely when the model doesn’t.',
       points: [
