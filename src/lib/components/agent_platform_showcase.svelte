@@ -2,17 +2,14 @@
   // You can later turn this into a reusable section
 </script>
 
-<div class="w-full py-16 pl-[120px] md:px-16">
+<div class="w-full py-[64px] pl-[120px] pr-[64px] md:px-16">
   <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-12 md:flex-row">
     <!-- Left: Text Content -->
-    <div class="w-[528px] space-y-6">
+    <div class="flex max-w-[528px] shrink-0 flex-col items-start gap-4">
       <h2 class="text-sans text-3xl font-semibold leading-tighter tracking-none text-white">
-        Everything your agent<br />
-        needs to go from<br />
-        prototype to product –<br />
-        <span class="text-white/80">fixed.</span>
+        Everything your agent needs to go from prototype to product – fixed.
       </h2>
-      <p class=" font-thin text-white/60 md:text-xl md:font-normal">
+      <p class=" text-xl font-medium text-gray-11">
         Modular when you want control. All-in-one when you just need to launch.
       </p>
     </div>

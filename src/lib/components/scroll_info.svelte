@@ -51,22 +51,22 @@
   ];
 </script>
 
-<div class="space-y-32 font-sans text-white">
+<div class="relative space-y-32 font-sans text-white">
   <!-- Top Section -->
-  <section class="mx-auto flex justify-center">
+  <section class="relative top-[100px] mx-auto flex justify-center">
     <div>
       <div class="flex">
         <div class="w-[588px]">
-          <h2
-            class="sticky top-0 z-20 mb-6 bg-background-vertical pb-3 text-3xl font-semibold leading-tighter text-white shadow-lg"
+          <div
+            class="sticky top-0 z-20 mb-6 bg-background-vertical px-0 py-[64px] text-3xl font-semibold leading-tighter text-white shadow-lg"
           >
             All that you’d end up building – <span
               class="bg-gradient-purple bg-clip-text text-transparent">in already done.</span
             >
-          </h2>
+          </div>
 
           <ul
-            class="mb-28 grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-normal text-gray-11"
+            class=" grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-normal text-gray-11"
           >
             <li>
               <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" />
@@ -84,30 +84,42 @@
               in between.
             </li>
           </ul>
+
+          <div class="my-[100px] border-b border-gray-5" />
+
           <!-- Feature Sections -->
-          <div>
-            {#each features as feature}
-              <section class="z-0 w-[588px] border-t border-gray-9 pb-24 pt-24">
-                <h3 class="z-0 mb-2 text-xl font-semibold text-brand-9">{feature.heading}</h3>
-                <p class="mb-6 text-2xl leading-snug">{feature.subheading}</p>
-                <p class="text-sans mb-6 text-xl leading-snug text-gray-11">
-                  {feature.subheading2}
-                </p>
-                <ul class="text-base grid list-inside grid-cols-1 gap-x-6 gap-y-2 text-gray-11">
-                  {#each feature.items as item}
-                    <li class="text-lg-richtext font-medium text-gray-11">
+          <div class="flex flex-col items-start gap-3 self-stretch">
+            {#each features as feature, index}
+              <h3 class="z-0 text-xl font-semibold text-brand-9">{feature.heading}</h3>
+              <p class=" text-2xl leading-snug">{feature.subheading}</p>
+              <p class="text-sans text-xl leading-snug text-gray-11">
+                {feature.subheading2}
+              </p>
+              <ul class="text-base grid list-inside grid-cols-1 gap-x-6 gap-y-2 text-gray-11">
+                {#each feature.items as item}
+                  <li class="text-lg-richtext font-medium text-gray-11">
+                    <div class="flex items-start gap-[8px] self-stretch">
                       <img
                         src="/agent_lp_images/bullet_icon.png"
                         alt=""
                         srcset=""
                         class="inline-block"
                       />
-                      {item}
-                    </li>
-                  {/each}
-                </ul>
-                <p class="mt-6 text-md italic leading-snug text-gray-11">{feature.footer}</p>
-              </section>
+                      <div>{item}</div>
+                    </div>
+                  </li>
+                {/each}
+              </ul>
+              <p
+                class={`mt-6 text-md italic leading-snug text-gray-11 ${
+                  index === features.length - 1 ? 'mb-[200px]' : ''
+                }`}
+              >
+                {feature.footer}
+              </p>
+              {#if index != features.length - 1}<div
+                  class="my-[100px] w-full space-y-[100px] border-b border-gray-5"
+                />{/if}
             {/each}
           </div>
         </div>

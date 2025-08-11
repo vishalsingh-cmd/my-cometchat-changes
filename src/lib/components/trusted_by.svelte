@@ -6,6 +6,7 @@
     '/agent_lp_images/trusted-by-logos/logo5.png'
   ];
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
+  import Button from '$src/components/buttons/button.svelte';
 </script>
 
 <div class="h-[136px]">
@@ -38,9 +39,8 @@
       <div
         class="absolute inset-0 flex items-center justify-center text-md text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:backdrop-blur-md"
       >
-        <button
-          class="rounded-xl border border-gray-8 p-2 transition-colors duration-300 hover:border-brand-9"
-          >Checkout our amazing stories</button
+        <Button as="a" variant="secondary" href="/customer-stories"
+          >Checkout our amazing customer stories</Button
         >
       </div>
 

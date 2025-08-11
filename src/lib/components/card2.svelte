@@ -11,7 +11,7 @@
 </script>
 
 <div
-  class="grid-bg relative grid grid-cols-12 grid-rows-4 text-sm font-medium leading-tight text-white"
+  class="grid-bg relative grid h-[630px] w-[1312px] grid-cols-12 grid-rows-4 text-sm font-medium leading-tight text-white"
 >
   <div class="relative col-span-3 row-span-3 border border-gray-5 p-6">
     <h3 class="mb-2 text-xl font-semibold">Seamless Multi-tenant support</h3>

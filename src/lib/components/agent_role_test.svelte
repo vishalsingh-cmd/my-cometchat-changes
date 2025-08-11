@@ -100,7 +100,7 @@
   <Container>
     <div class="flex flex-row items-start gap-6">
       <!-- Image section -->
-      <div class="flex-initial">
+      <div class="">
         <img
           src={myRollersImage[$activeIndex].imageAd}
           alt={myRollersImage[$activeIndex].imageAlt}
@@ -110,7 +110,7 @@
 
       <!-- Carousel section -->
       <div class="flex-initial">
-        <div class="flex w-[520px] flex-col gap-6">
+        <div class="flex min-h-[686px] w-[528px] flex-col">
           {#each myRollers as roller, index}
             <IndustryRollerItem
               {index}

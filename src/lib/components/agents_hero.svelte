@@ -1,48 +1,55 @@
 <script>
   // No interactivity for now
-  // import Button from '$src/components/buttons/button.svelte';
+  import Button from '$src/components/buttons/button.svelte';
 </script>
 
 <section
   class="top-[75px] mt-10 flex w-full flex-col items-center justify-center gap-8 py-20 font-sans text-white md:flex-row"
 >
   <!-- Left Content -->
-  <div class="max-w-[538px]">
-    <!-- Badge -->
-    <div class="mb-4 flex h-10 items-center gap-2">
-      <img src="/agent_lp_images/Profile.png" alt="icon" class="h-6 w-6" />
-      <div
-        class="inline-block rounded-full border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-4 py-1 text-lg font-semibold tracking-none text-transparent"
-      >
-        Full Stack AI Agent Platform
-      </div>
-    </div>
+  <div class="flex max-w-[538px] flex-col items-start justify-center gap-8">
+    <div class="flex flex-col items-start gap-6 self-stretch">
+      <div class="flex flex-col items-start gap-4 self-stretch">
+        <!-- Badge -->
+        <div class="flex h-[48px] items-center justify-center">
+          <img src="/agent_lp_images/Profile.png" alt="icon" class="" />
+          <div
+            class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-xl font-semibold leading-snug tracking-none text-transparent"
+          >
+            Full Stack AI Agent Platform
+          </div>
+        </div>
 
-    <!-- Heading -->
-    <h1 class="sm:text-5xl mb-4 text-4xl font-medium leading-snug">
-      Ship the
-      <span class=" bg-gradient-purple bg-clip-text text-transparent">agent.</span>
-      <br />
+        <!-- Heading -->
+        <h1 class="text-[58px] font-medium leading-snug">
+          Ship the
+          <span class=" bg-gradient-purple bg-clip-text text-transparent">agent.</span>
+          <br />
 
-      Skip the <span class="bg-gradient-purple bg-clip-text text-transparent">plumbing. </span>
-    </h1>
+          Skip the <span class="bg-gradient-purple bg-clip-text text-transparent">plumbing. </span>
+        </h1>
+      </div>
 
-    <!-- Description -->
-    <div class="text-sans mb-6">
-      <div class="mb-2 text-xl font-medium leading-snug tracking-wide text-gray-11">
-        Why are you still stitching together chat UIs, retries, moderation, notifications, and
-        analytics – just to get your agent into users’ hands?
-      </div>
-      <div class="mb-2 text-xl font-medium leading-snug tracking-wide text-gray-11">
-        CometChat gives you the entire frontend + infra layer.
-      </div>
-      <div class="text-xl font-medium leading-snug tracking-wide text-gray-11">
-        Full stack. Modular. Production-ready.
+      <!-- Description -->
+      <div class="text-sans flex flex-col items-start gap-[12px]">
+        <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+          Shipping an agent shouldn’t mean building chat UIs, retries, moderation, notifications,
+          and analytics from scratch.
+        </div>
+        <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+          CometChat gives you the entire frontend + infra layer.
+        </div>
+        <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+          Full stack. Modular. Production-ready.
+        </div>
       </div>
     </div>
 
     <!-- CTA Buttons -->
-    <div class="flex flex-wrap gap-4" />
+    <div class="flex flex-wrap gap-4">
+      <Button as="a" href="/demo" variant="secondary">Schedule a Demo</Button>
+      <Button as="a" href="/agent-builder">Try the Agent Builder</Button>
+    </div>
   </div>
 
   <!-- Right Content -->

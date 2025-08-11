@@ -115,8 +115,7 @@ export default {
     extend: {
       overflow: ['unset'],
       backgroundImage: {
-        'background-vertical':
-          'linear-gradient(0deg, #0A091400 0%, #0A0914 30%, #0A0914 80%, #0A0914 100%)',
+        'background-vertical': 'linear-gradient(180deg, #0A0914 58.33%, rgba(10, 9, 20, 0) 100%)',
         'divider-gradient':
           'linear-gradient(90deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
         'divider-gradient-vertical':

@@ -38,20 +38,21 @@
 <div
   class={cn([
     'group/single_roller relative isolate flex cursor-pointer flex-col overflow-hidden',
-    'border-b border-[#FAFAFF] border-opacity-10'
+    'mt-[40px] border-b border-[#FAFAFF] border-opacity-10'
   ])}
   data-state={status}
   on:click={handleOnClick}
   on:keypress
 >
-  <div class="grid grid-cols-[auto_1fr] gap-4 pb-10">
+  <div class="grid grid-cols-[auto_1fr] gap-[16px] pb-[40px]">
     <!-- Icon -->
     <div
       class={cn([
-        'flex h-8 w-8 items-center justify-center rounded-md border border-[#FAFAFF] border-opacity-10',
+        'flex h-8 w-8 flex-shrink-0 items-center justify-center',
+        'rounded-[6px] border border-[rgba(104,82,214,0.32)]',
+        'bg-[linear-gradient(180deg,rgba(104,82,214,0.03)_0%,rgba(104,82,214,0.15)_100%)]',
         'transition-[border-color] duration-300',
         'group-hover/single_roller:border-opacity-100',
-        'group-data-[state="active"]/single_roller:bg-[linear-gradient(180deg,_rgba(255,_113,_41,_0.03)_0%,_rgba(255,_113,_41,_0.15)_100%)]',
         'group-data-[state="active"]/single_roller:border-brand-9'
       ])}
     >
@@ -74,11 +75,11 @@
         class={cn(
           [
             'text-left font-sans text-[16px] font-semibold text-[#FAFAFF]',
-            'text-opacity-40 group-hover/single_roller:text-opacity-100',
+            'text-opacity-40 group-hover/single_roller:text-opacity-74',
             'transition-colors duration-300',
             'group-data-[state="active"]/single_roller:text-brand-9'
           ],
-          ['lg:text-[22px]']
+          ['leading-snug lg:text-[22px]']
         )}
       >
         {title}
@@ -87,7 +88,7 @@
       <!-- Hidden content -->
       <div
         class={cn([
-          'flex flex-col gap-2 group-data-[state="active"]/single_roller:mt-2',
+          'flex flex-col gap-[16px] group-data-[state="active"]/single_roller:mt-2',
           'pointer-events-none h-0 overflow-hidden',
           'group-data-[state="active"]/single_roller:h-[var(--scroll-height)]',
           'group-data-[state="active"]/single_roller:pointer-events-auto',
@@ -97,28 +98,28 @@
       >
         <p
           class={cn(
-            ['text-gray-11', 'text-left font-sans font-semibold leading-tighter tracking-none'],
-            ['mb-3 text-xl']
+            ['text-gray-12', 'font-sans font-semibold leading-tighter tracking-none opacity-74'],
+            [' text-xl']
           )}
         >
           {subHeading}
         </p>
         <p
-          class={cn(
-            ['leading-snug tracking-wide', 'text-left font-sans font-medium text-gray-11'],
-            ['text-[18px]']
-          )}
+          class={cn([
+            'leading-snug tracking-[0.09px]',
+            'font-sans text-lg font-normal text-gray-12 opacity-74'
+          ])}
         >
           {description}
         </p>
-        <div>
+        <div class="mb-[40px] flex flex-col items-start gap-[12px] self-stretch">
           {#each points as point}
-            <div class="flex items-center gap-2">
-              <img src="/agent_lp_images/bullet_icon.png" alt="" class="h-[16px] w-[16px]" />
+            <div class="flex items-center gap-[10px]">
+              <img src="/agent_lp_images/bullet_icon.png" alt="" class="" />
               <p
                 class={cn(
-                  ['opacity-74', 'text-left font-sans font-medium text-gray-11'],
-                  ['mb-2 text-[18px] font-medium leading-snug tracking-wide']
+                  ['opacity-74', 'text-left font-sans font-medium text-gray-12'],
+                  ['mb-2 text-[18px] font-medium leading-snug tracking-[0.09px]']
                 )}
               >
                 {point}

@@ -15,6 +15,8 @@
   import Card2 from '$src/lib/components/card2.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
+  import TitleBlocknew from '$src/lib/components/title_blocknew.svelte';
+  import Title from '$src/components/title.svelte';
 </script>
 
 <svelte:head>
@@ -27,7 +29,8 @@
     <TrustedBy />
     <ShowCase />
     <ScrollInfo />
-    <img src="/agent_lp_images/AI_Chip.png" alt="" class="mx-auto" />
+    <img src="/agent_lp_images/AI_Chip.png" alt="" class="mx-auto mt-[100px]" />
+    <TitleBlocknew />
     <PathSelector />
     <TitleBlock />
     <!-- <AgentRole /> -->

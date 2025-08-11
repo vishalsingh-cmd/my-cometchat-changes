@@ -49,42 +49,61 @@
 
 <div class="mb-20 grid min-h-[325px] grid-cols-[0.3fr_1fr_1fr_1fr_0.3fr] gap-0">
   <!-- Left border column -->
-  <div class=" border-b border-t border-gray-5" />
+  <div class="border-b border-t border-gray-5" />
 
   {#each cards as card}
     <div
-      class="group relative flex h-full flex-col border border-gray-5 p-6 text-white transition-all duration-300 hover:shadow-xl"
+      class="group relative flex h-full min-h-[261px] flex-shrink-0 flex-col items-start justify-between overflow-hidden border border-gray-5 p-6 text-white transition-all duration-500 hover:shadow-xl"
     >
-      <!-- Top: Icon -->
-      <div class="mb-4 flex items-end">
+      <!-- Gradient background -->
+
+      <div
+        class="absolute inset-0 z-10 flex-none translate-y-[-100%] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+        style="background: url('/agent_lp_images/gradient.svg') no-repeat center/cover;"
+      />
+
+      <!-- Box 1 -->
+      <!-- Icon (fades out on hover) -->
+      <div
+        class="relative z-10 flex items-end transition-opacity duration-300 group-hover:opacity-0"
+      >
         <img src={card.icon} alt={card.title} class="rounded-lg border border-gray-5 p-3" />
       </div>
 
-      <!-- Spacer -->
-      <div class="flex-grow" />
-
-      <!-- Bottom: Title + Description + Link -->
-      <div class="z-10">
-        <h3 class="mb-2 text-lg font-semibold">{card.title}</h3>
-        <p class="mb-4 text-md text-gray-11">{card.description}</p>
-      </div>
-
-      <Link href={card.link} class="z-50 text-sm text-brand-9 hover:underline">
-        {card.linkText}
-      </Link>
-
-      <!-- Hover Detail Overlay -->
-      <div
-        class="pointer-events-none absolute inset-0 z-20 flex translate-y-40 flex-col rounded-lg px-4 text-white opacity-0 transition-all duration-300 ease-in-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:backdrop-blur-lg"
-      >
-        <div class="z-10 pl-4 pt-6">
-          <p class="mb-2 text-xl font-semibold">{card.title}</p>
-          {#each card.hoverDetail as point}
-            <div class="flex max-w-[300px]">
-              <div><img src={bullet_icon} alt="" class="mr-1" /></div>
-              <div class="mb-4 text-md leading-snug text-gray-11">{point}</div>
+      <!-- Box-2 -->
+      <!-- Title & description & Hover Points -->
+      <div>
+        <div class="relative z-10">
+          <div class="translate-y-0 duration-300 group-hover:translate-y-[-210px]">
+            <h3 class=" text-xl font-semibold transition-all duration-300 group-hover:mb-2">
+              {card.title}
+            </h3>
+            <p
+              class="max-h-20 overflow-hidden text-md text-gray-11 transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0"
+            >
+              {card.description}
+            </p>
+            <div
+              class="absolute z-10 mt-0 flex w-[300px] flex-col items-start gap-3 self-stretch opacity-0 transition-all duration-300 group-hover:opacity-100"
+            >
+              {#each card.hoverDetail as point}
+                <div class="flex items-start gap-2 self-stretch">
+                  <img src={bullet_icon} alt="" class="mr-1 flex-none items-start object-contain" />
+                  <div class="text-md leading-snug text-gray-11">{point}</div>
+                </div>
+              {/each}
             </div>
-          {/each}
+          </div>
+
+          <!-- Link -->
+          <div>
+            <Link
+              href={card.link}
+              class="relative z-10 mt-auto text-sm text-brand-9 hover:underline"
+            >
+              {card.linkText}
+            </Link>
+          </div>
         </div>
       </div>
 
