@@ -9,7 +9,7 @@
   <img
     src="/agent_lp_images/cometchat_logo.png"
     alt="CometChat Logo"
-    class="mb-6 w-auto max-w-[180px] -translate-x-6"
+    class="absolute top-[40px] w-auto max-w-[180px] -translate-x-6"
   />
 
   <!-- Ellipse background -->
@@ -20,12 +20,14 @@
   />
 
   <!-- Heading + Text -->
-  <div class="z-10 flex max-w-[640px] flex-col items-center px-4">
+  <div class="absolute top-[320px] z-10 flex max-w-[640px] flex-col items-center gap-[16px] px-4">
     <p class="text-3xl font-semibold leading-tight text-white">
       You don’t need to build it<br />all to ship it all
     </p>
 
-    <p class="text-gray-300 mt-4 text-sm">
+    <p
+      class="text-center text-xl font-medium leading-snug tracking-[0.11px] text-gray-11 opacity-74"
+    >
       Focus on what your agent does. We’ll handle the rest — with chat infra trusted by global teams
       for years.
     </p>

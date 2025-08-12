@@ -1,7 +1,25 @@
 <script>
-  // import StepAnimatedBeam from '$src/_views/HomeV2/_sections/Step/_comp/StepAnimatedBeam.svelte';
+  let activeImage = '/agent_lp_images/core_features/insights.png'; // Default
 
   const features = [
+    {
+      heading: 'Built-in guardrails + moderation',
+      subheading: 'Two-Way Safety, Built In',
+      subheading2:
+        'Most platforms stop at content filters. We moderate both ways - and give you the logic, visibility, and flexibility to do it your way.',
+      items: [
+        'Catch jailbreaks, prompt injections, and bad actors at the door',
+        'Filter unsafe, biased, or hallucinated outputs from your agent',
+        'Works with CometChat AI, OpenAI, or your own moderation API',
+        'Fallback logic, refusal routing, escalation paths',
+        'Visual policy builder with thresholds, triggers, and roles',
+        'Audit trails, CSAM detection, and full RBAC compliance',
+        'Plug into any stage of the message lifecycle'
+      ],
+      footer:
+        "Because safety shouldn't be a post-it note on your roadmap. It should be a product feature.",
+      image: '/agent_lp_images/core_features/built_in.png'
+    },
     {
       heading: 'Production-ready chat UI',
       subheading: 'Built for LLM-native UX',
@@ -17,7 +35,8 @@
         'Supports structured agent output - including tool call rendering, memory markers, and fallback patterns'
       ],
       footer:
-        'It’s not just a pretty shell. It’s UX that teaches trust, guides behavior, and makes your agent feel alive.'
+        'It’s not just a pretty shell. It’s UX that teaches trust, guides behavior, and makes your agent feel alive.',
+      image: '/agent_lp_images/core_features/production_ready.png'
     },
     {
       heading: 'Multichannel notifications engine',
@@ -32,7 +51,8 @@
         'User-level frequency + preference settings'
       ],
       footer:
-        "Notifications aren't a growth hack. They're UX glue. And we built them so you wouldn’t have to."
+        "Notifications aren't a growth hack. They're UX glue. And we built them so you wouldn’t have to.",
+      image: '/agent_lp_images/core_features/multichannel.png'
     },
     {
       heading: 'Insights dashboard',
@@ -46,16 +66,37 @@
         'Sentiment markers and feedback loops',
         'Exportable, filterable, and privacy-respectful'
       ],
-      footer: 'You can’t improve what you can’t see. With us, you never ship blind.'
+      footer: 'You can’t improve what you can’t see. With us, you never ship blind.',
+      image: '/agent_lp_images/core_features/insights.png'
     }
   ];
+
+  // Intersection Observer to detect which section is in view
+  function observeFeature(node, image) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          activeImage = image;
+        }
+      },
+      { threshold: 0.8 }
+    );
+
+    observer.observe(node);
+
+    return {
+      destroy() {
+        observer.unobserve(node);
+      }
+    };
+  }
 </script>
 
 <div class="relative space-y-32 font-sans text-white">
-  <!-- Top Section -->
   <section class="relative top-[100px] mx-auto flex justify-center">
     <div>
       <div class="flex">
+        <!-- LEFT CONTENT -->
         <div class="w-[588px]">
           <div
             class="sticky top-0 z-20 mb-6 bg-background-vertical px-0 py-[64px] text-3xl font-semibold leading-tighter text-white shadow-lg"
@@ -65,23 +106,48 @@
             >
           </div>
 
-          <ul
-            class=" grid list-inside grid-cols-1 gap-y-2 text-lg-richtext font-normal text-gray-11"
-          >
-            <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" />
-              <span class="font-semibold"> Skip months of plumbing </span> with a stack that’s already
-              solved the hardest frontend and infra problems for AI agents.
+          <ul class=" flex flex-col items-start gap-3">
+            <li class="flex-start flex items-start gap-[8px] self-stretch">
+              <img
+                src="/agent_lp_images/star-04.svg"
+                alt=""
+                class="flex items-center gap-[10px] py-1"
+              />
+
+              <div
+                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
+              >
+                <span class="font-semibold"> Skip months of plumbing </span> with a stack that’s already
+                solved the hardest frontend and infra problems for AI agents.
+              </div>
             </li>
-            <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" />
-              <span class="font-semibold">Ship with confidence </span> on battle-tested tech that powers
-              millions of users across industries — from healthcare to high-growth SaaS.
+            <li class="flex-start flex items-start gap-[8px] self-stretch">
+              <img
+                src="/agent_lp_images/star-04.svg"
+                alt=""
+                class="flex items-center gap-[10px] py-1"
+              />
+
+              <div
+                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
+              >
+                Ship with confidence on battle-tested tech that powers millions of users across
+                industries — from healthcare to high-growth SaaS.
+              </div>
             </li>
-            <li>
-              <img src="/agent_lp_images/bullet_icon.png" alt="" srcset="" class="inline-block" /> Focus
-              on your edge while we handle the scaffolding — scale, security, compliance, and everything
-              in between.
+            <li class="flex-start flex items-start gap-[8px] self-stretch">
+              <img
+                src="/agent_lp_images/star-04.svg"
+                alt=""
+                class="flex items-center gap-[10px] py-1"
+              />
+
+              <div
+                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
+              >
+                Focus on your edge while we handle the scaffolding — scale, security, compliance,
+                and everything in between.
+              </div>
             </li>
           </ul>
 
@@ -90,47 +156,48 @@
           <!-- Feature Sections -->
           <div class="flex flex-col items-start gap-3 self-stretch">
             {#each features as feature, index}
-              <h3 class="z-0 text-xl font-semibold text-brand-9">{feature.heading}</h3>
-              <p class=" text-2xl leading-snug">{feature.subheading}</p>
-              <p class="text-sans text-xl leading-snug text-gray-11">
-                {feature.subheading2}
-              </p>
-              <ul class="text-base grid list-inside grid-cols-1 gap-x-6 gap-y-2 text-gray-11">
-                {#each feature.items as item}
-                  <li class="text-lg-richtext font-medium text-gray-11">
-                    <div class="flex items-start gap-[8px] self-stretch">
-                      <img
-                        src="/agent_lp_images/bullet_icon.png"
-                        alt=""
-                        srcset=""
-                        class="inline-block"
-                      />
-                      <div>{item}</div>
-                    </div>
-                  </li>
-                {/each}
-              </ul>
-              <p
-                class={`mt-6 text-md italic leading-snug text-gray-11 ${
-                  index === features.length - 1 ? 'mb-[200px]' : ''
-                }`}
-              >
-                {feature.footer}
-              </p>
-              {#if index != features.length - 1}<div
-                  class="my-[100px] w-full space-y-[100px] border-b border-gray-5"
-                />{/if}
+              <div use:observeFeature={feature.image}>
+                <div class="flex flex-col items-start gap-4 self-stretch">
+                  <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
+                    {feature.heading}
+                  </h3>
+                  <p class=" text-2xl leading-snug">{feature.subheading}</p>
+                  <p class="text-sans text-xl leading-snug text-gray-11">
+                    {feature.subheading2}
+                  </p>
+                  <ul class="text-base grid list-inside grid-cols-1 gap-[12px] text-gray-11">
+                    {#each feature.items as item}
+                      <li class="font-medium text-gray-12">
+                        <div class="flex items-start gap-[8px]">
+                          <img src="/agent_lp_images/bullet_icon.png" alt="" class="inline-block" />
+                          <div class="leading-snug tracking-[0.09px] opacity-74">{item}</div>
+                        </div>
+                      </li>
+                    {/each}
+                  </ul>
+                  <p
+                    class={`mt-6 text-md italic leading-snug text-gray-11 ${
+                      index === features.length - 1 ? 'mb-[200px]' : ''
+                    }`}
+                  >
+                    {feature.footer}
+                  </p>
+                </div>
+                {#if index != features.length - 1}
+                  <div class="my-[100px] w-full space-y-[100px] border-b border-gray-5" />
+                {/if}
+              </div>
             {/each}
           </div>
         </div>
 
+        <!-- RIGHT IMAGE -->
         <div class="sticky top-0">
           <img
-            src="/agent_lp_images/notifications.png"
+            src={activeImage}
             alt="Agent UI"
-            class="sticky top-0 mx-auto w-[640px]"
+            class="sticky top-0 mx-auto w-[640px] transition-opacity duration-500"
           />
-          <!-- Add a fake chat UI and button as overlay if needed -->
         </div>
       </div>
     </div>
