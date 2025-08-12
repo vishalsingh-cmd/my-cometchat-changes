@@ -28,7 +28,7 @@
         'Save time on structure, focus on experience',
         'Ideal for teams who want speed and polish'
       ],
-      link: '#',
+      link: 'https://www.cometchat.com/docs/ui-kit/react/overview',
       linkText: 'Explore UI Kits'
     },
     {
@@ -41,7 +41,7 @@
         'Save time on structure, focus on experience',
         'Ideal for teams who want speed and polish'
       ],
-      link: '#',
+      link: 'https://www.cometchat.com/docs',
       linkText: 'View Docs'
     }
   ];
@@ -75,11 +75,11 @@
       <div>
         <div class="relative z-10">
           <div class="translate-y-0 duration-300 group-hover:translate-y-[-210px]">
-            <h3 class=" text-xl font-semibold transition-all duration-300 group-hover:mb-2">
+            <h3 class=" text-xl font-[640px] transition-all duration-300 group-hover:mb-2">
               {card.title}
             </h3>
             <p
-              class="max-h-20 overflow-hidden text-md text-gray-11 transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0"
+              class="max-h-20 overflow-hidden text-lg font-medium text-gray-11 transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0"
             >
               {card.description}
             </p>
@@ -89,7 +89,7 @@
               {#each card.hoverDetail as point}
                 <div class="flex items-start gap-2 self-stretch">
                   <img src={bullet_icon} alt="" class="mr-1 flex-none items-start object-contain" />
-                  <div class="text-md leading-snug text-gray-11">{point}</div>
+                  <div class="text-[16px] leading-snug text-gray-11">{point}</div>
                 </div>
               {/each}
             </div>

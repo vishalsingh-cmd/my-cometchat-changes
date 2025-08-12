@@ -38,7 +38,7 @@
 <div
   class={cn([
     'group/single_roller relative isolate flex cursor-pointer flex-col overflow-hidden',
-    'mt-[40px] border-b border-[#FAFAFF] border-opacity-10'
+    'border-b border-[#FAFAFF] border-opacity-10'
   ])}
   data-state={status}
   on:click={handleOnClick}
@@ -60,7 +60,6 @@
         size="xs"
         {icon}
         class={cn([
-          '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
           '[&_path]:opacity-40 group-data-[state="active"]/single_roller:[&_path]:opacity-100',
           'group-data-[state="active"]/single_roller:[&_path]:fill-brand-9',
           '[&_path]:transition-colors [&_path]:duration-300',
@@ -98,7 +97,7 @@
       >
         <p
           class={cn(
-            ['text-gray-12', 'font-sans font-semibold leading-tighter tracking-none opacity-74'],
+            ['text-gray-12', 'font-sans font-medium leading-tighter tracking-none opacity-74'],
             [' text-xl']
           )}
         >
@@ -107,19 +106,19 @@
         <p
           class={cn([
             'leading-snug tracking-[0.09px]',
-            'font-sans text-lg font-normal text-gray-12 opacity-74'
+            'font-sans text-lg font-medium text-gray-12 opacity-74'
           ])}
         >
           {description}
         </p>
         <div class="mb-[40px] flex flex-col items-start gap-[12px] self-stretch">
           {#each points as point}
-            <div class="flex items-center gap-[10px]">
+            <div class="flex items-start gap-[8px] self-stretch">
               <img src="/agent_lp_images/bullet_icon.png" alt="" class="" />
               <p
                 class={cn(
                   ['opacity-74', 'text-left font-sans font-medium text-gray-12'],
-                  ['mb-2 text-[18px] font-medium leading-snug tracking-[0.09px]']
+                  ['text-[18px] font-medium leading-snug tracking-[0.09px]']
                 )}
               >
                 {point}

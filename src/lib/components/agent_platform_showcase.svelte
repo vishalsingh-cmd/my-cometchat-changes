@@ -7,7 +7,6 @@
     <!-- Left: Text Content -->
 
     <div class="flex max-w-[528px] shrink-0 flex-col items-start gap-4">
-      <p class="text-xl font-medium text-brand-9">Core features</p>
       <h2 class="text-sans text-3xl font-semibold leading-tighter tracking-none text-white">
         Everything your agent needs to go from prototype to product – fixed.
       </h2>

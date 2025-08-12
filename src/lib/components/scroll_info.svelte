@@ -1,25 +1,8 @@
 <script>
-  let activeImage = '/agent_lp_images/core_features/insights.png'; // Default
+  let activeImage = '/agent_lp_images/notifications.png'; // Default
+  let fading = false;
 
   const features = [
-    {
-      heading: 'Built-in guardrails + moderation',
-      subheading: 'Two-Way Safety, Built In',
-      subheading2:
-        'Most platforms stop at content filters. We moderate both ways - and give you the logic, visibility, and flexibility to do it your way.',
-      items: [
-        'Catch jailbreaks, prompt injections, and bad actors at the door',
-        'Filter unsafe, biased, or hallucinated outputs from your agent',
-        'Works with CometChat AI, OpenAI, or your own moderation API',
-        'Fallback logic, refusal routing, escalation paths',
-        'Visual policy builder with thresholds, triggers, and roles',
-        'Audit trails, CSAM detection, and full RBAC compliance',
-        'Plug into any stage of the message lifecycle'
-      ],
-      footer:
-        "Because safety shouldn't be a post-it note on your roadmap. It should be a product feature.",
-      image: '/agent_lp_images/core_features/built_in.png'
-    },
     {
       heading: 'Production-ready chat UI',
       subheading: 'Built for LLM-native UX',
@@ -37,6 +20,24 @@
       footer:
         'It’s not just a pretty shell. It’s UX that teaches trust, guides behavior, and makes your agent feel alive.',
       image: '/agent_lp_images/core_features/production_ready.png'
+    },
+    {
+      heading: 'Built-in guardrails + moderation',
+      subheading: 'Two-Way Safety, Built In',
+      subheading2:
+        'Most platforms stop at content filters. We moderate both ways - and give you the logic, visibility, and flexibility to do it your way.',
+      items: [
+        'Catch jailbreaks, prompt injections, and bad actors at the door',
+        'Filter unsafe, biased, or hallucinated outputs from your agent',
+        'Works with CometChat AI, OpenAI, or your own moderation API',
+        'Fallback logic, refusal routing, escalation paths',
+        'Visual policy builder with thresholds, triggers, and roles',
+        'Audit trails, CSAM detection, and full RBAC compliance',
+        'Plug into any stage of the message lifecycle'
+      ],
+      footer:
+        "Because safety shouldn't be a post-it note on your roadmap. It should be a product feature.",
+      image: '/agent_lp_images/core_features/built_in.png'
     },
     {
       heading: 'Multichannel notifications engine',
@@ -76,10 +77,15 @@
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          activeImage = image;
+          // Fade out first
+          fading = true;
+          setTimeout(() => {
+            activeImage = image;
+            fading = false;
+          }, 300); // half your fade duration
         }
       },
-      { threshold: 0.8 }
+      { threshold: 0.7 }
     );
 
     observer.observe(node);
@@ -92,18 +98,21 @@
   }
 </script>
 
-<div class="relative space-y-32 font-sans text-white">
-  <section class="relative top-[100px] mx-auto flex justify-center">
+<div class="relative font-sans text-white">
+  <section class="relative mx-auto flex justify-center">
     <div>
-      <div class="flex">
+      <div class="flex justify-center">
         <!-- LEFT CONTENT -->
         <div class="w-[588px]">
           <div
-            class="sticky top-0 z-20 mb-6 bg-background-vertical px-0 py-[64px] text-3xl font-semibold leading-tighter text-white shadow-lg"
+            class="sticky top-0 z-20 mb-6 flex flex-col bg-background-vertical px-0 py-[64px] shadow-lg"
           >
-            All that you’d end up building – <span
-              class="bg-gradient-purple bg-clip-text text-transparent">already done.</span
-            >
+            <div class="text-xl font-medium text-brand-9">Core features</div>
+            <div class="text-3xl font-semibold leading-tighter text-white">
+              All that you’d end up building – <span
+                class="bg-gradient-purple bg-clip-text text-transparent">already done.</span
+              >
+            </div>
           </div>
 
           <ul class=" flex flex-col items-start gap-3">
@@ -196,7 +205,9 @@
           <img
             src={activeImage}
             alt="Agent UI"
-            class="sticky top-0 mx-auto w-[640px] transition-opacity duration-500"
+            class={`sticky top-0 mx-auto w-[640px] transition-opacity duration-500 ${
+              fading ? 'opacity-0' : 'opacity-100'
+            }`}
           />
         </div>
       </div>

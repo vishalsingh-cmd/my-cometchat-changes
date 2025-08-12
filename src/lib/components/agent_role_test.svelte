@@ -28,12 +28,13 @@
     {
       icon: 'copilots',
       title: 'In-app copilots',
-      subHeading:
+      subHeading: 'More than answers. Real actions.',
+      description:
         'These agents are embedded directly into your product, helping users get things done - not just ask for help.',
-      description: 'This is the first custom roller item.',
       points: [
         'Trigger modals, walkthroughs, workflows, or external tools',
         'Show memory chips, pull API data, open tool cards',
+        'Built-in retries, feedback, and fallbacks',
         'Chat UI that adapts to live changes and structured replies',
         'Insights baked in so you know what’s working Chatbot'
       ],
@@ -109,7 +110,7 @@
 
       <!-- Carousel section -->
       <div class="flex-initial">
-        <div class="flex min-h-[686px] w-[528px] flex-col">
+        <div class="flex min-h-[686px] w-[528px] flex-col gap-[40px]">
           {#each myRollers as roller, index}
             <IndustryRollerItem
               {index}

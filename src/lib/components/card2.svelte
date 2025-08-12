@@ -13,102 +13,126 @@
 <div
   class="grid-bg relative grid h-[630px] w-[1312px] grid-cols-[repeat(14,1fr)] grid-rows-4 text-sm font-medium leading-tight text-white"
 >
-  <div class="col-span-1 row-span-4 border-b border-t border-gray-5" />
+  <div class="col-span-1 row-span-4 border-b-0 border-t-0 border-gray-5" />
 
-  <div class="relative col-span-3 row-span-3 border border-gray-5 p-6">
-    <h3 class="mb-2 text-xl font-semibold">Seamless Multi-tenant support</h3>
+  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5 p-6">
+    <h3 class="mb-2 text-[22px] font-[640px]">Seamless Multi-tenant support</h3>
     <!-- <div class="mt-6 flex h-32 w-full items-center justify-center rounded-md bg-[#]">#</div> -->
     <img src={data_enc} alt="" srcset="" class="mx-auto" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
+    <SecureDecCircle position="topLeft" className="z-40" />
+    <SecureDecCircle position="topRight" className="z-40" />
     <SecureDecCircle position="bottomLeft" />
     <SecureDecCircle position="bottomRight" />
   </div>
 
-  <div class="relative col-span-3 row-span-2 border border-gray-5 p-6">
+  <div class="relative col-span-3 row-span-2 border border-t-0 border-gray-5 p-6">
     <h3 class="mb-2 text-xl font-semibold">Data encryption in transit and at rest</h3>
     <img src={secure} alt="" srcset="" class="mx-auto" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+
+    <SecureDecCircle position="topRight" className="z-40" />
+    <SecureDecCircle position="bottomLeft" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-3 row-span-1 flex justify-between border border-gray-5">
-    <h3 class="w-[227px] pl-4 pt-6 font-sans text-xl font-[640] leading-tighter">
+  <div class="relative col-span-3 row-span-1 flex justify-between border border-t-0 border-gray-5">
+    <h3 class="w-[227px] pl-4 pt-6 font-sans text-[22px] font-[640px] leading-tighter">
       Global <br /> multi-region <br />delivery
     </h3>
 
     <img src={sg} alt="" srcset="" class="absolute bottom-0 right-0 h-[138px] w-[138px]" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+    <SecureDecCircle position="topRight" className="z-40" />
+    <SecureDecCircle position="bottomLeft" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-3 row-span-3 border border-gray-5 p-6">
-    <h3 class="mb-2 text-xl font-semibold">Edge network</h3>
-    <p class="text-lg leading-snug text-gray-11">
+  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5 p-6">
+    <h3 class="mb-2 text-xl font-[640px]">Edge network</h3>
+    <p
+      class="max-w-[226px] self-stretch font-sans text-[18px] font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
+    >
       Lightning-fast chat delivery through 35+ edge locations worldwide, ensuring minimal latency
       for all users.
     </p>
     <img src={connect} alt="" class="absolute bottom-0 right-0" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+    <SecureDecCircle position="topRight" className="z-40" />
+    <SecureDecCircle position="bottomLeft" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="col-span-1 row-span-4 border-b border-t border-gray-5" />
+  <div class="col-span-1 row-span-4 border-b-0 border-t-0 border-gray-5" />
 
-  <div class="relative col-span-3 row-span-1 border border-gray-5">
-    <div class="mx-auto mt-6 flex w-[204px] flex-col items-start gap-2 self-stretch">
-      <div class="font-bold bg-gradient-purple bg-clip-text text-3xl text-transparent">99.999%</div>
-      <div class="text-lg font-normal text-gray-11">Uptime SLA</div>
+  <div class="relative col-span-3 row-span-1 flex items-center justify-center border border-gray-5">
+    <div>
+      <div class="flex w-[204px] flex-col items-start gap-2 self-stretch">
+        <div class="bg-gradient-purple bg-clip-text text-3xl font-[640px] text-transparent">
+          99.999%
+        </div>
+        <div class="text-lg font-medium text-gray-12 opacity-74">Uptime SLA</div>
+      </div>
     </div>
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+
+    <SecureDecCircle position="bottomLeft" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
   <div class="relative col-span-6 flex items-center justify-between border border-gray-5 p-6">
-    <h3 class="mb-4 text-lg font-semibold">Enterprise <br /> security</h3>
+    <h3 class="mb-4 text-lg font-[640px]">Enterprise <br /> security</h3>
     <img src={enterprise} class="mx-auto" alt="" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+    <SecureDecCircle position="topLeft" className="z-40" />
   </div>
 
-  <div class="relative col-span-4 flex items-center border border-gray-5">
-    <h3 class=" w-[227px] pl-6 text-lg font-semibold">
+  <div class="relative col-span-4 flex items-center border border-b-0 border-gray-5">
+    <h3 class=" w-[227px] pl-6 text-lg font-[640px]">
       Message auditing <br /> and <br /> policy enforcement
     </h3>
     <img src={file} alt="" class="absolute bottom-0 right-0" />
-    <SecureDecCircle position="topLeft" />
     <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+    <SecureDecCircle position="bottomLeft" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-4 flex flex-col justify-center border border-gray-5">
-    <h3 class="mx-auto text-lg font-semibold">RBAC + Access logs</h3>
+  <div class="relative col-span-4 flex flex-col justify-center border border-b-0 border-gray-5">
+    <h3 class="relative left-[24px] text-lg font-semibold">RBAC <br />+ <br /> Access logs</h3>
     <img src={lock} alt="lock" class="absolute bottom-0 right-0 h-[138px] w-[138px]" />
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+
+    <SecureDecCircle position="topRight" className="z-40" />
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-4 flex flex-col justify-center border border-gray-5 p-6">
-    <h3 class="bg-gradient-purple bg-clip-text text-3xl font-semibold text-transparent">
-      5B+ users
-    </h3>
-    <p class="text-lg font-normal text-gray-11">Scalable systems</p>
-    <SecureDecCircle position="topLeft" />
-    <SecureDecCircle position="topRight" />
-    <SecureDecCircle position="bottomLeft" />
-    <SecureDecCircle position="bottomRight" />
+  <div
+    class="relative col-span-4 flex flex-col items-center justify-center border border-b-0 border-gray-5 p-6"
+  >
+    <div>
+      <h3 class="bg-gradient-purple bg-clip-text text-3xl font-[640px] text-transparent">
+        5B+ users
+      </h3>
+      <p class="text-lg font-medium text-gray-11">Scalable systems</p>
+    </div>
+    <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
+
+  <div
+    class="absolute top-0 z-30 h-[2px] w-[1312px]"
+    style="
+  background: linear-gradient(90deg,
+    rgba(250,250,255,0) 0%,
+    rgba(250,250,255,1) 5%,
+    rgba(250,250,255,1) 95%,
+    rgba(250,250,255,0) 100%
+  );
+  opacity: 0.1;
+"
+  />
+  <div
+    class="absolute bottom-0 z-30 h-[2px] w-[1312px]"
+    style="
+  background: linear-gradient(90deg,
+    rgba(250,250,255,0) 0%,
+    rgba(250,250,255,1) 5%,
+    rgba(250,250,255,1) 95%,
+    rgba(250,250,255,0) 100%
+  );
+  opacity: 0.1;
+"
+  />
 </div>

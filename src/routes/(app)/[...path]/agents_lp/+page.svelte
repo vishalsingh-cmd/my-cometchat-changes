@@ -16,7 +16,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import TitleBlocknew from '$src/lib/components/title_blocknew.svelte';
-  import Title from '$src/components/title.svelte';
+  // import Title from '$src/components/title.svelte';
 </script>
 
 <svelte:head>

@@ -4,7 +4,7 @@
 </script>
 
 <section
-  class="top-[75px] mt-10 flex w-full flex-col items-center justify-center gap-8 py-20 font-sans text-white md:flex-row"
+  class="top-[75px] flex w-full flex-col items-center justify-center gap-8 py-20 font-sans text-white md:flex-row"
 >
   <!-- Left Content -->
   <div class="flex max-w-[538px] flex-col items-start justify-center gap-8">
@@ -14,7 +14,7 @@
         <div class="flex h-[48px] items-center justify-center">
           <img src="/agent_lp_images/Profile.png" alt="icon" class="" />
           <div
-            class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-xl font-semibold leading-snug tracking-none text-transparent"
+            class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-[18px] font-semibold leading-snug tracking-none text-transparent"
           >
             Full Stack AI Agent Platform
           </div>
@@ -47,8 +47,10 @@
 
     <!-- CTA Buttons -->
     <div class="flex flex-wrap gap-4">
-      <Button as="a" href="/demo" variant="secondary">Schedule a Demo</Button>
-      <Button as="a" href="/agent-builder">Try the Agent Builder</Button>
+      <Button as="a" href="https://www.cometchat.com/contact-sales" variant="secondary"
+        >Schedule a Demo</Button
+      >
+      <Button as="a" href="https://app.cometchat.com/signup">Try the Agent Builder</Button>
     </div>
   </div>
 

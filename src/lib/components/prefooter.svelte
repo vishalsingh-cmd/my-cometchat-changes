@@ -3,13 +3,13 @@
 </script>
 
 <div
-  class="relative mx-auto flex h-[647px] w-full flex-col items-center justify-center overflow-hidden text-center"
+  class="relative mx-auto my-[80px] flex h-[647px] w-full flex-col items-center justify-center overflow-hidden text-center"
 >
   <!-- CometChat logo -->
   <img
     src="/agent_lp_images/cometchat_logo.png"
     alt="CometChat Logo"
-    class="absolute top-[40px] w-auto max-w-[180px] -translate-x-6"
+    class="[160px] absolute top-[40px] h-[160px] w-[160px] -translate-x-6"
   />
 
   <!-- Ellipse background -->
@@ -34,8 +34,8 @@
 
     <!-- Buttons -->
     <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-      <Button variant="secondary">Talk to Us</Button>
-      <Button>Try the Agent Builder</Button>
+      <Button variant="secondary" href="https://www.cometchat.com/contact-sales">Talk to Us</Button>
+      <Button as="a" href="https://app.cometchat.com/signup">Try the Agent Builder</Button>
     </div>
   </div>
 </div>
