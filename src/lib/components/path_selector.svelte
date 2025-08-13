@@ -1,7 +1,7 @@
 <script>
   let byobIcon = 'agent_lp_images/AI2_icon.png';
   let cometchatIcon = 'agent_lp_images/AI_icon.png';
-  let cometchatImage = 'agent_lp_images/Infra.png';
+  let cometchatImage = 'agent_lp_images/infra.png';
 
   let byobImage = '/agent_lp_images/Byob.png';
   let bulletIcon = '/agent_lp_images/bullet_icon.png';
