@@ -71,7 +71,6 @@
       </div>
     </div>
 
-    <SecureDecCircle position="bottomLeft" className="z-40" />
     <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 

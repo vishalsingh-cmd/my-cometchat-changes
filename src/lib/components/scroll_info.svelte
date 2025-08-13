@@ -4,6 +4,18 @@
 
   const features = [
     {
+      heading: '',
+      subheading: '',
+      subheading2: '',
+      items: [
+        'Skip months of plumbing with a stack that’s already solved the hardest frontend and infra problems for AI agents.',
+        'Ship with confidence on battle-tested tech that powers millions of users across industries — from healthcare to high-growth SaaS.',
+        'Focus on your edge while we handle the scaffolding — scale, security, compliance, and everything in between.'
+      ],
+      footer: '',
+      image: '/agent_lp_images/notifications.png'
+    },
+    {
       heading: 'Production-ready chat UI',
       subheading: 'Built for LLM-native UX',
       subheading2:
@@ -114,53 +126,6 @@
               >
             </div>
           </div>
-
-          <ul class=" flex flex-col items-start gap-3">
-            <li class="flex-start flex items-start gap-[8px] self-stretch">
-              <img
-                src="/agent_lp_images/star-04.svg"
-                alt=""
-                class="flex items-center gap-[10px] py-1"
-              />
-
-              <div
-                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
-              >
-                <span class="font-semibold"> Skip months of plumbing </span> with a stack that’s already
-                solved the hardest frontend and infra problems for AI agents.
-              </div>
-            </li>
-            <li class="flex-start flex items-start gap-[8px] self-stretch">
-              <img
-                src="/agent_lp_images/star-04.svg"
-                alt=""
-                class="flex items-center gap-[10px] py-1"
-              />
-
-              <div
-                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
-              >
-                Ship with confidence on battle-tested tech that powers millions of users across
-                industries — from healthcare to high-growth SaaS.
-              </div>
-            </li>
-            <li class="flex-start flex items-start gap-[8px] self-stretch">
-              <img
-                src="/agent_lp_images/star-04.svg"
-                alt=""
-                class="flex items-center gap-[10px] py-1"
-              />
-
-              <div
-                class="text-sans text-lg font-medium leading-snug tracking-[0.11px] text-gray-12 opacity-74"
-              >
-                Focus on your edge while we handle the scaffolding — scale, security, compliance,
-                and everything in between.
-              </div>
-            </li>
-          </ul>
-
-          <div class="my-[100px] border-b border-gray-5" />
 
           <!-- Feature Sections -->
           <div class="flex flex-col items-start gap-3 self-stretch">

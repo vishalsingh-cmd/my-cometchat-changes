@@ -48,22 +48,24 @@
     <!-- Icon -->
     <div
       class={cn([
-        'flex h-8 w-8 flex-shrink-0 items-center justify-center',
-        'rounded-[6px] border border-[rgba(104,82,214,0.32)]',
-        'bg-[linear-gradient(180deg,rgba(104,82,214,0.03)_0%,rgba(104,82,214,0.15)_100%)]',
+        'h-8 w-8',
+        'flex items-center justify-center',
+        'rounded-md border border-[#FAFAFF] border-opacity-10',
         'transition-[border-color] duration-300',
         'group-hover/single_roller:border-opacity-100',
-        'group-data-[state="active"]/single_roller:border-brand-9'
+        'group-data-[state="active"]/single_roller:bg-[linear-gradient(180deg,_rgba(104,_82,_214,_0.03)_0%,_rgba(104,_82,_214,_0.15)_100%)]',
+        'opacity-32 group-data-[state="active"]/single_roller:border-[#6852D6]'
       ])}
     >
       <Icon
         size="xs"
         {icon}
         class={cn([
+          'h-[20px] w-[20px]',
+          '[&_path]:fill-[url(#paint0_linear_1324_49788)]',
           '[&_path]:opacity-40 group-data-[state="active"]/single_roller:[&_path]:opacity-100',
-          'group-data-[state="active"]/single_roller:[&_path]:fill-brand-9',
-          '[&_path]:transition-colors [&_path]:duration-300',
-          'flex items-center justify-center'
+          'group-data-[state="active"]/single_roller:[&_path]:fill-[#6852D6]',
+          '[&_path]:transition-colors [&_path]:duration-300'
         ])}
       />
     </div>

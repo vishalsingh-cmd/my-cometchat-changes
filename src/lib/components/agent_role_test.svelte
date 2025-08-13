@@ -98,18 +98,16 @@
 
 <Section>
   <Container>
-    <div class="flex flex-row items-start gap-6">
+    <div class="flex items-start gap-6">
       <!-- Image section -->
-      <div class="">
-        <img
-          src={myRollersImage[$activeIndex].imageAd}
-          alt={myRollersImage[$activeIndex].imageAlt}
-          class="h-auto w-full object-contain"
-        />
-      </div>
+      <img
+        src={myRollersImage[$activeIndex].imageAd}
+        alt={myRollersImage[$activeIndex].imageAlt}
+        class="h-[588px] w-[752px] shrink-0"
+      />
 
       <!-- Carousel section -->
-      <div class="flex-initial">
+      <div class="">
         <div class="flex min-h-[686px] w-[528px] flex-col gap-[40px]">
           {#each myRollers as roller, index}
             <IndustryRollerItem
