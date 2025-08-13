@@ -47,7 +47,7 @@
   ];
 </script>
 
-<div class="relative mb-20 grid min-h-[325px] grid-cols-[0.3fr_1fr_1fr_1fr_0.3fr] gap-0">
+<div class="relative mx-auto mb-20 grid min-h-[325px] grid-cols-[0.3fr_1fr_1fr_1fr_0.3fr] gap-0">
   <!-- Left border column -->
   <div class="border-b-0 border-t-0 border-gray-5" />
 

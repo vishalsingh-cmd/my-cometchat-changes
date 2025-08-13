@@ -42,11 +42,11 @@
 "
     />
 
-    <div class="h-full w-[100px]" />
+    <div class="relative top-0 h-full w-[100px]" />
 
     <!-- Title -->
     <div
-      class="relative flex h-full w-max items-center justify-center border border-b-0 border-r-0 border-t-0 border-gray-5 px-6 text-lg text-white"
+      class="relative flex h-full w-max items-center justify-center border border-b-0 border-r-0 border-t-0 border-gray-5 px-6 text-[16px] font-semibold leading-tight tracking-[0.08px] text-gray-12 opacity-54"
     >
       Global trust, proven at scale
       <SecureDecCircle position="topLeft" className="z-30" />

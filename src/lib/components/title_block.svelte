@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<section class="bg-background px-[64px] pb-[48px] pt-[100px] leading-tighter">
+<section class="bg-background relative px-[64px] pb-[48px] pt-[100px] leading-tighter">
   <div class="flex w-[720px] flex-col gap-3 pb-[16px]">
     <p class="text-xl font-medium text-brand-9">What teams are building with CometChat</p>
 

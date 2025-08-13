@@ -7,7 +7,7 @@
   let bulletIcon = '/agent_lp_images/bullet_icon.png';
 </script>
 
-<section class="  text-white">
+<section class="">
   <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
     <!-- Card 1 -->
     <div class="relative h-[600px] rounded-2xl border border-[#1F1B2E] p-6">
