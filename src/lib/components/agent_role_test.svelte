@@ -14,13 +14,13 @@
       title: 'AI Chatbot',
       subHeading: 'Support that solves - and scales.',
       description:
-        'Whether it’s FAQs, help desk queries, refund requests, or onboarding prompts, these agents work with your knowledge base or tool stack - and know how to respond safely when the model doesn’t.',
+        'From FAQs to refunds, these agents tap your knowledge base, tools, and CRM - and know what to do when the model can’t.',
       points: [
         'Pull from RAG systems, CRM data, or static FAQs',
         'Built-in moderation and fallback for edge cases and escalations',
         'Multichannel support: web, mobile, push, email',
-        'Set up once. Deploy across teams, countries, or verticals',
-        'All without needing a separate team to build the UI, error states, and logging'
+        'One setup, deploy anywhere',
+        'No separate UI or logging build required'
       ],
       link: { url: '#one', target: '_self' },
       imageAd: 'test'
