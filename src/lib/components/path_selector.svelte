@@ -14,7 +14,9 @@
       <div class="flex flex-col items-start gap-6">
         <img src={byobIcon} alt="BYOB Icon" class="h-[64px]" />
         <div>
-          <h3 class="mb-3 text-xl font-semibold">BYOB – Bring Your Own (Agent) Brain</h3>
+          <h3 class="mb-3 font-sans text-[24px] font-[640px] leading-tighter text-gray-12">
+            BYOB – Bring Your Own (Agent) Brain
+          </h3>
           <ul class="flex flex-col items-start gap-3 text-md text-gray-11">
             <li class="flex items-start gap-x-2 self-stretch">
               <img src={bulletIcon} alt="" class="" />
@@ -57,7 +59,9 @@
     >
       <img src={cometchatIcon} alt="CometChat Icon" class="h-[64px]" />
       <div>
-        <h3 class="mb-3 text-xl font-semibold">Build Inside CometChat</h3>
+        <h3 class="mb-3 font-sans text-[24px] font-[640px] leading-tighter text-gray-12">
+          Build Inside CometChat
+        </h3>
         <ul class="flex flex-col items-start gap-3 text-md text-gray-11">
           <li class="flex items-start gap-x-2 self-stretch">
             <img src={bulletIcon} alt="" class="" />

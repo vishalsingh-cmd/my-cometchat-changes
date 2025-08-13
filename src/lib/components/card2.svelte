@@ -15,8 +15,12 @@
 >
   <div class="col-span-1 row-span-4 border-b-0 border-t-0 border-gray-5" />
 
-  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5 p-6">
-    <h3 class="mb-2 text-[22px] font-[640px]">Seamless Multi-tenant support</h3>
+  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5">
+    <h3
+      class="relative left-[24px] top-[24px] self-stretch font-sans text-[22px] font-[640px] leading-snug"
+    >
+      Seamless Multi-tenant support
+    </h3>
     <!-- <div class="mt-6 flex h-32 w-full items-center justify-center rounded-md bg-[#]">#</div> -->
     <img src={data_enc} alt="" srcset="" class="mx-auto" />
     <SecureDecCircle position="topLeft" className="z-40" />
@@ -25,9 +29,13 @@
     <SecureDecCircle position="bottomRight" />
   </div>
 
-  <div class="relative col-span-3 row-span-2 border border-t-0 border-gray-5 p-6">
-    <h3 class="mb-2 text-xl font-semibold">Data encryption in transit and at rest</h3>
-    <img src={secure} alt="" srcset="" class="mx-auto" />
+  <div class="relative col-span-3 row-span-2 border border-t-0 border-gray-5">
+    <h3
+      class="relative left-[24px] top-[24px] w-[227px] self-stretch font-sans text-[22px] text-xl font-[640px] leading-snug"
+    >
+      Data encryption in transit and at rest
+    </h3>
+    <img src={secure} alt="" srcset="" class="absolute bottom-[24px] left-[24px] mx-auto" />
 
     <SecureDecCircle position="topRight" className="z-40" />
     <SecureDecCircle position="bottomLeft" className="z-40" />
@@ -45,14 +53,18 @@
     <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5 p-6">
-    <h3 class="mb-2 text-xl font-[640px]">Edge network</h3>
-    <p
-      class="max-w-[226px] self-stretch font-sans text-[18px] font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
-    >
-      Lightning-fast chat delivery through 35+ edge locations worldwide, ensuring minimal latency
-      for all users.
-    </p>
+  <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5">
+    <div class="self-s relative left-[24px] top-[24px] flex flex-col items-start gap-[12px]">
+      <h3 class="self-stretch font-sans text-[22px] text-xl font-[640px] leading-snug">
+        Edge network
+      </h3>
+      <p
+        class="max-w-[226px] self-stretch font-sans text-[18px] font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
+      >
+        Lightning-fast chat delivery through 35+ edge locations worldwide, ensuring minimal latency
+        for all users.
+      </p>
+    </div>
     <img src={connect} alt="" class="absolute bottom-0 right-0" />
     <SecureDecCircle position="topRight" className="z-40" />
     <SecureDecCircle position="bottomLeft" className="z-40" />
@@ -75,13 +87,15 @@
   </div>
 
   <div class="relative col-span-6 flex items-center justify-between border border-gray-5 p-6">
-    <h3 class="mb-4 text-lg font-[640px]">Enterprise <br /> security</h3>
-    <img src={enterprise} class="mx-auto" alt="" />
+    <h3 class="mb-4 self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug">
+      Enterprise <br /> security
+    </h3>
+    <img src={enterprise} class="" alt="" />
     <SecureDecCircle position="topLeft" className="z-40" />
   </div>
 
-  <div class="relative col-span-4 flex items-center border border-b-0 border-gray-5">
-    <h3 class=" w-[227px] pl-6 text-lg font-[640px]">
+  <div class="relative col-span-4 flex border border-b-0 border-gray-5">
+    <h3 class="relative left-[24px] top-[46px] w-[227px] text-lg font-[640px]">
       Message auditing <br /> and <br /> policy enforcement
     </h3>
     <img src={file} alt="" class="absolute bottom-0 right-0" />
@@ -90,18 +104,20 @@
     <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div class="relative col-span-4 flex flex-col justify-center border border-b-0 border-gray-5">
-    <h3 class="relative left-[24px] text-lg font-semibold">RBAC <br />+ <br /> Access logs</h3>
+  <div class="relative col-span-4 flex flex-col border border-b-0 border-gray-5">
+    <h3
+      class="relative left-[24px] top-[46px] self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug"
+    >
+      RBAC <br />+ <br /> Access logs
+    </h3>
     <img src={lock} alt="lock" class="absolute bottom-0 right-0 h-[138px] w-[138px]" />
 
     <SecureDecCircle position="topRight" className="z-40" />
     <SecureDecCircle position="bottomRight" className="z-40" />
   </div>
 
-  <div
-    class="relative col-span-4 flex flex-col items-center justify-center border border-b-0 border-gray-5 p-6"
-  >
-    <div>
+  <div class="relative col-span-4 border border-b-0 border-gray-5">
+    <div class="relative left-[73px] top-[39px] flex flex-col items-start gap-[8px]">
       <h3 class="bg-gradient-purple bg-clip-text text-3xl font-[640px] text-transparent">
         5B+ users
       </h3>

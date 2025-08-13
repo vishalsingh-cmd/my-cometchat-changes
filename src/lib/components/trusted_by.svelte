@@ -16,7 +16,7 @@
 </script>
 
 <div class="h-[136px]">
-  <div class="relative z-10 flex h-full items-center justify-center">
+  <div class="relative z-40 flex h-full items-center justify-center">
     <div
       class="absolute top-0 z-30 h-[2px] w-[1312px]"
       style="
@@ -42,16 +42,20 @@
 "
     />
 
-    <div class="relative top-0 h-full w-[100px]" />
+    <div class="relative top-0 h-full w-[100px]">
+      <SecureDecCircle position="topRight" className="z-50" />
+
+      <SecureDecCircle position="bottomRight" className="z-50" />
+    </div>
 
     <!-- Title -->
     <div
       class="relative flex h-full w-max items-center justify-center border border-b-0 border-r-0 border-t-0 border-gray-5 px-6 text-[16px] font-semibold leading-tight tracking-[0.08px] text-gray-12 opacity-54"
     >
       Global trust, proven at scale
-      <SecureDecCircle position="topLeft" className="z-30" />
+      <SecureDecCircle position="topLeft" className="z-100" />
 
-      <SecureDecCircle position="bottomLeft" className="z-30" />
+      <SecureDecCircle position="bottomLeft" className="z-50" />
     </div>
 
     <div
@@ -84,9 +88,9 @@
         >
       </div>
 
-      <SecureDecCircle position="topRight" className="z-30" />
+      <SecureDecCircle position="topRight" className="z-50" />
 
-      <SecureDecCircle position="bottomRight" className="z-30" />
+      <SecureDecCircle position="bottomRight" className="z-50" />
     </div>
 
     <div class="from-h-full w-[120px]" />
