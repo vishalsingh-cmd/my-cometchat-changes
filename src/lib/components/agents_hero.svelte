@@ -50,7 +50,7 @@
       <Button as="a" href="https://www.cometchat.com/contact-sales" variant="secondary"
         >Schedule a Demo</Button
       >
-      <Button as="a" href="https://app.cometchat.com/signup">Try the Agent Builder</Button>
+      <Button as="a" href="https://app.cometchat.com/signup">Start Building Today</Button>
     </div>
   </div>
 

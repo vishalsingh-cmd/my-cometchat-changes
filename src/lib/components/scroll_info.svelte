@@ -113,7 +113,7 @@
 <div class="relative font-sans text-white">
   <section class="relative mx-auto flex justify-center">
     <div>
-      <div class="flex justify-center">
+      <div class="group flex justify-center">
         <!-- LEFT CONTENT -->
         <div class="w-[588px]">
           <div
@@ -166,11 +166,11 @@
         </div>
 
         <!-- RIGHT IMAGE -->
-        <div class="sticky top-0">
+        <div class="sticky top-0 pt-[300px]">
           <img
             src={activeImage}
             alt="Agent UI"
-            class={`sticky top-0 mx-auto w-[640px] transition-opacity duration-500 ${
+            class={`sticky top-1/2 mx-auto w-[640px] -translate-y-[300px] transition-opacity duration-500 ${
               fading ? 'opacity-0' : 'opacity-100'
             }`}
           />

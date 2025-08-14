@@ -45,6 +45,7 @@
   });
 </script>
 
+<h1>this is test</h1>
 {#if block}
   <section
     use:storyblokEditable={block}

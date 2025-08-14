@@ -9,7 +9,7 @@
   <img
     src="/agent_lp_images/cometchat_logo.png"
     alt="CometChat Logo"
-    class="[160px] absolute top-[40px] h-[160px] w-[160px] -translate-x-6"
+    class=" absolute top-[40px] -translate-x-10"
   />
 
   <!-- Ellipse background -->
@@ -37,7 +37,7 @@
       <Button variant="secondary" as="a" href="https://www.cometchat.com/contact-sales"
         >Talk to Us</Button
       >
-      <Button as="a" href="https://app.cometchat.com/signup">Try the Agent Builder</Button>
+      <Button as="a" href="https://app.cometchat.com/signup">Start Building Today</Button>
     </div>
   </div>
 </div>
