@@ -20,6 +20,31 @@
 </script>
 
 <svelte:head>
+  <title>Full Stack AI Agent Platform | CometChat</title>
+
+  <meta
+    name="description"
+    content="Developer-friendly full stack agent platform with chat UI, moderation, multichannel notifications, and analytics - so your AI agents ship faster and safer."
+  />
+  <meta name="robots" content="noindex" />
+
+  <meta property="og:title" content="Full Stack AI Agent Platform | CometChat" />
+  <meta
+    property="og:description"
+    content="Developer-friendly full stack agent platform with chat UI, moderation, multichannel notifications, and analytics - so your AI agents ship faster and safer."
+  />
+
+  <link rel="canonical" href="https://www.cometchat.com/full-stack-agent-platform" />
+
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
   <script>
@@ -35,8 +60,6 @@
     })(window, document, 'script', 'dataLayer', 'GTM-59ZJRV2');
   </script>
   <!-- End Google Tag Manager -->
-
-  <meta name="robots" content="noindex" />
 </svelte:head>
 
 <!-- Google Tag Manager (noscript) -->

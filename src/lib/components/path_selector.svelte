@@ -8,9 +8,9 @@
 </script>
 
 <section class="">
-  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
     <!-- Card 1 -->
-    <div class="relative h-[600px] rounded-2xl border border-[#1F1B2E] p-6">
+    <div class="relative h-[640px] rounded-2xl border border-[#1F1B2E] p-6">
       <div class="flex flex-col items-start gap-6">
         <img src={byobIcon} alt="BYOB Icon" class="h-[64px]" />
         <div>
@@ -55,7 +55,7 @@
 
     <!-- Card 2 -->
     <div
-      class="relative flex flex-col items-start gap-6 overflow-hidden rounded-2xl border border-[#1F1B2E] p-6"
+      class="relative flex h-[640px] flex-col items-start gap-6 overflow-hidden rounded-2xl border border-[#1F1B2E] p-6"
     >
       <img src={cometchatIcon} alt="CometChat Icon" class="h-[64px]" />
       <div>

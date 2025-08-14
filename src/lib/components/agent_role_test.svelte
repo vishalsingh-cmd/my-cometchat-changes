@@ -96,34 +96,30 @@
   }
 </script>
 
-<Section>
-  <Container>
-    <div class="flex items-start gap-6">
-      <!-- Image section -->
-      <img
-        src={myRollersImage[$activeIndex].imageAd}
-        alt={myRollersImage[$activeIndex].imageAlt}
-        class="h-[588px] w-[752px] shrink-0"
-      />
+<div class="flex items-start gap-6">
+  <!-- Image section -->
+  <img
+    src={myRollersImage[$activeIndex].imageAd}
+    alt={myRollersImage[$activeIndex].imageAlt}
+    class="h-[580px] w-[752px] shrink-0"
+  />
 
-      <!-- Carousel section -->
-      <div class="">
-        <div class="flex min-h-[686px] w-[528px] flex-col gap-[40px]">
-          {#each myRollers as roller, index}
-            <IndustryRollerItem
-              {index}
-              onClick={handleClick}
-              icon={roller.icon}
-              title={roller.title}
-              subHeading={roller.subHeading}
-              description={roller.description}
-              points={roller.points}
-              link={roller.link}
-              on:click={() => handleClick(index)}
-            />
-          {/each}
-        </div>
-      </div>
+  <!-- Carousel section -->
+  <div class="min-h-[686px]">
+    <div class="flex w-full flex-col gap-[40px]">
+      {#each myRollers as roller, index}
+        <IndustryRollerItem
+          {index}
+          onClick={handleClick}
+          icon={roller.icon}
+          title={roller.title}
+          subHeading={roller.subHeading}
+          description={roller.description}
+          points={roller.points}
+          link={roller.link}
+          on:click={() => handleClick(index)}
+        />
+      {/each}
     </div>
-  </Container>
-</Section>
+  </div>
+</div>

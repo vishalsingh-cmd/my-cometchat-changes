@@ -34,7 +34,7 @@
 
     <!-- Buttons -->
     <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-      <Button variant="secondary" as="a" href="https://www.cometchat.com/contact-sales"
+      <Button variant="secondary" as="a" href="https://www.cometchat.com/ai-agent-offer"
         >Talk to Us</Button
       >
       <Button as="a" href="https://app.cometchat.com/signup">Start Building Today</Button>

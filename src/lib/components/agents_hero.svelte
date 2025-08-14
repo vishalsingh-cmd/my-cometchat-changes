@@ -47,7 +47,7 @@
 
     <!-- CTA Buttons -->
     <div class="flex flex-wrap gap-4">
-      <Button as="a" href="https://www.cometchat.com/contact-sales" variant="secondary"
+      <Button as="a" href="https://www.cometchat.com/ai-agent-offer" variant="secondary"
         >Schedule a Demo</Button
       >
       <Button as="a" href="https://app.cometchat.com/signup">Start Building Today</Button>

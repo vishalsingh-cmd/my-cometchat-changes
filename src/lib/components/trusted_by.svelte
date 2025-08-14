@@ -79,14 +79,14 @@
         </div>
       </div>
 
-      <!-- Hover text (appears in center on hover) -->
+      <!-- Hover text (appears in center on hover)
       <div
         class=" absolute inset-0 flex items-center justify-center text-md text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:backdrop-blur-md"
       >
         <Button as="a" variant="secondary" href="/customer-stories"
           >Checkout our amazing customer stories</Button
         >
-      </div>
+      </div> -->
 
       <SecureDecCircle position="topRight" className="z-50" />
 

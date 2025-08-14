@@ -15,7 +15,7 @@
         'Integrates with auth, analytics, and third-party tools',
         'Great for prototypes, pilots, or teams with limited frontend resources'
       ],
-      link: '#',
+      link: 'https://app.cometchat.com/signup',
       linkText: 'Try the builder'
     },
     {
