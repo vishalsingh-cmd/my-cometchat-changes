@@ -47,6 +47,13 @@
   <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
   <script>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
@@ -73,23 +80,19 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<Section>
-  <Container>
-    <AgentsHero />
-    <TrustedBy />
-    <ShowCase />
-    <ScrollInfo />
-    <img src="/agent_lp_images/AI_Chip.png" alt="" class="mx-auto mt-[100px]" />
-    <TitleBlocknew />
-    <PathSelector />
-    <TitleBlock />
-    <!-- <AgentRole /> -->
-    <AgentRoleTest />
-    <TitleBlock2 />
-    <Cards />
-    <LockVector />
-    <TitleBlock3 />
-    <Card2 />
-    <Prefooter />
-  </Container>
-</Section>
+<AgentsHero />
+<TrustedBy />
+<ShowCase />
+<ScrollInfo />
+<img src="/agent_lp_images/AI_Chip.png" alt="" class="mx-auto lg:mt-[100px]" />
+<TitleBlocknew />
+<PathSelector />
+<TitleBlock />
+<!-- <AgentRole /> -->
+<AgentRoleTest />
+<TitleBlock2 />
+<Cards />
+<LockVector />
+<TitleBlock3 />
+<Card2 />
+<Prefooter />
