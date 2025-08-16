@@ -7,7 +7,7 @@
   <Container pxEnabled={false} pyEnabled={false}>
     <div class=" ">
       <div
-        class=" flex max-h-[640px] w-full flex-col items-center justify-between gap-12 px-[20px] pb-[40px] pt-[48px] lg:flex-row lg:pl-[120px] lg:pr-[64px]"
+        class=" mb-[40px] flex max-h-[640px] w-full flex-col items-center justify-between gap-12 px-[20px] pt-[48px] lg:flex-row lg:pl-[120px] lg:pr-[64px]"
       >
         <!-- Left: Text Content -->
 
@@ -21,7 +21,7 @@
         </div>
 
         <!-- Right: PNG Image -->
-        <div class="h-full">
+        <div class="">
           <img
             src="/agent_lp_images/Collaborative_Whiteboard.png"
             alt="Comparison boxes"

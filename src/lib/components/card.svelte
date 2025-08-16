@@ -111,7 +111,7 @@
                   </div>
                   <!-- Desktop view Hover Points -->
                   <div
-                    class="pointer-events-none absolute z-0 mt-0 hidden w-[300px] flex-col items-start gap-3 self-stretch opacity-0 transition-all duration-300 group-hover:opacity-100 lg:flex"
+                    class="pointer-events-none absolute top-[42px] z-0 mt-0 hidden w-[300px] flex-col items-start gap-3 self-stretch opacity-0 transition-all duration-300 group-hover:opacity-100 lg:flex"
                   >
                     {#each card.hoverDetail as point}
                       <div class="pointer-events-none flex items-start gap-2 self-stretch">

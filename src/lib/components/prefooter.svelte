@@ -7,20 +7,20 @@
 <Section>
   <Container>
     <div
-      class="relative mx-auto my-[80px] flex h-[647px] w-full flex-col items-center justify-center overflow-hidden text-center"
+      class="relative my-[80px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
     >
       <!-- CometChat logo -->
       <img
         src="/agent_lp_images/cometchat_logo.png"
         alt="CometChat Logo"
-        class=" absolute top-[40px] -translate-x-10"
+        class=" absolute top-[0px] -translate-x-10"
       />
 
       <!-- Ellipse background -->
       <img
         src="/agent_lp_images/big_ellipse.png"
         alt="Ellipse"
-        class="pointer-events-none absolute bottom-[50px] left-1/2 w-full -translate-x-1/2 select-none opacity-80"
+        class="pointer-events-none absolute left-1/2 top-[200px] shrink-0 -translate-x-1/2 select-none opacity-80 lg:top-[140px]"
       />
 
       <!-- Heading + Text -->
