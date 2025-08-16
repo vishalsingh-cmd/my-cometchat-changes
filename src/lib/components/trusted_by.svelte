@@ -63,7 +63,7 @@
         </div>
 
         <div
-          class="group relative flex h-full w-full items-center border border-b-0 border-l-0 border-t-0 border-gray-5 bg-[#0A0914]"
+          class="group relative flex h-full w-full items-center border border-b-0 border-l border-t-0 border-gray-5 bg-[#0A0914] lg:border-l-0"
         >
           <!-- Marquee row -->
           <div
