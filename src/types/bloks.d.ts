@@ -422,9 +422,9 @@ export interface CoreFeatureItemStoryblok {
   heading?: string;
   subheading?: string;
   subheading2?: string;
+  items?: TextStoryblok[];
   footer?: string;
   image?: AssetStoryblok;
-  items?: TextStoryblok[];
   _uid: string;
   component: 'core-feature-item';
   [k: string]: any;
