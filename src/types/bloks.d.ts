@@ -1116,6 +1116,7 @@ export interface IndustryStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
     | SocialProofsStoryblok
@@ -1550,6 +1551,7 @@ export interface PageStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
     | SocialProofsStoryblok
@@ -1725,6 +1727,7 @@ export interface PricingStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
     | SocialProofsStoryblok
@@ -2284,6 +2287,17 @@ export interface SecureAwardImgStoryblok {
   [k: string]: any;
 }
 
+export interface SecureCardStoryblok {
+  title?: string;
+  subtitle?: string;
+  image?: AssetStoryblok;
+  colSpan?: number;
+  rowSpan?: number;
+  _uid: string;
+  component: 'secure_card';
+  [k: string]: any;
+}
+
 export interface SecureNetworkStoryblok {
   title?: string;
   description?: string;
@@ -2301,6 +2315,13 @@ export interface SecureReachStoryblok {
   [k: string]: any;
 }
 
+export interface SecureSectionStoryblok {
+  cards?: SecureCardStoryblok[];
+  _uid: string;
+  component: 'secure-section';
+  [k: string]: any;
+}
+
 export interface SeoFieldsStoryblok {
   title?: string;
   description?: string;
@@ -2311,6 +2332,25 @@ export interface SeoFieldsStoryblok {
   href_lang?: HrefLangStoryblok[];
   _uid: string;
   component: 'seo-fields';
+  [k: string]: any;
+}
+
+export interface SharedServiceStoryblok {
+  cards?: SharedServiceCardStoryblok[];
+  _uid: string;
+  component: 'shared-service';
+  [k: string]: any;
+}
+
+export interface SharedServiceCardStoryblok {
+  icon?: AssetStoryblok;
+  heading?: string;
+  subheading?: string;
+  link?: string;
+  colSpan?: number;
+  rowSpan?: number;
+  _uid: string;
+  component: 'shared-service-card';
   [k: string]: any;
 }
 
@@ -2503,6 +2543,7 @@ export interface SyncedBlockContentStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
     | SocialProofsStoryblok
@@ -2637,6 +2678,7 @@ export interface TechnologyStoryblok {
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
     | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
     | SocialProofsStoryblok

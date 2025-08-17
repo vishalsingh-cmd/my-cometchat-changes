@@ -11016,6 +11016,56 @@
     "metadata": {}
   },
   {
+    "name": "secure_card",
+    "display_name": null,
+    "description": "Secure Card",
+    "created_at": "2025-08-17T17:16:01.248Z",
+    "updated_at": "2025-08-17T17:26:18.379Z",
+    "id": 80942535679608,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "2mdmwXydQiee57jwMdUQlw"
+      },
+      "subtitle": {
+        "type": "text",
+        "pos": 1,
+        "id": "YZ1he4XmSVCA_eJ-hZWatQ"
+      },
+      "image": {
+        "type": "asset",
+        "pos": 2,
+        "id": "iLa53YoQT_WPlszXwuIbPw"
+      },
+      "colSpan": {
+        "type": "number",
+        "pos": 3,
+        "id": "RjavvnT7RGigKhw7HdW9Iw"
+      },
+      "rowSpan": {
+        "type": "number",
+        "pos": 4,
+        "id": "vFlSJWBzTxCQlUNoTeuKQA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "secure_card",
+    "component_group_uuid": "faf7a733-a6f0-46f1-a226-48690b895c34",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "secure_network",
     "display_name": null,
     "description": null,
@@ -11091,6 +11141,42 @@
     "metadata": {}
   },
   {
+    "name": "secure-section",
+    "display_name": null,
+    "description": "Secure Section",
+    "created_at": "2025-08-17T17:14:11.336Z",
+    "updated_at": "2025-08-17T17:38:08.744Z",
+    "id": 80942085480055,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 0,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "secure_card"
+        ],
+        "maximum": 9,
+        "id": "EcHWVYF6RfSwhGAa-kZofQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "secure-section",
+    "component_group_uuid": "faf7a733-a6f0-46f1-a226-48690b895c34",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "seo-fields",
     "display_name": null,
     "description": null,
@@ -11149,6 +11235,97 @@
     "preset_id": null,
     "real_name": "seo-fields",
     "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "shared-service",
+    "display_name": null,
+    "description": "Shared Service",
+    "created_at": "2025-08-17T18:13:52.563Z",
+    "updated_at": "2025-08-17T18:22:36.766Z",
+    "id": 80956754185888,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 0,
+        "id": "JcxDymY7SZWUbaIUV6zDbA",
+        "maximum": 5,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "shared-service-card"
+        ]
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "shared-service",
+    "component_group_uuid": "faf7a733-a6f0-46f1-a226-48690b895c34",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "shared-service-card",
+    "display_name": null,
+    "description": "Shared Service Card",
+    "created_at": "2025-08-17T18:14:41.184Z",
+    "updated_at": "2025-08-17T18:20:41.009Z",
+    "id": 80956953337505,
+    "schema": {
+      "icon": {
+        "type": "asset",
+        "pos": 0,
+        "id": "LjCS65X-Ruima6Wgp8srjw"
+      },
+      "heading": {
+        "type": "text",
+        "pos": 1,
+        "id": "90GZ2fTpTAai98FE86SVlQ"
+      },
+      "subheading": {
+        "type": "textarea",
+        "pos": 2,
+        "id": "PiouYQRNRWOrSWBgr09zhg"
+      },
+      "link": {
+        "type": "text",
+        "pos": 3,
+        "id": "OG5GlfncQteU-qMMZYL0dw"
+      },
+      "colSpan": {
+        "type": "number",
+        "pos": 4,
+        "id": "FCOGkWwpQqyOSnDU0P1Drg"
+      },
+      "rowSpan": {
+        "type": "number",
+        "pos": 5,
+        "id": "5ks30c5jR4uLvA_vP2WKGg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "shared-service-card",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
     "internal_tags_list": [],

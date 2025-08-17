@@ -87,6 +87,8 @@
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
+  import SecureSection from './secure-section.svelte';
+  import SharedService from './shared-service.svelte';
 
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
@@ -180,6 +182,8 @@
     'resources-hero': ResourcesHero,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
+    'secure-section': SecureSection,
+    'shared-service': SharedService,
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,
     'solutions-section': SolutionsSection,
