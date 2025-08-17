@@ -86,6 +86,7 @@
   import ComplexRoller from '$src/_views/HomeV2/_sections/Industry/ComplexRoller.svelte';
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
+  import CoreFeatures from './core-features.svelte';
 
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
@@ -102,9 +103,9 @@
   import TemplatesSectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
   import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
-
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
+    'core-features': CoreFeatures,
     'agents-hero': AgentsHero,
     'awards-section': AwardsSection,
 

@@ -1,16 +1,5 @@
 import { StoryblokStory } from 'storyblok-generate-ts';
 
-export interface AgentsHeroStoryblok {
-  solution_type: StoryblokStory<IndustryStoryblok> | string;
-  title: string;
-  description: string;
-  links: ButtonLinkStoryblok[];
-  illustration: AssetStoryblok;
-  _uid: string;
-  component: 'agents-hero';
-  [k: string]: any;
-}
-
 export interface RichtextStoryblok {
   type: string;
   content?: RichtextStoryblok[];
@@ -34,12 +23,23 @@ export interface AssetStoryblok {
 export interface AccordionItemStoryblok {
   icon: number | string;
   title: string;
-  brief: string;
-  detail: RichtextStoryblok;
+  brief?: string;
+  detail?: RichtextStoryblok;
   media: AssetStoryblok;
   cta_slot?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'accordion-item';
+  [k: string]: any;
+}
+
+export interface AgentsHeroStoryblok {
+  solution_type?: StoryblokStory<IndustryStoryblok> | string;
+  title: string;
+  description: string;
+  links: ButtonLinkStoryblok[];
+  illustration: AssetStoryblok;
+  _uid: string;
+  component: 'agents-hero';
   [k: string]: any;
 }
 
@@ -197,7 +197,7 @@ export interface BlogPostStoryblok {
     | 'industry'
     | 'best-practices';
   imported_from_old_site?: boolean;
-  created_at?: string;
+  created_at: string;
   body: RichtextStoryblok;
   related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
@@ -415,6 +415,27 @@ export interface ConnectedStepsStoryblok {
   richDescription?: RichtextStoryblok;
   _uid: string;
   component: 'connected-steps';
+  [k: string]: any;
+}
+
+export interface CoreFeatureItemStoryblok {
+  heading?: string;
+  subheading?: string;
+  subheading2?: string;
+  footer?: string;
+  image?: AssetStoryblok;
+  items?: TextStoryblok[];
+  _uid: string;
+  component: 'core-feature-item';
+  [k: string]: any;
+}
+
+export interface CoreFeaturesStoryblok {
+  title?: string;
+  subtitle?: string;
+  features?: CoreFeatureItemStoryblok[];
+  _uid: string;
+  component: 'core-features';
   [k: string]: any;
 }
 
@@ -1068,6 +1089,7 @@ export interface IndustryStoryblok {
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
+    | PopupStoryblok
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
@@ -1501,6 +1523,7 @@ export interface PageStoryblok {
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
+    | PopupStoryblok
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
@@ -1550,6 +1573,7 @@ export interface PageStoryblok {
     | WebhooksSectionStoryblok
   )[];
   seo?: SeoFieldsStoryblok[];
+  popup?: any[];
   _uid: string;
   component: 'page';
   uuid?: string;
@@ -1599,6 +1623,18 @@ export interface PlatformSectionStoryblok {
   products: ProductDisplayItemStoryblok[];
   _uid: string;
   component: 'platform-section';
+  [k: string]: any;
+}
+
+export interface PopupStoryblok {
+  Image?: string;
+  title?: string;
+  brief?: string;
+  form?: any[];
+  cta?: any[];
+  close_text?: string;
+  _uid: string;
+  component: 'Popup';
   [k: string]: any;
 }
 
@@ -1662,6 +1698,7 @@ export interface PricingStoryblok {
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
+    | PopupStoryblok
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
@@ -1812,6 +1849,7 @@ export interface PricingHeroQ3Y24Storyblok {
   info_items?: PricingHeroInfoItemStoryblok[];
   category1: string;
   category2: string;
+  custom_label?: string;
   _uid: string;
   component: 'pricing-hero-Q3Y24';
   [k: string]: any;
@@ -1837,7 +1875,7 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   custom_price?: string;
   cta: ButtonLinkStoryblok[];
   highlights?: PricingHighligtsQ3Y24Storyblok[];
-  custom_label: string;
+  custom_label?: string;
   _uid: string;
   component: 'pricing-hero-Q3Y24-cardV1';
   [k: string]: any;
@@ -2155,6 +2193,7 @@ export interface ProductDisplayItemStoryblok {
   title: string;
   description: string;
   link?: LinkStoryblok[];
+  mobile_text?: string;
   _uid: string;
   component: 'product-display-item';
   [k: string]: any;
@@ -2326,7 +2365,7 @@ export interface SocialProofsStoryblok {
 }
 
 export interface SolutionsHeroStoryblok {
-  solution_type: StoryblokStory<IndustryStoryblok> | string;
+  solution_type?: StoryblokStory<IndustryStoryblok> | string;
   title: string;
   description: string;
   links: ButtonLinkStoryblok[];
@@ -2437,6 +2476,7 @@ export interface SyncedBlockContentStoryblok {
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
+    | PopupStoryblok
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
@@ -2570,6 +2610,7 @@ export interface TechnologyStoryblok {
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
     | PlatformSectionStoryblok
+    | PopupStoryblok
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
@@ -2808,6 +2849,17 @@ export interface TitleAndIconsStoryblok {
   icons?: MultiassetStoryblok;
   _uid: string;
   component: 'title-and-icons';
+  [k: string]: any;
+}
+
+export interface TitleBlockShortTest2Storyblok {
+  theme?: '' | 'dark' | 'light';
+  'title-test-2'?: string;
+  'header-test-2'?: string;
+  'description-2'?: RichtextStoryblok;
+  titletest1: TitleStoryblok[];
+  _uid: string;
+  component: 'title-block-short-test-2';
   [k: string]: any;
 }
 
