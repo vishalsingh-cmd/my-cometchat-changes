@@ -57,7 +57,7 @@
 
         <!-- Card 2 -->
         <div
-          class="relative flex h-[640px] flex-col items-start justify-between gap-6 overflow-hidden rounded-2xl border border-[#1F1B2E] p-6"
+          class="relative flex flex-col items-start justify-between gap-6 overflow-hidden rounded-2xl border border-[#1F1B2E] p-6 lg:h-[640px]"
         >
           <div class="flex flex-col items-start gap-6">
             <img src={cometchatIcon} alt="CometChat Icon" class="h-[64px]" />

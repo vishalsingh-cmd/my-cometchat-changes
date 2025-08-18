@@ -28,6 +28,11 @@
   />
   <meta name="robots" content="noindex" />
 
+  <meta
+    property="og:image"
+    content="https://a.storyblok.com/f/231922/1200x630/d639d0748b/open-graph-image.png"
+  />
+
   <meta property="og:title" content="Full Stack AI Agent Platform | CometChat" />
   <meta
     property="og:description"
@@ -36,6 +41,10 @@
 
   <link rel="canonical" href="https://www.cometchat.com/full-stack-agent-platform" />
 
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->
   <!-- Google Tag Manager -->

@@ -159,7 +159,7 @@
                       </ul>
                       <p
                         class={`mt-6 text-md italic leading-snug text-gray-11 ${
-                          index === features.length - 1 ? 'mb-[200px]' : ''
+                          index === features.length - 1 ? 'lg:mb-[200px]' : ''
                         }`}
                       >
                         {feature.footer}
