@@ -13,8 +13,8 @@
   import TitleBlock3 from '$src/lib/components/title_block3.svelte';
   import LockVector from '$src/_views/HomeV2/_sections/Secure/_comp/LockVector.svelte';
   import Card2 from '$src/lib/components/card2.svelte';
-  import Section from '$src/_comps/layouts/Section.svelte';
-  import Container from '$src/_comps/layouts/Container.svelte';
+  // import Section from '$src/_comps/layouts/Section.svelte';
+  // import Container from '$src/_comps/layouts/Container.svelte';
   import TitleBlocknew from '$src/lib/components/title_blocknew.svelte';
   // import Title from '$src/components/title.svelte';
 </script>

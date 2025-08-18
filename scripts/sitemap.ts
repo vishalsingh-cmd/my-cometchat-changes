@@ -70,7 +70,7 @@ async function main() {
       response.data.stories
         .filter((story: ISbStoryData) => {
           // filter entries that are not one of the types we want
-          story.content.component === 'page';
+          return story.content.component === 'page';
         })
         .map((story: ISbStoryData) => {
           const entry: SitemapEntry = {

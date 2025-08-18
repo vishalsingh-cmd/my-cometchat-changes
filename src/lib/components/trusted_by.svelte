@@ -14,7 +14,7 @@
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  import SectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
+  // import SectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
 </script>
 
 <Section>

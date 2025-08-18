@@ -1,7 +1,7 @@
 <script lang="ts">
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  import type { CoreFeaturesStoryblok, TextStoryblok } from '$src/types/bloks';
+  import type { CoreFeaturesStoryblok } from '$src/types/bloks';
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
 

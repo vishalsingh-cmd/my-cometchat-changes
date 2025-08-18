@@ -2293,6 +2293,7 @@ export interface SecureCardStoryblok {
   image?: AssetStoryblok;
   colSpan?: number;
   rowSpan?: number;
+  circlePos?: ('' | 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight')[];
   _uid: string;
   component: 'secure_card';
   [k: string]: any;

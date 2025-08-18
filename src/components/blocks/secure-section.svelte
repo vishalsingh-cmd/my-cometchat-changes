@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { SecureSectionStoryblok, SecureCardStoryblok } from '$src/types/bloks';
+  import type { SecureSectionStoryblok } from '$src/types/bloks';
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -34,7 +34,7 @@
               />
             {/if}
 
-            {#each card.decorations || [] as pos}
+            {#each card.circlePos || [] as pos}
               <SecureDecCircle position={pos} className="z-40" />
             {/each}
           </div>
