@@ -22,9 +22,11 @@ jobs:
     with:
       lint_command: 'npm run lint'
       test_command: 'npm run test'
-      build_command: ''
-      node_versions: '[20,22]'
+      build_command: 'npm run build'
+      node_versions: '[20]'
       # FIXME: For building to work we must provide the requred env var PUBLIC_STORYBLOK_TOKEN
       # 'npm run build'
       publish_to_github_registry: false
       publish_to_npm_registry: false
+    secrets:
+      PUBLIC_STORYBLOK_TOKEN: ${{ secrets.PUBLIC_STORYBLOK_TOKEN }}
