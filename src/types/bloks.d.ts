@@ -857,6 +857,14 @@ export interface HomeClientsStoryblok {
   [k: string]: any;
 }
 
+export interface HomeClientsV2Storyblok {
+  tagname?: string;
+  clients?: HomeClientStoryblok[];
+  _uid: string;
+  component: 'home_clients_v2';
+  [k: string]: any;
+}
+
 export interface HomeImplementationStoryblok {
   tagline?: string;
   title?: string;
@@ -1646,6 +1654,18 @@ export interface PreFooterStoryblok {
   call_to_action?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pre-footer';
+  [k: string]: any;
+}
+
+export interface PreFooter2Storyblok {
+  heading?: string;
+  subheading?: string;
+  primary_button_text?: string;
+  primary_button_link?: MultilinkStoryblok;
+  secondary_button_text?: string;
+  secondary_button_link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'pre-footer-2';
   [k: string]: any;
 }
 

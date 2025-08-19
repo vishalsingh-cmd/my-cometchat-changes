@@ -90,10 +90,12 @@
   import SecureSection from './secure-section.svelte';
   import SharedService from './shared-service.svelte';
 
+  import ClientsV2 from '$src/_views/HomeV2/_sections/Clients/Clients2.svelte';
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
   import Step from '$src/_views/HomeV2/_sections/Step/Step.svelte';
 
   import Technologies from '$src/_views/HomeV2/_sections/Technologies/Technologies.svelte';
+  import PreFooter2 from '$src/components/blocks/pre-footer-2.svelte';
   import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
   import Testimonial from '$src/_comps/specials/SpecialTestimonial/SpecialTestimonial.svelte';
@@ -168,6 +170,7 @@
     page: Page,
     'platform-section': PlatformSection,
     'pre-footer': PreFooter,
+    'pre-footer-2': PreFooter2,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
     'pricing-hero-enhancements': PricingHeroEnhancements,
@@ -208,6 +211,7 @@
     home__banner: Homev2Banner,
     home__video_tabs: FeatureTabs,
     home_clients: Clients,
+    home_clients_v2: ClientsV2,
     home_implementation: Step,
     home_technologies: Technologies,
     home__our_platform: Platform,
