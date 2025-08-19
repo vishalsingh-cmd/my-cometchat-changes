@@ -5,10 +5,10 @@
   import RotatingTextBox from './_comps/RotatingTextBox.svelte';
   import planats_bg from './_assets/planats_bg.svg';
   import Button from '$src/components/buttons/button.svelte';
-  import type { home__bannerStoryblok } from '$src/types/bloks';
+  import type { Home_BannerStoryblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
-  export let block: home__bannerStoryblok;
+  export let block: Home_BannerStoryblok;
 </script>
 
 <Section className="relative isolate">

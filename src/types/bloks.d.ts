@@ -841,6 +841,16 @@ export interface Home_BannerStoryblok {
   [k: string]: any;
 }
 
+export interface HomeBannerV2Storyblok {
+  beforeTitle?: string;
+  afterTitle?: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'home_banner_v2';
+  [k: string]: any;
+}
+
 export interface HomeClientStoryblok {
   client_img?: AssetStoryblok;
   _uid: string;

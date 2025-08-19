@@ -4089,6 +4089,57 @@
     "metadata": {}
   },
   {
+    "name": "home_banner_v2",
+    "display_name": "Home Banner v2",
+    "description": null,
+    "created_at": "2025-08-19T10:28:19.815Z",
+    "updated_at": "2025-08-19T10:30:19.719Z",
+    "id": 81550130447714,
+    "schema": {
+      "beforeTitle": {
+        "type": "text",
+        "pos": 0,
+        "id": "Uoc9h3B7TVSGIXjC7zcmVQ"
+      },
+      "afterTitle": {
+        "type": "text",
+        "pos": 2,
+        "id": "7w0zVzPYQEawBMJyngiLCw"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 3,
+        "id": "_xD34x44SBydDRsmnhk07A"
+      },
+      "links": {
+        "type": "bloks",
+        "pos": 4,
+        "id": "SMHE8wPuTP-HTbY1D04LEA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["button-link"],
+        "minimum": 1,
+        "maximum": 2,
+        "display_name": "Links"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "Home Banner v2",
+    "component_group_uuid": "faf7a733-a6f0-46f1-a226-48690b895c34",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "home_client",
     "display_name": null,
     "description": null,
