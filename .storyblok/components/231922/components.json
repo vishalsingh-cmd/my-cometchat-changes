@@ -1642,7 +1642,7 @@
     "display_name": null,
     "description": "Core Feature Item",
     "created_at": "2025-08-16T16:37:44.798Z",
-    "updated_at": "2025-08-17T10:50:06.009Z",
+    "updated_at": "2025-08-20T11:11:44.906Z",
     "id": 80579235019908,
     "schema": {
       "heading": {
@@ -1669,7 +1669,7 @@
         "component_whitelist": ["text"]
       },
       "footer": {
-        "type": "text",
+        "type": "multilink",
         "pos": 4,
         "id": "6sFlhYPMQfypbxnI3oKISg"
       },
@@ -1677,6 +1677,16 @@
         "type": "asset",
         "pos": 5,
         "id": "9Q8ooLX9QaqBwUX6mmKXmw"
+      },
+      "link_text": {
+        "type": "text",
+        "pos": 6,
+        "id": "HXHe8JWTR6KXJPOCOrYuwQ"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 7,
+        "id": "6bb1nWldQLe6lOdrz3SZ0A"
       }
     },
     "image": null,
@@ -7499,11 +7509,11 @@
     "display_name": null,
     "description": "PreFooter 2",
     "created_at": "2025-08-19T09:21:34.457Z",
-    "updated_at": "2025-08-19T09:51:16.224Z",
+    "updated_at": "2025-08-20T10:26:30.610Z",
     "id": 81533724505071,
     "schema": {
       "heading": {
-        "type": "text",
+        "type": "richtext",
         "pos": 0,
         "id": "SPlZMbDITkq0m6fhWe2VAg"
       },
@@ -10777,13 +10787,19 @@
     "display_name": null,
     "description": "Shared Service Card",
     "created_at": "2025-08-17T18:14:41.184Z",
-    "updated_at": "2025-08-17T18:20:41.009Z",
+    "updated_at": "2025-08-20T09:10:25.563Z",
     "id": 80956953337505,
     "schema": {
       "icon": {
-        "type": "asset",
+        "type": "option",
         "pos": 0,
-        "id": "LjCS65X-Ruima6Wgp8srjw"
+        "id": "LjCS65X-Ruima6Wgp8srjw",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [],
+        "use_uuid": true,
+        "source": "internal",
+        "datasource_slug": "icons"
       },
       "heading": {
         "type": "text",
@@ -12601,6 +12617,46 @@
     "preset_id": null,
     "real_name": "title-and-icons",
     "component_group_uuid": "6a9bca45-b5e6-4629-b234-2ffab85d02fd",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "title-block",
+    "display_name": null,
+    "description": "Title Block",
+    "created_at": "2025-08-20T07:43:47.253Z",
+    "updated_at": "2025-08-20T07:44:42.222Z",
+    "id": 81863586832893,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "457iiH_3RYm2l0sxOVtH_g"
+      },
+      "subtitle": {
+        "type": "richtext",
+        "pos": 1,
+        "id": "_86Dy0FITca-nNuL0lqW2w"
+      },
+      "description": {
+        "type": "text",
+        "pos": 2,
+        "id": "7lF3_-JbTc2FDvLkv-vPMg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "title-block",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
     "internal_tags_list": [],

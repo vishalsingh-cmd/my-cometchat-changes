@@ -8,7 +8,7 @@
 </script>
 
 <Section>
-  <Container>
+  <Container pyEnabled={false}>
     <div
       class="relative my-[80px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
     >
@@ -30,7 +30,7 @@
         class="absolute top-[320px] z-10 flex max-w-[640px] flex-col items-center gap-[16px] px-4"
       >
         {#if block.heading}
-          <p class="text-3xl font-semibold leading-tight text-white">{block.heading}</p>
+          <p class="text-3xl font-semibold leading-tight text-white">{@html block.heading}</p>
         {/if}
 
         {#if block.subheading}
@@ -41,7 +41,7 @@
           </p>
         {/if}
 
-        <div class="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+        <div class="flex flex-wrap justify-center gap-4 text-sm">
           {#if block.secondary_button_text && block.secondary_button_link}
             <Button variant="secondary" as="a" href={block.secondary_button_link.cached_url}>
               {block.secondary_button_text}

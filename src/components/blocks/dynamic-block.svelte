@@ -100,6 +100,7 @@
   import Platform from '$src/_views/HomeV2/_sections/Platform/Platform.svelte';
   import Secure from '$src/_views/HomeV2/_sections/Secure/Secure.svelte';
   import Testimonial from '$src/_comps/specials/SpecialTestimonial/SpecialTestimonial.svelte';
+  import TitleBlock from '$src/components/blocks/title-block.svelte';
 
   // templates
   import TemplatesBanner from '$src/_views/Templates/Banner/Banner.svelte';
@@ -197,6 +198,7 @@
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
 
+    'title-block': TitleBlock,
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
     'title-media-section': TitleMediaSection,

@@ -423,8 +423,10 @@ export interface CoreFeatureItemStoryblok {
   subheading?: string;
   subheading2?: string;
   items?: TextStoryblok[];
-  footer?: string;
+  footer?: MultilinkStoryblok;
   image?: AssetStoryblok;
+  link_text?: string;
+  description?: string;
   _uid: string;
   component: 'core-feature-item';
   [k: string]: any;
@@ -1148,6 +1150,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -1583,6 +1586,7 @@ export interface PageStoryblok {
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -1668,7 +1672,7 @@ export interface PreFooterStoryblok {
 }
 
 export interface PreFooter2Storyblok {
-  heading?: string;
+  heading?: RichtextStoryblok;
   subheading?: string;
   primary_button_text?: string;
   primary_button_link?: MultilinkStoryblok;
@@ -1771,6 +1775,7 @@ export interface PricingStoryblok {
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -2374,7 +2379,7 @@ export interface SharedServiceStoryblok {
 }
 
 export interface SharedServiceCardStoryblok {
-  icon?: AssetStoryblok;
+  icon?: number | string;
   heading?: string;
   subheading?: string;
   link?: string;
@@ -2588,6 +2593,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -2723,6 +2729,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -2922,6 +2929,15 @@ export interface TitleAndIconsStoryblok {
   icons?: MultiassetStoryblok;
   _uid: string;
   component: 'title-and-icons';
+  [k: string]: any;
+}
+
+export interface TitleBlockStoryblok {
+  title?: string;
+  subtitle?: RichtextStoryblok;
+  description?: string;
+  _uid: string;
+  component: 'title-block';
   [k: string]: any;
 }
 

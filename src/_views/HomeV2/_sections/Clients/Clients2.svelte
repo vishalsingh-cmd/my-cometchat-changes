@@ -71,7 +71,7 @@
 </script>
 
 <Section className="relative isolate group/clients overflow-hidden">
-  <Container>
+  <Container pyEnabled={false}>
     <div class="h-[136px]">
       <div class="relative z-40 flex h-full items-center justify-center">
         <!-- Top gradient line -->
@@ -135,11 +135,11 @@
             <!-- Marquee Track -->
             <div class="marquee-track flex items-center gap-8">
               {#if block}
-                {#each [...block.clients, ...block.clients] as data}
+                {#each [...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
                   <img
                     class="h-10 object-contain px-3 grayscale"
-                    src={data.client_img.filename}
-                    alt={data.client_img.alt}
+                    src={data?.client_img?.filename ?? ''}
+                    alt={data?.client_img?.alt ?? ''}
                   />
                 {/each}
               {/if}
@@ -159,7 +159,7 @@
 
 <style>
   .marquee-track {
-    animation: marquee 20s linear infinite;
+    animation: marquee 5s linear infinite;
   }
 
   @keyframes marquee {
@@ -167,7 +167,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-120%);
     }
   }
 </style>

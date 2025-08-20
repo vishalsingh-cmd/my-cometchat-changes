@@ -7,6 +7,7 @@
   import Button from '$src/components/buttons/button.svelte';
   import type { HomeBannerV2Storyblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  // import Divider from '$src/components/divider.svelte';
 
   export let block: HomeBannerV2Storyblok;
 </script>
@@ -18,17 +19,19 @@
         <div class="flex flex-col items-center gap-[28px]">
           <h1
             class={cn(
-              ['font-sans text-[40px] font-semibold', 'mx-auto flex max-w-3xl flex-col gap-x-2'],
+              ['font-sans text-[40px] font-semibold', 'mx-auto flex flex-col gap-x-2'],
               ['flex-wrap lg:flex-row lg:justify-center  lg:gap-x-5 lg:text-[58px]']
             )}
           >
-            <div>
-              <span class="bg-gradient-purple bg-clip-text text-transparent">
+            <div class="flex flex-col items-center gap-2 overflow-visible">
+              <div class="bg-gradient-purple bg-clip-text text-transparent lg:text-[58px]">
                 {block.beforeTitle}
-              </span>
-              <span class="bg-gradient-purple bg-clip-text text-transparent">
+              </div>
+              <div
+                class="bg-gradient-purple bg-clip-text leading-tighter text-transparent lg:text-[58px]"
+              >
                 {block.afterTitle}
-              </span>
+              </div>
             </div>
           </h1>
           <p

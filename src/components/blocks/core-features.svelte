@@ -2,6 +2,7 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import type { CoreFeaturesStoryblok } from '$src/types/bloks';
+  import Link from '../buttons/link.svelte';
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
 
@@ -54,15 +55,42 @@
               <div class="flex flex-col items-start gap-3 self-stretch">
                 {#each block.features ?? [] as feature, index}
                   <div use:observeFeature={feature.image?.filename ?? ''}>
-                    <div class="flex flex-col items-start gap-4 self-stretch">
-                      <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
-                        {feature.heading}
-                      </h3>
-                      <p class="text-2xl leading-snug">{feature.subheading}</p>
-                      <p class="text-sans text-xl leading-snug text-gray-11">
-                        {feature.subheading2}
-                      </p>
-
+                    <div class="flex max-w-[548px] flex-col items-start gap-4 self-stretch">
+                      {#if feature.heading}
+                        <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
+                          {feature.heading}
+                        </h3>
+                      {/if}
+                      {#if feature.subheading}
+                        <p
+                          class="text-sans text-2xl font-semibold leading-snug tracking-[0.09px] text-gray-12"
+                        >
+                          {feature.subheading}
+                        </p>
+                      {/if}
+                      <div class="flex flex-col items-start gap-3 self-stretch">
+                        {#if feature.subheading2}
+                          <p
+                            class="text-sans text-lg font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
+                          >
+                            {feature.subheading2}
+                          </p>
+                        {/if}
+                        {#if feature.description}
+                          <p
+                            class="text-sans self-stretch font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
+                          >
+                            {feature.description}
+                          </p>
+                        {/if}
+                        {#if feature.listheading}
+                          <p
+                            class="text-sans text-lg font-medium leading-snug tracking-[0.09px] text-brand-9"
+                          >
+                            {feature.listheading}
+                          </p>
+                        {/if}
+                      </div>
                       <!-- Items as TextStoryblok -->
                       <ul class="text-base grid list-inside grid-cols-1 gap-[12px] text-gray-11">
                         {#each feature.items ?? [] as item}
@@ -74,20 +102,23 @@
                                 class="inline-block"
                               />
                               <div class="leading-snug tracking-[0.09px] opacity-74">
-                                {item.text}
+                                {item.value?.content[0].content[0].text}
                               </div>
                             </div>
                           </li>
                         {/each}
                       </ul>
-
-                      <p
-                        class={`mt-6 text-md italic leading-snug text-gray-11 ${
-                          index === (block.features?.length ?? 0) - 1 ? 'mb-[200px]' : ''
-                        }`}
-                      >
-                        {feature.footer}
-                      </p>
+                      {#if feature.link_text}
+                        <Link
+                          variant="secondary"
+                          class={`text-md leading-snug text-brand-9 ${
+                            index === (block.features?.length ?? 0) - 1 ? 'mb-[200px]' : ''
+                          }`}
+                          href={feature.footer?.cached_url?.replace(/^pages\//, '')}
+                        >
+                          {feature.link_text}
+                        </Link>
+                      {/if}
                     </div>
 
                     <img
