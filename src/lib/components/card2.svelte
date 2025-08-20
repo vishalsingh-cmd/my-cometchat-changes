@@ -11,18 +11,6 @@
   let lock = '/agent_lp_images/grid_card_images/lock.png';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  // const cards = [
-  //   { title: 'Seamless multi-tenant support', img: '/path/image1.png' },
-  //   { title: 'Data encryption in transit & at rest', img: '/path/image2.png' },
-  //   { title: 'Global message delivery', img: '/path/image3.png' },
-  //   { title: 'RBAC & Access logs', img: '/path/image4.png' },
-  //   { title: 'Enterprise-grade compliance', img: '/path/image5.png' },
-  //   { title: '99.999% Uptime SLA', img: '/path/image6.png' },
-  //   { title: '5B+ users', img: '/path/image7.png' },
-  //   { title: 'Message routing policy enforcement', img: '/path/image8.png' },
-  //   { title: 'Edge network', img: '/path/image9.png' }
-  //   // keep adding until you have 29
-  // ];
 </script>
 
 <Section>

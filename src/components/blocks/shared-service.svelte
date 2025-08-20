@@ -55,11 +55,11 @@
                 <SecureDecCircle position="topRight" className="z-40" />
                 <SecureDecCircle position="bottomRight" className="z-40" />
                 <SecureDecCircle position="bottomLeft" className="z-40" />
-                {#if card.circlePos}
+                <!-- {#if card.circlePos}
                   {#each card?.circlePos ?? [] as pos}
                     <SecureDecCircle position={pos} className="z-40" />
                   {/each}
-                {/if}
+                {/if} -->
               </div>
             </div>
           {/each}
