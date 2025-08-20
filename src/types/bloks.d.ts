@@ -427,6 +427,7 @@ export interface CoreFeatureItemStoryblok {
   image?: AssetStoryblok;
   link_text?: string;
   description?: string;
+  listheading?: string;
   _uid: string;
   component: 'core-feature-item';
   [k: string]: any;
@@ -1485,6 +1486,14 @@ export interface NewHeaderStoryblok {
   [k: string]: any;
 }
 
+export interface NewHeaderV2Storyblok {
+  items: (NavItemStoryblok | NavLinkStoryblok)[];
+  ctas: (LinkStoryblok | ButtonLinkStoryblok)[];
+  _uid: string;
+  component: 'new-header-v2';
+  [k: string]: any;
+}
+
 export interface NewsletterSectionStoryblok {
   label?: string;
   title: string;
@@ -1672,7 +1681,7 @@ export interface PreFooterStoryblok {
 }
 
 export interface PreFooter2Storyblok {
-  heading?: RichtextStoryblok;
+  heading?: string;
   subheading?: string;
   primary_button_text?: string;
   primary_button_link?: MultilinkStoryblok;

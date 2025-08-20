@@ -46,7 +46,9 @@
                 class="sticky top-0 z-20 mb-6 flex flex-col bg-background-vertical px-0 py-[64px] shadow-lg"
               >
                 <div class="text-xl font-medium text-brand-9">{block.title}</div>
-                <div class="text-3xl font-semibold leading-tighter text-white">
+                <div
+                  class="bg-gradient-purple bg-clip-text text-3xl font-semibold leading-tighter text-transparent"
+                >
                   {@html block.subtitle}
                 </div>
               </div>
@@ -56,18 +58,20 @@
                 {#each block.features ?? [] as feature, index}
                   <div use:observeFeature={feature.image?.filename ?? ''}>
                     <div class="flex max-w-[548px] flex-col items-start gap-4 self-stretch">
-                      {#if feature.heading}
-                        <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
-                          {feature.heading}
-                        </h3>
-                      {/if}
-                      {#if feature.subheading}
-                        <p
-                          class="text-sans text-2xl font-semibold leading-snug tracking-[0.09px] text-gray-12"
-                        >
-                          {feature.subheading}
-                        </p>
-                      {/if}
+                      <div class="flex flex-col items-start gap-3 self-stretch">
+                        {#if feature.heading}
+                          <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
+                            {feature.heading}
+                          </h3>
+                        {/if}
+                        {#if feature.subheading}
+                          <p
+                            class="text-sans text-2xl font-semibold leading-snug tracking-[0.09px] text-gray-12"
+                          >
+                            {feature.subheading}
+                          </p>
+                        {/if}
+                      </div>
                       <div class="flex flex-col items-start gap-3 self-stretch">
                         {#if feature.subheading2}
                           <p
@@ -78,11 +82,15 @@
                         {/if}
                         {#if feature.description}
                           <p
-                            class="text-sans self-stretch font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74"
+                            class={`${
+                              index === 0 ? 'text-xl' : 'text-lg'
+                            } text-sans self-stretch font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74`}
                           >
                             {feature.description}
                           </p>
                         {/if}
+                      </div>
+                      <div class="flex flex-col items-start gap-3 self-stretch">
                         {#if feature.listheading}
                           <p
                             class="text-sans text-lg font-medium leading-snug tracking-[0.09px] text-brand-9"
@@ -90,24 +98,27 @@
                             {feature.listheading}
                           </p>
                         {/if}
-                      </div>
-                      <!-- Items as TextStoryblok -->
-                      <ul class="text-base grid list-inside grid-cols-1 gap-[12px] text-gray-11">
-                        {#each feature.items ?? [] as item}
-                          <li class="font-medium text-gray-12">
-                            <div class="flex items-start gap-[8px]">
-                              <img
-                                src="/agent_lp_images/bullet_icon.png"
-                                alt=""
-                                class="inline-block"
-                              />
-                              <div class="leading-snug tracking-[0.09px] opacity-74">
-                                {item.value?.content[0].content[0].text}
+
+                        <!-- Items as TextStoryblok -->
+                        <ul class="flex flex-col items-start gap-3 self-stretch">
+                          {#each feature.items ?? [] as item}
+                            <li class="font-medium text-gray-12">
+                              <div class="flex items-start gap-[8px]">
+                                <img
+                                  src="/agent_lp_images/bullet_icon.png"
+                                  alt=""
+                                  class="inline-block"
+                                />
+                                <div
+                                  class="text-xl font-medium leading-snug tracking-[0.09px] opacity-74"
+                                >
+                                  {item.value?.content[0].content[0].text}
+                                </div>
                               </div>
-                            </div>
-                          </li>
-                        {/each}
-                      </ul>
+                            </li>
+                          {/each}
+                        </ul>
+                      </div>
                       {#if feature.link_text}
                         <Link
                           variant="secondary"

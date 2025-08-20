@@ -10,10 +10,10 @@
   <Section>
     <Container pyEnabled={false}>
       <section class="flex flex-col items-center pt-[100px] lg:px-[64px]">
-        <div class="flex max-w-[720px] flex-col items-center gap-[16px]">
+        <div class="flex max-w-[858px] flex-col items-center gap-[16px]">
           <!-- Small heading -->
           <div class="flex flex-col items-center gap-[12px]">
-            <p class="text-center text-xl font-medium text-brand-9">{block.title}</p>
+            <p class="text-center text-xl font-semibold text-brand-9">{block.title}</p>
 
             <!-- Main heading -->
 

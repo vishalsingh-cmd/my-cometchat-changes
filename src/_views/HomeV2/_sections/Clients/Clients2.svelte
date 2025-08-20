@@ -70,7 +70,7 @@
   export let block: HomeClientsV2Storyblok;
 </script>
 
-<Section className="relative isolate group/clients overflow-hidden">
+<Section className="relative isolate group/clients overflow-visible">
   <Container pyEnabled={false}>
     <div class="h-[136px]">
       <div class="relative z-40 flex h-full items-center justify-center">
@@ -102,7 +102,7 @@
         />
 
         <!-- Left SecureDecCircles -->
-        <div class="relative top-0 h-full w-[100px]">
+        <div class=" relative top-0 h-full w-[100px]">
           <SecureDecCircle position="topRight" className="z-50" />
           <SecureDecCircle position="bottomRight" className="z-50" />
         </div>
@@ -159,7 +159,7 @@
 
 <style>
   .marquee-track {
-    animation: marquee 5s linear infinite;
+    animation: marquee 10s linear infinite;
   }
 
   @keyframes marquee {
