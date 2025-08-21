@@ -29,14 +29,18 @@
               >
                 <Icon
                   icon={card.icon}
-                  class="h-[36px] w-[36px] bg-divider-gradient text-gray-11 opacity-60"
+                  class="h-[36px] w-[36px] bg-icon-gradient bg-clip-text opacity-60"
                 />
               </div>
 
               <div class="flex flex-col items-start gap-4 self-stretch">
                 <div class="flex flex-col items-start gap-3 self-stretch">
                   {#if card.heading}
-                    <h3 class="text-[24px] font-[640px] text-white">{card.heading}</h3>
+                    <h3
+                      class="text-sans self-stretch text-[24px] font-[640px] leading-tighter text-gray-12"
+                    >
+                      {card.heading}
+                    </h3>
                   {/if}
 
                   {#if card.subheading}

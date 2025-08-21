@@ -122,7 +122,9 @@ export default {
           'linear-gradient(0deg, transparent 0%, hsl(var(--color-gray-12) / 0.1) 50%, transparent 100%)',
         'gradient-purple': 'linear-gradient(180deg, #FFFFFF 0%, #6A55D7 126.95%)',
         'border-beam-white':
-          'linear-gradient(90deg, rgba(250, 250, 255, 0) 0%, rgba(250, 250, 255, 0.1) 5%, rgba(250, 250, 255, 0.1) 95%, rgba(250, 250, 255, 0) 100%)'
+          'linear-gradient(90deg, rgba(250, 250, 255, 0) 0%, rgba(250, 250, 255, 0.1) 5%, rgba(250, 250, 255, 0.1) 95%, rgba(250, 250, 255, 0) 100%)',
+        'icon-gradient':
+          'linear-gradient(180deg, rgba(250,250,255,1) 0%, rgba(177,177,180,1) 50%, rgba(100,100,101,1) 100%)'
       },
       boxShadow: (theme) => ({
         focus: `0 0 16px 2px ${theme('colors.brand.7/80')}`,

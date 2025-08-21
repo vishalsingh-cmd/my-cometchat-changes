@@ -13,7 +13,7 @@
 </script>
 
 {#if block}
-  <Section className="relative">
+  <Section className="relative isolate">
     <Container>
       <div class="mt-10 flex flex-col items-center gap-[60px] text-center">
         <div class="flex flex-col items-center gap-[28px]">
