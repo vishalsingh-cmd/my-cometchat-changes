@@ -58,7 +58,7 @@
                     class={`text-md leading-snug text-brand-9 ${
                       index === (block.features?.length ?? 0) - 1 ? 'mb-[200px]' : ''
                     }`}
-                    href={card.link?.cached_url?.replace(/^pages\//, '')}
+                    href={card.link}
                   >
                     Learn more
                   </Link>

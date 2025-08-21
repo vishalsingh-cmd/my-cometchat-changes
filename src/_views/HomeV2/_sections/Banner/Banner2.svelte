@@ -43,7 +43,7 @@
             {block.description}
           </p>
         </div>
-        {#if block?.links?.length ?? false}
+        {#if block?.links?.length}
           <div class={cn(['flex items-center justify-center gap-[24px]'], ['lg:gap-6'])}>
             {#each block?.links ?? [] as linkCta}
               {@const { href, target, rel } = getAnchorFromCmsLink(linkCta.link)}
