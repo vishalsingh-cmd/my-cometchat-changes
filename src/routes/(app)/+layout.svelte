@@ -7,8 +7,8 @@
   import { Toaster } from 'svelte-french-toast';
   import TemplatesHeader from '$src/_bricks/TemplatesHeader.svelte';
   import TemplatesFooter from '$src/_bricks/TemplatesFooter.svelte';
-  import NewHeader from '$src/_bricks/NewHeader/NewHeader.svelte';
-  // import NewHeader_v2 from '$src/_bricks/NewHeader_V2/NewHeader-v2.svelte';
+  // import NewHeader from '$src/_bricks/NewHeader/NewHeader.svelte';
+  import NewHeader_v2 from '$src/_bricks/NewHeader_V2/NewHeader-v2.svelte';
 
   export let data;
 
@@ -39,7 +39,7 @@
 <QueryClientProvider client={queryClient}>
   <!-- ------------------------------- header -------------------------------- -->
   {#if data.newHeader}
-    <NewHeader block={data.newHeader} />
+    <NewHeader_v2 block={data.newHeader} />
   {/if}
 
   {#if data.templatesHeaderData}

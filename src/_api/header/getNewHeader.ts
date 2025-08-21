@@ -11,7 +11,7 @@ interface Props {
 export const getNewHeader = async (props: Props) => {
   const { storyblok, version } = props;
   try {
-    const newHeader = await storyblok.get('cdn/stories/configuration/new-header', {
+    const newHeader = await storyblok.get('cdn/stories/configuration/new-header-v2', {
       version
     });
 
