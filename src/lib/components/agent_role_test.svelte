@@ -48,7 +48,7 @@
       subHeading: 'Your use case. Our foundation.',
       description: 'Teams are building all kinds of agents on CometChat’s stack:',
       points: [
-        'Internal Slack copilots that summarize, fetch, and file',
+        'Internal copilots that summarize, fetch, and file',
         'Chat-first onboarding flows with step-by-step interaction',
         'Healthcare agents with audit trails and HIPAA guardrails',
         'Community moderation bots with escalation paths',
