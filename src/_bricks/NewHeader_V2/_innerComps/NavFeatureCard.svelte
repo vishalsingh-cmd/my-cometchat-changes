@@ -3,6 +3,7 @@
   // import Icon from '$src/components/icon/icon.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import type { NavFeatureCardProps } from '../newHeader.types';
+  // import NewChip from '../_comps/NewChip.svelte';
 
   export let className = '';
   export let titleClassName = '';
@@ -44,6 +45,9 @@
 <a href={href || ''} {target} class={base({ class: className })}>
   <h3 class={title({ class: titleClassName })}>
     {block.title}
+    <!-- {#if block.isNew}
+      <NewChip />
+    {/if} -->
   </h3>
   <p class={description({ class: descriptionClassName })}>
     {block.description}

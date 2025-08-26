@@ -1389,6 +1389,7 @@ export interface NavFeatureBigCardsStoryblok {
 }
 
 export interface NavFeatureCardStoryblok {
+  isNew?: boolean;
   title: string;
   description: string;
   icon: number | string;

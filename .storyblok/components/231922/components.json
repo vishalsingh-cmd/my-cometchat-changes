@@ -6532,24 +6532,29 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-03-01T15:31:25.350Z",
-    "updated_at": "2025-03-02T08:09:15.657Z",
+    "updated_at": "2025-08-26T14:36:01.578Z",
     "id": 7026860,
     "schema": {
+      "isNew": {
+        "type": "boolean",
+        "pos": 0,
+        "id": "-8RC3fSXTvuHeOaL1PkqaA"
+      },
       "title": {
         "type": "text",
-        "pos": 0,
+        "pos": 1,
         "required": true,
         "id": "THwiZRhqQHeQ_H9JWH55QA"
       },
       "description": {
         "type": "textarea",
-        "pos": 1,
+        "pos": 2,
         "required": true,
         "id": "tErOxK5AQMKLkvuum2M-xQ"
       },
       "icon": {
         "type": "option",
-        "pos": 2,
+        "pos": 3,
         "required": true,
         "allow_external_url": true,
         "id": "QguJosfXS0WfxsxDkjWIvg",
@@ -6559,7 +6564,7 @@
       },
       "link": {
         "type": "multilink",
-        "pos": 3,
+        "pos": 4,
         "required": true,
         "id": "3H2m_m_yToClng29qvwsZQ"
       }

@@ -21,7 +21,7 @@
       'translate-x-full data-[state="active"]:translate-x-0',
 
       'xl:inset-[unset] xl:top-full xl:left-1/2 xl:-translate-x-1/2 xl:data-[state="active"]:-translate-x-1/2',
-      'xl:h-[unset] xl:overflow-hidden xl:w-full xl:min-w-[900px] xl:bg-[#14131D] xl:pt-0',
+      'xl:h-[unset] xl:overflow-hidden xl:w-full xl:min-w-[900px] xl:bg-[#0A0914] xl:pt-0',
       'xl:overflow-[unset]',
       'xl:data-[state="active"]:-translate-x-1/2',
 

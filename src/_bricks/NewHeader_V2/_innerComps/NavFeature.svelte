@@ -2,6 +2,7 @@
   import { tv } from '$src/_utils/tailwind.utils';
   import Icon from '$src/components/icon/icon.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  // import NewChip from '../_comps/NewChip.svelte';
   import type { NavFeatureProps } from '../newHeader.types';
 
   export let className = '';
@@ -57,6 +58,9 @@
   <div class={info({ class: infoClassName })}>
     <h4 class={title({ class: titleClassName })}>
       {block.title}
+      <!-- {#if block.isNew}
+        <NewChip />
+      {/if} -->
     </h4>
     <p class={description({ class: descriptionClassName })}>
       {block.description}
