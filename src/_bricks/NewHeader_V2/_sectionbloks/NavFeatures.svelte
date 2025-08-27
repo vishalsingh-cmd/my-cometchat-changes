@@ -10,7 +10,7 @@
   export let block: NavFeaturesProps;
 
   const navFeatures = tv({
-    base: ['flex flex-col gap-6', 'px-6 w-full']
+    base: ['flex flex-col gap-6', 'px-6 w-full', 'py-6']
   });
 
   const features = tv({

@@ -17,12 +17,12 @@
   const navFeature = tv({
     slots: {
       base: [
-        'group/navFeature relative isolate',
+        'group/navFeature relative isolate min-w-[400px]',
         'font-sans font-semibold',
         'grid grid-cols-[auto_1fr] gap-4'
       ],
       iconWrap: [
-        'h-10 w-10 border border-[#FAFAFF] border-opacity-5 rounded-md',
+        'h-10 w-10 border border-[#FAFAFF] border-opacity-5 rounded-md ',
         'flex items-center justify-center',
         'transition-colors duration-300',
         'group-hover/navFeature:border-[#6852D6]',
@@ -39,11 +39,13 @@
       ],
       info: ['flex flex-col gap-1.5'],
       title: [
-        'font-sans text-[16px] font-semibold leading-[17px] text-[#FAFAFF]',
+        'font-sans text-[16px] font-semibold text-gray-12 opacity-75 leading-tighter',
         'transition-colors duration-300',
         'group-hover/navFeature:text-[#6852D6]'
       ],
-      description: ['text-[14px] font-medium leading-[17px] text-[#FAFAFF] text-opacity-60']
+      description: [
+        'text-[14px] font-sans font-medium leading-[17px] tracking-[0.07px] text-gray-12 opacity-50'
+      ]
     }
   });
 

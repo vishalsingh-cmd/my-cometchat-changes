@@ -26,10 +26,14 @@
   const navPanel = tv({
     base: [
       'group/navPanel',
-      'flex flex-col gap-8',
-      'flex-none w-full max-w-full overflow-x-clip',
+      'flex flex-col',
+      'flex-none overflow-x-clip',
+      // mobile (default)
+      'w-full max-w-full bg-[#0A0914]',
+      // desktop (xl:)
+      `${index === 1 || index === 2 ? 'xl:min-w-[864px]' : 'xl:min-w-[360px]'}`,
+      // visibility
       'hidden data-[state="active"]:flex',
-
       'data-[issidemenu="yes"]:gap-4'
     ]
   });

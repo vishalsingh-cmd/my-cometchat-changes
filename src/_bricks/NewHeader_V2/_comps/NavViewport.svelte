@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
+  import { onMount } from 'svelte';
   import { tv } from '$src/_utils/tailwind.utils';
   import type { NavItemProps, NavLinkProps } from '../newHeader.types';
   import { getNewHeaderContext } from '../_context/newHader.context';
@@ -8,7 +10,20 @@
   export let navItems: Array<NavItemProps | NavLinkProps>;
   export const className = '';
 
-  const { viewportElem, actions } = getNewHeaderContext();
+  const { viewportElem, actions, activePanelIndex } = getNewHeaderContext();
+
+  // track client width
+  let isDesktop = false;
+  if (browser) {
+    isDesktop = window.innerWidth >= WINDOW_BREEAKPOINTS.xl;
+    onMount(() => {
+      const handleResize = () => {
+        isDesktop = window.innerWidth >= WINDOW_BREEAKPOINTS.xl;
+      };
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    });
+  }
 
   const navViewport = tv({
     base: [
@@ -16,31 +31,42 @@
       'pt-[60px] bg-[#0A0914] w-full h-full',
       'flex flex-row',
       'overflow-x-clip overflow-y-auto',
-      'transition-[width,height,opacity,transform] duration-300',
+      'transition-[width,height,opacity] duration-300',
       'opacity-0 data-[state="active"]:opacity-100',
       'translate-x-full data-[state="active"]:translate-x-0',
 
-      'xl:inset-[unset] xl:top-full xl:left-1/2 xl:-translate-x-1/2 xl:data-[state="active"]:-translate-x-1/2',
-      'xl:h-[unset] xl:overflow-hidden xl:w-full xl:min-w-[900px] xl:bg-[#0A0914] xl:pt-0',
+      'xl:inset-[unset] xl:top-full',
+
+      'xl:h-[unset] xl:overflow-hidden xl:w-auto xl:bg-[#0A0914] xl:pt-0',
       'xl:overflow-[unset]',
-      'xl:data-[state="active"]:-translate-x-1/2',
+      '',
 
       'xl:shadow-new-header-viewport xl:border-[#FAFAFF] xl:rounded-2xl',
-      'xl:border-none xl:data-[state="active"]:border',
+      'xl:border-opacity-10 xl:data-[state="active"]:border',
       'xl:pointer-events-none xl:data-[state="active"]:pointer-events-auto'
     ]
   });
 
-  const handleMouseEnter = () => {
-    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
-      actions.cancelHidePanel();
+  const navWrapper = tv({
+    base: ['relative w-full h-full transition-transform duration-300'],
+    variants: {
+      index: {
+        0: 'xl:-translate-x-[0%]',
+        1: 'xl:-translate-x-[0%]',
+        2: 'xl:-translate-x-[0%]',
+        3: 'xl:translate-x-[25%]',
+        4: 'xl:translate-x-[40%]',
+        5: 'xl:translate-x-[50%]'
+      }
     }
+  });
+
+  const handleMouseEnter = () => {
+    if (isDesktop) actions.cancelHidePanel();
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth >= WINDOW_BREEAKPOINTS.xl) {
-      actions.scheduleHidePanel();
-    }
+    if (isDesktop) actions.scheduleHidePanel();
   };
 
   const handleOnClick = (e: MouseEvent) => {
@@ -52,16 +78,28 @@
   };
 </script>
 
-<div
-  class={navViewport({ class: className })}
-  bind:this={$viewportElem}
-  on:mouseenter={handleMouseEnter}
-  on:mouseleave={handleMouseLeave}
-  on:click={handleOnClick}
->
-  {#each navItems as navItem, index}
-    {#if 'panel' in navItem && navItem.panel}
-      <NavPanel {index} sections={navItem.panel} />
-    {/if}
-  {/each}
-</div>
+{#if isDesktop}
+  <div class={navWrapper({ index: $activePanelIndex })}>
+    <div
+      class={navViewport({ class: className })}
+      bind:this={$viewportElem}
+      on:mouseenter={handleMouseEnter}
+      on:mouseleave={handleMouseLeave}
+      on:click={handleOnClick}
+    >
+      {#each navItems as navItem, index}
+        {#if 'panel' in navItem && navItem.panel}
+          <NavPanel {index} sections={navItem.panel} />
+        {/if}
+      {/each}
+    </div>
+  </div>
+{:else}
+  <div class={navViewport({ class: className })} bind:this={$viewportElem} on:click={handleOnClick}>
+    {#each navItems as navItem, index}
+      {#if 'panel' in navItem && navItem.panel}
+        <NavPanel {index} sections={navItem.panel} />
+      {/if}
+    {/each}
+  </div>
+{/if}

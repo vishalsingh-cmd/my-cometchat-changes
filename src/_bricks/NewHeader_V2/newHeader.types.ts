@@ -26,6 +26,7 @@ export interface NavFeatureBigCardsProps {
 
 /* --------------------------- nav-feature-cards --------------------------- */
 export interface NavFeatureCardProps {
+  isNew?: boolean;
   title: string;
   description: string;
   icon: string;
