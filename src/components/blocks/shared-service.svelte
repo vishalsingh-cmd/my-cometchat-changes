@@ -18,7 +18,7 @@
         <div class="grid grid-cols-1 grid-rows-2 lg:grid-cols-6">
           {#each block?.cards ?? [] as card, index}
             <div
-              class={`relative flex min-h-[261px] ${index == 0 || index == 1 ? 'border-t-0' : ''} ${
+              class={`relative flex min-h-[350px] ${index == 0 || index == 1 ? 'border-t-0' : ''} ${
                 index == 2 || index == 3 || index == 4 ? 'border-b-0' : ''
               } flex-col items-start justify-between border border-b-0 border-l border-gray-5 p-8 col-span-${
                 card.colSpan || ''
