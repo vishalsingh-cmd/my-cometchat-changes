@@ -32,55 +32,6 @@ export interface AccordionItemStoryblok {
   [k: string]: any;
 }
 
-export interface AgentsHeroStoryblok {
-  solution_type?: StoryblokStory<IndustryStoryblok> | string;
-  title: string;
-  description: string;
-  links: ButtonLinkStoryblok[];
-  illustration: AssetStoryblok;
-  _uid: string;
-  component: 'agents-hero';
-  [k: string]: any;
-}
-
-export interface AnimatedBannerBoxStoryblok {
-  label?: string;
-  icon?: AssetStoryblok;
-  _uid: string;
-  component: 'animated_banner_box';
-  [k: string]: any;
-}
-
-export interface AuthorStoryblok {
-  name: string;
-  role?: string;
-  company?: string;
-  avatar: AssetStoryblok;
-  description: string;
-  _uid: string;
-  component: 'author';
-  [k: string]: any;
-}
-
-export type MultiassetStoryblok = {
-  alt?: string;
-  copyright?: string;
-  id: number;
-  filename: string;
-  name: string;
-  title?: string;
-  [k: string]: any;
-}[];
-
-export interface AwardsSectionStoryblok {
-  theme: '' | 'light' | 'dark';
-  title: string;
-  awards: MultiassetStoryblok;
-  _uid: string;
-  component: 'awards-section';
-  [k: string]: any;
-}
-
 export type MultilinkStoryblok =
   | {
       cached_url?: string;
@@ -135,6 +86,60 @@ export type MultilinkStoryblok =
       linktype?: 'email';
       [k: string]: any;
     };
+
+export interface AgentsHeroStoryblok {
+  badge_text?: string;
+  heading?: RichtextStoryblok;
+  description?: string;
+  description_2?: string;
+  description_3?: string;
+  primary_button_text?: string;
+  primary_button_link?: MultilinkStoryblok;
+  secondary_button_text?: string;
+  secondary_button_link?: MultilinkStoryblok;
+  hero_image?: AssetStoryblok;
+  _uid: string;
+  component: 'agents-hero';
+  [k: string]: any;
+}
+
+export interface AnimatedBannerBoxStoryblok {
+  label?: string;
+  icon?: AssetStoryblok;
+  _uid: string;
+  component: 'animated_banner_box';
+  [k: string]: any;
+}
+
+export interface AuthorStoryblok {
+  name: string;
+  role?: string;
+  company?: string;
+  avatar: AssetStoryblok;
+  description: string;
+  _uid: string;
+  component: 'author';
+  [k: string]: any;
+}
+
+export type MultiassetStoryblok = {
+  alt?: string;
+  copyright?: string;
+  id: number;
+  filename: string;
+  name: string;
+  title?: string;
+  [k: string]: any;
+}[];
+
+export interface AwardsSectionStoryblok {
+  theme: '' | 'light' | 'dark';
+  title: string;
+  awards: MultiassetStoryblok;
+  _uid: string;
+  component: 'awards-section';
+  [k: string]: any;
+}
 
 export interface BlogAnnouncementSidebarCardStoryblok {
   title?: string;
@@ -1109,6 +1114,8 @@ export interface IndustryStoryblok {
     | ModerationFeaturesStoryblok
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -1554,6 +1561,8 @@ export interface PageStoryblok {
     | ModerationFeaturesStoryblok
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -1650,6 +1659,23 @@ export interface ParagraphListItemStoryblok {
   [k: string]: any;
 }
 
+export interface PathSelectorStoryblok {
+  title?: string;
+  bullets?: SimpleTextStoryblok[];
+  icon_key?: ('' | 'byobIcon' | 'cometchatIcon')[];
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'path-selector';
+  [k: string]: any;
+}
+
+export interface PathSelectorsStoryblok {
+  cards?: PathSelectorStoryblok[];
+  _uid: string;
+  component: 'path-selectors';
+  [k: string]: any;
+}
+
 export interface PlatformSectionStoryblok {
   theme?: '' | 'light' | 'dark';
   background?: '' | 'gray' | 'white';
@@ -1743,6 +1769,8 @@ export interface PricingStoryblok {
     | ModerationFeaturesStoryblok
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -2561,6 +2589,8 @@ export interface SyncedBlockContentStoryblok {
     | ModerationFeaturesStoryblok
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -2697,6 +2727,8 @@ export interface TechnologyStoryblok {
     | ModerationFeaturesStoryblok
     | ModerationFeaturesSectionStoryblok
     | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok

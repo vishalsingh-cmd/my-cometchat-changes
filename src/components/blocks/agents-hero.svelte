@@ -1,83 +1,95 @@
 <script lang="ts">
-  import type { StoryblokStory } from 'storyblok-generate-ts';
-  // import Icon from '$components/icon/icon.svelte';
-
-  import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { getAnchorFromCmsLink } from '$lib/storyblok';
-
-  import type { IndustryStoryblok, AgentsHeroStoryblok } from '$types/bloks';
-
-  import BackgroundBottom from '$components/solutions/hero/background-bottom.svelte';
-  import Button from '$components/buttons/button.svelte';
-  import { type IllustrationOptions } from '$components/comet-illustration/comet-illustration.svelte';
-  import Stars from '$components/stars.svelte';
-  import Media from '$components/media.svelte';
+  import type { AgentsHeroStoryblok } from '$src/types/bloks';
+  import Section from '$src/_comps/layouts/Section.svelte';
+  import Container from '$src/_comps/layouts/Container.svelte';
+  import Button from '$src/components/buttons/button.svelte';
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   export let block: AgentsHeroStoryblok;
-
-  const parseItem = (item: string | StoryblokStory<IndustryStoryblok>) => {
-    const typedItem = item as StoryblokStory<IndustryStoryblok>;
-
-    return {
-      illustration: typedItem.content.illustration as IllustrationOptions,
-      name: typedItem.content.short_name
-    };
-  };
 </script>
 
 {#if block}
-  <section
-    use:storyblokEditable={block}
-    class="h-[663px] overflow-hidden bg-gray-1 pt-[108px] text-gray-12 md:h-[781px] md:pt-[148px]"
-  >
-    <div
-      class="container relative mx-auto flex h-full flex-col gap-10 px-container md:gap-16 lg:flex-row"
-    >
-      <BackgroundBottom />
+  <Section>
+    <Container>
+      <section
+        class="top-[75px] flex max-w-[1440px] flex-col items-center justify-center gap-8 pt-16 font-sans text-white lg:flex-row lg:py-20"
+      >
+        <!-- Left Content -->
+        <div class="flex max-w-[538px] flex-col items-start justify-center gap-8">
+          <div class="flex flex-col items-start gap-6 self-stretch">
+            <div class="flex flex-col items-start gap-4 self-stretch">
+              <!-- Badge -->
+              <div class="flex h-[48px] items-center justify-center">
+                <img src="/agent_lp_images/Profile.png" alt="icon" class="" />
+                {#if block.badge_text}
+                  <div
+                    class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-[18px] font-semibold leading-snug tracking-none text-transparent"
+                  >
+                    {block.badge_text}
+                  </div>
+                {/if}
+              </div>
 
-      <div class="w-full max-w-[528px]">
-        <div class="flex items-center gap-[10px]">
-          {#if block.solution_type}
-            {@const parsedItem = parseItem(block.solution_type)}
-            <img src="/Profile.svg" />
-            <p
-              class="m-0 rounded-[50px] border px-4 py-2 text-xl font-semibold leading-tighter opacity-74"
-            >
-              {parsedItem.name}
-            </p>
-          {/if}
+              <!-- Heading -->
+              <h1 class="text-4xl font-medium leading-snug">
+                Ship the
+                <span class=" bg-gradient-purple bg-clip-text text-transparent">agent.</span>
+                <br />
+
+                Skip the
+                <span class="bg-gradient-purple bg-clip-text text-transparent">plumbing. </span>
+              </h1>
+            </div>
+
+            <!-- Description -->
+            <div class="text-sans flex flex-col items-start gap-[12px]">
+              {#if block.description}
+                <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+                  {block.description}
+                </div>
+              {/if}
+              {#if block.description_2}
+                <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+                  {block.description_2}
+                </div>
+              {/if}
+              {#if block.description_3}
+                <div class="text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-74">
+                  {block.description_3}
+                </div>
+              {/if}
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap gap-4">
+            {#if block.secondary_button_text && block.secondary_button_link}
+              {@const { href, target, rel } = getAnchorFromCmsLink(block.secondary_button_link)}
+              <Button as="a" variant="secondary" {href} {target} {rel}>
+                {block.secondary_button_text}
+              </Button>
+            {/if}
+            {#if block.primary_button_text && block.primary_button_link}
+              {@const { href, target, rel } = getAnchorFromCmsLink(block.primary_button_link)}
+              <Button as="a" {href} {target} {rel}>
+                {block.primary_button_text}
+              </Button>
+            {/if}
+          </div>
         </div>
 
-        <h1 class="mt-2 text-3xl font-semibold leading-tighter md:mt-3">{block.title}</h1>
-        <p class="mt-3 text-xl font-medium leading-snug opacity-74 md:mt-5">{block.description}</p>
-        {#if block.links.length}
-          <div class="mt-5 flex gap-3 md:mt-8">
-            {#each block.links as link}
-              {@const { href, rel, target } = getAnchorFromCmsLink(link.link)}
-              <Button variant={link.variant} as="a" {href} {rel} {target}>
-                {link.label}
-              </Button>
-            {/each}
-          </div>
-        {/if}
-      </div>
-      {#if block.illustration}
-        <Media
-          imageTransformOptions={{ size: [1000, 0] }}
-          media={block.illustration}
-          class="bottom-0 w-full max-w-[784px] translate-x-4 transform self-end md:translate-x-16"
-        />
-      {/if}
-
-      <div class="pointer-events-none absolute left-6 top-0 h-[803px] w-[1389px]">
-        <Stars backgroundColours={['bg-brand-7', 'bg-brand-9', 'bg-gray-8']} />
-      </div>
-      <div
-        class="pointer-events-none absolute right-0 hidden h-full w-[145px] bg-gradient-to-l from-gray-1/100 to-transparent md:block"
-      />
-      <div
-        class="pointer-events-none absolute bottom-0 h-[200px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
-      />
-    </div>
-  </section>
+        <!-- Right Content -->
+        <div class="relative">
+          {#if block.hero_image?.filename}
+            <img
+              src={block.hero_image.filename}
+              alt={block.hero_image.alt || 'Hero image'}
+              class="aspect-[109/90] w-[350px] flex-shrink-0 rounded-xl shadow-xl lg:h-[475px] lg:w-[575.76px]"
+              loading="lazy"
+            />
+          {/if}
+        </div>
+      </section>
+    </Container>
+  </Section>
 {/if}

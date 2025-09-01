@@ -39,6 +39,7 @@
   import ModerationFeatures from './moderation-features.svelte';
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
+  import PathSelector from './path-selector.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingHero from './pricing-hero.svelte';
   import PricingHeroEnhancements from './pricing-hero-enhancements.svelte';
@@ -129,7 +130,7 @@
 
     'connected-step': ConnectedStep,
     'connected-steps': ConnectedSteps,
-
+    'path-selectors': PathSelector,
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
