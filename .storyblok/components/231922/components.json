@@ -1278,7 +1278,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-09-02T07:55:28.665Z",
-    "updated_at": "2025-09-02T08:01:02.118Z",
+    "updated_at": "2025-09-02T08:13:39.123Z",
     "id": 86467087023085,
     "schema": {
       "title": {
@@ -1292,9 +1292,12 @@
         "id": "zy_f7C4MSUyUCR6hRZcbMA"
       },
       "hover_points": {
-        "type": "text",
+        "type": "bloks",
         "pos": 2,
-        "id": "1OojPJYSQAmLnxyYTNn1Mg"
+        "id": "1OojPJYSQAmLnxyYTNn1Mg",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["simple_text"]
       },
       "link_text": {
         "type": "text",
@@ -5401,6 +5404,115 @@
     "metadata": {}
   },
   {
+    "name": "industry-carousel",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-09-02T10:07:39.997Z",
+    "updated_at": "2025-09-02T11:06:53.936Z",
+    "id": 86499573763957,
+    "schema": {
+      "items": {
+        "type": "bloks",
+        "pos": 0,
+        "id": "2ax19DXyQ3ahw3lIMxjTXg",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["industry-carousel-item"]
+      },
+      "images": {
+        "type": "multiasset",
+        "pos": 1,
+        "id": "BB3LGNh9Rg2Am3IKpcMyZg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "industry-carousel",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "industry-carousel-item",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-09-02T10:09:03.342Z",
+    "updated_at": "2025-09-02T10:26:38.486Z",
+    "id": 86499915145080,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "mbvesz4RTHimSLNDNQTBCQ"
+      },
+      "subheading": {
+        "type": "text",
+        "pos": 1,
+        "id": "MKVaAmhxTS6cU4AyDE_LQA"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 2,
+        "id": "X_lqD-hHR86B0eyQtxJtdw"
+      },
+      "points": {
+        "type": "bloks",
+        "pos": 3,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["simple_text"],
+        "id": "l06MmTFBTxWvSNf6vo8Ufg"
+      },
+      "link_text": {
+        "type": "text",
+        "pos": 4,
+        "id": "pEDk7-6mQy2LwSYYMv8mkg"
+      },
+      "link": {
+        "type": "multilink",
+        "pos": 5,
+        "id": "uJAqCtpISFqSlPEcpeA3jg"
+      },
+      "icon": {
+        "type": "option",
+        "pos": 6,
+        "use_uuid": true,
+        "source": "internal",
+        "datasource_slug": "icons",
+        "id": "bYEpqyuCRp-rCLoIkg6GJA"
+      },
+      "image": {
+        "type": "asset",
+        "pos": 7,
+        "id": "U9uafjdPRDebt65TA7X_ww"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "industry-carousel-item",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "infrastructure-section",
     "display_name": null,
     "description": null,
@@ -7243,7 +7355,7 @@
     "display_name": null,
     "description": null,
     "created_at": "2023-05-23T11:40:13.029Z",
-    "updated_at": "2025-05-09T03:17:39.846Z",
+    "updated_at": "2025-09-02T11:01:24.526Z",
     "id": 4017549,
     "schema": {
       "body": {

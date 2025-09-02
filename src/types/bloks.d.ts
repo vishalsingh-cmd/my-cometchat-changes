@@ -349,7 +349,7 @@ export interface ChatFeaturesSectionStoryblok {
 export interface ChatIntegrationStoryblok {
   title?: string;
   description?: string;
-  hover_points?: string;
+  hover_points?: SimpleTextStoryblok[];
   link_text?: string;
   link?: MultilinkStoryblok;
   Icon?: number | string;
@@ -1121,6 +1121,8 @@ export interface IndustryStoryblok {
     | ImplementationSectionV2Storyblok
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
@@ -1192,6 +1194,28 @@ export interface IndustryStoryblok {
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'industry';
+  [k: string]: any;
+}
+
+export interface IndustryCarouselStoryblok {
+  items?: IndustryCarouselItemStoryblok[];
+  images?: MultiassetStoryblok;
+  _uid: string;
+  component: 'industry-carousel';
+  [k: string]: any;
+}
+
+export interface IndustryCarouselItemStoryblok {
+  title?: string;
+  subheading?: string;
+  description?: string;
+  points?: SimpleTextStoryblok[];
+  link_text?: string;
+  link?: MultilinkStoryblok;
+  icon?: number | string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'industry-carousel-item';
   [k: string]: any;
 }
 
@@ -1570,6 +1594,8 @@ export interface PageStoryblok {
     | ImplementationSectionV2Storyblok
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
@@ -1780,6 +1806,8 @@ export interface PricingStoryblok {
     | ImplementationSectionV2Storyblok
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
@@ -2602,6 +2630,8 @@ export interface SyncedBlockContentStoryblok {
     | ImplementationSectionV2Storyblok
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
@@ -2742,6 +2772,8 @@ export interface TechnologyStoryblok {
     | ImplementationSectionV2Storyblok
     | ImplementationSectionV3Storyblok
     | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok

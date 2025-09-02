@@ -27,6 +27,7 @@
   import ImplementationSectionV2 from './implementation-section-v2.svelte';
   import ImplementationSectionV3 from './implementation-section-v3.svelte';
   import ImplementationListSection from './implementation-list-section.svelte';
+  import IndustryCarousel from './industry-carousel.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
   import IpadIframe from './ipad-iframe.svelte';
@@ -149,6 +150,7 @@
     'hero-form': HeroForm,
     'homepage-hero': HomepageHero,
 
+    'industry-carousel': IndustryCarousel,
     'implementation-section': ImplementationSection,
     'implementation-section-v2': ImplementationSectionV2,
     'implementation-section-v3': ImplementationSectionV3,

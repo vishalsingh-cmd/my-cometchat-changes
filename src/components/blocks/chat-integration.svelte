@@ -47,7 +47,7 @@
                   icon={card.Icon}
                   alt={card.title}
                   size="free"
-                  class=" min-h-[60px] min-w-[60px] rounded-lg border border-gray-5 p-3 opacity-50"
+                  class=" min-h-[60px] min-w-[60px] rounded-lg border border-gray-7 p-3 opacity-50"
                 />
               </div>
 
@@ -72,7 +72,7 @@
                     {#each card.hover_points ?? [] as point}
                       <div class="pointer-events-none flex items-start gap-2 self-stretch">
                         <img src={bullet_icon} alt="" class="mr-1 flex-none object-contain" />
-                        <div class="text-[16px] leading-snug text-gray-11">{point}</div>
+                        <div class="text-[16px] leading-snug text-gray-11">{point.text}</div>
                       </div>
                     {/each}
                   </div>
