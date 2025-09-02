@@ -346,6 +346,25 @@ export interface ChatFeaturesSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ChatIntegrationStoryblok {
+  title?: string;
+  description?: string;
+  hover_points?: string;
+  link_text?: string;
+  link?: MultilinkStoryblok;
+  Icon?: number | string;
+  _uid: string;
+  component: 'chat-integration';
+  [k: string]: any;
+}
+
+export interface ChatIntegrationsStoryblok {
+  cards?: ChatIntegrationStoryblok[];
+  _uid: string;
+  component: 'chat-integrations';
+  [k: string]: any;
+}
+
 export interface CodeBlockItemStoryblok {
   illustration: AssetStoryblok;
   language_name: string;
@@ -1074,6 +1093,8 @@ export interface IndustryStoryblok {
     | CenterStaticBannerV03Storyblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
@@ -1521,6 +1542,8 @@ export interface PageStoryblok {
     | CenterStaticBannerV03Storyblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
@@ -1729,6 +1752,8 @@ export interface PricingStoryblok {
     | CenterStaticBannerV03Storyblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
@@ -2549,6 +2574,8 @@ export interface SyncedBlockContentStoryblok {
     | CenterStaticBannerV03Storyblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
@@ -2687,6 +2714,8 @@ export interface TechnologyStoryblok {
     | CenterStaticBannerV03Storyblok
     | ChatAndMessagingHeroStoryblok
     | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok

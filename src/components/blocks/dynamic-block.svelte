@@ -6,6 +6,7 @@
   import AwardsSection from './awards-section.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
+  import ChatIntegration from './chat-integration.svelte';
   import CometCreditsSection from './comet-credits-section.svelte';
   import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
@@ -117,6 +118,7 @@
     'awards-section': AwardsSection,
 
     'chat-and-messaging-hero': ChatAndMessagingHero,
+    'chat-integrations': ChatIntegration,
     'chat-features-section': ChatFeaturesSection,
     'comet-credits-section': CometCreditsSection,
     complex_roller: ComplexRoller,
