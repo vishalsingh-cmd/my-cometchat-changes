@@ -23,6 +23,7 @@
   import HeaderAndListSection from './header-and-list-section.svelte';
   import HeroForm from './hero-form.svelte';
   import HomepageHero from './homepage-hero.svelte';
+  import Image from './image-only.svelte';
   import ImplementationSection from './implementation-section.svelte';
   import ImplementationSectionV2 from './implementation-section-v2.svelte';
   import ImplementationSectionV3 from './implementation-section-v3.svelte';
@@ -152,6 +153,7 @@
     'homepage-hero': HomepageHero,
 
     'industry-carousel': IndustryCarousel,
+    'image-only': Image,
     'implementation-section': ImplementationSection,
     'implementation-section-v2': ImplementationSectionV2,
     'implementation-section-v3': ImplementationSectionV3,

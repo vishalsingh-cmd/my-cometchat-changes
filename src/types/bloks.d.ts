@@ -1023,6 +1023,13 @@ export interface ImageCarousalStoryblok {
   [k: string]: any;
 }
 
+export interface ImageOnlyStoryblok {
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'image-only';
+  [k: string]: any;
+}
+
 export interface ImageTitleDescriptionTagsItemStoryblok {
   image: AssetStoryblok;
   tags: (TextStoryblok | TagStoryblok)[];
@@ -1116,6 +1123,7 @@ export interface IndustryStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -1590,6 +1598,7 @@ export interface PageStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -1698,6 +1707,7 @@ export interface PageStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -1911,6 +1921,7 @@ export interface PricingStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -2736,6 +2747,7 @@ export interface SyncedBlockContentStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok
@@ -2879,6 +2891,7 @@ export interface TechnologyStoryblok {
     | HeroFormStoryblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
+    | ImageOnlyStoryblok
     | ImplementationListSectionStoryblok
     | ImplementationSectionStoryblok
     | ImplementationSectionV2Storyblok

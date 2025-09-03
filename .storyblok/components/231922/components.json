@@ -4991,6 +4991,36 @@
     "metadata": {}
   },
   {
+    "name": "image-only",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-09-03T10:09:25.572Z",
+    "updated_at": "2025-09-03T10:10:34.285Z",
+    "id": 86853900588790,
+    "schema": {
+      "image": {
+        "type": "asset",
+        "pos": 0,
+        "id": "ofl4gJWjRJSY7o414TZjrg"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "image-only",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "image-title-description-tags-item",
     "display_name": null,
     "description": null,
