@@ -452,6 +452,7 @@ export interface CoreFeatureItemStoryblok {
   link_text?: string;
   description?: string;
   listheading?: string;
+  footer_text?: string;
   _uid: string;
   component: 'core-feature-item';
   [k: string]: any;

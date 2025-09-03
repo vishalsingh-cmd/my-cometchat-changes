@@ -1756,7 +1756,7 @@
     "display_name": null,
     "description": "Core Feature Item",
     "created_at": "2025-08-16T16:37:44.798Z",
-    "updated_at": "2025-08-20T12:27:23.784Z",
+    "updated_at": "2025-09-03T11:21:41.103Z",
     "id": 80579235019908,
     "schema": {
       "heading": {
@@ -1806,6 +1806,11 @@
         "type": "text",
         "pos": 8,
         "id": "FAuBjFJlRt2xuMVDm7nJ8w"
+      },
+      "footer_text": {
+        "type": "text",
+        "pos": 9,
+        "id": "ewdMemZERia9Q2zbM9qe0A"
       }
     },
     "image": null,
