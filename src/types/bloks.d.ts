@@ -1182,6 +1182,7 @@ export interface IndustryStoryblok {
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -1655,6 +1656,115 @@ export interface PageStoryblok {
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
+    | TitleFeaturesSectionStoryblok
+    | TitleImageSectionStoryblok
+    | TitleMediaSectionStoryblok
+    | TitleSectionStoryblok
+    | TitleWithCtaStoryblok
+    | VoiceAndVideoCallsHeroStoryblok
+    | WebhooksHeroStoryblok
+    | WebhooksSectionStoryblok
+  )[];
+  images?: (
+    | AgentsHeroStoryblok
+    | AwardsSectionStoryblok
+    | BlogAnnouncementSidebarCardStoryblok
+    | BreadcumbsStoryblok
+    | CardStoryblok
+    | CenterStaticBannerV03Storyblok
+    | ChatAndMessagingHeroStoryblok
+    | ChatFeaturesSectionStoryblok
+    | ChatIntegrationStoryblok
+    | ChatIntegrationsStoryblok
+    | CometCreditsSectionStoryblok
+    | ConnectedStepStoryblok
+    | ConnectedStepsStoryblok
+    | CoreFeaturesPricingSectionStoryblok
+    | CustomersHeroStoryblok
+    | CustomerStoriesSectionStoryblok
+    | DevelopersSectionStoryblok
+    | DirectorySectionStoryblok
+    | DoublePanelSectionStoryblok
+    | EmptyspaceStoryblok
+    | FaqSectionStoryblok
+    | FeaturedStorySectionStoryblok
+    | FeaturesAtGlanceSectionStoryblok
+    | FeaturesAutoScrollSectionStoryblok
+    | FeaturesListSectionStoryblok
+    | FeaturesSectionStoryblok
+    | FeaturesWithNavbarSectionStoryblok
+    | HeaderAndListSectionStoryblok
+    | HeroFormStoryblok
+    | HomepageHeroStoryblok
+    | ImageCarousalStoryblok
+    | ImplementationListSectionStoryblok
+    | ImplementationSectionStoryblok
+    | ImplementationSectionV2Storyblok
+    | ImplementationSectionV3Storyblok
+    | InDepthAnalyticsSectionStoryblok
+    | IndustryCarouselStoryblok
+    | IndustryCarouselItemStoryblok
+    | InfrastructureSectionStoryblok
+    | IpadIframeStoryblok
+    | LegalHeroStoryblok
+    | ListSectionStoryblok
+    | ListsSectionStoryblok
+    | LogoShowcaseStoryblok
+    | MediaTabsSectionStoryblok
+    | MediaWithListSectionStoryblok
+    | MetricsStoryblok
+    | ModerationFeatureCardStoryblok
+    | ModerationFeatureCardsRowStoryblok
+    | ModerationFeaturesStoryblok
+    | ModerationFeaturesSectionStoryblok
+    | NewsletterSectionStoryblok
+    | PathSelectorStoryblok
+    | PathSelectorsStoryblok
+    | PlatformSectionStoryblok
+    | PopupStoryblok
+    | PreFooterStoryblok
+    | PricingBetaHeroStoryblok
+    | PricingCardsStoryblok
+    | PricingHeroStoryblok
+    | PricingHeroEnhancementsStoryblok
+    | PricingHeroQ3Y24Storyblok
+    | PricingHeroQ3Y24CardStoryblok
+    | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroRevampStoryblok
+    | PricingPayAsYouGoHighlightsStoryblok
+    | PricingPlanGrowSegmentStoryblok
+    | PricingTableStoryblok
+    | PricingTableCategoryEnhancedStoryblok
+    | PricingTableEnhancedStoryblok
+    | PricingTableGroupLineRevampStoryblok
+    | PricingTableGroupRevampStoryblok
+    | PricingTableHeaderColumnRevampStoryblok
+    | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
+    | PricingTableRevampStoryblok
+    | PricingTableSectionStoryblok
+    | PricingTitleQ3Y24Storyblok
+    | RelatedBlogsStoryblok
+    | RelatedStoriesSectionStoryblok
+    | ResourcesHeroStoryblok
+    | RichTextSectionStoryblok
+    | SharedServiceCardStoryblok
+    | SidebarSlotStoryblok
+    | SideStaticBannerStoryblok
+    | SocialProofsStoryblok
+    | SolutionsHeroStoryblok
+    | SolutionsSectionStoryblok
+    | StandardHeroStoryblok
+    | SyncedBlockStoryblok
+    | TechnologiesSectionStoryblok
+    | TechnologiesSectionCopyStoryblok
+    | TechnologyHeroStoryblok
+    | TechnologyHeroCopyStoryblok
+    | TemplatesSidebarStoryblok
+    | TestimonialSectionStoryblok
+    | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -1867,6 +1977,7 @@ export interface PricingStoryblok {
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -2372,7 +2483,7 @@ export interface ResourcesHeroStoryblok {
 
 export interface RichTextSectionStoryblok {
   has_sidebar?: boolean;
-  body: RichtextStoryblok;
+  body?: RichtextStoryblok;
   _uid: string;
   component: 'rich-text-section';
   [k: string]: any;
@@ -2691,6 +2802,7 @@ export interface SyncedBlockContentStoryblok {
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -2833,6 +2945,7 @@ export interface TechnologyStoryblok {
     | TemplatesSidebarStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
+    | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
     | TitleMediaSectionStoryblok
@@ -3041,6 +3154,15 @@ export interface TitleBlockStoryblok {
   description?: string;
   _uid: string;
   component: 'title-block';
+  [k: string]: any;
+}
+
+export interface TitleBlockLeftStoryblok {
+  heading?: string;
+  subheading?: string;
+  description?: string;
+  _uid: string;
+  component: 'title-block-left';
   [k: string]: any;
 }
 
