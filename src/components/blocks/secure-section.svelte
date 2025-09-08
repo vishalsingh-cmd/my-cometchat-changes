@@ -6,7 +6,12 @@
   let secure = '/agent_lp_images/grid_card_images/Secure.png';
   let sg = '/agent_lp_images/grid_card_images/small_globe.png';
   let connect = '/agent_lp_images/grid_card_images/connectivity.png';
-  let enterprise = '/agent_lp_images/grid_card_images/3images.png';
+  let enterprise = [
+    '/agent_lp_images/grid_card_images/enterprise/1.png',
+    '/agent_lp_images/grid_card_images/enterprise/2.png',
+    '/agent_lp_images/grid_card_images/enterprise/3.png',
+    '/agent_lp_images/grid_card_images/enterprise/4.png'
+  ];
   let file = '/agent_lp_images/grid_card_images/file-check-icon.png';
   let lock = '/agent_lp_images/grid_card_images/lock.png';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -73,10 +78,14 @@
       <div
         class="relative col-span-2 row-span-3 flex flex-col justify-between gap-4 border border-gray-5 p-6"
       >
-        <div class="font-sans text-[18px] font-[640px] leading-tighter text-gray-12">
+        <!-- <div class="font-sans text-[18px] font-[640px] leading-tighter text-gray-12">
           Enterprise - grade compliance
+        </div> -->
+        <div class="inline-flex flex-wrap content-end items-end justify-center gap-[32px]">
+          {#each enterprise as file}
+            <img src={file} alt="" class="max-w-[130px]" />
+          {/each}
         </div>
-        <img src={enterprise} alt="" class="shrink-0" />
         <SecureDecCircle position="topLeft" className="z-40" />
         <SecureDecCircle position="topRight" className="z-40" />
       </div>
@@ -226,10 +235,14 @@
       </div>
 
       <div class="relative col-span-6 flex items-center justify-between border border-gray-5 p-6">
-        <h3 class="mb-4 self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug">
+        <!-- <h3 class="mb-4 self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug">
           Enterprise <br /> security
-        </h3>
-        <img src={enterprise} class="" alt="" />
+        </h3> -->
+        <div class="inline-flex flex-wrap content-end items-end gap-[32px]">
+          {#each enterprise as file}
+            <img src={file} alt="" class="max-w-[100px]" />
+          {/each}
+        </div>
         <SecureDecCircle position="topLeft" className="z-40" />
       </div>
 
