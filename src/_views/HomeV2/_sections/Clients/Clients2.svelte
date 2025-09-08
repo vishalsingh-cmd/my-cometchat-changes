@@ -159,7 +159,7 @@
 
 <style>
   .marquee-track {
-    animation: marquee 10s linear infinite;
+    animation: marquee 13s linear infinite;
   }
 
   @keyframes marquee {
