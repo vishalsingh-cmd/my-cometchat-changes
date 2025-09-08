@@ -108,13 +108,13 @@
         </div>
 
         <!-- Title -->
-        <div
+        <!-- <div
           class="relative hidden h-0 w-0 items-center justify-center border border-b-0 border-r-0 border-t-0 border-gray-5 px-6 text-[16px] font-semibold leading-tight tracking-[0.08px] text-gray-12 opacity-54 lg:flex lg:h-full lg:w-max"
         >
           {block.tagname}
           <SecureDecCircle position="topLeft" className="z-100" />
           <SecureDecCircle position="bottomLeft" className="z-50" />
-        </div>
+        </div> -->
 
         <!-- Marquee container -->
         <div
@@ -135,7 +135,7 @@
             <!-- Marquee Track -->
             <div class="marquee-track flex items-center gap-8">
               {#if block}
-                {#each [...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
+                {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
                   <img
                     class="h-10 object-contain px-3 grayscale"
                     src={data?.client_img?.filename ?? ''}
@@ -167,7 +167,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-120%);
+      transform: translateX(-92%);
     }
   }
 </style>
