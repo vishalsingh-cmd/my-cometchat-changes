@@ -118,7 +118,7 @@
 
         <!-- Marquee container -->
         <div
-          class="group relative flex h-full w-full items-center border border-b-0 border-l border-t-0 border-gray-5 bg-[#0A0914] lg:border-l-0"
+          class="group relative flex h-full w-full items-center border border-b-0 border-l border-t-0 border-gray-5 bg-[#0A0914]"
         >
           <!-- Marquee row -->
           <div
