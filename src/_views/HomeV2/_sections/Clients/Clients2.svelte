@@ -122,7 +122,7 @@
         >
           <!-- Marquee row -->
           <div
-            class="relative flex h-full w-full items-center justify-center overflow-hidden border-b border-t border-gray-5 lg:border-b-0 lg:border-t-0"
+            class="relative flex h-full max-w-[1100px] items-center justify-center overflow-hidden border-b border-t border-gray-5 lg:border-b-0 lg:border-t-0"
           >
             <!-- Gradient overlays -->
             <div
@@ -159,7 +159,7 @@
 
 <style>
   .marquee-track {
-    animation: marquee 13s linear infinite;
+    animation: marquee 17s linear infinite;
   }
 
   @keyframes marquee {
@@ -167,7 +167,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-92%);
+      transform: translateX(-139%);
     }
   }
 </style>
