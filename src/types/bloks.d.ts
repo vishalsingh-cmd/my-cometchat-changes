@@ -443,6 +443,7 @@ export interface ConnectedStepsStoryblok {
 }
 
 export interface CoreFeatureItemStoryblok {
+  is_top?: boolean;
   heading?: string;
   subheading?: string;
   subheading2?: string;

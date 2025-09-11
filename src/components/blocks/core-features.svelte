@@ -65,11 +65,20 @@
                     <div use:observeFeature={feature.image?.filename ?? ''}>
                       <div class="flex max-w-[548px] flex-col items-start gap-4 self-stretch">
                         <div class="flex flex-col items-start gap-3 self-stretch">
-                          {#if feature.heading}
-                            <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
+                          {#if feature.is_top}
+                            {#if feature.heading}
+                              <h3
+                                class="text-xl font-medium leading-snug tracking-[0.09px] opacity-74"
+                              >
+                                {feature.heading}
+                              </h3>
+                            {/if}
+                          {:else if feature.heading}
+                            <h3 class="z-0 text-2xl font-semibold leading-tighter text-brand-9">
                               {feature.heading}
                             </h3>
                           {/if}
+
                           {#if feature.subheading}
                             <p
                               class="text-sans text-2xl font-semibold leading-snug tracking-[0.09px] text-gray-12"
