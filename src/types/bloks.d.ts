@@ -829,6 +829,7 @@ export interface HeroFormStoryblok {
   title: string;
   description: string;
   form?: HubspotFormStoryblok[];
+  subheading?: RichtextStoryblok;
   _uid: string;
   component: 'hero-form';
   [k: string]: any;

@@ -4,7 +4,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import { hubspotForm } from '$lib/actions/hubspot-form';
-
+  import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   import Background from '$components/hero-form//background.svelte';
   import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
 
@@ -29,6 +29,24 @@
           >
             {block.description}
           </p>
+        {/if}
+
+        {#if block.subheading}
+          {#if typeof block.subheading != 'string' && block.subheading.content}
+            {#each block.subheading.content as content}
+              <p
+                class="max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
+              >
+                {@html resolver.render(content)}
+              </p>
+            {/each}
+          {:else}
+            <p
+              class="max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
+            >
+              {block.description}
+            </p>
+          {/if}
         {/if}
       </div>
 
