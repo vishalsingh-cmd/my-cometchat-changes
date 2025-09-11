@@ -35,7 +35,7 @@
           {#if typeof block.subheading != 'string' && block.subheading.content}
             {#each block.subheading.content as content}
               <p
-                class="max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
+                class="max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74] [&_a]:text-brand-9"
               >
                 {@html resolver.render(content)}
               </p>
@@ -44,7 +44,7 @@
             <p
               class="max-w-[528px] text-xl font-medium leading-snug tracking-wide text-gray-12 opacity-[0.74]"
             >
-              {block.description}
+              {block.subheading}
             </p>
           {/if}
         {/if}
