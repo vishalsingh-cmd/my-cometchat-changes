@@ -20,7 +20,7 @@
         // 'border border-[#FAFAFF] border-opacity-5 rounded-lg',
         // 'bg-[linear-gradient(180deg,_rgba(250,_250,_255,_0.04)_0%,_rgba(250,_250,_255,_0.02)_100%)]',
         'flex flex-col gap-2',
-        'border-b border-gray-5'
+        'border-t border-gray-5'
       ],
       title: [
         'font-sans text-[16px] font-semibold leading-[17px] text-gray-12',
