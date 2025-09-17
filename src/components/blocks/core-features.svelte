@@ -52,13 +52,13 @@
                 {#if block.subtitle}
                   <div class=" pb-2 text-3xl font-semibold leading-tighter">
                     {@html block.subtitle}
-                  </div>
-                {/if}
-                {#if block.gradient_title}
-                  <div
-                    class="bg-gradient-purple bg-clip-text pb-2 text-3xl font-semibold leading-tighter text-transparent"
-                  >
-                    {block.gradient_title}
+                    {#if block.gradient_title}
+                      <span
+                        class="bg-gradient-purple bg-clip-text pb-2 text-3xl font-semibold leading-tighter text-transparent"
+                      >
+                        {block.gradient_title}
+                      </span>
+                    {/if}
                   </div>
                 {/if}
               </div>
