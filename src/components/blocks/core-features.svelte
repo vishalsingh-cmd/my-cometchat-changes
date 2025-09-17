@@ -74,7 +74,7 @@
                               </h3>
                             {/if}
                           {:else if feature.heading}
-                            <h3 class="z-0 text-2xl font-semibold leading-tighter text-brand-9">
+                            <h3 class="z-0 text-xl font-semibold leading-tighter text-brand-9">
                               {feature.heading}
                             </h3>
                           {/if}
