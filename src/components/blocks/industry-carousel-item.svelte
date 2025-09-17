@@ -99,7 +99,7 @@
       >
         <p
           class={cn(
-            ['text-gray-12', 'font-sans font-medium leading-tighter tracking-none opacity-74'],
+            ['text-gray-12', 'font-sans font-semibold leading-tighter tracking-none opacity-74'],
             [' text-xl']
           )}
         >
@@ -113,7 +113,7 @@
         >
           {description}
         </p>
-        <div class="mb-[40px] flex flex-col items-start gap-[12px] self-stretch">
+        <div class="flex flex-col items-start gap-[12px] self-stretch">
           {#each points as point}
             <div class="flex items-start gap-[8px] self-stretch">
               <img src="/agent_lp_images/bullet_icon.png" alt="" class="" />

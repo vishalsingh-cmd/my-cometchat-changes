@@ -25,12 +25,12 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
             <div
-              class="relative flex flex-col justify-between rounded-2xl border border-[#1F1B2E] p-6 lg:h-[640px]"
+              class="relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8 lg:h-[640px]"
             >
               <div class="flex flex-col items-start gap-6">
                 <img src={iconMap[card.icon_key]} alt="Card Icon" class="h-[64px]" />
                 <div>
-                  <h3 class="mb-3 font-sans text-[24px] font-semibold leading-tighter text-gray-12">
+                  <h3 class="mb-3 font-sans text-[24px] font-[640px] leading-tighter text-gray-12">
                     {card.title}
                   </h3>
                   <ul class="flex flex-col items-start gap-3 text-md text-gray-11">

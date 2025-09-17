@@ -125,7 +125,7 @@
                                     class="inline-block"
                                   />
                                   <div
-                                    class="text-xl font-medium leading-snug tracking-[0.09px] opacity-74"
+                                    class="text-lg font-medium leading-snug tracking-[0.09px] opacity-74"
                                   >
                                     {item?.value?.content[0]?.content[0]?.text ?? ''}
                                   </div>

@@ -54,16 +54,20 @@
               <!-- Content -->
               <div class="relative z-10 flex flex-col gap-[24px] lg:gap-0">
                 <div
-                  class="flex translate-y-0 flex-col items-start gap-3 duration-300 group-hover:translate-y-[-210px] lg:gap-0"
+                  class="flex translate-y-0 flex-col items-start gap-3 duration-300 group-hover:translate-y-[-190px] lg:gap-0"
                 >
-                  <h3 class="text-xl font-semibold transition-all duration-300 group-hover:mb-2">
+                  <!-- <div class="flex flex-col items-start gap-3 self"> -->
+                  <h3
+                    class="self-stretch pb-3 font-sans text-xl font-[640px] leading-tighter transition-all duration-300 group-hover:mb-2"
+                  >
                     {card.title}
                   </h3>
                   <p
-                    class="max-h-20 overflow-hidden text-lg font-medium text-gray-11 transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0"
+                    class="max-h-20 overflow-hidden text-lg font-medium leading-snug tracking-[0.09px] text-gray-11 opacity-74 transition-all duration-300 group-hover:max-h-0 group-hover:opacity-0"
                   >
                     {card.description}
                   </p>
+                  <!-- </div> -->
 
                   <!-- Mobile hover points -->
                   <div
@@ -72,7 +76,11 @@
                     {#each card.hover_points ?? [] as point}
                       <div class="pointer-events-none flex items-start gap-2 self-stretch">
                         <img src={bullet_icon} alt="" class="mr-1 flex-none object-contain" />
-                        <div class="text-[16px] leading-snug text-gray-11">{point.text}</div>
+                        <div
+                          class="text-[16px] font-medium leading-snug tracking-[0.08px] text-gray-11"
+                        >
+                          {point.text}
+                        </div>
                       </div>
                     {/each}
                   </div>
@@ -84,7 +92,11 @@
                     {#each card.hover_points ?? [] as point}
                       <div class="pointer-events-none flex items-start gap-2 self-stretch">
                         <img src={bullet_icon} alt="" class="mr-1 flex-none object-contain" />
-                        <div class="text-[16px] leading-snug text-gray-11">{point.text}</div>
+                        <div
+                          class="font-sans text-[16px] leading-snug tracking-[0.08px] text-gray-12 opacity-74"
+                        >
+                          {point.text}
+                        </div>
                       </div>
                     {/each}
                   </div>
@@ -96,7 +108,7 @@
                     {@const { href } = getAnchorFromCmsLink(card.link)}
                     <Link
                       {href}
-                      class="relative z-10 mt-auto text-sm text-brand-9"
+                      class="relative z-10 pt-4 text-lg font-[640px] leading-tight text-brand-9"
                       variant="secondary"
                     >
                       {card.link_text}
