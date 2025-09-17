@@ -66,7 +66,7 @@
                       <p
                         class={cn(
                           paragraph,
-                          'text-xl font-medium leading-snug tracking-wide opacity-74'
+                          'font-bold text-xl leading-snug tracking-wide opacity-74'
                         )}
                       >
                         {@html resolver.render(content)}
