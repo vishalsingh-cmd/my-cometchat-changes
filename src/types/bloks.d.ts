@@ -462,6 +462,7 @@ export interface CoreFeatureItemStoryblok {
 export interface CoreFeaturesStoryblok {
   title?: string;
   subtitle?: string;
+  gradient_title?: string;
   features?: CoreFeatureItemStoryblok[];
   _uid: string;
   component: 'core-features';
@@ -827,7 +828,7 @@ export interface HeaderWithImageStoryblok {
 
 export interface HeroFormStoryblok {
   title: string;
-  description: string;
+  description?: string;
   form?: HubspotFormStoryblok[];
   subheading?: RichtextStoryblok;
   _uid: string;
@@ -1196,6 +1197,7 @@ export interface IndustryStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -1671,6 +1673,7 @@ export interface PageStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -1780,6 +1783,7 @@ export interface PageStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -1994,6 +1998,7 @@ export interface PricingStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -2820,6 +2825,7 @@ export interface SyncedBlockContentStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -2964,6 +2970,7 @@ export interface TechnologyStoryblok {
     | TitleBlockLeftStoryblok
     | TitleFeaturesSectionStoryblok
     | TitleImageSectionStoryblok
+    | TitleImageSectionV2Storyblok
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
@@ -3211,6 +3218,15 @@ export interface TitleImageSectionStoryblok {
   theme: '' | 'light' | 'dark';
   _uid: string;
   component: 'title-image-section';
+  [k: string]: any;
+}
+
+export interface TitleImageSectionV2Storyblok {
+  heading?: string;
+  description?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'title-image-section-v2';
   [k: string]: any;
 }
 

@@ -64,6 +64,7 @@
   import TechnologyHero from './technology-hero.svelte';
   import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
+  import TitleImageSectionV2 from './title-image-section-v2.svelte';
   import TitleSection from './title-section.svelte';
   import VoiceAndVideoCallsHero from './voice-and-video-calls-hero.svelte';
   import WebhooksHero from './webhooks-hero.svelte';
@@ -210,6 +211,7 @@
     'title-block-left': TitleBlockLeft,
     'title-features-section': TitleFeaturesSection,
     'title-image-section': TitleImageSection,
+    'title-image-section-v2': TitleImageSectionV2,
     'title-media-section': TitleMediaSection,
     'title-section': TitleSection,
     'title-and-description': TitleAndDescription,

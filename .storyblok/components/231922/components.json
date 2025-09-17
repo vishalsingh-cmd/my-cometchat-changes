@@ -1839,7 +1839,7 @@
     "display_name": "Core Features",
     "description": "",
     "created_at": "2025-08-16T16:25:46.234Z",
-    "updated_at": "2025-08-17T05:51:18.787Z",
+    "updated_at": "2025-09-17T07:09:41.263Z",
     "id": 80576291781762,
     "schema": {
       "title": {
@@ -1852,9 +1852,14 @@
         "pos": 1,
         "id": "7FK6QaSnS2ujHP8J8TcaGg"
       },
+      "gradient_title": {
+        "type": "text",
+        "pos": 2,
+        "id": "It3uRTbDSPeT48LhK0bHlA"
+      },
       "features": {
         "type": "bloks",
-        "pos": 2,
+        "pos": 3,
         "id": "xfw4CJdDQceImyJUv9XHtQ",
         "minimum": 1,
         "required": false,
@@ -3992,7 +3997,7 @@
     "display_name": null,
     "description": null,
     "created_at": "2023-10-10T18:31:56.991Z",
-    "updated_at": "2025-09-11T16:15:47.774Z",
+    "updated_at": "2025-09-11T16:55:37.957Z",
     "id": 4699166,
     "schema": {
       "title": {
@@ -4004,7 +4009,7 @@
       "description": {
         "type": "text",
         "pos": 1,
-        "required": true,
+        "required": false,
         "id": "DopCKvtYSjW_IfZ6-r-kfQ"
       },
       "form": {
@@ -4240,7 +4245,7 @@
     "display_name": "Home Banner v2",
     "description": null,
     "created_at": "2025-08-19T10:28:19.815Z",
-    "updated_at": "2025-08-19T10:30:19.719Z",
+    "updated_at": "2025-09-15T07:46:06.613Z",
     "id": 81550130447714,
     "schema": {
       "beforeTitle": {
@@ -4265,7 +4270,7 @@
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["button-link"],
-        "minimum": 1,
+        "minimum": 0,
         "maximum": 2,
         "display_name": "Links"
       }
@@ -13397,6 +13402,46 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "title-image-section",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "title-image-section-v2",
+    "display_name": null,
+    "description": "Title Image Section 2",
+    "created_at": "2025-09-17T11:47:40.093Z",
+    "updated_at": "2025-09-17T11:48:18.329Z",
+    "id": 91832566148373,
+    "schema": {
+      "heading": {
+        "type": "text",
+        "pos": 0,
+        "id": "3cnIBI18RU2fbF0PFJSs1w"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 1,
+        "id": "nGQlBEMfR5q8hwUcRIbK6A"
+      },
+      "image": {
+        "type": "asset",
+        "pos": 2,
+        "id": "BATnTFy4RhOfLEvY4RVFlQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "title-image-section-v2",
     "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
