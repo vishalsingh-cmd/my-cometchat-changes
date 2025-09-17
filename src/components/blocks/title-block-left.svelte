@@ -18,9 +18,9 @@
           {/if}
 
           {#if block.subheading}
-            <h1 class="font-sans text-3xl font-semibold leading-tight tracking-none text-gray-12">
+            <h2 class="font-sans text-3xl font-semibold leading-tight tracking-none text-gray-12">
               {block.subheading}
-            </h1>
+            </h2>
           {/if}
         </div>
 

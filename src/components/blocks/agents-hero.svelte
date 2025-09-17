@@ -22,11 +22,11 @@
               <div class="flex h-[48px] items-center justify-center">
                 <img src="/agent_lp_images/Profile.png" alt="icon" class="" />
                 {#if block.badge_text}
-                  <div
+                  <h1
                     class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-[18px] font-semibold leading-snug tracking-none text-transparent"
                   >
                     {block.badge_text}
-                  </div>
+                  </h1>
                 {/if}
               </div>
 
