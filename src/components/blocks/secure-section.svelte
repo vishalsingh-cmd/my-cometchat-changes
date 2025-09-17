@@ -154,26 +154,30 @@
       </div>
     </div>
 
+    <!-- desktop view -->
+
     <div
       class="grid-rows-12 relative hidden max-w-[1312px] grid-cols-2 text-sm font-medium leading-tight text-white lg:grid lg:grid-cols-[repeat(14,1fr)] lg:grid-rows-4"
     >
       <div class="col-span-1 row-span-4 border-b-0 border-t-0 border-gray-5" />
 
-      <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5">
+      <div class="relative col-span-3 row-span-3 border border-r-0 border-t-0 border-gray-5">
         <h3
           class="relative left-[24px] top-[24px] self-stretch font-sans text-[22px] font-[640px] leading-snug"
         >
           Seamless Multi-tenant support
         </h3>
         <!-- <div class="mt-6 flex h-32 w-full items-center justify-center rounded-md bg-[#]">#</div> -->
-        <img src={data_enc} alt="" srcset="" class="mx-auto" />
+        <img src={data_enc} alt="" srcset="" class="absolute bottom-0 left-1/2 -translate-x-1/2" />
         <SecureDecCircle position="topLeft" className="z-40" />
         <SecureDecCircle position="topRight" className="z-40" />
         <SecureDecCircle position="bottomLeft" />
         <SecureDecCircle position="bottomRight" />
       </div>
 
-      <div class="relative col-span-3 row-span-2 border border-t-0 border-gray-5">
+      <div
+        class="relative col-span-3 row-span-2 border border-b-0 border-l border-r-0 border-t-0 border-gray-5"
+      >
         <h3
           class="relative left-[24px] top-[24px] w-[227px] self-stretch font-sans text-[22px] text-xl font-[640px] leading-snug"
         >
@@ -199,7 +203,7 @@
         <SecureDecCircle position="bottomRight" className="z-40" />
       </div>
 
-      <div class="relative col-span-3 row-span-3 border border-t-0 border-gray-5">
+      <div class="relative col-span-3 row-span-3 border border-l-0 border-t-0 border-gray-5">
         <div class="self-s relative left-[24px] top-[24px] flex flex-col items-start gap-[12px]">
           <h3 class="self-stretch font-sans text-[22px] text-xl font-[640px] leading-snug">
             Edge network
@@ -220,7 +224,7 @@
       <div class="col-span-1 row-span-4 border-b-0 border-t-0 border-gray-5" />
 
       <div
-        class="relative col-span-3 row-span-1 flex items-center justify-center border border-gray-5"
+        class="relative col-span-3 row-span-1 flex items-center justify-center border-l border-r border-gray-5"
       >
         <div>
           <div class="flex w-[204px] flex-col items-start gap-2 self-stretch">
@@ -246,7 +250,7 @@
         <SecureDecCircle position="topLeft" className="z-40" />
       </div>
 
-      <div class="relative col-span-4 flex border border-b-0 border-gray-5">
+      <div class="relative col-span-4 flex border border-b-0 border-t-0 border-gray-5">
         <h3 class="relative left-[24px] top-[46px] w-[227px] text-lg font-[640px]">
           Message auditing <br /> and <br /> policy enforcement
         </h3>
@@ -256,7 +260,9 @@
         <SecureDecCircle position="bottomRight" className="z-40" />
       </div>
 
-      <div class="relative col-span-4 flex flex-col border border-b-0 border-gray-5">
+      <div
+        class="relative col-span-4 flex flex-col border border-b-0 border-l-0 border-t-0 border-gray-5"
+      >
         <h3
           class="relative left-[24px] top-[46px] self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug"
         >
@@ -268,7 +274,7 @@
         <SecureDecCircle position="bottomRight" className="z-40" />
       </div>
 
-      <div class="relative col-span-4 border border-b-0 border-gray-5">
+      <div class="relative col-span-4 border border-b-0 border-l-0 border-t-0 border-gray-5">
         <div class="relative left-[73px] top-[39px] flex flex-col items-start gap-[8px]">
           <h3 class="bg-gradient-purple bg-clip-text text-3xl font-[640px] text-transparent">
             5B+ users
@@ -280,13 +286,13 @@
 
       <!-- Top line -->
       <div
-        class="absolute top-0 z-10 h-[2px] w-full bg-[linear-gradient(90deg,rgba(250,250,255,0)_0%,rgba(250,250,255,1)_5%,rgba(250,250,255,1)_95%,rgba(250,250,255,0)_100%)]
+        class="absolute top-0 z-10 h-[1px] w-full bg-[linear-gradient(90deg,rgba(250,250,255,0)_0%,rgba(250,250,255,1)_5%,rgba(250,250,255,1)_95%,rgba(250,250,255,0)_100%)]
          opacity-10"
       />
 
       <!-- Bottom line -->
       <div
-        class="absolute bottom-0 z-10 h-[2px] w-full bg-[linear-gradient(90deg,rgba(250,250,255,0)_0%,rgba(250,250,255,1)_5%,rgba(250,250,255,1)_95%,rgba(250,250,255,0)_100%)]
+        class="absolute bottom-0 z-10 h-[1px] w-full bg-[linear-gradient(90deg,rgba(250,250,255,0)_0%,rgba(250,250,255,1)_5%,rgba(250,250,255,1)_95%,rgba(250,250,255,0)_100%)]
          opacity-10"
       />
     </div>

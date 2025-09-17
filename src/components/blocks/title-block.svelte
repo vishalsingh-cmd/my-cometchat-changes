@@ -9,7 +9,7 @@
 {#if block}
   <Section>
     <Container pyEnabled={false}>
-      <section class="flex flex-col items-center pt-[100px] lg:px-[64px]">
+      <section class="flex flex-col items-center pt-[48px] lg:px-[64px]">
         <div class="flex max-w-[858px] flex-col items-center gap-[16px]">
           <!-- Small heading -->
           <div class="flex flex-col items-center gap-[12px]">

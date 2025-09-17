@@ -16,7 +16,7 @@
       <img
         src="/agent_lp_images/cometchat_logo.png"
         alt="CometChat Logo"
-        class=" absolute top-[0px] -translate-x-10"
+        class=" absolute top-[40px] -translate-x-10"
       />
 
       <!-- Ellipse background -->

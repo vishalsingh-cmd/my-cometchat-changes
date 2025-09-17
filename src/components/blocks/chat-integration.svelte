@@ -24,12 +24,12 @@
       <div
         class="relative mb-20 grid min-h-[325px] grid-cols-1 gap-0 lg:grid-cols-[0.3fr_1fr_1fr_1fr_0.3fr]"
       >
-        <div class="border-b-0 border-t-0 border-gray-5" />
+        <div class="border-b-0 border-r border-t-0 border-gray-5" />
 
         {#each block.cards ?? [] as card}
           <div class="group relative">
             <div
-              class="relative z-20 flex h-full min-h-[261px] flex-shrink-0 flex-col items-start justify-between gap-[24px] overflow-hidden border border-b border-t border-gray-5 p-6 text-white transition-all duration-500 hover:shadow-xl lg:gap-0 lg:border-b-0 lg:border-t-0"
+              class="relative z-20 flex h-full min-h-[261px] flex-shrink-0 flex-col items-start justify-between gap-[24px] overflow-hidden border border-b border-l border-r border-t border-gray-5 p-6 text-white transition-all duration-500 hover:shadow-xl lg:gap-0 lg:border-b-0 lg:border-l-0 lg:border-t-0"
             >
               <!-- Gradient background -->
               <div class="absolute inset-0 hidden overflow-hidden lg:block">
@@ -126,7 +126,6 @@
           </div>
         {/each}
 
-        <!-- Top & Bottom Gradient Lines -->
         <div
           class="absolute top-0 z-30 hidden h-[2px] w-[1312px] lg:block"
           style="background: linear-gradient(90deg, rgba(250,250,255,0) 0%, rgba(250,250,255,1) 5%, rgba(250,250,255,1) 95%, rgba(250,250,255,0) 100%); opacity: 0.1;"
@@ -136,7 +135,7 @@
           style="background: linear-gradient(90deg, rgba(250,250,255,0) 0%, rgba(250,250,255,1) 5%, rgba(250,250,255,1) 95%, rgba(250,250,255,0) 100%); opacity: 0.1;"
         />
 
-        <div class="border-b-0 border-t-0 border-gray-5" />
+        <div class=" border-l-0 border-t-0 border-gray-5" />
       </div>
     </Container>
   </Section>
