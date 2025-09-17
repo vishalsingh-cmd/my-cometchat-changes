@@ -10,7 +10,7 @@
 <Section>
   <Container pyEnabled={false}>
     <div
-      class="relative my-[80px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
+      class="relative my-[40px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
     >
       <!-- CometChat logo -->
       <img

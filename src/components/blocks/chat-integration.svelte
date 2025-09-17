@@ -127,11 +127,11 @@
         {/each}
 
         <div
-          class="absolute top-0 z-30 hidden h-[2px] w-[1312px] lg:block"
+          class="absolute top-0 z-30 hidden h-[1px] w-[1312px] lg:block"
           style="background: linear-gradient(90deg, rgba(250,250,255,0) 0%, rgba(250,250,255,1) 5%, rgba(250,250,255,1) 95%, rgba(250,250,255,0) 100%); opacity: 0.1;"
         />
         <div
-          class="absolute bottom-0 z-30 hidden h-[2px] w-[1312px] lg:block"
+          class="absolute bottom-0 z-30 hidden h-[1px] w-[1312px] lg:block"
           style="background: linear-gradient(90deg, rgba(250,250,255,0) 0%, rgba(250,250,255,1) 5%, rgba(250,250,255,1) 95%, rgba(250,250,255,0) 100%); opacity: 0.1;"
         />
 
