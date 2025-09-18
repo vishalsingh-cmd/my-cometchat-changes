@@ -238,13 +238,13 @@
         <SecureDecCircle position="bottomRight" className="z-40" />
       </div>
 
-      <div class="relative col-span-6 flex items-center justify-between border border-gray-5 p-6">
+      <div class="relative col-span-6 border border-gray-5 p-6">
         <!-- <h3 class="mb-4 self-stretch font-sans text-[22px] text-lg font-[640px] leading-snug">
           Enterprise <br /> security
         </h3> -->
-        <div class="inline-flex flex-wrap content-end items-end gap-[32px]">
+        <div class="flex flex-wrap items-center justify-center gap-[32px]">
           {#each enterprise as file}
-            <img src={file} alt="" class="max-w-[100px]" />
+            <img src={file} alt="" class="max-w-[80px]" />
           {/each}
         </div>
         <SecureDecCircle position="topLeft" className="z-40" />
