@@ -124,8 +124,10 @@
         per_page: RESULTS_PER_PAGE,
         page: currentPage,
         search_term: $debouncedSearch,
-        sort_by: 'created_at:desc'
+        sort_by: 'content.created_at:desc'
       });
+
+      // console.log('Customer Story Res:', res.data.stories);
 
       return { stories: res.data.stories, total: res.total };
     }
@@ -198,6 +200,7 @@
 
       <!-- Success fetch -->
       {#if $getDirectoryDataWithFilters.isSuccess && $getDirectoryDataWithFilters.data.stories.length > 0}
+        <!-- {console.log('Stories:', $getDirectoryDataWithFilters.data.stories)} -->
         {#each $getDirectoryDataWithFilters.data.stories as item}
           {@const parsedItem = parseItem(item, 'customer-story')}
           {@const { image, title, tags, link, author, date } = parsedItem}
