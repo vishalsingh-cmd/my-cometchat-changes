@@ -20,7 +20,7 @@
             <div
               class={`relative flex min-h-[350px] ${index == 0 || index == 1 ? 'border-t-0' : ''} ${
                 index == 2 || index == 3 || index == 4 ? 'border-b-0' : ''
-              } flex-col items-start justify-between border border-b-0 border-l border-gray-5 p-8 col-span-${
+              } flex-col items-start gap-[80px] border border-b-0 border-l border-gray-5 p-8 col-span-${
                 card.colSpan || ''
               } row-span-${card.rowSpan || ''}`}
             >
