@@ -91,7 +91,7 @@
       {#if block.form && block.form[0]}
         {@const { form_title, api_form_id, api_region, api_portal_id } = block.form[0]}
         <div
-          class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-gray-12/8 p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
+          class="relative z-20 w-full rounded-3xl border border-gray-12/[0.04] bg-[rgba(250,250,255,0.04)] p-5 backdrop-blur-[50px] lg:w-[528px] lg:p-8"
         >
           <h2 class="mb-[18px] text-2xl/tighter font-semibold text-gray-12 lg:mb-[26px]">
             {form_title}
@@ -138,7 +138,7 @@
     }
 
     & .hs-form-field > * {
-      margin: 6px 0 !important;
+      margin: 16px 0 !important;
     }
 
     & fieldset {
@@ -149,15 +149,26 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+
+      & .legal-consent-container {
+        margin-top: 24px !important;
+
+        & .input {
+          border: none !important;
+          background-color: transparent !important;
+        }
+      }
     }
 
     & .form-columns-2 {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      gap: 16px;
       width: 100%;
     }
 
     & .form-columns-2 .hs-form-field {
+      flex: 1;
       width: 100% !important;
     }
 
@@ -300,6 +311,10 @@
       display: grid !important;
       grid-template-columns: auto 1fr;
       align-items: center;
+
+      & a {
+        color: hsl(var(--color-brand-9)) !important;
+      }
 
       & .hs-input {
         width: 16px !important;
