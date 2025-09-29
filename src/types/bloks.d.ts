@@ -836,6 +836,16 @@ export interface HeroFormStoryblok {
   [k: string]: any;
 }
 
+export interface HeroFormV2Storyblok {
+  title: string;
+  description?: string;
+  form?: HubspotFormStoryblok[];
+  subheading?: RichtextStoryblok;
+  _uid: string;
+  component: 'hero-form-v2';
+  [k: string]: any;
+}
+
 export interface HeroHeaderStoryblok {
   title: RichtextStoryblok;
   description?: RichtextStoryblok;
@@ -1125,6 +1135,7 @@ export interface IndustryStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1601,6 +1612,7 @@ export interface PageStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1711,6 +1723,7 @@ export interface PageStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1926,6 +1939,7 @@ export interface PricingStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2753,6 +2767,7 @@ export interface SyncedBlockContentStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2898,6 +2913,7 @@ export interface TechnologyStoryblok {
     | FeaturesWithNavbarSectionStoryblok
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
+    | HeroFormV2Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok

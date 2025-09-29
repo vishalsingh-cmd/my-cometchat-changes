@@ -4058,6 +4058,71 @@
     "metadata": {}
   },
   {
+    "name": "hero-form-v2",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-09-29T15:17:26.766Z",
+    "updated_at": "2025-09-29T15:17:59.890Z",
+    "id": 96130853971985,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "required": true,
+        "id": "IDyWtgjxRiO-jBTM9SUOVw"
+      },
+      "description": {
+        "type": "text",
+        "pos": 1,
+        "required": false,
+        "id": "DopCKvtYSjW_IfZ6-r-kfQ"
+      },
+      "form": {
+        "type": "bloks",
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "60c98516-8550-4441-b05d-ab8844ea8efa",
+            "name": "partners",
+            "value": "partners"
+          },
+          {
+            "_uid": "f182a6ee-4833-4955-8d53-7d1f887140f6",
+            "value": "contact",
+            "name": "contact"
+          }
+        ],
+        "default_value": "",
+        "pos": 3,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["hubspot-form"],
+        "maximum": 1,
+        "id": "LwZ8ThjXRImT8nRzgjnxkA"
+      },
+      "subheading": {
+        "type": "richtext",
+        "pos": 3,
+        "id": "jAjiBJVFTPe20bifgBra6g"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "hero-form-v2",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "hero-header",
     "display_name": null,
     "description": null,
