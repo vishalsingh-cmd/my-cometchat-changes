@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { HeroFormStoryV2blok } from '$types/bloks';
+  import type { HeroFormV2Storyblok } from '$types/bloks';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
@@ -9,7 +9,7 @@
   import FormSkeleton from '$components/skeletons/form-skeleton.svelte';
   import Icon from '../icon/icon.svelte';
 
-  export let block: HeroFormStoryV2blok;
+  export let block: HeroFormV2Storyblok;
   let isLoading = true;
 </script>
 

@@ -4062,7 +4062,7 @@
     "display_name": null,
     "description": null,
     "created_at": "2025-09-29T15:17:26.766Z",
-    "updated_at": "2025-09-29T15:17:59.890Z",
+    "updated_at": "2025-09-29T16:22:13.053Z",
     "id": 96130853971985,
     "schema": {
       "title": {
@@ -4076,6 +4076,19 @@
         "pos": 1,
         "required": false,
         "id": "DopCKvtYSjW_IfZ6-r-kfQ"
+      },
+      "subheading": {
+        "type": "richtext",
+        "pos": 2,
+        "id": "jAjiBJVFTPe20bifgBra6g"
+      },
+      "points": {
+        "type": "bloks",
+        "pos": 3,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["title-and-description"],
+        "id": "rGTfWelDS8iIS7J73t7bdg"
       },
       "form": {
         "type": "bloks",
@@ -4093,17 +4106,12 @@
           }
         ],
         "default_value": "",
-        "pos": 3,
+        "pos": 4,
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["hubspot-form"],
         "maximum": 1,
         "id": "LwZ8ThjXRImT8nRzgjnxkA"
-      },
-      "subheading": {
-        "type": "richtext",
-        "pos": 3,
-        "id": "jAjiBJVFTPe20bifgBra6g"
       }
     },
     "image": null,
