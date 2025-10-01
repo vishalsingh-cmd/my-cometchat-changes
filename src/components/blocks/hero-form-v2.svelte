@@ -302,6 +302,11 @@
       display: flex;
       align-self: flex-start;
       margin-top: 24px !important;
+      cursor: pointer;
+    }
+
+    & .hs_submit .hs-button:hover {
+      cursor: pointer;
     }
 
     & .hs-button {
