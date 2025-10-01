@@ -128,7 +128,6 @@
 <style lang="postcss">
   section :global(form) {
     max-width: 100% !important;
-    height: 500px !important;
     display: flex;
     align-items: flex-start !important;
     flex-direction: column;
