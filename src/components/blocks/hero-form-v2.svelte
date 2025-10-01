@@ -128,13 +128,21 @@
 <style lang="postcss">
   section :global(form) {
     max-width: 100% !important;
+    height: 500px !important;
     display: flex;
     align-items: flex-start !important;
     flex-direction: column;
     gap: 0px !important;
 
+    & iframe {
+      display: none !important;
+      height: 0 !important;
+      width: 0 !important;
+      overflow: hidden !important;
+    }
+
     & .hs-form-field {
-      margin-bottom: 10px !important;
+      margin-bottom: 16px !important;
     }
 
     & .hs-form-field > * {
@@ -151,7 +159,10 @@
       width: 100%;
 
       & .legal-consent-container {
-        margin-top: 24px !important;
+        /* margin-top: 24px !important; */
+        & .hs-form-field {
+          margin-bottom: 0px !important;
+        }
 
         & .input {
           border: none !important;
@@ -181,16 +192,17 @@
       margin-bottom: 0px !important;
     }
 
-    & label {
+    /* & label {
       display: block !important;
       font-size: 16px;
       font-style: normal;
       font-weight: 640;
-      line-height: 112%; /* 17.92px */
+      line-height: 112%; 
       letter-spacing: 0.08px;
       opacity: 0.74;
       color: var(--color-gray-12) !important;
-    }
+    } 
+    */
 
     & .hs-error-msgs {
       margin-top: 16px;
@@ -296,7 +308,7 @@
     & .hs-button {
       padding: 12px 16px;
 
-      background-color: hsl(var(--color-brand-9));
+      background-color: #6852d6;
       border-radius: 12px;
 
       font-size: 14px;
