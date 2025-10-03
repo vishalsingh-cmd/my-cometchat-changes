@@ -20,7 +20,6 @@
     {#if block.background?.filename}
       <video class="absolute top-0 z-0 h-full w-full object-cover" autoplay muted loop playsinline>
         <source src={block.background.filename} type="video/mp4" />
-        Your browser does not support the video tag.
       </video>
     {/if}
   </section>

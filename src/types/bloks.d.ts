@@ -502,6 +502,13 @@ export interface CustomersHeroAnimatedStoryblok {
   [k: string]: any;
 }
 
+export interface CustomerStatsStoryblok {
+  cards?: ValueAndDescriptionStoryblok[];
+  _uid: string;
+  component: 'customer-stats';
+  [k: string]: any;
+}
+
 export interface CustomerStoriesSectionStoryblok {
   title: TitleStoryblok[];
   testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
@@ -1132,6 +1139,7 @@ export interface IndustryStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1223,6 +1231,7 @@ export interface IndustryStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -1610,6 +1619,7 @@ export interface PageStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1701,6 +1711,7 @@ export interface PageStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -1722,6 +1733,7 @@ export interface PageStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1813,6 +1825,7 @@ export interface PageStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -1939,6 +1952,7 @@ export interface PricingStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -2030,6 +2044,7 @@ export interface PricingStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -2768,6 +2783,7 @@ export interface SyncedBlockContentStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -2859,6 +2875,7 @@ export interface SyncedBlockContentStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -2915,6 +2932,7 @@ export interface TechnologyStoryblok {
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
+    | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -3006,6 +3024,7 @@ export interface TechnologyStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
     | WebhooksSectionStoryblok
@@ -3470,6 +3489,14 @@ export interface TypewriterTextStoryblok {
   entries: TextStoryblok[];
   _uid: string;
   component: 'typewriter-text';
+  [k: string]: any;
+}
+
+export interface ValueAndDescriptionStoryblok {
+  value?: string;
+  description?: string;
+  _uid: string;
+  component: 'value-and-description';
   [k: string]: any;
 }
 
