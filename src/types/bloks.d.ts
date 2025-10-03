@@ -493,6 +493,15 @@ export interface CustomersHeroStoryblok {
   [k: string]: any;
 }
 
+export interface CustomersHeroAnimatedStoryblok {
+  title1: string;
+  title2?: string;
+  background?: AssetStoryblok;
+  _uid: string;
+  component: 'customers-hero-animated';
+  [k: string]: any;
+}
+
 export interface CustomerStoriesSectionStoryblok {
   title: TitleStoryblok[];
   testimonials: (StoryblokStory<TestimonialStoryblok> | string)[];
@@ -1122,6 +1131,7 @@ export interface IndustryStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1599,6 +1609,7 @@ export interface PageStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1710,6 +1721,7 @@ export interface PageStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -1926,6 +1938,7 @@ export interface PricingStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -2754,6 +2767,7 @@ export interface SyncedBlockContentStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
@@ -2900,6 +2914,7 @@ export interface TechnologyStoryblok {
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
     | CustomersHeroStoryblok
+    | CustomersHeroAnimatedStoryblok
     | CustomerStoriesSectionStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok

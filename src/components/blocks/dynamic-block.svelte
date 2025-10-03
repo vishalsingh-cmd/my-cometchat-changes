@@ -10,6 +10,7 @@
   import CometCreditsSection from './comet-credits-section.svelte';
   import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
+  import CustomerHeroAnimated from './customer-hero-animated.svelte';
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
@@ -131,6 +132,7 @@
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
     'customers-hero': CustomersHero,
+    'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
     'center-static-banner-v03': CenterStaticBannerV03,
