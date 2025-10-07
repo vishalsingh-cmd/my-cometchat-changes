@@ -18,7 +18,7 @@
 
 <div
   class={cn(
-    'container mx-auto flex w-full flex-row gap-4 overflow-auto break-all px-container md:gap-6',
+    'container mx-auto flex w-full flex-row gap-4 overflow-auto break-all bg-[#0A0914] px-container md:gap-6',
     className
   )}
   role="tablist"

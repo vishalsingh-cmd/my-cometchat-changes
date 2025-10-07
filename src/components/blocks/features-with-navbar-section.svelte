@@ -49,7 +49,7 @@
   <section
     use:storyblokEditable={block}
     data-theme="light"
-    class="bg-gray-1 text-gray-12"
+    class="bg-transparent text-gray-12"
     style="color-scheme: light;"
   >
     <div class="mx-auto max-w-content">

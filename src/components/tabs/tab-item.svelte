@@ -13,9 +13,9 @@
   type="button"
   role="tab"
   class={cn(
-    'relative inline-block h-[51px] min-w-fit cursor-pointer overflow-hidden break-keep text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100 md:h-[71px]',
+    'relative inline-block h-[51px] min-w-fit cursor-pointer overflow-hidden break-keep text-xl/tighter font-semibold text-white/54 transition-colors hover:text-white/100 md:h-[71px]',
     isActive &&
-      'text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
+      'text-white/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
   )}
 >
   <h3>{label}</h3>
