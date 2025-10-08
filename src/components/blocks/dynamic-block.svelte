@@ -3,6 +3,7 @@
   import type { ComponentType } from 'svelte';
 
   import AgentsHero from './agents-hero.svelte';
+  import AgentsHeroV2 from './agents-hero-v2.svelte';
   import AwardsSection from './awards-section.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
@@ -10,6 +11,8 @@
   import CometCreditsSection from './comet-credits-section.svelte';
   import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
+  import CustomerHeroAnimated from './customer-hero-animated.svelte';
+  import CustomerStats from './customer-stats.svelte';
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
   import DevelopersSection from './developers-section.svelte';
@@ -120,6 +123,7 @@
   const map: Record<string, ComponentType> = {
     'core-features': CoreFeatures,
     'agents-hero': AgentsHero,
+    'agents-hero-v2': AgentsHeroV2,
     'awards-section': AwardsSection,
 
     'chat-and-messaging-hero': ChatAndMessagingHero,
@@ -128,9 +132,11 @@
     'comet-credits-section': CometCreditsSection,
     complex_roller: ComplexRoller,
     'core-features-pricing-section': CoreFeaturesPricingSection,
+    'customer-stats': CustomerStats,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
     'customers-hero': CustomersHero,
+    'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
     'center-static-banner-v03': CenterStaticBannerV03,

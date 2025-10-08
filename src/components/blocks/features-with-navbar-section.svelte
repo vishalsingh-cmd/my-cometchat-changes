@@ -49,7 +49,7 @@
   <section
     use:storyblokEditable={block}
     data-theme="light"
-    class="bg-gray-1 text-gray-12"
+    class="bg-transparent text-gray-12"
     style="color-scheme: light;"
   >
     <div class="mx-auto max-w-content">
@@ -84,6 +84,7 @@
 
         <Sticky translateOnDesktop class="hidden border-b border-gray-12/8 lg:block">
           <Tabs
+            navBgTheme={block.nav_theme}
             options={parsedItems}
             activeTab={selectedItemIndex}
             on:optionSelect={onOptionSelect}

@@ -5,6 +5,7 @@
   export let id: number;
   export let label: string;
   export let isActive: boolean;
+  export let navBgTheme: 'light' | 'dark' = 'dark';
 </script>
 
 <button
@@ -13,9 +14,16 @@
   type="button"
   role="tab"
   class={cn(
-    'relative inline-block h-[51px] min-w-fit cursor-pointer overflow-hidden break-keep text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100 md:h-[71px]',
+    `relative inline-block h-[51px] min-w-fit cursor-pointer overflow-hidden break-keep text-xl/tighter font-semibold ${
+      navBgTheme == 'dark'
+        ? 'text-white/80 hover:text-white/100'
+        : 'text-brand-12/54 hover:text-brand-12/100'
+    }  transition-colors
+     md:h-[71px]`,
     isActive &&
-      'text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
+      `${
+        navBgTheme == 'dark' ? 'text-white/100' : 'text-brand-12'
+      } after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8`
   )}
 >
   <h3>{label}</h3>
