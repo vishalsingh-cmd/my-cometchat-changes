@@ -42,7 +42,7 @@
           on:click={onClick}
           class="flex w-full justify-between border-t border-solid border-gray-12/8 pb-4 pt-5"
         >
-          <p class="text-lg font-[640px] leading-tight text-gray-11">{panel.title}</p>
+          <p class="text-lg font-semibold leading-tight">{panel.title}</p>
           <Icon
             icon="chevron-up"
             size="xs"

@@ -14,7 +14,7 @@
   <section
     use:storyblokEditable={block}
     data-theme="light"
-    class="bg-transparent pt-12 text-gray-12 md:pt-20"
+    class="bg-gray-1 pt-12 text-gray-12 md:pt-20"
   >
     <div class="container mx-auto px-container">
       <div id="articles" class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
