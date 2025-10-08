@@ -84,6 +84,7 @@
 
         <Sticky translateOnDesktop class="hidden border-b border-gray-12/8 lg:block">
           <Tabs
+            navBgTheme={block.nav_theme}
             options={parsedItems}
             activeTab={selectedItemIndex}
             on:optionSelect={onOptionSelect}
