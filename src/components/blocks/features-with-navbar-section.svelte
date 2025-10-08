@@ -52,7 +52,7 @@
     class="bg-transparent text-gray-12"
     style="color-scheme: light;"
   >
-    <div class="mx-auto max-w-content">
+    <div class="max-w-screen mx-auto">
       {#if block.header && block.header[0]}
         <section
           use:storyblokEditable={block}
@@ -82,7 +82,7 @@
           label: item.title[0].label
         }))}
 
-        <Sticky translateOnDesktop class="hidden border-b border-gray-12/8 lg:block">
+        <Sticky translateOnDesktop class="hidden border-b border-gray-5 lg:block">
           <Tabs
             navBgTheme={block.nav_theme}
             options={parsedItems}
