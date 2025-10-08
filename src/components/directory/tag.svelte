@@ -33,7 +33,9 @@
     'hover:bg-brand-10/[0.12] hover:text-brand-10',
     'outline-4 outline-brand-9/0',
     'focus-visible:bg-brand-10/[0.12] focus-visible:text-brand-10 focus-visible:outline-brand-9/30',
-    isTagSelected ? 'bg-brand-10/[0.12] pr-2 text-brand-10' : 'bg-gray-11/[0.06] text-gray-12/74'
+    isTagSelected
+      ? 'bg-brand-10/[0.12] pr-2 text-brand-10'
+      : 'bg-gray-11/[0.06] text-white opacity-74'
   )}
   on:click={() => {
     dispatch('selectTag', { i: tag.value, j: panelType });

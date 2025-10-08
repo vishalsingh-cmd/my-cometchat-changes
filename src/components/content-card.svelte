@@ -47,17 +47,17 @@
     {/if}
     {#if title}
       <h3
-        class="smooth mb-2.5 text-xl leading-tighter opacity-[0.84] transition-all group-hover:opacity-100 md:mb-3"
+        class="smooth mb-2.5 text-xl leading-tighter text-white opacity-[0.84] transition-all group-hover:opacity-100 md:mb-3"
       >
         {title}
       </h3>
     {/if}
     {#if author && date}
       <div
-        class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
+        class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-white opacity-54 group-hover:opacity-64"
       >
         <span aria-label={string('a11y.author')}>{author}</span>
-        <span class="h-1 w-1 rounded-full bg-gray-12" />
+        <span class="h-1 w-1 rounded-full bg-white" />
         <span aria-label={string('a11y.published')}>{date}</span>
       </div>
     {/if}
