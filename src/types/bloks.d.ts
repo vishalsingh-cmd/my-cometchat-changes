@@ -103,6 +103,23 @@ export interface AgentsHeroStoryblok {
   [k: string]: any;
 }
 
+export interface AgentsHeroV2Storyblok {
+  badge_text?: string;
+  gradient_title?: string;
+  heading?: string;
+  description?: string;
+  description_2?: string;
+  description_3?: string;
+  primary_button_text?: string;
+  primary_button_link?: MultilinkStoryblok;
+  secondary_button_text?: string;
+  secondary_button_link?: MultilinkStoryblok;
+  hero_image?: AssetStoryblok;
+  _uid: string;
+  component: 'agents-hero-v2';
+  [k: string]: any;
+}
+
 export interface AnimatedBannerBoxStoryblok {
   label?: string;
   icon?: AssetStoryblok;
@@ -188,7 +205,6 @@ export interface BlogComparisonTableStoryblok {
 
 export interface BlogPostStoryblok {
   cover?: AssetStoryblok;
-  sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   author?: StoryblokStory<AuthorStoryblok> | string;
   category:
     | ''
@@ -201,8 +217,10 @@ export interface BlogPostStoryblok {
     | 'insights'
     | 'industry'
     | 'best-practices';
+  product_category: number | string;
   imported_from_old_site?: boolean;
   created_at: string;
+  sidebar_right_slot?: (SideStaticBannerStoryblok | RelatedBlogsStoryblok)[];
   body: RichtextStoryblok;
   related?: RelatedStoriesSectionStoryblok[];
   pre_footer?: (PreFooterCopyStoryblok | SyncedBlockStoryblok)[];
@@ -1124,6 +1142,7 @@ export interface IndustryStoryblok {
   description: string;
   body?: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -1604,6 +1623,7 @@ export interface NewsletterSectionStoryblok {
 export interface PageStoryblok {
   body?: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -1718,6 +1738,7 @@ export interface PageStoryblok {
   )[];
   images?: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -1937,6 +1958,7 @@ export interface PreFooter2Storyblok {
 export interface PricingStoryblok {
   body?: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -2768,6 +2790,7 @@ export interface SyncedBlockStoryblok {
 export interface SyncedBlockContentStoryblok {
   body?: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
@@ -2917,6 +2940,7 @@ export interface TechnologyStoryblok {
   screenshot: AssetStoryblok;
   body: (
     | AgentsHeroStoryblok
+    | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
     | BreadcumbsStoryblok
