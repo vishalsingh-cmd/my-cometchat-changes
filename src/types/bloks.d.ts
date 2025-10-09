@@ -89,7 +89,7 @@ export type MultilinkStoryblok =
 
 export interface AgentsHeroStoryblok {
   badge_text?: string;
-  heading?: RichtextStoryblok;
+  heading?: TitlleAndGradientTextStoryblok[];
   description?: string;
   description_2?: string;
   description_3?: string;
@@ -709,6 +709,7 @@ export interface FeaturesSectionStoryblok {
 }
 
 export interface FeaturesWithNavbarSectionStoryblok {
+  nav_theme?: '' | 'light' | 'dark';
   header?: TitleSectionStoryblok[];
   items: (TitleMediaSectionStoryblok | FaqSectionStoryblok)[];
   _uid: string;
@@ -1250,6 +1251,7 @@ export interface IndustryStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -1731,6 +1733,7 @@ export interface PageStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -1846,6 +1849,7 @@ export interface PageStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -2066,6 +2070,7 @@ export interface PricingStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -2898,6 +2903,7 @@ export interface SyncedBlockContentStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -3048,6 +3054,7 @@ export interface TechnologyStoryblok {
     | TitleMediaSectionStoryblok
     | TitleSectionStoryblok
     | TitleWithCtaStoryblok
+    | TitlleAndGradientTextStoryblok
     | ValueAndDescriptionStoryblok
     | VoiceAndVideoCallsHeroStoryblok
     | WebhooksHeroStoryblok
@@ -3343,6 +3350,14 @@ export interface TitleWithIconLabelStoryblok {
   links?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'title-with-icon-label';
+  [k: string]: any;
+}
+
+export interface TitlleAndGradientTextStoryblok {
+  title?: string;
+  gradient_title?: string;
+  _uid: string;
+  component: 'titlle-and-gradient-text';
   [k: string]: any;
 }
 

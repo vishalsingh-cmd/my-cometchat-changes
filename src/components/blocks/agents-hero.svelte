@@ -31,14 +31,15 @@
               </div>
 
               <!-- Heading -->
-              <h1 class="text-4xl font-medium leading-snug">
-                Ship the
-                <span class=" bg-gradient-purple bg-clip-text text-transparent">agent.</span>
-                <br />
-
-                Skip the
-                <span class="bg-gradient-purple bg-clip-text text-transparent">plumbing. </span>
-              </h1>
+              <div class="flex flex-col items-start gap-[10px] self-stretch">
+                {#each block?.heading ?? [] as heading}
+                  <h1 class="text-4xl font-medium leading-tighter">
+                    {heading.title}<span class=" bg-gradient-purple bg-clip-text text-transparent">
+                      {heading.gradient_title}</span
+                    >
+                  </h1>
+                {/each}
+              </div>
             </div>
 
             <!-- Description -->

@@ -76,7 +76,7 @@
     "display_name": null,
     "description": null,
     "created_at": "2025-08-05T10:47:03.671Z",
-    "updated_at": "2025-09-01T17:38:59.014Z",
+    "updated_at": "2025-10-09T07:05:12.520Z",
     "id": 76600212168695,
     "schema": {
       "badge_text": {
@@ -85,9 +85,12 @@
         "id": "Lngp_IL9TBmEn81QhTwf7g"
       },
       "heading": {
-        "type": "richtext",
+        "type": "bloks",
         "pos": 1,
-        "id": "k6vqa24SSjW1jpY1sx9O4A"
+        "id": "k6vqa24SSjW1jpY1sx9O4A",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["titlle-and-gradient-text"]
       },
       "description": {
         "type": "textarea",
@@ -3192,12 +3195,31 @@
     "display_name": null,
     "description": null,
     "created_at": "2024-06-16T09:00:08.210Z",
-    "updated_at": "2025-06-19T06:36:27.627Z",
+    "updated_at": "2025-10-08T11:57:16.227Z",
     "id": 5934114,
     "schema": {
+      "nav_theme": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "e2b320d5-1f98-4424-9ce5-82c980d02ae1",
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "_uid": "3b6edc65-e8a9-42c6-adc1-5a2f42538dd4",
+            "value": "dark",
+            "name": "Dark"
+          }
+        ],
+        "id": "jAPGZnS_Q1ShwZ1NLDiFeg",
+        "default_value": "light"
+      },
       "header": {
         "type": "bloks",
-        "pos": 0,
+        "pos": 1,
         "minimum": 1,
         "maximum": 1,
         "restrict_type": "",
@@ -3207,7 +3229,7 @@
       },
       "items": {
         "type": "bloks",
-        "pos": 1,
+        "pos": 2,
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["title-media-section", "faq-section"],
@@ -13990,6 +14012,41 @@
     "preset_id": null,
     "real_name": "title-with-icon-label",
     "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "titlle-and-gradient-text",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-10-09T07:03:05.110Z",
+    "updated_at": "2025-10-09T07:04:40.841Z",
+    "id": 99548303820295,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "CkP33czyTBWg2bt6a6k5zA"
+      },
+      "gradient_title": {
+        "type": "text",
+        "pos": 1,
+        "id": "prpDCZyeS7equZJ7rsDaBw"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "titlle-and-gradient-text",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
     "internal_tags_list": [],
