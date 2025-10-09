@@ -5,7 +5,8 @@
   export let id: number;
   export let label: string;
   export let isActive: boolean;
-  export let navBgTheme: 'light' | 'dark' = 'dark';
+
+  export let navBgTheme: 'light' | 'dark' = 'light';
 </script>
 
 <button

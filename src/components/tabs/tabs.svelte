@@ -14,7 +14,8 @@
     label: string;
   }[];
   export let activeTab = 0;
-  export let navBgTheme: 'light' | 'dark';
+
+  export let navBgTheme: 'light' | 'dark' = 'light';
 
   const navBg = {
     light: 'gray-1',
@@ -24,7 +25,7 @@
 
 <div
   class={cn(
-    `container mx-auto flex w-full flex-row gap-4 overflow-auto break-all bg-${navBg[navBgTheme]} px-container md:gap-6`,
+    ` mx-auto flex w-full flex-row gap-4 overflow-auto break-all bg-${navBg[navBgTheme]} px-container md:gap-6`,
     className
   )}
   role="tablist"
