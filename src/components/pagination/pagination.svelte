@@ -23,7 +23,7 @@
   $: pages = generatePagesArray(0, lastPage);
 </script>
 
-<div class={cn('flex h-6 gap-[14px]', className)} data-theme="light">
+<div class={cn('flex h-6 gap-[14px]', className)} data-theme="dark">
   <button
     on:click={onPageDecrement}
     disabled={currentPage <= 1}
@@ -32,7 +32,7 @@
     <Icon icon="chevron-left" size="xs" class="text-gray-12/74" />
   </button>
 
-  <div class="flex gap-3">
+  <div class="flex gap-3 text-gray-12 opacity-74">
     {#each pages as page, i}
       {#if page === 1 || page === lastPage || (page < currentPage + 2 && page > currentPage - 2)}
         <PaginationItem {onPageChange} number={page} isCurrent={pages[i] === currentPage} />

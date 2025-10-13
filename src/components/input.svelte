@@ -18,14 +18,18 @@
 
 <label for={$$props.id} class={cn('relative w-full text-gray-12', className)}>
   {#if icon}
-    <Icon {icon} size="xs" class="absolute left-4 top-1/2 -translate-y-2/4 text-gray-12/74" />
+    <Icon
+      {icon}
+      size="xs"
+      class="absolute left-4 top-1/2 -translate-y-2/4 text-gray-1 opacity-74"
+    />
   {/if}
   <input
     class={cn(
       'w-full lg:max-w-[304px]',
-      'rounded-[14px] border border-gray-12/10 bg-gray-12/2',
+      'rounded-[14px] border border-gray-1/20 bg-gray-12/2',
       'px-4 py-[13px]',
-      'text-md font-semibold leading-tight tracking-wide',
+      'text-md font-semibold leading-tight tracking-wide text-gray-1',
       'placeholder:text-opacity-64',
       'hover:border-brand-9/30',
       'outline-none',
