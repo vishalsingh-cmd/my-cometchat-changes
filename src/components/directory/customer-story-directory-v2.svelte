@@ -44,6 +44,12 @@
       title: 'Industry',
       tags: $page.data.datasourceIndustries,
       selectedTags: []
+    },
+    {
+      type: 'product-categories',
+      title: 'Product Categories',
+      tags: $page.data.datasourceProductCategories,
+      selectedTags: []
     }
   ] as Panel[];
 

@@ -72,6 +72,7 @@ export const load = async ({ cookies, fetch, params }) => {
     let datasourceTutorialTypes = [];
     let datasourceIntegrationTools = [];
     let datasourceProducts = [];
+    let datasourceProductCategories = [];
     let datasourcePlatforms = [];
     let datasourceFeatures = [];
     let datasourceLanguages = [];
@@ -94,6 +95,7 @@ export const load = async ({ cookies, fetch, params }) => {
         datasourceCategories = await getEntriesBasedOnDatasource('categories');
       } else if (directorySection.content_type === 'customer-story') {
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');
+        datasourceProductCategories = await getEntriesBasedOnDatasource('product-categories');
       } else if (directorySection.content_type === 'tutorial') {
         datasourceTutorialTypes = await getEntriesBasedOnDatasource('tutorial-types');
         datasourceIndustries = await getEntriesBasedOnDatasource('industries');
@@ -124,6 +126,7 @@ export const load = async ({ cookies, fetch, params }) => {
       datasourceTutorialTypes,
       datasourceIntegrationTools,
       datasourceProducts,
+      datasourceProductCategories,
       datasourcePlatforms,
       datasourceFeatures,
       datasourceLanguages,

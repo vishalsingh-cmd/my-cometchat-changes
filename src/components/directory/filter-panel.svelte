@@ -18,6 +18,7 @@
       | 'industries'
       | 'integration_tool'
       | 'product'
+      | 'product-categories'
       | 'platform'
       | 'features'
       | 'language'
@@ -56,7 +57,7 @@
           />
         </button>
       </div>
-      <div class="flex flex-row flex-wrap gap-2 pb-4">
+      <div class="flex flex-col gap-2 pb-4">
         {#each panel.tags as tag}
           {@const isTagSelected = panel.selectedTags.includes(tag.value)}
           {@const panelType = panel.type}
