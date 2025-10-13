@@ -3,9 +3,13 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
   import BlogPostDirectory from '$components/directory/blog-post-directory.svelte';
+  import BlogPostDirectoryV2 from '$components/directory/blog-post-directory-v2.svelte';
   import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
-  import TutorialDirectory from '$components/directory/tutorial-directory.svelte';
+  import CustomerStoryDirectoryV2 from '$components/directory/customer-story-directory-v2.svelte';
+  import TutorialDirectory from '$src/components/directory/tutorial-directory-v2.svelte';
+  import TutorialDirectoryV2 from '$src/components/directory/tutorial-directory-v2.svelte';
   import GuideDirectory from '$components/directory/guide-directory.svelte';
+  import GuideDirectoryV2 from '$components/directory/guide-directory-v2.svelte';
 
   export let block: DirectorySectionStoryblok;
 </script>
@@ -22,13 +26,17 @@
         <p class="text-3xl">{block.title}</p>
       </div>
       {#if block.content_type === 'tutorial'}
-        <TutorialDirectory {block} />
+        <!-- <TutorialDirectory {block} /> -->
+        <TutorialDirectoryV2 {block} />
       {:else if block.content_type === 'blog-post'}
-        <BlogPostDirectory {block} />
+        <!-- <BlogPostDirectory {block} /> -->
+        <BlogPostDirectoryV2 {block} />
       {:else if block.content_type === 'customer-story'}
-        <CustomerStoryDirectory {block} />
+        <!-- <CustomerStoryDirectory {block} /> -->
+        <CustomerStoryDirectoryV2 {block} />
       {:else if block.content_type === 'guide'}
-        <GuideDirectory {block} />
+        <!-- <GuideDirectory {block} /> -->
+        <GuideDirectoryV2 {block} />
       {/if}
     </div>
   </section>
