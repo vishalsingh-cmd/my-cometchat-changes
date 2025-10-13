@@ -26,14 +26,14 @@
   class={cn(
     'flex items-center gap-1.5',
     'rounded-[10px]',
-    'px-2.5 py-1.5',
+    'border border-gray-11 px-2.5 py-1.5',
     'text-md font-semibold leading-tight tracking-wide',
     'whitespace-nowrap',
     'transition-smooth',
     'hover:bg-brand-10/[0.12] hover:text-brand-10',
     'outline-4 outline-brand-9/0',
     'focus-visible:bg-brand-10/[0.12] focus-visible:text-brand-10 focus-visible:outline-brand-9/30',
-    isTagSelected ? 'bg-brand-10/[0.12] pr-2 text-brand-10' : 'bg-gray-11/[0.06] text-gray-12/74'
+    isTagSelected ? 'bg-brand-10/[0.12] pr-2 text-brand-10' : 'bg-gray-11/[0.06] text-gray-1/75'
   )}
   on:click={() => {
     dispatch('selectTag', { i: tag.value, j: panelType });

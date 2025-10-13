@@ -21,7 +21,7 @@
 {#if link}
   <a
     href={sanitizeSlug(link)}
-    class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
+    class="group relative flex min-h-[416px] flex-col rounded-3xl border border-gray-11 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
     {#if customer}
       <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
@@ -45,29 +45,33 @@
         class="mb-4 h-[202px] w-full rounded-2xl object-cover md:mb-5 md:h-[240px]"
       />
     {/if}
-    {#if title}
-      <h3
-        class="smooth mb-2.5 text-xl leading-tighter opacity-[0.84] transition-all group-hover:opacity-100 md:mb-3"
-      >
-        {title}
-      </h3>
-    {/if}
-    {#if author && date}
-      <div
-        class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
-      >
-        <span aria-label={string('a11y.author')}>{author}</span>
-        <span class="h-1 w-1 rounded-full bg-gray-12" />
-        <span aria-label={string('a11y.published')}>{date}</span>
+    <div class="flex h-full flex-col items-start justify-between self-stretch">
+      <div class="flex flex-col">
+        {#if title}
+          <h3
+            class="smooth mb-2.5 text-xl leading-tighter text-[#BEBEC2] transition-all group-hover:text-brand-9 group-hover:opacity-100 md:mb-3"
+          >
+            {title}
+          </h3>
+        {/if}
+        {#if author && date}
+          <div
+            class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-[#BEBEC2]"
+          >
+            <span aria-label={string('a11y.author')}>{author}</span>
+            <span class="h-1 w-1 rounded-full bg-[#BEBEC2]" />
+            <span aria-label={string('a11y.published')}>{date}</span>
+          </div>
+        {/if}
       </div>
-    {/if}
-    {#if tags}
-      <div class="mt-4 flex flex-row flex-wrap gap-2">
-        {#each tags as tag}
-          <Badge label={tag} size={badgeSize} />
-        {/each}
-      </div>
-    {/if}
+      {#if tags}
+        <div class="mt-4 flex flex-row flex-wrap gap-2">
+          {#each tags as tag}
+            <Badge label={tag} size={badgeSize} />
+          {/each}
+        </div>
+      {/if}
+    </div>
   </a>
 {/if}
 

@@ -40,13 +40,19 @@
         <button
           {...attributes}
           on:click={onClick}
-          class="flex w-full justify-between border-t border-solid border-gray-12/8 pb-4 pt-5"
+          class="flex w-full justify-between border-t border-solid border-gray-1/10 pb-4 pt-8"
         >
-          <p class="text-lg font-semibold leading-tight">{panel.title}</p>
+          <p
+            class={`text-md font-semibold leading-tight ${
+              expanded ? 'text-gray-1' : 'text-gray-1/74'
+            }`}
+          >
+            {panel.title}
+          </p>
           <Icon
             icon="chevron-up"
             size="xs"
-            class={cn('transition-transform duration-300', expanded && 'rotate-180')}
+            class={cn('text-gray-1 transition-transform duration-300', expanded && 'rotate-180')}
           />
         </button>
       </div>
@@ -61,7 +67,7 @@
   {/each}
 
   <GhostButton
-    class="isolate z-30 mt-5 hidden gap-1.5 lg:inline-flex"
+    class="isolate z-30 mt-5 hidden gap-1.5 text-gray-1 lg:inline-flex"
     on:click={() => dispatch('clearFilters')}
   >
     {string('directory.reset_filters')}
