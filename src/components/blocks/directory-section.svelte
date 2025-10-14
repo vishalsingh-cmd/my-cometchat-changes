@@ -2,13 +2,13 @@
   import type { DirectorySectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
 
-  import BlogPostDirectory from '$components/directory/blog-post-directory.svelte';
+  // import BlogPostDirectory from '$components/directory/blog-post-directory.svelte';
   import BlogPostDirectoryV2 from '$components/directory/blog-post-directory-v2.svelte';
-  import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
+  // import CustomerStoryDirectory from '$components/directory/customer-story-directory.svelte';
   import CustomerStoryDirectoryV2 from '$components/directory/customer-story-directory-v2.svelte';
-  import TutorialDirectory from '$src/components/directory/tutorial-directory-v2.svelte';
+  // import TutorialDirectory from '$src/components/directory/tutorial-directory-v2.svelte';
   import TutorialDirectoryV2 from '$src/components/directory/tutorial-directory-v2.svelte';
-  import GuideDirectory from '$components/directory/guide-directory.svelte';
+  // import GuideDirectory from '$components/directory/guide-directory.svelte';
   import GuideDirectoryV2 from '$components/directory/guide-directory-v2.svelte';
 
   export let block: DirectorySectionStoryblok;
