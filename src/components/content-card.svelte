@@ -21,7 +21,7 @@
 {#if link}
   <a
     href={sanitizeSlug(link)}
-    class="group relative flex min-h-[416px] flex-col rounded-3xl border border-gray-11 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
+    class="hover:border-white/4 group relative flex min-h-[416px] flex-col rounded-3xl border border-white/10 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
     {#if customer}
       <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">

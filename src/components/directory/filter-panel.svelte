@@ -30,6 +30,8 @@
     }[];
     selectedTags: string[];
   }[];
+  export let totalStories = 0;
+  export let tagCounts: { [key: string]: number } = {};
 
   const dispatch = createEventDispatcher();
 </script>
@@ -51,7 +53,7 @@
             {panel.title}
           </p>
           <Icon
-            icon="chevron-up"
+            icon="chevron-down"
             size="xs"
             class={cn('text-gray-1 transition-transform duration-300', expanded && 'rotate-180')}
           />
@@ -61,17 +63,21 @@
         {#each panel.tags as tag}
           {@const isTagSelected = panel.selectedTags.includes(tag.value)}
           {@const panelType = panel.type}
-          <Tag {tag} {panelType} {isTagSelected} on:selectTag />
+          <Tag {tag} count={tagCounts[tag.value] ?? 0} {panelType} {isTagSelected} on:selectTag />
         {/each}
       </div>
     </Accordion>
   {/each}
-
-  <GhostButton
-    class="isolate z-30 mt-5 hidden gap-1.5 text-gray-1 lg:inline-flex"
-    on:click={() => dispatch('clearFilters')}
-  >
-    {string('directory.reset_filters')}
-    <Icon size="xs" icon="trash-01" />
-  </GhostButton>
+  <div class="flex justify-between">
+    <div class="mt-5 text-[16px] font-normal leading-snug tracking-[0.08px] text-gray-1/74">
+      {totalStories} out of {totalStories} results
+    </div>
+    <GhostButton
+      class="isolate z-30 mt-5 hidden gap-1.5 text-gray-1 lg:inline-flex"
+      on:click={() => dispatch('clearFilters')}
+    >
+      {string('directory.reset_filters')}
+      <Icon size="xs" icon="trash-01" />
+    </GhostButton>
+  </div>
 </div>
