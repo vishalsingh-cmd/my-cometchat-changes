@@ -82,7 +82,7 @@
           label: item.title[0].label
         }))}
 
-        <Sticky translateOnDesktop class="hidden border-b border-gray-5 lg:block">
+        <Sticky translateOnDesktop class="hidden lg:block">
           <Tabs
             navBgTheme={block.nav_theme}
             options={parsedItems}
