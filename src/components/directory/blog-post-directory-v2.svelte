@@ -174,6 +174,42 @@
     }
   });
 
+  // getting all customer stories
+  $: getDirectoryData = createQuery({
+    queryKey: [`directory-${Math.random()}`, { id: block._uid, sort: 'created_at', order: 'asc' }],
+    queryFn: async () => {
+      const res = await getStories({
+        content_type: 'blog-post',
+        per_page: 100
+      });
+
+      console.log('Customer Story Res:', res.data.stories);
+
+      return { stories: res.data.stories, total: res.total };
+    }
+  });
+
+  $: tagCounts = {};
+  $: totalStories = 0;
+
+  $: if (getDirectoryData) {
+    const $data = $getDirectoryData; // auto-subscribe store
+    if ($data?.isSuccess) {
+      totalStories = $data.data.total;
+
+      tagCounts = $data.data.stories.reduce((acc, story) => {
+        // Assuming 'industry' field holds your tags
+        const tags = story.content.category ? [story.content.category] : [];
+
+        tags.forEach((t: string) => {
+          acc[t] = (acc[t] || 0) + 1;
+        });
+
+        return acc;
+      }, {} as Record<string, number>);
+    }
+  }
+
   $: hasPagination =
     $getDirectoryDataWithFilters.isSuccess &&
     $getDirectoryDataWithFilters.data.total > RESULTS_PER_PAGE;
@@ -201,7 +237,9 @@
         <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
 
         <FilterPanel
+          {totalStories}
           {panels}
+          {tagCounts}
           on:selectTag={(e) => toggleTag(e.detail.i, e.detail.j)}
           on:clearFilters={() => clearFilters()}
         />
