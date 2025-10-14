@@ -54,7 +54,7 @@
             {title}
           </h3>
         {/if}
-        {#if author && date}
+        <!-- {#if author && date}
           <div
             class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-[#BEBEC2]"
           >
@@ -62,7 +62,7 @@
             <span class="h-1 w-1 rounded-full bg-[#BEBEC2]" />
             <span aria-label={string('a11y.published')}>{date}</span>
           </div>
-        {/if}
+        {/if} -->
       </div>
       {#if tags}
         <div class="mt-4 flex flex-row flex-wrap gap-2">
