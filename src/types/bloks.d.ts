@@ -535,6 +535,15 @@ export interface CustomerStoriesSectionStoryblok {
   [k: string]: any;
 }
 
+export interface CustomerStoriesSliderStoryblok {
+  heading?: string;
+  gradient_heading?: string;
+  cards?: CustomerStoryCardStoryblok[];
+  _uid: string;
+  component: 'customer-stories-slider';
+  [k: string]: any;
+}
+
 export interface CustomerStoryStoryblok {
   Quote?: any;
   quote: string;
@@ -552,6 +561,16 @@ export interface CustomerStoryStoryblok {
   seo?: SeoFieldsStoryblok[];
   _uid: string;
   component: 'customer-story';
+  [k: string]: any;
+}
+
+export interface CustomerStoryCardStoryblok {
+  customer_logo?: AssetStoryblok;
+  cta_text?: string;
+  cta_link?: string;
+  description?: string;
+  _uid: string;
+  component: 'customer-story-card';
   [k: string]: any;
 }
 
@@ -1161,6 +1180,8 @@ export interface IndustryStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
@@ -1643,6 +1664,8 @@ export interface PageStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
@@ -1759,6 +1782,8 @@ export interface PageStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
@@ -1980,6 +2005,8 @@ export interface PricingStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
@@ -2813,6 +2840,8 @@ export interface SyncedBlockContentStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
@@ -2964,6 +2993,8 @@ export interface TechnologyStoryblok {
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
     | CustomerStoriesSectionStoryblok
+    | CustomerStoriesSliderStoryblok
+    | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
     | DoublePanelSectionStoryblok
