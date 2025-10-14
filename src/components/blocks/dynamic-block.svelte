@@ -15,6 +15,7 @@
   import CustomerStats from './customer-stats.svelte';
   import CustomerStory from './customer-story.svelte';
   import CustomerStoriesSection from './customer-stories-section.svelte';
+  import CustomerStoriesSlider from './customer-stories-slider.svelte';
   import DevelopersSection from './developers-section.svelte';
   import DirectorySection from './directory-section.svelte';
   import DoublePanelSection from './double-panel-section.svelte';
@@ -139,6 +140,7 @@
     'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
     'customer-stories-section': CustomerStoriesSection,
+    'customer-stories-slider': CustomerStoriesSlider,
     'center-static-banner-v03': CenterStaticBannerV03,
 
     'connected-step': ConnectedStep,
