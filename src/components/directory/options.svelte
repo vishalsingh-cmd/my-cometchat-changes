@@ -30,14 +30,20 @@
   <Button
     variant="secondary"
     on:click={() => dispatch('toggleFiltersPanel')}
-    class="gap-1.5 border border-gray-1/10 text-gray-1"
+    class="gap-1.5 border border-gray-1/10 bg-gray-1/2 text-gray-1"
   >
     <!-- Desktop -->
     <span class="hidden lg:block">
       {#if areFiltersOpen}
-        {string('directory.hide_filters')}
+        <div class="flex items-center gap-2">
+          <Icon icon="x-close" size="xs" />
+          {string('directory.hide_filters')}
+        </div>
       {:else}
-        {string('directory.show_filters')}
+        <div class="flex items-center gap-2">
+          <Icon icon="filter-funnel-02" size="xs" />
+          {string('directory.show_filters')}
+        </div>
       {/if}
     </span>
 
