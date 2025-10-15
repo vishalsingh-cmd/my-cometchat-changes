@@ -22,8 +22,17 @@
   >
     <div class="container mx-auto px-container">
       <div id="articles" class="max-w-[528px] pb-8 font-semibold leading-tighter md:pb-12">
-        <p class="mb-2 text-xl text-brand-9 md:mb-3">{block.label}</p>
-        <p class="text-3xl text-gray-1">{block.title}</p>
+        {#if block.label}
+          <p class="mb-2 text-xl text-brand-9 md:mb-3">{block.label}</p>
+        {/if}
+        {#if block.title}
+          <span class="text-3xl text-gray-1"> {block.title}</span>
+        {/if}
+        {#if block.gradient_title}
+          <span class="bg-gradient-purple bg-clip-text text-3xl text-transparent"
+            >{block.gradient_title}</span
+          >
+        {/if}
       </div>
       {#if block.content_type === 'tutorial'}
         <!-- <TutorialDirectory {block} /> -->
