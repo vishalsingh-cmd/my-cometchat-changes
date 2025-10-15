@@ -1,6 +1,6 @@
 <script lang="ts">
   import { sanitizeSlug } from '$lib/storyblok';
-  import { string } from '$lib/strings';
+  import Icon from './icon/icon.svelte';
 
   import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
 
@@ -21,7 +21,7 @@
 {#if link}
   <a
     href={sanitizeSlug(link)}
-    class="hover:border-white/4 group relative flex min-h-[416px] flex-col rounded-3xl border border-white/10 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
+    class="hover:border-white/4 group relative flex min-h-[416px] flex-col overflow-hidden rounded-3xl border border-white/10 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
     {#if customer}
       <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
@@ -71,6 +71,13 @@
           {/each}
         </div>
       {/if}
+    </div>
+
+    <!-- Arrow -->
+    <div
+      class="absolute -right-12 -top-12 z-[0] flex flex-shrink-0 items-center gap-[10px] rounded-xl border border-white/10 bg-[#0A0914] p-[10px] backdrop-blur-md transition-all duration-300 group-hover:right-6 group-hover:top-6 group-hover:bg-white/10"
+    >
+      <Icon icon="arrow-up-right" size="lg" class=" text-brand-9" />
     </div>
   </a>
 {/if}
