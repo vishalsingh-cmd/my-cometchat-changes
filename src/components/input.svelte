@@ -27,7 +27,7 @@
   <input
     class={cn(
       'w-full lg:max-w-[304px]',
-      'rounded-[14px] border border-gray-1/20 bg-gray-12/2',
+      'rounded-[14px] border border-gray-1/20 bg-gray-1/2',
       'px-4 py-[13px]',
       'text-md font-semibold leading-tight tracking-wide text-gray-1',
       'placeholder:text-opacity-64',
