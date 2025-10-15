@@ -8,9 +8,9 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} class="relative overflow-hidden text-gray-12">
+  <section use:storyblokEditable={block} class="text-gray-16 relative overflow-hidden">
     <div
-      class="container relative mx-auto flex flex-col items-start gap-1 px-container pb-[260px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
+      class="container relative mx-auto flex max-h-[400px] flex-col items-start gap-1 px-container pb-[260px] pt-[100px] md:items-center md:gap-5 md:pb-[144px] md:pt-[148px] md:text-center"
     >
       <BackgroundV2 />
 
