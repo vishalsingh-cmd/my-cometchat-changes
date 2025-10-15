@@ -5,6 +5,7 @@
   import AgentsHero from './agents-hero.svelte';
   import AgentsHeroV2 from './agents-hero-v2.svelte';
   import AwardsSection from './awards-section.svelte';
+  import BlogStoriesSlider from './blog-stories-slider.svelte';
   import ChatAndMessagingHero from './chat-and-messaging-hero.svelte';
   import ChatFeaturesSection from './chat-features-section.svelte';
   import ChatIntegration from './chat-integration.svelte';
@@ -127,6 +128,8 @@
     'agents-hero': AgentsHero,
     'agents-hero-v2': AgentsHeroV2,
     'awards-section': AwardsSection,
+
+    'blog-stories-slider': BlogStoriesSlider,
 
     'chat-and-messaging-hero': ChatAndMessagingHero,
     'chat-integrations': ChatIntegration,

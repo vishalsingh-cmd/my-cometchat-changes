@@ -230,6 +230,15 @@ export interface BlogPostStoryblok {
   [k: string]: any;
 }
 
+export interface BlogStoriesSliderStoryblok {
+  heading?: string;
+  gradient_heading?: string;
+  cards?: FeaturedStorySectionStoryblok[];
+  _uid: string;
+  component: 'blog-stories-slider';
+  [k: string]: any;
+}
+
 export interface BlogTableCellImageStoryblok {
   image?: string;
   _uid: string;
@@ -585,6 +594,7 @@ export interface DevelopersSectionStoryblok {
 export interface DirectorySectionStoryblok {
   label?: string;
   title?: string;
+  gradient_title?: string;
   content_type: '' | 'blog-post' | 'customer-story' | 'tutorial' | 'guide';
   _uid: string;
   component: 'directory-section';
@@ -1165,6 +1175,7 @@ export interface IndustryStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -1249,6 +1260,7 @@ export interface IndustryStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
@@ -1649,6 +1661,7 @@ export interface PageStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -1733,6 +1746,7 @@ export interface PageStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
@@ -1767,6 +1781,7 @@ export interface PageStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -1851,6 +1866,7 @@ export interface PageStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
@@ -1990,6 +2006,7 @@ export interface PricingStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -2074,6 +2091,7 @@ export interface PricingStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
@@ -2597,6 +2615,14 @@ export interface ResourcesHeroStoryblok {
   [k: string]: any;
 }
 
+export interface ResourcesHeroV2Storyblok {
+  title: string;
+  description: string;
+  _uid: string;
+  component: 'resources-hero-v2';
+  [k: string]: any;
+}
+
 export interface RichTextSectionStoryblok {
   has_sidebar?: boolean;
   body?: RichtextStoryblok;
@@ -2825,6 +2851,7 @@ export interface SyncedBlockContentStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -2909,6 +2936,7 @@ export interface SyncedBlockContentStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
@@ -2978,6 +3006,7 @@ export interface TechnologyStoryblok {
     | AgentsHeroV2Storyblok
     | AwardsSectionStoryblok
     | BlogAnnouncementSidebarCardStoryblok
+    | BlogStoriesSliderStoryblok
     | BreadcumbsStoryblok
     | CardStoryblok
     | CenterStaticBannerV03Storyblok
@@ -3062,6 +3091,7 @@ export interface TechnologyStoryblok {
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
+    | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
