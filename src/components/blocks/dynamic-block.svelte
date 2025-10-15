@@ -57,6 +57,7 @@
   import PricingTableSection from './pricing-table-section.svelte';
   import PlatformSection from './platform-section.svelte';
   import ResourcesHero from './resources-hero.svelte';
+  import ResourcesHeroV2 from './resources-hero-v2.svelte';
   import RelatedStoriesSection from './related-stories-section.svelte';
   import RichTextSection from './rich-text-section.svelte';
   import SocialProofs from './social-proofs.svelte';
@@ -204,6 +205,7 @@
     'pricing-table-Q3Y24': PricingTableQ3Y24,
     'pricing-table-Q3Y24-V2': PricingTableQ3Y24V2,
     'resources-hero': ResourcesHero,
+    'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'secure-section': SecureSection,
