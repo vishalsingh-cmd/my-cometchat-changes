@@ -54,7 +54,7 @@
         >
           {#each block.cards ?? [] as card, index}
             <div
-              class={'relative flex h-[440px] min-w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 py-[40px] pl-[40px] pr-4 transition-all duration-500 ease-in-out ' +
+              class={'relative flex h-[440px] min-w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent pl-[40px] pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 ' +
                 (index === $activeIndex ? 'opacity-100' : 'opacity-60')}
             >
               <FeaturedStorySectionV2 block={card} />

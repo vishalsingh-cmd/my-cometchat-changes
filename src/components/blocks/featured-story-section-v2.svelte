@@ -70,7 +70,7 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme}
-    class="overflow-hidden bg-gray-1 text-gray-12"
+    class="overflow-hidden bg-transparent text-gray-12"
   >
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
@@ -84,15 +84,19 @@
         : undefined}
       <!-- {console.log('imageURL', imageURL)} -->
       {@const tags = getTag(story)}
-      <div class="container mx-auto flex flex-col justify-between md:flex-row md:items-center">
+      <div
+        class="container mx-auto flex flex-col justify-between gap-[30px] md:flex-row md:items-center"
+      >
         <!-- Content -->
         <div class="flex flex-1 flex-col justify-between gap-[32px]">
           <!-- Headings -->
           <div class="flex max-w-[528px] flex-col items-start gap-4">
-            <p
-              class="border-brand-9/16 rounded-[10px] border-[1.4px] px-[10px] pb-2 pt-[6px] text-[16px] font-[640px] leading-tighter text-brand-9"
-            >
-              {tags}
+            <p class="rounded-[10px] border-[1.4px] border-[#604BC5]/50 px-[10px] pb-2 pt-[6px]">
+              <span
+                class="font-sans text-[16px] font-[640] leading-tight tracking-[0.08px] text-brand-9"
+              >
+                {tags}</span
+              >
             </p>
             <p class="text-2xl font-semibold leading-tighter">{story?.name}</p>
           </div>
@@ -125,13 +129,9 @@
         <!-- Image -->
         {#if content?.cover}
           <div
-            class="relative h-[407px] w-[651px] self-stretch overflow-hidden rounded-2xl border border-white/10 md:h-auto md:flex-1"
+            class="relative h-[407px] w-[651px] self-stretch overflow-hidden rounded-2xl border border-white/10"
           >
-            <Media
-              imageTransformOptions={{ size: [0, 900] }}
-              media={content?.cover}
-              class="absolute h-full w-full object-cover"
-            />
+            <Media media={content?.cover} class="h-full w-full object-cover" />
           </div>
         {/if}
       </div>
