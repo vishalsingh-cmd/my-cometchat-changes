@@ -3,7 +3,7 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  //   import { onMount } from 'svelte';
+  import { onMount } from 'svelte';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
 
@@ -12,6 +12,8 @@
 
   createIndustryContext(0);
   const { activeIndex, setActiveIndex } = getIndustryContect();
+
+  let interval: ReturnType<typeof setInterval>;
 
   //   let unsubscribe: () => void;
 
@@ -22,13 +24,30 @@
   //     return () => unsubscribe?.();
   //   });
 
+  function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      next();
+    }, 5000);
+  }
+
   function next() {
     setActiveIndex(($activeIndex + 1) % block.cards.length);
+    resetInterval();
   }
 
   function prev() {
     setActiveIndex(($activeIndex - 1 + block.cards.length) % block.cards.length);
+    resetInterval();
   }
+
+  onMount(() => {
+    interval = setInterval(() => {
+      next();
+    }, 5000);
+
+    return () => clearInterval(interval); // cleanup on unmount
+  });
 </script>
 
 {#if block}
@@ -54,7 +73,7 @@
         >
           {#each block.cards ?? [] as card, index}
             <div
-              class={'relative flex min-h-[416px] w-[816px] flex-shrink-0 flex-col justify-between rounded-[24px] border border-gray-12/10 p-[60px] transition-all duration-500 ease-in-out ' +
+              class={'group relative flex min-h-[416px] w-[816px] flex-shrink-0 flex-col justify-between rounded-[24px] border border-gray-12/10 bg-[#0A0914] p-[60px] transition-all duration-500 ease-in-out hover:border-gray-12/50 hover:bg-gray-11/5 ' +
                 (index === $activeIndex ? 'opacity-100' : 'opacity-60')}
             >
               <div class="h-[60px]">
@@ -62,9 +81,21 @@
               </div>
 
               <div class="flex flex-col gap-[40px]">
-                <p class="mt-4 font-sans text-2xl font-semibold leading-snug">
-                  {card?.description}
-                </p>
+                <div class="font-sans text-2xl font-semibold leading-snug">
+                  {#if card?.description}
+                    <p class="mt-4">
+                      {card?.description}
+                    </p>
+                  {/if}
+
+                  {#if card?.gradient_description}
+                    <span
+                      class="bg-[linear-gradient(180deg,#FAFAFF_7.35%,rgba(250,250,255,0.30)_107.35%)] bg-clip-text text-transparent"
+                    >
+                      {card.gradient_description}
+                    </span>
+                  {/if}
+                </div>
 
                 <div>
                   <Button className="w-5" as="a" href={card?.cta_link} variant="secondary"
@@ -81,10 +112,10 @@
                   viewBox="0 0 644 416"
                   fill="none"
                 >
-                  <g opacity="0.06" filter="url(#filter0_f_2337_576)">
+                  <g filter="url(#filter0_f_2337_576)">
                     <path
+                      class="fill-[#FAFAFF] opacity-[0.06] transition-all duration-300 group-hover:fill-[#6852D6] group-hover:opacity-[0.16]"
                       d="M556.005 38.8246L839.177 89.3145C864.237 93.7828 885.637 109.991 896.728 132.904C925.163 191.65 874.541 257.716 810.42 245.543L636.186 212.464C608.859 207.276 580.798 216.655 562.082 237.232L302.736 522.374C281.463 545.763 248.412 554.429 218.4 544.489L149.054 521.519C90.6258 502.167 75.0245 426.841 120.959 385.873L488.713 57.8786C507.033 41.5399 531.839 34.5158 556.005 38.8246Z"
-                      fill="#FAFAFF"
                     />
                   </g>
                   <defs>

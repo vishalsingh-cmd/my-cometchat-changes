@@ -5,7 +5,7 @@
 </script>
 
 {#if block}
-  <section class="relative z-10 flex h-[750px] flex-col items-center justify-center">
+  <section class="relative z-10 mt-[68px] flex h-[750px] flex-col items-center justify-center">
     <h1 class="absolute z-10 flex flex-col items-center justify-center gap-[10px]">
       <span class="font-sans text-[58px] font-medium leading-tighter">
         {block.title1}
