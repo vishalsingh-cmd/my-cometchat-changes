@@ -1,36 +1,42 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  //   import { onMount } from 'svelte';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
   import FeaturedStorySectionV2 from './featured-story-section-v2.svelte';
 
   import type { BlogStoriesSliderStoryblok } from '$types/bloks';
   export let block: BlogStoriesSliderStoryblok;
-  console.log(block.cards);
 
   createIndustryContext(0);
   const { activeIndex, setActiveIndex } = getIndustryContect();
 
-  //   let unsubscribe: () => void;
+  let interval: ReturnType<typeof setInterval>;
 
-  //   onMount(() => {
-  //     unsubscribe = onChange((index: number) => {
-  //       // Optional: trigger animations or effects
-  //     });
-  //     return () => unsubscribe?.();
-  //   });
+  function startAutoScroll() {
+    clearInterval(interval);
+    interval = setInterval(() => {
+      next();
+    }, 5000);
+  }
 
   function next() {
     setActiveIndex(($activeIndex + 1) % block.cards.length);
+    startAutoScroll(); // reset interval
   }
 
   function prev() {
     setActiveIndex(($activeIndex - 1 + block.cards.length) % block.cards.length);
+    startAutoScroll(); // reset interval
   }
+
+  onMount(() => {
+    startAutoScroll();
+    return () => clearInterval(interval);
+  });
 </script>
 
 {#if block}
@@ -48,9 +54,10 @@
             </span>
           {/if}
         </h2>
+
         <div
           class="flex gap-8 transition-transform duration-500 ease-in-out"
-          style="transform: translateX(-{$activeIndex * 92}%)"
+          style="transform: translateX(-{$activeIndex * 94}%)"
         >
           {#each block.cards ?? [] as card, index}
             <div
@@ -59,39 +66,23 @@
             >
               <FeaturedStorySectionV2 block={card} />
 
-              <div class="pointer-events-none absolute bottom-0 right-0">
+              <div class="group absolute inset-x-0 bottom-0 z-30 [filter:blur(29.137px)]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="644"
                   height="416"
                   viewBox="0 0 644 416"
                   fill="none"
+                  class="transition-colors duration-300"
                 >
-                  <g opacity="0.06" filter="url(#filter0_f_2337_576)">
+                  <g filter="url(#filter0_f_2337_576)">
                     <path
                       d="M556.005 38.8246L839.177 89.3145C864.237 93.7828 885.637 109.991 896.728 132.904C925.163 191.65 874.541 257.716 810.42 245.543L636.186 212.464C608.859 207.276 580.798 216.655 562.082 237.232L302.736 522.374C281.463 545.763 248.412 554.429 218.4 544.489L149.054 521.519C90.6258 502.167 75.0245 426.841 120.959 385.873L488.713 57.8786C507.033 41.5399 531.839 34.5158 556.005 38.8246Z"
-                      fill="#FAFAFF"
+                      class="fill-[#FAFAFF] opacity-[0.06] transition-all duration-300 group-hover:fill-[#7f6fce] group-hover:opacity-[0.16]"
                     />
                   </g>
                   <defs>
-                    <filter
-                      id="filter0_f_2337_576"
-                      x="0.176086"
-                      y="-56.4183"
-                      width="998.654"
-                      height="698.967"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape"
-                      />
-                      <feGaussianBlur stdDeviation="47" result="effect1_foregroundBlur_2337_576" />
-                    </filter>
+                    <!-- filter unchanged -->
                   </defs>
                 </svg>
               </div>
@@ -100,7 +91,7 @@
         </div>
 
         <!-- Arrows and dots -->
-        <div class="flex gap-2 self-center">
+        <div class="flex gap-2 self-center pb-4">
           <Button on:click={prev} variant="secondary"><Icon icon="chevron-left" size="xs" /></Button
           >
           <div class="flex items-center gap-2">

@@ -70,7 +70,7 @@
   <section
     use:storyblokEditable={block}
     data-theme={block.theme}
-    class="overflow-hidden bg-transparent text-gray-12"
+    class="group relative z-20 overflow-hidden bg-transparent text-gray-12"
   >
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
