@@ -41,7 +41,7 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} className="pl-[64px]">
+    <Container pxEnabled={false} pyEnabled={false} className="pl-[64px] mb-[40px] mt-[100px]">
       <div class=" relative flex w-full flex-col gap-[60px] overflow-hidden">
         <h2 class="font-sans text-3xl font-medium leading-snug">
           {#if block.heading}

@@ -34,8 +34,10 @@
 {#if block}
   <Section>
     <Container>
-      <div class=" relative mx-auto mt-40 flex w-full flex-col gap-[60px] overflow-hidden">
-        <h2 class="font-sans text-3xl font-medium leading-snug">
+      <div
+        class=" relative mx-auto mt-40 flex w-full flex-col gap-[60px] overflow-hidden font-semibold"
+      >
+        <h2 class="font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
@@ -60,7 +62,9 @@
               </div>
 
               <div class="flex flex-col gap-[40px]">
-                <p class="mt-4 font-sans text-lg leading-snug">{card?.description}</p>
+                <p class="mt-4 font-sans text-2xl font-semibold leading-snug">
+                  {card?.description}
+                </p>
 
                 <div>
                   <Button className="w-5" as="a" href={card?.cta_link} variant="secondary"

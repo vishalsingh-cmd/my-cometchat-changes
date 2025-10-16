@@ -69,7 +69,9 @@
     </Accordion>
   {/each}
   <div class="flex justify-between">
-    <div class="mt-5 text-[16px] font-normal leading-snug tracking-[0.08px] text-gray-1/74">
+    <div
+      class="mt-5 font-sans text-[16px] font-normal leading-snug tracking-[0.08px] text-gray-1/74"
+    >
       {totalStories} out of {totalStories} results
     </div>
     <GhostButton
