@@ -41,7 +41,7 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} pyEnabled={false} className="pl-[64px] mb-[40px] mt-[100px]">
+    <Container pxEnabled={false} pyEnabled={false} className=" mb-[40px] mt-[100px]">
       <div class=" relative flex w-full flex-col gap-[60px] overflow-hidden">
         <h2 class=" font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
@@ -57,11 +57,11 @@
 
         <div
           class="flex gap-8 transition-transform duration-500 ease-in-out"
-          style="transform: translateX(-{$activeIndex * 94}%)"
+          style="transform: translateX(-{$activeIndex * 85}%)"
         >
           {#each block.cards ?? [] as card, index}
             <div
-              class={'relative flex h-[440px] min-w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent pl-[40px] pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 ' +
+              class={'relative flex h-[440px] w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent pl-[40px] pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 ' +
                 (index === $activeIndex ? 'opacity-100' : 'opacity-60')}
             >
               <FeaturedStorySectionV2 block={card} />
