@@ -2491,7 +2491,7 @@
     "display_name": null,
     "description": "",
     "created_at": "2025-10-14T09:21:31.153Z",
-    "updated_at": "2025-10-14T09:23:40.019Z",
+    "updated_at": "2025-10-16T09:05:19.896Z",
     "id": 101351797370263,
     "schema": {
       "customer_logo": {
@@ -2513,6 +2513,11 @@
         "type": "text",
         "pos": 3,
         "id": "sWI6csIAR7iBjiHFzYCKzA"
+      },
+      "gradient_description": {
+        "type": "text",
+        "pos": 4,
+        "id": "NI-tEF7KSxO7WdXaWQmSLA"
       }
     },
     "image": null,
@@ -2879,9 +2884,27 @@
     "display_name": "FAQ Section",
     "description": null,
     "created_at": "2023-08-24T15:12:45.953Z",
-    "updated_at": "2023-08-24T15:21:35.871Z",
+    "updated_at": "2025-10-17T05:26:44.551Z",
     "id": 4472693,
     "schema": {
+      "theme": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "4a991255-92ce-40ca-8cfd-52fe4d45d15c",
+            "name": "Dark",
+            "value": "dark"
+          },
+          {
+            "_uid": "877f30b9-bcaf-4e95-b7c1-375b06c63735",
+            "value": "light",
+            "name": "Light"
+          }
+        ],
+        "id": "qJoSPs2MSsa_Lp2ssxehww"
+      },
       "title": {
         "type": "bloks",
         "restrict_type": "",
@@ -2889,7 +2912,9 @@
         "component_whitelist": ["title"],
         "minimum": 1,
         "maximum": 1,
-        "required": true
+        "required": true,
+        "pos": 1,
+        "id": "gmpsR0BYQjqxFX7aZp3VvQ"
       },
       "faqs": {
         "type": "bloks",
@@ -2898,7 +2923,9 @@
         "restrict_components": true,
         "component_whitelist": ["faq"],
         "minimum": 1,
-        "display_name": "FAQ’s list"
+        "display_name": "FAQ’s list",
+        "pos": 2,
+        "id": "0wDXVZWUQ-OKFuJBqZTq6g"
       }
     },
     "image": null,
@@ -7019,30 +7046,52 @@
     "display_name": null,
     "description": null,
     "created_at": "2024-07-29T19:59:48.152Z",
-    "updated_at": "2024-07-29T20:43:57.990Z",
+    "updated_at": "2025-10-17T05:52:54.348Z",
     "id": 6106281,
     "schema": {
+      "theme": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "display_name": "",
+        "options": [
+          {
+            "_uid": "acb51e5d-4e85-4877-8e87-8e258de971a1",
+            "name": "Light",
+            "value": "light"
+          },
+          {
+            "_uid": "bdb852d2-2221-4677-90b1-3fdacb8230b0",
+            "value": "dark",
+            "name": "Dark"
+          }
+        ],
+        "default_value": "light",
+        "id": "hamQpuByQ2CH3aUnhX6Zog"
+      },
       "title": {
         "type": "bloks",
-        "pos": 0,
+        "pos": 1,
         "required": true,
         "maximum": 1,
         "minimum": 1,
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["title-section"],
-        "key": "titile"
+        "key": "titile",
+        "id": "YF_WygHDQT6UcTqM19zJRQ"
       },
       "rows": {
         "type": "bloks",
-        "pos": 1,
+        "pos": 2,
         "required": true,
         "minimum": 1,
         "maximum": 3,
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["moderation-feature-cards-row"],
-        "key": "rows"
+        "key": "rows",
+        "id": "X80GDVqFQDG3mmPt30UeMA"
       }
     },
     "image": null,
@@ -13321,26 +13370,44 @@
     "display_name": null,
     "description": null,
     "created_at": "2023-06-12T12:30:15.872Z",
-    "updated_at": "2025-01-14T00:33:33.935Z",
+    "updated_at": "2025-10-17T05:35:32.817Z",
     "id": 4111424,
     "schema": {
+      "label_colour": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "b2d8f752-262b-40da-a654-48970e6efeff",
+            "name": "Orange",
+            "value": "orange"
+          },
+          {
+            "_uid": "255a8cb0-7bcb-413a-8c9a-dcc11c03cab4",
+            "value": "brand",
+            "name": "Brand"
+          }
+        ],
+        "id": "TNag2ojRT5qx6zq_VWMMaw"
+      },
       "label": {
         "type": "text",
         "required": false,
         "translatable": true,
-        "pos": 0,
+        "pos": 1,
         "id": "RwWgL10nRaK3XHrO5A-BGA"
       },
       "title": {
         "type": "textarea",
         "required": false,
         "translatable": true,
-        "pos": 1,
+        "pos": 2,
         "id": "Ax47xWOpRYe8vRiGXFkvLQ"
       },
       "description": {
         "type": "richtext",
-        "pos": 2,
+        "pos": 3,
         "customize_toolbar": true,
         "toolbar": ["bold", "color", "italic", "link", "underline"],
         "restrict_type": "",
@@ -13354,7 +13421,7 @@
         "restrict_type": "",
         "restrict_components": true,
         "component_whitelist": ["button-link"],
-        "pos": 3,
+        "pos": 4,
         "id": "A00m9t2uTF2LeyUIm9LIRQ"
       },
       "size": {
@@ -13383,7 +13450,7 @@
           }
         ],
         "default_value": "large",
-        "pos": 4,
+        "pos": 5,
         "id": "6yIi_isiTfuNJagL8pVxpg"
       }
     },

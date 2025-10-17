@@ -578,6 +578,7 @@ export interface CustomerStoryCardStoryblok {
   cta_text?: string;
   cta_link?: string;
   description?: string;
+  gradient_description?: string;
   _uid: string;
   component: 'customer-story-card';
   [k: string]: any;
@@ -648,6 +649,7 @@ export interface FaqStoryblok {
 }
 
 export interface FaqSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
   title: TitleStoryblok[];
   faqs: FaqStoryblok[];
   _uid: string;
@@ -1504,6 +1506,7 @@ export interface ModerationFeaturesStoryblok {
 }
 
 export interface ModerationFeaturesSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
   title: TitleSectionStoryblok[];
   rows: ModerationFeatureCardsRowStoryblok[];
   _uid: string;
@@ -3287,6 +3290,7 @@ export interface TextStoryblok {
 }
 
 export interface TitleStoryblok {
+  label_colour?: '' | 'orange' | 'brand';
   label?: string;
   title?: string;
   description?: RichtextStoryblok;
