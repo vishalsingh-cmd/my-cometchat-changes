@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
+  // import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
+  // import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
   import FeaturedStorySectionV2 from './featured-story-section-v2.svelte';
@@ -11,26 +11,49 @@
   import type { BlogStoriesSliderStoryblok } from '$types/bloks';
   export let block: BlogStoriesSliderStoryblok;
 
-  createIndustryContext(0);
-  const { activeIndex, setActiveIndex } = getIndustryContect();
+  // createIndustryContext(0);
+  // const { activeIndex, setActiveIndex } = getIndustryContect();
 
   let interval: ReturnType<typeof setInterval>;
 
+  // --- Infinite carousel logic ---
+  $: cards = block?.cards ?? [];
+  $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
+
+  let currentIndex = 1;
+  let transitioning = true;
+
   function startAutoScroll() {
     clearInterval(interval);
-    interval = setInterval(() => {
-      next();
-    }, 5000);
+    interval = setInterval(next, 5000);
   }
 
   function next() {
-    setActiveIndex(($activeIndex + 1) % block.cards.length);
-    startAutoScroll(); // reset interval
+    transitioning = true;
+    currentIndex += 1;
+    startAutoScroll();
   }
 
   function prev() {
-    setActiveIndex(($activeIndex - 1 + block.cards.length) % block.cards.length);
-    startAutoScroll(); // reset interval
+    transitioning = true;
+    currentIndex -= 1;
+    startAutoScroll();
+  }
+
+  async function handleTransitionEnd() {
+    // handle looping when reaching clone slides
+    if (currentIndex === duplicatedCards.length - 1) {
+      transitioning = false;
+      currentIndex = 1;
+      await tick();
+      transitioning = false;
+    }
+    if (currentIndex === 0) {
+      transitioning = false;
+      currentIndex = duplicatedCards.length - 2;
+      await tick();
+      transitioning = false;
+    }
   }
 
   onMount(() => {
@@ -41,9 +64,9 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} pyEnabled={false} className=" mb-[40px] mt-[100px]">
-      <div class=" relative flex w-full flex-col gap-[60px] overflow-hidden">
-        <h2 class=" font-sans text-3xl font-semibold leading-snug">
+    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[100px]">
+      <div class="relative flex w-full flex-col gap-[60px] overflow-hidden">
+        <h2 class="font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
@@ -55,17 +78,23 @@
           {/if}
         </h2>
 
+        <!-- Slider Track -->
         <div
-          class="flex gap-8 transition-transform duration-500 ease-in-out"
-          style="transform: translateX(-{$activeIndex * 85}%)"
+          class="flex gap-8"
+          style="
+            transform: translateX(-{currentIndex * 85}%);
+            transition: {transitioning ? 'transform 0.5s ease' : 'none'};
+          "
+          on:transitionend={handleTransitionEnd}
         >
-          {#each block.cards ?? [] as card, index}
+          {#each duplicatedCards as card, index}
             <div
               class={'relative flex h-[440px] w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent pl-[40px] pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 ' +
-                (index === $activeIndex ? 'opacity-100' : 'opacity-60')}
+                (index === currentIndex ? 'opacity-100' : 'opacity-60')}
             >
               <FeaturedStorySectionV2 block={card} />
 
+              <!-- Decorative background SVG -->
               <div class="group absolute inset-x-0 bottom-0 z-30 [filter:blur(29.137px)]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +111,24 @@
                     />
                   </g>
                   <defs>
-                    <!-- filter unchanged -->
+                    <filter
+                      id="filter0_f_2337_576"
+                      x="0.176086"
+                      y="-56.4183"
+                      width="998.654"
+                      height="698.967"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="BackgroundImageFix"
+                        result="shape"
+                      />
+                      <feGaussianBlur stdDeviation="47" result="effect1_foregroundBlur_2337_576" />
+                    </filter>
                   </defs>
                 </svg>
               </div>
@@ -90,22 +136,25 @@
           {/each}
         </div>
 
-        <!-- Arrows and dots -->
+        <!-- Arrows and Dots -->
         <div class="flex gap-2 self-center pb-4">
-          <Button on:click={prev} variant="secondary"><Icon icon="chevron-left" size="xs" /></Button
-          >
+          <Button on:click={prev} variant="secondary">
+            <Icon icon="chevron-left" size="xs" />
+          </Button>
+
           <div class="flex items-center gap-2">
-            {#each block.cards ?? [] as card, index}
+            {#each cards as _, index}
               <div
                 class={`h-2 w-2 rounded-full ${
-                  index === $activeIndex ? 'bg-gray-12' : 'bg-gray-12/10'
-                } `}
+                  index + 1 === currentIndex ? 'bg-gray-12' : 'bg-gray-12/10'
+                }`}
               />
             {/each}
           </div>
-          <Button on:click={next} variant="secondary" className="text-gray-5"
-            ><Icon icon="chevron-right" size="xs" /></Button
-          >
+
+          <Button on:click={next} variant="secondary" className="text-gray-5">
+            <Icon icon="chevron-right" size="xs" />
+          </Button>
         </div>
       </div>
     </Container>

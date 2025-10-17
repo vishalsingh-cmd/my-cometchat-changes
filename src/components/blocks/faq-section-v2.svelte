@@ -6,7 +6,7 @@
   import Icon from '$components/icon/icon.svelte';
   import Accordion from '$components/accordion.svelte';
   import AccordionGroup from '$components/accordion-group.svelte';
-  import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
+  // import RichTextRenderer from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: FaqSectionStoryblok;
 </script>

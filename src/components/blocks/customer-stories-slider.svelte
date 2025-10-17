@@ -1,61 +1,70 @@
 <script lang="ts">
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  import { onMount } from 'svelte';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
+  // import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
+  // import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
+  import { onMount, tick } from 'svelte';
 
   import type { CustomerStoriesSliderStoryblok } from '$types/bloks';
+
   export let block: CustomerStoriesSliderStoryblok;
 
-  createIndustryContext(0);
-  const { activeIndex, setActiveIndex } = getIndustryContect();
+  // createIndustryContext(0);
+  // const { activeIndex, setActiveIndex } = getIndustryContect();
 
   let interval: ReturnType<typeof setInterval>;
 
-  //   let unsubscribe: () => void;
+  $: cards = block?.cards ?? [];
+  $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
 
-  //   onMount(() => {
-  //     unsubscribe = onChange((index: number) => {
-  //       // Optional: trigger animations or effects
-  //     });
-  //     return () => unsubscribe?.();
-  //   });
+  let currentIndex = 1;
+  let transitioning = true;
 
   function resetInterval() {
     clearInterval(interval);
-    interval = setInterval(() => {
-      next();
-    }, 5000);
+    interval = setInterval(next, 5000);
   }
 
   function next() {
-    setActiveIndex(($activeIndex + 1) % block.cards.length);
+    transitioning = true;
+    currentIndex += 1;
     resetInterval();
   }
 
   function prev() {
-    setActiveIndex(($activeIndex - 1 + block.cards.length) % block.cards.length);
+    transitioning = true;
+    currentIndex -= 1;
     resetInterval();
   }
 
-  onMount(() => {
-    interval = setInterval(() => {
-      next();
-    }, 5000);
+  async function handleTransitionEnd() {
+    // Wait for DOM updates to settle before snapping (prevents flicker)
+    if (currentIndex === duplicatedCards.length - 1) {
+      transitioning = false;
+      currentIndex = 1;
+      await tick(); // ensures DOM updates before applying transform again
+      transitioning = false; // keeps it static
+    }
+    if (currentIndex === 0) {
+      transitioning = false;
+      currentIndex = duplicatedCards.length - 2;
+      await tick();
+      transitioning = false;
+    }
+  }
 
-    return () => clearInterval(interval); // cleanup on unmount
+  onMount(() => {
+    interval = setInterval(next, 5000);
+    return () => clearInterval(interval);
   });
 </script>
 
 {#if block}
   <Section>
-    <Container>
-      <div
-        class=" relative mx-auto mt-40 flex w-full flex-col gap-[60px] overflow-hidden font-semibold"
-      >
+    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[108px]">
+      <div class="relative flex w-full flex-col gap-[60px] overflow-hidden font-semibold">
         <h2 class="font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
@@ -67,14 +76,20 @@
             </span>
           {/if}
         </h2>
+
+        <!-- Slider Track -->
         <div
-          class="flex gap-8 transition-transform duration-500 ease-in-out"
-          style="transform: translateX(-{$activeIndex * 66}%)"
+          class="flex gap-8"
+          style="
+            transform: translateX(-{currentIndex * 58.5}%);
+            transition: {transitioning ? 'transform 0.5s ease' : 'none'};
+          "
+          on:transitionend={handleTransitionEnd}
         >
-          {#each block.cards ?? [] as card, index}
+          {#each duplicatedCards as card, index}
             <div
               class={'group relative flex min-h-[416px] w-[816px] flex-shrink-0 flex-col justify-between rounded-[24px] border border-gray-12/10 bg-[#0A0914] p-[60px] transition-all duration-500 ease-in-out hover:border-gray-12/50 hover:bg-gray-11/5 ' +
-                (index === $activeIndex ? 'opacity-100' : 'opacity-60')}
+                (index === currentIndex ? 'opacity-100' : 'opacity-60')}
             >
               <div class="h-[60px]">
                 <img src={card?.customer_logo?.filename} alt="customer_logo" class="shrink-0" />
@@ -83,9 +98,7 @@
               <div class="flex flex-col gap-[40px]">
                 <div class="font-sans text-2xl font-semibold leading-snug">
                   {#if card?.description}
-                    <p class="mt-4">
-                      {card?.description}
-                    </p>
+                    <p class="mt-4">{card?.description}</p>
                   {/if}
 
                   {#if card?.gradient_description}
@@ -98,12 +111,13 @@
                 </div>
 
                 <div>
-                  <Button className="w-5" as="a" href={card?.cta_link} variant="secondary"
-                    >{card?.cta_text}</Button
-                  >
+                  <Button className="w-5" as="a" href={card?.cta_link} variant="secondary">
+                    {card?.cta_text}
+                  </Button>
                 </div>
               </div>
 
+              <!-- Decorative Shape -->
               <div class="pointer-events-none absolute bottom-0 right-0">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -144,22 +158,25 @@
           {/each}
         </div>
 
-        <!-- Arrows and dots -->
+        <!-- Arrows and Dots -->
         <div class="flex gap-2 self-center">
-          <Button on:click={prev} variant="secondary"><Icon icon="chevron-left" size="xs" /></Button
-          >
+          <Button on:click={prev} variant="secondary">
+            <Icon icon="chevron-left" size="xs" />
+          </Button>
+
           <div class="flex items-center gap-2">
-            {#each block.cards ?? [] as card, index}
+            {#each cards as _, index}
               <div
                 class={`h-2 w-2 rounded-full ${
-                  index === $activeIndex ? 'bg-gray-12' : 'bg-gray-12/10'
-                } `}
+                  index + 1 === currentIndex ? 'bg-gray-12' : 'bg-gray-12/10'
+                }`}
               />
             {/each}
           </div>
-          <Button on:click={next} variant="secondary" className="text-gray-5"
-            ><Icon icon="chevron-right" size="xs" /></Button
-          >
+
+          <Button on:click={next} variant="secondary">
+            <Icon icon="chevron-right" size="xs" />
+          </Button>
         </div>
       </div>
     </Container>
