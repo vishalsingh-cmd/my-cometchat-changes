@@ -9,7 +9,7 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 text-gray-12">
+  <section use:storyblokEditable={block} data-theme={block.theme} class="bg-gray-1 text-gray-12">
     {#if block.title && block.title[0]}
       <TitleSection block={block.title[0]} />
     {/if}
