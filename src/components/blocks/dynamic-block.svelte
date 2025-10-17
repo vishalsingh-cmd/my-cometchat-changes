@@ -21,6 +21,7 @@
   import DirectorySection from './directory-section.svelte';
   import DoublePanelSection from './double-panel-section.svelte';
   import FaqSection from './faq-section.svelte';
+  import FaqSectionV2 from './faq-section-v2.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
   import FeaturesAtGlanceSection from './features-at-glance-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
@@ -157,6 +158,7 @@
     emptyspace: Emptyspace,
 
     'faq-section': FaqSection,
+    'faq-section-v2': FaqSectionV2,
     'featured-story-section': FeaturedStorySection,
     'features-at-glance-section': FeaturesAtGlanceSection,
     'features-section': FeaturesSection,
