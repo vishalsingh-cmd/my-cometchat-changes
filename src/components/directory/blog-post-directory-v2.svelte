@@ -8,6 +8,9 @@
   import { createDebouncedValue } from '$lib/stores/create-debounced-value';
   import { createMediaStore } from '$lib/stores/media';
 
+  import { fly, fade } from 'svelte/transition';
+  import { flip } from 'svelte/animate';
+
   import { getStories } from '$lib/storyblok';
   import { cn, scrollLock } from '$lib/utils';
   import { parseItem, type Panel, RESULTS_PER_PAGE } from '$lib/data/directory';
@@ -231,7 +234,11 @@
   >
     {#if areFiltersOpen}
       <div
-        class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
+        in:fly={{ x: -40, duration: 1000, opacity: 0 }}
+        out:fly={{ x: -40, duration: 1000, opacity: 0 }}
+        class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5
+           transition-all duration-300 ease-in-out lg:relative lg:h-auto
+           lg:w-auto lg:bg-transparent lg:px-0"
       >
         <!-- Mobile Filters Header -->
         <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
@@ -244,6 +251,7 @@
           on:clearFilters={() => clearFilters()}
         />
 
+        <!-- Mobile Filters Footer -->
         <MobileFiltersFooter
           on:clearFiltersAndClose={() => {
             clearFilters();

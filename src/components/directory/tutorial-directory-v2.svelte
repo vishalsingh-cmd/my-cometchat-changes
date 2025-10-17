@@ -18,7 +18,8 @@
     RESULTS_PER_PAGE
   } from '$lib/data/directory';
 
-  import ContentCard from '$components/content-card.svelte';
+  // import ContentCard from '$components/content-card.svelte';
+  import ContentCardTutorials from '$components/content-card-tutorials.svelte';
   import FilterPanel from '$components/directory/filter-panel.svelte';
   import MobileFiltersFooter from '$components/directory/mobile-filters-footer.svelte';
   import MobileFiltersHeader from '$components/directory/mobile-filters-header.svelte';
@@ -244,7 +245,7 @@
       <!-- Loading State -->
       {#if $getDirectoryDataWithFilters.isLoading}
         {#each Array(6) as _}
-          <ContentCard isLoading />
+          <ContentCardTutorials isLoading />
         {/each}
       {/if}
 
@@ -262,7 +263,7 @@
         {#each $getDirectoryDataWithFilters.data.stories as item}
           {@const parsedItem = parseItem(item, 'tutorial')}
           {@const { image, title, tags, link, customer, author, date } = parsedItem}
-          <ContentCard
+          <ContentCardTutorials
             {image}
             {title}
             {tags}
