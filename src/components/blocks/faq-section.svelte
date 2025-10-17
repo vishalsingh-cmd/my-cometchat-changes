@@ -12,20 +12,20 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="overflow-hidden bg-gray-1">
+  <section use:storyblokEditable={block} data-theme={block.theme} class="overflow-hidden bg-gray-1">
     <div
       class="container relative mx-auto flex flex-col items-center px-container py-12 lg:py-[100px]"
     >
       <!-- Gradient -->
-      <div
+      <!-- <div
         class="absolute -bottom-[200px] -left-[100px] h-[400px] w-[600px] -rotate-45 bg-gradient-to-r from-[#756CF6] via-[#B968A4] to-[#FCB8A8] opacity-30 blur-[230px] lg:opacity-100"
         style="transform: translate3d(0, 0, 0);"
-      />
+      /> -->
 
       {#if block.title?.[0]}
         {#if block.title && block.title[0]}
           {@const title = block.title[0]}
-          {@const label = getLabelInfo(title.label, 'orange')}
+          {@const label = getLabelInfo(title.label, title.label_colour || 'brand')}
           <Title
             {label}
             title={title.title}
