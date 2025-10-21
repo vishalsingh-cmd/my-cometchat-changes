@@ -657,6 +657,15 @@ export interface FaqSectionStoryblok {
   [k: string]: any;
 }
 
+export interface FaqSectionV2Storyblok {
+  theme?: '' | 'dark' | 'light';
+  title: TitleStoryblok[];
+  faqs: FaqStoryblok[];
+  _uid: string;
+  component: 'faq-section-v2';
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   title?: string;
   feature_list?: FeatureItemStoryblok[];
@@ -1200,6 +1209,7 @@ export interface IndustryStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -1240,11 +1250,13 @@ export interface IndustryStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1259,6 +1271,7 @@ export interface IndustryStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1687,6 +1700,7 @@ export interface PageStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -1727,11 +1741,13 @@ export interface PageStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1746,6 +1762,7 @@ export interface PageStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -1807,6 +1824,7 @@ export interface PageStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -1847,11 +1865,13 @@ export interface PageStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1866,6 +1886,7 @@ export interface PageStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -2032,6 +2053,7 @@ export interface PricingStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -2072,11 +2094,13 @@ export interface PricingStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -2091,6 +2115,7 @@ export interface PricingStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -2169,6 +2194,15 @@ export interface PricingCardsStoryblok {
   category2: any[];
   _uid: string;
   component: 'pricing-cards';
+  [k: string]: any;
+}
+
+export interface PricingCardsV2Storyblok {
+  category1: PricingHeroQ3Y24CardV1Storyblok[];
+  category2: any[];
+  category3?: HeroFormV2Storyblok[];
+  _uid: string;
+  component: 'pricing-cards-v2';
   [k: string]: any;
 }
 
@@ -2258,6 +2292,23 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   [k: string]: any;
 }
 
+export interface PricingHeroQ3Y24V2Storyblok {
+  header?: PricingTitleQ3Y24Storyblok[];
+  title?: string;
+  description?: RichtextStoryblok;
+  mau: PricingMauStoryblok[];
+  cards: PricingCardsV2Storyblok[];
+  button: ButtonLinkStoryblok[];
+  info_items?: PricingHeroInfoItemStoryblok[];
+  category1: string;
+  category2: string;
+  custom_label?: string;
+  category3?: string;
+  _uid: string;
+  component: 'pricing-hero-Q3Y24-v2';
+  [k: string]: any;
+}
+
 export interface PricingHeroRevampStoryblok {
   implementation_services?: string;
   support_services?: string;
@@ -2335,6 +2386,17 @@ export interface PricingPlanEnhancementFreeStoryblok {
   cta?: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-plan-enhancement-free';
+  [k: string]: any;
+}
+
+export interface PricingPlanEnhancementFreeV2Storyblok {
+  name: string;
+  description?: RichtextStoryblok;
+  price?: string;
+  highlights?: TextStoryblok[];
+  cta?: ButtonLinkStoryblok[];
+  _uid: string;
+  component: 'pricing-plan-enhancement-free-v2';
   [k: string]: any;
 }
 
@@ -2562,6 +2624,14 @@ export interface PricingTitleQ3Y24Storyblok {
   description?: RichtextStoryblok;
   _uid: string;
   component: 'pricing-title-Q3Y24';
+  [k: string]: any;
+}
+
+export interface PricingTitleQ3Y24V2Storyblok {
+  title?: string;
+  description?: RichtextStoryblok;
+  _uid: string;
+  component: 'pricing-title-Q3Y24-v2';
   [k: string]: any;
 }
 
@@ -2877,6 +2947,7 @@ export interface SyncedBlockContentStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -2917,11 +2988,13 @@ export interface SyncedBlockContentStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -2936,6 +3009,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok
@@ -3032,6 +3106,7 @@ export interface TechnologyStoryblok {
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
+    | FaqSectionV2Storyblok
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
@@ -3072,11 +3147,13 @@ export interface TechnologyStoryblok {
     | PreFooterStoryblok
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
+    | PricingCardsV2Storyblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
+    | PricingHeroQ3Y24V2Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -3091,6 +3168,7 @@ export interface TechnologyStoryblok {
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
+    | PricingTitleQ3Y24V2Storyblok
     | RelatedBlogsStoryblok
     | RelatedStoriesSectionStoryblok
     | ResourcesHeroStoryblok

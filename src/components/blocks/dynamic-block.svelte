@@ -86,6 +86,7 @@
   import CenterStaticBannerV03 from '$components/center-static-banner-v03.svelte';
   import ModerationFeaturesSection from './moderation-features-section.svelte';
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
+  import PricingHeroQ3Y24V2 from './pricing-hero-Q3Y24-v2.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-V2.svelte';
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
@@ -203,6 +204,7 @@
     'pricing-hero-enhancements': PricingHeroEnhancements,
     'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-hero-Q3Y24': PricingHeroQ3Y24,
+    'pricing-hero-Q3Y24-v2': PricingHeroQ3Y24V2,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
