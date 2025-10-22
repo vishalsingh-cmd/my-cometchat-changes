@@ -64,7 +64,7 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[100px]">
+    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[100px] pl-[64px]">
       <div class="relative flex w-full flex-col gap-[60px] overflow-hidden">
         <h2 class="font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
@@ -82,7 +82,7 @@
         <div
           class="flex gap-8"
           style="
-            transform: translateX(-{currentIndex * 85}%);
+            transform: translateX(-{currentIndex * 89.5}%);
             transition: {transitioning ? 'transform 0.5s ease' : 'none'};
           "
           on:transitionend={handleTransitionEnd}
