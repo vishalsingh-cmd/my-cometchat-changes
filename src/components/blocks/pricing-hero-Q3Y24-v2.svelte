@@ -12,10 +12,12 @@
     pricingValues,
     isBilledAnnualy
   } from '$lib/stores/pricing-stores';
+  import PlanetImage from '$lib/assets/Planats.png';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
-  import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
+  // import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
+  import PricingHeroQ3Y24CardV2 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV2.svelte';
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
   import HeroFormV2 from '$components/blocks/hero-form-v2.svelte';
   import { onMount } from 'svelte';
@@ -98,8 +100,14 @@
     {/if}
     <div class="relative z-50 w-full">
       <Sticky class="md:static">
+        <!-- Planet background image - centered and behind everything -->
+        <div class="pointer-events-none absolute left-1/2 top-24 z-0 w-screen -translate-x-[700px]">
+          <img src={PlanetImage} alt="planet" class="" />
+        </div>
+
+        <!-- Tab switches with higher z-index -->
         <div
-          class="flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
+          class="relative z-10 flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
         >
           <!-- Tab 1: Chat and Message -->
           <PricingTabSwitch
@@ -149,7 +157,7 @@
             </div>
           </PricingTabSwitch>
 
-          <!-- Tab 3: Voice and Calls (Second) -->
+          <!-- Tab 3: AI Agent -->
           <PricingTabSwitch
             id={2}
             isActive={activateTable === 2}
@@ -174,6 +182,7 @@
           </PricingTabSwitch>
         </div>
       </Sticky>
+
       <div class="container mx-auto mb-12 mt-4 flex flex-col items-center">
         {#if activateTable === 0}
           <div
@@ -188,6 +197,7 @@
             />
           </div>
         {/if}
+
         <div
           class={cn(
             'grid w-full grid-cols-1 gap-8 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
@@ -197,7 +207,8 @@
         >
           {#if activateTable === 0}
             {#each block.cards[0].category1 ?? [] as plan}
-              <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} />
+              <!-- <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} /> -->
+              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
             {/each}
           {:else if activateTable === 1}
             {#each block.cards[0].category2 ?? [] as plan}
@@ -209,6 +220,7 @@
             {/each}
           {/if}
         </div>
+
         {#if activateTable === 0}
           <Button
             variant="secondary"
@@ -223,6 +235,7 @@
           >
         {/if}
       </div>
+
       <div class="container mx-auto flex justify-center px-container pb-[30px] lg:pb-[60px]">
         {#if block.info_items && block.info_items.length > 0}
           <div class="flex flex-wrap gap-8 gap-y-3">
