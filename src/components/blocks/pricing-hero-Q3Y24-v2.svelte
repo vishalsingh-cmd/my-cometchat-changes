@@ -200,9 +200,11 @@
 
         <div
           class={cn(
-            'grid w-full grid-cols-1 gap-8 px-container sm:grid-cols-2 md:mt-8 md:gap-8 lg:grid-cols-3',
-            activateTable === 0 && 'items-end md:gap-y-16 xl:grid-cols-4',
-            activateTable !== 0 && 'xl:grid-cols-3'
+            'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
+            activateTable === 0 &&
+              'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
+            activateTable === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
+            activateTable === 2 && 'xl:grid-cols-1'
           )}
         >
           {#if activateTable === 0}
