@@ -40,16 +40,18 @@
   }
 
   async function handleTransitionEnd() {
-    // Wait for DOM updates to settle before snapping (prevents flicker)
+    // Go forward past last real slide → jump to first real slide
     if (currentIndex === duplicatedCards.length - 1) {
       transitioning = false;
       currentIndex = 1;
       await tick(); // ensures DOM updates before applying transform again
       transitioning = false; // keeps it static
     }
+
+    // Go backward past first real slide → jump to last real slide
     if (currentIndex === 0) {
       transitioning = false;
-      currentIndex = duplicatedCards.length - 2;
+      currentIndex = duplicatedCards.length - 2; // last real slide
       await tick();
       transitioning = false;
     }
@@ -81,9 +83,9 @@
         <div
           class="flex gap-8"
           style="
-            transform: translateX(-{currentIndex * 58.5}%);
-            transition: {transitioning ? 'transform 0.5s ease' : 'none'};
-          "
+    transform: translateX(-{currentIndex * 58.5}%);
+    transition: {transitioning ? 'transform 0.4s' : 'none'};
+  "
           on:transitionend={handleTransitionEnd}
         >
           {#each duplicatedCards as card, index}

@@ -76,15 +76,15 @@
     qp += tags.length == 0 ? `${currentTag}` : `&${currentTag}`;
     return qp;
   }
-  function scrollToElement() {
-    const tag = $page.url.search?.split('=')[1]?.replaceAll('%20', ' ');
-    if (!tag) return;
-    const element = document.getElementById('articles');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-  afterNavigate(() => scrollToElement());
+  // function scrollToElement() {
+  //   const tag = $page.url.search?.split('=')[1]?.replaceAll('%20', ' ');
+  //   if (!tag) return;
+  //   const element = document.getElementById('articles');
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  //   }
+  // }
+  // afterNavigate(() => scrollToElement());
   const toggleTag = (tag: string, type: 'category') => {
     const panel = getPanel(type);
     let qp;
