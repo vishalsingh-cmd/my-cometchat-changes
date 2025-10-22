@@ -69,7 +69,7 @@
 {#if block}
   <section data-theme="dark" use:storyblokEditable={block} class="w-full pt-[100px]">
     {#if block.header}
-      {@const { title, description } = block.header[activateTable === 0 ? 0 : 1]}
+      {@const { title, description } = block.header[activateTable]}
       <div class="relative z-50 w-full">
         <div class="container z-50 mx-auto">
           <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
@@ -166,7 +166,7 @@
             }}
           >
             <div
-              class="group flex flex-row items-center justify-center gap-4 text-lg lg:text-xl lg:font-[640]"
+              class="group flex flex-row items-center justify-center gap-2 text-lg lg:text-xl lg:font-[640]"
             >
               <Icon
                 icon="stars-01"
