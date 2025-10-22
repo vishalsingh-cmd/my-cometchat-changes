@@ -13,9 +13,7 @@
 
 {#if block}
   <section use:storyblokEditable={block} data-theme={block.theme} class="overflow-hidden bg-gray-1">
-    <div
-      class="container relative mx-auto flex flex-col items-center px-container py-12 lg:py-[100px]"
-    >
+    <div class="container relative mx-auto flex flex-col items-center px-container">
       {#if block.title?.[0]}
         {#if block.title && block.title[0]}
           {@const title = block.title[0]}
