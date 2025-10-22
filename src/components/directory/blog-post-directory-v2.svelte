@@ -22,7 +22,8 @@
   import NoResultsBanner from '$components/directory/no-results-banner.svelte';
   import Options from '$components/directory/options.svelte';
   import Pagination from '$components/pagination/pagination.svelte';
-  import { afterNavigate, goto } from '$app/navigation';
+  // import { afterNavigate } zfrom '$app/navigation';
+  import { goto } from '$app/navigation';
 
   export let block: DirectorySectionStoryblok;
 
@@ -38,11 +39,6 @@
     areFiltersOpen = !areFiltersOpen;
   };
 
-  const clearFilters = () => {
-    goto('/blog');
-    // panels = cleanFilters(panels);
-  };
-
   $: panels = [
     {
       type: 'category',
@@ -51,6 +47,17 @@
       selectedTags: []
     }
   ] as Panel[];
+
+  const clearFilters = () => {
+    // 1️⃣ Reset all selectedTags to empty
+    panels = panels.map((panel) => ({
+      ...panel,
+      selectedTags: []
+    }));
+
+    // 2️⃣ Navigate to the base URL without scroll reset
+    goto('/blog', { noScroll: true });
+  };
 
   const getPanel = (type: 'category') => {
     return panels.filter((panel) => {
@@ -94,13 +101,13 @@
       });
       if (panel.selectedTags.length > 0) qp = createQP(type, panel.selectedTags, '');
       else {
-        goto('/blog');
+        // goto('/blog');
         return;
       }
     } else {
       qp = createQP(type, panel.selectedTags, tag);
     }
-    goto(qp);
+    goto(qp, { noScroll: true });
     // if (!tag) return;
     // let element = document.getElementById('blog-post-directory');
     // element?.scrollIntoView();
