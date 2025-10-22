@@ -52,6 +52,7 @@
   import PathSelector from './path-selector.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingClients from './pricing-clients.svelte';
+  import PricingComparison from './pricing-comparison.svelte';
   import PricingHero from './pricing-hero.svelte';
   import PricingHeroEnhancements from './pricing-hero-enhancements.svelte';
   import PricingBetaHero from './pricing-beta-hero.svelte';
@@ -201,6 +202,7 @@
     'pre-footer': PreFooter,
     'pre-footer-2': PreFooter2,
     'pricing-clients': PricingClients,
+    'pricing-comparison': PricingComparison,
     'pricing-hero': PricingHero,
     'pricing-beta-hero': PricingBetaHero,
     'pricing-hero-enhancements': PricingHeroEnhancements,

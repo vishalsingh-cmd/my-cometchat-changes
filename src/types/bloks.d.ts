@@ -2226,6 +2226,16 @@ export interface PricingClientsStoryblok {
   [k: string]: any;
 }
 
+export interface PricingComparisonStoryblok {
+  title?: string;
+  description?: string;
+  button_text?: string;
+  button_link?: string;
+  _uid: string;
+  component: 'pricing-comparison';
+  [k: string]: any;
+}
+
 export interface PricingHeroStoryblok {
   title: string;
   description: string;
