@@ -46,7 +46,7 @@
   {/if}
   {#if description}
     <div
-      class="flex flex-wrap items-center gap-2.5 text-lg font-semibold leading-tight text-gray-12 opacity-54 group-hover:opacity-64"
+      class="flex flex-wrap items-center gap-2.5 font-sans text-lg font-medium leading-snug tracking-[0.09px] text-gray-12 opacity-74 group-hover:opacity-74"
     >
       <span>{description}</span>
     </div>

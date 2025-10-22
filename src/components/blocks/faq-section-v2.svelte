@@ -35,7 +35,7 @@
               {@const { title, text, _uid } = faq}
               <Accordion
                 id={_uid}
-                class="rounded-2xl border border-gray-12/[0.04] bg-gray-12/2 p-5 text-xl backdrop-blur-[20px]"
+                class="rounded-2xl border border-gray-12/[0.04] bg-gray-12/2 p-[23px] text-xl backdrop-blur-[20px]"
               >
                 <div slot="header" let:expanded let:attributes let:onClick>
                   <button
@@ -67,7 +67,7 @@
                     {#if node.content}
                       {#each node.content as inner}
                         <p
-                          class=" mt-2 font-sans text-xl leading-snug tracking-[0.11px] opacity-74"
+                          class=" mt-2 font-sans text-xl font-medium leading-snug tracking-[0.11px] opacity-74"
                         >
                           {inner.text}
                         </p>
