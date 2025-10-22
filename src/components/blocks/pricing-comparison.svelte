@@ -11,7 +11,7 @@
   <Container
     pyEnabled={false}
     pxEnabled={false}
-    className="relative   flex flex-col items-start justify-between overflow-hidden rounded-2xl border border-gray-12/30  pl-[39px] py-[47px]  font-sans text-white"
+    className="relative   flex flex-col items-start justify-between overflow-hidden rounded-2xl border border-gray-12/[0.1]  pl-[39px] py-[47px]  font-sans text-white"
   >
     <!-- Left Content -->
     <div class="z-10 flex max-w-[600px] flex-1 flex-col gap-6">
