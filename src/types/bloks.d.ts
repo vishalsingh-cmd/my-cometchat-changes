@@ -450,6 +450,14 @@ export interface ComplexRollerStoryblok {
   [k: string]: any;
 }
 
+export interface ComplianceStoryblok {
+  title?: string;
+  images?: ImageOnlyStoryblok[];
+  _uid: string;
+  component: 'compliance';
+  [k: string]: any;
+}
+
 export interface ConnectedStepStoryblok {
   icon?: AssetStoryblok;
   title?: string;
@@ -1251,6 +1259,7 @@ export interface IndustryStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -1742,6 +1751,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -1866,6 +1876,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -2095,6 +2106,7 @@ export interface PricingStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -2203,6 +2215,14 @@ export interface PricingCardsV2Storyblok {
   category3?: HeroFormV2Storyblok[];
   _uid: string;
   component: 'pricing-cards-v2';
+  [k: string]: any;
+}
+
+export interface PricingClientsStoryblok {
+  clients?: HomeClientsV2Storyblok[];
+  compliance?: any[];
+  _uid: string;
+  component: 'pricing-clients';
   [k: string]: any;
 }
 
@@ -2989,6 +3009,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -3148,6 +3169,7 @@ export interface TechnologyStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingClientsStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok

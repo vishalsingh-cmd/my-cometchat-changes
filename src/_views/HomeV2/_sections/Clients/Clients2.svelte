@@ -70,7 +70,7 @@
   export let block: HomeClientsV2Storyblok;
 </script>
 
-<Section className="relative isolate group/clients overflow-visible">
+<Section className="relative z-20 isolate group/clients overflow-visible">
   <Container pyEnabled={false}>
     <div class="h-[136px]">
       <div class="relative z-40 flex h-full items-center justify-center">
