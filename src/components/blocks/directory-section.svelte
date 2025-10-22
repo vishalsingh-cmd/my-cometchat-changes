@@ -29,8 +29,8 @@
           <span class="text-3xl text-gray-1"> {block.title}</span>
         {/if}
         {#if block.gradient_title}
-          <span class="bg-gradient-purple bg-clip-text text-3xl text-transparent"
-            >{block.gradient_title}</span
+          <span class="ml-2 bg-gradient-purple bg-clip-text text-3xl text-transparent">
+            {block.gradient_title}</span
           >
         {/if}
       </div>
