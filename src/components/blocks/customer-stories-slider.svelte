@@ -1,26 +1,20 @@
 <script lang="ts">
+  import { onMount, tick } from 'svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
-  // import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  // import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  import { onMount, tick } from 'svelte';
-
   import type { CustomerStoriesSliderStoryblok } from '$types/bloks';
 
   export let block: CustomerStoriesSliderStoryblok;
 
-  // createIndustryContext(0);
-  // const { activeIndex, setActiveIndex } = getIndustryContect();
-
   let interval: ReturnType<typeof setInterval>;
+  let currentIndex = 1;
+  let transitioning = true;
+  let lockTransition = false; // Prevent double transitionend
 
   $: cards = block?.cards ?? [];
   $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
-
-  let currentIndex = 1;
-  let transitioning = true;
 
   function resetInterval() {
     clearInterval(interval);
@@ -28,30 +22,37 @@
   }
 
   function next() {
+    if (lockTransition) return;
+    lockTransition = true;
     transitioning = true;
     currentIndex += 1;
     resetInterval();
   }
 
   function prev() {
+    if (lockTransition) return;
+    lockTransition = true;
     transitioning = true;
     currentIndex -= 1;
     resetInterval();
   }
 
-  async function handleTransitionEnd() {
-    // Go forward past last real slide → jump to first real slide
-    if (currentIndex === duplicatedCards.length - 1) {
-      transitioning = false;
-      currentIndex = 1;
-      await tick(); // ensures DOM updates before applying transform again
-      transitioning = false; // keeps it static
-    }
+  async function handleTransitionEnd(e: TransitionEvent) {
+    // Ensure only container transition triggers
+    if (e.target !== e.currentTarget) return;
 
-    // Go backward past first real slide → jump to last real slide
-    if (currentIndex === 0) {
+    lockTransition = false;
+
+    const lastIndex = duplicatedCards.length - 1;
+
+    if (currentIndex === lastIndex) {
+      transitioning = true;
+      currentIndex = 1;
+      await tick();
       transitioning = false;
-      currentIndex = duplicatedCards.length - 2; // last real slide
+    } else if (currentIndex === 0) {
+      transitioning = true;
+      currentIndex = duplicatedCards.length - 2;
       await tick();
       transitioning = false;
     }
@@ -83,7 +84,7 @@
         <div
           class="flex gap-8"
           style="
-    transform: translateX(-{currentIndex * 61.6}%);
+    transform: translateX(-{currentIndex * (816 + 32)}px);
     transition: {transitioning ? 'transform 0.4s' : 'none'};
   "
           on:transitionend={handleTransitionEnd}

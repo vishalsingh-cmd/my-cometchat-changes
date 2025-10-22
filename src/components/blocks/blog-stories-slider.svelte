@@ -2,26 +2,20 @@
   import { onMount, tick } from 'svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  // import { createIndustryContext } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
-  // import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
   import FeaturedStorySectionV2 from './featured-story-section-v2.svelte';
-
   import type { BlogStoriesSliderStoryblok } from '$types/bloks';
+
   export let block: BlogStoriesSliderStoryblok;
 
-  // createIndustryContext(0);
-  // const { activeIndex, setActiveIndex } = getIndustryContect();
-
   let interval: ReturnType<typeof setInterval>;
-
-  // --- Infinite carousel logic ---
-  $: cards = block?.cards ?? [];
-  $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
-
   let currentIndex = 1;
   let transitioning = true;
+  let lockTransition = false; // prevent multiple transitions at once
+
+  $: cards = block?.cards ?? [];
+  $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
 
   function startAutoScroll() {
     clearInterval(interval);
@@ -29,26 +23,38 @@
   }
 
   function next() {
+    if (lockTransition) return;
+    lockTransition = true;
     transitioning = true;
     currentIndex += 1;
     startAutoScroll();
   }
 
   function prev() {
+    if (lockTransition) return;
+    lockTransition = true;
     transitioning = true;
     currentIndex -= 1;
     startAutoScroll();
   }
 
-  async function handleTransitionEnd() {
-    // handle looping when reaching clone slides
-    if (currentIndex === duplicatedCards.length - 1) {
+  async function handleTransitionEnd(e: TransitionEvent) {
+    // only trigger on container
+    if (e.target !== e.currentTarget) return;
+
+    lockTransition = false;
+
+    const lastIndex = duplicatedCards.length - 1;
+
+    // jump to first real slide
+    if (currentIndex === lastIndex) {
       transitioning = false;
       currentIndex = 1;
       await tick();
       transitioning = false;
     }
-    if (currentIndex === 0) {
+    // jump to last real slide
+    else if (currentIndex === 0) {
       transitioning = false;
       currentIndex = duplicatedCards.length - 2;
       await tick();
