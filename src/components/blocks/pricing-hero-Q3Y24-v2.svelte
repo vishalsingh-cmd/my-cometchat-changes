@@ -238,7 +238,7 @@
         {/if}
       </div>
 
-      <div class="container mx-auto flex justify-center px-container pb-[30px] lg:pb-[60px]">
+      <!-- <div class="container mx-auto flex justify-center px-container pb-[30px] lg:pb-[60px]">
         {#if block.info_items && block.info_items.length > 0}
           <div class="flex flex-wrap gap-8 gap-y-3">
             {#each block.info_items as { icon, name, description }}
@@ -253,7 +253,7 @@
             {/each}
           </div>
         {/if}
-      </div>
+      </div> -->
     </div>
   </section>
 {/if}
