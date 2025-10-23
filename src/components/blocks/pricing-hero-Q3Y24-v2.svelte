@@ -1,5 +1,6 @@
 <script lang="ts">
-  import PricingTabSwitch from '../pricing-tab-switch.svelte';
+  // import PricingTabSwitch from '../pricing-tab-switch.svelte';
+  import PricingTabSwitchV2 from '../pricing-tab-switch-v2.svelte';
   import type { PricingHeroQ3Y24V2Storyblok, PricingValues } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { typeIcon } from '$lib/storyblok';
@@ -109,77 +110,81 @@
         <div
           class="relative z-10 flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
         >
-          <!-- Tab 1: Chat and Message -->
-          <PricingTabSwitch
-            id={0}
-            isActive={activateTable === 0}
-            on:click={() => {
-              activateTable = 0;
-            }}
+          <div
+            class="flex flex-row items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px]"
           >
-            <div
-              class="group flex flex-row items-center justify-center gap-4 text-lg lg:text-xl lg:font-[640]"
+            <!-- Tab 1: Chat and Message -->
+            <PricingTabSwitchV2
+              id={0}
+              isActive={activateTable === 0}
+              on:click={() => {
+                activateTable = 0;
+              }}
             >
-              <Icon
-                icon="chat-and-message"
-                size="xs"
-                class={cn(
-                  'mb-2 flex-shrink-0 text-brand-9',
-                  activateTable === 0 ? 'opacity-100' : 'opacity-50',
-                  'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                )}
-              />
-              {block.category1}
-            </div>
-          </PricingTabSwitch>
+              <div
+                class="group flex w-[260px] flex-row items-center justify-center gap-4 px-4 text-lg lg:font-[640]"
+              >
+                <Icon
+                  icon="chat-and-message"
+                  size="xs"
+                  class={cn(
+                    'mb-2 flex-shrink-0 text-brand-9',
+                    activateTable === 0 ? 'opacity-100' : 'opacity-50',
+                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                  )}
+                />
+                {block.category1}
+              </div>
+            </PricingTabSwitchV2>
 
-          <!-- Tab 2: Voice and Calls (First) -->
-          <PricingTabSwitch
-            id={1}
-            isActive={activateTable === 1}
-            on:click={() => {
-              activateTable = 1;
-            }}
-          >
-            <div
-              class="group flex flex-row items-center justify-center gap-4 text-lg lg:text-xl lg:font-[640]"
+            <!-- Tab 2: Voice and Calls (First) -->
+            <PricingTabSwitchV2
+              id={1}
+              isActive={activateTable === 1}
+              on:click={() => {
+                activateTable = 1;
+              }}
             >
-              <Icon
-                icon="voice-and-calls"
-                size="xs"
-                class={cn(
-                  'mb-2 flex-shrink-0 text-brand-9',
-                  activateTable === 1 ? 'opacity-100' : 'opacity-50',
-                  'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                )}
-              />
-              {block.category2}
-            </div>
-          </PricingTabSwitch>
+              <div
+                class="group flex flex-row items-center justify-center gap-4 border-l border-white/10 px-4 text-lg lg:text-xl lg:font-[640]"
+              >
+                <Icon
+                  icon="voice-and-calls"
+                  size="xs"
+                  class={cn(
+                    'mb-2 flex-shrink-0 text-brand-9',
+                    activateTable === 1 ? 'opacity-100' : 'opacity-50',
+                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                  )}
+                />
+                {block.category2}
+              </div>
+            </PricingTabSwitchV2>
 
-          <!-- Tab 3: AI Agent -->
-          <PricingTabSwitch
-            id={2}
-            isActive={activateTable === 2}
-            on:click={() => {
-              activateTable = 2;
-            }}
-          >
-            <div
-              class="group flex flex-row items-center justify-center gap-2 text-lg lg:text-xl lg:font-[640]"
+            <!-- Tab 3: AI Agent -->
+            <PricingTabSwitchV2
+              id={2}
+              isActive={activateTable === 2}
+              on:click={() => {
+                activateTable = 2;
+              }}
             >
-              <Icon
-                icon="stars-01"
-                size="md"
-                class={cn(
-                  'mb-2 flex-shrink-0 text-gray-11',
-                  activateTable === 2 ? 'opacity-100' : 'opacity-50',
-                  'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                )}
-              />
-              {block.category3}
-            </div>
-          </PricingTabSwitch>
+              <div
+                class="group flex w-[260px] flex-row items-center justify-center gap-2 border-l border-white/10 px-4 text-lg leading-tighter lg:text-xl lg:font-[640]"
+              >
+                <Icon
+                  icon="stars-01"
+                  size="md"
+                  class={cn(
+                    'flex-shrink-0  text-gray-11',
+                    activateTable === 2 ? 'opacity-100' : 'opacity-50',
+                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                  )}
+                />
+                {block.category3}
+              </div>
+            </PricingTabSwitchV2>
+          </div>
         </div>
       </Sticky>
 
