@@ -24,7 +24,7 @@
               <img
                 src={image.image.filename}
                 alt={image.alt || 'Compliance logo'}
-                class=""
+                class="w-[108px]"
                 loading="lazy"
               />
             {/each}
