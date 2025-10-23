@@ -3,7 +3,9 @@
   import PricingTabSwitchV2 from '../pricing-tab-switch-v2.svelte';
   import type { PricingHeroQ3Y24V2Storyblok, PricingValues } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { typeIcon } from '$lib/storyblok';
+  // import { typeIcon } from '$lib/storyblok';
+  import { fade } from 'svelte/transition';
+
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
@@ -203,30 +205,33 @@
           </div>
         {/if}
 
-        <div
-          class={cn(
-            'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
-            activateTable === 0 &&
-              'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
-            activateTable === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
-            activateTable === 2 && 'xl:grid-cols-1'
-          )}
-        >
-          {#if activateTable === 0}
-            {#each block.cards[0].category1 ?? [] as plan}
-              <!-- <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} /> -->
-              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
-            {/each}
-          {:else if activateTable === 1}
-            {#each block.cards[0].category2 ?? [] as plan}
-              <PricingCardVideoAndVoiceEnhanced block={plan} />
-            {/each}
-          {:else if activateTable === 2}
-            {#each block.cards[0].category3 ?? [] as plan}
-              <HeroFormV2 block={plan} />
-            {/each}
-          {/if}
-        </div>
+        {#key activateTable}
+          <div
+            class={cn(
+              'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
+              activateTable === 0 &&
+                'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
+              activateTable === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
+              activateTable === 2 && 'xl:grid-cols-1'
+            )}
+            transition:fade={{ duration: 500 }}
+          >
+            {#if activateTable === 0}
+              {#each block.cards[0].category1 ?? [] as plan}
+                <!-- <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} /> -->
+                <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+              {/each}
+            {:else if activateTable === 1}
+              {#each block.cards[0].category2 ?? [] as plan}
+                <PricingCardVideoAndVoiceEnhanced block={plan} />
+              {/each}
+            {:else if activateTable === 2}
+              {#each block.cards[0].category3 ?? [] as plan}
+                <HeroFormV2 block={plan} />
+              {/each}
+            {/if}
+          </div>
+        {/key}
 
         {#if activateTable === 0}
           <Button
