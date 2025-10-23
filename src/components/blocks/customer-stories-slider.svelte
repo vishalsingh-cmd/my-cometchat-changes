@@ -46,12 +46,12 @@
     const lastIndex = duplicatedCards.length - 1;
 
     if (currentIndex === lastIndex) {
-      transitioning = true;
+      transitioning = false;
       currentIndex = 1;
       await tick();
       transitioning = false;
     } else if (currentIndex === 0) {
-      transitioning = true;
+      transitioning = false;
       currentIndex = duplicatedCards.length - 2;
       await tick();
       transitioning = false;

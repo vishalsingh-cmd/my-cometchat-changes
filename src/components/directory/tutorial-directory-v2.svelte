@@ -48,18 +48,6 @@
 
   $: panels = [
     {
-      type: 'tutorial_type',
-      title: string('directory.filter.tutorial_type.label'),
-      tags: $page.data.datasourceTutorialTypes,
-      selectedTags: []
-    },
-    {
-      type: 'industries',
-      title: string('directory.filter.industries.label'),
-      tags: $page.data.datasourceIndustries,
-      selectedTags: []
-    },
-    {
       type: 'integration_tool',
       title: string('directory.filter.integration_tool.label'),
       tags: $page.data.datasourceIntegrationTools,
@@ -93,14 +81,7 @@
 
   const toggleTag = (
     tag: string,
-    type:
-      | 'tutorial_type'
-      | 'industries'
-      | 'integration_tool'
-      | 'product'
-      | 'platform'
-      | 'language'
-      | 'framework'
+    type: 'integration_tool' | 'product' | 'platform' | 'language' | 'framework'
   ) => {
     const panel = getPanel(panels, type);
 
@@ -154,21 +135,20 @@
   $: numberOfSelectedTags = getNumberOfSelectedTags();
 
   $: filter_query = {
-    tutorial_type: panels[0].selectedTags.length ? { in: panels[0].selectedTags.join(',') } : null,
-    integration_tool: panels[2].selectedTags.length
-      ? { in: panels[2].selectedTags.join(',') }
+    integration_tool: panels[0].selectedTags.length
+      ? { in: panels[0].selectedTags.join(',') }
       : null,
-    product: panels[3].selectedTags.length
+    product: panels[1].selectedTags.length
+      ? { any_in_array: panels[1].selectedTags.join(',') }
+      : null,
+    platform: panels[2].selectedTags.length
+      ? { any_in_array: panels[2].selectedTags.join(',') }
+      : null,
+    language: panels[3].selectedTags.length
       ? { any_in_array: panels[3].selectedTags.join(',') }
       : null,
-    platform: panels[4].selectedTags.length
+    framework: panels[4].selectedTags.length
       ? { any_in_array: panels[4].selectedTags.join(',') }
-      : null,
-    language: panels[5].selectedTags.length
-      ? { any_in_array: panels[5].selectedTags.join(',') }
-      : null,
-    framework: panels[6].selectedTags.length
-      ? { any_in_array: panels[6].selectedTags.join(',') }
       : null
   };
 

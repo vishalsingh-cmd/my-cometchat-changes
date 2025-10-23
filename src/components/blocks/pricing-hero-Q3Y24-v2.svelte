@@ -183,7 +183,7 @@
         </div>
       </Sticky>
 
-      <div class="container mx-auto mb-12 mt-4 flex flex-col items-center">
+      <div class="container relative z-10 mx-auto mb-12 mt-4 flex flex-col items-center">
         {#if activateTable === 0}
           <div
             class="mb-[61px] mt-8 flex w-full flex-col items-center justify-around lg:h-[110px] lg:flex-row"

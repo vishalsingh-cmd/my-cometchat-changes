@@ -7,7 +7,7 @@ function loadHubSpotForm() {
     }
 
     const script = document.createElement('script');
-    script.charset = 'utf-8';
+    // script.charset = 'utf-8';
     script.type = 'text/javascript';
     script.src = '//js.hsforms.net/forms/embed/v2.js';
     script.onload = resolve;
