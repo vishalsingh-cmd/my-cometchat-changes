@@ -33,7 +33,7 @@
 
       {#if block.button_text}
         <div>
-          <Button href={block.button_url} variant="secondary">
+          <Button as="a" href={block.button_link} variant="secondary">
             {block.button_text}
           </Button>
         </div>
@@ -42,7 +42,7 @@
 
     <!-- Right Illustration -->
     <div class=" flex flex-1 shrink-0 items-center justify-center">
-      <img src={handsvg} alt="icon" class="absolute bottom-0 right-0" />
+      <img src={handsvg} alt="icon" class="absolute bottom-0 right-0 aspect-auto h-[250px]" />
     </div>
   </Container>
 </Section>
