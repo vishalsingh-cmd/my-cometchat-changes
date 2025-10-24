@@ -35,7 +35,7 @@
       <div class="flex flex-col gap-[24px]">
         <div class="flex-start flex flex-col gap-3">
           {#if highlights?.length > 0}
-            <h3 class="mt-3 text-lg/tight font-semibold">Highlights</h3>
+            <h3 class=" text-lg/tight font-semibold">Highlights</h3>
 
             <div class="flex flex-col gap-2">
               {#each highlights as highlight}
