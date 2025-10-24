@@ -15,7 +15,7 @@
   // import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
   import PricingHeroQ3Y24CardV2 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV2.svelte';
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
-  import HeroFormV2 from '$components/blocks/hero-form-v2.svelte';
+  import HeroFormV2Pricing from '$components/blocks/hero-form-pricing.svelte';
   import { onMount } from 'svelte';
   import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   import Button from '$components/buttons/button.svelte';
@@ -224,7 +224,7 @@
             {/each}
           {:else if $activateTable === 2}
             {#each block.cards[0].category3 ?? [] as plan}
-              <HeroFormV2 block={plan} />
+              <HeroFormV2Pricing block={plan} />
             {/each}
           {/if}
         </div>
