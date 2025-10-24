@@ -1260,6 +1260,7 @@ export interface IndustryStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -1276,6 +1277,7 @@ export interface IndustryStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
@@ -1752,6 +1754,7 @@ export interface PageStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -1768,6 +1771,7 @@ export interface PageStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
@@ -1877,6 +1881,7 @@ export interface PageStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -1893,6 +1898,7 @@ export interface PageStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
@@ -2107,6 +2113,7 @@ export interface PricingStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -2123,6 +2130,7 @@ export interface PricingStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
@@ -2198,6 +2206,12 @@ export interface PricingBetaPlanStoryblok {
   cta: ButtonLinkStoryblok[];
   _uid: string;
   component: 'pricing-beta-plan';
+  [k: string]: any;
+}
+
+export interface PricingCStoryblok {
+  _uid: string;
+  component: 'pricing c';
   [k: string]: any;
 }
 
@@ -2612,6 +2626,15 @@ export interface PricingTableQ3Y24Storyblok {
 
 export interface PricingTableQ3Y24V2Storyblok {
   title?: TitleSectionStoryblok[];
+  collapsed_items_count?: number;
+  data: PricingTableGroupQ3Y24Storyblok[];
+  _uid: string;
+  component: 'pricing-table-Q3Y24-v2';
+  [k: string]: any;
+}
+
+export interface PricingTableQ3Y24V2Storyblok {
+  title?: TitleSectionStoryblok[];
   data: PricingTableGroupQ3Y24Storyblok[];
   _uid: string;
   component: 'pricing-table-Q3Y24-V2';
@@ -3020,6 +3043,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -3036,6 +3060,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
@@ -3180,6 +3205,7 @@ export interface TechnologyStoryblok {
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
     | PricingClientsStoryblok
+    | PricingComparisonStoryblok
     | PricingHeroStoryblok
     | PricingHeroEnhancementsStoryblok
     | PricingHeroQ3Y24Storyblok
@@ -3196,6 +3222,7 @@ export interface TechnologyStoryblok {
     | PricingTableGroupRevampStoryblok
     | PricingTableHeaderColumnRevampStoryblok
     | PricingTableQ3Y24Storyblok
+    | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
