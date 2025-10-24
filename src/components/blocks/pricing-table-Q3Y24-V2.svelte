@@ -1,6 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
-  import { activateTable, maus, pricingValues } from '$lib/stores/pricing-stores';
+  import { activateTable, maus, pricingValues } from '$lib/stores/pricing-stores-v2';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24/pricing-table-line-Q3Y24.svelte';
@@ -63,7 +63,7 @@
   });
 </script>
 
-{#if $activateTable}
+{#if $activateTable === 0}
   <div class="container mx-auto">
     <TitleSection block={block.title[0]} />
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">

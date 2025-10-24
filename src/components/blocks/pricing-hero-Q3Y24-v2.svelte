@@ -4,17 +4,10 @@
   import type { PricingHeroQ3Y24V2Storyblok, PricingValues } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   // import { typeIcon } from '$lib/storyblok';
-  import { fade } from 'svelte/transition';
 
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
-  import {
-    lastSelectedMAUIndex,
-    maus,
-    pricingValues,
-    isBilledAnnualy
-  } from '$lib/stores/pricing-stores';
   import PlanetImage from '$lib/assets/Planats.png';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
@@ -26,9 +19,15 @@
   import { onMount } from 'svelte';
   import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   import Button from '$components/buttons/button.svelte';
+  import {
+    activateTable,
+    lastSelectedMAUIndex,
+    maus,
+    pricingValues,
+    isBilledAnnualy
+  } from '$lib/stores/pricing-stores-v2';
 
   // Changed from 0 to support three tabs: 0, 1, or 2
-  let activateTable = 0;
 
   export let block: PricingHeroQ3Y24V2Storyblok;
 
@@ -72,7 +71,7 @@
 {#if block}
   <section data-theme="dark" use:storyblokEditable={block} class="w-full pt-[100px]">
     {#if block.header}
-      {@const { title, description } = block.header[activateTable]}
+      {@const { title, description } = block.header[$activateTable]}
       <div class="relative z-50 w-full">
         <div class="container z-50 mx-auto">
           <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
@@ -118,9 +117,9 @@
             <!-- Tab 1: Chat and Message -->
             <PricingTabSwitchV2
               id={0}
-              isActive={activateTable === 0}
+              isActive={$activateTable === 0}
               on:click={() => {
-                activateTable = 0;
+                $activateTable = 0;
               }}
             >
               <div
@@ -131,7 +130,7 @@
                   size="xs"
                   class={cn(
                     'mb-2 flex-shrink-0 text-brand-9',
-                    activateTable === 0 ? 'opacity-100' : 'opacity-50',
+                    $activateTable === 0 ? 'opacity-100' : 'opacity-50',
                     'transition-all duration-0 ease-in-out group-hover:opacity-100'
                   )}
                 />
@@ -142,9 +141,9 @@
             <!-- Tab 2: Voice and Calls (First) -->
             <PricingTabSwitchV2
               id={1}
-              isActive={activateTable === 1}
+              isActive={$activateTable === 1}
               on:click={() => {
-                activateTable = 1;
+                $activateTable = 1;
               }}
             >
               <div
@@ -155,7 +154,7 @@
                   size="xs"
                   class={cn(
                     'mb-2 flex-shrink-0 text-brand-9',
-                    activateTable === 1 ? 'opacity-100' : 'opacity-50',
+                    $activateTable === 1 ? 'opacity-100' : 'opacity-50',
                     'transition-all duration-0 ease-in-out group-hover:opacity-100'
                   )}
                 />
@@ -166,9 +165,9 @@
             <!-- Tab 3: AI Agent -->
             <PricingTabSwitchV2
               id={2}
-              isActive={activateTable === 2}
+              isActive={$activateTable === 2}
               on:click={() => {
-                activateTable = 2;
+                $activateTable = 2;
               }}
             >
               <div
@@ -179,7 +178,7 @@
                   size="md"
                   class={cn(
                     'flex-shrink-0  text-gray-11',
-                    activateTable === 2 ? 'opacity-100' : 'opacity-50',
+                    $activateTable === 2 ? 'opacity-100' : 'opacity-50',
                     'transition-all duration-0 ease-in-out group-hover:opacity-100'
                   )}
                 />
@@ -191,7 +190,7 @@
       </Sticky>
 
       <div class="container relative z-10 mx-auto mb-12 mt-4 flex flex-col items-center">
-        {#if activateTable === 0}
+        {#if $activateTable === 0}
           <div
             class="mb-[61px] mt-8 flex w-full flex-col items-center justify-around lg:h-[110px] lg:flex-row"
           >
@@ -205,35 +204,32 @@
           </div>
         {/if}
 
-        {#key activateTable}
-          <div
-            class={cn(
-              'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
-              activateTable === 0 &&
-                'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
-              activateTable === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
-              activateTable === 2 && 'xl:grid-cols-1'
-            )}
-            transition:fade={{ duration: 500 }}
-          >
-            {#if activateTable === 0}
-              {#each block.cards[0].category1 ?? [] as plan}
-                <!-- <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} /> -->
-                <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
-              {/each}
-            {:else if activateTable === 1}
-              {#each block.cards[0].category2 ?? [] as plan}
-                <PricingCardVideoAndVoiceEnhanced block={plan} />
-              {/each}
-            {:else if activateTable === 2}
-              {#each block.cards[0].category3 ?? [] as plan}
-                <HeroFormV2 block={plan} />
-              {/each}
-            {/if}
-          </div>
-        {/key}
+        <div
+          class={cn(
+            'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
+            $activateTable === 0 &&
+              'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
+            $activateTable === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
+            $activateTable === 2 && 'xl:grid-cols-1'
+          )}
+        >
+          {#if $activateTable === 0}
+            {#each block.cards[0].category1 ?? [] as plan}
+              <!-- <PricingHeroQ3Y24CardV1 block={plan} value={$pricingValues[plan.name]} /> -->
+              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+            {/each}
+          {:else if $activateTable === 1}
+            {#each block.cards[0].category2 ?? [] as plan}
+              <PricingCardVideoAndVoiceEnhanced block={plan} />
+            {/each}
+          {:else if $activateTable === 2}
+            {#each block.cards[0].category3 ?? [] as plan}
+              <HeroFormV2 block={plan} />
+            {/each}
+          {/if}
+        </div>
 
-        {#if activateTable === 0}
+        {#if $activateTable === 0}
           <Button
             variant="secondary"
             size="sm"

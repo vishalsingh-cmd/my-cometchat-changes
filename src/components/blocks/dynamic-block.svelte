@@ -90,7 +90,7 @@
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
   import PricingHeroQ3Y24V2 from './pricing-hero-Q3Y24-v2.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
-  import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-V2.svelte';
+  import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
@@ -214,7 +214,7 @@
     'pricing-table-section': PricingTableSection,
     'pricing-table-revamp': PricingTableRevamp,
     'pricing-table-Q3Y24': PricingTableQ3Y24,
-    'pricing-table-Q3Y24-V2': PricingTableQ3Y24V2,
+    'pricing-table-Q3Y24-v2': PricingTableQ3Y24V2,
     'resources-hero': ResourcesHero,
     'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,
