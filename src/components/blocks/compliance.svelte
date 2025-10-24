@@ -9,7 +9,7 @@
 {#if block}
   <Section
     ><Container pyEnabled={false} className="relative flex  items-center justify-center z-10">
-      <div class="relative w-[1100px] border-l border-r border-gray-5">
+      <div class="relative w-[1102px] border-l border-r border-gray-5">
         <div class="flex w-full justify-between">
           {#if block.title}
             <div class="flex items-center pl-[32px]">
