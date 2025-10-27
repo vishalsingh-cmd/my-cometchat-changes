@@ -147,7 +147,9 @@
               }}
             >
               <div
-                class="group flex flex-row items-center justify-center gap-4 border-l border-white/10 px-4 text-lg lg:text-xl lg:font-[640]"
+                class={`group flex flex-row items-center justify-center gap-4 ${
+                  $activateTable === 1 || $activateTable === 0 ? 'border-l' : ''
+                } border-white/10 px-4 text-lg lg:text-xl lg:font-[640]`}
               >
                 <Icon
                   icon="voice-and-calls"
@@ -171,7 +173,9 @@
               }}
             >
               <div
-                class="group flex w-[260px] flex-row items-center justify-center gap-2 border-l border-white/10 px-4 text-lg leading-tighter lg:text-xl lg:font-[640]"
+                class={`group flex w-[260px] flex-row items-center justify-center gap-2 ${
+                  $activateTable === 1 || $activateTable === 2 ? 'border-l' : ''
+                }border-white/10 px-4 text-lg leading-tighter lg:text-xl lg:font-[640]`}
               >
                 <Icon
                   icon="stars-01"

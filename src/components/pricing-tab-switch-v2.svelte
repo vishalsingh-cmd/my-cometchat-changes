@@ -14,7 +14,7 @@
   class={cn(
     'relative inline-block min-w-fit cursor-pointer overflow-hidden break-keep  py-3 text-xl/tighter font-semibold text-gray-12/54 transition-colors hover:text-gray-12/100',
     isActive &&
-      'rounded-xl bg-brand-9 text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
+      'rounded-full bg-brand-9 text-gray-12/100 after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:bg-brand-8'
   )}
 >
   <slot />
