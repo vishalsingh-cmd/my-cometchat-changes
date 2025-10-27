@@ -181,7 +181,7 @@
                   icon="stars-01"
                   size="md"
                   class={cn(
-                    'flex-shrink-0  text-gray-11',
+                    'flex-shrink-0  text-white',
                     $activateTable === 2 ? 'opacity-100' : 'opacity-50',
                     'transition-all duration-0 ease-in-out group-hover:opacity-100'
                   )}
