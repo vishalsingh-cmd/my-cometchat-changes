@@ -16,7 +16,7 @@
     type Panel,
     getPanel,
     RESULTS_PER_PAGE
-  } from '$lib/data/directory';
+  } from '$lib/data/directory-v2';
 
   // import ContentCard from '$components/content-card.svelte';
   import ContentCardTutorials from '$components/content-card-tutorials.svelte';
@@ -47,18 +47,18 @@
   };
 
   $: panels = [
-    {
-      type: 'integration_tool',
-      title: string('directory.filter.integration_tool.label'),
-      tags: $page.data.datasourceIntegrationTools,
-      selectedTags: []
-    },
-    {
-      type: 'product',
-      title: string('directory.filter.products.label'),
-      tags: $page.data.datasourceProducts,
-      selectedTags: []
-    },
+    // {
+    //   type: 'integration_tool',
+    //   title: string('directory.filter.integration_tool.label'),
+    //   tags: $page.data.datasourceIntegrationTools,
+    //   selectedTags: []
+    // },
+    // {
+    //   type: 'product',
+    //   title: string('directory.filter.products.label'),
+    //   tags: $page.data.datasourceProducts,
+    //   selectedTags: []
+    // },
     {
       type: 'platform',
       title: string('directory.filter.platforms.label'),
@@ -135,20 +135,17 @@
   $: numberOfSelectedTags = getNumberOfSelectedTags();
 
   $: filter_query = {
-    integration_tool: panels[0].selectedTags.length
-      ? { in: panels[0].selectedTags.join(',') }
+    // product: panels[0].selectedTags.length
+    //   ? { any_in_array: panels[0].selectedTags.join(',') }
+    //   : null,
+    platform: panels[0].selectedTags.length
+      ? { any_in_array: panels[0].selectedTags.join(',') }
       : null,
-    product: panels[1].selectedTags.length
+    language: panels[1].selectedTags.length
       ? { any_in_array: panels[1].selectedTags.join(',') }
       : null,
-    platform: panels[2].selectedTags.length
+    framework: panels[2].selectedTags.length
       ? { any_in_array: panels[2].selectedTags.join(',') }
-      : null,
-    language: panels[3].selectedTags.length
-      ? { any_in_array: panels[3].selectedTags.join(',') }
-      : null,
-    framework: panels[4].selectedTags.length
-      ? { any_in_array: panels[4].selectedTags.join(',') }
       : null
   };
 
@@ -243,10 +240,17 @@
         {#each $getDirectoryDataWithFilters.data.stories as item}
           {@const parsedItem = parseItem(item, 'tutorial')}
           {@const { image, title, tags, link, customer, author, date } = parsedItem}
+          {@const filteredTags = tags.filter(
+            (tag) =>
+              ![
+                'SDK', // name or slug of removed tag category
+                'Integration Tool' // also handle label version if needed
+              ].includes(tag)
+          )}
           <ContentCardTutorials
             {image}
             {title}
-            {tags}
+            tags={filteredTags}
             {link}
             {customer}
             {author}

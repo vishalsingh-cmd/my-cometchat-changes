@@ -1,0 +1,96 @@
+import type {
+  BlogPostStoryblok,
+  CustomerStoryStoryblok,
+  GuideStoryblok,
+  TutorialStoryblok
+} from '$types/bloks';
+
+import { formatDate } from '$lib/utils/dates';
+
+export const RESULTS_PER_PAGE = 12;
+
+export type Panel = {
+  type:
+    | 'category'
+    | 'tutorial_type'
+    | 'industry'
+    | 'industries'
+    | 'integration_tool'
+    | 'product'
+    | 'platform'
+    | 'features'
+    | 'language'
+    | 'framework';
+  title: string;
+  tags: { name: string; value: string }[];
+  selectedTags: string[];
+};
+
+export const parseItem = (
+  item: CustomerStoryStoryblok | BlogPostStoryblok | TutorialStoryblok | GuideStoryblok,
+  content_type: 'customer-story' | 'blog-post' | 'tutorial' | 'guide'
+) => {
+  const getTags = () => {
+    switch (content_type) {
+      case 'customer-story':
+        return [item.content.industry];
+      case 'blog-post':
+        return [item.content.category];
+      case 'guide':
+        return [item.content.category];
+      case 'tutorial': {
+        const tags = [];
+
+        if (item.content.platform) {
+          tags.push(...item.content.platform);
+        }
+
+        if (item.content.language) {
+          tags.push(...item.content.language);
+        }
+
+        if (item.content.framework) {
+          tags.push(...item.content.framework);
+        }
+
+        return tags;
+      }
+    }
+  };
+
+  return {
+    image:
+      item.content.cover !== undefined && item.content.cover.filename !== ''
+        ? item.content.cover
+        : undefined,
+    title: item.name,
+    tags: getTags(),
+    link: item.full_slug as string,
+    customer: content_type === 'customer-story' ? item.content.customer?.content : undefined,
+    author: item.content.author ? item.content.author.name : '',
+    date: formatDate(
+      item.content.created_at
+        ? new Date(item.content.created_at)
+        : new Date(item.created_at as string)
+    )
+  };
+};
+
+export const cleanFilters = (panels: Panel[]) => {
+  const cleanPanels = panels.map((panel) => {
+    panel.selectedTags = [];
+
+    return {
+      ...panel,
+      selectedTags: []
+    };
+  });
+
+  return cleanPanels;
+};
+
+export const getPanel = (panels: Panel[], type: string) => {
+  return panels.filter((panel) => {
+    return panel.type === type;
+  })[0];
+};
