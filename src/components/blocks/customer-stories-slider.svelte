@@ -11,10 +11,16 @@
   let interval: ReturnType<typeof setInterval>;
   let currentIndex = 1;
   let transitioning = true;
-  let lockTransition = false; // Prevent double transitionend
+  let lockTransition = false;
+  let containerWidth = 0;
+  let isMobile = false;
 
   $: cards = block?.cards ?? [];
   $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
+
+  // Responsive card width and gap
+  $: cardWidth = isMobile ? containerWidth - 32 : 816;
+  $: gap = isMobile ? 16 : 32;
 
   function resetInterval() {
     clearInterval(interval);
@@ -38,7 +44,6 @@
   }
 
   async function handleTransitionEnd(e: TransitionEvent) {
-    // Ensure only container transition triggers
     if (e.target !== e.currentTarget) return;
 
     lockTransition = false;
@@ -58,17 +63,35 @@
     }
   }
 
+  function handleResize() {
+    isMobile = window.innerWidth < 768;
+    containerWidth = window.innerWidth;
+  }
+
   onMount(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
     interval = setInterval(next, 5000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   });
 </script>
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[108px] pl-[64px]">
-      <div class="relative flex w-full flex-col gap-[60px] overflow-hidden font-semibold">
-        <h2 class="font-sans text-3xl font-semibold leading-snug">
+    <Container
+      pxEnabled={false}
+      pyEnabled={false}
+      className="mb-[40px] mt-[60px] md:mt-[108px] pl-[16px] md:pl-[64px]"
+    >
+      <div
+        class="relative flex w-full flex-col gap-[30px] overflow-hidden font-semibold md:gap-[60px]"
+      >
+        <!-- Heading -->
+        <h2 class="pr-[16px] font-sans text-2xl font-semibold leading-snug md:pr-0 md:text-3xl">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
@@ -82,24 +105,31 @@
 
         <!-- Slider Track -->
         <div
-          class="flex gap-8"
+          class="flex gap-4 md:gap-8"
           style="
-    transform: translateX(-{currentIndex * (816 + 32)}px);
-    transition: {transitioning ? 'transform 0.4s' : 'none'};
-  "
+            transform: translateX(-{currentIndex * (cardWidth + gap)}px);
+            transition: {transitioning ? 'transform 0.4s' : 'none'};
+          "
           on:transitionend={handleTransitionEnd}
         >
           {#each duplicatedCards as card, index}
             <div
-              class={'group relative flex min-h-[416px] w-[816px] flex-shrink-0 flex-col justify-between rounded-[24px] border border-gray-12/10 bg-[#0A0914] p-[60px] transition-all duration-500 ease-in-out hover:border-gray-12/50 hover:bg-gray-11/5 ' +
+              class={'group relative flex min-h-[350px] flex-shrink-0 flex-col justify-between rounded-[16px] border border-gray-12/10 bg-[#0A0914] p-[24px] transition-all duration-500 ease-in-out hover:border-gray-12/50 hover:bg-gray-11/5 md:min-h-[416px] md:rounded-[24px] md:p-[60px] ' +
                 (index === currentIndex ? 'opacity-100' : 'opacity-60')}
+              style="width: {cardWidth}px;"
             >
-              <div class="h-[60px]">
-                <img src={card?.customer_logo?.filename} alt="customer_logo" class="shrink-0" />
+              <!-- Logo -->
+              <div class="h-[40px] md:h-[60px]">
+                <img
+                  src={card?.customer_logo?.filename}
+                  alt="customer_logo"
+                  class="h-full w-auto object-contain object-left"
+                />
               </div>
 
-              <div class="flex flex-col gap-[40px]">
-                <div class="font-sans text-2xl font-semibold leading-snug">
+              <!-- Content -->
+              <div class="flex flex-col gap-[24px] md:gap-[40px]">
+                <div class="font-sans text-lg font-semibold leading-snug md:text-2xl">
                   {#if card?.description}
                     <p class="mt-4">{card?.description}</p>
                   {/if}
@@ -114,18 +144,22 @@
                 </div>
 
                 <div>
-                  <Button className="w-5" as="a" href={card?.cta_link} variant="secondary">
+                  <Button
+                    className="w-auto text-sm md:text-base"
+                    as="a"
+                    href={card?.cta_link}
+                    variant="secondary"
+                  >
                     {card?.cta_text}
                   </Button>
                 </div>
               </div>
 
               <!-- Decorative Shape -->
-              <div class="pointer-events-none absolute bottom-0 right-0">
+              <div class="pointer-events-none absolute bottom-0 right-0 opacity-50 md:opacity-100">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="644"
-                  height="416"
+                  class="h-auto w-[400px] md:w-[644px]"
                   viewBox="0 0 644 416"
                   fill="none"
                 >
@@ -161,23 +195,23 @@
           {/each}
         </div>
 
-        <!-- Arrows and Dots -->
-        <div class="flex gap-2 self-center">
-          <Button on:click={prev} variant="secondary">
+        <!-- Navigation Controls -->
+        <div class="flex gap-2 self-center pr-[16px] md:pr-0">
+          <Button on:click={prev} variant="secondary" className="h-8 w-8 md:h-10 md:w-10">
             <Icon icon="chevron-left" size="xs" />
           </Button>
 
           <div class="flex items-center gap-2">
             {#each cards as _, index}
               <div
-                class={`h-2 w-2 rounded-full ${
+                class={`h-2 w-2 rounded-full transition-colors ${
                   index + 1 === currentIndex ? 'bg-gray-12' : 'bg-gray-12/10'
                 }`}
               />
             {/each}
           </div>
 
-          <Button on:click={next} variant="secondary">
+          <Button on:click={next} variant="secondary" className="h-8 w-8 md:h-10 md:w-10">
             <Icon icon="chevron-right" size="xs" />
           </Button>
         </div>

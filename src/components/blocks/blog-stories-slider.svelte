@@ -12,10 +12,18 @@
   let interval: ReturnType<typeof setInterval>;
   let currentIndex = 1;
   let transitioning = true;
-  let lockTransition = false; // prevent multiple transitions at once
+  let lockTransition = false;
+  let containerWidth = 0;
+  let isMobile = false;
+  let isTablet = false;
 
   $: cards = block?.cards ?? [];
   $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
+
+  // Calculate responsive card width and gap
+  $: cardWidth = isMobile ? containerWidth - 40 : isTablet ? containerWidth - 80 : 1200;
+  $: gap = isMobile ? 8 : isTablet ? 16 : 32;
+  $: translateAmount = currentIndex * (cardWidth + gap);
 
   function startAutoScroll() {
     clearInterval(interval);
@@ -39,22 +47,18 @@
   }
 
   async function handleTransitionEnd(e: TransitionEvent) {
-    // only trigger on container
     if (e.target !== e.currentTarget) return;
 
     lockTransition = false;
 
     const lastIndex = duplicatedCards.length - 1;
 
-    // jump to first real slide
     if (currentIndex === lastIndex) {
       transitioning = false;
       currentIndex = 1;
       await tick();
       transitioning = false;
-    }
-    // jump to last real slide
-    else if (currentIndex === 0) {
+    } else if (currentIndex === 0) {
       transitioning = false;
       currentIndex = duplicatedCards.length - 2;
       await tick();
@@ -62,19 +66,22 @@
     }
   }
 
-  let isMobile = false;
-
-  const checkScreen = () => (isMobile = window.innerWidth < 768);
-
-  onMount(() => {
-    checkScreen();
-    window.addEventListener('resize', checkScreen);
-    return () => window.removeEventListener('resize', checkScreen);
-  });
+  function handleResize() {
+    const width = window.innerWidth;
+    isMobile = width < 768;
+    isTablet = width >= 768 && width < 1024;
+    containerWidth = width;
+  }
 
   onMount(() => {
+    handleResize();
+    window.addEventListener('resize', handleResize);
     startAutoScroll();
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   });
 </script>
 
@@ -83,10 +90,13 @@
     <Container
       pxEnabled={false}
       pyEnabled={false}
-      className="mb-[40px] mt-[100px] px-[20px] lg:pl-[64px] "
+      className="mb-[40px] mt-[60px] md:mt-[80px] lg:mt-[100px] px-[20px] lg:pl-[64px]"
     >
-      <div class="relative flex w-full flex-col gap-[60px] overflow-hidden">
-        <h2 class="font-sans text-3xl font-semibold leading-snug">
+      <div
+        class="relative flex w-full flex-col gap-[30px] overflow-hidden md:gap-[40px] lg:gap-[60px]"
+      >
+        <!-- Heading -->
+        <h2 class="font-sans text-2xl font-semibold leading-snug md:text-3xl">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
@@ -100,79 +110,49 @@
 
         <!-- Slider Track -->
         <div
-          class="flex gap-2 lg:gap-8"
+          class="flex gap-2 md:gap-4 lg:gap-8"
           style="
-             transform: translateX(-{currentIndex * (isMobile ? 102.5 : 90)}%);
+            transform: translateX(-{translateAmount}px);
             transition: {transitioning ? 'transform 0.5s ease' : 'none'};
           "
           on:transitionend={handleTransitionEnd}
         >
           {#each duplicatedCards as card, index}
             <div
-              class={'max-h-content relative flex max-w-full flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent px-[20px]  pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 lg:h-[440px] lg:w-[1200px] lg:pl-[40px] ' +
+              class={'relative flex min-h-[320px] flex-shrink-0 flex-col items-center justify-center rounded-[16px] border border-gray-12/10 bg-transparent px-[16px] py-[20px] transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 md:min-h-[380px] md:rounded-[20px] md:px-[24px] md:py-[24px] lg:h-[440px] lg:rounded-[24px] lg:px-[40px] lg:py-0 ' +
                 (index === currentIndex ? 'opacity-100' : 'opacity-60')}
+              style="width: {cardWidth}px;"
             >
               <FeaturedStorySectionV2 block={card} />
-
-              <!-- Decorative background SVG -->
-              <!-- <div class="group absolute inset-x-0 bottom-0 z-30 [filter:blur(29.137px)]">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="644"
-                  height="416"
-                  viewBox="0 0 644 416"
-                  fill="none"
-                  class="transition-colors duration-300"
-                >
-                  <g filter="url(#filter0_f_2337_576)">
-                    <path
-                      d="M556.005 38.8246L839.177 89.3145C864.237 93.7828 885.637 109.991 896.728 132.904C925.163 191.65 874.541 257.716 810.42 245.543L636.186 212.464C608.859 207.276 580.798 216.655 562.082 237.232L302.736 522.374C281.463 545.763 248.412 554.429 218.4 544.489L149.054 521.519C90.6258 502.167 75.0245 426.841 120.959 385.873L488.713 57.8786C507.033 41.5399 531.839 34.5158 556.005 38.8246Z"
-                      class="fill-[#FAFAFF] opacity-[0.06] transition-all duration-300 group-hover:fill-[#7f6fce] group-hover:opacity-[0.16]"
-                    />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_f_2337_576"
-                      x="0.176086"
-                      y="-56.4183"
-                      width="998.654"
-                      height="698.967"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="BackgroundImageFix"
-                        result="shape"
-                      />
-                      <feGaussianBlur stdDeviation="47" result="effect1_foregroundBlur_2337_576" />
-                    </filter>
-                  </defs>
-                </svg>
-              </div> -->
             </div>
           {/each}
         </div>
 
-        <!-- Arrows and Dots -->
+        <!-- Navigation Controls -->
         <div class="flex gap-2 self-center pb-4">
-          <Button on:click={prev} variant="secondary">
+          <Button
+            on:click={prev}
+            variant="secondary"
+            className="h-8 w-8 md:h-9 md:w-9 lg:h-10 lg:w-10"
+          >
             <Icon icon="chevron-left" size="xs" />
           </Button>
 
-          <div class="flex items-center gap-2">
+          <div class="flex items-center gap-1.5 md:gap-2">
             {#each cards as _, index}
               <div
-                class={`h-2 w-2 rounded-full ${
+                class={`h-1.5 w-1.5 rounded-full transition-colors md:h-2 md:w-2 ${
                   index + 1 === currentIndex ? 'bg-gray-12' : 'bg-gray-12/10'
                 }`}
               />
             {/each}
           </div>
 
-          <Button on:click={next} variant="secondary" className="text-gray-5">
+          <Button
+            on:click={next}
+            variant="secondary"
+            className="h-8 w-8 md:h-9 md:w-9 lg:h-10 lg:w-10 text-gray-5"
+          >
             <Icon icon="chevron-right" size="xs" />
           </Button>
         </div>

@@ -10,7 +10,7 @@
 {#if block}
   <Section>
     <Container pyEnabled={false} pxEnabled={false}>
-      <div class="flex">
+      <div class="flex flex-wrap">
         {#each block?.cards ?? [] as card, index}
           <div class="relative flex flex-1 flex-col items-start gap-2 border border-white/10 p-6">
             {#if card.value}
