@@ -9,9 +9,9 @@
   import StepCircle from './_comp/StepCircle.svelte';
   import StepContentImg from './_comp/StepContentImg.svelte';
   import StepContentWrap from './_comp/StepContentWrap.svelte';
-  import type { home_implementationStoryblok } from '$src/types/bloks';
+  import type { HomeImplementationStoryblok } from '$src/types/bloks';
 
-  export let block: home_implementationStoryblok;
+  export let block: HomeImplementationStoryblok;
 </script>
 
 <Section>

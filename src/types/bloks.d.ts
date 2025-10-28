@@ -1001,6 +1001,7 @@ export interface HomeClientsV2Storyblok {
 }
 
 export interface HomeImplementationStoryblok {
+  label?: '' | 'orange' | 'brand';
   tagline?: string;
   title?: string;
   description?: string;
