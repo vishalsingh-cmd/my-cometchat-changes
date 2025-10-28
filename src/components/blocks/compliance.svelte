@@ -9,8 +9,10 @@
 {#if block}
   <Section
     ><Container pyEnabled={false} className="relative flex  items-center justify-center z-10">
-      <div class="relative w-[1102px] border-l border-r border-gray-5">
-        <div class="flex w-full justify-between">
+      <div
+        class="relative flex h-[136px] flex-col justify-center border-b border-l border-r border-gray-5 lg:border-b-0"
+      >
+        <div class="flex w-full gap-[95px]">
           {#if block.title}
             <div class="flex items-center pl-[32px]">
               <h2 class="w-[130px] text-xl font-[640px] leading-tighter text-gray-12">
@@ -21,12 +23,14 @@
 
           <div class="my-6 flex items-center gap-8 pr-8">
             {#each block.images ?? [] as image}
-              <img
-                src={image.image.filename}
-                alt={image.alt || 'Compliance logo'}
-                class="w-[108px]"
-                loading="lazy"
-              />
+              <div class="flex flex-shrink">
+                <img
+                  src={image.image.filename}
+                  alt={image.alt || 'Compliance logo'}
+                  class="w-[108px]"
+                  loading="lazy"
+                />
+              </div>
             {/each}
           </div>
         </div>

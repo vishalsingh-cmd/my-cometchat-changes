@@ -7,7 +7,7 @@
   import Container from '$src/_comps/layouts/Container.svelte';
 </script>
 
-<Section className="h-[278px] w-[1088px] mx-auto mt-[65px]">
+<Section className="h-[278px] max-w-[1088px] mx-auto mt-[65px]">
   <Container
     pyEnabled={false}
     pxEnabled={false}

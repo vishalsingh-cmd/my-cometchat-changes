@@ -24,7 +24,7 @@
       'w-full md:h-full',
       tag && 'mt-8 rounded-b-3xl border border-brand-9/25 lg:mt-0',
       !tag && 'rounded-3xl border border-gray-12/[0.1]',
-      'bg-brand-12/[0.03] backdrop-blur-[30px]'
+      ' bg-brand-12/[0.03] backdrop-blur-[30px]'
     )}
     style="background: {!tag
       ? 'linear-gradient(0deg, rgba(250, 250, 255, 0.04) 0%, rgba(250, 250, 255, 0.04) 100%), #0A0914;'

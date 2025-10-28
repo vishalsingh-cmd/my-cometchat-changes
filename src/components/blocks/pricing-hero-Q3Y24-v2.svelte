@@ -105,7 +105,9 @@
     <div class="relative z-50 w-full">
       <Sticky class="md:static">
         <!-- Planet background image - centered and behind everything -->
-        <div class="pointer-events-none absolute left-1/2 top-24 z-0 w-screen -translate-x-[700px]">
+        <div
+          class="pointer-events-none absolute left-1/2 top-24 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[700px]"
+        >
           <img src={PlanetImage} alt="planet" class="" />
         </div>
 
@@ -114,7 +116,7 @@
           class="relative z-10 flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
         >
           <div
-            class="flex flex-row items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px]"
+            class="flex flex-col items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px] lg:flex-row"
           >
             <!-- Tab 1: Chat and Message -->
             <PricingTabSwitchV2
@@ -125,7 +127,7 @@
               }}
             >
               <div
-                class="group flex w-[260px] flex-row items-center justify-center gap-4 px-4 text-lg lg:font-[640]"
+                class="group flex w-full flex-row items-center justify-center gap-4 px-4 text-lg lg:w-[260px] lg:font-[640]"
               >
                 <Icon
                   icon="chat-and-message"
@@ -151,7 +153,7 @@
               <div
                 class={`group flex flex-row items-center justify-center gap-4 ${
                   $activateIndex === 1 || $activateIndex === 0 ? 'border-l' : ''
-                } border-white/10 px-4 text-lg lg:text-xl lg:font-[640]`}
+                } border-white/10 px-4 text-lg  lg:text-xl lg:font-[640]`}
               >
                 <Icon
                   icon="voice-and-calls"
@@ -175,7 +177,7 @@
               }}
             >
               <div
-                class={`group flex w-[260px] flex-row items-center justify-center gap-2 ${
+                class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
                   $activateIndex === 1 || $activateIndex === 2 ? 'border-l' : ''
                 }border-white/10 px-4 text-lg leading-tighter lg:text-xl lg:font-[640]`}
               >
