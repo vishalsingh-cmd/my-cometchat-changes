@@ -21,7 +21,6 @@
   import PricingPeriodToggleV2 from '$components/pricing-period-toggle-v2.svelte';
   import Button from '$components/buttons/button.svelte';
   import {
-    activateTable,
     activateIndex,
     lastSelectedMAUIndex,
     maus,
