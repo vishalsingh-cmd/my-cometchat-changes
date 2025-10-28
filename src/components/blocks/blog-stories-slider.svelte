@@ -102,7 +102,7 @@
         <div
           class="flex gap-2 lg:gap-8"
           style="
-             transform: translateX(-{currentIndex * (isMobile ? 100.5 : 90)}%);
+             transform: translateX(-{currentIndex * (isMobile ? 102.5 : 90)}%);
             transition: {transitioning ? 'transform 0.5s ease' : 'none'};
           "
           on:transitionend={handleTransitionEnd}
