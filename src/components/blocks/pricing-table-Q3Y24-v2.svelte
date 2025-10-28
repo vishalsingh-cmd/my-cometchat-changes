@@ -1,7 +1,8 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import {
-    activateTable,
+    activateIndex,
+    // activateTable,
     isBilledAnnualy,
     maus,
     pricingValues
@@ -134,7 +135,7 @@
   });
 </script>
 
-{#if $activateTable === 0}
+{#if $activateIndex === 0}
   <div class="container mx-auto pb-[80px]">
     <TitleSection block={block.title[0]} />
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
