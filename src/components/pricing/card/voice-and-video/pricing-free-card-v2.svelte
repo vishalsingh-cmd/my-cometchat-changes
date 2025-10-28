@@ -78,7 +78,7 @@
                           <p
                             class={cn(
                               paragraph,
-                              'text-lg/snug font-medium tracking-wide opacity-64'
+                              'text-lg/snug font-medium tracking-wide text-white opacity-[0.85]'
                             )}
                           >
                             {@html resolver.render(content)}

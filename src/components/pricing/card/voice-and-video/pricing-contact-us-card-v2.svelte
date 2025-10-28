@@ -45,7 +45,10 @@
                     {#if typeof highlight.value != 'string' && highlight.value.content}
                       {#each highlight.value.content as content}
                         <p
-                          class={cn(paragraph, 'text-lg/snug font-medium tracking-wide opacity-64')}
+                          class={cn(
+                            paragraph,
+                            'text-lg/snug font-medium tracking-wide text-white opacity-[0.85]'
+                          )}
                         >
                           {@html resolver.render(content)}
                         </p>
