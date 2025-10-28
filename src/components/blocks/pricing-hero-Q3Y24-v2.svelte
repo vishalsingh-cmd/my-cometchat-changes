@@ -239,7 +239,7 @@
             size="sm"
             class="mt-10 h-10 w-32"
             on:click={() => {
-              let table = document.getElementById('pricing-table-Q3Y24-v2');
+              let table = document.getElementById('pricing-table-Q3Y24');
               table?.scrollIntoView({ behavior: 'smooth' });
               let miniTable = document.getElementById('mini-pricing-table-Q3Y24');
               miniTable?.scrollIntoView({ behavior: 'smooth' });
