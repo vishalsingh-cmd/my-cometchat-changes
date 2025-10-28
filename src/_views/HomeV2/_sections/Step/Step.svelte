@@ -17,7 +17,11 @@
 <Section>
   <Container>
     <div class="flex flex-col">
-      <HeadingLatest as="h2" varient="h6" class="text-center text-[#FF7F3E]">
+      <HeadingLatest
+        as="h2"
+        varient="h6"
+        class={`text-center ${block.label === 'orange' ? 'text-[#FF7F3E]' : 'text-brand-9'}`}
+      >
         {block.tagline}
       </HeadingLatest>
       <HeadingLatest as="h3" class={cn(['mt-2 text-center'], ['lg:mt-3'])}>
