@@ -20,6 +20,7 @@
 <div class="gradient-h-line top-[314px]" />
 <div class="gradient-h-line bottom-0" />
 
+<div class="vertical-gradient-line left-[10px]" />
 <div class="vertical-gradient-line left-[80px]" />
 <div class="vertical-gradient-line left-[160px]" />
 <div class="vertical-gradient-line left-[240px]" />

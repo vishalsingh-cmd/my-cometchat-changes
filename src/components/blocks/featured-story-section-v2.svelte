@@ -129,7 +129,7 @@
         <!-- Image -->
         {#if content?.cover}
           <div
-            class="relative h-[407px] w-[651px] self-stretch overflow-hidden rounded-2xl border border-white/10"
+            class="relative h-full w-full self-stretch overflow-hidden rounded-2xl border border-white/10 lg:h-[407px] lg:w-[651px]"
           >
             <Media media={content?.cover} class="h-full w-full object-cover" />
           </div>

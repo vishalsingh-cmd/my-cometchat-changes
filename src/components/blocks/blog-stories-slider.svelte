@@ -62,6 +62,16 @@
     }
   }
 
+  let isMobile = false;
+
+  const checkScreen = () => (isMobile = window.innerWidth < 768);
+
+  onMount(() => {
+    checkScreen();
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  });
+
   onMount(() => {
     startAutoScroll();
     return () => clearInterval(interval);
@@ -70,7 +80,11 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={false} pyEnabled={false} className="mb-[40px] mt-[100px] pl-[64px]">
+    <Container
+      pxEnabled={false}
+      pyEnabled={false}
+      className="mb-[40px] mt-[100px] px-[20px] lg:pl-[64px]"
+    >
       <div class="relative flex w-full flex-col gap-[60px] overflow-hidden">
         <h2 class="font-sans text-3xl font-semibold leading-snug">
           {#if block.heading}
@@ -86,16 +100,16 @@
 
         <!-- Slider Track -->
         <div
-          class="flex gap-8"
+          class="flex gap-2 lg:gap-8"
           style="
-            transform: translateX(-{currentIndex * 89.5}%);
+             transform: translateX(-{currentIndex * (isMobile ? 100.5 : 90)}%);
             transition: {transitioning ? 'transform 0.5s ease' : 'none'};
           "
           on:transitionend={handleTransitionEnd}
         >
           {#each duplicatedCards as card, index}
             <div
-              class={'relative flex h-[440px] w-[1200px] flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent pl-[40px] pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 ' +
+              class={'max-h-content relative flex max-w-full flex-shrink-0 flex-col items-center justify-center rounded-[24px] border border-gray-12/10 bg-transparent px-[20px]  pr-4 transition-all duration-500 ease-in-out hover:border-gray-12/20 hover:bg-gray-12/5 lg:h-[440px] lg:w-[1200px] lg:pl-[40px] ' +
                 (index === currentIndex ? 'opacity-100' : 'opacity-60')}
             >
               <FeaturedStorySectionV2 block={card} />
