@@ -83,7 +83,7 @@
     <Container
       pxEnabled={false}
       pyEnabled={false}
-      className="mb-[40px] mt-[100px] px-[20px] lg:pl-[64px]"
+      className="mb-[40px] mt-[100px] px-[20px] lg:pl-[64px] "
     >
       <div class="relative flex w-full flex-col gap-[60px] overflow-hidden">
         <h2 class="font-sans text-3xl font-semibold leading-snug">
@@ -115,7 +115,7 @@
               <FeaturedStorySectionV2 block={card} />
 
               <!-- Decorative background SVG -->
-              <div class="group absolute inset-x-0 bottom-0 z-30 [filter:blur(29.137px)]">
+              <!-- <div class="group absolute inset-x-0 bottom-0 z-30 [filter:blur(29.137px)]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="644"
@@ -151,7 +151,7 @@
                     </filter>
                   </defs>
                 </svg>
-              </div>
+              </div> -->
             </div>
           {/each}
         </div>
