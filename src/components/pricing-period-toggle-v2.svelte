@@ -1,0 +1,41 @@
+<script lang="ts">
+  import { isBilledAnnualy } from '$lib/stores/pricing-stores-v2';
+  import { cn } from '$lib/utils';
+  import { createEventDispatcher } from 'svelte';
+
+  const options = ['Pay Monthly', 'Pay Yearly'];
+
+  const dispatch = createEventDispatcher();
+  $: dispatch('change', $isBilledAnnualy);
+</script>
+
+<div
+  class="relative flex h-[54px] w-[340px] items-center justify-around rounded-2xl border border-gray-8 p-1 shadow-2xl"
+  style="background-color:rgba(250, 250, 255, 0.09) ;box-shadow: 0px 0px 40px rgba(104, 83, 214, 0.24);"
+>
+  <div
+    class={cn(
+      'absolute -z-10 h-[85%] rounded-2xl bg-brand-9 transition-transform duration-300',
+      $isBilledAnnualy && 'w-[186px] translate-x-[72px]',
+      !$isBilledAnnualy && 'w-[140px] -translate-x-[94px]'
+    )}
+  />
+  <button
+    on:click={() => ($isBilledAnnualy = !$isBilledAnnualy)}
+    class={cn(
+      'h-full w-[250px] text-lg font-[640] leading-[20px]',
+      $isBilledAnnualy && 'opacity-75'
+    )}
+    >{options[0]}
+  </button>
+  <button
+    on:click={() => ($isBilledAnnualy = !$isBilledAnnualy)}
+    class={cn('h-full w-full text-lg font-[640] leading-[20px]', !$isBilledAnnualy && 'opacity-75')}
+    >{options[1]}
+    <p
+      class="inline rounded-lg border-[2px] border-[#FAFAFF33] p-1 text-xs font-semibold leading-[16.8px]"
+    >
+      Save 20%
+    </p>
+  </button>
+</div>
