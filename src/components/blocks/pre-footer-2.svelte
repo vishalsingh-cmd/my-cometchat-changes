@@ -7,7 +7,13 @@
   export let block: PreFooter2Storyblok;
 </script>
 
-<Section>
+<Section className="relative overflow-hidden">
+  <!-- Ellipse background -->
+  <img
+    src="/agent_lp_images/big_ellipse.png"
+    alt="Ellipse"
+    class="pointer-events-none absolute left-1/2 top-[200px] min-w-[1000px] shrink-0 -translate-x-1/2 select-none opacity-80 lg:top-[160px]"
+  />
   <Container pyEnabled={false}>
     <div
       class="relative my-[40px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
@@ -17,13 +23,6 @@
         src="/agent_lp_images/cometchat_logo.png"
         alt="CometChat Logo"
         class=" absolute top-[40px] -translate-x-10"
-      />
-
-      <!-- Ellipse background -->
-      <img
-        src="/agent_lp_images/big_ellipse.png"
-        alt="Ellipse"
-        class="pointer-events-none absolute left-1/2 top-[200px] shrink-0 -translate-x-1/2 select-none opacity-80 lg:top-[140px]"
       />
 
       <div
