@@ -13,7 +13,7 @@
     <Icon icon="x-close" size="xs" />
   </button>
   <p
-    class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform items-center gap-2 text-md font-semibold leading-tight tracking-wide text-gray-12"
+    class="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 transform items-center gap-2 text-md font-semibold leading-tight tracking-wide text-gray-1 opacity-74"
   >
     <Icon class="h-4 w-4" icon="filter-02" size="xs" />
     {string('directory.filters')}

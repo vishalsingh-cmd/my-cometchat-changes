@@ -241,7 +241,7 @@
   >
     {#if areFiltersOpen}
       <div
-        class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-gray-1 px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
+        class="fixed left-0 top-0 isolate z-40 h-[100dvh] w-full bg-[#0A0914] px-5 lg:relative lg:h-auto lg:w-auto lg:bg-transparent lg:px-0"
       >
         <!-- Mobile Filters Header -->
         <MobileFiltersHeader on:toggleFiltersPanel={onToggleFiltersPanel} />
