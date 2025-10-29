@@ -88,6 +88,7 @@ export type MultilinkStoryblok =
     };
 
 export interface AgentsHeroStoryblok {
+  show_icon?: boolean;
   badge_text?: string;
   heading?: TitlleAndGradientTextStoryblok[];
   description?: string;
@@ -104,6 +105,7 @@ export interface AgentsHeroStoryblok {
 }
 
 export interface AgentsHeroV2Storyblok {
+  show_icon?: boolean;
   badge_text?: string;
   gradient_title?: string;
   heading?: string;
@@ -683,6 +685,7 @@ export interface FeatureStoryblok {
 }
 
 export interface FeaturedStorySectionStoryblok {
+  link?: string;
   theme: '' | 'light' | 'dark';
   featured_story:
     | StoryblokStory<CustomerStoryStoryblok>

@@ -20,7 +20,8 @@
             <div class="flex flex-col items-start gap-4 self-stretch">
               <!-- Badge -->
               <div class="flex h-[48px] max-w-[528px] items-center justify-center">
-                <img src="/agent_lp_images/Profile.png" alt="icon" class="" />
+                {#if block.show_icon}<img src="/agent_lp_images/Profile.png" alt="icon" class="" />
+                {/if}
                 {#if block.badge_text}
                   <h1
                     class="rounded-[50px] border border-purple-11 bg-transparent bg-gradient-purple bg-clip-text px-[16px] py-[8px] text-center text-[18px] font-semibold leading-snug tracking-none text-transparent"
