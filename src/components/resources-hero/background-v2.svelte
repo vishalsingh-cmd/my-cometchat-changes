@@ -74,16 +74,16 @@
   <div class="gradient-h-line top-[380px]" />
   <div class="gradient-h-line top-[440px]" />
 
-  <div class="vertical-gradient-line left-[10px]" />
-  <div class="vertical-gradient-line left-[70px]" />
-  <div class="vertical-gradient-line left-[130px]" />
-  <div class="vertical-gradient-line left-[190px]" />
-  <div class="vertical-gradient-line left-[250px]" />
-  <div class="vertical-gradient-line left-[310px]" />
-  <div class="vertical-gradient-line left-[370px]" />
-  <div class="vertical-gradient-line left-[560px]" />
-  <div class="vertical-gradient-line left-[640px]" />
-  <div class="vertical-gradient-line left-[720px]" />
+  <div class="vertical-gradient-linex left-[10px]" />
+  <div class="vertical-gradient-linex left-[70px]" />
+  <div class="vertical-gradient-linex left-[130px]" />
+  <div class="vertical-gradient-linex left-[190px]" />
+  <div class="vertical-gradient-linex left-[250px]" />
+  <div class="vertical-gradient-linex left-[310px]" />
+  <div class="vertical-gradient-linex left-[370px]" />
+  <div class="vertical-gradient-linex left-[560px]" />
+  <div class="vertical-gradient-linex left-[640px]" />
+  <div class="vertical-gradient-linex left-[720px]" />
 </div>
 
 <style>
@@ -104,6 +104,7 @@
 
   .vertical-gradient-line {
     position: absolute;
+    top: 40px;
     width: 2px;
     height: 100%;
     background: linear-gradient(
@@ -114,7 +115,21 @@
       rgba(250, 250, 255, 0)
     );
     opacity: 0.04;
-    top: 0;
+  }
+
+  .vertical-gradient-linex {
+    position: absolute;
+    top: 60px;
+    width: 2px;
+    height: 400px;
+    background: linear-gradient(
+      to bottom,
+      rgba(250, 250, 255, 0),
+      #fafaff 10%,
+      #fafaff 90%,
+      rgba(250, 250, 255, 0)
+    );
+    opacity: 0.04;
   }
 
   .image {
