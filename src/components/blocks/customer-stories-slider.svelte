@@ -91,7 +91,7 @@
         class="relative flex w-full flex-col gap-[30px] overflow-hidden font-semibold md:gap-[60px]"
       >
         <!-- Heading -->
-        <h2 class="pr-[16px] font-sans text-2xl font-semibold leading-snug md:pr-0 md:text-3xl">
+        <h2 class="pr-[16px] font-sans text-[32px] font-semibold leading-snug md:pr-0 md:text-3xl">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
@@ -129,7 +129,7 @@
 
               <!-- Content -->
               <div class="flex flex-col gap-[24px] md:gap-[40px]">
-                <div class="font-sans text-lg font-semibold leading-snug md:text-2xl">
+                <div class="font-sans text-2xl font-semibold leading-snug md:text-2xl lg:text-lg">
                   {#if card?.description}
                     <p class="mt-4">{card?.description}</p>
                   {/if}

@@ -7,11 +7,11 @@
 {#if block}
   <section class="relative z-10 mt-[68px] flex h-[750px] flex-col items-center justify-center">
     <h1 class="absolute z-10 flex flex-col items-center justify-center gap-[10px]">
-      <span class="font-sans text-[58px] font-medium leading-tighter">
+      <span class="text-center font-sans text-[58px] font-medium leading-tighter">
         {block.title1}
       </span>
       <span
-        class=" bg-gradient-purple bg-clip-text pb-2 font-sans text-[58px] font-medium leading-tighter text-transparent"
+        class="bg-gradient-purple bg-clip-text pb-2 text-center font-sans text-[58px] font-medium leading-tighter text-transparent"
       >
         {block.title2}
       </span>
