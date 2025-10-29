@@ -16,9 +16,9 @@
 {#if block}
   <section use:storyblokEditable={block} class="relative overflow-hidden">
     <div
-      class="relative mx-auto flex max-w-content flex-col items-center gap-8 px-container pb-20 pt-[100px] lg:flex-row lg:gap-20 lg:pt-[0px]"
+      class="relative mx-auto flex max-w-content flex-col items-center gap-8 px-container pb-20 pt-[50px] lg:flex-row lg:gap-20 lg:pt-[0px]"
     >
-      <div class="z-20 flex flex-col gap-3 pb-[194px] lg:gap-4 lg:pl-[80px]">
+      <div class="z-20 flex flex-col gap-3 lg:gap-4 lg:pb-[194px] lg:pl-[80px]">
         {#if block.title}
           <h1
             class="max-w-[548px] bg-gradient-purple bg-clip-text text-3xl font-semibold leading-tighter text-gray-12 text-transparent"

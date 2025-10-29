@@ -5,6 +5,9 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   // import { typeIcon } from '$lib/storyblok';
 
+  import { slide } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
+
   import Icon from '$components/icon/icon.svelte';
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
@@ -67,6 +70,26 @@
     $maus = localMaus;
     updatePricingValues($isBilledAnnualy, 0);
   });
+
+  let isDropdownOpen = false;
+
+  const tabs = [
+    { id: 0, label: block.category1, icon: 'chat-and-message', iconSize: 'sm' },
+    { id: 1, label: block.category2, icon: 'voice-and-calls', iconSize: 'sm' },
+    { id: 2, label: block.category3, icon: 'stars-01', iconSize: 'sm' }
+  ];
+
+  $: activeTab = tabs.find((tab) => tab.id === $activateIndex);
+
+  function selectTab(id: number) {
+    $activateIndex = id;
+    isDropdownOpen = false;
+    console.log('Selected tab ID:', activateIndex);
+  }
+
+  function toggleDropdown() {
+    isDropdownOpen = !isDropdownOpen;
+  }
 </script>
 
 {#if block}
@@ -76,8 +99,12 @@
       <div class="relative z-50 w-full">
         <div class="container z-50 mx-auto">
           <div class="mb-8 flex flex-col items-start justify-center px-container md:items-center">
-            <div class="z-20 flex flex-col items-start gap-3 md:items-center md:gap-2">
-              <h1 class="bg-gradient-purple bg-clip-text text-4xl text-transparent">{title}</h1>
+            <div class="z-20 flex flex-col items-center gap-3 md:gap-2">
+              <h1
+                class="bg-gradient-purple bg-clip-text text-center text-4xl leading-snug text-transparent"
+              >
+                {title}
+              </h1>
               {#if description}
                 {#if typeof description != 'string' && description.content}
                   {#each description.content as content}
@@ -112,10 +139,89 @@
 
         <!-- Tab switches with higher z-index -->
         <div
-          class="relative z-10 flex w-full flex-row items-center justify-center gap-2 sm:gap-1 md:gap-4 lg:gap-6"
+          class="relative z-10 flex w-full flex-row items-center justify-center gap-2 bg-[#0A0914] py-4 sm:gap-1 md:gap-4 lg:gap-6"
         >
+          <!-- Mobile Dropdown (visible on mobile only) -->
+          <div class="relative z-50 w-full px-4 lg:hidden">
+            <button
+              on:click={toggleDropdown}
+              class="relative z-50 flex w-full items-center justify-between rounded-[16px] border border-brand-9/80 bg-brand-9/10 px-4 py-[13px] text-lg font-semibold text-white transition-all"
+            >
+              <div class="flex items-center gap-3">
+                <Icon
+                  icon={activeTab?.icon || 'chat-and-message'}
+                  size={activeTab?.iconSize || 'sm'}
+                  class="flex-none flex-shrink-0 "
+                />
+                <span>{activeTab?.label}</span>
+              </div>
+              <Icon
+                icon="chevron-down"
+                size="xs"
+                class={cn(
+                  'transition-transform duration-200',
+                  isDropdownOpen ? 'rotate-180' : 'rotate-0'
+                )}
+              />
+            </button>
+
+            <!-- Dropdown Menu with Animation -->
+            {#if isDropdownOpen}
+              <div
+                transition:slide={{ duration: 300, easing: quintOut }}
+                class="absolute left-4 right-4 top-full z-[100] mt-2 overflow-hidden rounded-[16px] border border-brand-9/80 bg-brand-2/80 p-[6px] shadow-lg backdrop-blur-lg"
+              >
+                {#each tabs as tab, i}
+                  <button
+                    on:click={() => selectTab(tab.id)}
+                    class={cn(
+                      'flex w-full items-center justify-between gap-3 rounded-lg px-4 py-3 text-left text-lg transition-all last:border-b-0',
+                      'text-gray-11 hover:bg-gray-12/[0.04] hover:text-white'
+                    )}
+                    style="animation: fadeInItem 0.3s ease-out {i * 0.05}s backwards;"
+                  >
+                    <div class="flex items-center gap-3">
+                      <Icon
+                        icon={tab.icon}
+                        size={tab.iconSize}
+                        class={cn(
+                          'flex-shrink-0',
+                          $activateIndex === tab.id ? 'text-gray-12' : 'text-gray-11 opacity-60'
+                        )}
+                      />
+                      <span class={$activateIndex === tab.id ? 'text-gray-12' : 'text-gray-11'}
+                        >{tab.label}</span
+                      >
+                    </div>
+                    <div class="relative flex w-4 items-center justify-center">
+                      <div class="h-4 w-4">
+                        <Icon
+                          icon="check"
+                          size="md"
+                          class={cn(
+                            'flex-shrink-0',
+                            $activateIndex === tab.id
+                              ? 'z-20 text-brand-9'
+                              : 'text-gray-11 opacity-0'
+                          )}
+                        />
+                      </div>
+                      <div
+                        class={cn(
+                          'absolute inset-0 z-[30] h-4 w-4 rounded-full bg-brand-9/20 text-brand-9 blur-sm transition-opacity',
+                          $activateIndex === tab.id ? 'opacity-100' : 'opacity-0'
+                        )}
+                      />
+                    </div>
+                  </button>
+                {/each}
+              </div>
+            {/if}
+          </div>
+
+          <!-- Desktop Tabs (visible on desktop only) -->
           <div
-            class="flex flex-col items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px] lg:flex-row"
+            class="hidden flex-col items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px] lg:flex lg:flex-row"
           >
             <!-- Tab 1: Chat and Message -->
             <PricingTabSwitchV2
@@ -141,7 +247,7 @@
               </div>
             </PricingTabSwitchV2>
 
-            <!-- Tab 2: Voice and Calls (First) -->
+            <!-- Tab 2: Voice and Calls -->
             <PricingTabSwitchV2
               id={1}
               isActive={$activateIndex === 1}
@@ -152,7 +258,7 @@
               <div
                 class={`group flex flex-row items-center justify-center gap-4 ${
                   $activateIndex === 1 || $activateIndex === 0 ? 'border-l' : ''
-                } border-white/10 px-4 text-lg  lg:text-xl lg:font-[640]`}
+                } border-white/10 px-4 text-lg lg:text-xl lg:font-[640]`}
               >
                 <Icon
                   icon="voice-and-calls"
@@ -184,7 +290,7 @@
                   icon="stars-01"
                   size="md"
                   class={cn(
-                    'flex-shrink-0  text-white',
+                    'flex-shrink-0 text-white',
                     $activateIndex === 2 ? 'opacity-100' : 'opacity-50',
                     'transition-all duration-0 ease-in-out group-hover:opacity-100'
                   )}
@@ -195,6 +301,15 @@
           </div>
         </div>
       </Sticky>
+
+      <!-- Click outside to close dropdown -->
+      {#if isDropdownOpen}
+        <button
+          class="fixed z-[45] lg:hidden"
+          on:click={() => (isDropdownOpen = false)}
+          aria-label="Close dropdown"
+        />
+      {/if}
 
       <div class="container relative z-10 mx-auto mb-12 mt-4 flex flex-col items-center">
         {#if $activateIndex === 0}
@@ -214,10 +329,10 @@
 
         <div
           class={cn(
-            'grid w-full grid-cols-1 gap-8 px-container  md:mt-8 md:gap-8 ',
+            'grid w-full grid-cols-1 gap-8 px-container md:mt-8 md:gap-8',
             $activateIndex === 0 &&
               'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
-            $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3 ',
+            $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3',
             $activateIndex === 2 && 'xl:grid-cols-1'
           )}
         >
@@ -271,3 +386,16 @@
     </div>
   </section>
 {/if}
+
+<style>
+  @keyframes fadeInItem {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
