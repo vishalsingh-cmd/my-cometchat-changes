@@ -96,7 +96,7 @@
         class="relative flex w-full flex-col gap-[30px] overflow-hidden md:gap-[40px] lg:gap-[60px]"
       >
         <!-- Heading -->
-        <h2 class="font-sans text-2xl font-semibold leading-snug md:text-3xl">
+        <h2 class="font-sans text-[32px] font-semibold leading-snug md:text-3xl">
           {#if block.heading}
             <span class="text-gray-12">{block.heading}</span>
           {/if}
