@@ -44,7 +44,7 @@
     class={cn(
       'translate-y-0 transition-transform duration-300 ease-motion',
       isSticky && $scrollDirection === 'up' && !$page.route.id?.startsWith('/lp/')
-        ? 'translate-y-top-nav'
+        ? 'translate-y-[60px]'
         : 'translate-y-0',
       !translateOnDesktop && 'md:translate-y-0 md:bg-transparent',
       isSticky ? 'bg-gray-1' : 'bg-transparent'

@@ -132,7 +132,7 @@
       <Sticky class="md:static">
         <!-- Planet background image - centered and behind everything -->
         <div
-          class="pointer-events-none absolute left-1/2 top-24 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[700px]"
+          class="pointer-events-none absolute left-1/2 top-32 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[700px]"
         >
           <img src={PlanetImage} alt="planet" class="" />
         </div>
