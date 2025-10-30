@@ -14,7 +14,7 @@
       >
         <div class="flex w-full flex-col gap-0 lg:flex-row lg:gap-[95px]">
           {#if block.title}
-            <div class="mt-6 flex items-center pl-[32px]">
+            <div class="mt-6 flex items-center pl-[32px] lg:mt-0">
               <h2 class="w-[130px] text-xl font-[640px] leading-tighter text-gray-12">
                 {block.title}
               </h2>
