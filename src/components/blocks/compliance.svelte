@@ -10,24 +10,24 @@
   <Section
     ><Container pyEnabled={false} className="relative flex  items-center justify-center z-10">
       <div
-        class="relative flex h-[136px] flex-col justify-center border-b border-l border-r border-gray-5 lg:border-b-0"
+        class="relative flex min-h-[136px] flex-col justify-center border-b border-l border-r border-gray-5 lg:border-b-0"
       >
-        <div class="flex w-full gap-[95px]">
+        <div class="flex w-full flex-col gap-0 lg:flex-row lg:gap-[95px]">
           {#if block.title}
-            <div class="flex items-center pl-[32px]">
+            <div class="mt-6 flex items-center pl-[32px]">
               <h2 class="w-[130px] text-xl font-[640px] leading-tighter text-gray-12">
                 {block.title}
               </h2>
             </div>
           {/if}
 
-          <div class="my-6 flex items-center gap-8 pr-8">
+          <div class="my-6 flex flex-wrap items-center justify-center gap-3 pr-0 lg:gap-8 lg:pr-8">
             {#each block.images ?? [] as image}
-              <div class="flex flex-shrink">
+              <div class="flex">
                 <img
                   src={image.image.filename}
                   alt={image.alt || 'Compliance logo'}
-                  class="w-[108px]"
+                  class="w-[80px] shrink-0 lg:w-[108px]"
                   loading="lazy"
                 />
               </div>
