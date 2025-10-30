@@ -11,7 +11,7 @@
         {block.title1}
       </span>
       <span
-        class="bg-gradient-purple bg-clip-text pb-2 text-center font-sans text-[58px] font-medium leading-tighter text-transparent"
+        class="bg-gradient-purple bg-clip-text pb-2 text-center font-sans text-4xl font-medium leading-tighter text-transparent"
       >
         {block.title2}
       </span>
