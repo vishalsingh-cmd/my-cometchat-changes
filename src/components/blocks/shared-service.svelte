@@ -4,7 +4,7 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
   import Icon from '$components/icon/icon.svelte';
-  import Link from '../buttons/link.svelte';
+  // import Link from '../buttons/link.svelte';
   export let block: SharedServiceStoryblok;
 </script>
 
@@ -53,15 +53,16 @@
                 </div>
 
                 {#if card.link}
-                  <Link
-                    variant="secondary"
-                    class={`text-md leading-snug text-brand-9 ${
-                      index === (block.features?.length ?? 0) - 1 ? 'mb-[200px]' : ''
-                    }`}
+                  <a
                     href={card.link}
+                    class={`inline-flex h-5 items-center gap-1 rounded  text-md font-semibold
+          leading-snug tracking-widest text-brand-9
+           hover:text-gray-12/100 focus-visible:outline
+          focus-visible:outline-1 focus-visible:outline-brand-7 active:text-gray-12/100
+          ${index === (block.features?.length ?? 0) - 1 ? 'mb-[200px]' : ''}`}
                   >
                     Learn more
-                  </Link>
+                  </a>
                 {/if}
                 <SecureDecCircle position="topLeft" className="z-40" />
                 <SecureDecCircle position="bottomRight" className="z-40" />
