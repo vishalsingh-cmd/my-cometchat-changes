@@ -67,7 +67,8 @@
 </script>
 
 {#if block}
-  <section
+  <a
+    href={block.link ?? '#'}
     use:storyblokEditable={block}
     data-theme={block.theme}
     class="group relative z-20 overflow-hidden bg-transparent text-gray-12"
@@ -136,5 +137,5 @@
         {/if}
       </div>
     {/if}
-  </section>
+  </a>
 {/if}

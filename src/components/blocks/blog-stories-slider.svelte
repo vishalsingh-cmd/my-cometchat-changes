@@ -17,13 +17,22 @@
   let isMobile = false;
   let isTablet = false;
 
+  // Touch/swipe state
+  let touchStartX = 0;
+  let touchCurrentX = 0;
+  let touchDeltaX = 0;
+  let isDragging = false;
+  let sliderElement: HTMLDivElement;
+
   $: cards = block?.cards ?? [];
   $: duplicatedCards = [cards[cards.length - 1], ...cards, cards[0]];
 
   // Calculate responsive card width and gap
   $: cardWidth = isMobile ? containerWidth - 40 : isTablet ? containerWidth - 80 : 1200;
   $: gap = isMobile ? 8 : isTablet ? 16 : 32;
-  $: translateAmount = currentIndex * (cardWidth + gap);
+
+  // Calculate transform with drag offset
+  $: translateAmount = currentIndex * (cardWidth + gap) - touchDeltaX;
 
   function startAutoScroll() {
     clearInterval(interval);
@@ -31,7 +40,7 @@
   }
 
   function next() {
-    if (lockTransition) return;
+    if (lockTransition || isDragging) return;
     lockTransition = true;
     transitioning = true;
     currentIndex += 1;
@@ -39,7 +48,7 @@
   }
 
   function prev() {
-    if (lockTransition) return;
+    if (lockTransition || isDragging) return;
     lockTransition = true;
     transitioning = true;
     currentIndex -= 1;
@@ -63,6 +72,99 @@
       currentIndex = duplicatedCards.length - 2;
       await tick();
       transitioning = false;
+    }
+  }
+
+  // Touch event handlers
+  function handleTouchStart(e: TouchEvent) {
+    if (lockTransition) return;
+
+    touchStartX = e.touches[0].clientX;
+    touchCurrentX = touchStartX;
+    isDragging = true;
+    transitioning = false;
+    clearInterval(interval);
+  }
+
+  function handleTouchMove(e: TouchEvent) {
+    if (!isDragging) return;
+
+    touchCurrentX = e.touches[0].clientX;
+    touchDeltaX = touchCurrentX - touchStartX;
+  }
+
+  function handleTouchEnd() {
+    if (!isDragging) return;
+
+    isDragging = false;
+    transitioning = true;
+
+    const swipeThreshold = (cardWidth + gap) * 0.25; // 25% of card width
+
+    if (Math.abs(touchDeltaX) > swipeThreshold) {
+      if (touchDeltaX > 0) {
+        // Swiped right - go to previous
+        prev();
+      } else {
+        // Swiped left - go to next
+        next();
+      }
+    } else {
+      // Snap back to current position
+      startAutoScroll();
+    }
+
+    touchDeltaX = 0;
+    touchStartX = 0;
+    touchCurrentX = 0;
+  }
+
+  // Mouse event handlers for desktop drag
+  function handleMouseDown(e: MouseEvent) {
+    if (lockTransition) return;
+
+    touchStartX = e.clientX;
+    touchCurrentX = touchStartX;
+    isDragging = true;
+    transitioning = false;
+    clearInterval(interval);
+
+    e.preventDefault();
+  }
+
+  function handleMouseMove(e: MouseEvent) {
+    if (!isDragging) return;
+
+    touchCurrentX = e.clientX;
+    touchDeltaX = touchCurrentX - touchStartX;
+  }
+
+  function handleMouseUp() {
+    if (!isDragging) return;
+
+    isDragging = false;
+    transitioning = true;
+
+    const swipeThreshold = (cardWidth + gap) * 0.25;
+
+    if (Math.abs(touchDeltaX) > swipeThreshold) {
+      if (touchDeltaX > 0) {
+        prev();
+      } else {
+        next();
+      }
+    } else {
+      startAutoScroll();
+    }
+
+    touchDeltaX = 0;
+    touchStartX = 0;
+    touchCurrentX = 0;
+  }
+
+  function handleMouseLeave() {
+    if (isDragging) {
+      handleMouseUp();
     }
   }
 
@@ -110,12 +212,23 @@
 
         <!-- Slider Track -->
         <div
-          class="flex gap-2 md:gap-4 lg:gap-8"
+          bind:this={sliderElement}
+          class="flex touch-pan-y select-none gap-2 md:gap-4 lg:gap-8"
+          class:cursor-grab={!isDragging}
+          class:cursor-grabbing={isDragging}
           style="
             transform: translateX(-{translateAmount}px);
             transition: {transitioning ? 'transform 0.5s ease' : 'none'};
           "
           on:transitionend={handleTransitionEnd}
+          on:touchstart={handleTouchStart}
+          on:touchmove={handleTouchMove}
+          on:touchend={handleTouchEnd}
+          on:touchcancel={handleTouchEnd}
+          on:mousedown={handleMouseDown}
+          on:mousemove={handleMouseMove}
+          on:mouseup={handleMouseUp}
+          on:mouseleave={handleMouseLeave}
         >
           {#each duplicatedCards as card, index}
             <div
