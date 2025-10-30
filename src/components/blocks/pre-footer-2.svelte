@@ -16,7 +16,7 @@
   />
   <Container pyEnabled={false}>
     <div
-      class="relative my-[40px] flex h-[647px] flex-col items-center justify-center overflow-hidden text-center"
+      class="relative my-[40px] flex min-h-[670px] flex-col items-center justify-center overflow-hidden text-center"
     >
       <!-- CometChat logo -->
       <img
@@ -40,7 +40,7 @@
           </p>
         {/if}
 
-        <div class="flex flex-wrap justify-center gap-4 text-sm">
+        <div class="flex flex-wrap justify-center gap-4 pt-[30px] text-sm">
           {#if block.secondary_button_text && block.secondary_button_link}
             <Button variant="secondary" as="a" href={block.secondary_button_link.cached_url}>
               {block.secondary_button_text}
