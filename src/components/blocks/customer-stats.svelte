@@ -9,7 +9,7 @@
 
 {#if block}
   <Section className="mt-[70px] lg:mt-0">
-    <Container pyEnabled={false} pxEnabled={false} className="px-5 lg:px-0">
+    <Container pyEnabled={false} pxEnabled={false} className="px-5 lg:px-[64px]">
       <div class="flex flex-wrap">
         {#each block?.cards ?? [] as card, index}
           <div class="relative flex flex-1 flex-col items-start gap-2 border border-white/10 p-6">
