@@ -74,12 +74,12 @@
                 <div slot="header" let:expanded let:attributes let:onClick>
                   <button
                     {...attributes}
-                    class="flex w-full items-center justify-between gap-4"
+                    class="flex w-full justify-between gap-4"
                     on:click={onClick}
                   >
                     <p
                       class={cn(
-                        'font-semibold leading-tighter opacity-74',
+                        'items-start self-start font-semibold leading-tighter opacity-74',
                         expanded && 'opacity-100'
                       )}
                     >
