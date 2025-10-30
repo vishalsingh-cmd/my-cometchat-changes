@@ -20,9 +20,9 @@
     >
       <!-- CometChat logo -->
       <img
-        src="/agent_lp_images/cometchat_logo.png"
+        src="/agent_lp_images/cometchat-logo-2.png"
         alt="CometChat Logo"
-        class=" absolute top-[40px] -translate-x-10"
+        class=" absolute top-[40px] w-[220px] -translate-x-10 select-none"
       />
 
       <div
