@@ -21,7 +21,7 @@
           }, 300);
         }
       },
-      { threshold: 0.7 }
+      { threshold: 0.55 }
     );
 
     observer.observe(node);
@@ -139,11 +139,7 @@
                             {/each}
                           </ul>
                           {#if feature.footer_text}
-                            <p
-                              class={`mt-6 text-md italic leading-snug text-gray-11 ${
-                                index === block.features.length - 1 ? 'lg:mb-[200px]' : ''
-                              }`}
-                            >
+                            <p class={`mt-6 text-md italic leading-snug text-gray-11`}>
                               {feature.footer_text}
                             </p>
                           {/if}

@@ -42,7 +42,11 @@
 
     <!-- Right Illustration -->
     <div class=" flex flex-1 shrink-0 items-center justify-center">
-      <img src={handsvg} alt="icon" class="absolute bottom-0 right-0 aspect-auto h-[250px]" />
+      <img
+        src={handsvg}
+        alt="icon"
+        class="absolute bottom-0 right-0 aspect-auto h-[205px] lg:h-[250px]"
+      />
     </div>
   </Container>
 </Section>
