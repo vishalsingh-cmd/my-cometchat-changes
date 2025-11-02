@@ -7,11 +7,11 @@
   import Container from '$src/_comps/layouts/Container.svelte';
 </script>
 
-<Section className=" max-w-[1088px] mx-auto p-5 mt-[65px]">
+<Section className=" max-w-[1140px] mx-auto p-4 lg:p-5 mt-[65px]">
   <Container
     pyEnabled={false}
     pxEnabled={false}
-    className="relative h-[493px] lg:h-[278px]   flex flex-col items-start justify-between overflow-hidden rounded-2xl border border-gray-12/[0.1] px-4 pt-4  lg:pl-[39px] lg:py-[47px]  font-sans text-white"
+    className="relative h-[550px] lg:h-[318px]   flex flex-col items-start justify-between overflow-hidden rounded-2xl border border-gray-12/[0.1] px-4 pt-4  lg:pl-[39px] lg:py-[47px]  font-sans text-white"
   >
     <!-- Left Content -->
     <div class="z-10 flex max-w-[600px] flex-1 flex-col gap-6">
