@@ -133,6 +133,48 @@
     flex-direction: column;
     gap: 0px !important;
 
+    & select {
+      color: var(--color-gray-12) !important;
+
+      font-size: 16px !important;
+      font-weight: 640 !important;
+      line-height: 112% !important;
+      letter-spacing: 0.08px;
+      appearance: none !important; /* Removes native arrow on Chrome/Safari */
+      background-image: url("data:image/svg+xml,%3Csvg fill='white' height='12' width='12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 4l4 4 4-4z'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 12px center !important;
+      background-size: 12px !important;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+    }
+
+    /* 👆 Placeholder state */
+    /* & select.is-placeholder {
+      color: rgba(250, 250, 255, 0.64) !important;
+    } */
+
+    /* 🟣 When user selects a value */
+    & select:not(.is-placeholder) {
+      background-color: transparent !important;
+      color: var(--color-gray-12) !important;
+    }
+
+    /* ✨ On focus */
+    & select:focus {
+      outline: none !important;
+      border-color: transparent !important;
+
+      /* box-shadow: 0 0 0 4px hsla(250, 62%, 58%, 0.3); */
+    }
+
+    /* 🔽 Dropdown menu options */
+    & select option {
+      border-radius: 10px !important;
+      background-color: black !important;
+      color: #fafaff !important;
+    }
+
     & iframe {
       display: none !important;
       height: 0 !important;
@@ -156,6 +198,16 @@
       display: flex;
       flex-direction: column;
       width: 100%;
+
+      & select.is-placeholder {
+        opacity: 1 !important;
+        background-color: transparent !important;
+      }
+
+      & .is-placeholder {
+        opacity: 1 !important;
+        background-color: transparent !important;
+      }
 
       & .legal-consent-container {
         /* margin-top: 24px !important; */
