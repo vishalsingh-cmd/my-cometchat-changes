@@ -170,8 +170,10 @@
     /* 🔽 Dropdown menu options */
     & select option {
       background-color: #17161e !important;
-      color: #fafaff !important;
+      color: #aaa8ad !important;
       border: none !important;
+      font-weight: 600;
+      border-color: #17161e !important;
     }
 
     & iframe {
