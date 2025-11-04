@@ -135,7 +135,6 @@
 
     & select {
       color: var(--color-gray-12) !important;
-
       font-size: 16px !important;
       font-weight: 640 !important;
       line-height: 112% !important;
@@ -170,9 +169,9 @@
 
     /* 🔽 Dropdown menu options */
     & select option {
-      border-radius: 10px !important;
-      background-color: black !important;
+      background-color: #17161e !important;
       color: #fafaff !important;
+      border: none !important;
     }
 
     & iframe {
