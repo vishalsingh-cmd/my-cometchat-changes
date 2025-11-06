@@ -124,11 +124,7 @@
 </script>
 
 {#if block}
-  <section
-    data-theme="dark"
-    use:storyblokEditable={block}
-    class="w-full overflow-hidden pt-[100px]"
-  >
+  <section data-theme="dark" use:storyblokEditable={block} class="w-full pt-[100px]">
     {#if block.header}
       {@const { title, description } = block.header[$activateIndex]}
       <div class="relative z-50 w-full">
@@ -164,10 +160,10 @@
       </div>
     {/if}
     <div class="relative z-50 w-full">
-      <Sticky class="md:static">
+      <Sticky class="md:static ">
         <!-- Planet background image - centered and behind everything -->
         <div
-          class="pointer-events-none absolute left-1/2 top-32 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[700px]"
+          class="pointer-events-none absolute left-1/2 top-32 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[780px]"
         >
           <img src={PlanetImage} alt="planet" class="" />
         </div>
