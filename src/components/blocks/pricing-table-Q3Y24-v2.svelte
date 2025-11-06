@@ -136,7 +136,7 @@
 </script>
 
 {#if $activateIndex === 0}
-  <div class="container mx-auto pb-[80px]">
+  <div class="container pb-[80px]">
     <TitleSection block={block.title[0]} />
     <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
       <table class="relative table-auto">
@@ -148,7 +148,7 @@
             class={cn(
               'pointer-events-auto  sticky mt-[40%] w-[320px]',
               isExpanded && 'bottom-2',
-              !isExpanded && 'bottom-36'
+              !isExpanded && 'bottom-[72px]'
             )}
             on:click={() => toggleTable()}>{label}</Button
           >

@@ -4,6 +4,8 @@
   import type { PricingHeroQ3Y24V2Storyblok, PricingValues } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   // import { typeIcon } from '$lib/storyblok';
+  import { page } from '$app/stores';
+  import { goto } from '$app/navigation';
 
   import { slide } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
@@ -35,6 +37,18 @@
 
   export let block: PricingHeroQ3Y24V2Storyblok;
 
+  const tabs = [
+    { id: 0, label: 'Chat and Messaging', param: 'chat', icon: 'chat-and-message', iconSize: 'sm' },
+    {
+      id: 1,
+      label: 'Voice and Video Calling',
+      param: 'voice',
+      icon: 'voice-and-calls',
+      iconSize: 'sm'
+    },
+    { id: 2, label: 'AI Agents', param: 'ai', icon: 'stars-01', iconSize: 'sm' }
+  ];
+
   let localMaus: string[] = [];
   const updatePricingValues = (() => {
     return (isBilledAnnually: boolean, index: number | null = null) => {
@@ -62,7 +76,19 @@
     };
   })();
 
+  // Detect initial tab BEFORE the component renders
+  const tabParam = new URL($page.url).searchParams.get('tab');
+
+  if (tabParam === 'voice') {
+    $activateIndex = 1;
+  } else if (tabParam === 'ai') {
+    $activateIndex = 2;
+  } else {
+    $activateIndex = 0;
+  }
+
   onMount(() => {
+    // Do your normal initialization (MAU setup, etc.)
     localMaus = [];
     block.mau[0].mau.tbody.forEach((row: any) => {
       localMaus.push(row.body[0].value);
@@ -73,18 +99,23 @@
 
   let isDropdownOpen = false;
 
-  const tabs = [
-    { id: 0, label: block.category1, icon: 'chat-and-message', iconSize: 'sm' },
-    { id: 1, label: block.category2, icon: 'voice-and-calls', iconSize: 'sm' },
-    { id: 2, label: block.category3, icon: 'stars-01', iconSize: 'sm' }
-  ];
+  // const tabs = [
+  //   { id: 0, label: block.category1, icon: 'chat-and-message', iconSize: 'sm' },
+  //   { id: 1, label: block.category2, icon: 'voice-and-calls', iconSize: 'sm' },
+  //   { id: 2, label: block.category3, icon: 'stars-01', iconSize: 'sm' }
+  // ];
 
   $: activeTab = tabs.find((tab) => tab.id === $activateIndex);
 
-  function selectTab(id: number) {
+  async function selectTab(id: number) {
     $activateIndex = id;
     isDropdownOpen = false;
-    console.log('Selected tab ID:', activateIndex);
+
+    const selected = tabs.find((t) => t.id === id);
+    if (selected) {
+      const newUrl = `/pricing?tab=${selected.param}`;
+      await goto(newUrl, { replaceState: true });
+    }
   }
 
   function toggleDropdown() {
@@ -93,7 +124,11 @@
 </script>
 
 {#if block}
-  <section data-theme="dark" use:storyblokEditable={block} class="w-full pt-[100px]">
+  <section
+    data-theme="dark"
+    use:storyblokEditable={block}
+    class="w-full overflow-hidden pt-[100px]"
+  >
     {#if block.header}
       {@const { title, description } = block.header[$activateIndex]}
       <div class="relative z-50 w-full">
@@ -258,7 +293,7 @@
               <div
                 class={`group flex flex-row items-center justify-center gap-4 ${
                   $activateIndex === 1 || $activateIndex === 0 ? 'border-l' : ''
-                } border-white/10 px-4 text-lg lg:text-xl lg:font-[640]`}
+                } border-white/10 px-4 text-lg lg:font-[640]`}
               >
                 <Icon
                   icon="voice-and-calls"
@@ -284,7 +319,7 @@
               <div
                 class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
                   $activateIndex === 1 || $activateIndex === 2 ? 'border-l' : ''
-                }border-white/10 px-4 text-lg leading-tighter lg:text-xl lg:font-[640]`}
+                }border-white/10 px-4 text-lg leading-tighter lg:font-[640]`}
               >
                 <Icon
                   icon="stars-01"
