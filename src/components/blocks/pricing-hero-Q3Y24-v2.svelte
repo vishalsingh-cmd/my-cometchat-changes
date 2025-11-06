@@ -116,6 +116,8 @@
       const newUrl = `/pricing?tab=${selected.param}`;
       await goto(newUrl, { replaceState: true });
     }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function toggleDropdown() {
