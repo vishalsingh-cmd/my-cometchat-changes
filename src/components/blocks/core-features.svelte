@@ -2,23 +2,32 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import type { CoreFeaturesStoryblok } from '$src/types/bloks';
+  import is from 'date-fns/locale/is';
   import Link from '../buttons/link.svelte';
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
 
   let activeImage = block?.features?.[0]?.image?.filename || '';
-  let fading = false;
+  let nextImage = '';
+  let isTransitioning = false;
 
   // Intersection Observer
   function observeFeature(node: HTMLElement, image: string) {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          fading = true;
+        if (entry.isIntersecting && image !== activeImage) {
+          nextImage = image;
+          isTransitioning = true;
+
           setTimeout(() => {
             activeImage = image;
-            fading = false;
-          }, 300);
+            isTransitioning = false;
+
+            // Add small delay before clearing nextImage
+            setTimeout(() => {
+              nextImage = '';
+            }, 500); // ← Extra 50ms delay
+          }, 600);
         }
       },
       { threshold: 0.55 }
@@ -174,13 +183,25 @@
 
             <!-- RIGHT IMAGE -->
             <div class="sticky top-0 hidden h-screen flex-col lg:flex">
-              <img
-                src={activeImage}
-                alt="Agent UI"
-                class={`my-auto w-[640px] transition-opacity duration-500 ${
-                  fading ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
+              <div class="relative my-auto h-[640px] w-[640px] overflow-hidden">
+                <!-- Active Image (bottom layer) -->
+                <img
+                  src={activeImage}
+                  alt="Agent UI"
+                  class={`absolute inset-0 z-10 w-full transition-all duration-[600ms] ease-out ${
+                    isTransitioning ? 'opacity-0' : 'opacity-100'
+                  }`}
+                />
+
+                <!-- Next Image (top layer during animation) -->
+                {#if nextImage}
+                  <img
+                    src={nextImage}
+                    alt="Agent UI"
+                    class="animate-slide-from-top absolute inset-0 z-20 w-full"
+                  />
+                {/if}
+              </div>
             </div>
           </div>
         </section>
@@ -188,3 +209,20 @@
     </Container>
   </Section>
 {/if}
+
+<style>
+  @keyframes slideFromTop {
+    from {
+      transform: translateY(-80px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slide-from-top {
+    animation: slideFromTop 800ms ease-out forwards;
+  }
+</style>
