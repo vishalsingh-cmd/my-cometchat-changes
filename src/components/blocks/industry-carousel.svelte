@@ -11,28 +11,16 @@
 
   const { activeIndex, setActiveIndex } = createIndustryContext(0);
 
-  //   const imageMap = {
-  //     scroll_ai: '/agent_lp_images/scroll_images/scroll_ai.png',
-  //     scroll_custom: '/agent_lp_images/scroll_images/scroll_custom.png',
-  //     scroll_product: '/agent_lp_images/scroll_images/scroll_product.png'
-  //   };
-
   let interval: any;
-
-  onMount(() => {
-    interval = setInterval(() => {
-      activeIndex.update((i) => (i + 1) % (block.items?.length ?? 1));
-    }, 20000);
-  });
-
-  onDestroy(() => {
-    clearInterval(interval);
-  });
+  let containerRef: HTMLElement;
+  let observer: IntersectionObserver;
 
   function startAnimation() {
-    interval = setInterval(() => {
-      setActiveIndex(($activeIndex + 1) % (block.items?.length ?? 1));
-    }, 20000);
+    if (!interval) {
+      interval = setInterval(() => {
+        activeIndex.update((i) => (i + 1) % (block.items?.length ?? 1));
+      }, 20000);
+    }
   }
 
   function stopAnimation() {
@@ -47,12 +35,42 @@
     setActiveIndex(index);
     startAnimation();
   }
+
+  onMount(() => {
+    observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // 👇 Start animation when visible
+            startAnimation();
+          } else {
+            // 👇 Stop animation when out of view
+            stopAnimation();
+          }
+        });
+      },
+      {
+        threshold: 0.3 // start when 30% of the section is visible
+      }
+    );
+
+    if (containerRef) {
+      observer.observe(containerRef);
+    }
+  });
+
+  onDestroy(() => {
+    stopAnimation();
+    if (observer && containerRef) {
+      observer.unobserve(containerRef);
+    }
+  });
 </script>
 
 {#if block}
   <Section>
     <Container>
-      <div class="flex items-start gap-6">
+      <div class="flex items-start gap-6" bind:this={containerRef}>
         <!-- Image section -->
         <img
           src={block.images?.[$activeIndex]?.filename ?? ''}

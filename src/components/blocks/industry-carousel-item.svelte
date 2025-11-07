@@ -1,9 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
-  // import GhostButton from '$src/components/buttons/ghost-button.svelte';
   import Icon from '$src/components/icon/icon.svelte';
-  // import { getAnchorFromCmsLink } from '$src/lib/storyblok';
-  // import type { standardLinkStoryblok } from '$src/types/bloks';
   import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import { onMount } from 'svelte';
 
@@ -17,22 +14,19 @@
   export let description: string;
   export let points;
 
-  // export let link: standardLinkStoryblok;
-
   $: status = $activeIndex === index ? 'active' : 'inactive';
 
   let contentElem: HTMLParagraphElement;
-  // let interval: any;
+  let mounted = false; // 👈 flag to delay underline animation
 
   const handleOnClick = () => {
     onClick(index);
   };
 
   onMount(() => {
-    contentElem.setAttribute('style', `--scroll-height: ${contentElem.scrollHeight}px`);
+    mounted = true;
+    contentElem?.setAttribute('style', `--scroll-height: ${contentElem.scrollHeight}px`);
   });
-
-  // const { href, target } = getAnchorFromCmsLink(link);
 </script>
 
 <div
@@ -136,8 +130,8 @@
   <div
     data-name="underline"
     class={cn([
-      'h-[1px] w-full bg-brand-9',
-      $activeIndex === index
+      'h-[1px] w-full transform bg-brand-9',
+      mounted && $activeIndex === index
         ? 'translate-x-0 transition-transform duration-[20000ms]'
         : '-translate-x-full transition-none'
     ])}
