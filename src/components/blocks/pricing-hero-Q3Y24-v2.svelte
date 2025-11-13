@@ -79,9 +79,9 @@
   // Detect initial tab BEFORE the component renders
   const tabParam = new URL($page.url).searchParams.get('tab');
 
-  if (tabParam === 'voice') {
+  if (tabParam === 'voice-video-calling') {
     $activateIndex = 1;
-  } else if (tabParam === 'ai') {
+  } else if (tabParam === 'ai-agents') {
     $activateIndex = 2;
   } else {
     $activateIndex = 0;
@@ -164,10 +164,12 @@
     <div class="relative z-50 w-full">
       <Sticky class="md:static ">
         <!-- Planet background image - centered and behind everything -->
-        <div
-          class="pointer-events-none absolute left-1/2 top-32 z-[0] hidden w-screen -translate-x-1/2 lg:block lg:-translate-x-[780px]"
-        >
-          <img src={PlanetImage} alt="planet" class="" />
+        <div class="relative mx-auto w-[1440px] overflow-visible">
+          <div
+            class="pointer-events-none absolute left-1/2 top-[130px] z-[0] hidden w-[1312px] -translate-x-1/2 lg:block lg:-translate-x-[700px]"
+          >
+            <img src={PlanetImage} alt="planet" class="" />
+          </div>
         </div>
 
         <!-- Tab switches with higher z-index -->

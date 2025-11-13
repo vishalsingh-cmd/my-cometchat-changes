@@ -2,7 +2,6 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import type { CoreFeaturesStoryblok } from '$src/types/bloks';
-  import is from 'date-fns/locale/is';
   import Link from '../buttons/link.svelte';
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
