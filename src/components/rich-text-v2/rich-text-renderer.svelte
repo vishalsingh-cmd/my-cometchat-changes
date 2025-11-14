@@ -48,7 +48,8 @@
   import CodeBlock from '$components/rich-text-v2/code-block.svelte';
   import UnorderedList from '$components/rich-text-v2/unordered-list.svelte';
   import OrderedList from '$components/rich-text-v2/ordered-list.svelte';
-  import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
+  // import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
+  import RichTextDynamicBlockV2 from '$components/blocks/rich-text-v2/rich-text-dynamic-block.svelte';
   import Media from '$components/media.svelte';
 
   type $$Props = HTMLAttributes<HTMLDivElement> & {
@@ -80,6 +81,6 @@
 
 {#if isBlok}
   {#each doc.attrs.body as b}
-    <RichTextDynamicBlock block={b} />
+    <RichTextDynamicBlockV2 block={b} />
   {/each}
 {/if}

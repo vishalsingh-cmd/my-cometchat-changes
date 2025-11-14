@@ -14,6 +14,7 @@
     'font-normal',
     'text-gray-1',
     '[&_span]:!text-gray-1',
+    '[&_p]:!text-gray-1',
     'tracking-[0.09px]',
 
     '[&_a]:text-brand-9',

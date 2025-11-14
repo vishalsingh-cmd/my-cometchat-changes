@@ -10,7 +10,7 @@
 <svelte:element
   this={`h${content.attrs.level}`}
   class={cn(
-    'font-semibold leading-tighter text-gray-12 [&_span]:!text-gray-1',
+    'font-semibold leading-tighter !text-gray-1 [&_span]:!text-gray-1',
     content?.attrs?.level == 2 && 'text-h1',
     content?.attrs?.level == 2 && 'text-h2',
     content?.attrs?.level == 3 && 'text-h3',

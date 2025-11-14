@@ -127,12 +127,53 @@
           hasShareOptions
         />
 
-        <div class="relative overflow-hidden text-black" id="content">
+        <div class="relative overflow-hidden" id="content">
           {#each block.content.body.content as b}
             <RichTextRendererV2 doc={b} />
           {/each}
 
           <!-- Author -->
+          {#if block.content.author && isBlockTutorialOrBlogPostOrGuide}
+            {@const author = typedAuthor(block.content.author)}
+            <div class="py-8 md:py-6">
+              <div
+                class="flex flex-col gap-3 rounded-2xl border border-gray-1/[0.08] bg-gray-1/[0.04] p-4 backdrop-blur-[20px] md:p-5"
+                style="transform: translate3d(0, 0, 0);"
+              >
+                <div class="flex items-center gap-3">
+                  {#if author.content.avatar}
+                    <Media
+                      imageTransformOptions={{ size: [100, 100] }}
+                      media={author.content.avatar}
+                      class="h-10 w-10 rounded-full"
+                    />
+                  {/if}
+                  <div
+                    class="flex flex-col gap-[2px] text-md font-semibold leading-tight tracking-wide text-gray-1"
+                  >
+                    <p>{author.content.name}</p>
+                    <p class="opacity-74">
+                      {#if author.content.role}
+                        {author.content.role}
+                      {/if}
+                      {#if author.content.role && author.content.company}
+                        ,
+                      {/if}
+                      {#if author.content.company}
+                        {author.content.company}
+                      {/if}
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="text-lg-richtext font-normal leading-[125%] tracking-wide text-[#BEBEC2]"
+                >
+                  {author.content.description}
+                </div>
+              </div>
+            </div>
+          {/if}
+          <!-- Author
           {#if block.content.author && isBlockTutorialOrBlogPostOrGuide}
             {@const author = typedAuthor(block.content.author)}
             <div class="py-8 md:py-6">
@@ -170,7 +211,7 @@
                 </div>
               </div>
             </div>
-          {/if}
+          {/if} -->
 
           <!-- <Share class="pb-8 md:hidden" /> -->
         </div>
