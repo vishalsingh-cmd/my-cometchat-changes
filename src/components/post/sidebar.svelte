@@ -29,7 +29,7 @@
         {#each headings as heading, i}
           <button
             class={cn(
-              'relative block text-left text-lg font-semibold leading-tight opacity-54',
+              'relative block text-left text-lg font-medium leading-tight opacity-54',
               activeHeadingIndex === i && 'opacity-100',
               i === 0 &&
                 'after:absolute after:-left-3 after:top-0 after:h-0.5 after:w-0.5 after:-translate-x-[0.5px] after:rounded-full after:bg-brand-9 after:shadow-[0_0_8px_8px_hsl(var(--color-brand-9)/0.05)]',
