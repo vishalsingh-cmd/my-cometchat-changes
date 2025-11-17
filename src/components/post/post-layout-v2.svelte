@@ -20,6 +20,7 @@
   import SideStaticBanner from '$components/side-static-banner.svelte';
   import Toc from '$components/toc.svelte';
   import Breadcumbs from '$components/breadcumbs.svelte';
+  import BreadcumbsV2 from '$components/breadcumbs-v2.svelte';
   import { page } from '$app/stores';
   import RelatedBlogs from '$components/related-blogs.svelte';
 
@@ -116,7 +117,7 @@
       <div
         class="grid-col-1 container relative mx-auto grid px-container pt-10 md:grid-cols-[1fr_minmax(auto,460px)] md:gap-12 md:pt-20 lg:grid-cols-[1fr_minmax(auto,640px)_1fr] lg:gap-6"
       >
-        <Breadcumbs slug={$page.url.pathname} current_page_title={block.name} />
+        <BreadcumbsV2 slug={$page.url.pathname} current_page_title={block.name} />
 
         <Toc {headings} {activeHeadingIndex} on:scrollIntoView={onScrollIntoView} />
 
