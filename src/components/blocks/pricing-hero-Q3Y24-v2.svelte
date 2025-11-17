@@ -38,15 +38,15 @@
   export let block: PricingHeroQ3Y24V2Storyblok;
 
   const tabs = [
-    { id: 0, label: 'Chat and Messaging', param: 'chat', icon: 'chat-and-message', iconSize: 'sm' },
+    { id: 0, label: 'Chat and Messaging', icon: 'chat-and-message', iconSize: 'sm' },
     {
       id: 1,
       label: 'Voice and Video Calling',
-      param: 'voice',
+      param: 'voice-video-calling',
       icon: 'voice-and-calls',
       iconSize: 'sm'
     },
-    { id: 2, label: 'AI Agents', param: 'ai', icon: 'stars-01', iconSize: 'sm' }
+    { id: 2, label: 'AI Agents', param: 'ai-agents', icon: 'stars-01', iconSize: 'sm' }
   ];
 
   let localMaus: string[] = [];
@@ -113,7 +113,7 @@
 
     const selected = tabs.find((t) => t.id === id);
     if (selected) {
-      const newUrl = `/pricing?tab=${selected.param}`;
+      const newUrl = id == 0 ? `/pricing` : `/pricing?tab=${selected.param}`;
       await goto(newUrl, { replaceState: true });
     }
 
@@ -262,9 +262,7 @@
             <PricingTabSwitchV2
               id={0}
               isActive={$activateIndex === 0}
-              on:click={() => {
-                $activateIndex = 0;
-              }}
+              on:click={() => selectTab(0)}
             >
               <div
                 class="group flex w-full flex-row items-center justify-center gap-4 px-4 text-lg lg:w-[260px] lg:font-[640]"
@@ -286,9 +284,7 @@
             <PricingTabSwitchV2
               id={1}
               isActive={$activateIndex === 1}
-              on:click={() => {
-                $activateIndex = 1;
-              }}
+              on:click={() => selectTab(1)}
             >
               <div
                 class={`group flex flex-row items-center justify-center gap-4 ${
@@ -312,9 +308,7 @@
             <PricingTabSwitchV2
               id={2}
               isActive={$activateIndex === 2}
-              on:click={() => {
-                $activateIndex = 2;
-              }}
+              on:click={() => selectTab(2)}
             >
               <div
                 class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
