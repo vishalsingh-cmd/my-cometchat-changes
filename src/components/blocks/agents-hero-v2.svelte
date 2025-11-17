@@ -64,13 +64,13 @@
           <div class="flex flex-wrap gap-4">
             {#if block.secondary_button_text && block.secondary_button_link}
               {@const { href, target, rel } = getAnchorFromCmsLink(block.secondary_button_link)}
-              <Button as="a" variant="secondary" {href} {target} {rel}>
+              <Button as="a" {href} {target} {rel}>
                 {block.secondary_button_text}
               </Button>
             {/if}
             {#if block.primary_button_text && block.primary_button_link}
               {@const { href, target, rel } = getAnchorFromCmsLink(block.primary_button_link)}
-              <Button as="a" {href} {target} {rel}>
+              <Button as="a" variant="secondary" {href} {target} {rel}>
                 {block.primary_button_text}
               </Button>
             {/if}
