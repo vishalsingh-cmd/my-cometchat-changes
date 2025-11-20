@@ -10,6 +10,7 @@
   import ChatFeaturesSection from './chat-features-section.svelte';
   import ChatIntegration from './chat-integration.svelte';
   import CometCreditsSection from './comet-credits-section.svelte';
+  import ComparisonTable from './comparison-table.svelte';
   import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
   import CustomerHeroAnimated from './customer-hero-animated.svelte';
@@ -144,6 +145,7 @@
     'customer-stats': CustomerStats,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
+    'comparison-table': ComparisonTable,
     'customers-hero': CustomersHero,
     'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
