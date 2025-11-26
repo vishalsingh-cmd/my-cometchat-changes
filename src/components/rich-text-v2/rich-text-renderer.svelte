@@ -50,7 +50,7 @@
   import OrderedList from '$components/rich-text-v2/ordered-list.svelte';
   // import RichTextDynamicBlock from '$components/blocks/rich-text/rich-text-dynamic-block.svelte';
   import RichTextDynamicBlockV2 from '$components/blocks/rich-text-v2/rich-text-dynamic-block.svelte';
-  import Media from '$components/media.svelte';
+  import MediaV2 from '$components/media-v2.svelte';
 
   type $$Props = HTMLAttributes<HTMLDivElement> & {
     doc: ISbRichtext;
@@ -74,7 +74,7 @@
 </script>
 
 {#if doc.content && doc.content[0].type == 'image'}
-  <Media media={doc.content[0].attrs} enableZoom={true} />
+  <MediaV2 media={doc.content[0].attrs} enableZoom={true} />
 {:else if component}
   <svelte:component this={component} content={doc} {...$$restProps} />
 {/if}

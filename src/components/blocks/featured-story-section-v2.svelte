@@ -2,7 +2,7 @@
   import type { StoryblokStory } from 'storyblok-generate-ts';
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import { sanitizeSlug } from '$lib/storyblok';
+  // import { sanitizeSlug } from '$lib/storyblok';
   import { formatDate } from '$lib/utils/dates';
 
   import type {
@@ -75,7 +75,7 @@
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
       {@const content = story.content}
-      {@const storyLink = sanitizeSlug(story.full_slug)}
+      <!-- {@const storyLink = sanitizeSlug(story.full_slug)} -->
       {@const author = getAuthor(story)}
       <!-- {console.log('author', author)} -->
       {@const date = story.created_at ? formatDate(new Date(story?.created_at)) : undefined}
