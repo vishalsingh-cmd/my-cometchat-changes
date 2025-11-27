@@ -16,7 +16,9 @@
 </script>
 
 {#if block}
-  <Section className="mt-[60px] relative isolate lg:h-[760px] overflow-hidden ">
+  <Section
+    className="mt-[60px] relative isolate lg:h-[760px] overflow-hidden max-w-[1440px] mx-auto "
+  >
     <Container>
       <div class=" mt-10 flex flex-col items-center gap-[60px] text-center">
         <div class="flex flex-col items-center gap-[28px]">
@@ -62,8 +64,12 @@
       src={planet}
       alt="background"
       class={cn(
-        ['absolute inset-0 -z-[1]', 'h-full w-full object-cover object-bottom', '-translate-y-4'],
-        ['lg:translate-y-[20px]']
+        [
+          'absolute inset-0 -z-[1]',
+          'h-full w-full object-cover object-bottom',
+          '-translate-y-[50px]'
+        ],
+        ['lg:-translate-y-[20px]']
       )}
     />
     <img
