@@ -64,8 +64,8 @@
         {:else}
           <span
             class={index < breadcrumbs.length - 1
-              ? 'font-bold text-brand-9 hover:cursor-pointer'
-              : 'text-brand-9 hover:cursor-pointer'}>{item.label}</span
+              ? 'font-bold text-brand-9 '
+              : 'text-gray-1 hover:cursor-default'}>{item.label}</span
           >
         {/if}
 

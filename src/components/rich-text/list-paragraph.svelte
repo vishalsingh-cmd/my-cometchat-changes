@@ -47,7 +47,7 @@
     'leading-snug',
     'tracking-[0.09px]',
 
-    '[&_a]:text-brand-9',
+    '[&_a]:text-[#836aff]',
     '[&_a:hover]:text-brand-10',
 
     '[&_img]:my-6',

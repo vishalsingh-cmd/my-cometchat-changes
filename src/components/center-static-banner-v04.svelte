@@ -12,13 +12,14 @@
   <div
     use:storyblokEditable={block}
     class={cn(
-      'relative flex h-auto w-full gap-3 overflow-clip rounded-3xl bg-gradient-to-r p-8 text-white shadow-md',
+      'relative flex h-auto w-full gap-3 overflow-clip rounded-[16px] bg-gradient-to-r p-8 text-white shadow-md',
       'flex-col ', // Flex direction is column on responsive screens
       'sm:flex-row lg:flex-row', // Flex direction is row on large screens
       'border border-gray-1/20'
     )}
+    style="box-shadow: 0 4px 20px 0 rgba(20, 19, 29, 0.06); backdrop-filter: blur(20px);"
   >
-    <h3 class="w-full text-start text-xl font-semibold leading-tight">{block.title}</h3>
+    <h3 class=" w-full text-start text-xl font-semibold leading-tight">{block.title}</h3>
     {#if block.cta_slot}
       <div class="ml-8 flex gap-3">
         {#each block.cta_slot as button}
@@ -35,7 +36,7 @@
       width="640"
       height="100"
       viewBox="0 0 640 100"
-      class="pointer-events-none absolute bottom-0 left-0"
+      class="pointer-events-none absolute bottom-0 left-0 -z-[1]"
       fill="none"
     >
       <g opacity="0.6" filter="url(#filter0_f_3037_20126)">

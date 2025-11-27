@@ -13,7 +13,7 @@
           {#each block?.table.thead as item}
             <th
               scope="col"
-              class="text-gray-900 max-w-[160px] px-12 py-3.5 text-left text-sm font-semibold sm:px-6"
+              class="text-gray-900 max-w-[160px] px-[16px] py-3.5 text-left text-sm font-semibold"
             >
               {item.value}
             </th>

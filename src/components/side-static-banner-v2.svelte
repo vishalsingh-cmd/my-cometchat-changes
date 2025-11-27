@@ -14,10 +14,11 @@
     class={cn(
       'wrap sticky top-[80px] mb-44 hidden h-[420px] w-full max-w-[500px] flex-col gap-[32px] overflow-clip rounded-3xl border border-gray-1/20  p-5 text-black shadow-sm lg:block'
     )}
+    style="box-shadow: 0 4px 20px 0 rgba(20, 19, 29, 0.06); backdrop-filter: blur(20px);"
   >
     <div class="flex flex-col gap-4">
       <h3 class="text-[28px] font-semibold leading-tight text-gray-1">{block.title}</h3>
-      <p class="text-lg font-normal leading-snug tracking-[0.09px] text-gray-1/75">
+      <p class="text-lg font-normal leading-snug tracking-[0.09px] text-[#FAFAFF] opacity-75">
         {block.description}
       </p>
     </div>

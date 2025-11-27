@@ -92,7 +92,7 @@
         <img
           on:click={createModal}
           class={cn(
-            'animate-fadeIn rounded-2xl border border-gray-1/20 ',
+            'animate-fadeIn rounded-2xl border border-gray-1/10 ',
             className,
             enableZoom && 'hover:cursor-zoom-in'
           )}

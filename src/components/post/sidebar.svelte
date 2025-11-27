@@ -14,12 +14,12 @@
 <div class="wrap sticky top-[80px] h-fit w-full max-w-[272px] overflow-visible pb-6 md:block">
   <div class="relative flex h-full w-fit flex-col justify-between">
     <div class="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-gray-5 to-gray-5/0" />
-    <img
+    <!-- <img
       src={Background}
       alt=""
       draggable="false"
       class="pointer-events-none absolute -bottom-1/2 -right-1/4 min-h-[680px] min-w-[680px] select-none opacity-20"
-    />
+    /> -->
 
     <div
       id="table-of-content-desktop"
