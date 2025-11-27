@@ -17,9 +17,10 @@
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import RichTextRendererV2 from '$components/rich-text-v2/rich-text-renderer.svelte';
   import RelatedStoriesSection from '$components/blocks/related-stories-section.svelte';
-  import SideStaticBanner from '$components/side-static-banner.svelte';
+  // import SideStaticBanner from '$components/side-static-banner.svelte';
+  import SideStaticBannerV2 from '$components/side-static-banner-v2.svelte';
   import Toc from '$components/toc.svelte';
-  import Breadcumbs from '$components/breadcumbs.svelte';
+  // import Breadcumbs from '$components/breadcumbs.svelte';
   import BreadcumbsV2 from '$components/breadcumbs-v2.svelte';
   import { page } from '$app/stores';
   import RelatedBlogs from '$components/related-blogs.svelte';
@@ -221,7 +222,7 @@
           <div class="flex flex-col gap-6">
             {#each block.content.sidebar_right_slot as slot}
               {#if slot.component === 'side-static-banner'}
-                <SideStaticBanner block={slot} />
+                <SideStaticBannerV2 block={slot} />
               {:else if slot.component === 'related-blogs'}
                 <RelatedBlogs block={slot} />
               {/if}

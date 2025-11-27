@@ -9,7 +9,9 @@
     'testimonial-block': TestimonialBlock,
     'youtube-video': YoutubeVideo,
     'center-static-banner-v01': CenterStaticBannerV01,
-    'center-static-banner-v02': CenterStaticBannerV02,
+    // earlier version commented out
+    // 'center-static-banner-v02': CenterStaticBannerV02,
+    'center-static-banner-v02': CenterStaticBannerV04,
     'toolkit-links-banner': ToolkitLinksBanner,
     'blog-text-table': BlogTextTable,
     'blog-checklist-table': BlogChecklistTableV2,
@@ -38,6 +40,8 @@
   import HighlightsParagraph from '$components/blocks/rich-text-v2/highlights-paragraph.svelte';
   import CenterStaticBannerV01 from '$components/center-static-banner-v01.svelte';
   import CenterStaticBannerV02 from '$components/center-static-banner-v02.svelte';
+  // import CenterStaticBannerV03 from '$components/center-static-banner-v03.svelte';
+  import CenterStaticBannerV04 from '$components/center-static-banner-v04.svelte';
   import ToolkitLinksBanner from '$components/toolkit-links-banner.svelte';
   import BlogTextTable from '$components/blog-text-table.svelte';
   import BlogChecklistTable from '$components/blog-checklist-table.svelte';

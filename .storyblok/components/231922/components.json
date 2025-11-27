@@ -3131,9 +3131,11 @@
         "use_uuid": true,
         "required": true,
         "source": "internal_stories",
-        "filter_content_type": ["customer-story", "blog-post", "tutorial"],
-        "pos": 2,
-        "id": "iYr0qy-KR4S--db6Tyy2RQ"
+        "filter_content_type": [
+          "customer-story",
+          "blog-post",
+          "tutorial"
+        ]
       },
       "button_label": {
         "type": "text",
@@ -5302,8 +5304,10 @@
         "pos": 4,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["link"],
-        "minimum": 0,
+        "component_whitelist": [
+          "link"
+        ],
+        "minimum": 1,
         "maximum": 1,
         "id": "l-ONBNR6QICJt_ZaIpvFDQ"
       }
@@ -7220,9 +7224,10 @@
         "minimum": 1,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["title-section"],
-        "key": "titile",
-        "id": "YF_WygHDQT6UcTqM19zJRQ"
+        "component_whitelist": [
+          "title-section"
+        ],
+        "key": "titile"
       },
       "rows": {
         "type": "bloks",
@@ -7232,9 +7237,10 @@
         "maximum": 3,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["moderation-feature-cards-row"],
-        "key": "rows",
-        "id": "X80GDVqFQDG3mmPt30UeMA"
+        "component_whitelist": [
+          "moderation-feature-cards-row"
+        ],
+        "key": "rows"
       }
     },
     "image": null,
@@ -14019,8 +14025,10 @@
         "maximum": 2,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["button-link"],
-        "pos": 4,
+        "component_whitelist": [
+          "button-link"
+        ],
+        "pos": 3,
         "id": "A00m9t2uTF2LeyUIm9LIRQ"
       },
       "size": {
