@@ -14960,12 +14960,22 @@
     "display_name": "Testimonial Carousel",
     "description": "Testimonial Carousel",
     "created_at": "2025-11-27T08:30:38.848Z",
-    "updated_at": "2025-11-27T08:34:24.580Z",
+    "updated_at": "2025-11-27T19:07:34.170Z",
     "id": 116910648733055,
     "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "k2yiCWHDTNeRJkxPl25i4Q"
+      },
+      "description": {
+        "type": "text",
+        "pos": 1,
+        "id": "oi2Aq1sUQFGJSbwBe128nw"
+      },
       "testimonial": {
         "type": "bloks",
-        "pos": 0,
+        "pos": 2,
         "id": "WMH0y6bQTxGbYXKarCPq0g",
         "restrict_type": "",
         "restrict_components": true,

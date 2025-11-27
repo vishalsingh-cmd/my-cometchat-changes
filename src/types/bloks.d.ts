@@ -3478,6 +3478,8 @@ export interface TestimonialBlockV2Storyblok {
 }
 
 export interface TestimonialsStoryblok {
+  title?: string;
+  description?: string;
   testimonial?: TestimonialBlockV2Storyblok[];
   _uid: string;
   component: 'testimonials';

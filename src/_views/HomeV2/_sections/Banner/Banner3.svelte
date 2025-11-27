@@ -75,7 +75,7 @@
     <img
       src={InvertedPlanet}
       alt="background"
-      class="absolute -top-[1000px] left-1/2 -z-[6] w-[130%] max-w-none -translate-x-1/2 object-cover lg:-translate-y-[0px]"
+      class="absolute -top-[1000px] left-1/2 -z-[6] w-[2000px] max-w-none -translate-x-1/2 object-cover lg:-translate-y-[0px]"
     />
 
     {#if block.image1}

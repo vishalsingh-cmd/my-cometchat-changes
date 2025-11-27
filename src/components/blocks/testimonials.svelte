@@ -21,7 +21,7 @@
 
   // Card width + gap
   const cardWidth = 640; // card width
-  const gap = 32; // gap between cards
+  const gap = 26; // gap between cards
   const totalWidth = cardWidth + gap;
 
   function selectTestimonial(index: number) {
@@ -93,10 +93,26 @@
   <Section>
     <Container pxEnabled={false} pyEnabled={false}>
       <div class="relative w-full overflow-hidden py-12 md:py-20" use:storyblokEditable={block}>
+        <!-- Title Section -->
+        {#if block.title || block.description}
+          <div class="container mx-auto mb-[40px] pb-[48px] pt-[100px] text-center">
+            {#if block.title}
+              <h2 class=" mb-[12px] font-sans text-xl font-semibold leading-tight text-brand-9">
+                {block.title}
+              </h2>
+            {/if}
+            {#if block.description}
+              <p class="mx-auto max-w-3xl text-[48px] font-semibold leading-tight text-gray-12">
+                {block.description}
+              </p>
+            {/if}
+          </div>
+        {/if}
+
         <!-- Testimonial Cards Carousel -->
-        <div class="relative mb-12 overflow-hidden md:mb-16">
+        <div class="relative mb-[24px] overflow-hidden md:mb-[32px]">
           <div
-            class="flex gap-8"
+            class="flex gap-[5px]"
             style="
               transform: translateX(calc(50% - {currentIndex * totalWidth}px - {cardWidth / 2}px ));
               transition: {transitioning ? 'transform 0.5s ease-in-out' : 'none'};
@@ -110,15 +126,15 @@
                 }`}
               >
                 <div
-                  class={`relative flex h-full w-[640px] flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-8 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
+                  class={`relative flex h-[410px] w-[640px] flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-8 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
     ${
       index === currentIndex
-        ? 'scale-100 border-gray-12/20 bg-gradient-to-br opacity-100'
-        : 'scale-95 border-gray-12 opacity-40'
+        ? 'scale-100 border-gray-12/10 bg-gradient-to-br opacity-100'
+        : 'scale-95 border-gray-12/20 '
     }
   `}
                   style={index === currentIndex
-                    ? 'box-shadow: 0px 4px 24px rgba(105, 83, 214, 0.15);'
+                    ? 'box-shadow: 0 0 214px 0 rgba(104, 82, 214, 0.24);'
                     : ''}
                 >
                   <!-- Quote Icon -->
@@ -138,7 +154,7 @@
 
                   <!-- Quote Text -->
                   <blockquote
-                    class="mb-[48px] text-xl font-medium leading-snug tracking-[0.16px] text-gray-12 md:text-2xl"
+                    class="mb-[48px] text-xl font-medium leading-snug tracking-[0.16px] text-gray-12 opacity-80 md:text-2xl"
                   >
                     <div class="relative mr-6 inline-block h-[50px] text-[80px] text-brand-9">
                       <span class="absolute -left-2 top-0"> “</span>
@@ -150,12 +166,12 @@
                   </blockquote>
 
                   <!-- Author Info -->
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-[20px]">
                     {#if testimonial.author_image?.filename}
                       <img
                         src={testimonial.author_image.filename}
                         alt={testimonial.author_name}
-                        class="h-12 w-12 object-cover md:h-14 md:w-[64px]"
+                        class="h-12 w-12 rounded-[8px] object-cover md:h-[64px] md:w-[64px]"
                       />
                     {/if}
                     <div>
@@ -179,7 +195,7 @@
             {#each testimonials as testimonial, index}
               <button
                 on:click={() => selectTestimonial(index)}
-                class={`group relative flex h-[70px] w-[120px] items-center justify-center rounded-[16px] border border-gray-12/10 bg-gray-12/5 p-3 transition-all duration-300 hover:border-brand-9/50 hover:bg-brand-9/10 md:h-[100px] md:w-[180px] md:p-[24px] ${
+                class={`group relative flex h-[70px] w-[120px] items-center justify-center rounded-[16px] border border-gray-12/10 bg-gray-12/5 p-3 transition-all duration-300 hover:border-brand-9/50 hover:bg-brand-9/10 md:h-[88px] md:w-[180px] md:p-[24px] ${
                   actualIndex === index ? 'bg-gradient-to-b from-[#6852D64D]/30 to-transparent' : ''
                 }`}
                 class:border-brand-9={actualIndex === index}
@@ -189,17 +205,16 @@
                   <img
                     src={testimonial.company_logo.filename}
                     alt="Company logo"
-                    class="h-auto max-h-[35px] w-auto max-w-full object-contain transition-all duration-300 md:max-h-[50px]"
-                    class:opacity-100={actualIndex === index}
-                    class:opacity-40={actualIndex !== index}
-                    class:group-hover:opacity-70={actualIndex !== index}
+                    class={` h-[40px] w-auto max-w-full object-contain transition-all duration-1000 ${
+                      actualIndex === index ? 'opacity-100' : 'opacity-40 group-hover:opacity-70'
+                    }`}
                   />
                 {/if}
 
                 <!-- Active Indicator Border -->
                 {#if actualIndex === index}
                   <div
-                    class="pointer-events-none absolute inset-0 rounded-[12px] border border-brand-9/30"
+                    class={`pointer-events-none absolute inset-0 rounded-[12px] border border-brand-9/30  `}
                   />
                 {/if}
               </button>
@@ -207,10 +222,10 @@
           </div>
         </div>
         <div
-          class="absolute right-0 top-0 h-full w-[200px] bg-gradient-to-r from-transparent via-[#0A0914BF]/75 to-[#0A0914]"
+          class="absolute right-0 top-0 h-full w-[150px] bg-gradient-to-r from-transparent via-[#0A0914BF]/50 to-[#0A0914]"
         />
         <div
-          class="absolute left-0 top-0 h-full w-[200px] bg-gradient-to-l from-transparent via-[#0A0914BF]/75 to-[#0A0914]"
+          class="absolute left-0 top-0 h-full w-[150px] bg-gradient-to-l from-transparent via-[#0A0914BF]/50 to-[#0A0914]"
         />
       </div>
     </Container>
