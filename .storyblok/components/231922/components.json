@@ -14892,6 +14892,105 @@
     "metadata": {}
   },
   {
+    "name": "testimonial-block-v2",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-11-27T08:33:18.737Z",
+    "updated_at": "2025-11-27T08:34:05.464Z",
+    "id": 116911303638400,
+    "schema": {
+      "testimonial": {
+        "type": "text",
+        "required": true,
+        "translatable": true,
+        "id": "8VRy_cz1TzGlE4S1ZMbwKA"
+      },
+      "author_name": {
+        "type": "text",
+        "required": true,
+        "translatable": true,
+        "id": "lMNjrP0TQ5CDQUnLnFUtpg"
+      },
+      "author_position": {
+        "type": "text",
+        "translatable": true,
+        "required": true,
+        "id": "rYeNGZlBTvmA62Up3TnUoQ"
+      },
+      "author_company": {
+        "type": "text",
+        "required": true,
+        "translatable": true,
+        "id": "UIX9d10YSZybOOIiCN2LVQ"
+      },
+      "author_image": {
+        "type": "asset",
+        "required": false,
+        "translatable": false,
+        "filetypes": [
+          "images"
+        ],
+        "asset_folder_id": 258668,
+        "id": "WbBEulhcT3WZlqeXUYghNw"
+      },
+      "company_logo": {
+        "type": "asset",
+        "pos": 5,
+        "id": "S2-wLOajRWCh5Juou5A2yw"
+      }
+    },
+    "image": "//a.storyblok.com/f/231922/x/ac6988ed49/testimonial.png",
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "testimonial-block-v2",
+    "component_group_uuid": "e853281d-4436-4eec-96ba-923ef0dda74e",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "testimonials",
+    "display_name": "Testimonial Carousel",
+    "description": "Testimonial Carousel",
+    "created_at": "2025-11-27T08:30:38.848Z",
+    "updated_at": "2025-11-27T08:34:24.580Z",
+    "id": 116910648733055,
+    "schema": {
+      "testimonial": {
+        "type": "bloks",
+        "pos": 0,
+        "id": "WMH0y6bQTxGbYXKarCPq0g",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "testimonial-block-v2"
+        ]
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "Testimonial Carousel",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "testimonial-section",
     "display_name": null,
     "description": null,

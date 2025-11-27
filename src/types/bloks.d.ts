@@ -1339,6 +1339,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1835,6 +1836,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1964,6 +1966,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -2198,6 +2201,7 @@ export interface PricingStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3130,6 +3134,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3294,6 +3299,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3456,6 +3462,25 @@ export interface TestimonialBlockStoryblok {
   author_image?: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
+  [k: string]: any;
+}
+
+export interface TestimonialBlockV2Storyblok {
+  testimonial: string;
+  author_name: string;
+  author_position: string;
+  author_company: string;
+  author_image?: AssetStoryblok;
+  company_logo?: AssetStoryblok;
+  _uid: string;
+  component: 'testimonial-block-v2';
+  [k: string]: any;
+}
+
+export interface TestimonialsStoryblok {
+  testimonial?: TestimonialBlockV2Storyblok[];
+  _uid: string;
+  component: 'testimonials';
   [k: string]: any;
 }
 
