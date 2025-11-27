@@ -442,6 +442,24 @@ export interface CometCreditsSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ComparisonTableStoryblok {
+  categories?: SimpleTextStoryblok[];
+  columns?: ComparisonTableColumnStoryblok[];
+  _uid: string;
+  component: 'comparison-table';
+  [k: string]: any;
+}
+
+export interface ComparisonTableColumnStoryblok {
+  is_highlight?: boolean;
+  name?: string;
+  logo?: AssetStoryblok;
+  rows?: SimpleTextStoryblok[];
+  _uid: string;
+  component: 'comparison-table-column';
+  [k: string]: any;
+}
+
 export interface ComplexRollerStoryblok {
   tagline: string;
   title: string;
@@ -979,6 +997,20 @@ export interface HomeBannerV2Storyblok {
   [k: string]: any;
 }
 
+export interface HomeBannerV3Storyblok {
+  beforeTitle?: string;
+  afterTitle?: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  image1?: AssetStoryblok;
+  image2?: AssetStoryblok;
+  image3?: AssetStoryblok;
+  image4?: AssetStoryblok;
+  _uid: string;
+  component: 'home_banner_v3';
+  [k: string]: any;
+}
+
 export interface HomeClientStoryblok {
   client_img?: AssetStoryblok;
   _uid: string;
@@ -1207,6 +1239,7 @@ export interface IndustryStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1231,6 +1264,7 @@ export interface IndustryStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1701,6 +1735,7 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1725,6 +1760,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1828,6 +1864,7 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1852,6 +1889,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2060,6 +2098,7 @@ export interface PricingStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -2084,6 +2123,7 @@ export interface PricingStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2990,6 +3030,7 @@ export interface SyncedBlockContentStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -3014,6 +3055,7 @@ export interface SyncedBlockContentStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3152,6 +3194,7 @@ export interface TechnologyStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -3176,6 +3219,7 @@ export interface TechnologyStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok

@@ -6,7 +6,7 @@
   // import planats_bg from './_assets/planats_bg.svg';
   import InvertedPlanet from './_assets/inverted-planet.svg';
   // import planats_bg from './_assets/Planats.svg';
-  import planet from './_assets/Plannet-Violet.svg';
+  import planet from './_assets/Planet-Violet.svg';
   import Button from '$src/components/buttons/button.svelte';
   import type { HomeBannerV2Storyblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
@@ -16,7 +16,7 @@
 </script>
 
 {#if block}
-  <Section className="mt-[60px] relative isolate lg:h-[760px] ">
+  <Section className="mt-[60px] relative isolate lg:h-[760px] overflow-hidden ">
     <Container>
       <div class=" mt-10 flex flex-col items-center gap-[60px] text-center">
         <div class="flex flex-col items-center gap-[28px]">
@@ -69,10 +69,7 @@
     <img
       src={InvertedPlanet}
       alt="background"
-      class={cn(
-        ['absolute inset-0 -z-[2]', ' h-full w-full object-cover ', '-translate-y-4'],
-        ['lg:-translate-y-[400px] ']
-      )}
+      class="absolute -top-[1000px] left-1/2 -z-[6] w-[130%] max-w-none -translate-x-1/2 object-cover lg:-translate-y-[0px]"
     />
 
     {#if block.image1}
