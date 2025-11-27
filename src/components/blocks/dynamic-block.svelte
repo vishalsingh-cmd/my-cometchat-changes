@@ -73,6 +73,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
   import TechnologyHero from './technology-hero.svelte';
+  import Testimonials from './testimonials.svelte';
   import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
   import TitleImageSectionV2 from './title-image-section-v2.svelte';
@@ -231,6 +232,7 @@
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
+    testimonials: Testimonials,
 
     'title-block': TitleBlock,
     'title-block-left': TitleBlockLeft,

@@ -442,6 +442,24 @@ export interface CometCreditsSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ComparisonTableStoryblok {
+  categories?: SimpleTextStoryblok[];
+  columns?: ComparisonTableColumnStoryblok[];
+  _uid: string;
+  component: 'comparison-table';
+  [k: string]: any;
+}
+
+export interface ComparisonTableColumnStoryblok {
+  is_highlight?: boolean;
+  name?: string;
+  logo?: AssetStoryblok;
+  rows?: SimpleTextStoryblok[];
+  _uid: string;
+  component: 'comparison-table-column';
+  [k: string]: any;
+}
+
 export interface ComplexRollerStoryblok {
   tagline: string;
   title: string;
@@ -979,6 +997,20 @@ export interface HomeBannerV2Storyblok {
   [k: string]: any;
 }
 
+export interface HomeBannerV3Storyblok {
+  beforeTitle?: string;
+  afterTitle?: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  image1?: AssetStoryblok;
+  image2?: AssetStoryblok;
+  image3?: AssetStoryblok;
+  image4?: AssetStoryblok;
+  _uid: string;
+  component: 'home_banner_v3';
+  [k: string]: any;
+}
+
 export interface HomeClientStoryblok {
   client_img?: AssetStoryblok;
   _uid: string;
@@ -1207,6 +1239,7 @@ export interface IndustryStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1231,6 +1264,7 @@ export interface IndustryStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1305,6 +1339,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1701,6 +1736,7 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1725,6 +1761,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1799,6 +1836,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1828,6 +1866,7 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -1852,6 +1891,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1926,6 +1966,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -2060,6 +2101,7 @@ export interface PricingStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -2084,6 +2126,7 @@ export interface PricingStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2158,6 +2201,7 @@ export interface PricingStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -2990,6 +3034,7 @@ export interface SyncedBlockContentStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -3014,6 +3059,7 @@ export interface SyncedBlockContentStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3088,6 +3134,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3152,6 +3199,7 @@ export interface TechnologyStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
@@ -3176,6 +3224,7 @@ export interface TechnologyStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3250,6 +3299,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3412,6 +3462,25 @@ export interface TestimonialBlockStoryblok {
   author_image?: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
+  [k: string]: any;
+}
+
+export interface TestimonialBlockV2Storyblok {
+  testimonial: string;
+  author_name: string;
+  author_position: string;
+  author_company: string;
+  author_image?: AssetStoryblok;
+  company_logo?: AssetStoryblok;
+  _uid: string;
+  component: 'testimonial-block-v2';
+  [k: string]: any;
+}
+
+export interface TestimonialsStoryblok {
+  testimonial?: TestimonialBlockV2Storyblok[];
+  _uid: string;
+  component: 'testimonials';
   [k: string]: any;
 }
 
