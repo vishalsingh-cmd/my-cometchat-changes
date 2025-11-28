@@ -170,13 +170,13 @@
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute -left-2 top-0">"</span>
+                      <span class="absolute -left-2 top-0">“</span>
                     </div>
                     {testimonial.testimonial}
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute left-0 top-0">"</span>
+                      <span class="absolute left-0 top-0">”</span>
                     </div>
                   </blockquote>
 
