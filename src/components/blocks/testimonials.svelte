@@ -147,7 +147,7 @@
                 }`}
               >
                 <div
-                  class={`relative flex flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-6 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
+                  class={`relative flex flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-6 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[32px]
     ${
       index === currentIndex
         ? ' border-gray-12/10 bg-gradient-to-br opacity-100'
