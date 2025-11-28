@@ -142,7 +142,7 @@
           >
             {#each duplicatedTestimonials as testimonial, index}
               <div
-                class={`rounded-2xl border p-[6px] transition-all duration-500 ${
+                class={`rounded-[20px] border p-[6px] transition-all duration-500 ${
                   index === currentIndex ? 'border-brand-9' : 'border-transparent'
                 }`}
               >
@@ -150,8 +150,8 @@
                   class={`relative flex flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-6 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
     ${
       index === currentIndex
-        ? 'scale-100 border-gray-12/10 bg-gradient-to-br opacity-100'
-        : 'scale-95 border-gray-12/20'
+        ? ' border-gray-12/10 bg-gradient-to-br opacity-100'
+        : ' border-gray-12/20'
     }
   `}
                   style="
@@ -170,13 +170,13 @@
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute -left-2 top-0">“</span>
+                      <span class="absolute -left-2 top-0">"</span>
                     </div>
                     {testimonial.testimonial}
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute left-0 top-0">”</span>
+                      <span class="absolute left-0 top-0">"</span>
                     </div>
                   </blockquote>
 
@@ -206,24 +206,38 @@
           </div>
         </div>
 
-        <!-- Company Logos -->
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap items-center justify-center gap-3 md:gap-6">
+        <!-- Company Logos Carousel -->
+        <div class="relative overflow-hidden">
+          <div
+            class="flex items-center justify-center"
+            style="
+              gap: {isMobile ? '12px' : '24px'};
+              transform: translateX(calc(50% - {actualIndex * (isMobile ? 112 : 204)}px - {isMobile
+              ? 50
+              : 90}px));
+              transition: transform 0.5s ease-in-out;
+            "
+          >
             {#each testimonials as testimonial, index}
               <button
                 on:click={() => selectTestimonial(index)}
-                class={`group relative flex h-[60px] w-[100px] items-center justify-center rounded-[12px] border border-gray-12/10 bg-gray-12/5 p-2 transition-all duration-300 hover:border-brand-9/50 hover:bg-brand-9/10 md:h-[88px] md:w-[180px] md:rounded-[16px] md:p-[24px] ${
-                  actualIndex === index ? 'bg-gradient-to-b from-[#6852D64D]/30 to-transparent' : ''
+                class={`group relative flex flex-shrink-0 items-center justify-center rounded-[12px] border p-2 transition-all duration-500 hover:border-brand-9/50 hover:bg-brand-9/10 md:rounded-[16px] md:p-[24px] ${
+                  actualIndex === index
+                    ? 'h-[70px] w-[100px]  border-brand-9 bg-gradient-to-b from-[#6852D64D]/30 to-transparent md:h-[88px] md:w-[180px]'
+                    : 'h-[60px] w-[90px]  border-gray-12/10 bg-gray-12/5 md:h-[76px] md:w-[160px]'
                 }`}
-                class:border-brand-9={actualIndex === index}
-                class:bg-brand-9={actualIndex === index}
+                style={actualIndex === index
+                  ? 'box-shadow: 0 0 40px 0 rgba(104, 82, 214, 0.3);'
+                  : ''}
               >
                 {#if testimonial.company_logo?.filename}
                   <img
                     src={testimonial.company_logo.filename}
                     alt="Company logo"
-                    class={`h-[32px] w-auto max-w-full object-contain transition-all duration-1000 md:h-[40px] ${
-                      actualIndex === index ? 'opacity-100' : 'opacity-40 group-hover:opacity-70'
+                    class={`h-[36px] w-auto max-w-full object-contain transition-all duration-500 ${
+                      actualIndex === index
+                        ? ' opacity-100 '
+                        : ' opacity-40 group-hover:opacity-70 '
                     }`}
                   />
                 {/if}
