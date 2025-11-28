@@ -12,6 +12,11 @@
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   // import Divider from '$src/components/divider.svelte';
 
+  import Image1 from './_assets/hero/image1.png';
+  import Image2 from './_assets/hero/image2.png';
+  import Image3 from './_assets/hero/image3.png';
+  import Image4 from './_assets/hero/image4.png';
+
   export let block: HomeBannerV2Storyblok;
 </script>
 
@@ -78,34 +83,27 @@
       class="absolute -top-[1000px] left-1/2 -z-[6] w-[2000px] max-w-none -translate-x-1/2 object-cover lg:-translate-y-[0px]"
     />
 
-    {#if block.image1}
-      <img
-        src={block.image1.filename}
-        alt={block.image1.alt}
-        class="top-0 -z-[1] inline-block h-auto w-[170px] lg:absolute lg:left-[80px] lg:top-1/2 lg:w-[200px] lg:-translate-y-1/2"
-      />
-    {/if}
-    {#if block.image2}
-      <img
-        src={block.image2.filename}
-        alt={block.image2.alt}
-        class="-z-[1] inline-block h-auto w-[170px] lg:absolute lg:bottom-0 lg:left-[25%] lg:w-[200px]"
-      />
-    {/if}
-    {#if block.image3}
-      <img
-        src={block.image3.filename}
-        alt={block.image3.alt}
-        class="absolute bottom-0 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[200px]"
-      />
-    {/if}
-    {#if block.image4}
-      <img
-        src={block.image4.filename}
-        alt={block.image4.alt}
-        class="relative -z-[1] h-auto w-[170px] lg:absolute lg:right-[50px] lg:top-1/2 lg:w-[200px] lg:-translate-y-1/2"
-      />
-    {/if}
+    <img
+      src={Image1}
+      alt={block.image1.alt}
+      class="top-0 -z-[1] inline-block h-auto w-[170px] lg:absolute lg:left-[80px] lg:top-1/2 lg:w-[200px] lg:-translate-y-1/2"
+    />
+
+    <img
+      src={Image2}
+      alt={block.image2.alt}
+      class="-z-[1] ml-9 inline-block h-auto w-[170px] lg:absolute lg:bottom-8 lg:left-[22%] lg:w-[200px]"
+    />
+    <img
+      src={Image3}
+      alt={block.image3.alt}
+      class="absolute bottom-8 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[200px]"
+    />
+    <img
+      src={Image4}
+      alt={block.image4.alt}
+      class="relative -z-[1] mx-auto mt-8 h-auto w-[170px] lg:absolute lg:right-[50px] lg:top-1/2 lg:mt-0 lg:w-[200px] lg:-translate-y-1/2"
+    />
 
     <div
       class="absolute bottom-0 left-0 z-10 h-[60px] w-full bg-gradient-to-b from-[#0A091400]/0 via-[#0A091400]/80 to-[#0A091400]/100"

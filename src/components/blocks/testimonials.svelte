@@ -11,6 +11,7 @@
   let transitioning = true;
   let lockTransition = false;
   let interval: ReturnType<typeof setInterval>;
+  let windowWidth = 0;
 
   $: testimonials = block?.testimonial ?? [];
   $: duplicatedTestimonials = [
@@ -19,16 +20,17 @@
     testimonials[0]
   ];
 
-  // Card width + gap
-  const cardWidth = 640; // card width
-  const gap = 26; // gap between cards
-  const totalWidth = cardWidth + gap;
+  // Responsive card dimensions
+  $: isMobile = windowWidth < 768;
+  $: cardWidth = isMobile ? windowWidth - 32 : 640; // Full width minus padding on mobile
+  $: gap = isMobile ? 16 : 26;
+  $: totalWidth = cardWidth + gap;
 
   function selectTestimonial(index: number) {
     if (lockTransition) return;
     lockTransition = true;
     transitioning = true;
-    currentIndex = index + 1; // +1 because of duplicated array
+    currentIndex = index + 1;
     resetAutoPlay();
   }
 
@@ -75,7 +77,6 @@
     }
   }
 
-  // Get actual testimonial index for company logo highlighting
   $: actualIndex =
     currentIndex === 0
       ? testimonials.length - 1
@@ -84,10 +85,23 @@
       : currentIndex - 1;
 
   onMount(() => {
+    windowWidth = window.innerWidth;
+
+    const handleResize = () => {
+      windowWidth = window.innerWidth;
+    };
+
+    window.addEventListener('resize', handleResize);
     resetAutoPlay();
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   });
 </script>
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 {#if block}
   <Section>
@@ -95,14 +109,20 @@
       <div class="relative w-full overflow-hidden py-12 md:py-20" use:storyblokEditable={block}>
         <!-- Title Section -->
         {#if block.title || block.description}
-          <div class="container mx-auto mb-[40px] pb-[48px] pt-[100px] text-center">
+          <div
+            class="container mx-auto mb-[40px] px-4 pb-[48px] pt-[60px] text-center md:pt-[100px]"
+          >
             {#if block.title}
-              <h2 class=" mb-[12px] font-sans text-xl font-semibold leading-tight text-brand-9">
+              <h2
+                class="mb-[12px] font-sans text-lg font-semibold leading-tight text-brand-9 md:text-xl"
+              >
                 {block.title}
               </h2>
             {/if}
             {#if block.description}
-              <p class="mx-auto max-w-3xl text-[48px] font-semibold leading-tight text-gray-12">
+              <p
+                class="mx-auto max-w-3xl text-[32px] font-semibold leading-tight text-gray-12 md:text-[48px]"
+              >
                 {block.description}
               </p>
             {/if}
@@ -112,9 +132,10 @@
         <!-- Testimonial Cards Carousel -->
         <div class="relative mb-[24px] overflow-hidden md:mb-[32px]">
           <div
-            class="flex gap-[5px]"
+            class="flex"
             style="
-              transform: translateX(calc(50% - {currentIndex * totalWidth}px - {cardWidth / 2}px ));
+              gap: {gap}px;
+              transform: translateX(calc(50% - {currentIndex * totalWidth}px - {cardWidth / 2}px));
               transition: {transitioning ? 'transform 0.5s ease-in-out' : 'none'};
             "
             on:transitionend={handleTransitionEnd}
@@ -126,47 +147,41 @@
                 }`}
               >
                 <div
-                  class={`relative flex h-[410px] w-[640px] flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-8 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
+                  class={`relative flex flex-shrink-0 flex-col justify-between rounded-[16px] border bg-gradient-to-b from-[#6852D633]/20 to-[#0A09141A]/10 p-6 transition-all duration-500 md:p-12 md:px-[40px] md:pb-[32px] md:pt-[40px]
     ${
       index === currentIndex
         ? 'scale-100 border-gray-12/10 bg-gradient-to-br opacity-100'
-        : 'scale-95 border-gray-12/20 '
+        : 'scale-95 border-gray-12/20'
     }
   `}
-                  style={index === currentIndex
+                  style="
+                    width: {cardWidth}px;
+                    height: auto;
+                    min-height: {isMobile ? '380px' : '410px'};
+                    {index === currentIndex
                     ? 'box-shadow: 0 0 214px 0 rgba(104, 82, 214, 0.24);'
                     : ''}
+                  "
                 >
-                  <!-- Quote Icon -->
-                  <!-- <div class="mb-6 text-brand-9">
-                  <svg
-                    width="40"
-                    height="32"
-                    viewBox="0 0 40 32"
-                    fill="currentColor"
-                    class="opacity-60"
-                  >
-                    <path
-                      d="M0 32V16C0 7.16 7.16 0 16 0h2v8h-2c-4.42 0-8 3.58-8 8v2h10v14H0zm22 0V16c0-8.84 7.16-16 16-16h2v8h-2c-4.42 0-8 3.58-8 8v2h10v14H22z"
-                    />
-                  </svg>
-                </div> -->
-
                   <!-- Quote Text -->
                   <blockquote
-                    class="mb-[48px] text-xl font-medium leading-snug tracking-[0.16px] text-gray-12 opacity-80 md:text-2xl"
+                    class="mb-[32px] text-lg font-medium leading-snug tracking-[0.16px] text-gray-12 opacity-80 md:mb-[48px] md:text-2xl"
                   >
-                    <div class="relative mr-6 inline-block h-[50px] text-[80px] text-brand-9">
-                      <span class="absolute -left-2 top-0"> “</span>
+                    <div
+                      class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
+                    >
+                      <span class="absolute -left-2 top-0">"</span>
                     </div>
                     {testimonial.testimonial}
-                    <div class="relative mr-6 inline-block h-[50px] text-[80px] text-brand-9">
-                      <span class="absolute left-0 top-0">” </span>
+                    <div
+                      class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
+                    >
+                      <span class="absolute left-0 top-0">"</span>
                     </div>
                   </blockquote>
 
                   <!-- Author Info -->
-                  <div class="flex items-center gap-[20px]">
+                  <div class="flex items-center gap-[16px] md:gap-[20px]">
                     {#if testimonial.author_image?.filename}
                       <img
                         src={testimonial.author_image.filename}
@@ -178,7 +193,9 @@
                       <p class="text-base font-semibold text-white md:text-lg">
                         {testimonial.author_name}
                       </p>
-                      <p class="text-[16px] leading-[125%] tracking-[0.08px] text-gray-11">
+                      <p
+                        class="text-[14px] leading-[125%] tracking-[0.08px] text-gray-11 md:text-[16px]"
+                      >
                         {testimonial.author_position}
                       </p>
                     </div>
@@ -195,7 +212,7 @@
             {#each testimonials as testimonial, index}
               <button
                 on:click={() => selectTestimonial(index)}
-                class={`group relative flex h-[70px] w-[120px] items-center justify-center rounded-[16px] border border-gray-12/10 bg-gray-12/5 p-3 transition-all duration-300 hover:border-brand-9/50 hover:bg-brand-9/10 md:h-[88px] md:w-[180px] md:p-[24px] ${
+                class={`group relative flex h-[60px] w-[100px] items-center justify-center rounded-[12px] border border-gray-12/10 bg-gray-12/5 p-2 transition-all duration-300 hover:border-brand-9/50 hover:bg-brand-9/10 md:h-[88px] md:w-[180px] md:rounded-[16px] md:p-[24px] ${
                   actualIndex === index ? 'bg-gradient-to-b from-[#6852D64D]/30 to-transparent' : ''
                 }`}
                 class:border-brand-9={actualIndex === index}
@@ -205,27 +222,28 @@
                   <img
                     src={testimonial.company_logo.filename}
                     alt="Company logo"
-                    class={` h-[40px] w-auto max-w-full object-contain transition-all duration-1000 ${
+                    class={`h-[32px] w-auto max-w-full object-contain transition-all duration-1000 md:h-[40px] ${
                       actualIndex === index ? 'opacity-100' : 'opacity-40 group-hover:opacity-70'
                     }`}
                   />
                 {/if}
 
-                <!-- Active Indicator Border -->
                 {#if actualIndex === index}
                   <div
-                    class={`pointer-events-none absolute inset-0 rounded-[12px] border border-brand-9/30  `}
+                    class="pointer-events-none absolute inset-0 rounded-[12px] border border-brand-9/30 md:rounded-[16px]"
                   />
                 {/if}
               </button>
             {/each}
           </div>
         </div>
+
+        <!-- Gradient overlays - hidden on mobile for better visibility -->
         <div
-          class="absolute right-0 top-0 h-full w-[150px] bg-gradient-to-r from-transparent via-[#0A0914BF]/50 to-[#0A0914]"
+          class="absolute right-0 top-0 hidden h-full w-[150px] bg-gradient-to-r from-transparent via-[#0A0914BF]/50 to-[#0A0914] md:block"
         />
         <div
-          class="absolute left-0 top-0 h-full w-[150px] bg-gradient-to-l from-transparent via-[#0A0914BF]/50 to-[#0A0914]"
+          class="absolute left-0 top-0 hidden h-full w-[150px] bg-gradient-to-l from-transparent via-[#0A0914BF]/50 to-[#0A0914] md:block"
         />
       </div>
     </Container>
