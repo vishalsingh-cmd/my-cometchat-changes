@@ -20,6 +20,8 @@
   import mobile_planet from './_assets/hero/mobile_planet.png';
 
   export let block: HomeBannerV2Storyblok;
+
+  let mobile_text: string = block.beforeTitle + ' ' + block.afterTitle;
 </script>
 
 {#if block}
@@ -34,7 +36,7 @@
                 ['flex-wrap lg:flex-row lg:justify-center  lg:gap-x-5 lg:text-[58px]']
               )}
             >
-              <div class="flex flex-col items-center gap-2 overflow-visible">
+              <div class="hidden flex-col items-center gap-2 overflow-visible lg:flex">
                 <div class="bg-gradient-purple bg-clip-text text-transparent lg:text-[58px]">
                   {block.beforeTitle}
                 </div>
@@ -43,6 +45,14 @@
                 >
                   {block.afterTitle}
                 </div>
+              </div>
+
+              <!-- MOBILE VIEW -->
+              <div class="flex flex-wrap justify-center gap-x-3 lg:hidden">
+                <!-- <div class="bg-gradient-purple bg-clip-text text-transparent lg:text-[58px]"> -->
+                {#each mobile_text.split(' ') as word, index (index)}
+                  <span class="bg-gradient-purple bg-clip-text text-transparent">{word}</span>
+                {/each}
               </div>
             </h1>
             <p
