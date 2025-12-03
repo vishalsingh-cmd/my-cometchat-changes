@@ -23,8 +23,11 @@
   // Responsive card dimensions
   $: isMobile = windowWidth < 768;
   $: cardWidth = isMobile ? windowWidth - 32 : 640; // Full width minus padding on mobile
+  $: LogoWidth = 100;
   $: gap = isMobile ? 16 : 26;
   $: totalWidth = cardWidth + gap;
+  $: totalLogoWidth = LogoWidth + gap;
+  $: logoGap = 24;
 
   function selectTestimonial(index: number) {
     if (lockTransition) return;
@@ -170,13 +173,13 @@
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute -left-2 top-0">"</span>
+                      <span class="absolute -left-2 top-0">“</span>
                     </div>
                     {testimonial.testimonial}
                     <div
                       class="relative mr-4 inline-block h-[40px] text-[60px] text-brand-9 md:mr-6 md:h-[50px] md:text-[80px]"
                     >
-                      <span class="absolute left-0 top-0">"</span>
+                      <span class="absolute left-0 top-0">”</span>
                     </div>
                   </blockquote>
 
@@ -209,13 +212,11 @@
         <!-- Company Logos Carousel -->
         <div class="relative overflow-hidden">
           <div
-            class="flex items-center justify-center"
+            class="flex items-center"
             style="
-              gap: {isMobile ? '12px' : '24px'};
-              transform: translateX(calc(50% - {actualIndex * (isMobile ? 112 : 204)}px - {isMobile
-              ? 50
-              : 90}px));
-              transition: transform 0.5s ease-in-out;
+               gap: {logoGap}px;
+   transform: translateX(calc(50% - {currentIndex * totalLogoWidth}px - {100 / 2}px));
+   transition: {transitioning ? 'transform 0.5s ease-in-out' : 'none'};
             "
           >
             {#each testimonials as testimonial, index}
@@ -224,7 +225,7 @@
                 class={`group relative flex flex-shrink-0 items-center justify-center rounded-[12px] border p-2 transition-all duration-500 hover:border-brand-9/50 hover:bg-brand-9/10 md:rounded-[16px] md:p-[24px] ${
                   actualIndex === index
                     ? 'h-[70px] w-[100px]  border-brand-9 bg-gradient-to-b from-[#6852D64D]/30 to-transparent md:h-[88px] md:w-[180px]'
-                    : 'h-[60px] w-[90px]  border-gray-12/10 bg-gray-12/5 md:h-[76px] md:w-[160px]'
+                    : 'h-[60px] w-[100px]  border-gray-12/10 bg-gray-12/5 md:h-[76px] md:w-[160px]'
                 }`}
                 style={actualIndex === index
                   ? 'box-shadow: 0 0 40px 0 rgba(104, 82, 214, 0.3);'
