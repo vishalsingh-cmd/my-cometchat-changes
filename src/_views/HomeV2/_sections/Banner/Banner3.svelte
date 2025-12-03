@@ -90,12 +90,12 @@
         <img
           src={Image2}
           alt={block.image2.alt}
-          class="-z-[1] ml-9 hidden h-auto w-[170px] lg:absolute lg:bottom-8 lg:left-[22%] lg:inline-block lg:w-[200px]"
+          class="-z-[1] ml-9 hidden h-auto w-[170px] lg:absolute lg:bottom-0 lg:left-[22%] lg:inline-block lg:w-[200px]"
         />
         <img
           src={Image3}
           alt={block.image3.alt}
-          class="absolute bottom-8 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[200px]"
+          class="absolute bottom-0 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[200px]"
         />
         <img
           src={Image4}
@@ -162,7 +162,7 @@
     <img
       src={InvertedPlanet}
       alt="background"
-      class="absolute -top-[900px] left-1/2 -z-[6] hidden w-[2000px] max-w-none -translate-x-1/2 lg:block lg:-translate-y-[0px]"
+      class="absolute -top-[1300px] left-1/2 -z-[6] hidden w-[2300px] max-w-none -translate-x-1/2 lg:block lg:-translate-y-[0px]"
     />
   </div>
 {/if}
