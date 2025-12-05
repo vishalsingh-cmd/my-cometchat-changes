@@ -3,6 +3,9 @@
   import Icon from '$src/components/icon/icon.svelte';
   import { getIndustryContect } from '$src/_views/HomeV2/_sections/Industry/_context/IndustryContext';
   import { onMount } from 'svelte';
+  import Link from '../buttons/link.svelte';
+
+  import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   const { activeIndex } = getIndustryContect();
 
@@ -13,6 +16,8 @@
   export let subHeading: string;
   export let description: string;
   export let points;
+  export let link: string | undefined = undefined;
+  export let linkText: string | undefined = undefined;
 
   $: status = $activeIndex === index ? 'active' : 'inactive';
 
@@ -121,6 +126,14 @@
               </p>
             </div>
           {/each}
+        </div>
+        <div>
+          {#if link}
+            {@const { href, target } = getAnchorFromCmsLink(link)}
+            <Link {target} {href} variant="primary" class="">
+              {linkText}
+            </Link>
+          {/if}
         </div>
       </div>
     </div>
