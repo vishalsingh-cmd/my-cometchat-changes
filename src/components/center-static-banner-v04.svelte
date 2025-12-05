@@ -62,5 +62,36 @@
         </filter>
       </defs>
     </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="640"
+      height="50"
+      viewBox="0 0 640 50"
+      class="absolute inset-x-0 bottom-0"
+      fill="none"
+    >
+      <g style="mix-blend-mode:plus-lighter" opacity="0.25" filter="url(#filter0_f_2925_27169)">
+        <path
+          d="M218.757 30C140.834 29.9996 112.452 60.5009 -16 36.5138V69.5144L656 67L627.525 50C627.525 50 592.033 40.3242 549.062 40C497.06 39.6076 459.842 50 409.853 46.4993C363.003 43.2184 292.791 30.0004 218.757 30Z"
+          fill="#FAFAFF"
+        />
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_2925_27169"
+          x="-46"
+          y="0"
+          width="732"
+          height="99.5146"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur stdDeviation="15" result="effect1_foregroundBlur_2925_27169" />
+        </filter>
+      </defs>
+    </svg>
   </div>
 {/if}

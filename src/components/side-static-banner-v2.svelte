@@ -180,6 +180,36 @@
         </filter>
       </defs>
     </svg>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="304"
+      height="135"
+      viewBox="0 0 304 135"
+      class="absolute inset-x-0 bottom-0 w-full"
+      fill="none"
+    >
+      <g style="mix-blend-mode:plus-lighter" opacity="0.25" filter="url(#filter0_f_2925_30277)">
+        <path
+          d="M180 78.5C226 78.5 260.5 126.5 323 50V154H-9.99994L-10 109C-10 109 28.5001 94.5 66.5001 100.5C104.5 106.5 120 78.5 180 78.5Z"
+          fill="#FAFAFF"
+        />
+      </g>
+      <defs>
+        <filter
+          id="filter0_f_2925_30277"
+          x="-60"
+          y="0"
+          width="433"
+          height="204"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+          <feGaussianBlur stdDeviation="25" result="effect1_foregroundBlur_2925_30277" />
+        </filter>
+      </defs>
+    </svg>
 
     <!-- {#if block.image}
       <img src={block.image} alt="Comet Chat" class="absolute -right-12 top-[200px] w-44" />

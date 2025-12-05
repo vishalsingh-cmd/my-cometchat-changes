@@ -1,7 +1,7 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
   import { cn } from '$lib/utils';
-  import Background from './assets/background.png';
+  // import Background from './assets/background.png';
   // import Share from './share.svelte';
 
   const dispatch = createEventDispatcher();
@@ -13,7 +13,7 @@
 
 <div class="wrap sticky top-[80px] h-fit w-full max-w-[272px] overflow-visible pb-6 md:block">
   <div class="relative flex h-full w-fit flex-col justify-between">
-    <div class="absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-gray-5 to-gray-5/0" />
+    <div class="absolute bottom-0 left-0 top-0 w-px bg-gray-5/10" />
     <!-- <img
       src={Background}
       alt=""
@@ -29,7 +29,7 @@
         {#each headings as heading, i}
           <button
             class={cn(
-              'relative block text-left text-lg font-medium leading-tight opacity-54',
+              'relative block text-left text-lg font-medium leading-[1.2] tracking-[0.09px] opacity-54',
               activeHeadingIndex === i && 'opacity-100',
               i === 0 &&
                 'after:absolute after:-left-3 after:top-0 after:h-0.5 after:w-0.5 after:-translate-x-[0.5px] after:rounded-full after:bg-brand-9 after:shadow-[0_0_8px_8px_hsl(var(--color-brand-9)/0.05)]',
