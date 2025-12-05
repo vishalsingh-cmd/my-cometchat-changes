@@ -8,8 +8,8 @@
 {#if block.table}
   <div class="overflow-hidden rounded-3xl border border-gray-1/10">
     <table class="min-w-full border-collapse">
-      <thead class="divide-y divide-gray-1/10">
-        <tr class="divide-x divide-gray-1/10 bg-gray-1/5">
+      <thead class=" divide-y divide-gray-1/10">
+        <tr class="divide-x divide-y divide-gray-1/10 border-b border-gray-1/10 bg-gray-1/5">
           {#each block?.table.thead as item}
             <th
               scope="col"

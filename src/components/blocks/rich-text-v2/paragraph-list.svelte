@@ -14,7 +14,7 @@
   <div use:storyblokEditable={block} class="pb-6 pt-4 font-semibold leading-tighter">
     <svelte:element this={block.is_numeric ? 'ol' : 'ul'}>
       {#each block.items as item, i}
-        <li class="mb-3 text-lg-richtext font-medium leading-snug tracking-wide">
+        <li class="mb-3 text-lg-richtext font-medium leading-[1.25] tracking-wide">
           <div class="flex-start flex gap-2">
             {#if block.is_numeric}
               <p class="w-[32px] text-center text-brand-9">
@@ -35,7 +35,7 @@
               />
             {/if}
             {#if item.title}
-              <p class={cn(item.description && 'font-semibold leading-tight')}>{item.title}</p>
+              <p class={cn(item.description && 'font-semibold leading-[1.25]')}>{item.title}</p>
             {/if}
             {#if item.description && (!item.title || item.title === '')}
               <div>

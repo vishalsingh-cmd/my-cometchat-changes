@@ -44,7 +44,7 @@
   const paragraph = cva([
     'font-normal',
     'text-gray-1 [&_span]:!text-gray-1 ',
-    'leading-snug',
+    'leading-[1.25]',
     'tracking-[0.09px]',
 
     '[&_a]:text-[#836aff]',
