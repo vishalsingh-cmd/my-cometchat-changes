@@ -89,6 +89,7 @@
   import ModerationFeaturesSection from './moderation-features-section.svelte';
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
   import PricingHeroQ3Y24V2 from './pricing-hero-Q3Y24-v2.svelte';
+  import PricingHeroQ3Y24V3 from './pricing-hero-Q3Y24-v3.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
@@ -209,6 +210,7 @@
     'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-hero-Q3Y24': PricingHeroQ3Y24,
     'pricing-hero-Q3Y24-v2': PricingHeroQ3Y24V2,
+    'pricing-hero-Q3Y24-v3': PricingHeroQ3Y24V3,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
