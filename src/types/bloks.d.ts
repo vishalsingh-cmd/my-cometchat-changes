@@ -2291,7 +2291,7 @@ export interface PricingCardsV2Storyblok {
 export interface PricingCardsV3Storyblok {
   category1: PricingHeroQ3Y24CardV1Storyblok[];
   category2: any[];
-  category3?: HeroFormV2Storyblok[];
+  category3?: (HeroFormV2Storyblok | PricingHeroQ3Y24CardV1Storyblok)[];
   category4?: any[];
   _uid: string;
   component: 'pricing-cards-v3';

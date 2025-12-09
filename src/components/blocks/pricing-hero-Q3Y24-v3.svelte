@@ -24,6 +24,7 @@
   import { onMount } from 'svelte';
   // import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   import PricingPeriodToggleV2 from '$components/pricing-period-toggle-v2.svelte';
+  import PricingPeriodToggle2 from '../pricing-period-toggle2.svelte';
   import Button from '$components/buttons/button.svelte';
   import {
     activateIndex,
@@ -396,6 +397,10 @@
               }}
             />
           </div>
+        {:else if $activateIndex === 2}
+          <PricingPeriodToggle2 />
+        {:else if $activateIndex === 3}
+          <PricingPeriodToggle2 />
         {/if}
 
         <div
@@ -404,7 +409,7 @@
             $activateIndex === 0 &&
               'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
             $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3',
-            $activateIndex === 2 && 'xl:grid-cols-1',
+            $activateIndex === 2 && 'xl:grid-cols-4',
             $activateIndex === 3 && 'lg:grid-cols-1 xl:grid-cols-2'
           )}
         >
@@ -418,8 +423,8 @@
               <PricingCardVideoAndVoiceEnhanced block={plan} />
             {/each}
           {:else if $activateIndex === 2}
-            {#each block.cards[0].category3 ?? [] as plan}
-              <HeroFormV2Pricing block={plan} />
+            {#each block.cards[0].category1 ?? [] as plan}
+              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
             {/each}
           {:else if $activateIndex === 3}
             {#each block.cards[0].category4 ?? [] as plan}
