@@ -13,7 +13,7 @@
     $activateIndex == 3 ? ' justify-center' : 'ml-20 justify-start'
   } `}
 >
-  <div class="inline-flex items-center gap-3 px-6 py-3">
+  <div class="inline-flex items-center gap-4 px-6 py-3">
     <!-- Pay monthly -->
     <span
       class={`text-lg font-[640px] text-white transition-opacity duration-200  ${
@@ -45,11 +45,11 @@
     </span>
 
     <!-- Save 20% Badge -->
-    <span
-      class="ml-[12px] rounded-[7px] border border-gray-11/20 bg-gray-11/[0.04] px-[6px] py-1 text-xs font-semibold leading-[1.4] text-white"
+    <div
+      class="ml-[12px] rounded-[7px] border border-gray-11/20 bg-gray-11/[0.04] px-[6px] py-1 text-xs font-semibold text-white"
     >
       Save 20%
-    </span>
+    </div>
   </div>
 </div>
 
