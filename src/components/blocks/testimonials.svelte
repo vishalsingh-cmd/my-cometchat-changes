@@ -52,13 +52,13 @@
     resetAutoPlay();
   }
 
-  function prev() {
-    if (lockTransition) return;
-    lockTransition = true;
-    transitioning = true;
-    currentIndex -= 1;
-    resetAutoPlay();
-  }
+  // function prev() {
+  //   if (lockTransition) return;
+  //   lockTransition = true;
+  //   transitioning = true;
+  //   currentIndex -= 1;
+  //   resetAutoPlay();
+  // }
 
   async function handleTransitionEnd(e: TransitionEvent) {
     if (e.target !== e.currentTarget) return;
