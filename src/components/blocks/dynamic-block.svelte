@@ -106,6 +106,7 @@
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
   import SecureSection from './secure-section.svelte';
+  import ServiceCard from './service-card.svelte';
   import SharedService from './shared-service.svelte';
 
   import ClientsV2 from '$src/_views/HomeV2/_sections/Clients/Clients2.svelte';
@@ -222,6 +223,7 @@
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'secure-section': SecureSection,
+    'service-cards': ServiceCard,
     'shared-service': SharedService,
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,

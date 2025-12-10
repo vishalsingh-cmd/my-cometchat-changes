@@ -13433,6 +13433,95 @@
     "metadata": {}
   },
   {
+    "name": "service-card",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-12-10T10:06:56.781Z",
+    "updated_at": "2025-12-10T10:08:47.207Z",
+    "id": 121534942344707,
+    "schema": {
+      "icon": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "source": "internal",
+        "datasource_slug": "icons",
+        "id": "f0gHwG0gSA-KgQOtt3R9TA"
+      },
+      "title": {
+        "type": "text",
+        "pos": 1,
+        "id": "imGwm9HZQxerynB1QASc8w"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 2,
+        "id": "tQ4CKvbARLqB3eMo64bIBw"
+      },
+      "cta_text": {
+        "type": "text",
+        "pos": 3,
+        "id": "1u-kc_f3Ra6hmWU8HAfwEw"
+      },
+      "cta_link": {
+        "type": "multilink",
+        "pos": 4,
+        "id": "bYahMQOdT1iCXd4fO48dYQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "service-card",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "service-cards",
+    "display_name": null,
+    "description": "",
+    "created_at": "2025-12-10T10:13:30.900Z",
+    "updated_at": "2025-12-10T10:15:53.878Z",
+    "id": 121536556652116,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 0,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "service-card"
+        ],
+        "component_denylist": [],
+        "id": "FsLwSne1Qu2g3-2Q_G-9Ng"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "service-cards",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "shared-service",
     "display_name": null,
     "description": "Shared Service",
