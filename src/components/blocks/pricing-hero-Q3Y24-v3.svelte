@@ -264,112 +264,183 @@
             {/if}
           </div>
 
-          <!-- Desktop Tabs (visible on desktop only) -->
-          <div
-            class="hidden flex-col items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px] lg:flex lg:flex-row"
-          >
-            <!-- Tab 1: Chat and Message -->
-            <PricingTabSwitchV2
-              id={0}
-              isActive={$activateIndex === 0}
-              on:click={() => {
-                $activateIndex = 0;
-              }}
-            >
-              <div
-                class="group flex w-full flex-row items-center justify-center gap-4 px-4 text-lg lg:w-[260px] lg:font-[640]"
-              >
-                <Icon
-                  icon="chat-and-message"
-                  size="xs"
-                  class={cn(
-                    'mb-2 flex-shrink-0 text-brand-9',
-                    $activateIndex === 0 ? 'opacity-100' : 'opacity-50',
-                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                  )}
-                />
-                {block.category1}
+          <!-- Desktop Tabs with Category Groups (visible on desktop only) -->
+          <div class="hidden lg:block">
+            <!-- Category Labels -->
+            <div class="mb-4 flex items-center justify-center gap-0">
+              <!-- Real-Time Communication Label -->
+              <div class="relative flex w-[532px] items-center justify-center">
+                <p class="text-[16px] font-semibold text-brand-9">Real-Time Communication</p>
+                <svg
+                  class="absolute left-8 top-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="117"
+                  height="18"
+                  viewBox="0 0 117 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M116.5 0.5H4.5C2.29086 0.5 0.499997 2.29086 0.499997 4.5V17.5"
+                    stroke="#6852D6"
+                  />
+                </svg>
+                <svg
+                  class="absolute right-8 top-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="116"
+                  height="18"
+                  viewBox="0 0 116 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M0 0.5H111C113.209 0.5 115 2.29086 115 4.5V17.5"
+                    stroke="#6852D6"
+                  />
+                </svg>
               </div>
-            </PricingTabSwitchV2>
+              <!-- AI Agent Platform Label -->
+              <div class="relative flex w-[532px] items-center justify-center">
+                <p class="text-[16px] font-semibold text-brand-9">AI Agent Platform</p>
+                <svg
+                  class="absolute left-16 top-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="117"
+                  height="18"
+                  viewBox="0 0 117 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M116.5 0.5H4.5C2.29086 0.5 0.499997 2.29086 0.499997 4.5V17.5"
+                    stroke="#6852D6"
+                  />
+                </svg>
+                <svg
+                  class="absolute right-16 top-3"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="116"
+                  height="18"
+                  viewBox="0 0 116 18"
+                  fill="none"
+                >
+                  <path
+                    opacity="0.6"
+                    d="M0 0.5H111C113.209 0.5 115 2.29086 115 4.5V17.5"
+                    stroke="#6852D6"
+                  />
+                </svg>
+              </div>
+            </div>
 
-            <!-- Tab 2: Voice and Calls -->
-            <PricingTabSwitchV2
-              id={1}
-              isActive={$activateIndex === 1}
-              on:click={() => {
-                $activateIndex = 1;
-              }}
+            <!-- Tabs Container -->
+            <div
+              class="flex flex-col items-center justify-center rounded-[16px] border border-gray-12/[0.12] bg-gray-12/[0.04] p-[5px] lg:flex lg:flex-row"
             >
-              <div
-                class={`group flex flex-row items-center justify-center gap-4 ${
-                  $activateIndex === 1 || $activateIndex === 0 ? 'border-l' : ''
-                } border-white/10 px-4 text-lg lg:font-[640]`}
+              <!-- Tab 1: Chat and Message -->
+              <PricingTabSwitchV2
+                id={0}
+                isActive={$activateIndex === 0}
+                on:click={() => {
+                  $activateIndex = 0;
+                }}
               >
-                <Icon
-                  icon="voice-and-calls"
-                  size="xs"
-                  class={cn(
-                    'mb-2 flex-shrink-0 text-brand-9',
-                    $activateIndex === 1 ? 'opacity-100' : 'opacity-50',
-                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                  )}
-                />
-                {block.category2}
-              </div>
-            </PricingTabSwitchV2>
+                <div
+                  class="group flex w-full flex-row items-center justify-center gap-4 px-4 text-lg lg:w-[290px] lg:font-[640]"
+                >
+                  <Icon
+                    icon="chat-and-message"
+                    size="xs"
+                    class={cn(
+                      'mb-2 flex-shrink-0 text-brand-9',
+                      $activateIndex === 0 ? 'opacity-100' : 'opacity-50',
+                      'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                    )}
+                  />
+                  {block.category1}
+                </div>
+              </PricingTabSwitchV2>
 
-            <!-- Tab 3: AI Agent -->
-            <PricingTabSwitchV2
-              id={2}
-              isActive={$activateIndex === 2}
-              on:click={() => {
-                $activateIndex = 2;
-              }}
-            >
-              <div
-                class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
-                  $activateIndex >= 1 ? 'border-l' : ''
-                }border-white/10 px-4 text-lg leading-tighter lg:font-[640]`}
+              <!-- Tab 2: Voice and Calls -->
+              <PricingTabSwitchV2
+                id={1}
+                isActive={$activateIndex === 1}
+                on:click={() => {
+                  $activateIndex = 1;
+                }}
               >
-                <Icon
-                  icon="stars-01"
-                  size="md"
-                  class={cn(
-                    'flex-shrink-0 text-white',
-                    $activateIndex === 3 ? 'opacity-100' : 'opacity-50',
-                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                  )}
-                />
-                {block.category3}
-              </div>
-            </PricingTabSwitchV2>
+                <div
+                  class={`group flex flex-row items-center justify-center gap-4 ${
+                    $activateIndex === 1 || $activateIndex === 0 ? 'border-l' : ''
+                  } border-white/10 px-4 text-lg lg:font-[640]`}
+                >
+                  <Icon
+                    icon="voice-and-calls"
+                    size="xs"
+                    class={cn(
+                      'mb-2 flex-shrink-0 text-brand-9',
+                      $activateIndex === 1 ? 'opacity-100' : 'opacity-50',
+                      'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                    )}
+                  />
+                  {block.category2}
+                </div>
+              </PricingTabSwitchV2>
 
-            <!-- Tab 4: Bring Your Own Agent -->
-            <PricingTabSwitchV2
-              id={3}
-              isActive={$activateIndex === 3}
-              on:click={() => {
-                console.log('clicked');
-                $activateIndex = 3;
-              }}
-            >
-              <div
-                class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
-                  $activateIndex === 1 || $activateIndex === 2 ? 'border-l' : ''
-                }border-white/10 px-4 text-lg leading-tighter lg:font-[640]`}
+              <!-- Tab 3: AI Agent -->
+              <PricingTabSwitchV2
+                id={2}
+                isActive={$activateIndex === 2}
+                on:click={() => {
+                  $activateIndex = 2;
+                }}
               >
-                <Icon
-                  icon="stars-01"
-                  size="md"
-                  class={cn(
-                    'flex-shrink-0 text-white',
-                    $activateIndex === 3 ? 'opacity-100' : 'opacity-50',
-                    'transition-all duration-0 ease-in-out group-hover:opacity-100'
-                  )}
-                />
-                {block.category4}
-              </div>
-            </PricingTabSwitchV2>
+                <div
+                  class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
+                    $activateIndex >= 1 ? 'border-l' : ''
+                  }border-white/10 px-4 text-lg leading-tighter lg:font-[640]`}
+                >
+                  <Icon
+                    icon="stars-01"
+                    size="md"
+                    class={cn(
+                      'flex-shrink-0 text-white',
+                      $activateIndex === 2 ? 'opacity-100' : 'opacity-50',
+                      'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                    )}
+                  />
+                  {block.category3}
+                </div>
+              </PricingTabSwitchV2>
+
+              <!-- Tab 4: Bring Your Own Agent -->
+              <PricingTabSwitchV2
+                id={3}
+                isActive={$activateIndex === 3}
+                on:click={() => {
+                  console.log('clicked');
+                  $activateIndex = 3;
+                }}
+              >
+                <div
+                  class={`group flex w-[100px] flex-row items-center justify-center gap-2 lg:w-[260px] ${
+                    $activateIndex === 2 || $activateIndex === 3 ? 'border-l' : ''
+                  }border-white/10 px-4 text-lg leading-tighter lg:font-[640]`}
+                >
+                  <Icon
+                    icon="stars-01"
+                    size="md"
+                    class={cn(
+                      'flex-shrink-0 text-white',
+                      $activateIndex === 3 ? 'opacity-100' : 'opacity-50',
+                      'transition-all duration-0 ease-in-out group-hover:opacity-100'
+                    )}
+                  />
+                  {block.category4}
+                </div>
+              </PricingTabSwitchV2>
+            </div>
           </div>
         </div>
       </Sticky>
