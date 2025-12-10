@@ -56,7 +56,7 @@
             {#if card.cta_link}
               {@const { href } = getAnchorFromCmsLink(card.cta_link)}
               <div class="mt-auto">
-                <Button {href} variant="secondary" size="sm" class="text-sm">
+                <Button as="a" {href} variant="secondary" size="sm" class="text-sm">
                   {card.cta_text || 'Learn more'}
                 </Button>
               </div>
