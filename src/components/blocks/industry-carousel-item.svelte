@@ -130,7 +130,7 @@
         <div>
           {#if link}
             {@const { href, target } = getAnchorFromCmsLink(link)}
-            <Link {target} {href} variant="primary" class="">
+            <Link {target} {href} class="text-md font-semibold text-brand-9 hover:text-white">
               {linkText}
             </Link>
           {/if}
