@@ -23,7 +23,7 @@
       'relative w-full overflow-hidden',
       'flex h-full w-full flex-col justify-between',
       'rounded-3xl border border-[#6853d6]/[0.8] bg-[#6853D60F]',
-      ' ml-[32px] backdrop-blur-[32px]'
+      'm-0 backdrop-blur-[32px] lg:ml-[32px]'
     )}
   >
     <div class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">

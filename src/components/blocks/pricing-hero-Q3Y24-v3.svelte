@@ -19,6 +19,8 @@
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   // import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
   import PricingHeroQ3Y24CardV2 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV2.svelte';
+  import AgentCard from '../pricing/card/agent/agent-card.svelte';
+
   import ForYou from '../pricing/card/agent/for-you.svelte';
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
   // import HeroFormV2Pricing from '$components/blocks/hero-form-pricing.svelte';
@@ -135,7 +137,27 @@
     isDropdownOpen = !isDropdownOpen;
   }
 
-  $: agentBuilderPricing = { monthly: [30], annually: [30] };
+  let agentBuildAnnually = false;
+  let agentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
+
+  // raw numeric prices (per plan index). Make sure these arrays match each tab's number of plans.
+  const agentMonthlyNumbers = [0, 10, 20]; // for tab 2 (3 cards)
+  const agentAnnualNumbers = [0, 8, 16]; // example discounted annual numbers (same length)
+
+  function updateAgentPricing(isAnnually?: boolean) {
+    // if parent event passes explicit boolean, use it, else toggle
+    agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
+  }
+
+  // produce array of objects the cards expect: { price: '$XX', isBilledAnnually: boolean }
+  $: {
+    const numbers = agentBuildAnnually ? agentAnnualNumbers : agentMonthlyNumbers;
+
+    agentBuilderPricing = numbers.map((n) => ({
+      price: n === 0 ? 'Free' : `$${n}`,
+      isBilledAnnually: agentBuildAnnually
+    }));
+  }
 </script>
 
 {#if block}
@@ -472,7 +494,11 @@
             />
           </div>
         {:else if $activateIndex === 2 || $activateIndex === 3}
-          <PricingPeriodToggle2 />
+          <PricingPeriodToggle2
+            on:change={() => {
+              updateAgentPricing();
+            }}
+          />
         {/if}
 
         <div
@@ -497,21 +523,20 @@
           {:else if $activateIndex === 2}
             {#each block.cards[0].category3 ?? [] as plan, i}
               {#if plan.component === 'pricing-hero-Q3Y24-cardV1'}
-                <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+                <AgentCard block={plan} value={agentBuilderPricing[i]} />
               {:else}
                 <div class="relative">
                   <div
-                    class="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent
-         via-gray-12/20
-         to-transparent"
+                    class="absolute left-0 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-gray-12/20 to-transparent lg:block"
                   />
+                  <!-- PASS value to ForYou if it expects it -->
                   <ForYou block={plan} />
                 </div>
               {/if}
             {/each}
           {:else if $activateIndex === 3}
-            {#each block.cards[0].category4 ?? [] as plan}
-              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+            {#each block.cards[0].category4 ?? [] as plan, i}
+              <AgentCard block={plan} value={agentBuilderPricing[i]} />
             {/each}
           {/if}
         </div>
