@@ -9,7 +9,7 @@
 </script>
 
 <div
-  class={`flex w-full items-center ${
+  class={`mb-[32px] flex w-full items-center ${
     $activateIndex == 3 ? ' justify-center' : 'ml-20 justify-start'
   } `}
 >

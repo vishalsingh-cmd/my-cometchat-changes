@@ -19,8 +19,9 @@
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   // import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
   import PricingHeroQ3Y24CardV2 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV2.svelte';
+  import ForYou from '../pricing/card/agent/for-you.svelte';
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
-  import HeroFormV2Pricing from '$components/blocks/hero-form-pricing.svelte';
+  // import HeroFormV2Pricing from '$components/blocks/hero-form-pricing.svelte';
   import { onMount } from 'svelte';
   // import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
   import PricingPeriodToggleV2 from '$components/pricing-period-toggle-v2.svelte';
@@ -133,6 +134,8 @@
   function toggleDropdown() {
     isDropdownOpen = !isDropdownOpen;
   }
+
+  $: agentBuilderPricing = { monthly: [30], annually: [30] };
 </script>
 
 {#if block}
@@ -468,9 +471,7 @@
               }}
             />
           </div>
-        {:else if $activateIndex === 2}
-          <PricingPeriodToggle2 />
-        {:else if $activateIndex === 3}
+        {:else if $activateIndex === 2 || $activateIndex === 3}
           <PricingPeriodToggle2 />
         {/if}
 
@@ -481,7 +482,7 @@
               'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
             $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3',
             $activateIndex === 2 && 'xl:grid-cols-4',
-            $activateIndex === 3 && 'lg:grid-cols-1 xl:grid-cols-2'
+            $activateIndex === 3 && 'max-w-[900px] lg:grid-cols-1 xl:grid-cols-2'
           )}
         >
           {#if $activateIndex === 0}
@@ -494,12 +495,23 @@
               <PricingCardVideoAndVoiceEnhanced block={plan} />
             {/each}
           {:else if $activateIndex === 2}
-            {#each block.cards[0].category1 ?? [] as plan}
-              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+            {#each block.cards[0].category3 ?? [] as plan, i}
+              {#if plan.component === 'pricing-hero-Q3Y24-cardV1'}
+                <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
+              {:else}
+                <div class="relative">
+                  <div
+                    class="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent
+         via-gray-12/20
+         to-transparent"
+                  />
+                  <ForYou block={plan} />
+                </div>
+              {/if}
             {/each}
           {:else if $activateIndex === 3}
             {#each block.cards[0].category4 ?? [] as plan}
-              <PricingCardVideoAndVoiceEnhanced block={plan} />
+              <PricingHeroQ3Y24CardV2 block={plan} value={$pricingValues[plan.name]} />
             {/each}
           {/if}
         </div>
