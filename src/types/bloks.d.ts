@@ -1328,6 +1328,8 @@ export interface IndustryStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -1827,6 +1829,8 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -1959,6 +1963,8 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -2196,6 +2202,8 @@ export interface PricingStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -2925,6 +2933,24 @@ export interface SeoFieldsStoryblok {
   [k: string]: any;
 }
 
+export interface ServiceCardStoryblok {
+  icon?: number | string;
+  title?: string;
+  description?: string;
+  cta_text?: string;
+  cta_link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'service-card';
+  [k: string]: any;
+}
+
+export interface ServiceCardsStoryblok {
+  cards?: ServiceCardStoryblok[];
+  _uid: string;
+  component: 'service-cards';
+  [k: string]: any;
+}
+
 export interface SharedServiceStoryblok {
   cards?: SharedServiceCardStoryblok[];
   _uid: string;
@@ -3159,6 +3185,8 @@ export interface SyncedBlockContentStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -3326,6 +3354,8 @@ export interface TechnologyStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok

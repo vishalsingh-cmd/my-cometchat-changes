@@ -91,6 +91,7 @@
   import ModerationFeaturesSection from './moderation-features-section.svelte';
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
   import PricingHeroQ3Y24V2 from './pricing-hero-Q3Y24-v2.svelte';
+  import PricingHeroQ3Y24V3 from './pricing-hero-Q3Y24-v3.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
@@ -108,6 +109,7 @@
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
   import SecureSection from './secure-section.svelte';
+  import ServiceCard from './service-card.svelte';
   import SharedService from './shared-service.svelte';
 
   import ClientsV2 from '$src/_views/HomeV2/_sections/Clients/Clients2.svelte';
@@ -213,6 +215,7 @@
     'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-hero-Q3Y24': PricingHeroQ3Y24,
     'pricing-hero-Q3Y24-v2': PricingHeroQ3Y24V2,
+    'pricing-hero-Q3Y24-v3': PricingHeroQ3Y24V3,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
@@ -224,6 +227,7 @@
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'secure-section': SecureSection,
+    'service-cards': ServiceCard,
     'shared-service': SharedService,
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,
