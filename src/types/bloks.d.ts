@@ -638,6 +638,16 @@ export interface DisclaimerStoryblok {
   [k: string]: any;
 }
 
+export interface DoneForYouCardStoryblok {
+  title?: string;
+  description?: string;
+  cta_text?: string;
+  cta_link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'done-for-you-card';
+  [k: string]: any;
+}
+
 export interface DoublePanelSectionStoryblok {
   theme: '' | 'light' | 'dark';
   title?: TitleStoryblok[];
@@ -1251,6 +1261,7 @@ export interface IndustryStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -1752,6 +1763,7 @@ export interface PageStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -1886,6 +1898,7 @@ export interface PageStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -2125,6 +2138,7 @@ export interface PricingStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -2299,8 +2313,8 @@ export interface PricingCardsV2Storyblok {
 export interface PricingCardsV3Storyblok {
   category1: PricingHeroQ3Y24CardV1Storyblok[];
   category2: any[];
-  category3?: (HeroFormV2Storyblok | PricingHeroQ3Y24CardV1Storyblok)[];
-  category4?: any[];
+  category3?: (HeroFormV2Storyblok | PricingHeroQ3Y24CardV1Storyblok | DoneForYouCardStoryblok)[];
+  category4?: PricingHeroQ3Y24CardV1Storyblok[];
   _uid: string;
   component: 'pricing-cards-v3';
   [k: string]: any;
@@ -3108,6 +3122,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -3277,6 +3292,7 @@ export interface TechnologyStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok

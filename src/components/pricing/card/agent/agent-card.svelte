@@ -58,25 +58,24 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                 </p>
               {/each}
             {:else}
-              <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">
-                {description}
-              </p>
+              <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
             {/if}
           {/if}
 
           {#if credits}
-            <div class="mt-4 flex items-center gap-2">
+            <div class="mt-[40px] flex items-center gap-2">
               <Icon icon="zap-circle" class="h-[19px] w-[19px] flex-shrink-0 text-gray-11" />
               <p class="text-md/snug font-medium leading-snug tracking-wide opacity-75">
                 {credits}
                 {'Credits'}
               </p>
             </div>
+            <div class="mt-6 h-px w-full bg-gray-12/[0.1]" />
           {/if}
 
           <div
             class={cn(
-              'mb-8 mt-8 flex h-[68px] flex-col gap-2 text-2xl/tighter font-semibold lg:mt-10'
+              'mb-8 mt-8 flex h-[68px] flex-col gap-2 text-2xl/tighter font-semibold lg:mt-6'
             )}
           >
             <p
@@ -130,8 +129,10 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
           {/if}
         </div>
 
+        <div class="mt-6 h-px w-full bg-gray-12/[0.1]" />
+
         {#if highlights[0]?.highlights1?.length > 0}
-          <div class="mt-10 flex flex-col gap-2">
+          <div class="mt-6 flex flex-col gap-2">
             {#if highlights[0]?.title}
               <p class="mb-1 text-lg/tight font-semibold">{highlights[0]?.title}</p>
             {/if}

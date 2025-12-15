@@ -1,16 +1,22 @@
 <script lang="ts">
-  let isYearly = false;
-
+  import { createEventDispatcher } from 'svelte';
   import { activateIndex } from '$lib/stores/pricing-stores-v2';
+
+  const dispatch = createEventDispatcher();
+
+  let isYearly = false;
 
   function togglePricing() {
     isYearly = !isYearly;
+
+    // SEND VALUE TO PARENT
+    dispatch('change', { isYearly });
   }
 </script>
 
 <div
-  class={`flex w-full items-center ${
-    $activateIndex == 3 ? ' justify-center' : 'ml-20 justify-start'
+  class={`mb-[32px] flex w-full items-center justify-center ${
+    $activateIndex == 3 ? ' lg:justify-center' : 'ml-0 lg:ml-20 lg:justify-start'
   } `}
 >
   <div class="inline-flex items-center gap-4 px-6 py-3">
@@ -26,7 +32,9 @@
     <!-- Toggle Switch -->
     <button
       on:click={togglePricing}
-      class={`relative h-[20px] w-11 rounded-[50px] bg-[#6852D6] transition-colors`}
+      class={`relative h-[20px] w-11 rounded-[50px] ${
+        !isYearly ? 'bg-gray-11' : 'bg-[#6852D6]'
+      } transition-colors`}
       aria-label="Toggle pricing"
     >
       <span
@@ -36,19 +44,21 @@
     </button>
 
     <!-- Pay yearly -->
-    <span
-      class={`text-lg font-[640px] text-white transition-opacity duration-200 ${
-        isYearly ? 'opacity-100' : 'opacity-75'
-      }`}
-    >
-      Pay yearly
-    </span>
+    <div class="flex flex-col gap-3 lg:flex-row lg:gap-5">
+      <span
+        class={`text-lg font-[640px] text-white transition-opacity duration-200 ${
+          isYearly ? 'opacity-100' : 'opacity-75'
+        }`}
+      >
+        Pay yearly
+      </span>
 
-    <!-- Save 20% Badge -->
-    <div
-      class="ml-[12px] rounded-[7px] border border-gray-11/20 bg-gray-11/[0.04] px-[6px] py-1 text-xs font-semibold text-white"
-    >
-      Save 20%
+      <!-- Save 20% Badge -->
+      <div
+        class="rounded-[7px] border border-gray-11/20 bg-gray-11/[0.04] px-[6px] py-1 text-xs font-semibold text-white"
+      >
+        Save 20%
+      </div>
     </div>
   </div>
 </div>
