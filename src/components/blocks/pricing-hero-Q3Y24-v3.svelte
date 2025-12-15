@@ -149,13 +149,17 @@
   const BYOMonthlyNumbers = [0, 1999]; // for tab 3 (3 cards)
   const BYOAnnualNumbers = [0, 1599.2]; // example discounted annual numbers (same length)
 
-  function updateAgentPricing(isAnnually?: boolean) {
+  function updateAgentPricing(e: Event) {
     // if parent event passes explicit boolean, use it, else toggle
+    const agentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
+    const isAnnually = agentBuildAnnuallyEvent?.detail?.isYearly;
     agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
   }
 
-  function updateBYOPricing(isAnnually?: boolean) {
+  function updateBYOPricing(e: Event) {
     // if parent event passes explicit boolean, use it, else toggle
+    const BYOAgentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
+    const isAnnually = BYOAgentBuildAnnuallyEvent?.detail?.isYearly;
     BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
   }
 
@@ -514,10 +518,10 @@
           </div>
         {:else if $activateIndex === 2 || $activateIndex === 3}
           <PricingPeriodToggle2
-            on:change={() => {
-              updateAgentPricing();
+            on:change={(e) => {
+              updateAgentPricing(e);
 
-              updateBYOPricing();
+              updateBYOPricing(e);
             }}
           />
         {/if}
