@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  import { activateIndex } from '$lib/stores/pricing-stores-v2';
+  // import { activateIndex } from '$lib/stores/pricing-stores-v2';
 
   const dispatch = createEventDispatcher();
 
