@@ -14,11 +14,7 @@
   }
 </script>
 
-<div
-  class={`mb-[32px] flex w-full items-center justify-center ${
-    $activateIndex == 3 ? ' lg:justify-center' : 'ml-0 lg:ml-20 lg:justify-start'
-  } `}
->
+<div class={`mb-[32px] ml-0 flex w-full items-center justify-center lg:ml-20 lg:justify-start `}>
   <div class="inline-flex items-center gap-4 px-6 py-3">
     <!-- Pay monthly -->
     <span
