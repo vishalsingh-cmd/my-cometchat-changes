@@ -22,7 +22,7 @@
       'p-5 md:p-6',
       'relative w-full overflow-hidden',
       'flex h-full w-full flex-col justify-between',
-      'rounded-3xl border border-[#6853d6]/[0.8] bg-[#6853D60F]',
+      'rounded-3xl border border-[#6853d6]/[0.4] bg-[#6853D60F]',
       'm-0 backdrop-blur-[32px] lg:ml-[32px]'
     )}
   >

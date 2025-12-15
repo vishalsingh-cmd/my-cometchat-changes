@@ -139,14 +139,24 @@
 
   let agentBuildAnnually = false;
   let agentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
+  let BYOAgentBuildAnnually = false;
+  let BYOAgentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
 
   // raw numeric prices (per plan index). Make sure these arrays match each tab's number of plans.
-  const agentMonthlyNumbers = [0, 10, 20]; // for tab 2 (3 cards)
-  const agentAnnualNumbers = [0, 8, 16]; // example discounted annual numbers (same length)
+  const agentMonthlyNumbers = [0, '99', '999']; // for tab 2 (3 cards)
+  const agentAnnualNumbers = [0, '79.2', '799.2']; // example discounted annual numbers (same length)
+
+  const BYOMonthlyNumbers = [0, 1999]; // for tab 3 (3 cards)
+  const BYOAnnualNumbers = [0, 1599.2]; // example discounted annual numbers (same length)
 
   function updateAgentPricing(isAnnually?: boolean) {
     // if parent event passes explicit boolean, use it, else toggle
     agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
+  }
+
+  function updateBYOPricing(isAnnually?: boolean) {
+    // if parent event passes explicit boolean, use it, else toggle
+    BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
   }
 
   // produce array of objects the cards expect: { price: '$XX', isBilledAnnually: boolean }
@@ -156,6 +166,15 @@
     agentBuilderPricing = numbers.map((n) => ({
       price: n === 0 ? 'Free' : `$${n}`,
       isBilledAnnually: agentBuildAnnually
+    }));
+  }
+
+  $: {
+    const numbers = BYOAgentBuildAnnually ? BYOAnnualNumbers : BYOMonthlyNumbers;
+
+    BYOAgentBuilderPricing = numbers.map((n) => ({
+      price: n === 0 ? 'Free' : `$${n}`,
+      isBilledAnnually: BYOAgentBuildAnnually
     }));
   }
 </script>
@@ -327,7 +346,7 @@
               </div>
               <!-- AI Agent Platform Label -->
               <div class="relative flex w-[532px] items-center justify-center">
-                <p class="text-[16px] font-semibold text-brand-9">AI Agent Platform</p>
+                <p class="text-[16px] font-semibold text-brand-9">AI Agents & Copilots</p>
                 <svg
                   class="absolute left-16 top-3"
                   xmlns="http://www.w3.org/2000/svg"
@@ -497,6 +516,8 @@
           <PricingPeriodToggle2
             on:change={() => {
               updateAgentPricing();
+
+              updateBYOPricing();
             }}
           />
         {/if}
@@ -536,7 +557,7 @@
             {/each}
           {:else if $activateIndex === 3}
             {#each block.cards[0].category4 ?? [] as plan, i}
-              <AgentCard block={plan} value={agentBuilderPricing[i]} />
+              <AgentCard block={plan} value={BYOAgentBuilderPricing[i]} />
             {/each}
           {/if}
         </div>

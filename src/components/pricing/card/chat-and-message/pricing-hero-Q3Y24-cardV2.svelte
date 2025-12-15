@@ -18,7 +18,7 @@
 </script>
 
 {#if block}
-  {@const { name, description, highlights, cta, custom_price, tag, custom_label } = block}
+  {@const { name, description, credits, highlights, cta, custom_price, tag, custom_label } = block}
   <div
     class={cn(
       'w-full md:h-full',
@@ -58,9 +58,22 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
                 </p>
               {/each}
             {:else}
-              <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">{description}</p>
+              <p class="py-1 text-lg/snug font-medium tracking-wide opacity-64">
+                {description}
+              </p>
             {/if}
           {/if}
+
+          {#if credits}
+            <div class="mt-4 flex items-center gap-2">
+              <Icon icon="zap-circle" class="h-[19px] w-[19px] flex-shrink-0 text-gray-11" />
+              <p class="text-md/snug font-medium leading-snug tracking-wide opacity-75">
+                {credits}
+                {'Credits'}
+              </p>
+            </div>
+          {/if}
+
           <div
             class={cn(
               'mb-8 mt-8 flex h-[68px] flex-col gap-2 text-2xl/tighter font-semibold lg:mt-10'
