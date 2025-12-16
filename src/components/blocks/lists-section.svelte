@@ -75,7 +75,7 @@
     class="overflow-hidden bg-gray-1 pb-10 pt-5 text-gray-12 md:py-16"
   >
     <div class="container relative isolate mx-auto px-container">
-      <Background theme={block.theme} />
+      <!-- <Background theme={block.theme} /> -->
 
       {#if block.header && block.header[0]}
         {@const { label, title, description, links } = block.header[0]}

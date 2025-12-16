@@ -532,6 +532,17 @@ export interface CoreFeaturesPricingSectionStoryblok {
   [k: string]: any;
 }
 
+export interface CtaBlockWithImageStoryblok {
+  title?: string;
+  description?: string;
+  button_text?: string;
+  button_link?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'cta-block-with-image';
+  [k: string]: any;
+}
+
 export interface CustomerStoryblok {
   logo: AssetStoryblok;
   industry: StoryblokStory<IndustryStoryblok> | string;
@@ -1253,6 +1264,7 @@ export interface IndustryStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -1755,6 +1767,7 @@ export interface PageStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -1890,6 +1903,7 @@ export interface PageStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -2130,6 +2144,7 @@ export interface PricingStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -2415,6 +2430,7 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   tag?: string;
   name: string;
   description?: RichtextStoryblok;
+  credits?: string;
   custom_price?: string;
   cta: ButtonLinkStoryblok[];
   highlights?: PricingHighligtsQ3Y24Storyblok[];
@@ -3114,6 +3130,7 @@ export interface SyncedBlockContentStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -3284,6 +3301,7 @@ export interface TechnologyStoryblok {
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
