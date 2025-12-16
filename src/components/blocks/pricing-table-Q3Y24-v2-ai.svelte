@@ -5,15 +5,15 @@
     // activateTable,
     isBilledAnnualy,
     maus,
-    pricingValuesVoice
+    pricingValuesai
   } from '$lib/stores/pricing-stores-v2';
   import { onMount, tick } from 'svelte';
   import { page } from '$app/stores';
-  import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24-voice/pricing-table-line-Q3Y24.svelte';
+  import PricingTableLineQ3Y24 from './pricing-table-line-Q3Y24-ai/pricing-table-line-Q3Y24.svelte';
   import scrollDirection from '$lib/stores/scroll-direction';
   import TitleSection from './title-section.svelte';
   import Dropdown from '$components/dropdown.svelte';
-  import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24-voice/pricing-table-line-Q3Y24-portrait.svelte';
+  import PricingTableLineQ3Y24Portrait from './pricing-table-line-Q3Y24-ai/pricing-table-line-Q3Y24-portrait.svelte';
   import Button from '$components/buttons/button.svelte';
 
   export let block;
@@ -101,7 +101,7 @@
     return maus;
   }
   let convertedMaus: string[] = [];
-  let plans = Object.keys($pricingValuesVoice);
+  let plans = Object.keys($pricingValuesai);
   plans = plans.map((plan) => {
     return {
       label: plan,
@@ -135,10 +135,10 @@
   });
 </script>
 
-{#if $activateIndex === 1}
+{#if $activateIndex === 2}
   <div class="container mx-auto pb-[80px]">
     <TitleSection block={block.title[0]} />
-    <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
+    <div class="hidden px-container lg:block" id="pricing-table-Q3Y24-voice">
       <table class="relative table-auto">
         <div
           class="pointer-events-none absolute top-0 z-30 mt-14 flex h-full w-full items-end justify-center"
@@ -175,15 +175,15 @@
               Usage
             {/if}
           </td>
-          {#each Object.keys($pricingValuesVoice) as plan, index}
+          {#each Object.keys($pricingValuesai) as plan, index}
             <th
               class={cn(
                 'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 xl:min-w-[205px] 2xl:min-w-[286px]',
-                index != Object.keys($pricingValuesVoice).length - 1 && 'border-r',
-                index == 2 && 'bg-[#6852D61A]'
+                index != Object.keys($pricingValuesai).length - 1 && 'border-r',
+                index == 1 && 'bg-[#6852D61A]'
               )}
             >
-              {#if index == 2}
+              {#if index == 1}
                 <p
                   class="absolute -top-10 left-0 flex h-10 w-[100%] items-center justify-center rounded-t-3xl border border-brand-12/2 bg-brand-9 text-md font-[640]"
                 >
@@ -193,17 +193,17 @@
               <p class="text-xl/normal font-semibold tracking-wide">{plan}</p>
               <p class="px-4 text-center text-lg/normal font-medium tracking-wide opacity-74">
                 {#if plan !== 'Build'}
-                  {$pricingValuesVoice[plan].price}
+                  {$pricingValuesai[plan].price}
                 {:else}
                   Free Forever
                 {/if}
-                {#if $pricingValuesVoice[plan].price.startsWith('$') && plan !== 'Build'}
+                {#if $pricingValuesai[plan].price.startsWith('$') && plan !== 'Build'}
                   <span class="-ml-[4px]">/month</span>
                 {/if}
               </p>
               <p class="text-md font-medium tracking-wide opacity-74">
                 {$isBilledAnnualy &&
-                $pricingValuesVoice[plan].price.startsWith('$') &&
+                $pricingValuesai[plan].price.startsWith('$') &&
                 plan !== 'Build'
                   ? 'Billed annually'
                   : ''}
