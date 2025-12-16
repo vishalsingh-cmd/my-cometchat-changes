@@ -16,6 +16,11 @@ export const pricingValuesVoice = writable<PricingValues>({
   PayAsYouGo: { price: '$', isBilledAnnually: true },
   Enterprise: { price: '$', isBilledAnnually: true }
 });
+export const pricingValuesai = writable<PricingValues>({
+  plan1: { price: '$0', isBilledAnnually: true },
+  plan2: { price: '$', isBilledAnnually: true },
+  plan3: { price: '$', isBilledAnnually: true }
+});
 
 export const maus = writable<string[]>([]);
 
