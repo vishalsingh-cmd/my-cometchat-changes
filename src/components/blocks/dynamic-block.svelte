@@ -128,6 +128,7 @@
   import TemplatesSectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
   import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
+  import CtaBlockWithImage from './cta-block-with-image.svelte';
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'core-features': CoreFeatures,
@@ -146,6 +147,7 @@
     'customer-stats': CustomerStats,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
+    'cta-block-with-image': CtaBlockWithImage,
     'customers-hero': CustomersHero,
     'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
