@@ -12,7 +12,7 @@
   import Header from '$components/title.svelte';
   import Title from '$components/lists-section/title.svelte';
   import Tabs from '$components/tabs/tabs.svelte';
-  import Background from '$components/lists-section/background.svelte';
+  // import Background from '$components/lists-section/background.svelte';
 
   export let block: ListsSectionStoryblok;
 
