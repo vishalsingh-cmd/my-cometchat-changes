@@ -96,6 +96,10 @@
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
   import PricingTableQ3Y24V2Voice from './pricing-table-Q3Y24-v2-voice.svelte';
   import PricingTableQ3Y24V2ai from './pricing-table-Q3Y24-v2-ai.svelte';
+<<<<<<< HEAD
+=======
+  import PricingTableQ3Y24V2BYOA from './pricing-table-Q3Y24-v2-byoa.svelte';
+>>>>>>> origin/pricing
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
@@ -230,6 +234,10 @@
     'pricing-table-Q3Y24-v2': PricingTableQ3Y24V2,
     'pricing-table-Q3Y24-v2-voice': PricingTableQ3Y24V2Voice,
     'pricing-table-Q3Y24-v2-ai': PricingTableQ3Y24V2ai,
+<<<<<<< HEAD
+=======
+    'pricing-table-Q3Y24-v2-byoa': PricingTableQ3Y24V2BYOA,
+>>>>>>> origin/pricing
     'resources-hero': ResourcesHero,
     'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,

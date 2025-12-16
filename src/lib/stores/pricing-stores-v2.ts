@@ -22,6 +22,11 @@ export const pricingValuesai = writable<PricingValues>({
   plan3: { price: '$', isBilledAnnually: true }
 });
 
+export const pricingValuesbyoa = writable<PricingValues>({
+  Build: { price: '$0', isBilledAnnually: true },
+  Enterprise: { price: '$', isBilledAnnually: true }
+});
+
 export const maus = writable<string[]>([]);
 
 export const lastSelectedMAUIndex = writable<number>(1);
