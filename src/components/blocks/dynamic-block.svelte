@@ -94,6 +94,7 @@
   import PricingHeroQ3Y24V3 from './pricing-hero-Q3Y24-v3.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
+  import PricingTableQ3Y24V2Voice from './pricing-table-Q3Y24-v2-voice.svelte';
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
@@ -132,6 +133,7 @@
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
   import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
   import CtaBlockWithImage from './cta-block-with-image.svelte';
+
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'core-features': CoreFeatures,
@@ -225,6 +227,7 @@
     'pricing-table-revamp': PricingTableRevamp,
     'pricing-table-Q3Y24': PricingTableQ3Y24,
     'pricing-table-Q3Y24-v2': PricingTableQ3Y24V2,
+    'pricing-table-Q3Y24-v2-voice': PricingTableQ3Y24V2Voice,
     'resources-hero': ResourcesHero,
     'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,
