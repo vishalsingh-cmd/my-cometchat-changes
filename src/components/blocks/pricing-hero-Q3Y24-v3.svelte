@@ -220,7 +220,7 @@
         <!-- Planet background image - centered and behind everything -->
         <div class="relative mx-auto w-[1440px] overflow-visible">
           <div
-            class="pointer-events-none absolute left-1/2 top-[130px] z-[0] hidden w-[1312px] -translate-x-1/2 lg:block lg:-translate-x-[700px]"
+            class="pointer-events-none absolute left-1/2 top-[160px] z-[0] hidden w-[1312px] -translate-x-1/2 lg:block lg:-translate-x-[700px]"
           >
             <img src={PlanetImage} alt="planet" class="" />
           </div>
