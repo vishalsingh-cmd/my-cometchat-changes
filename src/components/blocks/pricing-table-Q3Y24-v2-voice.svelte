@@ -18,7 +18,7 @@
 
   export let block;
   let limit = Number(block.collapsed_items_count || 0);
-  let selectedOption = 2;
+  let selectedOption = 1;
   let currentRowIndex = 1;
 
   let label = 'Expand all Features';
@@ -178,7 +178,7 @@
           {#each Object.keys($pricingValuesVoice) as plan, index}
             <th
               class={cn(
-                'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 xl:min-w-[205px] 2xl:min-w-[286px]',
+                'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 md:min-w-[290px] 2xl:min-w-[286px]',
                 index != Object.keys($pricingValuesVoice).length - 1 && 'border-r',
                 index == 2 && 'bg-[#6852D61A]'
               )}

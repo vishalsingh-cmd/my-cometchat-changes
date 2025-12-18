@@ -21,8 +21,8 @@
       {/if}
     </td>
   {/if}
-  {#if block.plan1}
-    {@const { simpleText, label, tooltip, link } = separateText(block.plan1)}
+  {#if block.chatbot}
+    {@const { simpleText, label, tooltip, link } = separateText(block.chatbot)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />
       {#if label}
@@ -33,8 +33,8 @@
       {/if}</td
     >
   {/if}
-  {#if block.plan2}
-    {@const { simpleText, label, tooltip, link } = separateText(block.plan2)}
+  {#if block.copilot}
+    {@const { simpleText, label, tooltip, link } = separateText(block.copilot)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />
@@ -44,8 +44,8 @@
     >
   {/if}
 
-  {#if block.plan3}
-    {@const { simpleText, label, tooltip, link } = separateText(block.plan3)}
+  {#if block.enterprise}
+    {@const { simpleText, label, tooltip, link } = separateText(block.enterprise)}
     <td class={cn(className, 'max-w-[238px]')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />

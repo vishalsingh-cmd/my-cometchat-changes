@@ -179,7 +179,7 @@
           {#each Object.keys($pricingValuesbyoa) as plan, index}
             <th
               class={cn(
-                'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 xl:min-w-[205px] 2xl:min-w-[428px]',
+                'relative h-full max-w-[228px] flex-shrink flex-grow-0 flex-col items-center justify-start gap-0 border-b border-gray-4 px-5 md:min-w-[428px] ',
                 index != Object.keys($pricingValuesbyoa).length - 1 && 'border-r',
                 index == 1 && 'bg-[#6852D61A]'
               )}
@@ -350,10 +350,10 @@
                 </div>
               {/if}
               {#each lines as line}
-                <PricingTableLineQ3Y24Portrait block={line} />
+                <PricingTableLineQ3Y24Portrait block={line} {plans} {selectedOption} />
               {/each}
             {:else}
-              <PricingTableLineQ3Y24Portrait block={line} />
+              <PricingTableLineQ3Y24Portrait block={line} {plans} {selectedOption} />
             {/if}
           {/each}
         {/each}
