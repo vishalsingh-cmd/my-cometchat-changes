@@ -350,10 +350,10 @@
                 </div>
               {/if}
               {#each lines as line}
-                <PricingTableLineQ3Y24Portrait block={line} />
+                <PricingTableLineQ3Y24Portrait block={line} {plans} {selectedOption} />
               {/each}
             {:else}
-              <PricingTableLineQ3Y24Portrait block={line} />
+              <PricingTableLineQ3Y24Portrait block={line} {plans} {selectedOption} />
             {/if}
           {/each}
         {/each}

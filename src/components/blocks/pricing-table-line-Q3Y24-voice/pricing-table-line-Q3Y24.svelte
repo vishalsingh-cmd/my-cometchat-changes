@@ -33,8 +33,8 @@
       {/if}</td
     >
   {/if}
-  {#if block.pay_as_you_go}
-    {@const { simpleText, label, tooltip, link } = separateText(block.pay_as_you_go)}
+  {#if block.payasyougo}
+    {@const { simpleText, label, tooltip, link } = separateText(block.payasyougo)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />

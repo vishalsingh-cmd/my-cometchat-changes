@@ -33,8 +33,8 @@
       {/if}</td
     >
   {/if}
-  {#if block.enterprise}
-    {@const { simpleText, label, tooltip, link } = separateText(block.enterprise)}
+  {#if block.deploy}
+    {@const { simpleText, label, tooltip, link } = separateText(block.deploy)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />
