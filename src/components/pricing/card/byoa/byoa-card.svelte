@@ -21,7 +21,7 @@
   {@const { name, description, credits, highlights, cta, custom_price, tag, custom_label } = block}
   <div
     class={cn(
-      'w-full md:h-full',
+      'max-w-[420px] md:h-full',
       tag && 'mt-8 rounded-b-3xl border border-brand-9/25 lg:mt-0',
       !tag && 'rounded-3xl border border-gray-12/[0.1]',
       ' bg-brand-12/[0.03] backdrop-blur-[30px]'
@@ -73,6 +73,8 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
             <div class="mt-6 h-px w-full bg-gray-12/[0.1]" />
           {/if}
 
+          <div class="mt-6 h-px w-full bg-gray-12/[0.1]" />
+
           <div
             class={cn(
               'mb-8 mt-8 flex h-[68px] flex-col gap-2 text-2xl/tighter font-semibold lg:mt-6'
@@ -82,7 +84,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               class={cn(
                 'font-semibold tracking-wide',
                 price.startsWith('$') && 'text-2xl/snug',
-                !price.startsWith('$') && 'text-xl/normal'
+                !price.startsWith('$') && 'text-2xl/normal'
               )}
             >
               {#if custom_price}
@@ -117,14 +119,14 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               class="w-full self-start md:w-fit">{cta[0].label}</Button
             >
           {:else}
-            {@const { href, target, rel } = getAnchorFromCmsLink(cta[0].link)}
+            {@const { href, target, rel } = getAnchorFromCmsLink(cta[1].link)}
             <Button
               as="a"
               variant={cta[0].variant}
               {href}
               {target}
               {rel}
-              class="w-full self-start md:w-fit">{cta[0].label}</Button
+              class="w-full self-start md:w-fit">{cta[1].label}</Button
             >
           {/if}
         </div>
@@ -137,11 +139,8 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
               <p class="mb-1 text-lg/tight font-semibold">{highlights[0]?.title}</p>
             {/if}
             {#each highlights[0]?.highlights1 as highlight, index}
-              <div class="relative flex items-start gap-2">
-                <Icon
-                  icon="star-04"
-                  class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 -translate-y-[3px] text-brand-9"
-                />
+              <div class="flex items-start gap-2">
+                <Icon icon="star-04" class="mt-1.5 h-3.5 w-3.5 flex-shrink-0 text-brand-9" />
                 {#if typeof highlight.value != 'string' && highlight?.value?.content}
                   <div>
                     {#each highlight.value.content as content}

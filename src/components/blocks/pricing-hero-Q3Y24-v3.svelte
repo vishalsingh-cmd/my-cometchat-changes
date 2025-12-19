@@ -20,6 +20,7 @@
   // import PricingHeroQ3Y24CardV1 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV1.svelte';
   import PricingHeroQ3Y24CardV2 from '$components/pricing/card/chat-and-message/pricing-hero-Q3Y24-cardV2.svelte';
   import AgentCard from '../pricing/card/agent/agent-card.svelte';
+  import BYOACard from '../pricing/card/byoa/byoa-card.svelte';
 
   import ForYou from '../pricing/card/agent/for-you.svelte';
   import PricingRangeSliderV2 from '$components/pricing-range-sliderV2.svelte';
@@ -34,6 +35,8 @@
     lastSelectedMAUIndex,
     maus,
     pricingValues,
+    pricingValuesai,
+    pricingValuesbyoa,
     isBilledAnnualy
   } from '$lib/stores/pricing-stores-v2';
 
@@ -143,17 +146,37 @@
   let BYOAgentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
 
   // raw numeric prices (per plan index). Make sure these arrays match each tab's number of plans.
-  const agentMonthlyNumbers = [0, '99', '999']; // for tab 2 (3 cards)
-  const agentAnnualNumbers = [0, '79.2', '799.2']; // example discounted annual numbers (same length)
+  const agentMonthlyNumbers = ['0', '99', '999']; // for tab 2 (3 cards)
+  const agentAnnualNumbers = ['0', '79.20', '799.20']; // example discounted annual numbers (same length)
 
-  const BYOMonthlyNumbers = [0, 1999]; // for tab 3 (3 cards)
-  const BYOAnnualNumbers = [0, 1599.2]; // example discounted annual numbers (same length)
+  const BYOMonthlyNumbers = ['0', '1999']; // for tab 3 (3 cards)
+  const BYOAnnualNumbers = ['0', '1599.20']; // example discounted annual numbers (same length)
+  $: if ($activateIndex === 2) {
+    updateAgentPricing(agentBuildAnnually);
+  }
 
   function updateAgentPricing(e: Event) {
     // if parent event passes explicit boolean, use it, else toggle
     const agentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
     const isAnnually = agentBuildAnnuallyEvent?.detail?.isYearly;
     agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
+
+    pricingValuesai.update((values) => {
+      const prices = agentBuildAnnually ? agentAnnualNumbers : agentMonthlyNumbers;
+
+      Object.keys(values).forEach((plan, index) => {
+        values[plan] = {
+          price: index === 0 ? '$0' : `$${prices[index]}`,
+          isBilledAnnually: agentBuildAnnually
+        };
+      });
+
+      return values;
+    });
+  }
+
+  $: if ($activateIndex === 3) {
+    updateBYOPricing(BYOAgentBuildAnnually);
   }
 
   function updateBYOPricing(e: Event) {
@@ -161,6 +184,19 @@
     const BYOAgentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
     const isAnnually = BYOAgentBuildAnnuallyEvent?.detail?.isYearly;
     BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
+
+    pricingValuesbyoa.update((values) => {
+      const prices = BYOAgentBuildAnnually ? BYOAnnualNumbers : BYOMonthlyNumbers;
+
+      Object.keys(values).forEach((plan, index) => {
+        values[plan] = {
+          price: index === 0 ? '$0' : `$${prices[index]}`,
+          isBilledAnnually: BYOAgentBuildAnnually
+        };
+      });
+
+      return values;
+    });
   }
 
   // produce array of objects the cards expect: { price: '$XX', isBilledAnnually: boolean }
@@ -533,7 +569,7 @@
               'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
             $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3',
             $activateIndex === 2 && 'xl:grid-cols-4',
-            $activateIndex === 3 && 'max-w-[900px] lg:grid-cols-1 xl:grid-cols-2'
+            $activateIndex === 3 && ' max-w-[996px] gap-8 lg:grid-cols-1 xl:grid-cols-2'
           )}
         >
           {#if $activateIndex === 0}
@@ -551,9 +587,8 @@
                 <AgentCard block={plan} value={agentBuilderPricing[i]} />
               {:else}
                 <div class="relative">
-                  <div
-                    class="absolute left-0 top-0 hidden h-full w-px bg-gradient-to-b from-transparent via-gray-12/20 to-transparent lg:block"
-                  />
+                  <div class="vertical-line absolute left-0 top-0" />
+
                   <!-- PASS value to ForYou if it expects it -->
                   <ForYou block={plan} />
                 </div>
@@ -561,12 +596,51 @@
             {/each}
           {:else if $activateIndex === 3}
             {#each block.cards[0].category4 ?? [] as plan, i}
-              <AgentCard block={plan} value={BYOAgentBuilderPricing[i]} />
+              <BYOACard block={plan} value={BYOAgentBuilderPricing[i]} />
             {/each}
           {/if}
         </div>
 
         {#if $activateIndex === 0}
+          <Button
+            variant="secondary"
+            size="sm"
+            class="mt-10 h-10 w-32"
+            on:click={() => {
+              let table = document.getElementById('pricing-table-Q3Y24');
+              table?.scrollIntoView({ behavior: 'smooth' });
+              let miniTable = document.getElementById('mini-pricing-table-Q3Y24');
+              miniTable?.scrollIntoView({ behavior: 'smooth' });
+            }}>See all features</Button
+          >
+        {/if}
+        {#if $activateIndex === 1}
+          <Button
+            variant="secondary"
+            size="sm"
+            class="mt-10 h-10 w-32"
+            on:click={() => {
+              let table = document.getElementById('pricing-table-Q3Y24');
+              table?.scrollIntoView({ behavior: 'smooth' });
+              let miniTable = document.getElementById('mini-pricing-table-Q3Y24');
+              miniTable?.scrollIntoView({ behavior: 'smooth' });
+            }}>See all features</Button
+          >
+        {/if}
+        {#if $activateIndex === 2}
+          <Button
+            variant="secondary"
+            size="sm"
+            class="mt-10 h-10 w-32"
+            on:click={() => {
+              let table = document.getElementById('pricing-table-Q3Y24');
+              table?.scrollIntoView({ behavior: 'smooth' });
+              let miniTable = document.getElementById('mini-pricing-table-Q3Y24');
+              miniTable?.scrollIntoView({ behavior: 'smooth' });
+            }}>See all features</Button
+          >
+        {/if}
+        {#if $activateIndex === 3}
           <Button
             variant="secondary"
             size="sm"
@@ -611,5 +685,17 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  .vertical-line {
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(250, 250, 255, 0) 0%,
+      rgba(250, 250, 255, 0.15) 5%,
+      rgba(250, 250, 255, 0.15) 95%,
+      rgba(250, 250, 255, 0) 100%
+    );
   }
 </style>

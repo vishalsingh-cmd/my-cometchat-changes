@@ -40,7 +40,7 @@
     </button>
 
     <!-- Pay yearly -->
-    <div class="flex flex-col gap-3 lg:flex-row lg:gap-5">
+    <div class="flex flex-col gap-3 lg:flex-row">
       <span
         class={`text-lg font-[640px] text-white transition-opacity duration-200 ${
           isYearly ? 'opacity-100' : 'opacity-75'

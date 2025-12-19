@@ -139,7 +139,7 @@
 {#if $activateIndex === 3}
   <div class="container mx-auto pb-[80px]">
     <TitleSection block={block.title[0]} />
-    <div class="hidden px-container lg:block" id="pricing-table-Q3Y24-voice">
+    <div class="hidden px-container lg:block" id="pricing-table-Q3Y24">
       <table class="relative table-auto">
         <div
           class="pointer-events-none absolute top-0 z-30 mt-14 flex h-full w-full items-end justify-center"
