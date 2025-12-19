@@ -155,10 +155,8 @@
     updateAgentPricing(agentBuildAnnually);
   }
 
-  function updateAgentPricing(e: Event) {
+  function updateAgentPricing(isAnnually?: boolean) {
     // if parent event passes explicit boolean, use it, else toggle
-    const agentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
-    const isAnnually = agentBuildAnnuallyEvent?.detail?.isYearly;
     agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
 
     pricingValuesai.update((values) => {
@@ -179,10 +177,8 @@
     updateBYOPricing(BYOAgentBuildAnnually);
   }
 
-  function updateBYOPricing(e: Event) {
+  function updateBYOPricing(isAnnually?: boolean) {
     // if parent event passes explicit boolean, use it, else toggle
-    const BYOAgentBuildAnnuallyEvent = e as CustomEvent<{ isYearly: boolean }>;
-    const isAnnually = BYOAgentBuildAnnuallyEvent?.detail?.isYearly;
     BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
 
     pricingValuesbyoa.update((values) => {
@@ -554,10 +550,10 @@
           </div>
         {:else if $activateIndex === 2 || $activateIndex === 3}
           <PricingPeriodToggle2
-            on:change={(e) => {
-              updateAgentPricing(e);
+            on:change={() => {
+              updateAgentPricing();
 
-              updateBYOPricing(e);
+              updateBYOPricing();
             }}
           />
         {/if}
