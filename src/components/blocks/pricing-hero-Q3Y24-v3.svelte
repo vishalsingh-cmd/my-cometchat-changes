@@ -35,6 +35,8 @@
     lastSelectedMAUIndex,
     maus,
     pricingValues,
+    pricingValuesai,
+    pricingValuesbyoa,
     isBilledAnnualy
   } from '$lib/stores/pricing-stores-v2';
 
@@ -149,15 +151,48 @@
 
   const BYOMonthlyNumbers = ['0', '1999']; // for tab 3 (3 cards)
   const BYOAnnualNumbers = ['0', '1599.20']; // example discounted annual numbers (same length)
+  $: if ($activateIndex === 2) {
+    updateAgentPricing(agentBuildAnnually);
+  }
 
   function updateAgentPricing(isAnnually?: boolean) {
     // if parent event passes explicit boolean, use it, else toggle
     agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
+
+    pricingValuesai.update((values) => {
+      const prices = agentBuildAnnually ? agentAnnualNumbers : agentMonthlyNumbers;
+
+      Object.keys(values).forEach((plan, index) => {
+        values[plan] = {
+          price: index === 0 ? '$0' : `$${prices[index]}`,
+          isBilledAnnually: agentBuildAnnually
+        };
+      });
+
+      return values;
+    });
+  }
+
+  $: if ($activateIndex === 3) {
+    updateBYOPricing(BYOAgentBuildAnnually);
   }
 
   function updateBYOPricing(isAnnually?: boolean) {
     // if parent event passes explicit boolean, use it, else toggle
     BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
+
+    pricingValuesbyoa.update((values) => {
+      const prices = BYOAgentBuildAnnually ? BYOAnnualNumbers : BYOMonthlyNumbers;
+
+      Object.keys(values).forEach((plan, index) => {
+        values[plan] = {
+          price: index === 0 ? '$0' : `$${prices[index]}`,
+          isBilledAnnually: BYOAgentBuildAnnually
+        };
+      });
+
+      return values;
+    });
   }
 
   // produce array of objects the cards expect: { price: '$XX', isBilledAnnually: boolean }
