@@ -133,6 +133,12 @@
     convertedMaus = convertMAUSToNumber($maus);
     analyseCurrentRowIndex();
   });
+
+  const PLAN_LABELS: Record<string, string> = {
+    Build: 'Build',
+    PayAsYouGo: 'Pay-as-you-go',
+    Enterprise: 'Enterprise'
+  };
 </script>
 
 {#if $activateIndex === 1}
@@ -190,7 +196,7 @@
                   Most popular
                 </p>
               {/if}
-              <p class="text-xl/normal font-semibold tracking-wide">{plan}</p>
+              <p class="text-xl/normal font-semibold tracking-wide">{PLAN_LABELS[plan] ?? plan}</p>
               <p class="px-4 text-center text-lg/normal font-medium tracking-wide opacity-74">
                 {#if plan !== 'Build'}
                   {$pricingValuesVoice[plan].price}
