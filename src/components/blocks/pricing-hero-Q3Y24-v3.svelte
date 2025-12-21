@@ -14,6 +14,7 @@
   import Sticky from '$components/sticky.svelte';
   import PricingCardVideoAndVoiceEnhanced from '$components/pricing-card-video-and-voice-enhanced.svelte';
   import PlanetImage from '$lib/assets/Planats.png';
+  import mobile_planet from '$components/pricing/assets/Planets.svg';
   import { cn } from '$lib/utils';
   import { paragraph } from '$components/rich-text/rich-text-store';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
@@ -251,7 +252,14 @@
         </div>
       </div>
     {/if}
-    <div class="relative z-50 w-full">
+    <div class=" relative isolate w-full">
+      <div class="pointer-events-none absolute inset-0 z-10 block lg:hidden">
+        <img
+          src={mobile_planet}
+          alt="planet"
+          class="sticky inset-y-0 w-full max-w-[480px] opacity-80"
+        />
+      </div>
       <Sticky class="md:static ">
         <!-- Planet background image - centered and behind everything -->
         <div class="relative mx-auto w-[1440px] overflow-visible">
@@ -548,7 +556,8 @@
               }}
             />
           </div>
-        {:else if $activateIndex === 2 || $activateIndex === 3}
+        {/if}
+        {#if $activateIndex == 2 || $activateIndex == 3}
           <PricingPeriodToggle2
             on:change={() => {
               updateAgentPricing();
@@ -560,7 +569,7 @@
 
         <div
           class={cn(
-            'grid w-full grid-cols-1 gap-8 px-container md:mt-8 md:gap-8',
+            'relative z-20 grid w-full grid-cols-1 gap-8 px-container md:mt-8 md:gap-8',
             $activateIndex === 0 &&
               'items-end sm:grid-cols-2 md:gap-y-16 lg:grid-cols-3 xl:grid-cols-4',
             $activateIndex === 1 && 'lg:grid-cols-3 xl:grid-cols-3',

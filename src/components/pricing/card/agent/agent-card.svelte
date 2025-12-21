@@ -48,12 +48,7 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
           {#if description}
             {#if typeof description != 'string' && description.content}
               {#each description.content as content}
-                <p
-                  class={cn(
-                    paragraph,
-                    'mt-3 h-14 text-sm/snug font-medium tracking-wide opacity-64'
-                  )}
-                >
+                <p class={cn(paragraph, 'mt-3 text-sm/snug font-medium tracking-wide opacity-64')}>
                   {@html resolver.render(content)}
                 </p>
               {/each}
@@ -63,14 +58,14 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
           {/if}
 
           {#if credits}
-            <div class="mt-[40px] flex items-center gap-2">
+            <div class="mt-[32px] flex items-center gap-2 lg:mt-[40px]">
               <Icon icon="zap-circle" class="h-[19px] w-[19px] flex-shrink-0 text-gray-11" />
               <p class="text-md/snug font-medium leading-snug tracking-wide opacity-75">
                 {credits}
                 {'Credits'}
               </p>
             </div>
-            <div class="mt-6 h-px w-full bg-gray-12/[0.1]" />
+            <div class="mt-[32px] h-px w-full bg-gray-12/[0.1] lg:mt-6" />
           {/if}
 
           <div
@@ -189,3 +184,10 @@ box-shadow:{!tag ? '' : '0px 0px 40px rgba(104, 83, 214, 0.24)'}"
     </div>
   </div>
 {/if}
+
+<style>
+  .gradient-border {
+    padding: 5px; /* border thickness */
+    border-radius: 24px;
+  }
+</style>
