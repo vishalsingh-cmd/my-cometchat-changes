@@ -14,8 +14,8 @@
   }
 </script>
 
-<div class={`mb-[32px] ml-0 flex w-full items-center justify-center lg:ml-20 lg:justify-start `}>
-  <div class="inline-flex items-center gap-4 px-6 py-3">
+<div class={`mb-[32px] ml-0 flex w-full items-center justify-center lg:ml-20 lg:justify-start`}>
+  <div class="inline-flex items-center gap-4 px-6">
     <!-- Pay monthly -->
     <span
       class={`text-lg font-[640px] text-white transition-opacity duration-200  ${
