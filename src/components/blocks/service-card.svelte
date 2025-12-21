@@ -23,10 +23,15 @@
 
 {#if block}
   <Section>
-    <Container>
-      <div use:storyblokEditable={block} class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-10">
+    <Container pyEnabled={false}>
+      <div
+        use:storyblokEditable={block}
+        class="mt-[65px] flex flex-col justify-center gap-10 lg:flex-row"
+      >
         {#each block.cards ?? [] as card}
-          <div class="group flex flex-col rounded-[24px] border border-gray-12/10 p-8 md:p-10">
+          <div
+            class="group flex max-w-[534px] flex-col rounded-[24px] border border-gray-12/10 p-8 md:p-10"
+          >
             <!-- Icon -->
             {#if card.icon}
               <div
