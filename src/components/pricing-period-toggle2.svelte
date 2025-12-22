@@ -4,7 +4,7 @@
 
   const dispatch = createEventDispatcher();
 
-  let isYearly = false;
+  let isYearly = true;
 
   function togglePricing() {
     isYearly = !isYearly;
