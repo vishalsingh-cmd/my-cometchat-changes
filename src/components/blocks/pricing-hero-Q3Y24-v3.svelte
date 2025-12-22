@@ -548,7 +548,8 @@
             class="mb-[61px] mt-8 flex w-full flex-col items-center justify-around lg:h-[110px] lg:flex-row"
           >
             <!-- <PricingPeriodToggle on:change={() => updatePricingValues($isBilledAnnualy)} /> -->
-            <PricingPeriodToggleV2 on:change={() => updatePricingValues($isBilledAnnualy)} />
+            <!-- <PricingPeriodToggleV2 on:change={() => updatePricingValues($isBilledAnnualy)} /> -->
+            <PricingPeriodToggle2 on:change1={() => updatePricingValues($isBilledAnnualy)} />
             <PricingRangeSliderV2
               maus={$maus}
               on:index={(e) => {
