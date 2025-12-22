@@ -21,7 +21,6 @@ export const pricingValuesai = writable<PricingValues>({
   Copilot: { price: '$', isBilledAnnually: true },
   Enterprise: { price: '$', isBilledAnnually: true }
 });
-
 export const pricingValuesbyoa = writable<PricingValues>({
   Build: { price: '$0', isBilledAnnually: true },
   Deploy: { price: '$', isBilledAnnually: true }

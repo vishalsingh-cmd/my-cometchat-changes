@@ -10,7 +10,7 @@
     isYearly = !isYearly;
 
     // SEND VALUE TO PARENT
-    dispatch('change', { isYearly });
+    dispatch('change', { isAnnual: isYearly });
   }
 </script>
 
