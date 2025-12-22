@@ -112,6 +112,8 @@
     });
     $maus = localMaus;
     updatePricingValues($isBilledAnnualy, 0);
+    updateAgentPricing($isBilledAnnualy);
+    updateBYOPricing($isBilledAnnualy);
   });
 
   let isDropdownOpen = false;
@@ -141,9 +143,9 @@
     isDropdownOpen = !isDropdownOpen;
   }
 
-  let agentBuildAnnually = false;
+  let agentBuildAnnually = $isBilledAnnualy;
   let agentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
-  let BYOAgentBuildAnnually = false;
+  let BYOAgentBuildAnnually = $isBilledAnnualy;
   let BYOAgentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
 
   // raw numeric prices (per plan index). Make sure these arrays match each tab's number of plans.
@@ -156,9 +158,8 @@
     updateAgentPricing(agentBuildAnnually);
   }
 
-  function updateAgentPricing(isAnnually?: boolean) {
-    // if parent event passes explicit boolean, use it, else toggle
-    agentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !agentBuildAnnually;
+  function updateAgentPricing(isAnnually: boolean) {
+    agentBuildAnnually = isAnnually;
 
     pricingValuesai.update((values) => {
       const prices = agentBuildAnnually ? agentAnnualNumbers : agentMonthlyNumbers;
@@ -178,9 +179,8 @@
     updateBYOPricing(BYOAgentBuildAnnually);
   }
 
-  function updateBYOPricing(isAnnually?: boolean) {
-    // if parent event passes explicit boolean, use it, else toggle
-    BYOAgentBuildAnnually = typeof isAnnually === 'boolean' ? isAnnually : !BYOAgentBuildAnnually;
+  function updateBYOPricing(isAnnually: boolean) {
+    BYOAgentBuildAnnually = isAnnually;
 
     pricingValuesbyoa.update((values) => {
       const prices = BYOAgentBuildAnnually ? BYOAnnualNumbers : BYOMonthlyNumbers;
@@ -559,10 +559,9 @@
         {/if}
         {#if $activateIndex == 2 || $activateIndex == 3}
           <PricingPeriodToggle2
-            on:change={() => {
-              updateAgentPricing();
-
-              updateBYOPricing();
+            on:change={(e) => {
+              updateAgentPricing(e.detail.isAnnual);
+              updateBYOPricing(e.detail.isAnnual);
             }}
           />
         {/if}
