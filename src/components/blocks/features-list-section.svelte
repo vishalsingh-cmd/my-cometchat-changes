@@ -21,7 +21,7 @@
 {#if block}
   <section
     use:storyblokEditable={block}
-    data-theme="light"
+    data-theme={block.theme === 'dark' ? 'dark' : 'light'}
     class="bg-gray-1 text-gray-12"
     style="color-scheme: light;"
   >
