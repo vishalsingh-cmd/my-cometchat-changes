@@ -15,7 +15,11 @@
 </script>
 
 {#if block}
-  <section use:storyblokEditable={block} data-theme="light" class="bg-gray-1 pb-6 text-gray-12">
+  <section
+    use:storyblokEditable={block}
+    data-theme={block.theme}
+    class="bg-gray-1 pb-6 text-gray-12"
+  >
     <div class="container mx-auto">
       <TitleSection block={block.title[0]} />
     </div>
@@ -27,7 +31,11 @@
       )}
     >
       <div class="flex-1">
-        <AnimatedAccordionGroup block={block.items} on:switch={handleItemSwitch} />
+        <AnimatedAccordionGroup
+          theme={block.theme}
+          block={block.items}
+          on:switch={handleItemSwitch}
+        />
       </div>
       <div
         class={cn(
