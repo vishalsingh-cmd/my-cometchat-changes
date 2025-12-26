@@ -12,9 +12,9 @@
 
 {#if block}
   <Section>
-    <Container pxEnabled={true} class="px-4 pb-12 font-sans md:px-8 lg:px-[176px] lg:pb-[80px]">
+    <Container class="mt-[60px] font-sans lg:px-[176px] lg:pb-[80px]">
       <div class="w-full overflow-x-auto" use:storyblokEditable={block}>
-        <div class="relative min-w-[768px]">
+        <div class="relative mx-auto max-w-[1140px]">
           <!-- Shadow overlay for highlighted column -->
           {#if highlightedColumnIndex >= 0}
             <div
@@ -76,7 +76,7 @@
               <!-- Column Data -->
               {#each block.columns ?? [] as column}
                 <div
-                  class={`border px-4 pt-3 md:px-6 md:pt-4 lg:px-[32px] lg:pt-[16px] ${
+                  class={`flex items-center border px-4 pt-3 md:px-6 md:pt-4 lg:px-[32px] lg:py-[16px] ${
                     column.is_highlight
                       ? `border-x-brand-9/80 ${
                           block.categories.length - 1 === index
@@ -87,7 +87,7 @@
                   }`}
                 >
                   <p
-                    class="text-base font-medium leading-snug tracking-[0.5%] text-gray-11 opacity-74 md:text-lg"
+                    class="text-lg font-medium leading-snug tracking-[0.5%] text-gray-11 opacity-74 md:text-lg"
                   >
                     {column.rows?.[index]?.text || '-'}
                   </p>
