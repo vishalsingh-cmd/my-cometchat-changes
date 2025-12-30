@@ -103,6 +103,7 @@
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import Homev3Banner from '$src/_views/HomeV2/_sections/Banner/Banner2.svelte';
   import Homev4Banner from '$src/_views/HomeV2/_sections/Banner/Banner3.svelte';
+  import Homev5Banner from '$src/_views/HomeV2/_sections/Banner/Banner4.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
   import SecureSection from './secure-section.svelte';
@@ -249,6 +250,7 @@
     home__banner: Homev2Banner,
     home_banner_v2: Homev3Banner,
     home_banner_v3: Homev4Banner,
+    home_banner_v4: Homev5Banner,
     home__video_tabs: FeatureTabs,
     home_clients: Clients,
     home_clients_v2: ClientsV2,
