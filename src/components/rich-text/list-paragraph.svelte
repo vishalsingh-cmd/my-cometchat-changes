@@ -42,12 +42,12 @@
   export let content: ISbRichtext;
 
   const paragraph = cva([
-    'font-medium',
-    'text-gray-12',
-    'leading-snug',
-    'tracking-wide',
+    'font-normal',
+    'text-gray-1 [&_span]:!text-gray-1 ',
+    'leading-[1.25]',
+    'tracking-[0.09px]',
 
-    '[&_a]:text-brand-9',
+    '[&_a]:text-[#836aff]',
     '[&_a:hover]:text-brand-10',
 
     '[&_img]:my-6',

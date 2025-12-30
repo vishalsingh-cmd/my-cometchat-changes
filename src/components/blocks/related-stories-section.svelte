@@ -62,7 +62,7 @@
   <section
     use:storyblokEditable={block}
     class="bg-gray-1 px-container text-gray-12"
-    data-theme="light"
+    data-theme="dark"
   >
     {#if block.header && block.header.length > 0}
       {@const { title, description, links } = block.header[0]}
@@ -78,9 +78,9 @@
       />
     {/if}
     <div class="container relative mx-auto grid grid-cols-1 gap-8 pb-12 md:grid-cols-3 md:pb-20">
-      <div
+      <!-- <div
         class="absolute -left-[196px] -top-[86px] h-[408px] w-[408px] rounded-full opacity-20 blur"
-      />
+      /> -->
       {#if block.items && block.items.length > 0}
         {#each block.items as item}
           {@const { title, image, tags, link, customer, author, date } = parsedItem(item)}

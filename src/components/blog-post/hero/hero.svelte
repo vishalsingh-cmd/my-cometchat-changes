@@ -51,7 +51,7 @@
       class="container relative mx-auto grid h-full grid-cols-1 gap-8 overflow-hidden px-container pb-10 pt-[100px] md:pb-20 md:pt-[148px] lg:grid-cols-2"
     >
       <!-- Background Blur -->
-      <div
+      <!-- <div
         class={cn(
           'h-[250px] w-[250px]',
           'absolute origin-center transform rounded-1/2',
@@ -61,7 +61,7 @@
           'opacity-60',
           'blur-[150px]'
         )}
-      />
+      /> -->
 
       <div class="z-10 flex flex-col justify-between gap-8">
         <Title

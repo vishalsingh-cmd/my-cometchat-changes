@@ -133,6 +133,7 @@
                 description={item.description}
                 points={item.points}
                 link={item.link}
+                linkText={item.link_text}
                 on:click={() => handleClick(index)}
               />
             </div>

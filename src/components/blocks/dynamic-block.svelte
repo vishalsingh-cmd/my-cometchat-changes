@@ -10,6 +10,7 @@
   import ChatFeaturesSection from './chat-features-section.svelte';
   import ChatIntegration from './chat-integration.svelte';
   import CometCreditsSection from './comet-credits-section.svelte';
+  import ComparisonTable from './comparison-table.svelte';
   import CoreFeaturesPricingSection from './core-features-pricing-section.svelte';
   import CustomersHero from './customers-hero.svelte';
   import CustomerHeroAnimated from './customer-hero-animated.svelte';
@@ -72,6 +73,7 @@
   import TechnologiesSection from './technologies-section.svelte';
   import TechnologiesSectionCopy from './technologies-section-copy.svelte';
   import TechnologyHero from './technology-hero.svelte';
+  import Testimonials from './testimonials.svelte';
   import TitleFeaturesSection from './title-features-section.svelte';
   import TitleImageSection from './title-image-section.svelte';
   import TitleImageSectionV2 from './title-image-section-v2.svelte';
@@ -89,8 +91,13 @@
   import ModerationFeaturesSection from './moderation-features-section.svelte';
   import PricingHeroQ3Y24 from './pricing-hero-Q3Y24.svelte';
   import PricingHeroQ3Y24V2 from './pricing-hero-Q3Y24-v2.svelte';
+  import PricingHeroQ3Y24V3 from './pricing-hero-Q3Y24-v3.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
+  import PricingTableQ3Y24V2Voice from './pricing-table-Q3Y24-v2-voice.svelte';
+  import PricingTableQ3Y24V2ai from './pricing-table-Q3Y24-v2-ai.svelte';
+  import PricingTableQ3Y24V2BYOA from './pricing-table-Q3Y24-v2-byoa.svelte';
+
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
@@ -107,6 +114,7 @@
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
   import SecureSection from './secure-section.svelte';
+  import ServiceCard from './service-card.svelte';
   import SharedService from './shared-service.svelte';
 
   import ClientsV2 from '$src/_views/HomeV2/_sections/Clients/Clients2.svelte';
@@ -128,6 +136,8 @@
   import TemplatesSectionInfo from '$src/_views/Templates/_blocks/SectionInfo.svelte';
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
   import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
+  import CtaBlockWithImage from './cta-block-with-image.svelte';
+
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'core-features': CoreFeatures,
@@ -146,6 +156,9 @@
     'customer-stats': CustomerStats,
     'testimonial-section': TestimonialSection,
     'features-auto-scroll-section': FeaturesAutoScrollSection,
+    'comparison-table': ComparisonTable,
+    'cta-block-with-image': CtaBlockWithImage,
+
     'customers-hero': CustomersHero,
     'customers-hero-animated': CustomerHeroAnimated,
     'customer-story': CustomerStory,
@@ -211,17 +224,22 @@
     'pricing-hero-revamp': PricingHeroRevamp,
     'pricing-hero-Q3Y24': PricingHeroQ3Y24,
     'pricing-hero-Q3Y24-v2': PricingHeroQ3Y24V2,
+    'pricing-hero-Q3Y24-v3': PricingHeroQ3Y24V3,
     'pricing-table': PricingTable,
     'pricing-table-enhanced': PricingTableEnhanced,
     'pricing-table-section': PricingTableSection,
     'pricing-table-revamp': PricingTableRevamp,
     'pricing-table-Q3Y24': PricingTableQ3Y24,
     'pricing-table-Q3Y24-v2': PricingTableQ3Y24V2,
+    'pricing-table-Q3Y24-v2-voice': PricingTableQ3Y24V2Voice,
+    'pricing-table-Q3Y24-v2-ai': PricingTableQ3Y24V2ai,
+    'pricing-table-Q3Y24-v2-byoa': PricingTableQ3Y24V2BYOA,
     'resources-hero': ResourcesHero,
     'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,
     'rich-text-section': RichTextSection,
     'secure-section': SecureSection,
+    'service-cards': ServiceCard,
     'shared-service': SharedService,
     'social-proofs': SocialProofs,
     'solutions-hero': SolutionsHero,
@@ -231,6 +249,7 @@
     'technologies-section': TechnologiesSection,
     'technologies-section_copy': TechnologiesSectionCopy,
     'technology-hero': TechnologyHero,
+    testimonials: Testimonials,
 
     'title-block': TitleBlock,
     'title-block-left': TitleBlockLeft,

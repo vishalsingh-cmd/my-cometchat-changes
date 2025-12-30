@@ -442,6 +442,24 @@ export interface CometCreditsSectionStoryblok {
   [k: string]: any;
 }
 
+export interface ComparisonTableStoryblok {
+  categories?: SimpleTextStoryblok[];
+  columns?: ComparisonTableColumnStoryblok[];
+  _uid: string;
+  component: 'comparison-table';
+  [k: string]: any;
+}
+
+export interface ComparisonTableColumnStoryblok {
+  is_highlight?: boolean;
+  name?: string;
+  logo?: AssetStoryblok;
+  rows?: SimpleTextStoryblok[];
+  _uid: string;
+  component: 'comparison-table-column';
+  [k: string]: any;
+}
+
 export interface ComplexRollerStoryblok {
   tagline: string;
   title: string;
@@ -511,6 +529,17 @@ export interface CoreFeaturesPricingSectionStoryblok {
   items: ListsSectionItemStoryblok[];
   _uid: string;
   component: 'core-features-pricing-section';
+  [k: string]: any;
+}
+
+export interface CtaBlockWithImageStoryblok {
+  title?: string;
+  description?: string;
+  button_text?: string;
+  button_link?: string;
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'cta-block-with-image';
   [k: string]: any;
 }
 
@@ -617,6 +646,16 @@ export interface DisclaimerStoryblok {
   description: string;
   _uid: string;
   component: 'disclaimer';
+  [k: string]: any;
+}
+
+export interface DoneForYouCardStoryblok {
+  title?: string;
+  description?: string;
+  cta_text?: string;
+  cta_link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'done-for-you-card';
   [k: string]: any;
 }
 
@@ -979,6 +1018,20 @@ export interface HomeBannerV2Storyblok {
   [k: string]: any;
 }
 
+export interface HomeBannerV3Storyblok {
+  beforeTitle?: string;
+  afterTitle?: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  image1?: AssetStoryblok;
+  image2?: AssetStoryblok;
+  image3?: AssetStoryblok;
+  image4?: AssetStoryblok;
+  _uid: string;
+  component: 'home_banner_v3';
+  [k: string]: any;
+}
+
 export interface HomeClientStoryblok {
   client_img?: AssetStoryblok;
   _uid: string;
@@ -1207,9 +1260,11 @@ export interface IndustryStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -1218,6 +1273,7 @@ export interface IndustryStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -1231,6 +1287,7 @@ export interface IndustryStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1263,6 +1320,7 @@ export interface IndustryStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -1271,6 +1329,7 @@ export interface IndustryStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1292,6 +1351,8 @@ export interface IndustryStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -1305,6 +1366,7 @@ export interface IndustryStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1701,9 +1763,11 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -1712,6 +1776,7 @@ export interface PageStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -1725,6 +1790,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1757,6 +1823,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -1765,6 +1832,7 @@ export interface PageStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1786,6 +1854,8 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -1799,6 +1869,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -1828,9 +1899,11 @@ export interface PageStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -1839,6 +1912,7 @@ export interface PageStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -1852,6 +1926,7 @@ export interface PageStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1884,6 +1959,7 @@ export interface PageStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -1892,6 +1968,7 @@ export interface PageStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -1913,6 +1990,8 @@ export interface PageStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -1926,6 +2005,7 @@ export interface PageStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -2060,9 +2140,11 @@ export interface PricingStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -2071,6 +2153,7 @@ export interface PricingStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -2084,6 +2167,7 @@ export interface PricingStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2116,6 +2200,7 @@ export interface PricingStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -2124,6 +2209,7 @@ export interface PricingStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -2145,6 +2231,8 @@ export interface PricingStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -2158,6 +2246,7 @@ export interface PricingStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -2233,6 +2322,16 @@ export interface PricingCardsV2Storyblok {
   category3?: HeroFormV2Storyblok[];
   _uid: string;
   component: 'pricing-cards-v2';
+  [k: string]: any;
+}
+
+export interface PricingCardsV3Storyblok {
+  category1: PricingHeroQ3Y24CardV1Storyblok[];
+  category2: any[];
+  category3?: (HeroFormV2Storyblok | PricingHeroQ3Y24CardV1Storyblok | DoneForYouCardStoryblok)[];
+  category4?: PricingHeroQ3Y24CardV1Storyblok[];
+  _uid: string;
+  component: 'pricing-cards-v3';
   [k: string]: any;
 }
 
@@ -2331,6 +2430,7 @@ export interface PricingHeroQ3Y24CardV1Storyblok {
   tag?: string;
   name: string;
   description?: RichtextStoryblok;
+  credits?: string;
   custom_price?: string;
   cta: ButtonLinkStoryblok[];
   highlights?: PricingHighligtsQ3Y24Storyblok[];
@@ -2354,6 +2454,24 @@ export interface PricingHeroQ3Y24V2Storyblok {
   category3?: string;
   _uid: string;
   component: 'pricing-hero-Q3Y24-v2';
+  [k: string]: any;
+}
+
+export interface PricingHeroQ3Y24V3Storyblok {
+  header?: PricingTitleQ3Y24Storyblok[];
+  title?: string;
+  description?: RichtextStoryblok;
+  mau: PricingMauStoryblok[];
+  cards: (PricingCardsV2Storyblok | PricingCardsV3Storyblok)[];
+  button: ButtonLinkStoryblok[];
+  info_items?: PricingHeroInfoItemStoryblok[];
+  category1: string;
+  category2: string;
+  custom_label?: string;
+  category3?: string;
+  category4?: string;
+  _uid: string;
+  component: 'pricing-hero-Q3Y24-v3';
   [k: string]: any;
 }
 
@@ -2845,6 +2963,24 @@ export interface SeoFieldsStoryblok {
   [k: string]: any;
 }
 
+export interface ServiceCardStoryblok {
+  icon?: number | string;
+  title?: string;
+  description?: string;
+  cta_text?: string;
+  cta_link?: MultilinkStoryblok;
+  _uid: string;
+  component: 'service-card';
+  [k: string]: any;
+}
+
+export interface ServiceCardsStoryblok {
+  cards?: ServiceCardStoryblok[];
+  _uid: string;
+  component: 'service-cards';
+  [k: string]: any;
+}
+
 export interface SharedServiceStoryblok {
   cards?: SharedServiceCardStoryblok[];
   _uid: string;
@@ -2990,9 +3126,11 @@ export interface SyncedBlockContentStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -3001,6 +3139,7 @@ export interface SyncedBlockContentStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -3014,6 +3153,7 @@ export interface SyncedBlockContentStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3046,6 +3186,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -3054,6 +3195,7 @@ export interface SyncedBlockContentStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -3075,6 +3217,8 @@ export interface SyncedBlockContentStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -3088,6 +3232,7 @@ export interface SyncedBlockContentStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3152,9 +3297,11 @@ export interface TechnologyStoryblok {
     | ChatIntegrationStoryblok
     | ChatIntegrationsStoryblok
     | CometCreditsSectionStoryblok
+    | ComparisonTableStoryblok
     | ConnectedStepStoryblok
     | ConnectedStepsStoryblok
     | CoreFeaturesPricingSectionStoryblok
+    | CtaBlockWithImageStoryblok
     | CustomersHeroStoryblok
     | CustomersHeroAnimatedStoryblok
     | CustomerStatsStoryblok
@@ -3163,6 +3310,7 @@ export interface TechnologyStoryblok {
     | CustomerStoryCardStoryblok
     | DevelopersSectionStoryblok
     | DirectorySectionStoryblok
+    | DoneForYouCardStoryblok
     | DoublePanelSectionStoryblok
     | EmptyspaceStoryblok
     | FaqSectionStoryblok
@@ -3176,6 +3324,7 @@ export interface TechnologyStoryblok {
     | HeaderAndListSectionStoryblok
     | HeroFormStoryblok
     | HeroFormV2Storyblok
+    | HomeBannerV3Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3208,6 +3357,7 @@ export interface TechnologyStoryblok {
     | PricingBetaHeroStoryblok
     | PricingCardsStoryblok
     | PricingCardsV2Storyblok
+    | PricingCardsV3Storyblok
     | PricingClientsStoryblok
     | PricingComparisonStoryblok
     | PricingHeroStoryblok
@@ -3216,6 +3366,7 @@ export interface TechnologyStoryblok {
     | PricingHeroQ3Y24CardStoryblok
     | PricingHeroQ3Y24CardV1Storyblok
     | PricingHeroQ3Y24V2Storyblok
+    | PricingHeroQ3Y24V3Storyblok
     | PricingHeroRevampStoryblok
     | PricingPayAsYouGoHighlightsStoryblok
     | PricingPlanGrowSegmentStoryblok
@@ -3237,6 +3388,8 @@ export interface TechnologyStoryblok {
     | ResourcesHeroStoryblok
     | ResourcesHeroV2Storyblok
     | RichTextSectionStoryblok
+    | ServiceCardStoryblok
+    | ServiceCardsStoryblok
     | SharedServiceCardStoryblok
     | SidebarSlotStoryblok
     | SideStaticBannerStoryblok
@@ -3250,6 +3403,7 @@ export interface TechnologyStoryblok {
     | TechnologyHeroStoryblok
     | TechnologyHeroCopyStoryblok
     | TemplatesSidebarStoryblok
+    | TestimonialsStoryblok
     | TestimonialSectionStoryblok
     | TitleBlockStoryblok
     | TitleBlockLeftStoryblok
@@ -3412,6 +3566,27 @@ export interface TestimonialBlockStoryblok {
   author_image?: AssetStoryblok;
   _uid: string;
   component: 'testimonial-block';
+  [k: string]: any;
+}
+
+export interface TestimonialBlockV2Storyblok {
+  testimonial: string;
+  author_name: string;
+  author_position: string;
+  author_company: string;
+  author_image?: AssetStoryblok;
+  company_logo?: AssetStoryblok;
+  _uid: string;
+  component: 'testimonial-block-v2';
+  [k: string]: any;
+}
+
+export interface TestimonialsStoryblok {
+  title?: string;
+  description?: string;
+  testimonial?: TestimonialBlockV2Storyblok[];
+  _uid: string;
+  component: 'testimonials';
   [k: string]: any;
 }
 
