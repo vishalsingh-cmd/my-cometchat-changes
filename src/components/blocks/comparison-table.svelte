@@ -30,9 +30,11 @@
 
           <div class=" hidden grid-cols-[1fr_1fr_1fr] gap-0 md:grid">
             <!-- Header Row -->
-            <div class="bg-[#0F0B1E] px-4 pb-6 pt-8 md:px-6 lg:px-[32px] lg:pb-[32px] lg:pt-[48px]">
+            <div
+              class="border border-gray-12/10 bg-[#0F0B1E] px-4 pb-6 pt-8 md:px-6 lg:px-[32px] lg:pb-[32px] lg:pt-[48px]"
+            >
               <p
-                class="text-lg font-[640px] leading-tighter text-gray-12 md:text-xl lg:text-[22px]"
+                class=" text-lg font-[640px] leading-tighter text-gray-12 md:text-xl lg:text-[22px]"
               >
                 Category
               </p>
@@ -43,7 +45,7 @@
                 class={`flex items-center justify-start border bg-[#0F0B1E] px-4 pb-6 pt-8 md:px-6 lg:px-[32px] lg:pb-[32px] lg:pt-[48px] ${
                   column.is_highlight
                     ? 'border-b-0 border-brand-9/80 bg-brand-9/[0.06]'
-                    : 'border-0'
+                    : 'border border-gray-12/10'
                 }`}
               >
                 {#if column.logo?.filename}
@@ -106,7 +108,7 @@
             {/if}
 
             <!-- Header row -->
-            <div class="bg-[#0F0B1E] px-4 py-6">
+            <div class="border border-gray-12/10 bg-[#0F0B1E] px-4 py-6">
               <p class="text-lg font-[640] text-gray-12">Category</p>
             </div>
 
