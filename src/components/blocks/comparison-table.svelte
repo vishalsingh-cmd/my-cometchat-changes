@@ -8,6 +8,7 @@
 
   // Get index of highlighted column
   $: highlightedColumnIndex = block.columns?.findIndex((col: any) => col.is_highlight) ?? -1;
+  $: firstColumn = block.columns?.[0];
 </script>
 
 {#if block}
@@ -18,7 +19,7 @@
           <!-- Shadow overlay for highlighted column -->
           {#if highlightedColumnIndex >= 0}
             <div
-              class="pointer-events-none absolute inset-y-0 z-10"
+              class="pointer-events-none absolute inset-y-0 z-10 hidden md:block"
               style="
                 left: {(highlightedColumnIndex + 1) * (100 / 3)}%;
                 width: {100 / 3}%;
@@ -27,7 +28,7 @@
             />
           {/if}
 
-          <div class="grid grid-cols-[1fr_1fr_1fr] gap-0">
+          <div class=" hidden grid-cols-[1fr_1fr_1fr] gap-0 md:grid">
             <!-- Header Row -->
             <div class="bg-[#0F0B1E] px-4 pb-6 pt-8 md:px-6 lg:px-[32px] lg:pb-[32px] lg:pt-[48px]">
               <p
@@ -64,7 +65,7 @@
             {#each block.categories ?? [] as category, index}
               <!-- Category Label -->
               <div
-                class="border border-gray-12/10 bg-transparent py-3 pl-4 md:py-4 md:pl-6 lg:py-[19px] lg:pl-[32px]"
+                class="flex items-center border border-gray-12/10 bg-transparent py-3 pl-4 md:py-4 md:pl-6 lg:py-[19px] lg:pl-[32px]"
               >
                 <p
                   class="text-base font-medium leading-snug tracking-[0.09px] text-gray-12 md:text-lg"
@@ -76,7 +77,7 @@
               <!-- Column Data -->
               {#each block.columns ?? [] as column}
                 <div
-                  class={`flex items-center border px-4 pt-3 md:px-6 md:pt-4 lg:px-[32px] lg:py-[16px] ${
+                  class={`flex items-center border px-4 py-5 md:px-6 md:pt-4 lg:px-[32px] lg:py-[16px] ${
                     column.is_highlight
                       ? `border-x-brand-9/80 ${
                           block.categories.length - 1 === index
@@ -93,6 +94,62 @@
                   </p>
                 </div>
               {/each}
+            {/each}
+          </div>
+          <!-- MOBILE TABLE -->
+          <div class="relative grid grid-cols-[1fr_1fr] gap-0 md:hidden">
+            {#if firstColumn?.is_highlight}
+              <div
+                class="pointer-events-none absolute right-0 top-0 h-full w-1/2"
+                style="box-shadow: 0 0 32px rgba(105, 83, 214, 0.45);"
+              />
+            {/if}
+
+            <!-- Header row -->
+            <div class="bg-[#0F0B1E] px-4 py-6">
+              <p class="text-lg font-[640] text-gray-12">Category</p>
+            </div>
+
+            <div
+              class={`relative flex items-center justify-start border bg-[#0F0B1E] px-4 pb-6 pt-8 ${
+                firstColumn.is_highlight
+                  ? 'border-b-0 border-brand-9/80 bg-brand-9/[0.06] shadow-[0_0_24px_rgba(105,83,214,0.45)]'
+                  : 'border-0'
+              }`}
+            >
+              {#if firstColumn?.logo?.filename}
+                <img src={firstColumn.logo.filename} alt={firstColumn.name} class="h-6" />
+              {/if}
+              <p class="mt-1 text-lg font-semibold text-white">
+                {firstColumn?.name}
+              </p>
+            </div>
+
+            <!-- Data rows -->
+            {#each block.categories ?? [] as category, index}
+              <!-- Category -->
+              <div class="flex items-center border border-gray-12/10 px-4 py-4">
+                <p class="text-base font-medium text-gray-12">
+                  {category.text}
+                </p>
+              </div>
+
+              <!-- First column value -->
+              <div
+                class={`flex items-center border py-5 pl-5 pr-2 ${
+                  firstColumn.is_highlight
+                    ? `border-x-brand-9/80 ${
+                        block.categories.length - 1 === index
+                          ? 'border-b-brand-9/80'
+                          : 'border-b-gray-12/10'
+                      } border-t-gray-12/10 bg-brand-9/[0.06]`
+                    : 'border-gray-12/10'
+                }`}
+              >
+                <p class="text-base font-medium text-gray-11 opacity-75">
+                  {firstColumn?.rows?.[index]?.text || '-'}
+                </p>
+              </div>
             {/each}
           </div>
         </div>
