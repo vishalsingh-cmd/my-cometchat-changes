@@ -16,7 +16,7 @@
   import Image2 from './_assets/hero/image2-v2.png';
   import Image3 from './_assets/hero/image2.png';
   import Image4 from './_assets/hero/image4.png';
-  import mobile_screen from './_assets/hero/mobile_responsive.png';
+  // import mobile_screen from './_assets/hero/mobile_responsive.png';
   import mobile_planet from './_assets/hero/mobile_planet.png';
 
   export let block: HomeBannerV2Storyblok;
@@ -112,7 +112,7 @@
           alt="image4"
           class="relative -z-[1] mx-auto mt-8 hidden h-auto w-[170px] lg:absolute lg:right-[50px] lg:top-1/2 lg:mt-0 lg:block lg:w-[200px] lg:-translate-y-1/2"
         />
-        <img src={mobile_screen} alt="" class="block w-screen -translate-y-[20px] lg:hidden" />
+        <!-- <img src={mobile_screen} alt="" class="block w-screen -translate-y-[20px] lg:hidden" /> -->
         <img
           src={mobile_planet}
           alt="background"
