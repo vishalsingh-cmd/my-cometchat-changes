@@ -24,6 +24,7 @@
   import FaqSection from './faq-section.svelte';
   import FaqSectionV2 from './faq-section-v2.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
+  import FeatureShowcase from './feature-showcase.svelte';
   import FeaturesAtGlanceSection from './features-at-glance-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -182,6 +183,7 @@
     'featured-story-section': FeaturedStorySection,
     'features-at-glance-section': FeaturesAtGlanceSection,
     'features-section': FeaturesSection,
+    'feature-showcase': FeatureShowcase,
     'features-with-navbar-section': FeaturesWithNavbarSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,

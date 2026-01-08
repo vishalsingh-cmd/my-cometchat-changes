@@ -27,7 +27,7 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
             <div
-              class="relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8 lg:h-[640px]"
+              class="max-h-content relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8"
             >
               <div class="flex flex-col items-start gap-6">
                 <img src={iconMap[card.icon_key]} alt="Card Icon" class="h-[64px]" />
