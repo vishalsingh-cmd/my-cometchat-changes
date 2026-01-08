@@ -65,7 +65,7 @@
               <img
                 src={card.image.filename}
                 alt="Card Image"
-                class="max-h-[580px] w-full opacity-74"
+                class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
               />
             </div>
           {/each}
