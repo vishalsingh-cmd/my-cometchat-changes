@@ -51,6 +51,7 @@
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PathSelector from './path-selector.svelte';
+  import PathSelectorV2 from './path-selector-v2.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingClients from './pricing-clients.svelte';
   import PricingComparison from './pricing-comparison.svelte';
@@ -169,6 +170,7 @@
     'connected-step': ConnectedStep,
     'connected-steps': ConnectedSteps,
     'path-selectors': PathSelector,
+    'path-selectors-v2': PathSelectorV2,
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
