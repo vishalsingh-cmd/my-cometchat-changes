@@ -2,22 +2,22 @@
   import type { PathSelectorStoryblok } from '$src/types/bloks';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
-  import Link from '$components/buttons/link.svelte';
+  import Icon from '../icon/icon.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   export let block: PathSelectorStoryblok;
 
   // Static assets
-  let byobIcon = 'agent_lp_images/AI2_icon.png';
-  let cometchatIcon = 'agent_lp_images/AI_icon.png';
+  // let byobIcon = 'agent_lp_images/AI2_icon.png';
+  // let cometchatIcon = 'agent_lp_images/AI_icon.png';
   //   let cometchatImage = 'agent_lp_images/infra.png';
   //   let byobImage = '/agent_lp_images/Byob.png';
-  let bulletIcon = '/agent_lp_images/bullet_icon.png';
+  // let bulletIcon = '/agent_lp_images/bullet_icon.png';
 
-  const iconMap = {
-    byobIcon,
-    cometchatIcon
-  };
+  // const iconMap = {
+  //   byobIcon,
+  //   cometchatIcon
+  // };
 </script>
 
 {#if block}
@@ -27,12 +27,21 @@
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
             <div
-              class="max-h-content relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8"
+              class="max-h-content relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E]"
             >
-              <div class="flex flex-col items-start gap-6">
-                <img src={iconMap[card.icon_key]} alt="Card Icon" class="h-[64px]" />
+              <div class="flex flex-col items-start gap-6 p-8 pb-[40px]">
+                <div
+                  class="h-[48px] w-[48px] rounded-lg border border-gray-12/10 bg-gradient-to-b from-[#0A0914] to-white/15 p-[10px] md:h-[64px] md:w-[64px] lg:p-[14px]"
+                >
+                  <Icon
+                    icon={card.icon_key}
+                    class="h-[30px] bg-gradient-to-b from-[#3223dd] to-white opacity-40 md:h-[36px]"
+                  />
+                </div>
                 <div>
-                  <h3 class="mb-4 font-sans text-[24px] font-[640px] leading-tighter text-gray-12">
+                  <h3
+                    class="mb-4 font-sans text-[22px] font-semibold leading-tighter text-gray-12 md:text-[24px] md:font-[640px]"
+                  >
                     {card.title}
                   </h3>
                   <p class="text-lg font-normal leading-snug tracking-[0.09px] opacity-74">
