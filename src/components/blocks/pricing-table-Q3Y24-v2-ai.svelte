@@ -21,6 +21,12 @@
   let selectedOption = 2;
   let currentRowIndex = 1;
 
+  let tableheading = {
+    WebOnly: 'Web-Only',
+    Core: 'Core',
+    Plus: 'Plus'
+  };
+
   let label = 'Expand all Features';
   let icon = 'chevron-down';
   let data = [];
@@ -190,7 +196,7 @@
                   Most popular
                 </p>
               {/if}
-              <p class="text-xl/normal font-semibold tracking-wide">{plan}</p>
+              <p class="text-xl/normal font-semibold tracking-wide">{tableheading[plan]}</p>
               <p class="px-4 text-center text-lg/normal font-medium tracking-wide opacity-74">
                 {#if plan !== 'Build'}
                   {$pricingValuesai[plan].price}

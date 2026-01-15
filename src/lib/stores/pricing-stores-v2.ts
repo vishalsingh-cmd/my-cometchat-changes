@@ -17,13 +17,13 @@ export const pricingValuesVoice = writable<PricingValues>({
   Enterprise: { price: '$', isBilledAnnually: true }
 });
 export const pricingValuesai = writable<PricingValues>({
-  Chatbot: { price: '$0', isBilledAnnually: true },
-  Copilot: { price: '$', isBilledAnnually: true },
-  Enterprise: { price: '$', isBilledAnnually: true }
+  WebOnly: { price: '$0', isBilledAnnually: true },
+  Core: { price: '$', isBilledAnnually: true },
+  Plus: { price: '$', isBilledAnnually: true }
 });
 export const pricingValuesbyoa = writable<PricingValues>({
-  Build: { price: '$0', isBilledAnnually: true },
-  Deploy: { price: '$', isBilledAnnually: true }
+  Sandbox: { price: '$0', isBilledAnnually: true },
+  Prime: { price: '$', isBilledAnnually: true }
 });
 
 export const maus = writable<string[]>([]);
