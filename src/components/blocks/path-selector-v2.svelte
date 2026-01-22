@@ -26,28 +26,29 @@
       <section>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
-            <div
-              class="max-h-content relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E]"
-            >
-              <div class="flex flex-col items-start gap-6 p-8 pb-[40px]">
-                <div
-                  class="h-[48px] w-[48px] rounded-lg border border-gray-12/10 bg-gradient-to-b from-[#0A0914] to-white/15 p-[10px] md:h-[64px] md:w-[64px] lg:p-[14px]"
-                >
-                  <Icon
-                    icon={card.icon_key}
-                    class="h-[30px] bg-gradient-to-b from-[#3223dd] to-white opacity-40 md:h-[36px]"
-                  />
-                </div>
-                <div>
-                  <h3
-                    class="mb-4 font-sans text-[22px] font-semibold leading-tighter text-gray-12 md:text-[24px] md:font-[640px]"
+            <div class="gradient-border">
+              <div
+                class="gradient-border-inner max-h-content relative flex flex-col justify-between"
+              >
+                <div class="flex flex-col items-start gap-6 p-8 pb-[40px]">
+                  <div
+                    class="h-[48px] w-[48px] rounded-lg border border-gray-12/10 bg-gradient-to-b from-[#0A0914] to-white/15 p-[10px] md:h-[64px] md:w-[64px] lg:p-[14px]"
                   >
-                    {card.title}
-                  </h3>
-                  <p class="text-lg font-normal leading-snug tracking-[0.09px] opacity-74">
-                    {card.description}
-                  </p>
-                  <!-- <ul class="flex flex-col items-start gap-3 text-md text-gray-11">
+                    <Icon
+                      icon={card.icon_key}
+                      class="h-[30px] bg-gradient-to-b from-[#3223dd] to-white opacity-40 md:h-[36px]"
+                    />
+                  </div>
+                  <div>
+                    <h3
+                      class="mb-4 font-sans text-[22px] font-semibold leading-tighter text-gray-12 md:text-[22px] md:font-[640px]"
+                    >
+                      {card.title}
+                    </h3>
+                    <p class="text-lg font-normal leading-snug tracking-[0.09px] opacity-74">
+                      {card.description}
+                    </p>
+                    <!-- <ul class="flex flex-col items-start gap-3 text-md text-gray-11">
                     {#each card.bullets ?? [] as bullet}
                       <li class="flex items-start gap-x-2 self-stretch">
                         <img src={bulletIcon} alt="" />
@@ -59,23 +60,24 @@
                       </li>
                     {/each}
                   </ul> -->
-                  {#if card.link}
-                    <div class="mt-4">
-                      <a
-                        class="text-lg font-[640px] text-brand-9 hover:text-white"
-                        href={getAnchorFromCmsLink(card.link)}>Learn more</a
-                      >
-                    </div>
-                  {/if}
+                    {#if card.link}
+                      <div class="mt-4">
+                        <a
+                          class="text-lg font-[640px] text-brand-9 hover:text-white"
+                          href={getAnchorFromCmsLink(card.link)}>Learn more</a
+                        >
+                      </div>
+                    {/if}
+                  </div>
                 </div>
-              </div>
 
-              <!-- Image inside card -->
-              <img
-                src={card.image.filename}
-                alt="Card Image"
-                class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
-              />
+                <!-- Image inside card -->
+                <img
+                  src={card.image.filename}
+                  alt="Card Image"
+                  class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
+                />
+              </div>
             </div>
           {/each}
         </div>
@@ -83,3 +85,17 @@
     </Container>
   </Section>
 {/if}
+
+<style>
+  .gradient-border {
+    background: linear-gradient(180deg, #fafaff4d, #fafaff1a);
+    padding: 1px;
+    border-radius: 1.5rem;
+  }
+
+  .gradient-border-inner {
+    background: #0a0a0a;
+    border-radius: calc(1.5rem - 1px);
+    height: 100%;
+  }
+</style>
