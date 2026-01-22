@@ -41,7 +41,7 @@
                   {block.beforeTitle}
                 </div>
                 <div
-                  class="bg-gradient-purple bg-clip-text leading-tighter text-transparent lg:text-[58px]"
+                  class="bg-gradient-purple bg-clip-text pb-2 leading-tighter text-transparent lg:text-[58px]"
                 >
                   {block.afterTitle}
                 </div>
@@ -51,7 +51,9 @@
               <div class="flex flex-wrap justify-center gap-x-3 lg:hidden">
                 <!-- <div class="bg-gradient-purple bg-clip-text text-transparent lg:text-[58px]"> -->
                 {#each mobile_text.split(' ') as word, index (index)}
-                  <span class="bg-gradient-purple bg-clip-text text-transparent">{word}</span>
+                  <span class="bg-gradient-purple bg-clip-text leading-snug text-transparent"
+                    >{word}</span
+                  >
                 {/each}
               </div>
             </h1>
