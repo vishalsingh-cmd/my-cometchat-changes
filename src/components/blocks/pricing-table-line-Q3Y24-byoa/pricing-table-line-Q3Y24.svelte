@@ -21,8 +21,8 @@
       {/if}
     </td>
   {/if}
-  {#if block.build}
-    {@const { simpleText, label, tooltip, link } = separateText(block.build)}
+  {#if block.sandbox}
+    {@const { simpleText, label, tooltip, link } = separateText(block.sandbox)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />
       {#if label}
@@ -33,8 +33,8 @@
       {/if}</td
     >
   {/if}
-  {#if block.deploy}
-    {@const { simpleText, label, tooltip, link } = separateText(block.deploy)}
+  {#if block.prime}
+    {@const { simpleText, label, tooltip, link } = separateText(block.prime)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />

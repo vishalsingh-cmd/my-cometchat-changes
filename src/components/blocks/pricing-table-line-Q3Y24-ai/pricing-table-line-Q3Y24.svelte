@@ -21,8 +21,8 @@
       {/if}
     </td>
   {/if}
-  {#if block.chatbot}
-    {@const { simpleText, label, tooltip, link } = separateText(block.chatbot)}
+  {#if block.web_only}
+    {@const { simpleText, label, tooltip, link } = separateText(block.web_only)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />
       {#if label}
@@ -33,8 +33,8 @@
       {/if}</td
     >
   {/if}
-  {#if block.copilot}
-    {@const { simpleText, label, tooltip, link } = separateText(block.copilot)}
+  {#if block.core}
+    {@const { simpleText, label, tooltip, link } = separateText(block.core)}
     <td class={cn(className, 'max-w-[238px] border-r')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />
@@ -44,8 +44,8 @@
     >
   {/if}
 
-  {#if block.enterprise}
-    {@const { simpleText, label, tooltip, link } = separateText(block.enterprise)}
+  {#if block.plus}
+    {@const { simpleText, label, tooltip, link } = separateText(block.plus)}
     <td class={cn(className, 'max-w-[238px]')}>
       <SimpleText {simpleText} {link} />{#if label}
         <Label {label} />

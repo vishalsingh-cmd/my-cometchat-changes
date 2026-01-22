@@ -149,11 +149,11 @@
   let BYOAgentBuilderPricing: { price: string | number; isBilledAnnually?: boolean }[] = [];
 
   // raw numeric prices (per plan index). Make sure these arrays match each tab's number of plans.
-  const agentMonthlyNumbers = ['0', '99', '999']; // for tab 2 (3 cards)
-  const agentAnnualNumbers = ['0', '79.20', '799.20']; // example discounted annual numbers (same length)
+  const agentMonthlyNumbers = ['0', '123.75', '1248.75']; // for tab 2 (3 cards)
+  const agentAnnualNumbers = ['0', '99', '999']; // example discounted annual numbers (same length)
 
-  const BYOMonthlyNumbers = ['0', '1999']; // for tab 3 (3 cards)
-  const BYOAnnualNumbers = ['0', '1599.20']; // example discounted annual numbers (same length)
+  const BYOMonthlyNumbers = ['0', '2498.75']; // for tab 3 (3 cards)
+  const BYOAnnualNumbers = ['0', '1999']; // example discounted annual numbers (same length)
   $: if ($activateIndex === 2) {
     updateAgentPricing(agentBuildAnnually);
   }
