@@ -39,6 +39,7 @@
   import ImplementationListSection from './implementation-list-section.svelte';
   import IndustryCarousel from './industry-carousel.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
+  import Integration from './integrations.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
   import IpadIframe from './ipad-iframe.svelte';
   import MediaTabsSection from './media-tabs-section.svelte';
@@ -201,6 +202,7 @@
     'infrastructure-section': InfrastructureSection,
     'ipad-iframe': IpadIframe,
     'image-carousal': ImageCarousal,
+    integrations: Integration,
 
     'media-tabs-section': MediaTabsSection,
     'media-with-list-section': MediaWithListSection,
