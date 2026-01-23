@@ -14,8 +14,11 @@
 
   import Image1 from './_assets/hero/image1-v2.png';
   import Image2 from './_assets/hero/image2-v2.png';
-  import Image3 from './_assets/hero/image2.png';
-  import Image4 from './_assets/hero/image4.png';
+  // import Image3 from './_assets/hero/image2.png';
+  import Image4 from './_assets/hero/image4-v2.png';
+
+  import Image3_1 from './_assets/hero/image3-v2/1.png';
+  import Image3_2 from './_assets/hero/image3-v2/2.png';
   // import mobile_screen from './_assets/hero/mobile_responsive.png';
   import mobile_planet from './_assets/hero/mobile_planet.png';
 
@@ -105,9 +108,14 @@
           class="-z-[1] ml-9 hidden h-auto w-[170px] lg:absolute lg:bottom-40 lg:left-[22%] lg:inline-block lg:w-[225px] lg:-translate-x-16"
         />
         <img
-          src={Image3}
+          src={Image3_1}
           alt="image3"
-          class="absolute bottom-0 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[200px]"
+          class="absolute bottom-[145px] right-[20%] -z-[0] hidden h-auto w-[100px] translate-x-8 lg:block lg:w-[242px]"
+        />
+        <img
+          src={Image3_2}
+          alt="image3"
+          class="absolute bottom-40 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[190px]"
         />
         <img
           src={Image4}
