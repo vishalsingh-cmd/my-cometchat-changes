@@ -8,6 +8,8 @@
   import { onMount } from 'svelte';
 
   export let block: FeatureShowcaseStoryblok;
+  let cardRefs: HTMLDivElement[] = [];
+  let pendingScrollIndex: number | null = null;
 
   let selectedIndex = -1;
   const updateSelectedIndex = () => {
@@ -25,9 +27,16 @@
   function selectFeature(index: number) {
     selectedIndex = index;
   }
-
   function toggleMobileFeature(index: number) {
-    openMobileIndex = openMobileIndex === index ? null : index;
+    // If clicking the same card, just close it
+    if (openMobileIndex === index) {
+      openMobileIndex = null;
+      return;
+    }
+
+    // We are switching cards
+    pendingScrollIndex = index;
+    openMobileIndex = index;
   }
 
   $: selectedFeature = block.features?.[selectedIndex];
@@ -40,9 +49,10 @@
       <div class="flex flex-col gap-4 lg:hidden" use:storyblokEditable={block}>
         {#each block.features ?? [] as feature, index}
           <div
-            class={` ${
+            bind:this={cardRefs[index]}
+            class={`${
               openMobileIndex === index ? 'cardSelected' : 'card'
-            }  rounded-2xl border border-gray-12/10`}
+            } rounded-2xl border border-gray-12/10`}
           >
             <!-- Feature Title Button -->
             <button
@@ -108,7 +118,19 @@
 
             <!-- Expandable Content -->
             {#if openMobileIndex === index}
-              <div transition:slide={{ duration: 300 }} class="px-3 pb-4">
+              <div
+                transition:slide={{ duration: 300 }}
+                class="px-3 pb-4"
+                on:introend={() => {
+                  if (pendingScrollIndex === index) {
+                    cardRefs[index]?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                    pendingScrollIndex = null;
+                  }
+                }}
+              >
                 <!-- Image -->
                 {#if feature.mobileImage}
                   <div class="relative mb-4 mt-2 overflow-hidden rounded-lg">
