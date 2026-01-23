@@ -20,7 +20,7 @@
 
     return () => window.removeEventListener('resize', updateSelectedIndex);
   });
-  let openMobileIndex: number | null = null;
+  let openMobileIndex: number | null = 0;
 
   function selectFeature(index: number) {
     selectedIndex = index;

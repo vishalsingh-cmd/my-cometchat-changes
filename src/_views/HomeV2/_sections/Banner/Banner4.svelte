@@ -29,7 +29,7 @@
 
 {#if block}
   <div class="max-w-screen relative isolate mx-auto overflow-hidden">
-    <Section className="mt-[60px] relative isolate lg:h-[760px] max-w-[1440px] mx-auto ">
+    <Section className="mt-[80px] relative isolate lg:h-[660px] max-w-[1440px] mx-auto ">
       <Container>
         <div class=" mt-10 flex flex-col items-center gap-[60px] text-center">
           <div class="flex flex-col items-center gap-[28px]">
@@ -88,34 +88,34 @@
           alt="background"
           class={cn(
             [
-              'absolute inset-0 -z-[1]',
-              ' h-full w-full object-cover object-bottom',
+              'absolute inset-x-0 -top-12 -z-[1]',
+              ' pointer-events-none h-full w-full  object-bottom',
               '-translate-y-[50px]'
             ],
-            ['hidden lg:block lg:-translate-y-[20px]']
+            ['hidden lg:block lg:-translate-y-[0px]']
           )}
         />
 
         <img
           src={Image1}
           alt="image1"
-          class="top-0 -z-[1] hidden h-auto w-[170px] lg:absolute lg:left-[80px] lg:top-1/2 lg:block lg:w-[277px] lg:-translate-y-1/2"
+          class="top-0 -z-[1] hidden h-auto w-[170px] lg:absolute lg:left-[80px] lg:top-[400px] lg:block lg:w-[277px] lg:-translate-y-1/2"
         />
 
         <img
           src={Image2}
           alt="image2"
-          class="-z-[1] ml-9 hidden h-auto w-[170px] lg:absolute lg:bottom-40 lg:left-[22%] lg:inline-block lg:w-[225px] lg:-translate-x-16"
+          class="lg:bottom-18 -z-[1] ml-9 hidden h-auto w-[170px] lg:absolute lg:left-[22%] lg:inline-block lg:w-[225px] lg:-translate-x-16"
         />
         <img
           src={Image3_1}
           alt="image3"
-          class="absolute bottom-[145px] right-[20%] -z-[0] hidden h-auto w-[100px] translate-x-8 lg:block lg:w-[242px]"
+          class="absolute bottom-[10px] right-[20%] -z-[0] hidden h-auto w-[100px] translate-x-8 lg:block lg:w-[242px]"
         />
         <img
           src={Image3_2}
           alt="image3"
-          class="absolute bottom-40 right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[190px]"
+          class="absolute bottom-[20px] right-[20%] -z-[1] hidden h-auto w-[100px] lg:block lg:w-[190px]"
         />
         <img
           src={Image4}
@@ -179,6 +179,7 @@
         class="absolute bottom-0 left-0 z-10 h-[60px] w-full bg-gradient-to-b from-[#0A091400]/0 via-[#0A091400]/80 to-[#0A091400]/100"
       />
     </Section>
+
     <img
       src={InvertedPlanet}
       alt="background"

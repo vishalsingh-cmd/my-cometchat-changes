@@ -26,7 +26,7 @@
       <section>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
-            <div class="gradient-border">
+            <div class="gradient-border rounded-[24px] border border-gray-12/10">
               <div
                 class="gradient-border-inner max-h-content relative flex flex-col justify-between"
               >
@@ -87,8 +87,8 @@
 {/if}
 
 <style>
-  .gradient-border {
-    background: linear-gradient(180deg, #fafaff4d, #fafaff1a);
+  /* .gradient-border {
+    background: linear-gradient(80deg, #fafaff4d, #fafaff1a);
     padding: 1px;
     border-radius: 1.5rem;
   }
@@ -97,5 +97,5 @@
     background: #0a0a0a;
     border-radius: calc(1.5rem - 1px);
     height: 100%;
-  }
+  } */
 </style>
