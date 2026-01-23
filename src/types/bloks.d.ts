@@ -756,11 +756,20 @@ export interface FeaturesAtGlanceSectionStoryblok {
 }
 
 export interface FeaturesAutoScrollSectionStoryblok {
+  theme?: '' | 'light' | 'dark';
   title: TitleSectionStoryblok[];
   items: AccordionItemStoryblok[];
   media_side: '' | 'left' | 'center' | 'right';
   _uid: string;
   component: 'features-auto-scroll-section';
+  [k: string]: any;
+}
+
+export interface FeatureShowcaseStoryblok {
+  text_first?: boolean;
+  features?: ShowcaseItemStoryblok[];
+  _uid: string;
+  component: 'feature-showcase';
   [k: string]: any;
 }
 
@@ -773,6 +782,7 @@ export interface FeaturesListItemStoryblok {
 }
 
 export interface FeaturesListSectionStoryblok {
+  theme?: '' | 'dark' | 'light';
   header: TitleStoryblok[];
   items: FeaturesListItemStoryblok[];
   _uid: string;
@@ -1032,6 +1042,19 @@ export interface HomeBannerV3Storyblok {
   [k: string]: any;
 }
 
+export interface HomeBannerV4Storyblok {
+  beforeTitle?: string;
+  afterTitle?: string;
+  description?: string;
+  links?: ButtonLinkStoryblok[];
+  image1?: AssetStoryblok;
+  image2?: AssetStoryblok;
+  image3?: AssetStoryblok;
+  _uid: string;
+  component: 'home_banner_v4';
+  [k: string]: any;
+}
+
 export interface HomeClientStoryblok {
   client_img?: AssetStoryblok;
   _uid: string;
@@ -1281,6 +1304,7 @@ export interface IndustryStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -1288,6 +1312,7 @@ export interface IndustryStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1299,6 +1324,7 @@ export interface IndustryStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -1314,6 +1340,8 @@ export interface IndustryStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -1342,6 +1370,9 @@ export interface IndustryStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
@@ -1416,6 +1447,14 @@ export interface InfrastructureSectionStoryblok {
   items?: BulletPointStoryblok[];
   _uid: string;
   component: 'infrastructure-section';
+  [k: string]: any;
+}
+
+export interface IntegrationsStoryblok {
+  image?: AssetStoryblok;
+  mobileImage?: AssetStoryblok;
+  _uid: string;
+  component: 'integrations';
   [k: string]: any;
 }
 
@@ -1784,6 +1823,7 @@ export interface PageStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -1791,6 +1831,7 @@ export interface PageStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1802,6 +1843,7 @@ export interface PageStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -1817,6 +1859,8 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -1845,6 +1889,9 @@ export interface PageStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
@@ -1920,6 +1967,7 @@ export interface PageStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -1927,6 +1975,7 @@ export interface PageStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -1938,6 +1987,7 @@ export interface PageStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -1953,6 +2003,8 @@ export interface PageStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -1981,6 +2033,9 @@ export interface PageStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
@@ -2082,6 +2137,24 @@ export interface PathSelectorsStoryblok {
   [k: string]: any;
 }
 
+export interface PathSelectorsV2Storyblok {
+  cards?: PathSelectorV2Storyblok[];
+  _uid: string;
+  component: 'path-selectors-v2';
+  [k: string]: any;
+}
+
+export interface PathSelectorV2Storyblok {
+  title?: string;
+  description?: string;
+  link?: MultilinkStoryblok;
+  icon_key?: '' | 'byobIcon' | 'cometchatIcon';
+  image?: AssetStoryblok;
+  _uid: string;
+  component: 'path-selector-v2';
+  [k: string]: any;
+}
+
 export interface PlatformSectionStoryblok {
   theme?: '' | 'light' | 'dark';
   background?: '' | 'gray' | 'white';
@@ -2161,6 +2234,7 @@ export interface PricingStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -2168,6 +2242,7 @@ export interface PricingStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -2179,6 +2254,7 @@ export interface PricingStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -2194,6 +2270,8 @@ export interface PricingStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -2222,6 +2300,9 @@ export interface PricingStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
@@ -2688,6 +2769,34 @@ export interface PricingTableGroupQ3Y24Storyblok {
   [k: string]: any;
 }
 
+export interface PricingTableGroupQ3Y24AiStoryblok {
+  title?: string;
+  subgroup?: (PricingTableSubgroupQ3Y24Storyblok | PricingTableLineQ3Y24AiStoryblok)[];
+  _uid: string;
+  component: 'pricing-table-group-Q3Y24-ai';
+  [k: string]: any;
+}
+
+export interface PricingTableGroupQ3Y24ByoaStoryblok {
+  title?: string;
+  subgroup?: (PricingTableSubgroupQ3Y24Storyblok | PricingTableLineQ3Y24ByoaStoryblok)[];
+  _uid: string;
+  component: 'pricing-table-group-Q3Y24-byoa';
+  [k: string]: any;
+}
+
+export interface PricingTableGroupQ3Y24VoiceStoryblok {
+  title?: string;
+  subgroup?: (
+    | PricingTableSubgroupQ3Y24Storyblok
+    | PricingTableLineQ3Y24Storyblok
+    | PricingTableLineQ3Y24VoiceStoryblok
+  )[];
+  _uid: string;
+  component: 'pricing-table-group-Q3Y24-voice';
+  [k: string]: any;
+}
+
 export interface PricingTableGroupRevampStoryblok {
   title?: string;
   lines?: PricingTableGroupLineRevampStoryblok[];
@@ -2737,6 +2846,35 @@ export interface PricingTableLineQ3Y24Storyblok {
   [k: string]: any;
 }
 
+export interface PricingTableLineQ3Y24AiStoryblok {
+  name_and_description: string;
+  web_only?: string;
+  core?: string;
+  plus?: string;
+  _uid: string;
+  component: 'pricing-table-line-Q3Y24-ai';
+  [k: string]: any;
+}
+
+export interface PricingTableLineQ3Y24ByoaStoryblok {
+  name_and_description: string;
+  sandbox?: string;
+  prime?: string;
+  _uid: string;
+  component: 'pricing-table-line-Q3Y24-byoa';
+  [k: string]: any;
+}
+
+export interface PricingTableLineQ3Y24VoiceStoryblok {
+  name_and_description: string;
+  build: string;
+  payasyougo: string;
+  enterprise: string;
+  _uid: string;
+  component: 'pricing-table-line-Q3Y24-voice';
+  [k: string]: any;
+}
+
 export interface PricingTableQ3Y24Storyblok {
   title?: TitleSectionStoryblok[];
   collapsed_items_count?: number;
@@ -2760,6 +2898,33 @@ export interface PricingTableQ3Y24V2Storyblok {
   data: PricingTableGroupQ3Y24Storyblok[];
   _uid: string;
   component: 'pricing-table-Q3Y24-V2';
+  [k: string]: any;
+}
+
+export interface PricingTableQ3Y24V2AiStoryblok {
+  title?: TitleSectionStoryblok[];
+  collapsed_items_count?: number;
+  data: PricingTableGroupQ3Y24AiStoryblok[];
+  _uid: string;
+  component: 'pricing-table-Q3Y24-v2-ai';
+  [k: string]: any;
+}
+
+export interface PricingTableQ3Y24V2ByoaStoryblok {
+  title?: TitleSectionStoryblok[];
+  collapsed_items_count?: number;
+  data: PricingTableGroupQ3Y24ByoaStoryblok[];
+  _uid: string;
+  component: 'pricing-table-Q3Y24-v2-byoa';
+  [k: string]: any;
+}
+
+export interface PricingTableQ3Y24V2VoiceStoryblok {
+  title?: TitleSectionStoryblok[];
+  collapsed_items_count?: number;
+  data: PricingTableGroupQ3Y24VoiceStoryblok[];
+  _uid: string;
+  component: 'pricing-table-Q3Y24-v2-voice';
   [k: string]: any;
 }
 
@@ -2788,7 +2953,12 @@ export interface PricingTableSubgroupEnhancedStoryblok {
 
 export interface PricingTableSubgroupQ3Y24Storyblok {
   title: string;
-  lines: PricingTableLineQ3Y24Storyblok[];
+  lines: (
+    | PricingTableLineQ3Y24Storyblok
+    | PricingTableLineQ3Y24AiStoryblok
+    | PricingTableLineQ3Y24ByoaStoryblok
+    | PricingTableLineQ3Y24VoiceStoryblok
+  )[];
   _uid: string;
   component: 'pricing-table-subgroup-Q3Y24';
   [k: string]: any;
@@ -3000,6 +3170,16 @@ export interface SharedServiceCardStoryblok {
   [k: string]: any;
 }
 
+export interface ShowcaseItemStoryblok {
+  title?: string;
+  description?: string;
+  image?: AssetStoryblok;
+  mobileImage?: AssetStoryblok;
+  _uid: string;
+  component: 'showcase-item';
+  [k: string]: any;
+}
+
 export interface SidebarSlotStoryblok {
   _uid: string;
   component: 'sidebar-slot';
@@ -3147,6 +3327,7 @@ export interface SyncedBlockContentStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -3154,6 +3335,7 @@ export interface SyncedBlockContentStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3165,6 +3347,7 @@ export interface SyncedBlockContentStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -3180,6 +3363,8 @@ export interface SyncedBlockContentStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -3208,6 +3393,9 @@ export interface SyncedBlockContentStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok
@@ -3318,6 +3506,7 @@ export interface TechnologyStoryblok {
     | FeaturedStorySectionStoryblok
     | FeaturesAtGlanceSectionStoryblok
     | FeaturesAutoScrollSectionStoryblok
+    | FeatureShowcaseStoryblok
     | FeaturesListSectionStoryblok
     | FeaturesSectionStoryblok
     | FeaturesWithNavbarSectionStoryblok
@@ -3325,6 +3514,7 @@ export interface TechnologyStoryblok {
     | HeroFormStoryblok
     | HeroFormV2Storyblok
     | HomeBannerV3Storyblok
+    | HomeBannerV4Storyblok
     | HomepageHeroStoryblok
     | ImageCarousalStoryblok
     | ImageOnlyStoryblok
@@ -3336,6 +3526,7 @@ export interface TechnologyStoryblok {
     | IndustryCarouselStoryblok
     | IndustryCarouselItemStoryblok
     | InfrastructureSectionStoryblok
+    | IntegrationsStoryblok
     | IpadIframeStoryblok
     | LegalHeroStoryblok
     | ListSectionStoryblok
@@ -3351,6 +3542,8 @@ export interface TechnologyStoryblok {
     | NewsletterSectionStoryblok
     | PathSelectorStoryblok
     | PathSelectorsStoryblok
+    | PathSelectorsV2Storyblok
+    | PathSelectorV2Storyblok
     | PlatformSectionStoryblok
     | PopupStoryblok
     | PreFooterStoryblok
@@ -3379,6 +3572,9 @@ export interface TechnologyStoryblok {
     | PricingTableQ3Y24Storyblok
     | PricingTableQ3Y24V2Storyblok
     | PricingTableQ3Y24V2Storyblok
+    | PricingTableQ3Y24V2AiStoryblok
+    | PricingTableQ3Y24V2ByoaStoryblok
+    | PricingTableQ3Y24V2VoiceStoryblok
     | PricingTableRevampStoryblok
     | PricingTableSectionStoryblok
     | PricingTitleQ3Y24Storyblok

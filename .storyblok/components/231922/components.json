@@ -3432,31 +3432,52 @@
     "display_name": null,
     "description": null,
     "created_at": "2024-06-20T09:44:53.633Z",
-    "updated_at": "2024-07-04T11:31:59.835Z",
+    "updated_at": "2025-12-24T16:19:21.398Z",
     "id": 5954162,
     "schema": {
+      "theme": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "eb5319c8-4744-4532-8f56-eac6c01db4a4",
+            "name": "light",
+            "value": "light"
+          },
+          {
+            "_uid": "5df7f1d5-f2df-408f-b1be-f234a31f52b6",
+            "value": "dark",
+            "name": "dark"
+          }
+        ],
+        "default_value": "light",
+        "id": "ar9ppSbuTFGOywWfQFTHzg"
+      },
       "title": {
         "type": "bloks",
-        "pos": 0,
+        "pos": 1,
         "minimum": 1,
         "maximum": 1,
         "required": true,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["title-section"]
+        "component_whitelist": ["title-section"],
+        "id": "1XdkkvKfS6yj9o9dbUG5sA"
       },
       "items": {
         "type": "bloks",
-        "pos": 1,
+        "pos": 2,
         "minimum": 2,
         "required": true,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["accordion-item"]
+        "component_whitelist": ["accordion-item"],
+        "id": "Hqhs8632SBiJRHV1v87pzg"
       },
       "media_side": {
         "type": "option",
-        "pos": 2,
+        "pos": 3,
         "use_uuid": true,
         "options": [
           {
@@ -3475,7 +3496,8 @@
             "name": "Right"
           }
         ],
-        "required": true
+        "required": true,
+        "id": "RCXI6Q6pTMuGV6S8YPQEHw"
       }
     },
     "image": null,
@@ -3486,6 +3508,45 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "features-auto-scroll-section",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "feature-showcase",
+    "display_name": null,
+    "description": "Feature Showcase",
+    "created_at": "2026-01-08T11:05:27.188Z",
+    "updated_at": "2026-01-15T12:13:45.540Z",
+    "id": 131812258567683,
+    "schema": {
+      "text_first": {
+        "type": "boolean",
+        "pos": 0,
+        "id": "VFmJW5VtSMS2YwFHwAsqhQ"
+      },
+      "features": {
+        "type": "bloks",
+        "pos": 1,
+        "id": "A6mXqsd0Q42n2KRF0TeOhA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["showcase-item"],
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "feature-showcase",
     "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
@@ -3539,9 +3600,28 @@
     "display_name": null,
     "description": null,
     "created_at": "2023-06-28T09:16:05.392Z",
-    "updated_at": "2024-06-16T14:04:45.244Z",
+    "updated_at": "2025-12-24T16:30:25.192Z",
     "id": 4188935,
     "schema": {
+      "theme": {
+        "type": "option",
+        "pos": 0,
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "178022ae-1caa-4124-8810-f00c7b61bc67",
+            "name": "dark",
+            "value": "dark"
+          },
+          {
+            "_uid": "52c1b2d8-61fa-4cce-abff-d878b397434f",
+            "value": "light",
+            "name": "light"
+          }
+        ],
+        "default_value": "light",
+        "id": "yNoHrYL4RY6lm-d7ipwmWQ"
+      },
       "header": {
         "type": "bloks",
         "required": true,
@@ -3549,14 +3629,18 @@
         "maximum": 1,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["title"]
+        "component_whitelist": ["title"],
+        "pos": 1,
+        "id": "6algPzyrRE2SB_F8qoH7Wg"
       },
       "items": {
         "type": "bloks",
         "required": true,
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["features-list-item"]
+        "component_whitelist": ["features-list-item"],
+        "pos": 2,
+        "id": "WZKZGBFkRCmoC8ln_LRtkQ"
       }
     },
     "image": "//a.storyblok.com/f/231922/x/7f46a3ae79/screenshot-2023-06-30-at-17-09-49.png",
@@ -5102,6 +5186,72 @@
     "metadata": {}
   },
   {
+    "name": "home_banner_v4",
+    "display_name": "Home Banner v4",
+    "description": null,
+    "created_at": "2025-12-30T11:19:14.783Z",
+    "updated_at": "2025-12-30T12:05:20.032Z",
+    "id": 128630598795315,
+    "schema": {
+      "beforeTitle": {
+        "type": "text",
+        "pos": 0,
+        "id": "Uoc9h3B7TVSGIXjC7zcmVQ"
+      },
+      "afterTitle": {
+        "type": "text",
+        "pos": 2,
+        "id": "7w0zVzPYQEawBMJyngiLCw"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 3,
+        "id": "_xD34x44SBydDRsmnhk07A"
+      },
+      "links": {
+        "type": "bloks",
+        "pos": 4,
+        "id": "SMHE8wPuTP-HTbY1D04LEA",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["button-link"],
+        "minimum": 0,
+        "maximum": 2,
+        "display_name": "Links"
+      },
+      "image1": {
+        "type": "asset",
+        "pos": 4,
+        "id": "PHrZAh2qRhmjPFQdB2pKAg"
+      },
+      "image2": {
+        "type": "asset",
+        "pos": 5,
+        "id": "vkiXsdByS6SMUdZHaWELJQ"
+      },
+      "image3": {
+        "type": "asset",
+        "pos": 6,
+        "id": "wPU6QeozSPugfne4R8gBrQ"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "Home Banner v4",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "home_client",
     "display_name": null,
     "description": null,
@@ -6441,6 +6591,41 @@
     "all_presets": [],
     "preset_id": null,
     "real_name": "infrastructure-section",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "integrations",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-22T17:45:49.741Z",
+    "updated_at": "2026-01-22T17:51:25.896Z",
+    "id": 136865176546444,
+    "schema": {
+      "image": {
+        "type": "asset",
+        "pos": 0,
+        "id": "I1sWPwmvTkiKnZGxR6ojLg"
+      },
+      "mobileImage": {
+        "type": "asset",
+        "pos": 1,
+        "id": "-2I02OirTNSLyhiRFGXd5Q"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "integrations",
     "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
     "color": null,
     "icon": null,
@@ -8607,6 +8792,105 @@
     "metadata": {}
   },
   {
+    "name": "path-selectors-v2",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-08T10:27:34.967Z",
+    "updated_at": "2026-01-08T10:37:02.933Z",
+    "id": 131802951550108,
+    "schema": {
+      "cards": {
+        "type": "bloks",
+        "pos": 0,
+        "id": "RtrB-bh4RiyAjSsveE-M8Q",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["path-selector-v2"],
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "path-selectors-v2",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "path-selector-v2",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-08T10:34:50.830Z",
+    "updated_at": "2026-01-15T10:57:56.551Z",
+    "id": 131804736845007,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "ZUdjOOVbSZCQ2uxCSEi7YA"
+      },
+      "description": {
+        "type": "text",
+        "pos": 1,
+        "id": "uzR6iln1S-GcQtKRh-8nAQ"
+      },
+      "link": {
+        "type": "multilink",
+        "pos": 2,
+        "id": "y1tkGbzqTdCeA__1hwC7yA"
+      },
+      "icon_key": {
+        "type": "option",
+        "pos": 3,
+        "id": "sxK8uSygTz6sZrKtn1CPGw",
+        "options": [
+          {
+            "_uid": "22b6e7f2-5f3d-4aba-9c9e-e64d359c24e5",
+            "name": "byobIcon",
+            "value": "byobIcon"
+          },
+          {
+            "_uid": "120c2edf-c4b4-4602-8f90-c27a0038cebe",
+            "value": "cometchatIcon",
+            "name": "cometchatIcon"
+          }
+        ],
+        "source": "internal",
+        "datasource_slug": "icons",
+        "use_uuid": true
+      },
+      "image": {
+        "type": "asset",
+        "pos": 4,
+        "id": "QarWOYDtTZ-rUY8jezVjXA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "path-selector-v2",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "platform-section",
     "display_name": null,
     "description": null,
@@ -9742,7 +10026,7 @@
     "display_name": null,
     "description": null,
     "created_at": "2024-09-18T09:43:59.161Z",
-    "updated_at": "2025-12-15T04:20:40.279Z",
+    "updated_at": "2025-12-19T05:52:53.341Z",
     "id": 6308639,
     "schema": {
       "tag": {
@@ -9780,8 +10064,8 @@
       "cta": {
         "type": "bloks",
         "pos": 5,
-        "minimum": 2,
-        "maximum": 2,
+        "minimum": 1,
+        "maximum": 1,
         "required": true,
         "restrict_type": "",
         "restrict_components": true,
@@ -11321,6 +11605,130 @@
     "metadata": {}
   },
   {
+    "name": "pricing-table-group-Q3Y24-ai",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T18:00:44.312Z",
+    "updated_at": "2025-12-16T18:01:53.171Z",
+    "id": 123774747919764,
+    "schema": {
+      "title": {
+        "type": "text",
+        "required": false,
+        "tooltip": true,
+        "description": "Don't add heading for Usage category since it is hardcoded.\nThe data for the first row MAU is also hard coded to dynamically reflext slider values.",
+        "id": "sHekTrOjRUqwGJrfpH-A3Q"
+      },
+      "subgroup": {
+        "type": "bloks",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["pricing-table-subgroup-Q3Y24", "pricing-table-line-Q3Y24-ai"],
+        "id": "sItxIg5zTrSPw7zSLOS33g",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-group-Q3Y24-ai",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-group-Q3Y24-byoa",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T18:23:37.235Z",
+    "updated_at": "2025-12-16T18:26:26.252Z",
+    "id": 123780371408361,
+    "schema": {
+      "title": {
+        "type": "text",
+        "required": false,
+        "tooltip": true,
+        "description": "Don't add heading for Usage category since it is hardcoded.\nThe data for the first row MAU is also hard coded to dynamically reflext slider values.",
+        "id": "sHekTrOjRUqwGJrfpH-A3Q"
+      },
+      "subgroup": {
+        "type": "bloks",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["pricing-table-subgroup-Q3Y24", "pricing-table-line-Q3Y24-byoa"],
+        "id": "sItxIg5zTrSPw7zSLOS33g",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-group-Q3Y24-byoa",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-group-Q3Y24-voice",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T14:46:32.972Z",
+    "updated_at": "2025-12-16T14:51:59.773Z",
+    "id": 123727024026000,
+    "schema": {
+      "title": {
+        "type": "text",
+        "required": false,
+        "tooltip": true,
+        "description": "Don't add heading for Usage category since it is hardcoded.\nThe data for the first row MAU is also hard coded to dynamically reflext slider values.",
+        "id": "sHekTrOjRUqwGJrfpH-A3Q"
+      },
+      "subgroup": {
+        "type": "bloks",
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": [
+          "pricing-table-subgroup-Q3Y24",
+          "pricing-table-line-Q3Y24",
+          "pricing-table-line-Q3Y24-voice"
+        ],
+        "id": "sItxIg5zTrSPw7zSLOS33g",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-group-Q3Y24-voice",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "pricing-table-group-revamp",
     "display_name": null,
     "description": null,
@@ -11592,6 +12000,215 @@
     "metadata": {}
   },
   {
+    "name": "pricing-table-line-Q3Y24-ai",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T17:53:14.420Z",
+    "updated_at": "2026-01-22T16:06:09.969Z",
+    "id": 123772905162094,
+    "schema": {
+      "name_and_description": {
+        "type": "text",
+        "pos": 0,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "link", "italic", "underline", "color"],
+        "required": true,
+        "key": "name",
+        "description": "{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\n\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "tooltip": true,
+        "id": "95f5drppT7CgyQiWK1y1ow"
+      },
+      "web_only": {
+        "type": "text",
+        "pos": 1,
+        "id": "3j7ftmhxT02-OcEmraogWQ",
+        "display_name": "Web Only"
+      },
+      "core": {
+        "type": "text",
+        "pos": 2,
+        "id": "eofDzwtiRROJMk3174dpUw"
+      },
+      "plus": {
+        "type": "text",
+        "pos": 3,
+        "id": "oFrLpAtXToGy0s3Fc4mr-A"
+      }
+    },
+    "image": null,
+    "preview_field": "name_and_description",
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-line-Q3Y24-ai",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-line-Q3Y24-byoa",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T18:24:11.966Z",
+    "updated_at": "2026-01-22T16:08:52.307Z",
+    "id": 123780513662442,
+    "schema": {
+      "name_and_description": {
+        "type": "text",
+        "pos": 0,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "link", "italic", "underline", "color"],
+        "required": true,
+        "key": "name",
+        "description": "{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\n\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "tooltip": true,
+        "id": "95f5drppT7CgyQiWK1y1ow"
+      },
+      "sandbox": {
+        "type": "text",
+        "pos": 1,
+        "id": "rlxEUpKrRha2re20fMCxHA"
+      },
+      "prime": {
+        "type": "text",
+        "pos": 2,
+        "id": "YgnhM51VR4atXTlGXHC2KQ",
+        "display_name": ""
+      }
+    },
+    "image": null,
+    "preview_field": "name_and_description",
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-line-Q3Y24-byoa",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-line-Q3Y24-voice",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T14:47:47.475Z",
+    "updated_at": "2025-12-18T08:29:56.073Z",
+    "id": 123727329186194,
+    "schema": {
+      "name_and_description": {
+        "type": "text",
+        "pos": 0,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "link", "italic", "underline", "color"],
+        "required": true,
+        "key": "name",
+        "description": "{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\n\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "tooltip": true,
+        "id": "95f5drppT7CgyQiWK1y1ow"
+      },
+      "build": {
+        "type": "text",
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "f6a7962f-db6f-44e1-9ac7-fd859fb43a33",
+            "name": "none",
+            "value": "none"
+          },
+          {
+            "_uid": "46ae7607-8e95-4590-a661-a1462c1fb619",
+            "value": "included",
+            "name": "included"
+          },
+          {
+            "_uid": "bc475188-6f75-4896-9a77-1cf6e0fe452e",
+            "value": "paid-add-on",
+            "name": "paid-add-on"
+          }
+        ],
+        "default_value": "yes",
+        "required": true,
+        "key": "build",
+        "pos": 1,
+        "exclude_empty_option": false,
+        "description": "yes : tick icon\nno : cross icon\naddon : add-on icon\n{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "tooltip": true,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "color", "italic", "link", "underline"],
+        "id": "yiR7pNKIQDG7Oa15brCOCg"
+      },
+      "payasyougo": {
+        "type": "text",
+        "use_uuid": true,
+        "options": [
+          {
+            "_uid": "dfbe88a8-b7cb-447c-ae71-eeb351636cd6",
+            "name": "none",
+            "value": "none"
+          },
+          {
+            "_uid": "49eb5e02-9d2f-44a2-9d4c-cd104109eeca",
+            "value": "included",
+            "name": "included"
+          },
+          {
+            "_uid": "f0c002cc-9a65-4055-b050-55d25ed864c1",
+            "value": "paid-add-on",
+            "name": "paid-add-on"
+          }
+        ],
+        "key": "basic",
+        "pos": 2,
+        "default_value": "yes",
+        "description": "yes : tick icon\nno : cross icon\naddon : add-on icon\n{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\n\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "required": true,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "color", "link", "italic", "underline"],
+        "tooltip": true,
+        "id": "_AzlXy8lRSW6WbL4Cv3weg",
+        "display_name": "Pay As You Go"
+      },
+      "enterprise": {
+        "type": "text",
+        "pos": 3,
+        "required": true,
+        "description": "yes : tick icon\nno : cross icon\naddon : add-on icon\n{ } : content written inside a curly braces is considered as tooltip\n[ ] : content written inside a box bracked is consdered as label\n\nHyperlink: <anchor|https://anchorExample.com.>\n\nNot using any of the above options will be considered as cutom text and custom text can be combined with [ ] as well  as {}",
+        "tooltip": true,
+        "customize_toolbar": true,
+        "toolbar": ["bold", "color", "italic", "link", "underline"],
+        "default_value": "yes",
+        "key": "enterprise",
+        "id": "H_B1Fcu3Q-6HEB3khEpJ2g"
+      }
+    },
+    "image": null,
+    "preview_field": "name_and_description",
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-line-Q3Y24-voice",
+    "component_group_uuid": "2e5c793c-f4ec-4438-a7cc-3bf05c0f8d53",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "pricing-table-Q3Y24",
     "display_name": null,
     "description": null,
@@ -11738,6 +12355,168 @@
     "metadata": {}
   },
   {
+    "name": "pricing-table-Q3Y24-v2-ai",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T17:50:20.489Z",
+    "updated_at": "2025-12-16T18:06:13.660Z",
+    "id": 123772192736620,
+    "schema": {
+      "title": {
+        "type": "bloks",
+        "pos": 0,
+        "minimum": 1,
+        "maximum": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["title-section"],
+        "id": "kuAhvT6uRyqCinsaqXBZmA"
+      },
+      "collapsed_items_count": {
+        "type": "number",
+        "pos": 1,
+        "description": "Number of items to be displayed when the table is collapsed",
+        "tooltip": true,
+        "default_value": "15",
+        "id": "BiyDmmczSoivRZlo6UxZqw"
+      },
+      "data": {
+        "type": "bloks",
+        "pos": 2,
+        "minimum": 1,
+        "required": true,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["pricing-table-group-Q3Y24-ai"],
+        "id": "g3VH5mBEQk-AmzUH4cG-8w",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-Q3Y24-v2-ai",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-Q3Y24-v2-byoa",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T18:20:26.948Z",
+    "updated_at": "2025-12-16T18:52:45.786Z",
+    "id": 123779591988678,
+    "schema": {
+      "title": {
+        "type": "bloks",
+        "pos": 0,
+        "minimum": 1,
+        "maximum": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["title-section"],
+        "id": "kuAhvT6uRyqCinsaqXBZmA"
+      },
+      "collapsed_items_count": {
+        "type": "number",
+        "pos": 1,
+        "description": "Number of items to be displayed when the table is collapsed",
+        "tooltip": true,
+        "default_value": "15",
+        "id": "BiyDmmczSoivRZlo6UxZqw"
+      },
+      "data": {
+        "type": "bloks",
+        "pos": 2,
+        "minimum": 1,
+        "required": true,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["pricing-table-group-Q3Y24-byoa"],
+        "id": "g3VH5mBEQk-AmzUH4cG-8w",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-Q3Y24-v2-byoa",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "pricing-table-Q3Y24-v2-voice",
+    "display_name": null,
+    "description": null,
+    "created_at": "2025-12-16T13:25:35.999Z",
+    "updated_at": "2025-12-16T14:57:19.842Z",
+    "id": 123707129856069,
+    "schema": {
+      "title": {
+        "type": "bloks",
+        "pos": 0,
+        "minimum": 1,
+        "maximum": 1,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["title-section"],
+        "id": "kuAhvT6uRyqCinsaqXBZmA"
+      },
+      "collapsed_items_count": {
+        "type": "number",
+        "pos": 1,
+        "description": "Number of items to be displayed when the table is collapsed",
+        "tooltip": true,
+        "default_value": "15",
+        "id": "BiyDmmczSoivRZlo6UxZqw"
+      },
+      "data": {
+        "type": "bloks",
+        "pos": 2,
+        "minimum": 1,
+        "required": true,
+        "restrict_type": "",
+        "restrict_components": true,
+        "component_whitelist": ["pricing-table-group-Q3Y24-voice"],
+        "id": "g3VH5mBEQk-AmzUH4cG-8w",
+        "component_denylist": []
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "pricing-table-Q3Y24-v2-voice",
+    "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
     "name": "pricing-table-revamp",
     "display_name": null,
     "description": null,
@@ -11853,21 +12632,29 @@
     "display_name": null,
     "description": null,
     "created_at": "2024-09-19T00:49:06.312Z",
-    "updated_at": "2024-09-19T02:53:47.897Z",
+    "updated_at": "2026-01-23T05:58:05.599Z",
     "id": 6311096,
     "schema": {
       "title": {
         "type": "text",
-        "required": true
+        "required": true,
+        "id": "9sFKe9qIRgCw-4wuSemmSA"
       },
       "lines": {
         "type": "bloks",
         "restrict_type": "",
         "restrict_components": true,
-        "component_whitelist": ["pricing-table-line-Q3Y24"],
+        "component_whitelist": [
+          "pricing-table-line-Q3Y24",
+          "pricing-table-line-Q3Y24-ai",
+          "pricing-table-line-Q3Y24-byoa",
+          "pricing-table-line-Q3Y24-voice"
+        ],
         "required": true,
         "display_name": "subgroup",
-        "tooltip": true
+        "tooltip": true,
+        "component_denylist": [],
+        "id": "I7kSOTSIQvqvc1IVivqKaA"
       }
     },
     "image": null,
@@ -12910,6 +13697,51 @@
     "preset_id": null,
     "real_name": "shared-service-card",
     "component_group_uuid": "618c5cae-6c2f-4ae7-8d59-af973d0efe85",
+    "color": null,
+    "icon": null,
+    "internal_tags_list": [],
+    "internal_tag_ids": [],
+    "content_type_asset_preview": null,
+    "metadata": {}
+  },
+  {
+    "name": "showcase-item",
+    "display_name": null,
+    "description": "",
+    "created_at": "2026-01-08T11:06:52.700Z",
+    "updated_at": "2026-01-22T17:36:40.023Z",
+    "id": 131812608824867,
+    "schema": {
+      "title": {
+        "type": "text",
+        "pos": 0,
+        "id": "m8jffwS6TDm0mAHBfZayFQ"
+      },
+      "description": {
+        "type": "textarea",
+        "pos": 1,
+        "id": "FOYBFTIFT2Gfy7B14F47Iw"
+      },
+      "image": {
+        "type": "asset",
+        "pos": 2,
+        "id": "I7rUpThfR7mzmZB-AVzpeA"
+      },
+      "mobileImage": {
+        "type": "asset",
+        "pos": 3,
+        "id": "_gprJh7bRsyLchp156W6vA"
+      }
+    },
+    "image": null,
+    "preview_field": null,
+    "is_root": false,
+    "preview_tmpl": null,
+    "is_nestable": true,
+    "all_presets": [],
+    "preset_id": null,
+    "real_name": "showcase-item",
+    "component_group_uuid": null,
     "color": null,
     "icon": null,
     "internal_tags_list": [],

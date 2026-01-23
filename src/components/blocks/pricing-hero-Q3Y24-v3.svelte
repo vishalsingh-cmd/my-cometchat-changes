@@ -28,7 +28,7 @@
   // import HeroFormV2Pricing from '$components/blocks/hero-form-pricing.svelte';
   import { onMount } from 'svelte';
   // import PricingPeriodToggle from '$components/pricing-period-toggle.svelte';
-  import PricingPeriodToggleV2 from '$components/pricing-period-toggle-v2.svelte';
+  // import PricingPeriodToggleV2 from '$components/pricing-period-toggle-v2.svelte';
   import PricingPeriodToggle2 from '../pricing-period-toggle2.svelte';
   import Button from '$components/buttons/button.svelte';
   import {

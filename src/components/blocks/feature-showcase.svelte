@@ -3,7 +3,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
-  import Icon from '$components/icon/icon.svelte';
+  // import Icon from '$components/icon/icon.svelte';
   import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
 
