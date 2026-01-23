@@ -178,7 +178,7 @@
             )}
           >
             {#if currentRowIndex === 1}
-              Usage
+              {''}
             {/if}
           </td>
           {#each Object.keys($pricingValuesai) as plan, index}
@@ -312,7 +312,7 @@
             class="mt-auto flex items-center border-b border-gray-4 bg-[#0F0B1E] py-[20px] pl-4 text-xl leading-[23.92px]"
           >
             {#if currentRowIndex === 1}
-              Usage
+              {''}
             {/if}
           </div>
         </div>

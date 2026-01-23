@@ -15,10 +15,12 @@
 
   let isBilledAnnually;
   $: isBilledAnnually = value?.isBilledAnnually ?? false;
+  console.log(value);
 </script>
 
 {#if block}
   {@const { name, description, credits, highlights, cta, custom_price, tag, custom_label } = block}
+
   <div class="glass-border relative h-full">
     <div
       class={cn(

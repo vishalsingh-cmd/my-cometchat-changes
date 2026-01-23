@@ -201,7 +201,7 @@
     const numbers = agentBuildAnnually ? agentAnnualNumbers : agentMonthlyNumbers;
 
     agentBuilderPricing = numbers.map((n) => ({
-      price: n === 0 ? 'Free' : `$${n}`,
+      price: n == 0 ? 'Pay-as-you-go' : `$${n}`,
       isBilledAnnually: agentBuildAnnually
     }));
   }
