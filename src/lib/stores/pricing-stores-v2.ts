@@ -11,6 +11,20 @@ export const pricingValues = writable<PricingValues>({
   Advanced: { price: '$', isBilledAnnually: true },
   Enterprise: { price: '$', isBilledAnnually: true }
 });
+export const pricingValuesVoice = writable<PricingValues>({
+  Build: { price: '$0', isBilledAnnually: true },
+  PayAsYouGo: { price: '$', isBilledAnnually: true },
+  Enterprise: { price: '$', isBilledAnnually: true }
+});
+export const pricingValuesai = writable<PricingValues>({
+  WebOnly: { price: '$0', isBilledAnnually: true },
+  Core: { price: '$', isBilledAnnually: true },
+  Plus: { price: '$', isBilledAnnually: true }
+});
+export const pricingValuesbyoa = writable<PricingValues>({
+  Sandbox: { price: '$0', isBilledAnnually: true },
+  Prime: { price: '$', isBilledAnnually: true }
+});
 
 export const maus = writable<string[]>([]);
 

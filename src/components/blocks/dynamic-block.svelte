@@ -24,6 +24,7 @@
   import FaqSection from './faq-section.svelte';
   import FaqSectionV2 from './faq-section-v2.svelte';
   import FeaturedStorySection from './featured-story-section.svelte';
+  import FeatureShowcase from './feature-showcase.svelte';
   import FeaturesAtGlanceSection from './features-at-glance-section.svelte';
   import FeaturesListSection from './features-list-section.svelte';
   import FeaturesSection from './features-section.svelte';
@@ -38,6 +39,7 @@
   import ImplementationListSection from './implementation-list-section.svelte';
   import IndustryCarousel from './industry-carousel.svelte';
   import InDepthAnalyticsSection from './in-depth-analytics-section.svelte';
+  import Integration from './integrations.svelte';
   import InfrastructureSection from './infrastructure-section.svelte';
   import IpadIframe from './ipad-iframe.svelte';
   import MediaTabsSection from './media-tabs-section.svelte';
@@ -51,6 +53,7 @@
   import NewsletterSection from './newsletter-section.svelte';
   import Page from './page.svelte';
   import PathSelector from './path-selector.svelte';
+  import PathSelectorV2 from './path-selector-v2.svelte';
   import PreFooter from './pre-footer.svelte';
   import PricingClients from './pricing-clients.svelte';
   import PricingComparison from './pricing-comparison.svelte';
@@ -94,6 +97,10 @@
   import PricingHeroQ3Y24V3 from './pricing-hero-Q3Y24-v3.svelte';
   import PricingTableQ3Y24 from './pricing-table-Q3Y24.svelte';
   import PricingTableQ3Y24V2 from './pricing-table-Q3Y24-v2.svelte';
+  import PricingTableQ3Y24V2Voice from './pricing-table-Q3Y24-v2-voice.svelte';
+  import PricingTableQ3Y24V2ai from './pricing-table-Q3Y24-v2-ai.svelte';
+  import PricingTableQ3Y24V2BYOA from './pricing-table-Q3Y24-v2-byoa.svelte';
+
   import ConnectedSteps from './connected-steps/connected-steps.svelte';
   import ConnectedStep from './connected-steps/connected-step.svelte';
   import MarketplaceBanner from './pages/marketplace/marketplace-banner.svelte';
@@ -106,6 +113,7 @@
   import Homev2Banner from '$src/_views/HomeV2/_sections/Banner/Banner.svelte';
   import Homev3Banner from '$src/_views/HomeV2/_sections/Banner/Banner2.svelte';
   import Homev4Banner from '$src/_views/HomeV2/_sections/Banner/Banner3.svelte';
+  import Homev5Banner from '$src/_views/HomeV2/_sections/Banner/Banner4.svelte';
   import FeatureTabs from '$src/_views/HomeV2/_sections/FeatureTabs/FeatureTabs.svelte';
   import CoreFeatures from './core-features.svelte';
   import SecureSection from './secure-section.svelte';
@@ -132,6 +140,7 @@
   import TemplatesPlatformSection from '$src/_views/Templates/_blocks/TemplatesPlatformSection.svelte';
   import RelatedTemplates from '$src/_views/Templates/_blocks/RelatedTemplates.svelte';
   import CtaBlockWithImage from './cta-block-with-image.svelte';
+
   export let block: SbBlokData;
   const map: Record<string, ComponentType> = {
     'core-features': CoreFeatures,
@@ -163,6 +172,7 @@
     'connected-step': ConnectedStep,
     'connected-steps': ConnectedSteps,
     'path-selectors': PathSelector,
+    'path-selectors-v2': PathSelectorV2,
     'developers-section': DevelopersSection,
     'directory-section': DirectorySection,
     'double-panel-section': DoublePanelSection,
@@ -174,6 +184,7 @@
     'featured-story-section': FeaturedStorySection,
     'features-at-glance-section': FeaturesAtGlanceSection,
     'features-section': FeaturesSection,
+    'feature-showcase': FeatureShowcase,
     'features-with-navbar-section': FeaturesWithNavbarSection,
     'features-list-section': FeaturesListSection,
     'header-and-list-section': HeaderAndListSection,
@@ -191,6 +202,7 @@
     'infrastructure-section': InfrastructureSection,
     'ipad-iframe': IpadIframe,
     'image-carousal': ImageCarousal,
+    integrations: Integration,
 
     'media-tabs-section': MediaTabsSection,
     'media-with-list-section': MediaWithListSection,
@@ -225,6 +237,9 @@
     'pricing-table-revamp': PricingTableRevamp,
     'pricing-table-Q3Y24': PricingTableQ3Y24,
     'pricing-table-Q3Y24-v2': PricingTableQ3Y24V2,
+    'pricing-table-Q3Y24-v2-voice': PricingTableQ3Y24V2Voice,
+    'pricing-table-Q3Y24-v2-ai': PricingTableQ3Y24V2ai,
+    'pricing-table-Q3Y24-v2-byoa': PricingTableQ3Y24V2BYOA,
     'resources-hero': ResourcesHero,
     'resources-hero-v2': ResourcesHeroV2,
     'related-stories-section': RelatedStoriesSection,
@@ -260,6 +275,7 @@
     home__banner: Homev2Banner,
     home_banner_v2: Homev3Banner,
     home_banner_v3: Homev4Banner,
+    home_banner_v4: Homev5Banner,
     home__video_tabs: FeatureTabs,
     home_clients: Clients,
     home_clients_v2: ClientsV2,

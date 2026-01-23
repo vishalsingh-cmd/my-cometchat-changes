@@ -13,6 +13,7 @@
   import { paragraph } from '$components/rich-text/rich-text-store';
 
   export let block: AccordianItemStoryblok[];
+  export let theme: 'light' | 'dark' = 'light';
   const dispatch = createEventDispatcher();
   let intervalId: ReturnType<typeof setInterval>;
   let activeIndex = 0;
@@ -75,7 +76,7 @@
   <section
     bind:this={observedElement}
     use:storyblokEditable={block}
-    data-theme="light"
+    data-theme={theme}
     class="overflow-hidden bg-gray-1"
   >
     <div class="relative flex w-full flex-col items-center lg:py-12">

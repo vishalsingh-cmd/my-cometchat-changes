@@ -1,6 +1,8 @@
 <script lang="ts">
   import { createEventDispatcher } from 'svelte';
-  // import { activateIndex } from '$lib/stores/pricing-stores-v2';
+
+  import { activateIndex } from '$lib/stores/pricing-stores-v2';
+  import { isBilledAnnualy } from '$lib/stores/pricing-stores-v2';
 
   const dispatch = createEventDispatcher();
 
@@ -9,13 +11,20 @@
   function togglePricing() {
     isYearly = !isYearly;
 
+    // UPDATE STORE
+    isBilledAnnualy.set(isYearly);
+
     // SEND VALUE TO PARENT
-    dispatch('change', { isYearly });
+    dispatch('change', { isAnnual: isYearly });
   }
+
+  $: dispatch('change1', $isBilledAnnualy);
 </script>
 
-<div class={`mb-[32px] ml-0 flex w-full items-center justify-center lg:ml-20 lg:justify-start `}>
-  <div class="inline-flex items-center gap-4 px-6 py-3">
+<div
+  class={`mb-[32px] ml-0 flex w-full max-w-xl items-center justify-center self-start lg:ml-20 lg:justify-start`}
+>
+  <div class="inline-flex items-center gap-4 px-6">
     <!-- Pay monthly -->
     <span
       class={`text-lg font-[640px] text-white transition-opacity duration-200  ${
@@ -40,7 +49,7 @@
     </button>
 
     <!-- Pay yearly -->
-    <div class="flex flex-col gap-3 lg:flex-row lg:gap-5">
+    <div class="flex flex-col gap-3 lg:flex-row">
       <span
         class={`text-lg font-[640px] text-white transition-opacity duration-200 ${
           isYearly ? 'opacity-100' : 'opacity-75'
