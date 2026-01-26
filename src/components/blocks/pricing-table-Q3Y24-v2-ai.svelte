@@ -199,18 +199,20 @@
               <p class="text-xl/normal font-semibold tracking-wide">{tableheading[plan]}</p>
               <p class="px-4 text-center text-lg/normal font-medium tracking-wide opacity-74">
                 {#if plan !== 'Build'}
-                  {$pricingValuesai[plan].price}
+                  {$pricingValuesai[plan].price === '$0'
+                    ? 'Pay-as-you-go'
+                    : $pricingValuesai[plan].price}
                 {:else}
                   Free Forever
                 {/if}
-                {#if $pricingValuesai[plan].price.startsWith('$') && plan !== 'Build'}
+                {#if $pricingValuesai[plan].price.startsWith('$') && plan !== 'WebOnly'}
                   <span class="-ml-[4px]">/month</span>
                 {/if}
               </p>
               <p class="text-md font-medium tracking-wide opacity-74">
                 {$isBilledAnnualy &&
                 $pricingValuesai[plan].price.startsWith('$') &&
-                plan !== 'Build'
+                plan !== 'WebOnly'
                   ? 'Billed annually'
                   : ''}
               </p>
