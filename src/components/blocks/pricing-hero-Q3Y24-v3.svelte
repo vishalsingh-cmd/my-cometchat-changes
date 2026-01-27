@@ -390,7 +390,7 @@
               </div>
               <!-- AI Agent Platform Label -->
               <div class="relative flex w-[532px] items-center justify-center">
-                <p class="text-[16px] font-semibold text-brand-9">AI Agents & Copilots</p>
+                <p class="text-[16px] font-semibold text-brand-9">AI Agent Platform</p>
                 <svg
                   class="absolute left-16 top-3"
                   xmlns="http://www.w3.org/2000/svg"
