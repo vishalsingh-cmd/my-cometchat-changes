@@ -159,10 +159,3 @@ The mapped component (`agents-hero.svelte`) receives the block data as props and
 
 - `npm run build` to create build the project
 - `npm run start` to run the build project
-
-## Deployment environments
-
-- We have a [staging environment](http://cometchat-web-staging.vercel.app/) that is bound to the `main` branch
-- We have a [production environment](http://cometchat-web-production.vercel.app/) that is deployed when new releases are published
-
-All the environments are deployed on [Vercel](https://vercel.com/)
