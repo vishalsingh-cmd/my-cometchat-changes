@@ -6,12 +6,17 @@
 
   import { cn } from '$lib/utils';
   import { onMount } from 'svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
   import Media from '$components/media.svelte';
 
   let containerRef: HTMLElement | null = null;
   export let block: SocialProofsStoryblok;
   const customers = block.customers as StoryblokStory<CustomerStoryblok>[];
   $: customersArray = [...customers];
+
+  // Helper to resolve customer logo with external URL support
+  const getResolvedCustomerLogo = (customer: StoryblokStory<CustomerStoryblok>) =>
+    getResolvedAsset(customer.content, 'logo');
 
   let initialScrollWidth = 0;
   let containerWidth = 0;
@@ -67,11 +72,14 @@
             {@const twoLinesArray = isOverflowing ? customersArray : customersLineArray}
             <div class="flex w-full justify-center gap-8 md:gap-14">
               {#each needsTwoLines ? twoLinesArray : customersArray as customer}
-                <Media
-                  imageTransformOptions={{ size: [0, 150] }}
-                  media={customer.content.logo}
-                  class="h-6 w-fit flex-shrink-0 opacity-54"
-                />
+                {@const resolvedLogo = getResolvedCustomerLogo(customer)}
+                {#if resolvedLogo}
+                  <Media
+                    imageTransformOptions={{ size: [0, 150] }}
+                    media={resolvedLogo}
+                    class="h-6 w-fit flex-shrink-0 opacity-54"
+                  />
+                {/if}
               {/each}
             </div>
           {/each}

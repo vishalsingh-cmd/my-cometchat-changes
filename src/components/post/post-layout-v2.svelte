@@ -13,6 +13,7 @@
 
   // import Share from './share.svelte';-
   import Media from '$components/media.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
   import Sidebar from '$components/post/sidebar.svelte';
   import PreFooter from '$components/blocks/pre-footer.svelte';
   import RichTextRendererV2 from '$components/rich-text-v2/rich-text-renderer.svelte';
@@ -137,16 +138,17 @@
           <!-- Author -->
           {#if block.content.author && isBlockTutorialOrBlogPostOrGuide}
             {@const author = typedAuthor(block.content.author)}
+            {@const resolvedAvatar = getResolvedAsset(author.content, 'avatar')}
             <div class="py-8 md:py-6">
               <div
                 class="flex flex-col gap-3 rounded-2xl border border-gray-1/[0.08] bg-gray-1/[0.04] p-4 backdrop-blur-[20px] md:p-5"
                 style="transform: translate3d(0, 0, 0);"
               >
                 <div class="flex items-center gap-3">
-                  {#if author.content.avatar}
+                  {#if resolvedAvatar}
                     <Media
                       imageTransformOptions={{ size: [100, 100] }}
-                      media={author.content.avatar}
+                      media={resolvedAvatar}
                       class="h-10 w-10 rounded-full"
                     />
                   {/if}

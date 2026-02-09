@@ -10,6 +10,7 @@
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
   import { paragraph } from '$components/rich-text/rich-text-store';
+  import { getImageSrc, getResolvedAsset } from '$lib/image-helper';
   export let block: TestimonialSectionStoryblok;
   let horizontalContainer: HTMLDivElement;
   let verticalContainer: HTMLDivElement;
@@ -85,16 +86,19 @@
         class="hidden flex-grow-0 gap-10 overflow-hidden md:flex"
       >
         {#each block.cards as card, i}
+          {@const resolvedCardImage = getResolvedAsset(card, 'image')}
           <div
             id={`testimonial-card-${i}`}
             class={'flex h-[382px] w-[800px] flex-none rounded-2xl border border-gray-5 bg-white' +
               (i == 0 ? '' : ' opacity-50 grayscale')}
           >
-            <Media media={card.image} class="w-[35%] rounded-l-2xl object-cover" />
+            <Media media={resolvedCardImage} class="w-[35%] rounded-l-2xl object-cover" />
             <div
               class="flex flex-col justify-between px-10 pb-10 pt-20"
-              style="background-image: url({card?.bg
-                ?.filename}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
+              style="background-image: url({getImageSrc(
+                card,
+                'bg'
+              )}); background-repeat: no-repeat; background-position:center; background-size: 100% 100%;"
             >
               {#if card.content}
                 {#if typeof card.content != 'string' && card?.content?.content}
@@ -133,12 +137,13 @@
       </div>
       <div bind:this={verticalContainer} class="flex flex-grow-0 gap-10 overflow-hidden md:hidden">
         {#each block.cards as card, i}
+          {@const resolvedCardImage = getResolvedAsset(card, 'image')}
           <div
             id={`testimonial-m-card-${i}`}
             class={'flex h-[442px] w-[330px] flex-none flex-col rounded-2xl border border-gray-5 bg-white' +
               (i == 0 ? '' : ' grayscale')}
           >
-            <Media media={card.image} class="h-[35%] w-full rounded-t-2xl object-cover" />
+            <Media media={resolvedCardImage} class="h-[35%] w-full rounded-t-2xl object-cover" />
             <div class="relative flex h-full flex-grow-0 flex-col p-3">
               {#if card.content}
                 {#if typeof card.content != 'string' && card?.content?.content}

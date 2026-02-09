@@ -3,6 +3,7 @@
 
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Divider from '$components/divider.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
@@ -24,6 +25,10 @@
     customer as StoryblokStory<CustomerStoryblok>;
   const typeAuthor = (author: string | StoryblokStory<AuthorStoryblok> | undefined) =>
     author as unknown as StoryblokStory<AuthorStoryblok>[];
+
+  // Helper to resolve story cover with external URL support
+  const getResolvedCover = (story: StoryblokStory<BlogPostStoryblok>) =>
+    getResolvedAsset(story.content, 'cover');
 </script>
 
 <div class="container mx-auto px-container xl:flex">
@@ -36,7 +41,7 @@
           {@const typedCustomer = typeCustomer(typedStory.content.customer)}
 
           <TopnavThumb
-            image={typedStory.content.cover}
+            image={getResolvedCover(typedStory)}
             href="/"
             title={typedStory.name}
             publishedAt={typedStory.published_at}
@@ -61,7 +66,7 @@
           {@const typedStory = typeStory(story)}
           {@const typedAuthor = typeAuthor(typedStory.content.author)}
           <TopnavThumb
-            image={typedStory.content.cover}
+            image={getResolvedCover(typedStory)}
             href="/"
             title={typedStory.name}
             publishedAt={typedStory.published_at}

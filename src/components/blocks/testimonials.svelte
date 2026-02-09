@@ -4,6 +4,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import { onMount, tick } from 'svelte';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: TestimonialsStoryblok;
 
@@ -185,9 +186,9 @@
 
                   <!-- Author Info -->
                   <div class="flex items-center gap-[16px] md:gap-[20px]">
-                    {#if testimonial.author_image?.filename}
+                    {#if getImageSrc(testimonial, 'author_image')}
                       <img
-                        src={testimonial.author_image.filename}
+                        src={getImageSrc(testimonial, 'author_image')}
                         alt={testimonial.author_name}
                         class="h-12 w-12 rounded-[8px] object-cover md:h-[64px] md:w-[64px]"
                       />
@@ -231,9 +232,9 @@
                   ? 'box-shadow: 0 0 40px 0 rgba(104, 82, 214, 0.3);'
                   : ''}
               >
-                {#if testimonial.company_logo?.filename}
+                {#if getImageSrc(testimonial, 'company_logo')}
                   <img
-                    src={testimonial.company_logo.filename}
+                    src={getImageSrc(testimonial, 'company_logo')}
                     alt="Company logo"
                     class={`h-[36px] w-auto max-w-full object-contain transition-all duration-500 ${
                       actualIndex === index

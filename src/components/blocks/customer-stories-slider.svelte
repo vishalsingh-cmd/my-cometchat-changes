@@ -5,6 +5,7 @@
   import Button from '$src/components/buttons/button.svelte';
   import Icon from '../icon/icon.svelte';
   import type { CustomerStoriesSliderStoryblok } from '$types/bloks';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: CustomerStoriesSliderStoryblok;
 
@@ -235,7 +236,7 @@
               <!-- Logo -->
               <div class="h-[40px] md:h-[60px]">
                 <img
-                  src={card?.customer_logo?.filename}
+                  src={getImageSrc(card, 'customer_logo')}
                   alt="customer_logo"
                   class="pointer-events-none h-full w-auto object-contain object-left"
                   draggable="false"

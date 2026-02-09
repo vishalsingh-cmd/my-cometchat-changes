@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Divider from '$components/divider.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
@@ -19,11 +20,11 @@
       <div class="flex flex-col items-start gap-8">
         {#each data.customer_stories as story}
           <TopnavThumb
-            image={story.image}
+            image={getResolvedAsset(story, 'image')}
             href={getAnchorFromCmsLink(story.link).href ?? ''}
             title={story.title}
-            publishedAt={story.date}
-            publishedBy={story.author}
+            publishedAt={story.date ?? null}
+            publishedBy={story.author ?? ''}
           />
         {/each}
         {#if data.customer_stories_link?.[0]}
@@ -42,11 +43,11 @@
       <div class="flex flex-col items-start gap-8">
         {#each data.blog_posts as story}
           <TopnavThumb
-            image={story.image}
+            image={getResolvedAsset(story, 'image')}
             href={getAnchorFromCmsLink(story.link).href ?? ''}
             title={story.title}
-            publishedAt={story.date}
-            publishedBy={story.author}
+            publishedAt={story.date ?? null}
+            publishedBy={story.author ?? ''}
           />
         {/each}
         {#if data.blog_link?.[0]}

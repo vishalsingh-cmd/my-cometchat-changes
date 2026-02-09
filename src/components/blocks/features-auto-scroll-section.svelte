@@ -2,6 +2,7 @@
   import type { FeaturesAutoScrollSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn } from '$lib/utils';
+  import { getResolvedAsset } from '$lib/image-helper';
   import Media from '$components/media.svelte';
   import AnimatedAccordionGroup from './animated-accordion-group.svelte';
   import TitleSection from './title-section.svelte';
@@ -12,6 +13,11 @@
   function handleItemSwitch(e: CustomEvent<number>) {
     activeIndex = e.detail;
   }
+
+  // Resolve media for active item with external URL support
+  $: resolvedMedia = block.items?.[activeIndex]
+    ? getResolvedAsset(block.items[activeIndex], 'media')
+    : undefined;
 </script>
 
 {#if block}
@@ -44,11 +50,13 @@
         )}
       >
         {#key activeIndex}
-          <Media
-            imageTransformOptions={{ size: [1200, 0] }}
-            media={block.items[activeIndex].media}
-            class="object-cover"
-          />
+          {#if resolvedMedia}
+            <Media
+              imageTransformOptions={{ size: [1200, 0] }}
+              media={resolvedMedia}
+              class="object-cover"
+            />
+          {/if}
         {/key}
       </div>
     </div>

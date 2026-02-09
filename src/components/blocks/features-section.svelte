@@ -1,14 +1,18 @@
 <script lang="ts">
   import { cn, getLabelInfo } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { FeaturesSectionStoryblok } from '$types/bloks';
+  import type { FeaturesSectionStoryblok, AssetStoryblok } from '$types/bloks';
 
   import Title from '$components/title.svelte';
   import Badge from '$components/badge.svelte';
   import Media from '$components/media.svelte';
 
   export let block: FeaturesSectionStoryblok;
+
+  // Resolve image for external URL support
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -22,8 +26,8 @@
       <div
         class="flex w-full items-center justify-center border-b border-gray-12/8 bg-gray-12/2 xl:max-w-[700px]"
       >
-        {#if block.image}
-          <Media media={block.image} imageTransformOptions={{ size: [1000, 0] }} />
+        {#if resolvedImage}
+          <Media media={resolvedImage} imageTransformOptions={{ size: [1000, 0] }} />
         {/if}
       </div>
       <div

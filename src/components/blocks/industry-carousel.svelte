@@ -65,6 +65,34 @@
       observer.unobserve(containerRef);
     }
   });
+  import { getResolvedAsset } from '$lib/image-helper';
+  import type { AssetStoryblok } from '$src/types/bloks';
+
+  // Helper to resolve image for a given index: checks item for external URL first, then block.images
+  function resolveCarouselImage(index: number) {
+    const item = block.items?.[index];
+    if (!item) return undefined;
+
+    // Check if item has external image configured (we pretend 'image' field exists on item for the helper,
+    // or just check the external fields directly if we want to be specific, but getResolvedAsset is cleaner if we assume the fields follow pattern)
+    // However, since 'image' asset is NOT on the item (it's in block.images), getResolvedAsset(item, 'image') would fall back to item.image which is undefined.
+    // So we need: check external on item -> if active, use it. Else use block.images[index].
+
+    // We can use getResolvedAsset if we pass a constructed object or if we use the lower level getImageSrc but we need to handle the fallback manually.
+
+    // Let's use getResolvedAsset logic manually or adapt it?
+    // Actually, if we use getResolvedAsset(item, 'image'), it looks for item.image_use_external_url and item.image_external_url.
+    // If those exist and are true, it returns the URL string (patched into an asset object if we use getResolvedAsset).
+    // If not, it returns item.image (which is undefined).
+
+    const resolvedFromItem = getResolvedAsset(item, 'image');
+    if (resolvedFromItem?.filename && resolvedFromItem.is_external_url) {
+      return resolvedFromItem.filename;
+    }
+
+    // Fallback to the main images array
+    return block.images?.[index]?.filename ?? '';
+  }
 </script>
 
 {#if block}
@@ -73,7 +101,7 @@
       <div class="flex items-start gap-6" bind:this={containerRef}>
         <!-- Image section -->
         <img
-          src={block.images?.[$activeIndex]?.filename ?? ''}
+          src={resolveCarouselImage($activeIndex)}
           alt={block.images?.[$activeIndex]?.alt ?? ''}
           class="hidden h-[580px] w-[752px] shrink-0 lg:block"
         />
@@ -102,7 +130,7 @@
                 <p class="text-xl font-medium text-gray-11">{item.subheading}</p>
               </div>
               <img
-                src={block.images?.[index]?.filename ?? ''}
+                src={resolveCarouselImage(index)}
                 alt={item.image_alt}
                 class="aspect-[153/118] h-[269px] w-[350px] shrink-0"
               />

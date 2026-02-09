@@ -5,6 +5,7 @@
 
   import { cn, getLabelInfo } from '$lib/utils';
   import { getImageAttributes } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Title from '$components/title.svelte';
   import Sticky from '$components/sticky.svelte';
@@ -130,8 +131,14 @@
                 {#each feature.sub_features as sub_feature, i}
                   <InfoItem item={sub_feature} class="col-start-1" />
 
-                  {#if feature.images[i]?.filename}
-                    {@const { src, alt } = getImageAttributes(feature.images[i], {
+                  {@const externalAsset = getResolvedAsset(sub_feature, 'image')}
+                  {@const effectiveImage =
+                    externalAsset?.filename && externalAsset.is_external_url
+                      ? externalAsset
+                      : feature.images[i]}
+
+                  {#if effectiveImage?.filename}
+                    {@const { src, alt } = getImageAttributes(effectiveImage, {
                       size: [512, 0]
                     })}
                     <div

@@ -27,5 +27,36 @@
       <stop offset="0.285" stop-color="#B1B1B4" />
       <stop offset="1" stop-color="#646465" />
     </linearGradient>
+
+    <linearGradient id="nav-feature-icon-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7F68F5" />
+      <stop offset="100%" stop-color="#6852D6" />
+    </linearGradient>
+    <linearGradient
+      id="nav-feature-icon-resources-purple-gradient"
+      x1="0%"
+      y1="0%"
+      x2="0%"
+      y2="100%"
+    >
+      <stop offset="0%" stop-color="#7F68F5" />
+      <stop offset="40%" stop-color="#6852D6" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#6852D6" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="nav-feature-icon-minimal-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAFAFF" />
+      <stop offset="50%" stop-color="#B1B1B4" />
+      <stop offset="100%" stop-color="#646465" />
+    </linearGradient>
+    <linearGradient id="nav-feature-icon-developer-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7F68F5" />
+      <stop offset="40%" stop-color="#6852D6" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#6852D6" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="nav-feature-icon-bottom-mobile-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FAFAFF" stop-opacity="0.5" />
+      <stop offset="28.5%" stop-color="#B1B1B4" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#646465" stop-opacity="0.5" />
+    </linearGradient>
   </defs>
 </svg>

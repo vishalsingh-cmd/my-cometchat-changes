@@ -20,6 +20,7 @@
   import Stars from '$components/stars.svelte';
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
   import Dropdown from '$components/dropdown.svelte';
   import GhostButton from '$components/buttons/ghost-button.svelte';
 
@@ -126,11 +127,11 @@
         >
           Learn more
         </GhostButton>
+        {@const resolvedCoverImage = getResolvedAsset(selectedIndustry.content, 'cover_image')}
         <div class="mt-10 flex w-full max-w-[1440px] justify-center">
-          <Media
-            imageTransformOptions={{ size: [900, 0] }}
-            media={selectedIndustry.content.cover_image}
-          />
+          {#if resolvedCoverImage}
+            <Media imageTransformOptions={{ size: [900, 0] }} media={resolvedCoverImage} />
+          {/if}
         </div>
       {/if}
       <div
@@ -208,14 +209,17 @@
           {/if}
         </div>
         {#each industries as _, i}
-          <Media
-            imageTransformOptions={{ size: [1800, 0] }}
-            media={industries[i].content.cover_image}
-            class={cn(
-              'mx-auto mt-16 hidden max-h-[500px] w-auto',
-              selectedIndustryIndex === i && 'block'
-            )}
-          />
+          {@const resolvedIndustryCover = getResolvedAsset(industries[i].content, 'cover_image')}
+          {#if resolvedIndustryCover}
+            <Media
+              imageTransformOptions={{ size: [1800, 0] }}
+              media={resolvedIndustryCover}
+              class={cn(
+                'mx-auto mt-16 hidden max-h-[500px] w-auto',
+                selectedIndustryIndex === i && 'block'
+              )}
+            />
+          {/if}
         {/each}
       {/if}
       <div

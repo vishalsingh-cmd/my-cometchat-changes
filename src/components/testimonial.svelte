@@ -1,9 +1,10 @@
 <script lang="ts">
-  import type { TestimonialStoryblok } from '$types/bloks';
+  import type { TestimonialStoryblok, AssetStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Media from './media.svelte';
   import Icon from './icon/icon.svelte';
@@ -13,6 +14,9 @@
   export let flipHorizontal: boolean;
 
   export let block: TestimonialStoryblok;
+
+  // Resolve avatar for external URL support
+  $: resolvedAvatar = getResolvedAsset(block, 'avatar') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -24,10 +28,10 @@
       $$restProps.class
     )}
   >
-    {#if block.avatar}
+    {#if resolvedAvatar}
       <Media
         imageTransformOptions={{ size: [200, 0] }}
-        media={block.avatar}
+        media={resolvedAvatar}
         class={cn('h-8 w-8 rounded-full md:h-12 md:w-12', flipHorizontal && 'self-end')}
       />
     {/if}

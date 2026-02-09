@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import { getImageSrc } from '$lib/image-helper';
   import type { AnimatedBannerBoxStoryblok } from '$src/types/bloks';
 
   export let animatedBoxes: AnimatedBannerBoxStoryblok[];
@@ -46,7 +47,7 @@
               'rounded-2xl'
             ])}
           >
-            <img src={item.icon.filename} alt={item.label} />
+            <img src={getImageSrc(item, 'icon')} alt={item.label} />
             <span class="bg-gradient-purple bg-clip-text leading-none text-transparent">
               {item.label}
             </span>

@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
+  import type { AuthorStoryblok, BlogPostStoryblok, AssetStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
   import { formatDateUSMedium } from '$lib/utils/dates';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
@@ -10,6 +11,9 @@
   export let block: BlogPostStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
+
+  // Resolve cover image for external URL support
+  $: resolvedCover = getResolvedAsset(block.content, 'cover') as AssetStoryblok | undefined;
 </script>
 
 <section
@@ -40,9 +44,9 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div class="h-full max-h-[656px] overflow-hidden rounded-3xl">
-          <Media media={block.content.cover} class="h-full max-h-[656px] w-full object-cover" />
+          <Media media={resolvedCover} class="h-full max-h-[656px] w-full object-cover" />
         </div>
       {/if}
     </div>
@@ -91,11 +95,11 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div
           class="border-px z-10 h-full max-h-[580px] min-h-[297px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
-          <Media media={block.content.cover} class="h-full max-h-[580px] w-full object-cover" />
+          <Media media={resolvedCover} class="h-full max-h-[580px] w-full object-cover" />
         </div>
       {/if}
     </div>

@@ -6,6 +6,7 @@ import type {
 } from '$types/bloks';
 
 import { formatDate } from '$lib/utils/dates';
+import { getResolvedAsset } from '$lib/image-helper';
 
 export const RESULTS_PER_PAGE = 12;
 
@@ -59,10 +60,7 @@ export const parseItem = (
   };
 
   return {
-    image:
-      item.content.cover !== undefined && item.content.cover.filename !== ''
-        ? item.content.cover
-        : undefined,
+    image: getResolvedAsset(item.content, 'cover'),
     title: item.name,
     tags: getTags(),
     link: item.full_slug as string,

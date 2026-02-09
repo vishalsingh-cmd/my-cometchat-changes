@@ -8,6 +8,7 @@
   import { type EmblaCarouselType } from 'embla-carousel';
   import type { RollerPointStoryblok } from '$types/bloks';
   import Media from '$src/components/media.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   const industryContext = getIndustryContect();
   const onEmblaInit = (event: CustomEvent<EmblaCarouselType>) => {
@@ -23,6 +24,7 @@
 <EmblaCarousal onInit={onEmblaInit} emblaOptions={{ watchDrag: false }}>
   <EmblaContainer>
     {#each industryPointBlocks as industryPointBlock}
+      {@const resolvedImage = getResolvedAsset(industryPointBlock, 'image')}
       <EmblaSlide className="flex-[0_0_100%] flex flex-col gap-5">
         <ul class={cn('flex flex-col gap-3')}>
           {#each industryPointBlock.points as point}
@@ -34,11 +36,13 @@
             </li>
           {/each}
         </ul>
-        <Media
-          class="h-auto w-full object-cover"
-          imageTransformOptions={{ size: [1200, 0] }}
-          media={industryPointBlock.image}
-        />
+        {#if resolvedImage}
+          <Media
+            class="h-auto w-full object-cover"
+            imageTransformOptions={{ size: [1200, 0] }}
+            media={resolvedImage}
+          />
+        {/if}
       </EmblaSlide>
     {/each}
   </EmblaContainer>

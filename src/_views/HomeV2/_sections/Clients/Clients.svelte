@@ -3,11 +3,12 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Button from '$src/components/buttons/button.svelte';
   import { cn } from '$src/lib/utils';
+  import { getImageSrc } from '$lib/image-helper';
   import emblaCarouselSvelte from 'embla-carousel-svelte';
   import AutoScroll from 'embla-carousel-auto-scroll';
   import { onMount, onDestroy } from 'svelte';
   import { browser } from '$app/environment';
-  import type { ClientsStoryblok } from '$src/types/bloks';
+  import type { HomeClientsStoryblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
 
   let emblaApi: any;
@@ -66,7 +67,8 @@
     }
   });
 
-  export let block: ClientsStoryblok;
+  export let block: HomeClientsStoryblok;
+  const cast = (val: any) => val;
 </script>
 
 <Section className="relative isolate group/clients overflow-hidden">
@@ -88,10 +90,15 @@
         )}
         data-scrollbar="hidden"
       >
-        {#if block}
-          {#each block.clients as data}
+        {#if block && block.clients}
+          {#each block.clients as client}
+            {@const data = cast(client)}
             <div class={cn('embla__slide mx-4 min-w-0 max-w-full flex-[0_0_auto]', '')}>
-              <img class="w-max" src={data.client_img.filename} alt={data.client_img.alt} />
+              <img
+                class="w-max"
+                src={getImageSrc(data, 'client_img')}
+                alt={data.client_img?.alt ?? ''}
+              />
             </div>
           {/each}
         {/if}

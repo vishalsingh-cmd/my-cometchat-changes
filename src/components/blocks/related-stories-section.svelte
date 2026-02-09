@@ -4,6 +4,7 @@
 
   import { getLabelInfo } from '$lib/utils';
   import { formatDate } from '$lib/utils/dates';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import type {
     AuthorStoryblok,
@@ -46,7 +47,7 @@
 
     return {
       title: typedItem.name,
-      image: typedItem.content.cover?.filename !== '' ? typedItem.content.cover : undefined,
+      image: getResolvedAsset(typedItem.content, 'cover'),
       tags: tags(),
       link: typedItem.full_slug,
       customer: typedCustomer ? typedCustomer.content.name : undefined,

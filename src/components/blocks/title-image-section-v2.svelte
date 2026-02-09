@@ -1,9 +1,13 @@
 <script lang="ts">
-  import type { TitleImageSectionV2Storyblok } from '$src/types/bloks';
+  import type { TitleImageSectionV2Storyblok, AssetStoryblok } from '$src/types/bloks';
+  import { getResolvedAsset } from '$lib/image-helper';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
 
   export let block: TitleImageSectionV2Storyblok;
+
+  // Resolve image for external URL support
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -28,10 +32,10 @@
           </div>
 
           <!-- Right: CMS-driven Image -->
-          {#if block.image?.filename}
+          {#if resolvedImage?.filename}
             <div>
               <img
-                src={block.image.filename}
+                src={resolvedImage.filename}
                 alt={'Agent feature visual'}
                 class="py-auto mx-auto w-full max-w-[600px]"
                 loading="lazy"

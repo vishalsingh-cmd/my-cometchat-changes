@@ -10,10 +10,14 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { HomepageHeroStoryblok } from '$types/bloks';
+  import type { HomepageHeroStoryblok, AssetStoryblok } from '$types/bloks';
 
   export let block: HomepageHeroStoryblok;
+
+  // Resolve illustration for external URL support
+  $: resolvedIllustration = getResolvedAsset(block, 'illustration') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -102,10 +106,10 @@
       >
         <img src={OrbitThin} alt="" />
       </div>
-      {#if block.illustration}
+      {#if resolvedIllustration}
         <Media
           imageTransformOptions={{ size: [1200, 0] }}
-          media={block.illustration}
+          media={resolvedIllustration}
           class="isolate z-10 w-full min-w-[454px] max-w-[796px] -translate-x-[10%] translate-y-[50px] sm:mx-auto sm:-translate-x-0 md:translate-y-0"
         />
       {/if}

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
-  import type { ChatAndMessagingHeroStoryblok } from '$types/bloks';
+  import { getResolvedAsset } from '$lib/image-helper';
+  import type { ChatAndMessagingHeroStoryblok, AssetStoryblok } from '$types/bloks';
 
   import Blurs from '$components/chat-and-messaging/hero/blurs.svelte';
   import Ellipse from '$components/chat-and-messaging/hero/assets/ellipse.svg';
@@ -13,6 +14,9 @@
   import Background from '$components/chat-and-messaging/hero/background.svelte';
 
   export let block: ChatAndMessagingHeroStoryblok;
+
+  // Resolve illustration for external URL support
+  $: resolvedIllustration = getResolvedAsset(block, 'illustration') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -34,10 +38,10 @@
         alt=""
         class="pointer-events-none absolute left-[calc(50%+300px)] top-[39px]"
       />
-      {#if block.illustration}
+      {#if resolvedIllustration}
         <Media
           imageTransformOptions={{ size: [1500, 0] }}
-          media={block.illustration}
+          media={resolvedIllustration}
           class="pointer-events-none absolute left-[calc(50%-400px)] top-[400px] max-w-[600px] md:left-[calc(50%-900px)] md:top-[300px] md:max-w-[1500px]"
         />
       {/if}

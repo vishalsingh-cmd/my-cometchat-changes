@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Badge from './badge.svelte';
   import Media from './media.svelte';
@@ -10,16 +11,19 @@
   export let customer: CustomerStoryblok | undefined = undefined;
   export let description: string | undefined = undefined;
   export let badgeSize: 'small' | 'medium' = 'medium';
+
+  // Resolve customer logo for external URL support
+  $: resolvedCustomerLogo = customer ? getResolvedAsset(customer, 'logo') : undefined;
 </script>
 
 <div
   class="group relative flex flex-col font-semibold text-gray-12 outline-none focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
 >
-  {#if customer}
+  {#if customer && resolvedCustomerLogo}
     <div class="absolute left-3 top-4 rounded-xl bg-gray-1 p-2 backdrop-blur-[50px]">
       <Media
         imageTransformOptions={{ size: [0, 200] }}
-        media={customer.logo}
+        media={resolvedCustomerLogo}
         class="h-3.5 w-full"
       />
     </div>

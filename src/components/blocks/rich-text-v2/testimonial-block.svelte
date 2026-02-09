@@ -1,10 +1,14 @@
 <script lang="ts">
   import Media from '$components/media.svelte';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { TestimonialBlockStoryblok } from '$types/bloks';
+  import type { TestimonialBlockStoryblok, AssetStoryblok } from '$types/bloks';
 
   export let block: TestimonialBlockStoryblok;
+
+  // Resolve author image for external URL support
+  $: resolvedAuthorImage = getResolvedAsset(block, 'author_image') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -19,10 +23,10 @@
         <p class="opacity-74">{block.author_position}, {block.author_company}</p>
       </div>
     </div>
-    {#if block.author_image}
+    {#if resolvedAuthorImage}
       <Media
         imageTransformOptions={{ size: [200, 0] }}
-        media={block.author_image}
+        media={resolvedAuthorImage}
         class="w-12 rounded-full"
       />
     {/if}

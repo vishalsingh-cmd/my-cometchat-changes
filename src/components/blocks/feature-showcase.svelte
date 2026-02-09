@@ -6,6 +6,7 @@
   // import Icon from '$components/icon/icon.svelte';
   import { slide } from 'svelte/transition';
   import { onMount } from 'svelte';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: FeatureShowcaseStoryblok;
   let cardRefs: HTMLDivElement[] = [];
@@ -135,7 +136,7 @@
                 {#if feature.mobileImage}
                   <div class="relative mb-4 mt-2 overflow-hidden rounded-lg">
                     <img
-                      src={feature.mobileImage.filename}
+                      src={getImageSrc(feature, 'mobileImage')}
                       alt={feature.title}
                       class="h-full w-full object-cover"
                     />
@@ -162,10 +163,10 @@
         >
           {#if selectedFeature}
             <!-- Image -->
-            {#if selectedFeature.image?.filename}
+            {#if getImageSrc(selectedFeature, 'image')}
               <div class="relative overflow-hidden rounded-lg" key={selectedIndex}>
                 <img
-                  src={selectedFeature.image.filename}
+                  src={getImageSrc(selectedFeature, 'image')}
                   alt={selectedFeature.title}
                   class="h-full w-full object-cover lg:min-h-[464px]"
                 />

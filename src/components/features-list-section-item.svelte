@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import type { FeaturesListSubItemStoryblok } from '$types/bloks';
 
@@ -51,9 +52,10 @@
         </div>
       {/if}
       {#if contentItem.illustration}
+        {@const resolvedIllustration = getResolvedAsset(contentItem, 'illustration')}
         <div class="flex h-full flex-col justify-end">
           <Media
-            media={contentItem.illustration}
+            media={resolvedIllustration}
             imageTransformOptions={{ size: [700, 0] }}
             class=" w-full max-w-[480px]"
           />

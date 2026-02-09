@@ -3,10 +3,11 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import type { CoreFeaturesStoryblok } from '$src/types/bloks';
   import Link from '../buttons/link.svelte';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
 
-  let activeImage = block?.features?.[0]?.image?.filename || '';
+  let activeImage = getImageSrc(block?.features?.[0], 'image');
   let nextImage = '';
   let isTransitioning = false;
 
@@ -75,7 +76,7 @@
               {#if block.features}
                 <div class="flex flex-col items-start gap-3 self-stretch">
                   {#each block.features ?? [] as feature, index}
-                    <div use:observeFeature={feature.image?.filename ?? ''}>
+                    <div use:observeFeature={getImageSrc(feature, 'image')}>
                       <div class="flex max-w-[548px] flex-col items-start gap-4 self-stretch">
                         <div class="flex flex-col items-start gap-3 self-stretch">
                           {#if feature.is_top}
@@ -166,7 +167,7 @@
                       </div>
 
                       <img
-                        src={feature.image?.filename}
+                        src={getImageSrc(feature, 'image')}
                         alt={feature.image?.alt}
                         class="mt-[32px] flex aspect-square shrink-0 lg:hidden"
                       />

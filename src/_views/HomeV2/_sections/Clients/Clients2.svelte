@@ -8,6 +8,7 @@
   //   import { onMount, onDestroy } from 'svelte';
   //   import { browser } from '$app/environment';
   import type { HomeClientsV2Storyblok } from '$src/types/bloks';
+  import { getImageSrc } from '$lib/image-helper';
   //   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import SecureDecCircle from '../Secure/_comp/SecureDecCircle.svelte';
 
@@ -138,7 +139,7 @@
                 {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
                   <img
                     class="h-10 object-contain px-3 grayscale"
-                    src={data?.client_img?.filename ?? ''}
+                    src={getImageSrc(data, 'client_img') ?? ''}
                     alt={data?.client_img?.alt ?? ''}
                   />
                 {/each}

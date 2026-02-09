@@ -1,6 +1,7 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import type {
     CustomerStoryStoryblok,
@@ -23,8 +24,8 @@
               tab.customer as StoryblokStory<CustomerStoryblok>;
 
             return {
-              logo: customer.content.logo,
-              image: tab.image
+              logo: getResolvedAsset(customer.content, 'logo'),
+              image: getResolvedAsset(tab, 'image')
             };
           })
           .filter((tab) => {

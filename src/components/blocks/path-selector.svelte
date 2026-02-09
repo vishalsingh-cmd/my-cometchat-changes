@@ -2,6 +2,7 @@
   import type { PathSelectorStoryblok } from '$src/types/bloks';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   export let block: PathSelectorStoryblok;
 
@@ -24,6 +25,7 @@
       <section>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
+            {@const resolvedCardImage = getResolvedAsset(card, 'image')}
             <div
               class="relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8 lg:h-[640px]"
             >
@@ -49,11 +51,13 @@
               </div>
 
               <!-- Image inside card -->
-              <img
-                src={card.image.filename}
-                alt="Card Image"
-                class="max-h-[300px] w-full opacity-74"
-              />
+              {#if resolvedCardImage?.filename}
+                <img
+                  src={resolvedCardImage.filename}
+                  alt="Card Image"
+                  class="max-h-[300px] w-full opacity-74"
+                />
+              {/if}
             </div>
           {/each}
         </div>

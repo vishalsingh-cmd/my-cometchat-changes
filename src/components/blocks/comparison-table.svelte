@@ -3,6 +3,7 @@
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: ComparisonTableStoryblok;
 
@@ -48,9 +49,9 @@
                     : 'border border-gray-12/10'
                 }`}
               >
-                {#if column.logo?.filename}
+                {#if getImageSrc(column, 'logo')}
                   <img
-                    src={column.logo.filename}
+                    src={getImageSrc(column, 'logo')}
                     alt={column.name}
                     class="h-6 md:h-7 lg:h-[30px]"
                   />
@@ -119,8 +120,8 @@
                   : 'border-0'
               }`}
             >
-              {#if firstColumn?.logo?.filename}
-                <img src={firstColumn.logo.filename} alt={firstColumn.name} class="h-6" />
+              {#if firstColumn && getImageSrc(firstColumn, 'logo')}
+                <img src={getImageSrc(firstColumn, 'logo')} alt={firstColumn.name} class="h-6" />
               {/if}
               <p class="mt-1 text-lg font-semibold text-white">
                 {firstColumn?.name}
@@ -139,9 +140,9 @@
               <!-- First column value -->
               <div
                 class={`flex items-center border py-5 pl-5 pr-2 ${
-                  firstColumn.is_highlight
+                  firstColumn?.is_highlight
                     ? `border-x-brand-9/80 ${
-                        block.categories.length - 1 === index
+                        (block.categories?.length ?? 0) - 1 === index
                           ? 'border-b-brand-9/80'
                           : 'border-b-gray-12/10'
                       } border-t-gray-12/10 bg-brand-9/[0.06]`

@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { TitleMediaSectionStoryblok } from '$types/bloks';
+  import type { TitleMediaSectionStoryblok, AssetStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn, getLabelInfo } from '$lib/utils';
   import { string } from '$lib/strings';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Badge from '$components/badge.svelte';
   import Icon from '$components/icon/icon.svelte';
@@ -12,6 +13,9 @@
   import { resolver } from '$components/rich-text/rich-text-renderer.svelte';
 
   export let block: TitleMediaSectionStoryblok;
+
+  // Resolve media for external URL support
+  $: resolvedMedia = getResolvedAsset(block, 'media') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -86,7 +90,7 @@
           </ul>
         {/if}
       </div>
-      {#if block.media}
+      {#if resolvedMedia}
         <div
           class={cn(
             'aspect-square h-full w-full flex-1 overflow-hidden lg:max-h-[640px]',
@@ -95,7 +99,7 @@
         >
           <Media
             imageTransformOptions={{ size: [1200, 0] }}
-            media={block.media}
+            media={resolvedMedia}
             class="object-cover"
           />
         </div>

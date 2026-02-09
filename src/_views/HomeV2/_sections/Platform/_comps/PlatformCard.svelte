@@ -3,7 +3,8 @@
   import { onMount } from 'svelte';
   import GhostButton from '$src/components/buttons/ghost-button.svelte';
   import Media from '$src/components/media.svelte';
-  import type { Platform_cardStoryblok } from '$src/types/bloks';
+  import { getImageSrc, getResolvedAsset } from '$lib/image-helper';
+  import type { Platform_cardStoryblok, AssetStoryblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   export let baseClassName = '';
   export let containerClassName = '';
@@ -76,6 +77,10 @@
   }
 
   export let block: Platform_cardStoryblok;
+
+  // Resolve images for external URL support
+  $: resolvedIcon = getResolvedAsset(block, 'icon') as AssetStoryblok | undefined;
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
 </script>
 
 <div
@@ -85,8 +90,10 @@
 >
   <div class={platformCard__container({ class: containerClassName })}>
     <div class={platformCard__info({ class: infoClassName })}>
-      <Media media={block.icon} />
-      <img src={block.icon.filename} alt={block.icon.alt} class="w-12 lg:w-16" />
+      {#if resolvedIcon}
+        <Media media={resolvedIcon} />
+      {/if}
+      <img src={getImageSrc(block, 'icon')} alt={block.icon?.alt ?? ''} class="w-12 lg:w-16" />
       <h3 class={platformCard__title({ class: titleClassName })}>{block.title}</h3>
       <p class={platformCard__des({ class: desClassName })}>
         {block.description}
@@ -101,7 +108,9 @@
     </div>
 
     <div class={platformCard__imageWrap({ class: imageWrapClassName })}>
-      <Media media={block.image} class={platformCard__image({ class: imageClassName })} />
+      {#if resolvedImage}
+        <Media media={resolvedImage} class={platformCard__image({ class: imageClassName })} />
+      {/if}
     </div>
   </div>
 

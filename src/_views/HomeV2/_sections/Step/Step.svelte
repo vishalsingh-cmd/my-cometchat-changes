@@ -9,6 +9,7 @@
   import StepCircle from './_comp/StepCircle.svelte';
   import StepContentImg from './_comp/StepContentImg.svelte';
   import StepContentWrap from './_comp/StepContentWrap.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
   import type { HomeImplementationStoryblok } from '$src/types/bloks';
 
   export let block: HomeImplementationStoryblok;
@@ -34,6 +35,7 @@
 
     <div class={cn(['mx-auto mt-10 flex max-w-[1086px] flex-col'], ['lg:mt-[88px]'])}>
       {#each block.steps as stepData, i}
+        {@const resolvedImage = getResolvedAsset(stepData, 'image')}
         <div
           class={cn(
             [
@@ -50,10 +52,12 @@
           <StepCircle position="topMiddle" className="hidden lg:block" />
           <StepCircle position="topRight" />
 
-          <StepContentImg
-            image={stepData.image}
-            className={cn([i != 1 && 'lg:order-1', 'pb-4 pt-6'], ['lg:flex-[50]'])}
-          />
+          {#if resolvedImage}
+            <StepContentImg
+              image={resolvedImage}
+              className={cn([i != 1 && 'lg:order-1', 'pb-4 pt-6'], ['lg:flex-[50]'])}
+            />
+          {/if}
           <StepContentWrap block={stepData} className={cn(['lg:flex-[50]'])} />
 
           {#if i === block.steps.length - 1}

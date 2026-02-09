@@ -2,6 +2,7 @@
   import type { CtaBlockWithImageStoryblok } from '$types/bloks';
   // import handsvg from '$components/pricing/assets/hand.svg';
   import Button from '../buttons/button.svelte';
+  import { getImageSrc } from '$lib/image-helper';
   export let block: CtaBlockWithImageStoryblok;
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -43,7 +44,7 @@
     <!-- Right Illustration -->
     <div class=" flex flex-1 shrink-0 items-center justify-center">
       <img
-        src={block?.image?.filename}
+        src={getImageSrc(block, 'image')}
         alt="icon"
         class="absolute bottom-0 right-0 aspect-auto h-[205px] lg:h-[250px]"
       />

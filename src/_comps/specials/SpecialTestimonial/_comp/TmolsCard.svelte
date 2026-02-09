@@ -3,8 +3,9 @@
   import QuoteIcon from '../_icons/QuoteIcon.svelte';
   import QuoteIconBg from '../_icons/QuoteIconBg.svelte';
   import ParahLates from '$src/_comps/typography/ParahLates.svelte';
-  import type { SpecialTestimonialStoryblok } from '$src/types/bloks';
+  import type { SpecialTestimonialStoryblok, AssetStoryblok } from '$src/types/bloks';
   import Media from '$src/components/media.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   export let className = '';
   const tmolsCard = tv({
@@ -12,20 +13,24 @@
   });
 
   export let block: SpecialTestimonialStoryblok;
+
+  // Make these reactive so they update when block changes
+  $: profileImg = (getResolvedAsset(block, 'profile_img') || {}) as AssetStoryblok;
+  $: brandImg = (getResolvedAsset(block, 'brand_img') || {}) as AssetStoryblok;
 </script>
 
 <div class={tmolsCard({ class: className })}>
   <div class="grid max-h-[120px] grid-cols-[_7fr_3fr] gap-3">
     <div class="flex flex-col justify-between gap-3">
       <div class="max-h-40">
-        <Media media={block.brand_img} />
+        <Media media={brandImg} />
       </div>
       <QuoteIcon />
     </div>
     <div
       class={cn(['relative h-[120px] w-[120px] overflow-hidden rounded-bl-[130px] bg-[#35353E]'])}
     >
-      <Media media={block.profile_img} />
+      <Media media={profileImg} />
     </div>
   </div>
 

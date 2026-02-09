@@ -1,14 +1,18 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn, getLabelInfo } from '$lib/utils';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { ImplementationSectionV2Storyblok } from '$types/bloks';
+  import type { ImplementationSectionV2Storyblok, AssetStoryblok } from '$types/bloks';
 
   import Title from '$components/title.svelte';
   import Panel from '$components/panel.svelte';
   import Media from '$components/media.svelte';
 
   export let block: ImplementationSectionV2Storyblok;
+
+  // Resolve illustration for external URL support
+  $: resolvedIllustration = getResolvedAsset(block, 'illustration') as AssetStoryblok | undefined;
 
   const leftItems = block.items.slice(0, block.items.length - 1);
   const rightItems = block.items.slice(block.items.length - 1);
@@ -45,7 +49,7 @@
           {#if rightItems[0]}
             <Panel item={rightItems[0]} class="px-container md:border-r-0 md:px-container" />
             <Media
-              media={block.illustration}
+              media={resolvedIllustration}
               class="-translate-x-10 scale-125 transform md:translate-x-0"
             />
           {/if}

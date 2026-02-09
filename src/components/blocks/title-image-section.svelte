@@ -1,8 +1,9 @@
 <script lang="ts">
-  import type { TitleImageSectionStoryblok } from '$types/bloks';
+  import type { TitleImageSectionStoryblok, AssetStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { cn, getLabelInfo } from '$lib/utils';
   import { string } from '$lib/strings';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Badge from '$components/badge.svelte';
   import Icon from '$components/icon/icon.svelte';
@@ -12,6 +13,9 @@
   import { paragraph } from '$components/rich-text/rich-text-store';
 
   export let block: TitleImageSectionStoryblok;
+
+  // Resolve image - uses external URL if toggle is ON and URL provided, otherwise falls back to Storyblok asset
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -86,7 +90,7 @@
           </ul>
         {/if}
       </div>
-      {#if block.image}
+      {#if resolvedImage}
         <div
           class={cn(
             'aspect-square h-full w-full flex-1 overflow-hidden lg:max-h-[640px]',
@@ -95,7 +99,7 @@
         >
           <Media
             imageTransformOptions={{ size: [1200, 0] }}
-            media={block.image}
+            media={resolvedImage}
             class="object-cover"
           />
         </div>

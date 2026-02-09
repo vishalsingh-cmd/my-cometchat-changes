@@ -8,6 +8,7 @@
   //   import { onMount, onDestroy } from 'svelte';
   //   import { browser } from '$app/environment';
   import type { HomeClientsV2Storyblok } from '$src/types/bloks';
+  import { getImageSrc } from '$lib/image-helper';
   //   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import SecureDecCircle from '../Secure/_comp/SecureDecCircle.svelte';
 
@@ -68,6 +69,7 @@
   // });
 
   export let block: HomeClientsV2Storyblok;
+  const cast = (val: any) => val;
 </script>
 
 <Section className="relative z-20 isolate group/clients overflow-visible">
@@ -135,10 +137,11 @@
             <!-- Marquee Track -->
             <div class="marquee-track flex items-center gap-8">
               {#if block}
-                {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
+                {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as client}
+                  {@const data = cast(client)}
                   <img
                     class="h-10 object-contain px-3 grayscale"
-                    src={data?.client_img?.filename ?? ''}
+                    src={getImageSrc(data, 'client_img')}
                     alt={data?.client_img?.alt ?? ''}
                   />
                 {/each}

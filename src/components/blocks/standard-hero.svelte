@@ -1,11 +1,12 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
 
-  import type { StandardHeroStoryblok } from '$types/bloks';
+  import type { StandardHeroStoryblok, AssetStoryblok } from '$types/bloks';
 
   import Badge from '$components/badge.svelte';
   import Button from '$components/buttons/button.svelte';
@@ -17,22 +18,18 @@
   import LeftTitleNoImageBackground from '$components/standard-hero/left-title-no-image-background.svelte';
 
   export let block: StandardHeroStoryblok;
+
+  // Resolve image for external URL support
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
+  $: hasImage = resolvedImage?.filename && resolvedImage.filename !== '';
 </script>
 
 {#if block}
   <section
     class={cn(
       'relative overflow-hidden bg-gray-1 pb-[240px] pt-[100px] text-gray-12 md:pb-20 md:pt-[148px]',
-      block.image &&
-        block.image.filename !== '' &&
-        block.image.filename !== null &&
-        block.header_alignment === 'left' &&
-        'h-[707px] md:h-[1148px]',
-      block.image &&
-        block.image.filename !== '' &&
-        block.image.filename !== null &&
-        block.header_alignment === 'center' &&
-        'h-[584px] md:h-[1116px]'
+      hasImage && block.header_alignment === 'left' && 'h-[707px] md:h-[1148px]',
+      hasImage && block.header_alignment === 'center' && 'h-[584px] md:h-[1116px]'
     )}
     use:storyblokEditable={block}
   >
@@ -71,7 +68,7 @@
         {/if}
       </div>
 
-      {#if block.image && block.image.filename !== '' && block.image.filename !== null}
+      {#if hasImage}
         <div
           class={cn(
             'absolute isolate z-10 w-full',
@@ -81,28 +78,28 @@
               'bottom-5 w-[300px] max-w-[1100px] md:-bottom-5 md:-left-[200px] md:w-[1400px] lg:left-auto lg:w-full'
           )}
         >
-          <Media imageTransformOptions={{ size: [1900, 0] }} media={block.image} />
+          <Media imageTransformOptions={{ size: [1900, 0] }} media={resolvedImage} />
         </div>
       {/if}
 
       <!-- Backgrounds -->
-      {#if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'center'}
+      {#if !hasImage && block.header_alignment === 'center'}
         <CenterTitleNoImageBackground />
-      {:else if (!block.image || !block.image.filename || block.image.source === null) && block.header_alignment === 'left'}
+      {:else if !hasImage && block.header_alignment === 'left'}
         <LeftTitleNoImageBackground />
-      {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
+      {:else if hasImage && block.header_alignment === 'center'}
         <CenterTitleImageBackground />
-      {:else if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left'}
+      {:else if hasImage && block.header_alignment === 'left'}
         <LeftTitleImageBackground />
       {/if}
     </div>
 
     <!-- Bottom Gradient -->
-    {#if block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'center'}
+    {#if hasImage && block.header_alignment === 'center'}
       <div
         class="absolute bottom-0 left-0 isolate z-20 h-[213px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
       />
-    {:else if !(block.image && block.image.filename !== '' && block.image.filename !== null && block.header_alignment === 'left')}
+    {:else if !(hasImage && block.header_alignment === 'left')}
       <div
         class="absolute bottom-0 h-[120px] w-full bg-gradient-to-t from-gray-1/100 to-transparent"
       />

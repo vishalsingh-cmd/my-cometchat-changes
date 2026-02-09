@@ -1,8 +1,9 @@
 <script lang="ts">
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getLabelInfo } from '$lib/utils';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { WebhooksHeroStoryblok } from '$types/bloks';
+  import type { WebhooksHeroStoryblok, AssetStoryblok } from '$types/bloks';
 
   import Background from '$components/webhooks-hero/background.svelte';
 
@@ -10,6 +11,9 @@
   import Title from '$components/title.svelte';
 
   export let block: WebhooksHeroStoryblok;
+
+  // Resolve illustration for external URL support
+  $: resolvedIllustration = getResolvedAsset(block, 'illustration') as AssetStoryblok | undefined;
 </script>
 
 {#if block}
@@ -23,9 +27,9 @@
     >
       <Background />
 
-      {#if block.illustration}
+      {#if resolvedIllustration}
         <div class="isolate md:absolute md:-right-40 md:top-[30px] md:w-[1000px]">
-          <Media imageTransformOptions={{ size: [1600, 0] }} media={block.illustration} />
+          <Media imageTransformOptions={{ size: [1600, 0] }} media={resolvedIllustration} />
         </div>
       {/if}
 

@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { CustomersHeroAnimatedStoryblok } from '$types/bloks';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: CustomersHeroAnimatedStoryblok;
 </script>
@@ -17,9 +18,9 @@
       </span>
     </h1>
 
-    {#if block.background?.filename}
+    {#if getImageSrc(block, 'background')}
       <video class="absolute top-0 z-0 h-full w-full object-cover" autoplay muted loop playsinline>
-        <source src={block.background.filename} type="video/mp4" />
+        <source src={getImageSrc(block, 'background')} type="video/mp4" />
       </video>
     {/if}
   </section>

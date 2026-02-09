@@ -4,6 +4,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Icon from '../icon/icon.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   export let block: PathSelectorStoryblok;
 
@@ -26,6 +27,7 @@
       <section>
         <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {#each block.cards ?? [] as card}
+            {@const resolvedCardImage = getResolvedAsset(card, 'image')}
             <div class="gradient-border rounded-[24px] border border-gray-12/10">
               <div
                 class="gradient-border-inner max-h-content relative flex flex-col justify-between"
@@ -72,11 +74,13 @@
                 </div>
 
                 <!-- Image inside card -->
-                <img
-                  src={card.image.filename}
-                  alt="Card Image"
-                  class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
-                />
+                {#if resolvedCardImage?.filename}
+                  <img
+                    src={resolvedCardImage.filename}
+                    alt="Card Image"
+                    class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
+                  />
+                {/if}
               </div>
             </div>
           {/each}

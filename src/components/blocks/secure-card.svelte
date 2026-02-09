@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { getResolvedAsset } from '$lib/image-helper';
+  import type { AssetStoryblok } from '$types/bloks';
+  import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
+
   export let blok;
   export let desktop = false;
 
-  import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
+  // Resolve image for external URL support
+  $: resolvedImage = getResolvedAsset(blok, 'image') as AssetStoryblok | undefined;
 
   const decorations = blok.decorations || [];
 </script>
@@ -19,8 +24,8 @@
       <p class="text-lg font-medium text-gray-12 opacity-74">{blok.subtitle}</p>
     {/if}
 
-    {#if blok.image?.filename}
-      <img src={blok.image.filename} alt={blok.image.alt || ''} class="mt-4" />
+    {#if resolvedImage?.filename}
+      <img src={resolvedImage.filename} alt={resolvedImage.alt || ''} class="mt-4" />
     {/if}
   </div>
 

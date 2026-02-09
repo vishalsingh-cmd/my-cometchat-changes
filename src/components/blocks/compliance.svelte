@@ -4,6 +4,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
+  import { getImageSrc } from '$lib/image-helper';
 </script>
 
 {#if block}
@@ -25,7 +26,7 @@
             {#each block.images ?? [] as image}
               <div class="flex">
                 <img
-                  src={image.image.filename}
+                  src={getImageSrc(image, 'image')}
                   alt={image.alt || 'Compliance logo'}
                   class="w-[80px] shrink-0 lg:w-[108px]"
                   loading="lazy"

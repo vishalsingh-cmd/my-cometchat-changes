@@ -2,8 +2,9 @@
   import { cn } from '$lib/utils';
   import { intersectionObserver } from '$lib/actions/intersection-observer';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { ImageTitleDescriptionTagsItemStoryblok } from '$types/bloks';
+  import type { ImageTitleDescriptionTagsItemStoryblok, AssetStoryblok } from '$types/bloks';
 
   import Badge from '$components/badge.svelte';
   import Media from '$components/media.svelte';
@@ -13,6 +14,9 @@
   let className: string | undefined = undefined;
   export { className as class };
   export let block: ImageTitleDescriptionTagsItemStoryblok;
+
+  // Resolve image for external URL support
+  $: resolvedImage = getResolvedAsset(block, 'image') as AssetStoryblok | undefined;
 
   let isIntersecting = false;
 </script>
@@ -39,10 +43,10 @@
       }
     }}
   >
-    {#if block.image}
+    {#if resolvedImage}
       <Media
         imageTransformOptions={{ size: [800, 0] }}
-        media={block.image}
+        media={resolvedImage}
         class="mb-12 w-full max-w-[436px]"
       />
     {/if}

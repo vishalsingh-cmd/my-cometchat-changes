@@ -2,6 +2,7 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import type { home__video_tabsStoryblok } from '$src/types/bloks';
   import type { EmblaCarouselType } from 'embla-carousel';
+  import { getImageSrc, getResolvedAsset } from '$lib/image-helper';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import FeatureTabTrigger from './FeatureTabTrigger.svelte';
@@ -64,13 +65,13 @@
                 <video
                   data-name="feature-tabs-cnt-video"
                   class={cn(['mx-auto h-full w-4/5 object-contain', 'max-sm:hidden'])}
-                  src={featureTab.video.filename}
+                  src={getImageSrc(featureTab, 'video')}
                   muted
                   playsinline
                 />
                 <img
                   class={cn(['mx-auto h-full w-4/5 object-contain object-top', 'sm:hidden'])}
-                  src={featureTab.mobileImg.filename}
+                  src={getImageSrc(featureTab, 'mobileImg')}
                   alt="mobile feature"
                 />
                 {#if featureTab.callout && featureTab.callout.length > 0}

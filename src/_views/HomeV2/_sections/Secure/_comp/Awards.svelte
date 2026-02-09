@@ -1,6 +1,7 @@
 <script lang="ts">
   import HeadingLatest from '$src/_comps/typography/HeadingLatest.svelte';
   import { cn } from '$src/_utils/tailwind.utils';
+  import { getImageSrc } from '$lib/image-helper';
   import type { SecureAwardStoryblok } from '$src/types/bloks';
 
   import SecureDecCircle from './SecureDecCircle.svelte';
@@ -8,6 +9,7 @@
   export let className = '';
 
   export let block: SecureAwardStoryblok;
+  const getAwardImage = (award: any) => getImageSrc(award, 'img');
 </script>
 
 <div
@@ -21,7 +23,7 @@
   <div class={cn(['flex flex-col gap-4 p-4'], ['lg:p-10'])}>
     <HeadingLatest as="h3" varient="h6">{block.title}</HeadingLatest>
     <div class={cn(['grid grid-cols-[1fr_1fr] gap-4'])}>
-      {#each block.imgs as award}
+      {#each block.imgs || [] as award}
         <div
           class={cn(
             [
@@ -33,7 +35,11 @@
             ['lg:rounded-full']
           )}
         >
-          <img class="w-full object-contain" src={award.img.filename} alt={award.img.name} />
+          <img
+            class="w-full object-contain"
+            src={getAwardImage(award)}
+            alt={award.img?.name ?? ''}
+          />
         </div>
       {/each}
     </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cn } from '$lib/utils';
+  import { getImageSrc } from '$lib/image-helper';
   import type { ConnectedStepStoryblok } from '$types/bloks';
   export let block: ConnectedStepStoryblok;
 </script>
@@ -13,7 +14,7 @@
         'border border-[#E8E8E8]'
       ])}
     >
-      <img src={block.icon.filename} alt="icon" />
+      <img src={getImageSrc(block, 'icon')} alt="icon" />
     </div>
     <div class="absolute left-1/2 top-0 -z-[1] h-full w-[1px] bg-[#E8E8E8]" />
   </div>

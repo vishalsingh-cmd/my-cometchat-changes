@@ -4,6 +4,7 @@
   import Container from '$src/_comps/layouts/Container.svelte';
   import Button from '$src/components/buttons/button.svelte';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: AgentsHeroStoryblok;
 </script>
@@ -82,10 +83,10 @@
 
         <!-- Right Content -->
         <div class="relative">
-          {#if block.hero_image?.filename}
+          {#if getImageSrc(block, 'hero_image')}
             <img
-              src={block.hero_image.filename}
-              alt={block.hero_image.alt || 'Hero image'}
+              src={getImageSrc(block, 'hero_image')}
+              alt={block.hero_image?.alt || 'Hero image'}
               class="aspect-[109/90] w-[350px] flex-shrink-0 rounded-xl shadow-xl lg:h-[475px] lg:w-[575.76px]"
               loading="lazy"
             />

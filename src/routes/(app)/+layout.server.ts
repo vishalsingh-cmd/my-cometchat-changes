@@ -4,7 +4,7 @@ import { getStoryblok } from '$lib/storyblok.js';
 import { getStoryVersion } from '$lib/utils';
 import { getTemplatesFooter } from '$src/_api/header/getTemplatesFooter';
 import { isTemplatesPage } from '$src/_helpers/withSlugs';
-import { getNewHeader } from '$src/_api/header/getNewHeader';
+import { getNewHeaderV3 } from '$src/_api/header/getNewHeaderV3';
 import { getFooter } from '$src/lib/data/footer';
 
 export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
@@ -21,7 +21,7 @@ export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
     };
   } else {
     const [newHeader, footer] = await Promise.all([
-      getNewHeader({ storyblok, version }),
+      getNewHeaderV3({ storyblok, version }),
       getFooter(storyblok, { version })
     ]);
 

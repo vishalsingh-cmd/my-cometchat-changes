@@ -2,6 +2,7 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import Media from '$src/components/media.svelte';
   import { onMount } from 'svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
   import TemplatesHeading from '../_comps/TemplatesHeading.svelte';
   // import TemplatesParah from '../_comps/TemplatesParah.svelte';
   import { createTemplateContext } from './templateContext';
@@ -16,11 +17,14 @@
   });
 
   $: seo = $template.data?.story?.content?.seo[0];
+
+  // Resolve og_image for external URL support
+  $: resolvedOgImage = seo ? getResolvedAsset(seo, 'og_image') : undefined;
 </script>
 
 {#if $template.isLoading}
   <RelatedTemplateSkeleton />
-{:else if $template.data && $template.data?.story?.full_slug && seo && seo.title && seo.description && seo.og_image}
+{:else if $template.data && $template.data?.story?.full_slug && seo && seo.title && seo.description && resolvedOgImage}
   <a
     href={sanitizeSlug($template.data.story.full_slug)}
     target="_blank"
@@ -30,7 +34,7 @@
       <Media
         class="h-auto w-full object-cover"
         imageTransformOptions={{ size: [1200, 0] }}
-        media={seo.og_image}
+        media={resolvedOgImage}
       />
       <div
         class={cn([

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { sanitizeSlug } from '$lib/storyblok';
   import Icon from './icon/icon.svelte';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import type { AssetStoryblok, CustomerStoryblok } from '$types/bloks';
 
@@ -12,10 +13,15 @@
   export let tags: string[] | undefined = undefined;
   export let link: string | undefined = undefined;
   export let customer: CustomerStoryblok | undefined = undefined;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   export let author: string | undefined = undefined;
-  export let date: string | undefined = undefined;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  export let publishDate: string | undefined = undefined;
   export let isLoading = false;
   export let badgeSize: 'small' | 'medium' = 'medium';
+
+  // Resolve customer logo for external URL support
+  $: resolvedCustomerLogo = customer ? getResolvedAsset(customer, 'logo') : undefined;
 </script>
 
 {#if link}
@@ -23,11 +29,11 @@
     href={sanitizeSlug(link)}
     class="hover:border-white/4 group relative flex max-h-[416px] max-w-[409px] flex-col overflow-hidden rounded-3xl border border-white/10 p-4 font-semibold text-gray-12 outline-none hover:bg-[#D9D9D9]/10 focus-visible:after:absolute focus-visible:after:-left-2 focus-visible:after:-top-2 focus-visible:after:h-[calc(100%+16px)] focus-visible:after:w-[calc(100%+16px)] focus-visible:after:rounded-[18px] focus-visible:after:border focus-visible:after:border-brand-7"
   >
-    {#if customer}
+    {#if customer && resolvedCustomerLogo}
       <div class="absolute left-3 top-4 rounded-xl bg-gray-12/20 p-2 backdrop-blur-[50px]">
         <Media
           imageTransformOptions={{ size: [0, 200] }}
-          media={customer.logo}
+          media={resolvedCustomerLogo}
           class="h-3.5 w-full"
         />
       </div>

@@ -15,6 +15,7 @@
 
   // import Button from '$components/buttons/button.svelte';
   import Media from '$components/media.svelte';
+  import { getImageSrc } from '$lib/image-helper';
 
   export let block: FeaturedStorySectionStoryblok;
 
@@ -57,12 +58,22 @@
     } else if (story.content?.component === 'blog-post') {
       tags = [story.content?.category];
     } else if (story.content?.component === 'tutorial') {
-      tags = [story.content?.tutorial_type];
+      tags = [story.content?.tutorial_type ?? ''];
     }
 
     const parsedTags = tags.join(', ');
 
     return parsedTags;
+  };
+
+  const getAuthorImage = (
+    story:
+      | StoryblokStory<BlogPostStoryblok>
+      | StoryblokStory<CustomerStoryStoryblok>
+      | StoryblokStory<TutorialStoryblok>
+  ) => {
+    const content = story.content as any;
+    return getImageSrc(content?.author?.content, 'avatar');
   };
 </script>
 
@@ -80,9 +91,7 @@
       {@const author = getAuthor(story)}
       <!-- {console.log('author', author)} -->
       {@const date = story.created_at ? formatDate(new Date(story?.created_at)) : undefined}
-      {@const imageURL = story.content?.author?.content?.avatar?.filename
-        ? story.content.author.content.avatar.filename
-        : undefined}
+      {@const imageURL = getAuthorImage(story)}
       <!-- {console.log('imageURL', imageURL)} -->
       {@const tags = getTag(story)}
       <div

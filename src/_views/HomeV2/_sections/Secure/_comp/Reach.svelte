@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
+  import { getImageSrc } from '$lib/image-helper';
   import type { SecureReachkStoryblok } from '$src/types/bloks';
   import SecureDecCircle from './SecureDecCircle.svelte';
   export let className = '';
@@ -22,7 +23,7 @@
     [className]
   )}
 >
-  <img src={block?.icon.filename} alt={block?.icon.alt} class="h-10 w-10" />
+  <img src={getImageSrc(block, 'icon')} alt={block?.icon?.alt ?? ''} class="h-10 w-10" />
 
   <h4 class={cn(['mt-4 text-[16px] font-medium text-[#FAFAFF]'])}>
     {block?.title}

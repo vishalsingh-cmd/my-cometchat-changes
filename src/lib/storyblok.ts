@@ -221,8 +221,8 @@ export type ImageAttributes = {
   alt: string;
   title?: string;
   src: string;
-  width: string;
-  height: string;
+  width?: string;
+  height?: string;
 };
 
 export function getImageAttributes(
@@ -230,7 +230,7 @@ export function getImageAttributes(
   options?: Partial<ImageAttributesOptions>
 ): ImageAttributes {
   if (!image.filename.includes('a.storyblok.com'))
-    return { src: image.filename, alt: image.src, height: '0', width: '0' };
+    return { src: image.filename, alt: image.alt || '', title: image.title };
 
   let src = image.filename + '/m/';
 

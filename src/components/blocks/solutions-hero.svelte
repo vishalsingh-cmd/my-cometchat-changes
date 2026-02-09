@@ -3,8 +3,9 @@
 
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import { getAnchorFromCmsLink } from '$lib/storyblok';
+  import { getResolvedAsset } from '$lib/image-helper';
 
-  import type { IndustryStoryblok, SolutionsHeroStoryblok } from '$types/bloks';
+  import type { IndustryStoryblok, SolutionsHeroStoryblok, AssetStoryblok } from '$types/bloks';
 
   import BackgroundBottom from '$components/solutions/hero/background-bottom.svelte';
   import Button from '$components/buttons/button.svelte';
@@ -15,6 +16,9 @@
   import Media from '$components/media.svelte';
 
   export let block: SolutionsHeroStoryblok;
+
+  // Resolve illustration for external URL support
+  $: resolvedIllustration = getResolvedAsset(block, 'illustration') as AssetStoryblok | undefined;
 
   const parseItem = (item: string | StoryblokStory<IndustryStoryblok>) => {
     const typedItem = item as StoryblokStory<IndustryStoryblok>;
@@ -58,10 +62,10 @@
           </div>
         {/if}
       </div>
-      {#if block.illustration}
+      {#if resolvedIllustration}
         <Media
           imageTransformOptions={{ size: [1000, 0] }}
-          media={block.illustration}
+          media={resolvedIllustration}
           class="bottom-0 w-full max-w-[784px] translate-x-4 transform self-end md:translate-x-16"
         />
       {/if}

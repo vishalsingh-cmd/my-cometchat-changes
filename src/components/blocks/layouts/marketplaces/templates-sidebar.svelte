@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
+  import { getImageSrc } from '$lib/image-helper';
   import { cn } from '$lib/utils';
   import { getAnchorFromCmsLink, sanitizeSlug } from '$src/lib/storyblok';
   import type { TemplatesSidebarItemStoryblok } from '$src/types/bloks';
@@ -27,7 +28,7 @@
     >
       {#each links as link}
         <option value={link.slug.url}>
-          <img src={link.icon.filename} alt={link.title} />
+          <img src={getImageSrc(link, 'icon')} alt={link.title} />
           <span>{link.title}</span>
         </option>
       {/each}
@@ -79,7 +80,7 @@
         )}
         data-iscurrentpage={isActive ? 'active' : 'inactive'}
       >
-        <img src={link.icon.filename} alt={link.title} />
+        <img src={getImageSrc(link, 'icon')} alt={link.title} />
         <span>{link.title}</span>
       </a>
     {/each}

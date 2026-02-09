@@ -3,6 +3,7 @@
   import { string } from '$lib/strings/index.js';
   import { industries } from '$lib/stores/industries';
   import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
+  import { getImageSrc } from '$lib/image-helper';
 
   import DynamicPage from '$components/blocks/dynamic-page.svelte';
 
@@ -38,12 +39,17 @@
   <!-- OG Image -->
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  {#if data.page?.content?.seo?.[0] && data.page?.content?.seo?.[0].og_image?.filename}
-    {@const { src } = getImageAttributes(data.page?.content?.seo?.[0].og_image, {
-      size: [1200, 630]
-    })}
-    <meta property="og:image" content={src} />
-    <meta property="twitter:image" content={src} />
+  {#if data.page?.content?.seo?.[0]}
+    {@const seo = data.page.content.seo[0]}
+    {@const ogImageSrc = getImageSrc(seo, 'og_image', { size: [1200, 630] })}
+
+    {#if ogImageSrc}
+      <meta property="og:image" content={ogImageSrc} />
+      <meta property="twitter:image" content={ogImageSrc} />
+    {:else}
+      <meta property="og:image" content="/_static/default-og-image.png" />
+      <meta property="twitter:image" content="/_static/default-og-image.png" />
+    {/if}
   {:else}
     <meta property="og:image" content="/_static/default-og-image.png" />
     <meta property="twitter:image" content="/_static/default-og-image.png" />

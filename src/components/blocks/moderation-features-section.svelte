@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { ModerationFeaturesSectionStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
+  import { getResolvedAsset } from '$lib/image-helper';
   import TitleSection from './title-section.svelte';
   import { cn } from '$lib/utils';
   import ModerationFeatureCard from '$components/moderation-feature-card.svelte';
@@ -22,7 +23,7 @@
               <ModerationFeatureCard
                 title={card.title}
                 description={card.description}
-                image={card.image}
+                image={getResolvedAsset(card, 'image')}
               />
             {/each}
           {/each}

@@ -119,6 +119,7 @@
   import SecureSection from './secure-section.svelte';
   import ServiceCard from './service-card.svelte';
   import SharedService from './shared-service.svelte';
+  import ExternalImageTest from './external-image-test.svelte';
 
   import ClientsV2 from '$src/_views/HomeV2/_sections/Clients/Clients2.svelte';
   import Clients from '$src/_views/HomeV2/_sections/Clients/Clients.svelte';
@@ -178,6 +179,7 @@
     'double-panel-section': DoublePanelSection,
 
     emptyspace: Emptyspace,
+    external_image_test: ExternalImageTest,
 
     'faq-section': FaqSection,
     'faq-section-v2': FaqSectionV2,

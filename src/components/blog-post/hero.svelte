@@ -2,6 +2,7 @@
   import type { AuthorStoryblok, BlogPostStoryblok } from '$types/bloks';
 
   import { cn } from '$lib/utils';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Title from '$components/title.svelte';
   import Media from '$components/media.svelte';
@@ -9,6 +10,12 @@
   export let block: BlogPostStoryblok;
 
   const author = block.content.author as unknown as AuthorStoryblok;
+
+  // Resolve images for external URL support
+  $: resolvedCover = getResolvedAsset(block.content, 'cover');
+  $: resolvedAuthorAvatar = author?.content
+    ? getResolvedAsset(author.content, 'avatar')
+    : undefined;
 </script>
 
 <section
@@ -34,11 +41,11 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div class="h-full max-h-[175px] overflow-hidden rounded-3xl object-cover md:max-h-[656px]">
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
+            media={resolvedCover}
             class="h-full w-full object-cover"
           />
         </div>
@@ -61,12 +68,14 @@
           <p class="opacity-74">{block.content.seo[0].description}</p>
           <div class="flex items-center gap-3">
             {#if author}
-              {@const { avatar, name, role, company } = author.content}
-              <Media
-                imageTransformOptions={{ size: [50, 0] }}
-                media={avatar}
-                class="h-6 w-6 rounded-full"
-              />
+              {@const { name, role, company } = author.content}
+              {#if resolvedAuthorAvatar}
+                <Media
+                  imageTransformOptions={{ size: [50, 0] }}
+                  media={resolvedAuthorAvatar}
+                  class="h-6 w-6 rounded-full"
+                />
+              {/if}
               <p>
                 {name},
                 {#if role}
@@ -78,13 +87,13 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div
           class="border-px h-full max-h-[580px] overflow-hidden rounded-3xl border border-gray-12/[0.04] object-cover"
         >
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
+            media={resolvedCover}
             class="h-full w-full object-cover"
           />
         </div>

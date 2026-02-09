@@ -5,6 +5,7 @@
 
   import { cn } from '$lib/utils';
   import { string } from '$lib/strings';
+  import { getResolvedAsset } from '$lib/image-helper';
 
   import Metrics from '$components/blocks/metrics.svelte';
   import Title from '$components/title.svelte';
@@ -20,6 +21,12 @@
   const industry = industries.find((industry) => industry.uuid === industryToShow)?.name ?? '';
 
   const author = block.content.author;
+
+  // Resolve images for external URL support
+  $: resolvedCover = getResolvedAsset(block.content, 'cover');
+  $: resolvedAuthorAvatar = author?.content
+    ? getResolvedAsset(author.content, 'avatar')
+    : undefined;
 </script>
 
 <section
@@ -46,13 +53,13 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div
           class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
+            media={resolvedCover}
             class="h-full max-h-[580px] w-full object-cover"
           />
         </div>
@@ -88,12 +95,14 @@
           <p class="opacity-74">{block.content.quote}</p>
           <div class="flex items-center gap-4">
             {#if author}
-              {@const { avatar, name, role, company } = author.content}
-              <Media
-                media={avatar}
-                imageTransformOptions={{ size: [96, 96] }}
-                class="h-12 w-12 rounded-full"
-              />
+              {@const { name, role, company } = author.content}
+              {#if resolvedAuthorAvatar}
+                <Media
+                  media={resolvedAuthorAvatar}
+                  imageTransformOptions={{ size: [96, 96] }}
+                  class="h-12 w-12 rounded-full"
+                />
+              {/if}
               <div class="text-lg font-medium">
                 <p aria-label={string('a11y.author')}>
                   {name}
@@ -109,13 +118,13 @@
           </div>
         </div>
       </div>
-      {#if block.content.cover}
+      {#if resolvedCover}
         <div
           class="border-px h-full max-h-[580px] min-h-[284px] overflow-hidden rounded-3xl border border-gray-12/[0.04]"
         >
           <Media
             imageTransformOptions={{ size: [1600, 0] }}
-            media={block.content.cover}
+            media={resolvedCover}
             class="h-full max-h-[580px] w-full object-cover"
           />
         </div>
