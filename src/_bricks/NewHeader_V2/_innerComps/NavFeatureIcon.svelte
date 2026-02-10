@@ -1,3 +1,4 @@
+<script lang="ts">
   import Icon from '$src/components/icon/icon.svelte';
   import { cn, tv } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
@@ -17,7 +18,7 @@
     ]
   });
 
-  const { href, target } = getAnchorFromCmsLink(block.link);
+  const { href, target } = getAnchorFromCmsLink(block?.link ?? {});
 </script>
 
 <a href={href || '#'} {target} class={navFeatureIcon({ class: className })}>
@@ -28,6 +29,6 @@
     ])}
     width="24"
     height="24"
-    icon={block.icon}
+    icon={block?.icon}
   />
 </a>
