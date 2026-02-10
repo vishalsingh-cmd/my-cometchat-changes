@@ -9,6 +9,7 @@
   //   import { browser } from '$app/environment';
   import type { HomeClientsV2Storyblok } from '$src/types/bloks';
   import { getImageSrc } from '$lib/image-helper';
+  import { page } from '$app/stores';
   //   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
   import SecureDecCircle from '../Secure/_comp/SecureDecCircle.svelte';
 
@@ -69,6 +70,7 @@
   // });
 
   export let block: HomeClientsV2Storyblok;
+  $: clients = (block.clients && block.clients.length > 0) ? block.clients : $page.data.globalLogos || [];
   const cast = (val: any) => val;
 </script>
 
@@ -136,8 +138,8 @@
 
             <!-- Marquee Track -->
             <div class="marquee-track flex items-center gap-8">
-              {#if block}
-                {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as client}
+              {#if clients && clients.length > 0}
+                {#each [...clients, ...clients, ...clients] as client}
                   {@const data = cast(client)}
                   <img
                     class="h-10 object-contain px-3 grayscale"

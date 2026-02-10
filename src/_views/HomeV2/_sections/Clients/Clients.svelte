@@ -10,6 +10,7 @@
   import { browser } from '$app/environment';
   import type { HomeClientsStoryblok } from '$src/types/bloks';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { page } from '$app/stores';
 
   let emblaApi: any;
   let cleanup: (() => void) | null = null;
@@ -68,6 +69,8 @@
   });
 
   export let block: HomeClientsStoryblok;
+  
+  $: clients = (block.clients && block.clients.length > 0) ? block.clients : $page.data.globalLogos || [];
   const cast = (val: any) => val;
 </script>
 
@@ -90,8 +93,8 @@
         )}
         data-scrollbar="hidden"
       >
-        {#if block && block.clients}
-          {#each block.clients as client}
+        {#if clients && clients.length > 0}
+          {#each clients as client}
             {@const data = cast(client)}
             <div class={cn('embla__slide mx-4 min-w-0 max-w-full flex-[0_0_auto]', '')}>
               <img

@@ -9,7 +9,7 @@
   //   import { browser } from '$app/environment';
   import type { HomeClientsV2Storyblok } from '$src/types/bloks';
   import { getImageSrc } from '$lib/image-helper';
-  //   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
+  import { page } from '$app/stores';
   import SecureDecCircle from '../Secure/_comp/SecureDecCircle.svelte';
 
   //   let emblaApi: any;
@@ -69,6 +69,7 @@
   // });
 
   export let block: HomeClientsV2Storyblok;
+  $: clients = (block.clients && block.clients.length > 0) ? block.clients : $page.data.globalLogos || [];
 </script>
 
 <Section className="relative z-20 isolate group/clients overflow-visible">
@@ -135,8 +136,8 @@
 
             <!-- Marquee Track -->
             <div class="marquee-track flex items-center gap-8">
-              {#if block}
-                {#each [...(block?.clients ?? []), ...(block?.clients ?? []), ...(block?.clients ?? [])] as data}
+              {#if clients && clients.length > 0}
+                {#each [...clients, ...clients, ...clients] as data}
                   <img
                     class="h-10 object-contain px-3 grayscale"
                     src={getImageSrc(data, 'client_img') ?? ''}

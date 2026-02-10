@@ -6,6 +6,7 @@ import { getTemplatesFooter } from '$src/_api/header/getTemplatesFooter';
 import { isTemplatesPage } from '$src/_helpers/withSlugs';
 import { getNewHeaderV3 } from '$src/_api/header/getNewHeaderV3';
 import { getFooter } from '$src/lib/data/footer';
+import { getGlobalLogos } from '$src/_api/shared/getGlobalLogos';
 
 export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
   const version = getStoryVersion(cookies);
@@ -20,15 +21,17 @@ export const load: LayoutServerLoad = async ({ params, cookies, fetch }) => {
       templatesFooterData: templatesFooter
     };
   } else {
-    const [newHeader, footer] = await Promise.all([
+    const [newHeader, footer, globalLogos] = await Promise.all([
       getNewHeaderV3({ storyblok, version }),
-      getFooter(storyblok, { version })
+      getFooter(storyblok, { version }),
+      getGlobalLogos(storyblok, { version })
     ]);
 
     return {
       version,
       newHeader,
-      footer
+      footer,
+      globalLogos
     };
   }
 };
