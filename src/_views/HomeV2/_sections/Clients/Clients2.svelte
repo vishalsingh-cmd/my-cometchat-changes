@@ -69,7 +69,8 @@
   // });
 
   export let block: HomeClientsV2Storyblok;
-  $: clients = (block.clients && block.clients.length > 0) ? block.clients : $page.data.globalLogos || [];
+  $: clients =
+    block.clients && block.clients.length > 0 ? block.clients : $page.data.globalLogos || [];
 </script>
 
 <Section className="relative z-20 isolate group/clients overflow-visible">

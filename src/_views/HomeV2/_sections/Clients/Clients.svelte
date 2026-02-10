@@ -69,8 +69,9 @@
   });
 
   export let block: HomeClientsStoryblok;
-  
-  $: clients = (block.clients && block.clients.length > 0) ? block.clients : $page.data.globalLogos || [];
+
+  $: clients =
+    block.clients && block.clients.length > 0 ? block.clients : $page.data.globalLogos || [];
   const cast = (val: any) => val;
 </script>
 
