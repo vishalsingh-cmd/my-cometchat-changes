@@ -89,27 +89,40 @@
     {@const { src, alt, width, height } = getImageAttributes(media, imageTransformOptions)}
     {#if src.includes('a.storyblok.com')}
       <div class="relative rounded-2xl border border-gray-1/20 p-1">
-        <img
-          on:click={createModal}
-          class={cn(
-            'animate-fadeIn rounded-2xl border border-gray-1/10 ',
-            className,
-            enableZoom && 'hover:cursor-zoom-in'
-          )}
-          {src}
-          {alt}
-          {width}
-          {height}
-        />
+        {#if enableZoom}
+          <button
+            type="button"
+            on:click={createModal}
+            class={cn(
+              'block w-full animate-fadeIn rounded-2xl border border-gray-1/10',
+              className,
+              'hover:cursor-zoom-in'
+            )}
+            aria-label="Zoom image"
+          >
+            <img {src} {alt} {width} {height} class="h-full w-full object-cover" />
+          </button>
+        {:else}
+          <img
+            class={cn('animate-fadeIn rounded-2xl border border-gray-1/10 ', className)}
+            {src}
+            {alt}
+            {width}
+            {height}
+          />
+        {/if}
       </div>
-    {:else}
-      <img
+    {:else if enableZoom}
+      <button
+        type="button"
         on:click={createModal}
-        on:keydown
-        class={cn('animate-fadeIn', className, enableZoom && 'hover:cursor-zoom-in')}
-        {src}
-        {alt}
-      />
+        class={cn('block w-full animate-fadeIn', className, 'hover:cursor-zoom-in')}
+        aria-label="Zoom image"
+      >
+        <img {src} {alt} class="h-full w-full object-cover" />
+      </button>
+    {:else}
+      <img class={cn('animate-fadeIn', className)} {src} {alt} />
     {/if}
   {/if}
 {/if}

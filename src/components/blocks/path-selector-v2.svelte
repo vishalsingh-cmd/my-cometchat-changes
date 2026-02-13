@@ -77,7 +77,7 @@
                 {#if resolvedCardImage?.filename}
                   <img
                     src={resolvedCardImage.filename}
-                    alt="Card Image"
+                    alt={card.title}
                     class="max-h-[316px] w-full opacity-74 lg:max-h-[580px]"
                   />
                 {/if}

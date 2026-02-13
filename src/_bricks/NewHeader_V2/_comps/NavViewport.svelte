@@ -76,16 +76,27 @@
       actions.deactivateNav();
     }
   };
+  const handleKeydown = (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' || target.closest('a')) {
+        actions.hidePanel();
+        actions.deactivateNav();
+      }
+    }
+  };
 </script>
 
 {#if isDesktop}
   <div class={navWrapper({ index: $activePanelIndex })}>
     <div
+      role="presentation"
       class={navViewport({ class: className })}
       bind:this={$viewportElem}
       on:mouseenter={handleMouseEnter}
       on:mouseleave={handleMouseLeave}
       on:click={handleOnClick}
+      on:keydown={handleKeydown}
     >
       {#each navItems as navItem, index}
         {#if 'panel' in navItem && navItem.panel}
@@ -95,7 +106,13 @@
     </div>
   </div>
 {:else}
-  <div class={navViewport({ class: className })} bind:this={$viewportElem} on:click={handleOnClick}>
+  <div
+    role="presentation"
+    class={navViewport({ class: className })}
+    bind:this={$viewportElem}
+    on:click={handleOnClick}
+    on:keydown={handleKeydown}
+  >
     {#each navItems as navItem, index}
       {#if 'panel' in navItem && navItem.panel}
         <NavPanel {index} sections={navItem.panel} />

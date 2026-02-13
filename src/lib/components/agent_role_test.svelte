@@ -17,11 +17,31 @@
       description:
         'From FAQs to refunds, these agents tap your knowledge base, tools, and CRM - and know what to do when the model can’t.',
       points: [
-        'Pull from RAG systems, CRM data, or static FAQs',
-        'Built-in moderation and fallback for edge cases and escalations',
-        'Multichannel support: web, mobile, push, email',
-        'One setup, deploy anywhere',
-        'No separate UI or logging build required'
+        {
+          icon: '/agent_lp_images/bullet_icon.png',
+          title: 'Pull from RAG systems, CRM data, or static FAQs',
+          link: '#'
+        },
+        {
+          icon: '/agent_lp_images/bullet_icon.png',
+          title: 'Built-in moderation and fallback for edge cases and escalations',
+          link: '#'
+        },
+        {
+          icon: '/agent_lp_images/bullet_icon.png',
+          title: 'Multichannel support: web, mobile, push, email',
+          link: '#'
+        },
+        {
+          icon: '/agent_lp_images/bullet_icon.png',
+          title: 'One setup, deploy anywhere',
+          link: '#'
+        },
+        {
+          icon: '/agent_lp_images/bullet_icon.png',
+          title: 'No separate UI or logging build required',
+          link: '#'
+        }
       ],
       link: { url: '#one', target: '_self' },
       imageAd: 'test'
@@ -65,7 +85,7 @@
     { imageAd: '/agent_lp_images/scroll_images/scroll_product.png', imageAlt: 'test3' }
   ];
 
-  let interval: any;
+  let interval: ReturnType<typeof setInterval> | null;
 
   onMount(() => {
     interval = setInterval(() => {
@@ -74,7 +94,7 @@
   });
 
   onDestroy(() => {
-    clearInterval(interval);
+    if (interval) clearInterval(interval);
   });
 
   function startAnimation() {

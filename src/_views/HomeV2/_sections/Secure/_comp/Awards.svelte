@@ -9,7 +9,7 @@
   export let className = '';
 
   export let block: SecureAwardStoryblok;
-  const getAwardImage = (award: any) => getImageSrc(award, 'img');
+  const getAwardImage = (award: Record<string, unknown>) => getImageSrc(award, 'img');
 </script>
 
 <div

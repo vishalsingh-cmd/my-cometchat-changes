@@ -1,4 +1,4 @@
-// @ts-nocheck
+/* eslint-disable no-console */
 /**
  * Storyblok Component Schema Update Script
  *
@@ -34,14 +34,14 @@ const API_BASE = `https://mapi.storyblok.com/v1/spaces/${STORYBLOK_SPACE_ID}`;
 interface StoryblokField {
   type: string;
   pos?: number;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface StoryblokComponent {
   id: number;
   name: string;
   schema: Record<string, StoryblokField>;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 interface ApiResponse {
@@ -63,7 +63,7 @@ async function fetchComponents(): Promise<StoryblokComponent[]> {
   while (page <= maxPages) {
     const response = await fetch(`${API_BASE}/components?page=${page}&per_page=${perPage}`, {
       headers: {
-        Authorization: STORYBLOK_MANAGEMENT_TOKEN!,
+        Authorization: STORYBLOK_MANAGEMENT_TOKEN ?? '',
         'Content-Type': 'application/json'
       }
     });
@@ -191,7 +191,7 @@ async function updateComponent(component: StoryblokComponent): Promise<boolean> 
   const response = await fetch(`${API_BASE}/components/${component.id}`, {
     method: 'PUT',
     headers: {
-      Authorization: STORYBLOK_MANAGEMENT_TOKEN!,
+      Authorization: STORYBLOK_MANAGEMENT_TOKEN ?? '',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({

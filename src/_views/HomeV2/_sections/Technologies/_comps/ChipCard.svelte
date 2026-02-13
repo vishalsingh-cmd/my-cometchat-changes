@@ -1,7 +1,7 @@
 <script lang="ts">
   import { cn } from '$src/_utils/tailwind.utils';
 
-  export let icon: any;
+  export let icon: unknown;
   export let href: string;
   export let className = '';
 </script>

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { templates_listingStoryblok } from '$src/types/bloks';
   import { onMount } from 'svelte';
   import { page } from '$app/stores';
   import { sanitizeSlug } from '$src/lib/storyblok';
@@ -12,7 +11,6 @@
   import TemplateErrorPage from './_comps/TemplateErrorPage.svelte';
   import TemplateNoData from './_comps/TemplateNoData.svelte';
 
-  export let block: templates_listingStoryblok;
   const { templates, actions } = createTemplatesContext({
     startsWithPath: $page.data.page.full_slug,
     excludingPath: $page.data.page.full_slug

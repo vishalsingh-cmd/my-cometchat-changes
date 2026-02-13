@@ -31,20 +31,6 @@
       | StoryblokStory<CustomerStoryStoryblok>
       | StoryblokStory<TutorialStoryblok>;
 
-  const getAuthor = (
-    story:
-      | StoryblokStory<BlogPostStoryblok>
-      | StoryblokStory<CustomerStoryStoryblok>
-      | StoryblokStory<TutorialStoryblok>
-  ) => {
-    if (story.content?.component === 'customer-story') {
-      return story.content?.author_name;
-    } else {
-      const author = story.content?.author as StoryblokStory<AuthorStoryblok>;
-      return author?.name;
-    }
-  };
-
   const getTag = (
     story:
       | StoryblokStory<BlogPostStoryblok>
@@ -66,14 +52,29 @@
     return parsedTags;
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const castToAny = (val: any) => val;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const getAuthor = (story: any) => {
+    const content = story.content;
+    const author = content?.author as StoryblokStory<AuthorStoryblok> | undefined;
+    if (typeof author === 'string') return author;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (author as any)?.name;
+  };
+
   const getAuthorImage = (
     story:
       | StoryblokStory<BlogPostStoryblok>
       | StoryblokStory<CustomerStoryStoryblok>
       | StoryblokStory<TutorialStoryblok>
   ) => {
-    const content = story.content as any;
-    return getImageSrc(content?.author?.content, 'avatar');
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const content = story.content as Record<string, any>;
+    const author = content?.author as StoryblokStory<AuthorStoryblok> | undefined;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return (author as any)?.content ? getImageSrc(author.content, 'avatar') : undefined;
   };
 </script>
 
@@ -86,9 +87,10 @@
   >
     {#if block.featured_story}
       {@const story = typeFeaturedStory(block.featured_story)}
-      {@const content = story.content}
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      {@const content = castToAny(story).content}
       <!-- {@const storyLink = sanitizeSlug(story.full_slug)} -->
-      {@const author = getAuthor(story)}
+      {@const author = getAuthor(castToAny(story))}
       {@const date = story.created_at ? formatDate(new Date(story?.created_at)) : undefined}
       {@const imageURL = getAuthorImage(story)}
       {@const tags = getTag(story)}

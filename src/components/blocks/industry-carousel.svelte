@@ -11,7 +11,7 @@
 
   const { activeIndex, setActiveIndex } = createIndustryContext(0);
 
-  let interval: any;
+  let interval: ReturnType<typeof setInterval> | null;
   let containerRef: HTMLElement;
   let observer: IntersectionObserver;
 
@@ -66,7 +66,6 @@
     }
   });
   import { getResolvedAsset } from '$lib/image-helper';
-  import type { AssetStoryblok } from '$src/types/bloks';
 
   // Helper to resolve image for a given index: checks item for external URL first, then block.images
   function resolveCarouselImage(index: number) {

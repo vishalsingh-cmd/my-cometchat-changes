@@ -18,7 +18,17 @@
   }
 </script>
 
-<div on:mouseover={mouseOver} on:mouseleave={mouseLeave} on:mousemove={mouseMove}>
+<div
+  on:mouseover={mouseOver}
+  on:mouseleave={mouseLeave}
+  on:mousemove={mouseMove}
+  on:focus={mouseOver}
+  on:blur={mouseLeave}
+  on:keydown={(e) => e.key === 'Enter' && mouseOver(e)}
+  tabindex="0"
+  role="button"
+  aria-label="Tooltip trigger"
+>
   <slot />
 </div>
 

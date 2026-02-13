@@ -1,4 +1,7 @@
-export const getGlobalLogos = async (storyblokApi: any, { version }: { version: string }) => {
+export const getGlobalLogos = async (
+  storyblokApi: { get: (path: string, options: unknown) => Promise<unknown> },
+  { version }: { version: string }
+) => {
   try {
     const { data } = await storyblokApi.get('cdn/stories/shared-blocks/home-client-v2-shared', {
       version
@@ -7,7 +10,7 @@ export const getGlobalLogos = async (storyblokApi: any, { version }: { version: 
     // Find the logo_carousel or home_clients block in the story content
     const content = data.story?.content;
     const body = content?.body || [];
-    const logoCarousel = body.find((blk: any) =>
+    const logoCarousel = body.find((blk: { component: string; [key: string]: unknown }) =>
       ['logo_carousel', 'home_clients', 'home_clients_v2'].includes(blk.component)
     );
 

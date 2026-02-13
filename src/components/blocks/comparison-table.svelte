@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { ComparisonTableStoryblok } from '$types/bloks';
+  import type { ComparisonTableColumnStoryblok, ComparisonTableStoryblok } from '$types/bloks';
   import { storyblokEditable } from '$lib/actions/storyblok-editable';
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
@@ -8,7 +8,8 @@
   export let block: ComparisonTableStoryblok;
 
   // Get index of highlighted column
-  $: highlightedColumnIndex = block.columns?.findIndex((col: any) => col.is_highlight) ?? -1;
+  $: highlightedColumnIndex =
+    block.columns?.findIndex((col: ComparisonTableColumnStoryblok) => col.is_highlight) ?? -1;
   $: firstColumn = block.columns?.[0];
 </script>
 

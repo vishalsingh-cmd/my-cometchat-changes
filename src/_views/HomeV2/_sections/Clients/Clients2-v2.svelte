@@ -72,7 +72,7 @@
   export let block: HomeClientsV2Storyblok;
   $: clients =
     block.clients && block.clients.length > 0 ? block.clients : $page.data.globalLogos || [];
-  const cast = (val: any) => val;
+  const cast = (val: Record<string, unknown>) => val;
 </script>
 
 <Section className="relative z-20 isolate group/clients overflow-visible">
@@ -145,7 +145,7 @@
                   <img
                     class="h-10 object-contain px-3 grayscale"
                     src={getImageSrc(data, 'client_img')}
-                    alt={data?.client_img?.alt ?? ''}
+                    alt={cast(data).client_img?.alt || ''}
                   />
                 {/each}
               {/if}

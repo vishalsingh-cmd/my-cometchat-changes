@@ -13,10 +13,7 @@
   export let tags: string[] | undefined = undefined;
   export let link: string | undefined = undefined;
   export let customer: CustomerStoryblok | undefined = undefined;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  export let author: string | undefined = undefined;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  export let publishDate: string | undefined = undefined;
+
   export let isLoading = false;
   export let badgeSize: 'small' | 'medium' = 'medium';
 

@@ -36,7 +36,7 @@ export const hubspotForm = (
           portalId,
           formId,
           target: `#hubspot-form`,
-          onFormSubmitted: function (e: any) {
+          onFormSubmitted: function (e: Record<string, unknown>) {
             node.dispatchEvent(new CustomEvent('submitSuccess', e));
           }
         });

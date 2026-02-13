@@ -13,8 +13,7 @@
   export let tags: string[] | undefined = undefined;
   export let link: string | undefined = undefined;
   export let customer: CustomerStoryblok | undefined = undefined;
-  export let author: string | undefined = undefined;
-  export let publishDate: string | undefined = undefined;
+
   export let isLoading = false;
   export let badgeSize: 'small' | 'medium' = 'medium';
 

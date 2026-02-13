@@ -7,7 +7,7 @@
   import IndustryRollerItem from './IndustryRollerItem.svelte';
   import type { RollerPointStoryblok } from '$types/bloks';
 
-  let interval: any;
+  let interval: ReturnType<typeof setInterval> | null;
   let containerElem: HTMLDivElement;
   const { activeIndex, setActiveIndex } = getIndustryContect();
   export let industryPointBlocks: RollerPointStoryblok[];
@@ -59,7 +59,7 @@
       icon={industryPointBlock.icon}
       title={industryPointBlock.title}
       description={industryPointBlock.description}
-      link={industryPointBlock.link}
+      link={industryPointBlock.link?.toString()}
       status={index === $activeIndex ? 'active' : 'inactive'}
     />
   {/each}

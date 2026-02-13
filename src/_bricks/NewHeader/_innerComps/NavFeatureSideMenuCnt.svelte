@@ -6,6 +6,7 @@
   import NavFeatureIcons from '../_sectionbloks/NavFeatureIcons.svelte';
   import NavFeatures from '../_sectionbloks/NavFeatures.svelte';
   import type { NavFeatureSideMenuItemProps } from '../newHeader.types';
+  import type { ComponentType } from 'svelte';
   import NavFeatureSideMenuTrigger from './NavFeatureSideMenuTrigger.svelte';
 
   export let index: number;
@@ -14,7 +15,7 @@
   export let className = '';
   export let toggleItem: (index: number) => void;
 
-  const blockMap: Record<string, any> = {
+  const blockMap: Record<string, ComponentType> = {
     'nav-feature-big-cards': NavFeatureBigCards,
     'nav-feature-cards': NavFeatureCards,
     'nav-feature-icons': NavFeatureIcons,

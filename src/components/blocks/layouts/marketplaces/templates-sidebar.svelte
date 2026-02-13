@@ -7,8 +7,8 @@
   export let className = '';
 
   const links: TemplatesSidebarItemStoryblok[] = $page.data.templatesMenu;
-  function handleChange(event: any) {
-    const selectedOption = links.find((link) => link.slug.url === event.target.value);
+  function handleChange(event: unknown) {
+    const selectedOption = links.find((link) => link.slug.url === (event as Event).target.value);
     if (selectedOption && selectedOption.slug.url) {
       window.location.href = $page.url + '/templates/' + selectedOption.slug.url;
     }

@@ -8,7 +8,6 @@
 
   export let headings: HTMLHeadingElement[] = [];
   export let activeHeadingIndex = 0;
-  export let hasShareOptions = false;
 </script>
 
 <div class="wrap sticky top-[80px] h-fit w-full max-w-[272px] overflow-visible pb-6 md:block">

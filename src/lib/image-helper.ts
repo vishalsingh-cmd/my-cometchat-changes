@@ -21,7 +21,7 @@ import type { AssetStoryblok } from '../types/bloks';
  * @returns The resolved image URL or undefined if no image is available
  */
 export function getImageSrc(
-  block: any,
+  block: Record<string, unknown>,
   assetFieldName: string,
   options?: Partial<ImageAttributesOptions>
 ): string | undefined {
@@ -64,7 +64,7 @@ export function getImageSrc(
  * @returns The resolved alt text
  */
 export function getImageAlt(
-  block: Record<string, any>,
+  block: Record<string, unknown>,
   assetFieldName: string,
   fallback = ''
 ): string {
@@ -81,7 +81,7 @@ export function getImageAlt(
  * @returns Object with src and alt properties
  */
 export function getImageProps(
-  block: Record<string, any>,
+  block: Record<string, unknown>,
   assetFieldName: string,
   altFallback = ''
 ): { src: string | undefined; alt: string } {
@@ -101,7 +101,10 @@ export function getImageProps(
  * @param assetFieldName - The name of the asset field in the block
  * @returns The original asset object with 'filename' property patched if external URL exists, or original asset.
  */
-export function getResolvedAsset(block: any, assetFieldName: string): AssetStoryblok | undefined {
+export function getResolvedAsset(
+  block: Record<string, unknown>,
+  assetFieldName: string
+): AssetStoryblok | undefined {
   const url = getImageSrc(block, assetFieldName);
   const asset = block?.[assetFieldName] as AssetStoryblok | undefined;
 

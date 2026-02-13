@@ -18,8 +18,8 @@
   };
 </script>
 
-<div class={burger({ class: className })} on:click={onClick}>
-  <Button aria-label="Menu button" variant="secondary">
+<div class={burger({ class: className })}>
+  <Button aria-label="Menu button" variant="secondary" on:click={onClick}>
     <Icon size="sm" icon={$isNavExpanded ? 'x' : 'menu-01'} class="opacity-80" />
   </Button>
 </div>

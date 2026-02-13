@@ -13,7 +13,7 @@
   //   let byobImage = '/agent_lp_images/Byob.png';
   let bulletIcon = '/agent_lp_images/bullet_icon.png';
 
-  const iconMap = {
+  const iconMap: Record<string, string> = {
     byobIcon,
     cometchatIcon
   };
@@ -30,7 +30,7 @@
               class="relative flex flex-col justify-between rounded-3xl border border-[#1F1B2E] p-8 lg:h-[640px]"
             >
               <div class="flex flex-col items-start gap-6">
-                <img src={iconMap[card.icon_key]} alt="Card Icon" class="h-[64px]" />
+                <img src={iconMap[card.icon_key] || ''} alt={card.title} class="h-[64px]" />
                 <div>
                   <h3 class="mb-3 font-sans text-[24px] font-[640px] leading-tighter text-gray-12">
                     {card.title}
@@ -54,7 +54,7 @@
               {#if resolvedCardImage?.filename}
                 <img
                   src={resolvedCardImage.filename}
-                  alt="Card Image"
+                  alt={card.title}
                   class="max-h-[300px] w-full opacity-74"
                 />
               {/if}

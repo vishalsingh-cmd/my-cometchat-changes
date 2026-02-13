@@ -7,11 +7,12 @@
   import NavFeatures from '../_sectionbloks/NavFeatures.svelte';
   import NavFeatureSideMenu from '../_sectionbloks/NavFeatureSideMenu.svelte';
   import type { NavPanelProps } from '../newHeader.types';
+  import type { ComponentType } from 'svelte';
   import NavPanelBackBtn from './NavPanelBackBtn.svelte';
 
   const { panelElems, activePanelIndex } = getNewHeaderContext();
 
-  const blockMap: Record<string, any> = {
+  const blockMap: Record<string, ComponentType> = {
     'nav-feature-big-cards': NavFeatureBigCards,
     'nav-feature-cards': NavFeatureCards,
     'nav-feature-icons': NavFeatureIcons,

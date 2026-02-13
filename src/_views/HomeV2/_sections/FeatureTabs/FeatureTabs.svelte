@@ -2,7 +2,7 @@
   import { cn } from '$src/_utils/tailwind.utils';
   import type { home__video_tabsStoryblok } from '$src/types/bloks';
   import type { EmblaCarouselType } from 'embla-carousel';
-  import { getImageSrc, getResolvedAsset } from '$lib/image-helper';
+  import { getImageSrc } from '$lib/image-helper';
   import Container from '$src/_comps/layouts/Container.svelte';
   import Section from '$src/_comps/layouts/Section.svelte';
   import FeatureTabTrigger from './FeatureTabTrigger.svelte';

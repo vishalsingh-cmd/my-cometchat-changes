@@ -2,7 +2,7 @@
   import { industries } from '$lib/stores/industries';
   import { page } from '$app/stores';
   import { string } from '$lib/strings/index.js';
-  import { getImageAttributes, startStoryblokBridge } from '$lib/storyblok.js';
+  import { startStoryblokBridge } from '$lib/storyblok.js';
   import { getImageSrc } from '$lib/image-helper';
   import DynamicPage from '$components/blocks/dynamic-page.svelte';
 

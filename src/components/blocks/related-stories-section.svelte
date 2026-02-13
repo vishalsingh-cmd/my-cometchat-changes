@@ -84,26 +84,10 @@
       /> -->
       {#if block.items && block.items.length > 0}
         {#each block.items as item}
-          {@const { title, image, tags, link, customer, author, date } = parsedItem(item)}
-          <ContentCard
-            {title}
-            {image}
-            {tags}
-            {link}
-            {customer}
-            {author}
-            {date}
-            badgeSize="medium"
-          />
+          {@const { title, image, tags, link, customer } = parsedItem(item)}
+          <ContentCard {title} {image} {tags} {link} {customer} badgeSize="medium" />
         {/each}
       {/if}
     </div>
   </section>
 {/if}
-
-<style>
-  .blur {
-    background: linear-gradient(290deg, #fcb8a8 0%, #b968a4 48.44%, #756cf6 100%);
-    filter: blur(150px);
-  }
-</style>

@@ -62,17 +62,19 @@
       }
       let i;
       i = isBilledAnnually ? 1 : 0;
-      block.mau[i].mau.tbody[index].body.forEach((col: any, index: number) => {
-        if (index === 0) {
-          $pricingValues['Build'].isBilledAnnually = isBilledAnnually;
-          return;
+      block.mau[i].mau.tbody[index].body.forEach(
+        (col: { value?: string; [key: string]: unknown }, index: number) => {
+          if (index === 0) {
+            $pricingValues['Build'].isBilledAnnually = isBilledAnnually;
+            return;
+          }
+          const categoryName: keyof PricingValues = block.cards[0].category1[index].name;
+          $pricingValues[categoryName] = {
+            price: col.value,
+            isBilledAnnually: isBilledAnnually
+          };
         }
-        const categoryName: keyof PricingValues = block.cards[0].category1[index].name;
-        $pricingValues[categoryName] = {
-          price: col.value,
-          isBilledAnnually: isBilledAnnually
-        };
-      });
+      );
     };
   })();
 
@@ -90,7 +92,7 @@
   onMount(() => {
     // Do your normal initialization (MAU setup, etc.)
     localMaus = [];
-    block.mau[0].mau.tbody.forEach((row: any) => {
+    block.mau[0].mau.tbody.forEach((row: { body: { value: string }[] }) => {
       localMaus.push(row.body[0].value);
     });
     $maus = localMaus;

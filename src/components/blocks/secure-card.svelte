@@ -4,7 +4,6 @@
   import SecureDecCircle from '$src/_views/HomeV2/_sections/Secure/_comp/SecureDecCircle.svelte';
 
   export let blok;
-  export let desktop = false;
 
   // Resolve image for external URL support
   $: resolvedImage = getResolvedAsset(blok, 'image') as AssetStoryblok | undefined;
