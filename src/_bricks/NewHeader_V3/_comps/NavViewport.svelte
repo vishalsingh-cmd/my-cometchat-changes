@@ -36,6 +36,7 @@
       'translate-x-full data-[state="active"]:translate-x-0',
 
       'xl:inset-[unset] xl:top-full',
+      'xl:translate-x-0',
 
       'xl:h-[unset] xl:overflow-hidden xl:w-auto xl:bg-[#0A0914] xl:pt-0',
       'xl:overflow-[unset]',
