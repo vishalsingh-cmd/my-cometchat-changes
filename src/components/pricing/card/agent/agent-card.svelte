@@ -15,7 +15,7 @@
 
   let isBilledAnnually;
   $: isBilledAnnually = value?.isBilledAnnually ?? false;
-  console.log(value);
+  // console.log(value);
 </script>
 
 {#if block}

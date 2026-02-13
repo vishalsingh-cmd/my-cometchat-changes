@@ -1,7 +1,6 @@
 <script lang="ts">
   import { tv } from '$src/_utils/tailwind.utils';
   import { getAnchorFromCmsLink } from '$src/lib/storyblok';
-  import { getImageSrc } from '$lib/image-helper';
   import type { NavFeatureBigCardProps } from '../newHeader.types';
 
   export let className = '';
@@ -32,15 +31,10 @@
   });
   const { base, image, info, title } = navFeatureBigCard();
   const { href, target } = getAnchorFromCmsLink(block.link);
-
-  // Get image URL with external URL support
-  $: imageUrl = getImageSrc(block, 'image') || '';
 </script>
 
 <a href={href || '#'} {target} class={base({ class: className })}>
-  {#if imageUrl}
-    <img src={imageUrl} alt={block.title} class={image({ class: imgClassName })} />
-  {/if}
+  <img src={block.image.filename} alt={block.title} class={image({ class: imgClassName })} />
   <div class={info({ class: infoClassName })}>
     <h3 class={title({ class: titleClassName })}>
       {block.title}

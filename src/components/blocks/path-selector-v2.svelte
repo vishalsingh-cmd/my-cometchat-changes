@@ -66,7 +66,7 @@
                       <div class="mt-4">
                         <a
                           class="text-lg font-[640px] text-brand-9 hover:text-white"
-                          href={getAnchorFromCmsLink(card.link)}>Learn more</a
+                          href={getAnchorFromCmsLink(card.link).href}>Learn more</a
                         >
                       </div>
                     {/if}

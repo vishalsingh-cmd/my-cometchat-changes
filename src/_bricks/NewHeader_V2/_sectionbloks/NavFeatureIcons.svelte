@@ -9,7 +9,6 @@
 
   export let className = '';
   export let iconsClassName = '';
-  export let titleClassName = '';
   export let block: NavFeatureIconsProps;
 
   const navFeatureIcons = tv({
@@ -27,7 +26,7 @@
 </script>
 
 <NavSection className={base({ class: className })}>
-  <NavTitle className={titleClassName}>{block.title}</NavTitle>
+  <NavTitle>{block.title}</NavTitle>
 
   <div class={icons({ class: iconsClassName })}>
     {#each block.icons as icon}

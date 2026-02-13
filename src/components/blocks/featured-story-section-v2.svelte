@@ -89,10 +89,8 @@
       {@const content = story.content}
       <!-- {@const storyLink = sanitizeSlug(story.full_slug)} -->
       {@const author = getAuthor(story)}
-      <!-- {console.log('author', author)} -->
       {@const date = story.created_at ? formatDate(new Date(story?.created_at)) : undefined}
       {@const imageURL = getAuthorImage(story)}
-      <!-- {console.log('imageURL', imageURL)} -->
       {@const tags = getTag(story)}
       <div
         class="container mx-auto flex flex-col justify-between gap-[30px] md:flex-row md:items-center"

@@ -2,14 +2,14 @@ import type {
   AssetStoryblok,
   ButtonLinkStoryblok,
   LinkStoryblok,
-  MultilinkStoryblok
+  standardLinkStoryblok
 } from '$src/types/bloks';
 
 /* -------------------------- nav-feature-big-cards ------------------------- */
 export interface NavFeatureBigCardProps {
   title: string;
   image: AssetStoryblok;
-  link: MultilinkStoryblok;
+  link: standardLinkStoryblok;
 
   component: 'nav-feature-big-card';
   _uid: string;
@@ -30,7 +30,7 @@ export interface NavFeatureCardProps {
   title: string;
   description: string;
   icon: string;
-  link: MultilinkStoryblok;
+  link: standardLinkStoryblok;
 
   component: 'nav-feature-card';
   _uid: string;
@@ -49,7 +49,7 @@ export interface NavFeatureCardsProps {
 export interface NavFeatureIconProps {
   title: string;
   icon: string;
-  link: MultilinkStoryblok;
+  link: standardLinkStoryblok;
 
   component: 'nav-feature-icon';
   _uid: string;
@@ -69,7 +69,7 @@ export interface NavFeatureProps {
   title: string;
   description: string;
   icon: string;
-  link: MultilinkStoryblok;
+  link: standardLinkStoryblok;
 
   component: 'nav-feature';
   _uid: string;
@@ -78,7 +78,7 @@ export interface NavFeatureProps {
 export interface NavFeaturesProps {
   title: string;
   columns: 'auto' | '1' | '2' | '3';
-  features: Array<NavFeatureProps | NavFeaturePostProps>;
+  features: NavFeatureProps[];
 
   component: 'nav-features';
   _uid: string;
@@ -102,40 +102,13 @@ export interface NavFeatureSideMenuProps {
   _uid: string;
 }
 
-/* -------------------------- nav-feature-posts ------------------------- */
-export interface NavFeaturePostProps {
-  title: string;
-  description: string;
-  image: AssetStoryblok;
-  imageplugin?: {
-    _uid?: string;
-    url?: string;
-    plugin?: string;
-    content?: string;
-  };
-  link: MultilinkStoryblok;
-
-  component: 'nav-feature-post';
-  _uid: string;
-}
-
-export interface NavFeaturePostsProps {
-  title: string;
-  posts: NavFeaturePostProps[];
-  see_all_link?: LinkStoryblok;
-
-  component: 'nav-feature-posts';
-  _uid: string;
-}
-
 /* ------------------------------- basic navs ------------------------------- */
 export type NavPanelProps =
   | NavFeatureBigCardsProps
   | NavFeatureCardsProps
   | NavFeatureIconsProps
   | NavFeaturesProps
-  | NavFeatureSideMenuProps
-  | NavFeaturePostsProps;
+  | NavFeatureSideMenuProps;
 
 export interface NavItemProps {
   title: string;
@@ -149,7 +122,7 @@ export interface NavItemProps {
 export interface NavLinkProps {
   title: string;
   isNew: boolean;
-  link: MultilinkStoryblok;
+  link: standardLinkStoryblok;
 
   component: 'nav-link';
   _uid: string;

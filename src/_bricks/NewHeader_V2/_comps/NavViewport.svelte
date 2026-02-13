@@ -31,7 +31,7 @@
       'pt-[60px] bg-[#0A0914] w-full h-full',
       'flex flex-row',
       'overflow-x-clip overflow-y-auto',
-      'transition-[width,height,opacity] duration-300 ease-out',
+      'transition-[width,height,opacity] duration-300',
       'opacity-0 data-[state="active"]:opacity-100',
       'translate-x-full data-[state="active"]:translate-x-0',
 
@@ -44,28 +44,7 @@
       'xl:shadow-new-header-viewport xl:border-[#FAFAFF] xl:rounded-2xl',
       'xl:border-opacity-10 xl:data-[state="active"]:border',
       'xl:pointer-events-none xl:data-[state="active"]:pointer-events-auto'
-    ],
-    variants: {
-      index: {
-        0: [
-          'xl:border-opacity-20',
-          'xl:bg-[linear-gradient(0deg,#0A0914,#0A0914),linear-gradient(0deg,rgba(250,250,255,0.04),rgba(250,250,255,0.04))]'
-        ],
-        1: [
-          'xl:border-opacity-20', // Increasing border opacity for Developer tab
-          // Apply gradient background to the viewport itself for Index 1
-          'xl:bg-[linear-gradient(0deg,#0A0914,#0A0914),linear-gradient(0deg,rgba(250,250,255,0.04),rgba(250,250,255,0.04))]'
-        ],
-        2: [
-          'xl:border-opacity-20',
-          'xl:bg-[linear-gradient(0deg,#0A0914,#0A0914),linear-gradient(0deg,rgba(250,250,255,0.04),rgba(250,250,255,0.04))]'
-        ],
-
-        3: [],
-        4: [],
-        5: []
-      }
-    }
+    ]
   });
 
   const navWrapper = tv({
@@ -90,46 +69,36 @@
     if (isDesktop) actions.scheduleHidePanel();
   };
 
-  const handleOnClick = (e: Event) => {
+  const handleOnClick = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
     if (target.tagName === 'A' || target.closest('a')) {
+      actions.hidePanel();
       actions.deactivateNav();
     }
   };
-
-  // derived safe index for tv variant
-  $: activeIndex = ($activePanelIndex ?? 0) as 0 | 1 | 2 | 3 | 4 | 5;
 </script>
 
 {#if isDesktop}
-  <div class={navWrapper({ index: activeIndex })}>
+  <div class={navWrapper({ index: $activePanelIndex })}>
     <div
-      class={navViewport({ class: className, index: activeIndex })}
+      class={navViewport({ class: className })}
       bind:this={$viewportElem}
-      role="presentation"
       on:mouseenter={handleMouseEnter}
       on:mouseleave={handleMouseLeave}
       on:click={handleOnClick}
-      on:keydown={(e) => e.key === 'Enter' && handleOnClick(e)}
     >
       {#each navItems as navItem, index}
         {#if 'panel' in navItem && navItem.panel}
-          <NavPanel {index} sections={navItem.panel} title={navItem.title} />
+          <NavPanel {index} sections={navItem.panel} />
         {/if}
       {/each}
     </div>
   </div>
 {:else}
-  <div
-    class={navViewport({ class: className })}
-    bind:this={$viewportElem}
-    role="presentation"
-    on:click={handleOnClick}
-    on:keydown={(e) => e.key === 'Enter' && handleOnClick(e)}
-  >
+  <div class={navViewport({ class: className })} bind:this={$viewportElem} on:click={handleOnClick}>
     {#each navItems as navItem, index}
       {#if 'panel' in navItem && navItem.panel}
-        <NavPanel {index} sections={navItem.panel} title={navItem.title} />
+        <NavPanel {index} sections={navItem.panel} />
       {/if}
     {/each}
   </div>

@@ -67,11 +67,7 @@ export function createNewHeaderContext(): NewHeaderContext {
   const setTriggerPos = (trigger: HTMLButtonElement) => {
     const header = get(headerElem);
     if (!header) return;
-    // Set both position and width for smooth sliding transition
-    header.setAttribute(
-      'style',
-      `--active-trigger-left: ${trigger.offsetLeft}px; --active-trigger-width: ${trigger.offsetWidth}px`
-    );
+    header.setAttribute('style', `--active-trigger-left: ${trigger.offsetLeft}px`);
   };
 
   // const setupViewport = (viewport: HTMLDivElement, panel: HTMLDivElement) => {

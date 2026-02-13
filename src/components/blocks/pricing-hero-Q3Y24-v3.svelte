@@ -507,7 +507,6 @@
                 id={3}
                 isActive={$activateIndex === 3}
                 on:click={() => {
-                  console.log('clicked');
                   $activateIndex = 3;
                 }}
               >

@@ -53,7 +53,7 @@
               {/if}
             </NavTrigger>
           {:else if navItem.component === 'nav-link'}
-            <NavLink link={navItem.link} isLast={index === navItems.length - 1}>
+            <NavLink link={navItem.link}>
               {navItem.title}
               {#if navItem.isNew}
                 <NewChip />

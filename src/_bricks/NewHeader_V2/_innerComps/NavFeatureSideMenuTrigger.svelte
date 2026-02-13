@@ -7,11 +7,10 @@
     base: [
       'px-5 py-6 w-full',
       'flex items-center justify-between',
-      /*Updated Typography: 14px, 600 weight, 140% leading, 2% tracking */
-      'font-sans font-semibold text-[14px] leading-[1.4] tracking-[0.02em] text-[#FAFAFF]',
+      'font-sans font-semibold text-[14px] text-[#FAFAFF]',
       'transition-colors duration-300',
 
-      /*Removed lg:text-[16px] to keep it 14px consistently */
+      'lg:text-[16px]',
       ' xl:data-[state="active"]:text-[#6852D6] ',
       ' xl:data-[state="active"]:bg-[#0F0E19] '
     ]

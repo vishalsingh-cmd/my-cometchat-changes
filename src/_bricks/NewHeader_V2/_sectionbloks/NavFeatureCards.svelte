@@ -2,7 +2,7 @@
   import { tv } from '$src/_utils/tailwind.utils';
   import type { NavFeatureCardsProps } from '../newHeader.types';
   import NavSection from '../_innerComps/NavSection.svelte';
-  import NavTitle from '../_innerComps/NavTitle.svelte';
+  // import NavTitle from '../_innerComps/NavTitle.svelte';
   import NavFeatureCard from '../_innerComps/NavFeatureCard.svelte';
 
   export let className = '';
@@ -10,16 +10,27 @@
   export let block: NavFeatureCardsProps;
 
   const navFeatureCards = tv({
-    base: ['flex flex-col gap-1.5', 'px-0']
+    base: ['flex flex-col gap-6', 'px-6']
   });
 
   const cards = tv({
-    base: ['flex flex-col gap-3']
+    base: ['grid grid-cols'],
+    variants: {
+      columns: {
+        auto: ['lg:grid-cols-[repeat(auto-fill,_minmax(300px,1fr))]'],
+        '1': ['lg:grid-cols-1'],
+        '2': ['lg:grid-cols-1'],
+        '3': ['lg:grid-cols-1']
+      }
+    },
+    defaultVariants: {
+      columns: block.columns
+    }
   });
 </script>
 
 <NavSection className={navFeatureCards({ class: className })}>
-  <NavTitle>{block.title}</NavTitle>
+  <!-- <NavTitle>{block.title}</NavTitle> -->
 
   <div class={cards({ class: cardsClassName })}>
     {#each block.cards as card}

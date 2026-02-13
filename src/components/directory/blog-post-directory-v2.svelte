@@ -193,8 +193,6 @@
         per_page: 100
       });
 
-      // console.log('Customer Story Res:', res.data.stories);
-
       return { stories: res.data.stories, total: res.total };
     }
   });

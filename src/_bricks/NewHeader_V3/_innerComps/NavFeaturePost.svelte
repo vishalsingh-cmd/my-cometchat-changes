@@ -49,8 +49,6 @@
 
   const { base, imageWrap, image, info, title, description } = navFeaturePost();
   const { href, target } = getAnchorFromCmsLink(block.link);
-  // Debugging: Log the block to see what data is coming from Storyblok
-  $: console.log('NavFeaturePost block:', block);
 
   $: imageUrl = getImageSrc(block, 'image');
 </script>

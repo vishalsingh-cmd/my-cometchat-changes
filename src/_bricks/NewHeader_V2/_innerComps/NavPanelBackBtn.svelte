@@ -12,7 +12,6 @@
       'flex items-center gap-1 py-3 px-5',
       'font-sans font-semibold text-[14px] text-[#FAFAFF]',
       'border-b border-[#22212C]',
-      'before:content-[""] before:absolute before:bottom-full before:left-0 before:right-0 before:h-[60px] before:bg-[#0A0914]',
 
       'xl:hidden'
     ]
@@ -24,8 +23,6 @@
 </script>
 
 <button class={navPanelBackBtn({ class: className })} on:click={onShowPanel}>
-  <div class="flex h-4 w-4 items-center justify-center">
-    <Icon icon="arrow-narrow-left" class="h-3 w-3 text-[#FAFAFF]" />
-  </div>
+  <Icon icon="chevron-left" size="xs" />
   Back
 </button>

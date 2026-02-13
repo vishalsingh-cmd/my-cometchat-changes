@@ -3,14 +3,13 @@
 
   export let className = '';
 
-  /* eslint-disable max-len */
   const logo = tv({
-    base: ['z-[1] block w-[90px] h-[14px] xl:w-[129px] xl:h-[20px]']
+    base: ['z-[1]']
   });
 </script>
 
 <a href="/" class={logo({ class: className })}>
-  <svg viewBox="0 0 129 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
+  <svg width="129" height="20" viewBox="0 0 129 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fill-rule="evenodd"
       clip-rule="evenodd"
