@@ -4,7 +4,7 @@
   import Section from '$src/_comps/layouts/Section.svelte';
   import Container from '$src/_comps/layouts/Container.svelte';
   // import Icon from '$components/icon/icon.svelte';
-  import { slide } from 'svelte/transition';
+
   import { onMount } from 'svelte';
   import { getImageSrc } from '$lib/image-helper';
 
@@ -118,39 +118,41 @@
             </button>
 
             <!-- Expandable Content -->
-            {#if openMobileIndex === index}
-              <div
-                transition:slide={{ duration: 300 }}
-                class="px-3 pb-4"
-                on:introend={() => {
-                  if (pendingScrollIndex === index) {
-                    cardRefs[index]?.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                    });
-                    pendingScrollIndex = null;
-                  }
-                }}
-              >
-                <!-- Image -->
-                {#if feature.mobileImage}
-                  <div class="relative mb-4 mt-2 overflow-hidden rounded-lg">
-                    <img
-                      src={getImageSrc(feature, 'mobileImage')}
-                      alt={feature.title}
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                {/if}
+            <div
+              class="accordion-content"
+              class:open={openMobileIndex === index}
+              on:transitionend={() => {
+                if (openMobileIndex === index && pendingScrollIndex === index) {
+                  cardRefs[index]?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                  });
+                  pendingScrollIndex = null;
+                }
+              }}
+            >
+              <div class="overflow-hidden">
+                <div class="accordion-inner px-3 pb-4">
+                  <!-- Image -->
+                  {#if feature.mobileImage}
+                    <div class="relative mb-4 mt-2 overflow-hidden rounded-lg">
+                      <img
+                        src={getImageSrc(feature, 'mobileImage')}
+                        alt={feature.title}
+                        class="h-full w-full object-cover"
+                      />
+                    </div>
+                  {/if}
 
-                <!-- Description -->
-                {#if feature.description}
-                  <p class="leading-relaxed text-md tracking-[0.09px] text-gray-12 opacity-74">
-                    {feature.description}
-                  </p>
-                {/if}
+                  <!-- Description -->
+                  {#if feature.description}
+                    <p class="leading-relaxed text-md tracking-[0.09px] text-gray-12 opacity-74">
+                      {feature.description}
+                    </p>
+                  {/if}
+                </div>
               </div>
-            {/if}
+            </div>
           </div>
         {/each}
       </div>
@@ -163,15 +165,15 @@
         >
           {#if selectedFeature}
             <!-- Image -->
-            {#if getImageSrc(selectedFeature, 'image')}
-              <div class="relative overflow-hidden rounded-lg" key={selectedIndex}>
+            {#key selectedIndex}
+              <div class="relative overflow-hidden rounded-lg">
                 <img
                   src={getImageSrc(selectedFeature, 'image')}
                   alt={selectedFeature.title}
                   class="h-full w-full object-cover lg:min-h-[464px]"
                 />
               </div>
-            {/if}
+            {/key}
 
             <!-- Description -->
             {#if selectedFeature.description}
@@ -191,7 +193,9 @@
 
         <!-- Feature List -->
         <div
-          class={`relative flex flex-col gap-4 ${block.text_first ? 'lg:order-1' : 'lg:order-2'}`}
+          class={`relative flex flex-col gap-4 ${
+            block.text_first ? 'lg:order-1' : 'lg:order-2 lg:items-end'
+          }`}
         >
           <div class="relative flex flex-col gap-8">
             <div class="absolute left-0 top-0 z-[1] h-full w-[1px] bg-gray-12/10" />
@@ -276,10 +280,34 @@
   .card {
     border-radius: 16px;
     border: 1px solid rgba(250, 250, 255, 0.3);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
   .cardSelected {
     border-radius: 16px;
     border: 1px solid rgba(250, 250, 255, 0.3);
     background: linear-gradient(180deg, rgba(104, 82, 214, 0.1) 0%, rgba(10, 9, 20, 0) 100%);
+    transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accordion-content.open {
+    grid-template-rows: 1fr;
+  }
+
+  .accordion-inner {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accordion-content.open .accordion-inner {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>

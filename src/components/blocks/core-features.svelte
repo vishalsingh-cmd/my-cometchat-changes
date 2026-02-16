@@ -7,7 +7,9 @@
 
   export let block: CoreFeaturesStoryblok | undefined = undefined;
 
-  let activeImage = getImageSrc(block?.features?.[0], 'image');
+  let activeImage = block?.features?.[0]
+    ? getImageSrc(block.features[0] as unknown as Record<string, unknown>, 'image') ?? ''
+    : '';
   let nextImage = '';
   let isTransitioning = false;
 
@@ -76,7 +78,7 @@
               {#if block.features}
                 <div class="flex flex-col items-start gap-3 self-stretch">
                   {#each block.features ?? [] as feature, index}
-                    <div use:observeFeature={getImageSrc(feature, 'image')}>
+                    <div use:observeFeature={getImageSrc(feature, 'image') ?? ''}>
                       <div class="flex max-w-[548px] flex-col items-start gap-4 self-stretch">
                         <div class="flex flex-col items-start gap-3 self-stretch">
                           {#if feature.is_top}
@@ -141,7 +143,7 @@
                                   <div
                                     class="text-lg font-medium leading-snug tracking-[0.09px] opacity-74"
                                   >
-                                    {item?.value?.content[0]?.content[0]?.text ?? ''}
+                                    {item?.value?.content?.[0]?.content?.[0]?.text ?? ''}
                                   </div>
                                 </div>
                               </li>
